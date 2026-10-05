@@ -11,6 +11,20 @@ import media from '../data/media.json';
 import presenters from '../data/presenters.json';
 export {edition,evidence,claims,sources,people,relationships,locations,metagames,media,presenters};
 export const stops=edition.stops.map(id=>{const stop=stopData.find(s=>s.id===id);if(!stop)throw new Error(`Missing stop: ${id}`);return stop;});
-export const stopURL=(id:string)=>`/stops/${id}/`;
-export const sourceURL=(id:string,from?:string)=>`/sources/${from?`?from=${from}`:''}#source-${id}`;
-export const claimURL=(id:string,from?:string)=>`/sources/${from?`?from=${from}`:''}#claim-${id}`;
+
+const rawBase = import.meta.env.BASE_URL || '/';
+export const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+export const routeURL = (path: string = '') => {
+  const clean = path.replace(/^\//, '');
+  if (!clean) return base;
+  return `${base}${clean}`;
+};
+export const assetURL = (path: string = '') => {
+  const clean = path.replace(/^\//, '');
+  return `${base}${clean}`;
+};
+export const stopURL = (id: string) => `${base}stops/${id}/`;
+export const sourceURL = (id: string, from?: string) =>
+  `${base}sources/${from ? `?from=${from}` : ''}#source-${id}`;
+export const claimURL = (id: string, from?: string) =>
+  `${base}sources/${from ? `?from=${from}` : ''}#claim-${id}`;

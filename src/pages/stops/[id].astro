@@ -5,7 +5,7 @@ import EvidenceItem from '../../components/EvidenceItem.astro';
 import Presenter from '../../components/Presenter.astro';
 import StopNav from '../../components/StopNav.astro';
 import ClaimLinks from '../../components/ClaimLinks.astro';
-import {stops,evidence,media,locations,people,metagames,presenters,stopURL} from '../../lib/catalog';
+import {stops,evidence,media,locations,people,metagames,presenters,stopURL,routeURL,assetURL} from '../../lib/catalog';
 export function getStaticPaths(){return stops.map((stop,index)=>({params:{id:stop.id},props:{stop,index}}));}
 const {stop,index}=Astro.props;
 const scene=media.scenes.find(s=>s.id===stop.sceneId)!;
@@ -18,13 +18,14 @@ const presenter=presenters.find(p=>p.stopId===stop.id)!;
  <article class="container reading-page" data-reading-page={stop.id}>
   <header class="page-heading"><p class="eyebrow">Stop {index+1} · {stop.period}</p><h1>{stop.title}</h1><p class="lede">{stop.synopsis}</p><StopNav index={index} position="top"/><nav class="controls" aria-label="On this page"><a href="#intro">Introduction</a><a href="#record">The record</a><a href="#metagame">The underlying bargain</a><a href="#evidence">Evidence</a></nav></header>
   <div class="stop-grid"><div class="stop-prose">
-   <section id="intro" data-reading-block><AudioPlayer audioSrc={narration.file} ambienceSrc={index===1||index===2||index===6?'/media/audio/ambience-room-tone.mp3':undefined}/><h2>Introduction</h2><p>{stop.blocks.intro.text}</p><ClaimLinks ids={stop.blocks.intro.claimIds} from={stop.id}/></section>
+   <section id="intro" data-reading-block><h2>Introduction</h2><p>{stop.blocks.intro.text}</p><ClaimLinks ids={stop.blocks.intro.claimIds} from={stop.id}/><AudioPlayer audioSrc={assetURL(narration.file)} ambienceSrc={index===1||index===2||index===6?assetURL('/media/audio/ambience-room-tone.mp3'):undefined}/></section>
    <section id="record" data-reading-block><h2>The record</h2><p>{stop.blocks.record.text}</p><ClaimLinks ids={stop.blocks.record.claimIds} from={stop.id}/><Presenter presenter={presenter}/></section>
    <section id="metagame" data-reading-block><p class="eyebrow">Tour explanation / Interpretation</p><h2>{metagame.title}</h2><p>{stop.blocks.metagame.text}</p><ClaimLinks ids={metagame.premiseClaims} from={stop.id}/>
     <details class="card"><summary>Examine aims, responses, and costs</summary><ul>{metagame.actors.map(a=><li><strong>{a.name}:</strong> {a.role}{!a.isDocumented?' — analytical perspective':''}</li>)}</ul><p><strong>Aims:</strong> {metagame.aims}</p><p><strong>Expected benefit:</strong> {metagame.expectedBenefit}</p><p><strong>Who bore the costs:</strong> {metagame.bearingCosts}</p><p><strong>Reported response:</strong> {metagame.observedResponse}</p><p><strong>Limit:</strong> {metagame.evidentiaryLimit}</p></details>
    </section>
    <section id="evidence"><h2>Inspect the evidence</h2><p>These are source-linked explanations. Original records stay with the linked archives. Opening an item marks it inspected when saving is available.</p>{stop.evidenceIds.map(id=>{const ev=evidence.find(e=>e.id===id);return ev ? <EvidenceItem evidence={ev}/> : null})}</section>
-   <section><h2>People and connections</h2><ul>{stop.relatedPersonIds.map(id=>{const p=people.find(p=>p.id===id);return <li><a href={`/casebook/?from=${stop.id}#person-${id}`}>{p?.name}</a> — {p?.role}</li>})}</ul><h3>Connected chapters</h3><ul>{stop.relatedStopIds.map(id=><li><a href={stopURL(id)}>{stops.find(s=>s.id===id)?.title}</a></li>)}</ul></section><StopNav index={index} position="bottom"/>
-  </div><aside class="stop-scene-column"><figure class="scene-wrapper"><img src={scene.file} width={scene.width} height={scene.height} alt={scene.description} fetchpriority="high"/><figcaption>Reconstruction · Generalized illustration. Architecture, sightlines, and depicted figures are not verified.</figcaption></figure><div class="card"><h2>The place</h2><p>{loc.historicalName}</p><p class="muted">{loc.address}</p><p>Position: {loc.precision}. Condition: {loc.condition}. Access: {loc.access}.</p><p>{loc.qualification}</p><a href={`/map/#location-${loc.id}`}>Location notes</a></div></aside></div>
+   <section><h2>People and connections</h2><ul>{stop.relatedPersonIds.map(id=>{const p=people.find(p=>p.id===id);return <li><a href={routeURL(`/casebook/?from=${stop.id}#person-${id}`)}>{p?.name}</a> — {p?.role}</li>})}</ul><h3>Connected chapters</h3><ul>{stop.relatedStopIds.map(id=><li><a href={stopURL(id)}>{stops.find(s=>s.id===id)?.title}</a></li>)}</ul></section><StopNav index={index} position="bottom"/>
+  </div><aside class="stop-scene-column"><figure class="scene-wrapper"><img src={assetURL(scene.file)} width={scene.width} height={scene.height} alt={scene.description} fetchpriority="high"/><figcaption>Reconstruction · Generalized illustration. Architecture, sightlines, and depicted figures are not verified.</figcaption></figure><div class="card"><h2>The place</h2><p>{loc.historicalName}</p><p class="muted">{loc.address}</p><p>Position: {loc.precision}. Condition: {loc.condition}. Access: {loc.access}.</p><p>{loc.qualification}</p><a href={routeURL(`/map/#location-${loc.id}`)}>Location notes</a></div></aside></div>
+
  </article>
 </Layout>

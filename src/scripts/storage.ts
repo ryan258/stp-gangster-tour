@@ -61,5 +61,11 @@ export function markEvidenceInspected(id:string):{added:boolean;saved:boolean} {
  return {added:true,saved:saveProgress({inspectedEvidence:[...p.inspectedEvidence,id]})};
 }
 export function clearProgress():boolean {progressMemory=defaultProgress();const saved=write(PROGRESS_KEY,progressMemory);window.dispatchEvent(new Event('stp:progress'));return saved;}
-export function bookmarkURL(bookmark:Bookmark|null):string {if(!bookmark)return '/map/';return `${STOP_IDS.includes(bookmark.stopId)?'/stops/':'/'}${bookmark.stopId}/#${bookmark.blockId}`;}
+export function bookmarkURL(bookmark:Bookmark|null):string {
+  const rawBase = import.meta.env.BASE_URL || '/';
+  const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+  if(!bookmark)return `${base}map/`;
+  return `${base}${STOP_IDS.includes(bookmark.stopId)?'stops/':''}${bookmark.stopId}/#${bookmark.blockId}`;
+}
+
 export function announce(message:string){const el=document.getElementById('live-announcer');if(el)el.textContent=message;}

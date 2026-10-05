@@ -1,4 +1,5 @@
 ---
+import {assetURL} from '../lib/catalog';
 interface Props {
   audioSrc?: string;
   narrationId?: string;
@@ -8,10 +9,11 @@ interface Props {
 const {
   narrationId,
   durationSeconds,
-  audioSrc = narrationId ? `/media/audio/${narrationId}.mp3` : '',
-  ambienceSrc = '/media/audio/ambience-city-rain.mp3'
+  audioSrc = narrationId ? assetURL(`/media/audio/${narrationId}.mp3`) : '',
+  ambienceSrc = assetURL('/media/audio/ambience-city-rain.mp3')
 } = Astro.props;
 ---
+
 <section class="audio-player audio-player-panel card" aria-label="Introduction audio" data-audio-player data-narration-src={audioSrc} data-ambience-src={ambienceSrc} data-duration={durationSeconds}>
  <h2>Listen to the introduction</h2>
  <p class="muted">Synthesized macOS Samantha voice. Listening and pronunciation review pending. The complete transcript is the introduction below.</p>

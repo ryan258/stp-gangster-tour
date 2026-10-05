@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { claims, sources, edition, media, sourceURL } from '../lib/catalog';
+import { claims, sources, edition, media, sourceURL, routeURL } from '../lib/catalog';
 ---
 
 <Layout title="Sources and qualifications">
@@ -10,7 +10,8 @@ import { claims, sources, edition, media, sourceURL } from '../lib/catalog';
       <h1>Sources and qualifications</h1>
       <p class="lede">Thirty claims, with their support, disputes, and limits.</p>
       <p>“Supported” refers to the bounded statement and cited source, not universal certainty. A historical record, a later account, and this tour’s explanation are different kinds of material. These pages paraphrase records; they do not present invented transcripts or archival facsimiles.</p>
-      <p><a data-context-return hidden href="/map/">Back to the tour</a></p>
+      <p><a data-context-return hidden href={routeURL('/map/')}>Back to the tour</a></p>
+
       <nav class="controls" aria-label="Sources sections">
         <a href="#claims">Claims</a>
         <a href="#bibliography">Bibliography</a>
@@ -77,7 +78,7 @@ import { claims, sources, edition, media, sourceURL } from '../lib/catalog';
         <li>Corrected the hotel surveillance caption, silver-nitrate wording, and Lincoln Court illustration labels.</li>
         <li>Replaced automatic listening passes with pending review records.</li>
       </ul>
-      <p>Still open: recorded listening and rights reviews, referenced illustration review, the finished river/base geography layer, and real-device and assistive-technology verification.</p>
+      <p>Still open: recorded listening and rights reviews, referenced illustration review, final editorial review, and real-device and assistive-technology verification.</p>
       <p>To investigate a possible correction, note the claim or evidence ID, the proposed correction, and a source with a page or passage locator. The ledger preserves qualifications while that question is checked.</p>
     </section>
 

@@ -1,9 +1,9 @@
 ---
-import {stops,stopURL} from '../lib/catalog';
+import {stops,stopURL,routeURL} from '../lib/catalog';
 interface Props {index:number;position:'top'|'bottom'}
 const {index,position}=Astro.props;
 ---
 <nav class="stop-nav" aria-label={`Reading order (${position})`}>
- <a href={index===0?'/prologue/':stopURL(stops[index-1].id)}>← Previous: {index===0?'Prologue':stops[index-1].title}</a>
- <a href={index===stops.length-1?'/epilogue/':stopURL(stops[index+1].id)}>Next: {index===stops.length-1?'Epilogue':stops[index+1].title} →</a>
+ <a href={index===0?routeURL('/prologue/'):stopURL(stops[index-1].id)}>← Previous: {index===0?'Prologue':stops[index-1].title}</a>
+ <a href={index===stops.length-1?routeURL('/epilogue/'):stopURL(stops[index+1].id)}>Next: {index===stops.length-1?'Epilogue':stops[index+1].title} →</a>
 </nav>

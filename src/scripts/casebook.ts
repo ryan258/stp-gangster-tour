@@ -19,7 +19,7 @@ export function initEvidenceDisclosures(){
  trigger?.addEventListener('click',()=>{if(confirm){confirm.hidden=false;document.getElementById('btn-cancel-reset')?.focus();}});
  document.getElementById('btn-cancel-reset')?.addEventListener('click',()=>{if(confirm)confirm.hidden=true;trigger?.focus();});
  document.getElementById('btn-confirm-reset')?.addEventListener('click',()=>{const saved=clearProgress();if(confirm)confirm.hidden=true;trigger?.focus();announce(saved?'Reading progress reset. Preferences kept.':'Progress reset on this page only; saved data could not be changed.');refresh();});
- const from=new URLSearchParams(location.search).get('from');if(from&&STOP_IDS.includes(from))document.querySelectorAll<HTMLAnchorElement>('[data-context-return]').forEach(a=>{a.href=`/stops/${from}/#record`;a.textContent=`Back to ${from.replaceAll('-',' ')}`;a.hidden=false;});
+ const from=new URLSearchParams(location.search).get('from');if(from&&STOP_IDS.includes(from)){const rawBase=import.meta.env.BASE_URL||'/';const base=rawBase.endsWith('/')?rawBase:`${rawBase}/`;document.querySelectorAll<HTMLAnchorElement>('[data-context-return]').forEach(a=>{a.href=`${base}stops/${from}/#record`;a.textContent=`Back to ${from.replaceAll('-',' ')}`;a.hidden=false;});}
  document.querySelectorAll<HTMLElement>('[data-js-control]').forEach(el=>el.hidden=false);
  window.addEventListener('stp:progress',refresh);window.addEventListener('storage',refresh);window.addEventListener('pageshow',refresh);refresh();
 }

@@ -1,6 +1,13 @@
 ---
+import {routeURL} from '../lib/catalog';
 interface Props {currentPath?:string;stopNumber?:number;totalStops?:number}
-const {currentPath='/',stopNumber,totalStops=7}=Astro.props;
+const {currentPath=routeURL('/'),stopNumber,totalStops=7}=Astro.props;
+const navItems = [
+  ['/', 'Home'],
+  ['/map/', 'Map'],
+  ['/casebook/', 'Casebook'],
+  ['/sources/', 'Sources']
+];
 ---
-<header class="site-header"><div class="header-container"><a href="/" class="site-brand">SAINT PAUL AFTER DARK</a>{stopNumber&&<span class="badge">Stop {stopNumber} of {totalStops}</span>}
-<nav class="site-nav" aria-label="Main navigation">{[['/','Home'],['/map/','Map'],['/casebook/','Casebook'],['/sources/','Sources']].map(([href,label])=><a href={href} aria-current={currentPath===href?'page':undefined}>{label}</a>)}<button type="button" class="btn-secondary" id="btn-toggle-calm" aria-pressed="false" data-js-control hidden>Calm view</button></nav></div></header>
+<header class="site-header"><div class="header-container"><a href={routeURL('/')} class="site-brand">SAINT PAUL AFTER DARK</a>{stopNumber&&<span class="badge">Stop {stopNumber} of {totalStops}</span>}
+<nav class="site-nav" aria-label="Main navigation">{navItems.map(([path,label])=>{const href=routeURL(path);return <a href={href} aria-current={currentPath===href?'page':undefined}>{label}</a>;})}<button type="button" class="btn-secondary" id="btn-toggle-calm" aria-pressed="false" data-js-control hidden>Calm view</button></nav></div></header>
