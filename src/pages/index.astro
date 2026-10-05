@@ -1,10 +1,182 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import {edition,stops,stopURL,routeURL,assetURL} from '../lib/catalog';
----
-<Layout title="Saint Paul After Dark"><div class="container">
- <section class="home-hero"><div><p class="eyebrow">1900–1938 · Seven chapters</p><h1>SAINT PAUL <br/>AFTER DARK</h1><p class="lede">{edition.tagline}</p><p>Follow the bargain that offered criminals refuge, the people who carried its costs, and the records that complicate the legend.</p><div class="controls"><a class="btn" href={routeURL('/prologue/')}>Start the tour</a><a class="btn btn-secondary" href={routeURL('/map/')}>Explore the seven stops</a></div><p><a data-resume hidden href={routeURL('/map/')}>Resume reading</a></p></div><figure><img src={assetURL('/media/scenes/scene-skyline.svg')} width="1200" height="700" alt="Generalized noir skyline illustration, not a surveyed view of Saint Paul." fetchpriority="high"/><figcaption>Reconstruction · An illustrative setting, not historical evidence.</figcaption></figure></section>
 
- <section class="prose"><h2>Read the city through its evidence</h2><p>This is a self-paced reading tour for home use. The complete text is available without sound. Each chapter separates historical accounts, records, and interpretation; disputed stories retain their qualifications.</p><p>{edition.contentNote}</p><p>There are no timers or scores. Use a keyboard, voice commands matching the visible button labels, or ordinary links. Calm view reduces decoration and turns ambience off. Progress is saved locally when your browser permits it.</p></section>
- <section><h2>The reading order</h2><ol class="chapter-grid">{stops.map(s=><li class="card"><p class="eyebrow">{s.period}</p><h3><a href={stopURL(s.id)}>{s.title}</a></h3><p>{s.synopsis}</p><span class="muted" data-visited-stop={s.id} data-js-control hidden></span></li>)}</ol></section>
-</div></Layout>
+const cardImages: Record<string, string> = {
+  'the-arrangement': '/images/redesign/card-the-arrangement.webp',
+  'a-suite-above-the-street': '/images/redesign/card-a-suite-above-the-street.webp',
+  'under-the-bluff': '/images/redesign/card-under-the-bluff.webp',
+  'the-price-of-protection': '/images/redesign/card-the-price-of-protection.webp',
+  'the-deal-breaks': '/images/redesign/card-the-deal-breaks.webp',
+  'the-safe-house-fails': '/images/redesign/card-the-safe-house-fails.webp',
+  'on-the-record': '/images/redesign/card-on-the-record.webp'
+};
+---
+<Layout title="Saint Paul After Dark">
+  <!-- 1. Hero Section -->
+  <section class="hero-noir">
+    <div class="hero-backdrop">
+      <img
+        src={assetURL('/images/redesign/hero-skyline.webp')}
+        alt="Saint Paul skyline at night with illuminated Capitol dome and red river reflections"
+        width="1600"
+        height="900"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-eyebrow">1900–1938 · Seven Chapters</span>
+        <h1 class="hero-title">
+          <span class="title-saint-paul">SAINT PAUL</span>
+          <span class="title-after-dark">AFTER DARK</span>
+        </h1>
+        <p class="hero-tagline">Crime Shaped a City. People Tell Its Story.</p>
+        <p class="hero-description">
+          Follow the bargain that offered criminals refuge, the people who came for its costs, and the records that complicate the legend.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-hero-primary" href={routeURL('/prologue/')}>
+            Start the tour <span aria-hidden="true">&rarr;</span>
+          </a>
+          <a class="btn btn-hero-secondary" href={routeURL('/map/')}>
+            Explore the seven stops
+          </a>
+        </div>
+        <p><a data-resume hidden href={routeURL('/map/')}>Resume reading</a></p>
+      </div>
+    </div>
+    <div class="hero-script-watermark">
+      <span class="script-text">Same city. Different shadows.</span>
+      <span class="script-sub">Saint Paul, Minnesota · 1930s (Inspired)</span>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- 2. Read the City Through Its Evidence (Dossier Section) -->
+    <section class="evidence-dossier-section">
+      <div class="dossier-grid">
+        <!-- Left: Vintage Paper Card -->
+        <article class="vintage-dossier-card">
+          <h2>Read the City Through Its Evidence</h2>
+          <p>
+            A self-paced reading tour for home use. Each chapter separates historical accounts, records, and interpretation; disputed stories retain their qualifications.
+          </p>
+          <p class="content-warning">
+            {edition.contentNote}
+          </p>
+          <div class="dossier-icons">
+            <div class="icon-col">
+              <span class="icon-glyph" aria-hidden="true">📖</span>
+              <span class="icon-label">Real Records</span>
+            </div>
+            <div class="icon-col">
+              <span class="icon-glyph" aria-hidden="true">⚖️</span>
+              <span class="icon-label">Multiple Perspectives</span>
+            </div>
+            <div class="icon-col">
+              <span class="icon-glyph" aria-hidden="true">📍</span>
+              <span class="icon-label">Places & People</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Center: Archival Photo Frame -->
+        <div class="vintage-photo-card">
+          <div class="photo-tape" aria-hidden="true"></div>
+          <div class="photo-inner">
+            <img
+              src={assetURL('/images/redesign/hotel-ryan.webp')}
+              alt="Archival photograph of Hotel Ryan street corner with illuminated neon sign in downtown Saint Paul"
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Right: Vintage Book Cover -->
+        <div class="vintage-book-card">
+          <div class="book-title">
+            <span>Seven Chapters</span>
+            <span>One City</span>
+            <span>Many Truths</span>
+          </div>
+          <div class="book-divider" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. The Reading Order Section -->
+    <section class="reading-order-section">
+      <div class="section-header-bar">
+        <div class="header-left">
+          <h2>The Reading Order</h2>
+          <div class="header-line" aria-hidden="true"></div>
+        </div>
+        <div class="header-right">
+          <span class="header-sub">Move through time. See how it all connects.</span>
+          <div class="nav-arrows" aria-hidden="true">
+            <span class="arrow-btn">&larr;</span>
+            <span class="arrow-btn">&rarr;</span>
+          </div>
+        </div>
+      </div>
+
+      <ol class="chapter-cards-grid">
+        {stops.map((s, index) => (
+          <li class="chapter-card-item">
+            <article class="chapter-card">
+              <div class="card-backdrop">
+                <img
+                  src={assetURL(cardImages[s.id] || '/images/redesign/hero-skyline.webp')}
+                  alt=""
+                  width="600"
+                  height="340"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-content">
+                <p class="card-period">
+                  {index + 1}. {s.period}
+                  <span class="visited-badge" data-visited-stop={s.id} data-js-control hidden>Visited</span>
+                </p>
+                <h3 class="card-title">
+                  <a href={stopURL(s.id)}>{s.title}</a>
+                </h3>
+                <p class="card-synopsis">{s.synopsis}</p>
+                <div class="card-action">
+                  <span class="circle-arrow" aria-hidden="true">&rarr;</span>
+                </div>
+              </div>
+            </article>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <!-- 4. Quote Banner Section -->
+    <section class="quote-banner-section">
+      <div class="banner-backdrop">
+        <img
+          src={assetURL('/images/redesign/banner-bridge.webp')}
+          alt="Arched stone Mississippi River bridge under moonlit night sky"
+          width="1600"
+          height="900"
+          loading="lazy"
+        />
+      </div>
+      <div class="banner-content">
+        <div class="banner-left">
+          <p class="banner-eyebrow">A More Complete Saint Paul</p>
+          <p>History isn&rsquo;t just what happened &mdash; it&rsquo;s how we understand it.</p>
+        </div>
+        <div class="banner-right">
+          <blockquote>
+            &ldquo;The past is a map. It helps us see where we are, and where we might go.&rdquo;
+          </blockquote>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
