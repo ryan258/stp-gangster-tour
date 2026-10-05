@@ -1,90 +1,34 @@
-# Architecture & Design System
+# Architecture
 
-This document outlines the architectural patterns, styling conventions, state management, and component systems used in **Saint Paul After Dark**.
+The application is a static Astro site. Each route is an independent HTML document; navigation does not depend on a client router or framework hydration. Browser code enhances an already readable page. There is no runtime backend or historical-source fetch.
 
----
+## Content ownership
 
-## 1. Static Generation (SSG) with Astro
+The edition manifest is the single reading-order authority. `src/lib/catalog.ts` joins it with stop records for static rendering. `scripts/content-schema.mjs` validates every authored data collection with Zod; `validate-content.mjs` applies cross-record ownership, ordering, reference, word-count, transcript, file-digest, geometry and release rules. `check-svg.py` uses Python’s XML parser and rejects active/external SVG content. `ffprobe` verifies MP3 codec and duration. Masters and derivatives have separate hashes.
 
-The site runs on Astro v5 configured in `output: 'static'` mode:
-- **Zero Server Overhead:** All HTML pages are pre-compiled during `npm run build` into `dist/`.
-- **Pre-rendered Routes:**
-  - `/` — Landing page with hero illustration and resume bookmark prompt.
-  - `/prologue/` — Concise narrative framing.
-  - `/map/` — Seven-stop directory with precision, condition, and access status.
-  - `/stops/[id]/` — Seven static stop routes generated via `getStaticPaths()`.
-  - `/casebook/` — Evidence item dossier, people registry, and inspection tracker.
-  - `/sources/` — Claims (C01–C30) and sources (S01–S16) ledger with edition release notes.
-  - `/epilogue/` — Narrative closing and completion review.
-  - `/404.html` — Accessible error fallback page.
-- **Island Hydration:** Client-side JavaScript is selectively attached only where needed:
-  - Audio playback controller (`src/scripts/audio.ts`)
-  - Presenter button toggles (`src/scripts/selection.ts`)
-  - Casebook filtering and bookmark tracking (`src/scripts/casebook.ts`, `src/scripts/storage.ts`)
-  - Reading position and scroll tracking (`src/scripts/reading.ts`)
-  - Calm view preference toggling (`src/scripts/calm.ts`)
+`presenters.json` owns presenter copy and its evidence/claim references. `Presenter.astro` supplies four layout variants. Templates contain no independent historical scenes or fabricated quotations. Evidence cards explicitly identify paraphrases as tour explanations; source records retain their historical-record/account distinction.
 
----
+A single visitor claim can appear in several contexts. Review its qualification in the claim ledger, stop text, presenter, profile, evidence item and illustration caption when changing it. Validation checks those links, not the historical truth of prose.
 
-## 2. Design System & Tokens
+## Browser boundaries
 
-Styles are defined using native CSS custom properties without third-party frameworks:
+- `storage.ts`: pure decoders plus independent progress/preferences persistence. Payloads are limited to 32 KiB UTF-8, known IDs and supported blocks. Invalid fields recover independently; unknown schema versions reset that record. Failed writes fall back for this document and show a persistent notice.
+- `reading.ts`: visits and block bookmarks; debounced scroll writes flush before navigation. Source/profile visits do not establish narrative bookmarks. BFCache restoration does not immediately rewrite a newer bookmark.
+- `casebook.ts`: native evidence disclosure tracking, fragment opening, filters, counts, empty state, reset and context returns. No arbitrary hash becomes a selector or arbitrary query parameter becomes a URL.
+- `selection.ts`: pressed state and highlight only. It never changes focus, browser history, or scroll position.
+- `audio.ts`: explicit audio lifecycle. Elements and their `src` are created only after a channel action. Generation counters reject stale asynchronous playback results; pagehide/visibility/BFCache pause sound. Calm view stops ambience while leaving narration alone. Unsupported independent volume disables ambience and directs the reader to device volume.
+- `calm.ts`: preference/render bridge. It shares a preference event with audio; disabling Calm view never automatically starts sound.
 
-### Color Palette (`src/styles/tokens.css`)
-- `--color-ink`: `#0B0C10` (Dark, immersive noir background)
-- `--color-paper`: `#F3EFE6` (Warm archival paper for body text)
-- `--color-surface-card`: `#151820` (Subtle contrast card backgrounds)
-- `--color-muted`: `#9A9AA0` (Secondary metadata and footnotes)
-- `--color-accent`: `#C62F42` (Vivid crimson accent reserved for focal points)
-- `--color-border`: `#282C37` (Structural containment borders)
-- `--color-border-subtle`: `#1E222B` (Divider lines)
+The layout initializes optional enhancements separately. Controls start hidden and are shown only when JavaScript runs. Native text, links, and disclosures remain usable without enhancements. Browser modules import only the small edition manifest/state fields; the full research catalog and schemas stay at build time.
 
-### Typography
-- **Title & Headings:** `Barlow Condensed`, `sans-serif` (Self-hosted WOFF2, Semibold 600/700).
-- **Body & Controls:** `Source Sans 3`, `sans-serif` (Self-hosted WOFF2, Regular 400 and Semibold 600).
-- **Measure:** Line-height at 1.5–1.65, line-length bounded to 60–75 characters (`--container-prose-width: 820px`).
+## Presentation
 
-### Calm View Mode
-Users can toggle **Calm view** at any time. When `.calm-mode` is added to `<html>`:
-- Decorative shadows and high-contrast gradients are suppressed.
-- Motion transitions are eliminated (`transition: none !important`).
-- Halftone backgrounds and ambient noise overlays are disabled.
-- Essential content contrast remains fully accessible.
+Dark backgrounds, warm paper text, a brighter crimson link color and a separate darker button fill provide the visual system. Grid columns can shrink below 320 pixels without clipping. Navigation wraps, controls have visible names suitable for voice input, and focus remains visible. Reduced-motion, forced-colors and print styles are present. Automated coverage is not screen-reader or real-device certification.
 
----
+The map separates approximate venue coordinates from historical event geometry, current condition, and current access. Four unknown positions remain unplaced. A mathematical coordinate grid supplies only relative venue positions; the river/base layer remains a release obligation recorded in `geography.json`.
 
-## 3. Unified Interactive Presenter (`src/components/Presenter.astro`)
+## Build and media
 
-To honor Spec R2, each of the seven stops features an interactive presentation component driven by a validated catalog dataset (`src/data/presenters.json`). The unified presenter supports four interaction kinds, rendering complete content prior to client-side enhancement:
+`build.mjs` removes only its owned output directory, validates, and invokes Astro. Preview output and accepted production output use separate directories. Production rejects pending/stale reviews and unresolved rights; a failed gate leaves no stale accepted `dist/`.
 
-1. **`relationship`**
-   - Displays interrelated participants, institutional conditions, and mechanisms.
-   - Used in Stop 1 (The Three Conditions: Check-in, Pay, Keep crimes outside).
-2. **`comparison`**
-   - Compares two perspectives, records, or timelines (e.g. Tax Net-Worth vs. Juror Tampering in Stop 2, Corporate Charter vs. 1970s folklore in Stop 3, Extortion vs. Response in Stop 5, Convictions vs. Civil Service Reform in Stop 7).
-3. **`document`**
-   - Contrasts primary documentary text with forensic traces (e.g. Hamm Ransom Letters vs. FBI Silver-Nitrate Fingerprints in Stop 4).
-4. **`sequence`**
-   - Renders a multi-stage dated timeline (e.g. Lincoln Court apartment standoff in Stop 6).
-
-Each item in a presenter is linked to its primary evidence item (`evidenceId`) and supported claims (`claimIds`), rendered with interactive highlights via `src/scripts/selection.ts`.
-
----
-
-## 4. State & Local Storage (`src/scripts/storage.ts`)
-
-Progress and preferences are managed strictly on the client using `localStorage`:
-- **Progress Key:** `stp-after-dark:progress:v1`
-  - `bookmark: { stopId, blockId }`
-  - `visitedStops: string[]`
-  - `inspectedEvidence: string[]`
-  - `endingReached: boolean`
-- **Preferences Key:** `stp-after-dark:preferences:v1`
-  - `calmView: boolean`
-  - `narrationVolume: number`
-  - `ambienceVolume: number`
-  - `playbackSpeed: number`
-- **Safety Protections:**
-  - Payload length capped at 32 KiB.
-  - Safe memory fallbacks for restricted iframe or cookie-disabled modes.
-  - Resetting progress explicitly leaves preferences intact.
+`generate-audio.mjs` uses argument arrays with `execFileSync`, isolated temporary files, and explicit stop IDs. It retains AIFF narration masters and WAV ambience masters in `production/audio/`, which Astro does not publish. MP3 files are served locally. Every generation invalidates the corresponding listening review. Distribution-rights approval is separate from file generation and technical checks.

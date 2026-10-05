@@ -1,53 +1,35 @@
-# Evidence Ledger & Epistemological Standards
+# Evidence and editorial standards
 
-This guide explains the data hierarchy, source classification, and editorial ethics used throughout **Saint Paul After Dark**.
+The chain is **source → bounded claim → source-linked explanation → stop/presenter/profile/interpretation**. IDs make the chain inspectable. They do not turn an explanation into an original record or make a claim certain.
 
----
+| Field | Meaning |
+| --- | --- |
+| Supported | The cited material supports the bounded assertion with its stated limits. An attributed account can be Supported without independent corroboration. |
+| Qualified | Support requires an explicit qualification. |
+| Disputed | The claim is contested in the examined material. |
+| Unverified | Adequate support has not been established in this project. |
+| Direct record | A period source such as an opinion or announcement; a later rendering may be a transcription. |
+| Attributed account | A historian, institution, witness or investigative reconstruction reports the matter. Preserve that attribution. |
+| Cross-source | More than one cited source supports the assertion; source count alone does not establish independence. |
 
-## 1. Evidence Hierarchy
+All fourteen currently rendered evidence items are **Tour explanation** because they paraphrase and compare material. Source S06 is a period business notice, not an original incorporation filing. The FBI website histories are retrospective accounts, not original judgments, witness files, or laboratory reports examined by this project. Illustration labels say **Reconstruction** and explicitly limit architectural and event precision.
 
-Every historical claim in the experience belongs to a transparent verification hierarchy:
+## Corrections incorporated in 0.5.0
 
-```
-[Sources: S01–S16]
-       │
-       ▼
-[Claims: C01–C30]
-       │
-       ▼
-[Evidence Treatments: E01–E14]
-       │
-       ▼
-[Stops: 1–7] & [Metagames: M01–M07]
-```
+- No claim that every payment occurred at the Green Lantern, every officer participated, or every resident was spared. “No record examined” does not become “no record exists.”
+- Gleckman’s partial tax acquittal remains distinct from the appeal; his contempt findings do not establish a separate conviction of Fuchs or a sole holdout juror.
+- Castle Royal guest lore remains disputed. No invented corporate capital quotation, origin date for the legend, or deliberate marketing fabrication is asserted.
+- Hamm was released alive. The RCHS residence description and FBI office description remain an explicit location conflict. Silver nitrate is described as applied solution, not chemical fuming or a global first.
+- Bremer’s captors demanded secrecy; the summary reports authorities were notified. Removed invented bank-vault values, guards, dialogue, and psychological certainty.
+- Lincoln Court has an attributed sequence, without an invented time, floor plan, apartment-specific protection guarantee, or prior wound requiring refuge.
+- The police-reform wiretap is not described as a federal operation without support. Convictions and charter reform do not prove the end of all corruption.
 
-### Claim Statuses (`src/data/claims.json`)
-- **Supported:** Backed by contemporaneous public records, trial transcripts, or authoritative archival synthesis (e.g. MNHS MNopedia studies).
-- **Qualified:** Plausible and documented, but bounded by context (e.g., informal policy without surviving signed contracts; corporate filings that don't prove secret gatherings).
-- **Disputed:** Competing contemporary accounts exist, or subsequent retractions took place.
-- **Unverified:** Popular or promotional lore lacking primary source verification (e.g., claims that John Dillinger or Ma Barker frequented Castle Royal).
+Current passage-check dates preserve the research ledger’s existing record. A later wording correction is not a fresh full historical audit. Publication precision is also preserved: a known year is not silently turned into January 1.
 
----
+## Review practice
 
-## 2. Material Labels
+When adding a claim, record its source, passage locator, status, basis, qualification, and check date. For a correction, identify all places the claim appears, including SVG text. For a quotation or facsimile, check the original passage/image and usage rights before adding it; this project’s paraphrases are not quotation substitutes.
 
-Every evidence item (`EvidenceItem.astro`) and scene image display an explicit classification badge:
+Historical geometry, current condition, and access are separate assertions. Published community venue coordinates are approximate and identified as such. They do not establish an event footprint or an accessible entrance. Dated current venue pages are used only for what they actually state.
 
-| Label | Meaning |
-|---|---|
-| **Historical record** | Primary source created during the event (federal court dockets, incorporation filings, FBI forensic reports). |
-| **Historical account** | Archival synthesis written by professional historians or institutions (e.g., MNHS). |
-| **Tour explanation / Interpretation** | The analytical framework applied by this project to explain economic incentives, leverage, and power dynamics. |
-| **Reconstruction** | Original graphic-noir illustration based on documented architectural footprints and historical photographs. |
-| **Lead / historical account** | Contemporary or promotional address leads used for site context only. |
-
----
-
-## 3. The Metagame Framework (`src/data/metagames.json`)
-
-Each stop examines a period **metagame** (analytical model M01–M07):
-- **Aims:** What each participant sought (e.g., municipal calm, ransom cash, judicial evasion).
-- **Mechanism:** The levers used to enforce behavior (e.g., selective access, peer pressure among fugitives, financial leverage on jurors, latent chemical forensics).
-- **Expected Benefit:** The rewards anticipated by the actors.
-- **Bearing Costs:** The unconsenting victims who absorbed the harm (e.g., neighboring towns exposed to exported bank robberies, kidnap victims, taxpayers, disenfranchised voters).
-- **Evidentiary Limit:** Explicit caveats preventing over-interpretation or false certainty.
+No automated script may mark listening, rights, historical review, or owner acceptance complete. Reviewer identity, date, relevant revision and matching digests are required for a production review record. Source verification and editorial judgment remain separate from schema validity.

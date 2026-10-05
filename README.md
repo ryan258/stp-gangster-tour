@@ -1,150 +1,70 @@
 # Saint Paul After Dark
 
-> *Every city has rules. Saint Paul had an arrangement.*
+A personal, at-home history tour about the informal protection system associated with Saint Paul’s underworld, its victims, and the records that complicate the legend. Seven chapters connect people, places, money, coercion, and institutional change. There are no scores, accounts, location tracking, or booking flows.
 
-An interactive, graphic-noir web tour exploring seven places in Saint Paul's underworld history through original vector scenes, primary evidence records, an interactive city map, and a connected analytical narrative examining municipal corruption, refuge, and reform.
+**Current state: working preview, edition 0.5.0.** All thirteen content routes and a static 404 exist. Thirty claim records include disputes and qualifications; fourteen evidence items are source-linked explanations, not original transcripts or charters. Listening, illustration provenance/reference review, the finished river/base geography, and real-device accessibility validation remain open. A successful structural check is not editorial certification.
 
----
+## Run locally
 
-## Overview
+Use Node **22.22.3** (`.nvmrc`) and npm. `package.json` allows supported even-major Node 22/24 runtimes; only the recorded runtime has been exercised here. Python 3 is needed for XML validation and `ffprobe` for audio format/duration checks. Audio regeneration additionally needs macOS `say` and `ffmpeg`.
 
-Between 1900 and 1936, Saint Paul operated under the "O'Connor system"—an informal municipal arrangement instituted by Police Chief John O'Connor that granted visiting criminals refuge on three conditions: check in upon arrival, pay tribute to intermediaries, and commit no major crimes within city limits.
-
-This project investigates how that bargain functioned, who benefited, who absorbed the exported costs, and what forensic and political forces ultimately dismantled it.
-
-- **7 Sourced Locations:** Green Lantern Saloon, Saint Paul Hotel, Castle Royal Caves, Hamm Brewery area, Lincoln Court Apartments, and the Federal Courthouse.
-- **30 Verified Claims (C01–C30):** Grounded in federal appellate court dockets, FBI case archives, Minnesota Historical Society research, and period newspaper accounts.
-- **14 Evidence Records (E01–E14):** Court transcripts, corporate charters, ransom letters, and latent silver-nitrate fingerprint records.
-- **Four Reusable Interaction Patterns:** Unified `Presenter.astro` supporting relationship diagrams, dated comparisons, sequential timelines, and forensic document viewers driven by `src/data/presenters.json`.
-- **Audio Narration & Ambience:** Self-hosted narration tracks and rain/room tone ambience with independent mixing and fallback for limited audio stacks.
-- **Calm View & Low-Effort Navigation:** One-click reduced sensory mode removing decorative textures and animations; full keyboard and screen-reader accessibility.
-
----
-
-## Technical Stack & Architecture
-
-- **Framework:** [Astro](https://astro.build/) (v5 static output mode)
-- **Language:** TypeScript (strict type checking)
-- **Styling:** Vanilla CSS design tokens (`tokens.css` + `global.css`) — zero heavy UI dependencies or Tailwind
-- **Assets:** Self-hosted typography (Barlow Condensed & Source Sans 3 with OFL licenses), responsive SVG scenes, CBR 128k MP3 narration
-- **State & Storage:** Local browser `localStorage` manager with safe quota boundaries and memory fallbacks
-- **Testing:**
-  - Content validation script: `scripts/validate-content.mjs` (Zod schemas via `scripts/content-schema.mjs` and SVG verification via `scripts/check-svg.py`)
-  - Unit testing: [Vitest](https://vitest.dev/)
-  - Browser E2E testing: [Playwright](https://playwright.dev/)
-
----
-
-## Project Structure
-
-```
-stp-gangster-tour/
-├── astro.config.mjs         # Astro static output configuration
-├── package.json             # Scripts and dependencies
-├── spec.md                  # Comprehensive functional & technical specification
-├── history.md               # Complete 7-stop historical narrative draft
-├── research.md              # Research ledger: claims, evidence, and citations
-├── roadmap.md               # Milestone tracking and upcoming work
-├── docs/                    # Architecture, verification, and editorial guides
-│   ├── architecture.md
-│   ├── evidence-ledger.md
-│   └── verification.md
-├── scripts/
-│   ├── build.mjs            # Production build and preview orchestrator
-│   ├── content-schema.mjs   # Strict Zod schemas for all 11 catalog datasets
-│   ├── validate-content.mjs # Validates JSON cross-references and media files
-│   ├── check-svg.py         # Validates XML well-formedness and SVG dimensions
-│   └── generate-audio.mjs   # Speech-synthesis and ffmpeg audio pipeline
-├── production/
-│   └── audio/               # Original uncompressed lossless audio masters (.aiff, .wav)
-├── public/
-│   ├── fonts/               # Self-hosted WOFF2 fonts
-│   ├── licenses/            # Font licenses
-│   └── media/
-│       ├── audio/           # Narration tracks and ambience beds
-│       └── scenes/          # Original graphic-noir SVG scenes
-├── src/
-│   ├── components/          # Reusable Astro components
-│   │   ├── AudioPlayer.astro
-│   │   ├── ClaimLinks.astro
-│   │   ├── EvidenceItem.astro
-│   │   ├── Header.astro / Footer.astro
-│   │   ├── Presenter.astro
-│   │   ├── StopNav.astro
-│   │   └── SvgMap.astro
-│   ├── data/                # Validated JSON data files (11 datasets)
-│   ├── layouts/Layout.astro # Root layout with SEO and Calm view injector
-│   ├── lib/                 # Shared data catalog access and typed URL helpers
-│   │   └── catalog.ts
-│   ├── pages/               # Static route definitions
-│   │   ├── 404.astro        # Error fallback page
-│   │   ├── index.astro      # Tour landing page
-│   │   ├── prologue.astro   # Contextual prologue
-│   │   ├── map.astro        # Seven-stop directory and geography notes
-│   │   ├── stops/[id].astro # Dynamic 7-stop reading route
-│   │   ├── casebook.astro   # Evidence inspector and progress tracker
-│   │   ├── sources.astro    # Full claims (C01–C30) & sources (S01–S16) ledger
-│   │   └── epilogue.astro   # Historical synthesis and closing actions
-│   ├── scripts/             # Client-side TypeScript controllers
-│   │   ├── audio.ts         # Audio and ambient mixer controller
-│   │   ├── calm.ts          # Calm view state controller
-│   │   ├── casebook.ts      # Evidence disclosure and filter controller
-│   │   ├── reading.ts       # Reading progress and scroll tracking
-│   │   ├── selection.ts     # Interactive presenter highlight controller
-│   │   └── storage.ts       # Safe localStorage manager
-│   └── styles/              # CSS tokens and global base styles
-└── tests/
-    ├── unit/                # Vitest data integrity and storage tests
-    └── browser/             # Playwright end-to-end user journey tests
-```
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ (tested on Node 22+)
-- npm 9+
-
-### Installation
-
-```bash
-npm install
-```
-
-### Development Server
-
-```bash
+```sh
+npm ci
 npm run dev
 ```
 
-Visit [http://localhost:4321](http://localhost:4321) to explore the tour locally.
+The development server binds to loopback. Content is checked before startup; restart it after editing catalog data to repeat the gate. No historical sources are fetched at build time or during reading. Root-relative links assume deployment at an origin root.
 
----
+To view the built working preview:
 
-## Verification & Testing
-
-Run deterministic gates quietly:
-
-```bash
-# 1. Type check and content cross-reference validation
-npm run check
-
-# 2. Vitest data integrity unit test suite
-npm run test:unit
-
-# 3. Playwright end-to-end browser test suite
-npm run test:browser
-
-# 4. Production static build
-npm run build
+```sh
+npm run build:preview
+npm run preview
 ```
 
----
+Preview output goes to `dist-preview/` with a visible edition-status notice. `npm run build` is the production gate and intentionally fails while required reviews are pending; it removes stale `dist/` output before checking. `npm run preview:production` serves a separately accepted `dist/` build. Neither command deploys anything.
 
-## Content Integrity & Ethics Policy
+## What works
 
-- **Fact vs. Lore:** Primary records (court opinions, incorporation filings, police archives) are strictly distinguished from period accounts, retrospective folklore, and tour interpretations.
-- **Victim & Community Visibility:** The tour emphasizes who absorbed the costs of the arrangement (neighboring towns, kidnapping victims, unrepresented citizens), rejecting glorification of criminal violence.
-- **Privacy & Respect:** Zero runtime user tracking, telemetry, or remote font tracking. All assets are self-contained.
+- Home, prologue, seven ordered stops, map/directory, casebook, sources, epilogue, and recovery page.
+- Complete static reading, links, and native evidence disclosures without JavaScript.
+- One catalog-driven presenter with relationship, comparison, document, and sequence layouts. Selection emphasizes text without moving keyboard focus.
+- Optional local synthesized narration and ambience; no audio fetch before an explicit channel action. Pause, resume, replay, retry, mute, speed, separate volume buttons, Calm view, and silent page return.
+- Local bookmark, visited-stop and evidence markers with strict runtime parsing, ID allowlists, UTF-8 byte limits, memory fallback notices, and a progress-only reset.
+- People profiles, qualified connections, context-return links, printable source pages, copyable citations, and edition correction notes.
+- Three approximate venue positions with linked geographic sources, independent access/condition notes, and four unplaced stops. The coordinate sketch is not a finished river/street map or walking route.
+
+## Project map
+
+| Area | Responsibility |
+| --- | --- |
+| `src/data/` | Edition order, stops, claims, sources, evidence, people, relationships, metagames, presenters, locations, geography and media/review records |
+| `src/lib/catalog.ts` | Build-time joins and URL helpers; not imported by browser controllers |
+| `src/pages/`, `src/components/`, `src/layouts/` | Static pages and reusable reading/presenter/evidence/audio shell |
+| `src/scripts/` | Small independent browser enhancements |
+| `scripts/content-schema.mjs`, `validate-content.mjs`, `check-svg.py` | Schemas, cross-record checks, hashes, SVG parsing, audio probes, production obligations |
+| `public/` | Served fonts, licenses, SVGs and MP3 derivatives |
+| `production/audio/` | Retained AIFF/WAV masters; excluded from public output |
+| `tests/` | Targeted content/storage and browser regression scenarios |
+
+Read [architecture](docs/architecture.md), [evidence standards](docs/evidence-ledger.md), [verification](docs/verification.md), and the [remaining work](roadmap.md). The [specification](spec.md) preserves the intended finished-edition requirements. `history.md` and `research.md` are the editorial starting point; current visitor copy and corrections live in the validated catalog.
+
+## Verification and editing
+
+```sh
+npm run check
+npm run test:unit -- tests/unit/data-integrity.test.ts tests/unit/storage.test.ts
+npm run test:browser -- tests/browser/tour.spec.ts
+```
+
+Build the preview before browser tests. Playwright uses an isolated loopback port and refuses an existing server, avoiding tests against stale output. See the verification record for observed results and untested environments.
+
+Changing an introduction invalidates its narration digest. Regenerate only the affected stop:
+
+```sh
+node scripts/generate-audio.mjs the-safe-house-fails
+```
+
+The script retains a lossless master, probes the derivative and resets review to **pending**. It never grants listening or rights approval. `--ambience` explicitly regenerates the two deterministic noise textures. No generation runs implicitly with a build.
+
+No reuse license for the project’s prose, illustrations, or synthesized voice has been assigned by this remediation. Font license notices are retained. Publication, commits, and deployment remain owner-controlled actions.
