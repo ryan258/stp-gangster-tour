@@ -16,7 +16,7 @@ const {
 
 <section class="audio-player audio-player-panel card" aria-label="Introduction audio" data-audio-player data-narration-src={audioSrc} data-ambience-src={ambienceSrc} data-duration={durationSeconds}>
  <h2>Listen to the introduction</h2>
- <p class="muted">Synthesized macOS Samantha voice. Listening and pronunciation review pending. The complete transcript is the introduction below.</p>
+ <p class="muted">Synthesized macOS Samantha voice. Listening and pronunciation review pending. The complete transcript is the introduction text on this page.</p>
  <div data-audio-controls hidden>
   <div class="controls">
    <button id="btn-audio-play" type="button">Play narration</button>
@@ -35,7 +35,7 @@ const {
   <p data-mixer-notice hidden>Use your device volume for narration. This browser does not support independent audio volume; ambience is disabled.</p>
   <p role="status" data-audio-status>Sound is off. Nothing downloads until you start a channel.</p>
  </div>
- <noscript><p>Audio controls need JavaScript. Read the complete introduction below.</p></noscript>
+ <noscript><p>Audio controls need JavaScript. Read the complete introduction on this page.</p></noscript>
 </section>
 <script>
  import {TourAudioController} from '../scripts/audio';

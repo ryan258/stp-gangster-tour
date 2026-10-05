@@ -1,4 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro';import ClaimLinks from '../components/ClaimLinks.astro';import {edition,stops,stopURL,routeURL} from '../lib/catalog';
+import Layout from '../layouts/Layout.astro';
+import ExperienceHero from '../components/ExperienceHero.astro';
+import ReadingTrail from '../components/ReadingTrail.astro';
+import ClaimLinks from '../components/ClaimLinks.astro';
+import {edition,stops,stopURL,routeURL,assetURL} from '../lib/catalog';
 ---
-<Layout title="Epilogue"><article class="container prose reading-page" data-reading-page="epilogue"><section id="opening" data-reading-block><p class="eyebrow">Epilogue · Tour explanation</p><h1>{edition.epilogue.title}</h1>{edition.epilogue.paragraphs.map(p=><p>{p}</p>)}<ClaimLinks ids={edition.epilogue.premiseClaimIds}/></section><section><h2>Your reading trail</h2><p id="ending-status" data-js-control hidden></p><ul>{stops.map(s=><li><a href={stopURL(s.id)}>{s.title}</a> <span class="muted" data-visited-stop={s.id} data-js-control hidden></span></li>)}</ul><p><a href={routeURL('/casebook/')}>Revisit people and inspected evidence</a></p></section><nav class="stop-nav" aria-label="Reading order"><a href={stopURL(stops[6].id)}>← Previous: {stops[6].title}</a><a href={routeURL('/map/')}>Return to the map →</a></nav></article></Layout>
+<Layout title="Epilogue">
+ <article class="experience-page bookend-page epilogue-page" data-reading-page="epilogue">
+  <ExperienceHero title={edition.epilogue.title} eyebrow="Epilogue · Tour explanation" image="/images/redesign/banner-bridge.webp" folio="08" note="The city remains.">
+   <p class="lede">The story closes. The questions stay with us.</p><nav class="experience-actions" aria-label="Epilogue sections"><a href="#opening">Read the epilogue <span aria-hidden="true">↓</span></a><a href="#reading-trail">Your reading trail <span aria-hidden="true">↓</span></a></nav>
+  </ExperienceHero>
+  <div class="container bookend-layout">
+   <div class="bookend-prose"><section id="opening" data-reading-block class="story-opening"><p class="eyebrow">The limits of protection</p><h2>After the bargain</h2>{edition.epilogue.paragraphs.map(p=><p>{p}</p>)}<ClaimLinks ids={edition.epilogue.premiseClaimIds}/></section></div>
+   <aside class="bookend-aside"><figure class="experience-photo"><img src={assetURL('/images/redesign/card-on-the-record.webp')} alt="" width="1376" height="768" decoding="async"/><figcaption>What remains is the record.<br/><small>Atmospheric illustration.</small></figcaption></figure><div class="paper-document reflection-note"><p class="paper-kicker">Two questions to carry back</p><p>Who could shape another person’s choices?</p><p>Who absorbed the consequences?</p><span class="handwritten">Return to the city.<br/>Read it again.</span></div></aside>
+  </div>
+  <section class="container trail-section" id="reading-trail"><div class="experience-section-heading"><div><p class="eyebrow">The places you passed through</p><h2>Your reading trail</h2></div><p id="ending-status" data-js-control hidden></p></div><ReadingTrail/><div class="experience-actions"><a href={routeURL('/casebook/')}>Revisit people and inspected evidence <span aria-hidden="true">→</span></a><a href={routeURL('/sources/')}>Follow the source trail <span aria-hidden="true">↗</span></a></div><nav class="stop-nav" aria-label="Reading order"><a href={stopURL(stops[6].id)}>← Previous: {stops[6].title}</a><a href={routeURL('/map/')}>Return to the map →</a></nav></section>
+ </article>
+</Layout>

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ExperienceHero from '../components/ExperienceHero.astro';
 import {routeURL} from '../lib/catalog';
 ---
-<Layout title="Page not found"><div class="container prose"><h1>This page is not in the casebook</h1><p>The link may be incomplete or out of date. Your saved progress has not been reset.</p><p><a data-resume hidden href={routeURL('/map/')}>Resume reading</a></p><div class="controls"><a href={routeURL('/map/')} class="btn">Find a stop</a><a href={routeURL('/')} class="btn btn-secondary">Go home</a></div></div></Layout>
+<Layout title="Page not found"><div class="experience-page missing-page"><ExperienceHero title="This page is not in the casebook" eyebrow="A loose end" lede="The link may be incomplete or out of date. Your saved progress has not been reset." image="/images/redesign/card-the-arrangement.webp" folio="404" note="Pick up another thread."><div class="experience-actions"><a data-resume hidden href={routeURL('/map/')}>Resume reading</a><a href={routeURL('/map/')}>Find a stop <span aria-hidden="true">→</span></a><a href={routeURL('/')}>Go home <span aria-hidden="true">↗</span></a></div></ExperienceHero></div></Layout>

@@ -1,26 +1,95 @@
 ---
-import {stops,locations,stopURL,routeURL} from '../lib/catalog';
+import {stops,locations,stopURL,routeURL,assetURL} from '../lib/catalog';
 import river from '../data/map-river.json';
 import geography from '../data/geography.json';
 
 const placed=locations.filter(l=>l.coordinates!==null);
 const x=(lon:number)=>80+(lon+93.102)*40000*Math.cos(44.94*Math.PI/180);
 const y=(lat:number)=>60+(44.947-lat)*40000;
+const chapterNotes: Record<string,string> = {
+  'the-arrangement': 'The bargain behind the refuge.',
+  'a-suite-above-the-street': 'Respectability had an address.',
+  'under-the-bluff': 'Where the music met the myth.',
+  'the-price-of-protection': 'Protection always has a price.',
+  'the-deal-breaks': 'Silence was part of the demand.',
+  'the-safe-house-fails': 'Refuge had its limits.',
+  'on-the-record': 'What remains is the record.'
+};
 ---
-<figure class="geographic-preview">
- <svg viewBox="0 0 1000 650" role="img" aria-labelledby="map-title map-desc"><title id="map-title">The Mississippi River and three approximate venue positions in Saint Paul</title><desc id="map-desc">North is up. The hotel and Landmark Center are close together northwest of the caves. Four other stops remain unplaced. The modern river layer supplies geographic context. Historical shorelines and street routes are not asserted. Use the directory below for links and full qualifications.</desc>
- <rect x="0" y="0" width="1000" height="650" fill="#151A24"/>
- {[44.935,44.94,44.945].map(lat=><g><line x1="70" x2="640" y1={y(lat)} y2={y(lat)} stroke="#63718a" stroke-dasharray="4 5"/><text x="10" y={y(lat)-7} fill="#B8B8BC" font-size="16">{lat}°N</text></g>)}
- {[-93.1,-93.095,-93.09,-93.085].map(lon=><g><line y1="45" y2="580" x1={x(lon)} x2={x(lon)} stroke="#63718a" stroke-dasharray="4 5"/><text x={x(lon)} y="610" fill="#B8B8BC" font-size="16" text-anchor="middle">{Math.abs(lon)}°W</text></g>)}
- <path d={river.rings.map(r=>r.map((point,i)=>`${i===0?'M':'L'}${x(point[0]).toFixed(2)},${y(point[1]).toFixed(2)}`).join(' ')+' Z').join(' ')} fill="#263F4B" stroke="#92B4C7" stroke-width="1.5" fill-rule="evenodd"/>
- <text x="260" y="360" fill="#F3EFE6" font-size="19" transform="rotate(-24 260 360)">MISSISSIPPI RIVER</text>
- <text x="925" y="50" fill="#F3EFE6" font-size="22">N ↑</text>
- {placed.map((l,i)=>{const stop=stops.find(s=>s.locationId===l.id)!;const labelY=110+i*125;return <g><circle cx={x(l.coordinates!.longitude)} cy={y(l.coordinates!.latitude)} r="20" fill="none" stroke="#FF8293" stroke-width="3" stroke-dasharray="5 4"/><text x={x(l.coordinates!.longitude)} y={y(l.coordinates!.latitude)+6} text-anchor="middle" fill="#F3EFE6" font-size="18">{stop.order}</text><path d={`M${x(l.coordinates!.longitude)+22},${y(l.coordinates!.latitude)} L660,${labelY}`} fill="none" stroke="#B8B8BC"/><text x="675" y={labelY} fill="#F3EFE6" font-size="19">{stop.order}. {l.currentName}</text><text x="675" y={labelY+25} fill="#FF8293" font-size="17">Approximate venue area</text></g>;})}
- </svg><figcaption>North-up geographic overview. Dashed outlines indicate uncertain venue areas, not measured boundaries. No event footprints or travel connections are asserted. The modern river is clipped from USGS NHD data. Coordinate sources and dates appear below. <a href={geography.baseSourceUrl!}>USGS river source</a>.</figcaption>
+<figure class="geographic-preview" aria-labelledby="field-map-heading">
+  <div class="map-board">
+    <div class="map-legend">
+      <div class="map-paper-label">
+        <span class="map-sheet-number">Field notes / 01</span>
+        <h2 id="field-map-heading">Saint Paul<br/>Map</h2>
+        <p>Approximate<br/>venue locations</p>
+      </div>
+      <ul class="map-symbols" aria-label="Map legend">
+        <li><span class="legend-pin" aria-hidden="true">#</span><span>Venue position<br/><small>Approximate</small></span></li>
+        <li><span class="legend-river" aria-hidden="true"></span><span>Mississippi River<br/><small>Modern geometry</small></span></li>
+        <li><span class="legend-grid" aria-hidden="true"></span><span>Coordinate grid<br/><small>North is up</small></span></li>
+      </ul>
+      <div class="map-compass" aria-hidden="true"><span>N</span><svg viewBox="0 0 100 100"><path d="M50 5 59 41 95 50 59 59 50 95 41 59 5 50 41 41Z" fill="none" stroke="currentColor"/><path d="m50 5 9 36-9 9Z M95 50 59 59 50 50Z M50 95 41 59 50 50Z M5 50 41 41 50 50Z" fill="currentColor"/><circle cx="50" cy="50" r="26" fill="none" stroke="currentColor"/></svg><span>S</span></div>
+    </div>
+    <div class="map-drawing">
+      <svg class="venue-map" viewBox="0 0 640 570" role="img" aria-labelledby="map-title" aria-describedby="map-desc">
+        <title id="map-title">The Mississippi River and three approximate venue positions in Saint Paul</title>
+        <desc id="map-desc">North is up. Stop 7, Landmark Center, and stop 2, the Saint Paul Hotel, are close together northwest of stop 3, the Wabasha Street Caves. Four other stops remain unplaced. The modern river layer supplies geographic context. Historical shorelines and street routes are not asserted. Use the venue links beside the map or the directory below for full qualifications.</desc>
+        <defs>
+          <pattern id="map-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#b8a88a" stroke-opacity=".12" stroke-width=".7"/></pattern>
+          <linearGradient id="river-fill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#365966"/><stop offset="1" stop-color="#1d343e"/></linearGradient>
+        </defs>
+        <rect width="640" height="570" fill="url(#map-grid)"/>
+        {[44.935,44.94,44.945].map(lat=><g class="map-coordinate"><line x1="20" x2="620" y1={y(lat)} y2={y(lat)}/><text x="18" y={y(lat)-9}>{lat}°N</text></g>)}
+        {[-93.1,-93.095,-93.09,-93.085].map(lon=><g class="map-coordinate"><line y1="20" y2="535" x1={x(lon)} x2={x(lon)}/><text x={x(lon)} y="555" text-anchor="middle">{Math.abs(lon)}°W</text></g>)}
+        <path d={river.rings.map(r=>r.map((point,i)=>`${i===0?'M':'L'}${x(point[0]).toFixed(2)},${y(point[1]).toFixed(2)}`).join(' ')+' Z').join(' ')} fill="url(#river-fill)" stroke="#7a9ca5" stroke-width="1.5" fill-rule="evenodd"/>
+        <text class="map-river-label" x="250" y="340" transform="rotate(-33 250 340)">Mississippi River</text>
+        <text class="map-area-label" x="250" y="65">Downtown<tspan x="250" dy="21">Saint Paul</tspan></text>
+        <text class="map-area-label" x="290" y="500">West Side</text>
+        <text class="map-north" x="595" y="45">N ↑</text>
+        {placed.map(l=>{const stop=stops.find(s=>s.locationId===l.id)!;return <g class="map-venue"><circle cx={x(l.coordinates!.longitude)} cy={y(l.coordinates!.latitude)} r="22" class="map-pin-halo"/><circle cx={x(l.coordinates!.longitude)} cy={y(l.coordinates!.latitude)} r="17" class="map-pin"/><text x={x(l.coordinates!.longitude)} y={y(l.coordinates!.latitude)+6} text-anchor="middle">{stop.order}</text></g>;})}
+      </svg>
+      <span class="map-drawing-caption">Geographic context · no travel route</span>
+    </div>
+    <div class="map-key">
+      <p class="map-key-heading">Three places on the map</p>
+      <ol class="map-venue-links" aria-label="Plotted venues">
+        {placed.map(l=>{const stop=stops.find(s=>s.locationId===l.id)!;return <li><a href={`#location-${l.id}`}><span class="venue-key-number" aria-hidden="true">{stop.order}</span><span><strong>{l.currentName}</strong><small>Stop {stop.order} · approximate area</small></span><span aria-hidden="true">↗</span></a></li>;})}
+      </ol>
+      <div class="map-postcard" aria-hidden="true"><img src={assetURL('/images/redesign/banner-bridge.webp')} alt="" width="800" height="450" decoding="async"/><span>The river runs<br/>through every story.</span></div>
+    </div>
+  </div>
+  <figcaption>North-up geographic overview. Dashed outlines indicate uncertain venue areas, not measured boundaries. No event footprints or travel connections are asserted. Modern river geometry is clipped from USGS NHD data, not a reconstructed 1930s shoreline. Map services and data: U.S. Geological Survey, National Geospatial Program. <a href={geography.baseSourceUrl!}>USGS river source</a> · <a href={geography.reuseSourceUrl}>Public-domain reuse basis</a>.</figcaption>
 </figure>
-<p class="muted">Map services and data available from U.S. Geological Survey, National Geospatial Program. <a href={geography.reuseSourceUrl}>Public-domain reuse basis</a>. Modern river geometry is context, not a reconstructed 1930s shoreline.</p>
-<section><h2>The seven-stop directory</h2><p>Every chapter can be read at home. Three venue positions are shown approximately from published geographic records. Four chapters remain unplaced. An address does not establish an exact historical event footprint.</p>
- <ol class="location-list">{stops.map(s=>{const l=locations.find(l=>l.id===s.locationId);if(!l)return null;return <li id={`location-${l.id}`} class="card"><p class="eyebrow">Stop {s.order} · {l.role}</p><h3><a href={stopURL(s.id)}>{s.title}</a></h3><p><strong>{l.historicalName}</strong><br/>{l.address}</p><p>{s.synopsis}</p><p>Position: <strong>{l.precision}</strong> · Condition: <strong>{l.condition}</strong> · Access: <strong>{l.access}</strong></p><p>{l.qualification}</p>{l.coordinates&&<p class="muted"><a href={l.coordinates.sourceUrl}>Coordinate source</a>, checked {l.coordinates.checkedDate}. {l.coordinates.method} Structured Wikimedia place coordinates are available under CC0; no source photograph is reproduced.</p>}{l.currentCheck&&<p class="muted">Address/access note checked {l.currentCheck.date}: {l.currentCheck.note} <a href={l.currentCheck.url}>Current venue source</a></p>}<p><a href={routeURL(`/sources/#source-${l.supportingSourceId}`)}>Historical source {l.supportingSourceId}</a> — {l.supportingLocator}</p><p class="muted" data-visited-stop={s.id} data-js-control hidden></p></li>})}</ol>
+<aside class="map-reading-note"><span aria-hidden="true">↳</span><p>A reading directory, wherever you are. Location precision, condition, and access are separate. This page is not a walking route or an invitation to enter private property.</p></aside>
+<section class="map-directory" id="directory" aria-labelledby="directory-heading">
+  <header class="directory-heading">
+    <div><p class="eyebrow">Open the city’s case file</p><h2 id="directory-heading">The seven-stop directory</h2></div>
+    <p class="directory-aside">Every chapter a different corner<br/>of a darker Saint Paul.</p>
+  </header>
+  <p class="directory-intro">Every chapter can be read at home. Three venue positions are shown approximately from published geographic records. Four chapters remain unplaced. An address does not establish an exact historical event footprint.</p>
+  <p class="directory-art-note">Chapter images are atmospheric illustrations, not documentary photographs.</p>
+  <ol class="location-list" role="list">
+    {stops.map(s=>{const l=locations.find(l=>l.id===s.locationId);if(!l)return null;return <li id={`location-${l.id}`} class="location-card">
+      <div class="location-picture"><img src={assetURL(`/images/redesign/card-${s.id}.webp`)} alt="" width="480" height="600" decoding="async"/><span class="location-number" aria-hidden="true">{s.order}</span></div>
+      <div class="location-content">
+        <p class="eyebrow">Stop {s.order} · {l.role}</p>
+        <h3><a href={stopURL(s.id)}>{s.title}</a></h3>
+        <p class="location-address"><strong>{l.historicalName}</strong><br/>{l.address}</p>
+        <p class="location-synopsis">{s.synopsis}</p>
+        <ul class="location-status" aria-label="Location status"><li>Position: <strong>{l.precision}</strong></li><li>Condition: <strong>{l.condition}</strong></li><li>Access: <strong>{l.access}</strong></li></ul>
+        <div class="location-record">
+          <a href={routeURL(`/sources/#source-${l.supportingSourceId}`)}>Historical source {l.supportingSourceId} <span aria-hidden="true">↗</span></a>
+          <details class="location-details"><summary>Location notes <span class="sr-only">for {s.title}</span></summary><div class="location-details-content">
+            <p>{l.qualification}</p>
+            {l.coordinates&&<p><a href={l.coordinates.sourceUrl}>Coordinate source</a>, checked {l.coordinates.checkedDate}. {l.coordinates.method} Structured Wikimedia place coordinates are available under CC0; no source photograph is reproduced.</p>}
+            {l.currentCheck&&<p>Address/access note checked {l.currentCheck.date}: {l.currentCheck.note} <a href={l.currentCheck.url}>Current venue source</a></p>}
+            <p>Historical source {l.supportingSourceId} — {l.supportingLocator}</p>
+          </div></details>
+        </div>
+        <p class="muted location-progress" data-visited-stop={s.id} data-js-control hidden></p>
+      </div>
+      <div class="location-margin"><p>{chapterNotes[s.id]}</p><a href={stopURL(s.id)} aria-label={`Read chapter ${s.order}: ${s.title}`}>Read chapter <span aria-hidden="true">→</span></a></div>
+    </li>;})}
+  </ol>
 </section>
-
-<style>.geographic-preview{margin-block:2rem}.geographic-preview svg{width:100%}@media(max-width:600px){.geographic-preview svg{display:none}}</style>

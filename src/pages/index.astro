@@ -13,12 +13,13 @@ const cardImages: Record<string, string> = {
 };
 ---
 <Layout title="Saint Paul After Dark">
+ <div class="experience-page home-experience">
   <!-- 1. Hero Section -->
   <section class="hero-noir">
     <div class="hero-backdrop">
       <img
         src={assetURL('/images/redesign/hero-skyline.webp')}
-        alt="Saint Paul skyline at night with illuminated Capitol dome and red river reflections"
+        alt=""
         width="1600"
         height="900"
         fetchpriority="high"
@@ -48,11 +49,12 @@ const cardImages: Record<string, string> = {
     </div>
     <div class="hero-script-watermark">
       <span class="script-text">Same city. Different shadows.</span>
-      <span class="script-sub">Saint Paul, Minnesota · 1930s (Inspired)</span>
+      <span class="script-sub">Saint Paul, Minnesota · 1930s inspired artwork</span>
     </div>
   </section>
 
   <div class="container">
+    <nav class="home-entry-strip" aria-label="Explore the experience"><a href="#reading-order"><b>07</b><span>Chapters<br/><small>Follow the story</small></span></a><a href={routeURL('/casebook/')}><b>14</b><span>Evidence files<br/><small>Look beneath the legend</small></span></a><a href={routeURL('/sources/')}><b>30</b><span>Claim records<br/><small>Trace the source</small></span></a></nav>
     <!-- 2. Read the City Through Its Evidence (Dossier Section) -->
     <section class="evidence-dossier-section">
       <div class="dossier-grid">
@@ -67,48 +69,50 @@ const cardImages: Record<string, string> = {
           </p>
           <div class="dossier-icons">
             <div class="icon-col">
-              <span class="icon-glyph" aria-hidden="true">📖</span>
+              <span class="icon-glyph" aria-hidden="true">01</span>
               <span class="icon-label">Real Records</span>
             </div>
             <div class="icon-col">
-              <span class="icon-glyph" aria-hidden="true">⚖️</span>
+              <span class="icon-glyph" aria-hidden="true">02</span>
               <span class="icon-label">Multiple Perspectives</span>
             </div>
             <div class="icon-col">
-              <span class="icon-glyph" aria-hidden="true">📍</span>
+              <span class="icon-glyph" aria-hidden="true">03</span>
               <span class="icon-label">Places & People</span>
             </div>
           </div>
         </article>
 
-        <!-- Center: Archival Photo Frame -->
-        <div class="vintage-photo-card">
+        <!-- Atmospheric illustration in a paper frame -->
+        <figure class="vintage-photo-card">
           <div class="photo-tape" aria-hidden="true"></div>
           <div class="photo-inner">
             <img
               src={assetURL('/images/redesign/hotel-ryan.webp')}
-              alt="Archival photograph of Hotel Ryan street corner with illuminated neon sign in downtown Saint Paul"
+              alt="Atmospheric illustration of a hotel street corner at night"
               width="800"
               height="600"
-              loading="lazy"
+              decoding="async"
             />
           </div>
-        </div>
+          <figcaption>Atmospheric artwork · not an archival photograph</figcaption>
+        </figure>
 
         <!-- Right: Vintage Book Cover -->
         <div class="vintage-book-card">
           <div class="book-title">
             <span>Seven Chapters</span>
             <span>One City</span>
-            <span>Many Truths</span>
+            <span>Many Perspectives</span>
           </div>
           <div class="book-divider" aria-hidden="true"></div>
+          <a href={routeURL('/casebook/')}>Open the casebook <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
 
     <!-- 3. The Reading Order Section -->
-    <section class="reading-order-section">
+    <section class="reading-order-section" id="reading-order">
       <div class="section-header-bar">
         <div class="header-left">
           <h2>The Reading Order</h2>
@@ -116,14 +120,12 @@ const cardImages: Record<string, string> = {
         </div>
         <div class="header-right">
           <span class="header-sub">Move through time. See how it all connects.</span>
-          <div class="nav-arrows" aria-hidden="true">
-            <span class="arrow-btn">&larr;</span>
-            <span class="arrow-btn">&rarr;</span>
-          </div>
+          <a class="reading-map-link" href={routeURL('/map/')}>Open the field map <span aria-hidden="true">↗</span></a>
         </div>
       </div>
 
-      <ol class="chapter-cards-grid">
+      <p class="home-art-note">Atmospheric illustrations accompany the chapters; the linked records supply the evidence.</p>
+      <ol class="chapter-cards-grid" role="list">
         {stops.map((s, index) => (
           <li class="chapter-card-item">
             <article class="chapter-card">
@@ -133,7 +135,7 @@ const cardImages: Record<string, string> = {
                   alt=""
                   width="600"
                   height="340"
-                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="card-content">
@@ -160,10 +162,10 @@ const cardImages: Record<string, string> = {
       <div class="banner-backdrop">
         <img
           src={assetURL('/images/redesign/banner-bridge.webp')}
-          alt="Arched stone Mississippi River bridge under moonlit night sky"
+          alt=""
           width="1600"
           height="900"
-          loading="lazy"
+          decoding="async"
         />
       </div>
       <div class="banner-content">
@@ -172,11 +174,11 @@ const cardImages: Record<string, string> = {
           <p>History isn&rsquo;t just what happened &mdash; it&rsquo;s how we understand it.</p>
         </div>
         <div class="banner-right">
-          <blockquote>
-            &ldquo;The past is a map. It helps us see where we are, and where we might go.&rdquo;
-          </blockquote>
+          <p class="tour-reflection">The past is a map.<br/>Look closer at what it leaves out.</p>
+          <a href={routeURL('/sources/')}>Explore the sources <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
   </div>
+ </div>
 </Layout>

@@ -1,4 +1,27 @@
 ---
-import Layout from '../layouts/Layout.astro';import SvgMap from '../components/SvgMap.astro';import {routeURL} from '../lib/catalog';
+import Layout from '../layouts/Layout.astro';
+import SvgMap from '../components/SvgMap.astro';
+import {assetURL,routeURL} from '../lib/catalog';
+import '../styles/map.scss';
 ---
-<Layout title="Map and places"><div class="container"><header class="page-heading"><p class="eyebrow">Places and uncertainty</p><h1>Map and places</h1><p class="lede">A reading directory, with location precision kept separate from condition and access.</p><p>Three approximate venue positions are plotted beside a sourced modern river layer. Historical event footprints remain qualified. This page is not a walking route or an invitation to enter private property.</p><p><a data-resume hidden href={routeURL('/map/')}>Resume reading</a></p></header><SvgMap/></div></Layout>
+<Layout title="Map and places">
+  <div class="map-page">
+    <header class="map-hero">
+      <img class="map-hero-image" src={assetURL('/images/redesign/hero-skyline.webp')} alt="" width="1600" height="900" fetchpriority="high"/>
+      <div class="container map-hero-content">
+        <div class="map-intro">
+          <p class="eyebrow">Places and uncertainty</p>
+          <h1>Map and places</h1>
+          <p class="lede">A city of refuge. A record of consequences.</p>
+          <p class="map-intro-copy">Explore the places behind seven chapters of Saint Paul’s history. Three approximate venue positions sit beside a sourced modern river; four chapters remain unplaced.</p>
+          <div class="map-hero-links">
+            <a href="#directory">Explore the seven stops <span aria-hidden="true">↓</span></a>
+            <a data-resume hidden href={routeURL('/map/')}>Resume reading <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="map-hero-note" aria-hidden="true"><span>Same city.<br/>Different shadows.</span><small>Saint Paul, Minnesota<br/>1930s inspired artwork</small></div>
+      </div>
+    </header>
+    <div class="container map-content"><SvgMap/></div>
+  </div>
+</Layout>

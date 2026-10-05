@@ -1,33 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ExperienceHero from '../components/ExperienceHero.astro';
 import { claims, sources, edition, media, sourceURL, routeURL } from '../lib/catalog';
 ---
 
 <Layout title="Sources and qualifications">
-  <div class="container prose">
-    <header class="page-heading">
-      <p class="eyebrow">Follow the evidence</p>
-      <h1>Sources and qualifications</h1>
-      <p class="lede">Thirty claims, with their support, disputes, and limits.</p>
-      <p>“Supported” refers to the bounded statement and cited source, not universal certainty. A historical record, a later account, and this tour’s explanation are different kinds of material. These pages paraphrase records; they do not present invented transcripts or archival facsimiles.</p>
-      <p><a data-context-return hidden href={routeURL('/map/')}>Back to the tour</a></p>
-
-      <nav class="controls" aria-label="Sources sections">
-        <a href="#claims">Claims</a>
-        <a href="#bibliography">Bibliography</a>
-        <a href="#edition-status">Edition notes</a>
-        <a href="#credits">Credits</a>
-      </nav>
-      <p data-js-control hidden>
-        <button type="button" class="btn-secondary" id="print-sources">Print or save as PDF</button>
-      </p>
-    </header>
-
+  <div class="experience-page sources-page">
+    <ExperienceHero title="Sources and qualifications" eyebrow="The archive behind the story" lede="The atmosphere draws you in. The sources let you look closer." image="/images/redesign/banner-bridge.webp" folio="REF" note="Follow the paper trail.">
+      <p class="hero-explainer">Thirty claims, with their support, disputes, and limits. A historical record, a later account, and this tour’s explanation are different kinds of material.</p>
+      <div class="experience-actions"><a data-context-return hidden href={routeURL('/map/')}>Back to the tour</a><a href="#claims">Open the claim ledger <span aria-hidden="true">↓</span></a></div>
+    </ExperienceHero>
+    <div class="container">
+      <nav class="archive-tabs" aria-label="Sources sections"><a href="#claims"><span>{claims.length}</span> Claims</a><a href="#bibliography"><span>{sources.length}</span> Bibliography</a><a href="#edition-status"><span>↳</span> Edition notes</a><a href="#credits"><span>↳</span> Credits</a></nav>
+      <div class="archive-layout">
+        <aside class="archive-guide"><div class="paper-document"><p class="paper-kicker">A reader’s field guide</p><h2>Read the fine print.</h2><p>“Supported” refers to the bounded statement and cited source, not universal certainty.</p><p>These pages paraphrase records; they do not present invented transcripts or archival facsimiles.</p><dl><dt>Supported</dt><dd>Read the statement alongside its explanation and qualification.</dd><dt>Disputed</dt><dd>Follow the differing accounts and the limits of what they establish.</dd></dl><p data-js-control hidden><button type="button" class="btn-secondary" id="print-sources">Print or save as PDF</button></p></div><nav class="archive-guide-links" aria-label="Archive index"><a href="#claims">Claim ledger <span aria-hidden="true">↓</span></a><a href="#bibliography">Bibliography <span aria-hidden="true">↓</span></a><a href="#edition-status">Edition notes <span aria-hidden="true">↓</span></a><a href="#credits">Credits <span aria-hidden="true">↓</span></a></nav></aside>
+        <div class="archive-records">
     <section id="claims">
-      <h2>Claim ledger</h2>
+      <div class="experience-section-heading"><div><p class="eyebrow">Statement. Support. Qualification.</p><h2>Claim ledger</h2></div></div>
       {claims.map(c => (
-        <article id={`claim-${c.id}`} class="card">
-          <p class="eyebrow">{c.id} · {c.status} · {c.evidenceBasis}</p>
+        <article id={`claim-${c.id}`} class="claim-file" data-claim-status={c.status}>
+          <div class="record-file-header"><span class="record-id">{c.id}</span><span class="claim-status">{c.status}</span><span>{c.evidenceBasis}</span></div>
           <h3>{c.assertion}</h3>
           <p>{c.supportExplanation}</p>
           <p><strong>Qualification:</strong> {c.qualification}</p>
@@ -49,10 +41,10 @@ import { claims, sources, edition, media, sourceURL, routeURL } from '../lib/cat
     </section>
 
     <section id="bibliography">
-      <h2>Bibliography</h2>
+      <div class="experience-section-heading"><div><p class="eyebrow">Beyond these pages</p><h2>Bibliography</h2></div></div>
       {sources.map(s => (
-        <article id={`source-${s.id}`} class="card">
-          <p class="eyebrow">{s.id} · {s.sourceType}</p>
+        <article id={`source-${s.id}`} class="bibliography-file">
+          <div class="record-file-header"><span class="record-id">{s.id}</span><span>{s.sourceType}</span></div>
           <h3>{s.title}</h3>
           <p>{s.creator}</p>
           <p>Published: {s.publicationDate}. Recorded consultation: {s.consultationDate}.</p>
@@ -67,7 +59,7 @@ import { claims, sources, edition, media, sourceURL, routeURL } from '../lib/cat
       ))}
     </section>
 
-    <section id="edition-status">
+    <section id="edition-status" class="archive-note">
       <h2>Edition notes</h2>
       <p>Edition {edition.contentRevision} is a working preview. Structural checks cover records, links between records, asset digests, and SVG parsing. They cannot establish historical truth, listening quality, rights, or accessibility conformance.</p>
       <h3>Corrections in 0.5.0</h3>
@@ -82,18 +74,21 @@ import { claims, sources, edition, media, sourceURL, routeURL } from '../lib/cat
       <p>To investigate a possible correction, note the claim or evidence ID, the proposed correction, and a source with a page or passage locator. The ledger preserves qualifications while that question is checked.</p>
     </section>
 
-    <section id="credits">
+    <section id="credits" class="archive-note">
       <h2>Credits and material use</h2>
       <p>Local narration uses macOS Samantha; ambience is synthesized noise, not a location recording. Regenerated recordings have retained lossless masters in the project’s non-published production directory. Listening and distribution-rights reviews remain pending.</p>
-      <p>Illustrations are existing local project SVGs with corrective edits. They are generalized reconstructions, not verified architectural views. No new reuse license has been assigned. Referenced scene review and provenance confirmation remain open.</p>
+      <p>The skyline, chapter artwork, hotel image, and bridge artwork are existing project WebP assets used for atmosphere. They are not presented as archival photographs, authenticated likenesses, or verified architectural views. The expandable scene studies use existing local SVG reconstructions with corrective edits. No new reuse license has been assigned. Referenced scene review and provenance confirmation remain open.</p>
       <ul>
         {media.scenes.map(s => (
           <li>{s.id}: {s.description}</li>
         ))}
       </ul>
-      <p>Fonts: Barlow Condensed and Source Sans 3, self-hosted. Their license files are retained under public/licenses in the project. The cited archives and websites retain their own rights and conditions.</p>
+      <p>Fonts: Barlow Condensed and Source Sans 3 have self-hosted files, with licenses retained under public/licenses in the project. The visual design also requests Playfair Display, Cinzel, Caveat, and Source Sans 3 from Google Fonts, with local fallback fonts when unavailable. The cited archives and websites retain their own rights and conditions.</p>
       <p>No analytics, account, GPS, or external audio provider is part of the runtime. Following a source link leaves this site and uses that source’s services.</p>
     </section>
+        </div>
+      </div>
+    </div>
   </div>
 </Layout>
 

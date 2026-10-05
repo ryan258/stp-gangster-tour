@@ -1,4 +1,27 @@
 ---
-import Layout from '../layouts/Layout.astro';import ClaimLinks from '../components/ClaimLinks.astro';import {edition,stops,stopURL,routeURL} from '../lib/catalog';
+import Layout from '../layouts/Layout.astro';
+import ExperienceHero from '../components/ExperienceHero.astro';
+import ClaimLinks from '../components/ClaimLinks.astro';
+import {edition,stops,stopURL,routeURL,assetURL} from '../lib/catalog';
 ---
-<Layout title="Prologue"><article class="container prose reading-page" data-reading-page="prologue"><section id="opening" data-reading-block><p class="eyebrow">Prologue</p><h1>{edition.prologue.title}</h1>{edition.prologue.paragraphs.map(p=><p>{p}</p>)}<ClaimLinks ids={edition.prologue.premiseClaimIds}/></section><section><h2>Choose your pace</h2><p>The introduction to each stop has optional synthesized narration. Evidence opens in place; the casebook and sources are always available. Sound starts only when you choose it and pauses when you leave the page.</p><p>Reading progress is stored in this browser, with preferences kept separately. No account or score is involved.</p></section><nav class="stop-nav" aria-label="Reading order"><a href={routeURL('/')}>← Previous: Home</a><a href={stopURL(stops[0].id)}>Next: {stops[0].title} →</a></nav></article></Layout>
+<Layout title="Prologue">
+ <article class="experience-page bookend-page" data-reading-page="prologue">
+  <ExperienceHero title={edition.prologue.title} eyebrow="Prologue · Saint Paul, beginning in 1900" image="/images/redesign/hero-skyline.webp" folio="00" note="Every city has rules.">
+   <p class="lede">Before the hotel suites, the nightclubs, and the ransom notes, there was an arrangement.</p>
+   <nav class="experience-actions" aria-label="Begin reading"><a href="#opening">Open the story <span aria-hidden="true">↓</span></a><a href={stopURL(stops[0].id)}>Go to chapter one <span aria-hidden="true">→</span></a></nav>
+  </ExperienceHero>
+  <div class="container bookend-layout">
+   <div class="bookend-prose">
+    <section id="opening" data-reading-block class="story-opening"><p class="eyebrow">The terms of refuge</p><h2>A bargain with a boundary</h2>{edition.prologue.paragraphs.map(p=><p>{p}</p>)}<ClaimLinks ids={edition.prologue.premiseClaimIds}/></section>
+    <section class="pace-panel"><p class="eyebrow">Make yourself at home</p><h2>Choose your pace</h2><p>The introduction to each stop has optional synthesized narration. Evidence opens in place; the casebook and sources are always available. Sound starts only when you choose it and pauses when you leave the page.</p><p>Reading progress is stored in this browser, with preferences kept separately. No account or score is involved.</p><div class="pace-modes"><span><b>Read</b>Follow the story</span><span><b>Listen</b>Start the voice</span><span><b>Inspect</b>Open the evidence</span></div><p class="muted">Use ordinary links, a keyboard, or voice commands matching the visible controls. Calm view reduces decoration and turns ambience off.</p></section>
+    <nav class="stop-nav" aria-label="Reading order"><a href={routeURL('/')}>← Previous: Home</a><a href={stopURL(stops[0].id)}>Next: {stops[0].title} →</a></nav>
+   </div>
+   <aside class="bookend-aside">
+    <figure class="experience-photo"><img src={assetURL('/images/redesign/hotel-ryan.webp')} alt="" width="1024" height="768" decoding="async"/><figcaption>A city after dark.<br/><small>Atmospheric artwork, not an archival photograph.</small></figcaption></figure>
+    <div class="paper-document"><p class="paper-kicker">A reading of the record</p><h2>The arrangement</h2><ol class="terms-list"><li>Identify yourself.</li><li>Pay for protection.</li><li>Keep major crimes outside the city.</li></ol><p>A paraphrase of the arrangement described by the Minnesota Historical Society. The linked claims set out its scope and limits.</p><a href={routeURL('/sources/#claim-C01')}>Read the claim basis <span aria-hidden="true">↗</span></a></div>
+    <div class="experience-content-note"><p class="eyebrow">Before you begin</p><p>{edition.contentNote}</p></div>
+   </aside>
+  </div>
+  <div class="container"><a class="next-chapter-teaser" href={stopURL(stops[0].id)}><img src={assetURL('/images/redesign/card-the-arrangement.webp')} alt="" width="1376" height="768" decoding="async"/><span><small>Chapter 01 / {stops[0].period}</small><strong>{stops[0].title}</strong><em>Begin with the people who made the bargain work.</em></span><b aria-hidden="true">→</b></a></div>
+ </article>
+</Layout>
