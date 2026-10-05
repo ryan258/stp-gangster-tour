@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%" role="img" aria-labelledby="scene-caves-title scene-caves-desc">
+  <title id="scene-caves-title">Castle Royal Underground Caves Nightclub</title>
+  <desc id="scene-caves-desc">Illustrated reconstruction: Dramatic graphic noir view of the subterranean silica sandstone arches of Castle Royal beneath Saint Paul's bluffs, featuring an empty bandstand, dining tables with glowing lamps, and restrained crimson drapery.</desc>
+  <defs>
+    <radialGradient id="table-lamp" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFF0D0" stop-opacity="0.9"/>
+      <stop offset="35%" stop-color="#E5AD45" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cave-stone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#181D26"/>
+      <stop offset="60%" stop-color="#0D1017"/>
+      <stop offset="100%" stop-color="#06080B"/>
+    </linearGradient>
+    <linearGradient id="stage-glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F3EFE6" stop-opacity="0.25"/>
+      <stop offset="70%" stop-color="#F3EFE6" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#0B0C10" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Subterranean Darkness -->
+  <rect width="1000" height="650" fill="#060709"/>
+
+  <!-- Great Carved Sandstone Arches (Silica Cave Architecture) -->
+  <!-- Outer Arch 1 (Left Wall into Ceiling) -->
+  <path d="M-50,650 L-50,150 Q180,-20 480,110 Q280,240 180,650 Z" fill="url(#cave-stone)" stroke="#222B3A" stroke-width="3"/>
+  
+  <!-- Outer Arch 2 (Right Wall into Ceiling) -->
+  <path d="M1050,650 L1050,140 Q800,-30 520,110 Q720,240 820,650 Z" fill="url(#cave-stone)" stroke="#222B3A" stroke-width="3"/>
+
+  <!-- Center Sandstone Barrel Vault Arch -->
+  <path d="M180,650 Q280,180 500,140 Q720,180 820,650 L750,650 Q680,240 500,210 Q320,240 250,650 Z" fill="#0C0F15" stroke="#1C2433" stroke-width="2"/>
+
+  <!-- Sandstone Texture Facets / Chiseled Strata Lines -->
+  <path d="M20,180 Q140,140 260,190" stroke="#2B3648" stroke-width="2" fill="none"/>
+  <path d="M30,240 Q150,210 240,270" stroke="#232C3B" stroke-width="1.5" fill="none"/>
+  <path d="M760,190 Q880,150 980,180" stroke="#2B3648" stroke-width="2" fill="none"/>
+  <path d="M780,270 Q870,220 970,250" stroke="#232C3B" stroke-width="1.5" fill="none"/>
+
+  <!-- Restrained Crimson Velvet Drapery along Center Cavern Arch -->
+  <path d="M350,215 Q430,230 500,215 Q570,230 650,215 L660,280 Q580,295 500,280 Q420,295 340,280 Z" fill="#C62F42" stroke="#871A27" stroke-width="2"/>
+  <path d="M335,280 L350,390 Q340,420 325,480 L310,480 Q320,380 335,280 Z" fill="#A82334"/>
+  <path d="M665,280 L650,390 Q660,420 675,480 L690,480 Q680,380 665,280 Z" fill="#A82334"/>
+
+  <!-- The Bandstand / Stage (Empty - No Famous Figures Rendered as Fact) -->
+  <polygon points="340,480 660,480 720,530 280,530" fill="#131822" stroke="#2C374A" stroke-width="2"/>
+  <!-- Stage Footlights Glow -->
+  <polygon points="350,480 650,480 600,320 400,320" fill="url(#stage-glow)"/>
+
+  <!-- Empty Vintage Microphone on Stand -->
+  <line x1="500" y1="410" x2="500" y2="475" stroke="#F3EFE6" stroke-width="3"/>
+  <circle cx="500" cy="405" r="9" fill="#0B0C10" stroke="#F3EFE6" stroke-width="2"/>
+  <line x1="495" y1="405" x2="505" y2="405" stroke="#F3EFE6" stroke-width="2"/>
+  <ellipse cx="500" cy="475" rx="14" ry="5" fill="#F3EFE6"/>
+
+  <!-- Empty Drum Kit Silhouette on Bandstand -->
+  <ellipse cx="580" cy="435" rx="22" ry="12" fill="#050608" stroke="#F3EFE6" stroke-width="1.5"/>
+  <ellipse cx="620" cy="425" rx="14" ry="18" fill="#050608" stroke="#F3EFE6" stroke-width="1.5"/>
+  <line x1="620" y1="440" x2="620" y2="475" stroke="#F3EFE6" stroke-width="2"/>
+
+  <!-- Dining Tables with Tablecloths and Small Glowing Lamps -->
+  <!-- Center Foreground Table -->
+  <g transform="translate(420, 500)">
+    <circle cx="80" cy="60" r="100" fill="url(#table-lamp)"/>
+    <!-- Table Top -->
+    <ellipse cx="80" cy="65" rx="75" ry="25" fill="#E8E4DA" stroke="#333" stroke-width="1"/>
+    <!-- Tablecloth Hang -->
+    <path d="M5,65 Q80,120 155,65 L150,140 Q80,170 10,140 Z" fill="#F3EFE6" stroke="#222" stroke-width="1"/>
+    <!-- Little Amber Table Lamp -->
+    <ellipse cx="80" cy="55" rx="8" ry="3" fill="#D4AF37"/>
+    <polygon points="76,55 84,55 82,38 78,38" fill="#F3EFE6"/>
+    <ellipse cx="80" cy="38" rx="12" ry="5" fill="#E2B158"/>
+    <!-- Empty Champagne Coupe -->
+    <line x1="110" y1="58" x2="110" y2="46" stroke="#F3EFE6" stroke-width="1.5"/>
+    <path d="M102,46 Q110,54 118,46 Z" fill="#F3EFE6" fill-opacity="0.5"/>
+  </g>
+
+  <!-- Left Table Silhouette -->
+  <g transform="translate(60, 480)">
+    <circle cx="80" cy="50" r="75" fill="url(#table-lamp)"/>
+    <ellipse cx="80" cy="55" rx="60" ry="20" fill="#E8E4DA"/>
+    <path d="M20,55 Q80,95 140,55 L135,130 Q80,150 25,130 Z" fill="#D6D1C4"/>
+    <ellipse cx="80" cy="46" rx="6" ry="3" fill="#D4AF37"/>
+    <ellipse cx="80" cy="32" rx="10" ry="4" fill="#E2B158"/>
+  </g>
+
+  <!-- Right Table Silhouette -->
+  <g transform="translate(760, 480)">
+    <circle cx="80" cy="50" r="75" fill="url(#table-lamp)"/>
+    <ellipse cx="80" cy="55" rx="60" ry="20" fill="#E8E4DA"/>
+    <path d="M20,55 Q80,95 140,55 L135,130 Q80,150 25,130 Z" fill="#D6D1C4"/>
+    <ellipse cx="80" cy="46" rx="6" ry="3" fill="#D4AF37"/>
+    <ellipse cx="80" cy="32" rx="10" ry="4" fill="#E2B158"/>
+  </g>
+
+  <!-- Spec Compliance: No Famous Gangsters Fabricated into the Room -->
+  <rect x="25" y="25" width="230" height="28" fill="#0B0C10" fill-opacity="0.85" stroke="#F3EFE6" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="35" y="44" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="12" letter-spacing="1">ILLUSTRATED RECONSTRUCTION</text>
+
+  <rect width="1000" height="650" fill="none" stroke="#F3EFE6" stroke-opacity="0.15" stroke-width="2"/>
+</svg>

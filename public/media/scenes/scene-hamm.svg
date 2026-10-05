@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%" role="img" aria-labelledby="scene-hamm-title scene-hamm-desc">
+  <title id="scene-hamm-title">The Theodore Hamm Brewery Context Landscape</title>
+  <desc id="scene-hamm-desc">Illustrated reconstruction: High-contrast industrial brick brewhouse silhouettes, smokestacks, and a period sedan on Cable Street, paired with a quiet forensic evidence panel representing the silver nitrate fingerprint extraction.</desc>
+  <defs>
+    <linearGradient id="dusk-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050608"/>
+      <stop offset="60%" stop-color="#141822"/>
+      <stop offset="100%" stop-color="#2D1A22"/> <!-- Subdued brick-red twilight -->
+    </linearGradient>
+    <linearGradient id="street-ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F1218"/>
+      <stop offset="100%" stop-color="#050608"/>
+    </linearGradient>
+    <radialGradient id="headlight-beam" cx="0" cy="0.5" r="1">
+      <stop offset="0%" stop-color="#F3EFE6" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#F3EFE6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Industrial Twilight Sky -->
+  <rect width="1000" height="380" fill="url(#dusk-sky)"/>
+
+  <!-- Great Industrial Hamm Brewery Complex Silhouettes -->
+  <!-- Main Brewhouse Complex with Gables and Arched Windows -->
+  <polygon points="40,380 40,140 180,90 320,140 320,380" fill="#0A0C10" stroke="#1C222E" stroke-width="2"/>
+  <!-- Tall Industrial Brick Chimneys / Smokestacks -->
+  <polygon points="120,380 120,40 145,40 150,380" fill="#07080B" stroke="#161B24" stroke-width="1.5"/>
+  <polygon points="260,380 260,20 285,20 290,380" fill="#06070A" stroke="#161B24" stroke-width="1.5"/>
+  <!-- Smoke Plume in Cold Evening Air -->
+  <path d="M272,20 Q285,-10 320,-20 Q360,-15 390,-5" stroke="#F3EFE6" stroke-opacity="0.08" stroke-width="14" fill="none" stroke-linecap="round"/>
+
+  <!-- Grain Silos and Warehouse Wings -->
+  <polygon points="320,380 320,170 540,170 540,380" fill="#0E1118" stroke="#1A202C" stroke-width="2"/>
+  <ellipse cx="360" cy="170" rx="35" ry="12" fill="#141822"/>
+  <ellipse cx="430" cy="170" rx="35" ry="12" fill="#141822"/>
+  <ellipse cx="500" cy="170" rx="35" ry="12" fill="#141822"/>
+
+  <!-- Distant Residential Cable Street Rooftops (Right Background) -->
+  <polygon points="560,380 560,250 630,210 700,250 700,380" fill="#0B0D12"/>
+  <polygon points="710,380 710,240 780,200 850,240 850,380" fill="#0D1016"/>
+  <polygon points="860,380 860,260 930,220 1000,260 1000,380" fill="#090B0E"/>
+
+  <!-- Street Level & Cobblestone Asphalt Surface -->
+  <rect y="380" width="1000" height="270" fill="url(#street-ground)"/>
+  <line x1="0" y1="380" x2="1000" y2="380" stroke="#F3EFE6" stroke-opacity="0.15" stroke-width="2"/>
+
+  <!-- 1933 Automobile (Kidnapping Car Silhouette on Cable Street) -->
+  <g transform="translate(180, 360)">
+    <!-- Car Headlight Beams Casting Forward -->
+    <polygon points="260,55 600,-20 620,120 260,75" fill="url(#headlight-beam)"/>
+    <!-- Car Body -->
+    <path d="M40,75 C60,45 100,25 150,25 L210,25 C230,25 250,45 260,65 L270,75 L280,85 L20,85 C25,78 35,75 40,75 Z" fill="#06070A" stroke="#1A212D" stroke-width="2"/>
+    <!-- Car Roof and Windows -->
+    <path d="M70,30 L100,5 L190,5 L225,30 Z" fill="#040507" stroke="#222B3A" stroke-width="2"/>
+    <polygon points="105,10 145,10 145,28 85,28" fill="#F3EFE6" fill-opacity="0.3"/>
+    <polygon points="155,10 205,10 220,28 155,28" fill="#F3EFE6" fill-opacity="0.2"/>
+    <!-- Wheels -->
+    <circle cx="75" cy="85" r="22" fill="#000" stroke="#333" stroke-width="2"/>
+    <circle cx="75" cy="85" r="10" fill="#444"/>
+    <circle cx="235" cy="85" r="22" fill="#000" stroke="#333" stroke-width="2"/>
+    <circle cx="235" cy="85" r="10" fill="#444"/>
+  </g>
+
+  <!-- Evidence Document Surface (Right Lower Panel - Clean & Sourced) -->
+  <g transform="translate(560, 410)">
+    <rect width="400" height="210" fill="#0D1117" stroke="#252F40" stroke-width="2" rx="4"/>
+    <rect x="15" y="15" width="370" height="30" fill="#131822"/>
+    <text x="25" y="36" fill="#F3EFE6" font-family="'Barlow Condensed', sans-serif" font-weight="600" font-size="15" letter-spacing="2">INVESTIGATIVE TRACE — EVIDENCE E08</text>
+    
+    <!-- Fingerprint Ridge Graphic Trace -->
+    <g transform="translate(30, 65)">
+      <rect width="70" height="90" fill="#F3EFE6" rx="2"/>
+      <!-- Concentric Fingerprint Loops in Crimson / Noir -->
+      <path d="M35,25 Q45,35 45,55 Q45,75 35,80" stroke="#C62F42" stroke-width="2" fill="none"/>
+      <path d="M35,33 Q40,40 40,55 Q40,70 35,74" stroke="#C62F42" stroke-width="1.8" fill="none"/>
+      <path d="M35,18 Q50,30 50,55 Q50,80 35,85" stroke="#C62F42" stroke-width="2.2" fill="none"/>
+    </g>
+
+    <!-- Evidence Text -->
+    <text x="120" y="80" fill="#F3EFE6" font-family="'Source Sans 3', sans-serif" font-weight="600" font-size="13">Silver Nitrate Latent Print Trace</text>
+    <text x="120" y="100" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">Ransom letters delivered to Hamm family were</text>
+    <text x="120" y="116" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">chemically fumed by federal investigators,</text>
+    <text x="120" y="132" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">yielding latent prints that linked Barker-Karpis.</text>
+
+    <!-- Context Caveat Note -->
+    <rect x="20" y="165" width="360" height="32" fill="#07090C" stroke="#1A212C" stroke-width="1"/>
+    <text x="30" y="185" fill="#C62F42" font-family="'Source Sans 3', sans-serif" font-weight="600" font-size="11">CONTEXT LOCATION:</text>
+    <text x="145" y="185" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">Seizure at Cable St residence, not brewery.</text>
+  </g>
+
+  <!-- Reconstruction Label Badge -->
+  <rect x="25" y="25" width="230" height="28" fill="#0B0C10" fill-opacity="0.85" stroke="#F3EFE6" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="35" y="44" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="12" letter-spacing="1">ILLUSTRATED RECONSTRUCTION</text>
+
+  <rect width="1000" height="650" fill="none" stroke="#F3EFE6" stroke-opacity="0.15" stroke-width="2"/>
+</svg>

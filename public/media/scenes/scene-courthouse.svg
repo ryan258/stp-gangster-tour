@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%" role="img" aria-labelledby="scene-court-title scene-court-desc">
+  <title id="scene-court-title">Federal Courthouse (Landmark Center) and Courtroom on the Record</title>
+  <desc id="scene-court-desc">Illustrated reconstruction: The Richardsonian Romanesque granite towers and steep slate roof of Saint Paul's Landmark Center, paired with a somber oak-paneled federal courtroom with judicial bench, witness box, and the scales of justice.</desc>
+  <defs>
+    <linearGradient id="court-light" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F3EFE6" stop-opacity="0.3"/>
+      <stop offset="60%" stop-color="#F3EFE6" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="granite-stone" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141822"/>
+      <stop offset="50%" stop-color="#0E121A"/>
+      <stop offset="100%" stop-color="#07090D"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Night Sky -->
+  <rect width="1000" height="650" fill="#06080B"/>
+
+  <!-- Left Half: Landmark Center Building Exterior Facade -->
+  <g transform="translate(0, 0)">
+    <!-- Main Romanesque Granite Block -->
+    <polygon points="30,650 30,180 500,180 500,650" fill="url(#granite-stone)" stroke="#222B3B" stroke-width="2"/>
+    
+    <!-- Iconic Central Clock Tower / Stepped Pyramidal Roof -->
+    <polygon points="170,180 170,80 360,80 360,180" fill="#0C0F16" stroke="#253042" stroke-width="2"/>
+    <polygon points="190,80 265,10 340,80" fill="#090B10" stroke="#C62F42" stroke-width="1.5"/> <!-- Red copper slate ridge -->
+    <!-- Tower Clock Face -->
+    <circle cx="265" cy="130" r="28" fill="#F3EFE6" fill-opacity="0.9" stroke="#000" stroke-width="2"/>
+    <line x1="265" y1="130" x2="265" y2="112" stroke="#000" stroke-width="3"/>
+    <line x1="265" y1="130" x2="278" y2="130" stroke="#000" stroke-width="2.5"/>
+
+    <!-- High Arched Granite Windows (2nd & 3rd Floor Courts) -->
+    <path d="M70,300 L70,240 Q95,210 120,240 L120,300 Z" fill="#030406" stroke="#2D394E" stroke-width="2"/>
+    <path d="M150,300 L150,240 Q175,210 200,240 L200,300 Z" fill="#030406" stroke="#2D394E" stroke-width="2"/>
+    <path d="M330,300 L330,240 Q355,210 380,240 L380,300 Z" fill="#030406" stroke="#2D394E" stroke-width="2"/>
+    <path d="M410,300 L410,240 Q435,210 460,240 L460,300 Z" fill="#030406" stroke="#2D394E" stroke-width="2"/>
+
+    <!-- Lower Portico Arches -->
+    <path d="M180,650 L180,560 Q265,510 350,560 L350,650 Z" fill="#030405" stroke="#333" stroke-width="3"/>
+    <text x="265" y="550" fill="#F3EFE6" font-family="'Barlow Condensed', sans-serif" font-weight="600" font-size="14" letter-spacing="2" text-anchor="middle">FEDERAL COURTHOUSE</text>
+  </g>
+
+  <!-- Right Half: Formal Federal Courtroom Interior (The Venue of Law) -->
+  <g transform="translate(500, 0)">
+    <!-- Courtroom Wall Background -->
+    <rect width="500" height="650" fill="#0A0D13" stroke="#1D2533" stroke-width="2"/>
+
+    <!-- Tall Stately Courtroom Window with Light Beaming on the Record -->
+    <path d="M160,280 L160,80 Q250,30 340,80 L340,280 Z" fill="#141B26" stroke="#2C374A" stroke-width="2"/>
+    <polygon points="160,280 340,280 440,650 60,650" fill="url(#court-light)"/>
+    
+    <!-- Grand Carved Oak Judicial Bench -->
+    <polygon points="110,420 390,420 420,580 80,580" fill="#121720" stroke="#2E3A4E" stroke-width="3"/>
+    <!-- Recessed Oak Wainscot Panels on Bench -->
+    <rect x="130" y="445" width="65" height="110" fill="#080A0E" stroke="#1F2838" stroke-width="1.5"/>
+    <rect x="215" y="445" width="70" height="110" fill="#080A0E" stroke="#1F2838" stroke-width="1.5"/>
+    <rect x="305" y="445" width="65" height="110" fill="#080A0E" stroke="#1F2838" stroke-width="1.5"/>
+
+    <!-- High Judicial Leather Chair Silhouette -->
+    <polygon points="225,410 275,410 285,320 215,320" fill="#040507" stroke="#18202B" stroke-width="2"/>
+
+    <!-- The Gavel on Sounding Block -->
+    <ellipse cx="170" cy="415" rx="16" ry="6" fill="#D4AF37"/>
+    <rect x="160" y="405" width="20" height="10" fill="#050608" rx="2"/>
+    <line x1="170" y1="408" x2="195" y2="400" stroke="#D4AF37" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Witness Stand / Box to the Left of Bench -->
+    <polygon points="20,470 90,470 100,650 10,650" fill="#0F131C" stroke="#222B3A" stroke-width="2"/>
+    <line x1="30" y1="450" x2="80" y2="450" stroke="#F3EFE6" stroke-width="2"/>
+
+    <!-- Court Reporter / Record Table in Foreground (On the Record) -->
+    <polygon points="180,590 320,590 340,650 160,650" fill="#080A0F" stroke="#222C3D" stroke-width="2"/>
+    <!-- Court Stenographer Transcript Book / Legal Docket -->
+    <polygon points="215,605 275,598 285,635 225,642" fill="#F3EFE6" stroke="#000" stroke-width="1"/>
+    <line x1="225" y1="612" x2="265" y2="607" stroke="#0B0C10" stroke-width="1.5"/>
+    <line x1="227" y1="620" x2="270" y2="615" stroke="#0B0C10" stroke-width="1.5"/>
+    <line x1="230" y1="628" x2="275" y2="623" stroke="#C62F42" stroke-width="2"/> <!-- Crimson bookmark line -->
+
+    <!-- Scales of Justice Emblem Emblazoned on Wall Above Bench -->
+    <g transform="translate(250, 240)">
+      <line x1="0" y1="-30" x2="0" y2="30" stroke="#F3EFE6" stroke-width="2.5"/>
+      <line x1="-35" y1="-15" x2="35" y2="-15" stroke="#F3EFE6" stroke-width="2"/>
+      <!-- Left Pan -->
+      <line x1="-35" y1="-15" x2="-45" y2="10" stroke="#F3EFE6" stroke-width="1"/>
+      <line x1="-35" y1="-15" x2="-25" y2="10" stroke="#F3EFE6" stroke-width="1"/>
+      <ellipse cx="-35" cy="10" rx="14" ry="4" fill="#F3EFE6" fill-opacity="0.8"/>
+      <!-- Right Pan -->
+      <line x1="35" y1="-15" x2="25" y2="10" stroke="#F3EFE6" stroke-width="1"/>
+      <line x1="35" y1="-15" x2="45" y2="10" stroke="#F3EFE6" stroke-width="1"/>
+      <ellipse cx="35" cy="10" rx="14" ry="4" fill="#F3EFE6" fill-opacity="0.8"/>
+    </g>
+  </g>
+
+  <!-- Reconstruction Label Badge -->
+  <rect x="25" y="25" width="230" height="28" fill="#0B0C10" fill-opacity="0.85" stroke="#F3EFE6" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="35" y="44" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="12" letter-spacing="1">ILLUSTRATED RECONSTRUCTION</text>
+
+  <rect width="1000" height="650" fill="none" stroke="#F3EFE6" stroke-opacity="0.15" stroke-width="2"/>
+</svg>

@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%" role="img" aria-labelledby="scene-lincoln-title scene-lincoln-desc">
+  <title id="scene-lincoln-title">Lincoln Court Apartments — The Three-Stage Breakdown</title>
+  <desc id="scene-lincoln-desc">Illustrated reconstruction: A graphic noir triptych panel sequence showing the failure of refuge at 93 South Lexington Parkway in March 1934: the manager's report, agent surveillance, and the hallway confrontation.</desc>
+  <defs>
+    <linearGradient id="muzzle-flash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFF5E0"/>
+      <stop offset="30%" stop-color="#E2A63B"/>
+      <stop offset="70%" stop-color="#C62F42"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="650" fill="#07090C"/>
+
+  <!-- PANEL 1: THE REPORT (March 30, 1934) -->
+  <g id="panel-report" transform="translate(30, 70)">
+    <!-- Panel Box -->
+    <rect width="295" height="540" fill="#0C0F15" stroke="#1F2837" stroke-width="2" rx="3"/>
+    
+    <!-- Panel Header -->
+    <rect width="295" height="42" fill="#131822" rx="3"/>
+    <text x="18" y="27" fill="#F3EFE6" font-family="'Barlow Condensed', sans-serif" font-weight="600" font-size="16" letter-spacing="1.5">1. THE REPORT</text>
+    <text x="210" y="27" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="12">MARCH 30</text>
+
+    <!-- Lincoln Court Apartment Facade Silhouette -->
+    <polygon points="20,240 20,70 275,70 275,240" fill="#10151E" stroke="#1D2433" stroke-width="1.5"/>
+    <rect x="40" y="90" width="35" height="50" fill="#050609" stroke="#222B3D" stroke-width="1.5"/>
+    <rect x="95" y="90" width="35" height="50" fill="#050609" stroke="#222B3D" stroke-width="1.5"/>
+    <!-- Lit Apartment Window (Apt 303) -->
+    <rect x="150" y="90" width="35" height="50" fill="#E2B158" fill-opacity="0.8" stroke="#F3EFE6" stroke-width="1.5"/>
+    <line x1="167" y1="90" x2="167" y2="140" stroke="#000" stroke-width="1"/>
+    <line x1="150" y1="115" x2="185" y2="115" stroke="#000" stroke-width="1"/>
+    <!-- Silhouette of woman looking through blinds (Frechette) -->
+    <circle cx="167" cy="110" r="8" fill="#0B0C10"/>
+
+    <rect x="205" y="90" width="35" height="50" fill="#050609" stroke="#222B3D" stroke-width="1.5"/>
+
+    <!-- Building Entrance Arch -->
+    <path d="M120,240 L120,180 Q147,160 175,180 L175,240 Z" fill="#07090C" stroke="#2D384D" stroke-width="2"/>
+    <text x="147" y="172" fill="#F3EFE6" font-family="'Barlow Condensed', sans-serif" font-size="9" text-anchor="middle" letter-spacing="1">LINCOLN COURT</text>
+
+    <!-- Manager Reporting at Telephone (Lower Section) -->
+    <rect x="20" y="270" width="255" height="230" fill="#090B0F" stroke="#171D28" stroke-width="1"/>
+    <!-- Telephone Operator Desk Lamp -->
+    <circle cx="70" cy="330" r="45" fill="#E2B158" fill-opacity="0.15"/>
+    <!-- Manager Profile Silhouette speaking into candle-stick phone -->
+    <path d="M140,380 C120,380 115,340 135,320 C155,300 170,330 160,380 Z" fill="#18202B"/>
+    <line x1="80" y1="360" x2="80" y2="430" stroke="#F3EFE6" stroke-width="3"/>
+    <circle cx="80" cy="360" r="10" fill="#000" stroke="#F3EFE6" stroke-width="2"/>
+    <path d="M80,360 Q105,355 125,350" stroke="#F3EFE6" stroke-width="2" fill="none"/>
+
+    <!-- Panel Caption -->
+    <text x="35" y="445" fill="#F3EFE6" font-family="'Source Sans 3', sans-serif" font-weight="600" font-size="13">Suspicious Tenants Reported</text>
+    <text x="35" y="468" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">Building manager reports new tenants</text>
+    <text x="35" y="484" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">under alias 'Hellman' acting strangely.</text>
+  </g>
+
+  <!-- PANEL 2: THE SURVEILLANCE (March 31, Morning) -->
+  <g id="panel-surveillance" transform="translate(350, 70)">
+    <!-- Panel Box -->
+    <rect width="295" height="540" fill="#0C0F15" stroke="#1F2837" stroke-width="2" rx="3"/>
+    
+    <!-- Panel Header -->
+    <rect width="295" height="42" fill="#131822" rx="3"/>
+    <text x="18" y="27" fill="#F3EFE6" font-family="'Barlow Condensed', sans-serif" font-weight="600" font-size="16" letter-spacing="1.5">2. THE STAKEOUT</text>
+    <text x="195" y="27" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="12">MARCH 31 AM</text>
+
+    <!-- Interior Hallway & Staircase Perspective -->
+    <polygon points="20,400 20,70 275,70 275,400" fill="#0A0C11"/>
+    <!-- Staircase Steps -->
+    <polygon points="30,380 180,340 180,355 30,395" fill="#19202C"/>
+    <polygon points="45,355 195,315 195,330 45,370" fill="#151A24"/>
+    <polygon points="60,330 210,290 210,305 60,345" fill="#12161E"/>
+    <polygon points="75,305 225,265 225,280 75,320" fill="#0E1218"/>
+
+    <!-- Agent Silhouette Watching with Fedora (In Foreground) -->
+    <g transform="translate(70, 200)">
+      <ellipse cx="60" cy="55" rx="20" ry="7" fill="#000"/>
+      <path d="M60,55 C45,55 45,35 60,35 C75,35 75,55 60,55 Z" fill="#000"/>
+      <polygon points="35,70 85,70 100,200 20,200" fill="#07090D" stroke="#161C26" stroke-width="2"/>
+    </g>
+
+    <!-- Associate Homer Van Meter Enters the Stairwell -->
+    <g transform="translate(160, 160)">
+      <ellipse cx="40" cy="45" rx="14" ry="5" fill="#1A212E"/>
+      <path d="M40,45 C30,45 30,30 40,30 C50,30 50,45 40,45 Z" fill="#1A212E"/>
+      <polygon points="25,55 55,55 65,150 15,150" fill="#141923"/>
+    </g>
+
+    <!-- Tension Flash Line between the two figures -->
+    <line x1="140" y1="240" x2="185" y2="210" stroke="#C62F42" stroke-width="2" stroke-dasharray="4,4"/>
+
+    <!-- Panel Caption -->
+    <rect x="20" y="420" width="255" height="90" fill="#090B0F" stroke="#171D28" stroke-width="1"/>
+    <text x="35" y="445" fill="#F3EFE6" font-family="'Source Sans 3', sans-serif" font-weight="600" font-size="13">Agents Converge on the Hallway</text>
+    <text x="35" y="468" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">Federal agents and St. Paul detectives</text>
+    <text x="35" y="484" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">confront Van Meter on the stairs as</text>
+    <text x="35" y="500" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">they prepare to knock on Apartment 303.</text>
+  </g>
+
+  <!-- PANEL 3: THE CONFRONTATION & ESCAPE (March 31, 10:30 AM) -->
+  <g id="panel-confrontation" transform="translate(670, 70)">
+    <!-- Panel Box -->
+    <rect width="295" height="540" fill="#0C0F15" stroke="#1F2837" stroke-width="2" rx="3"/>
+    
+    <!-- Panel Header -->
+    <rect width="295" height="42" fill="#131822" rx="3"/>
+    <text x="18" y="27" fill="#F3EFE6" font-family="'Barlow Condensed', sans-serif" font-weight="600" font-size="16" letter-spacing="1.5">3. CONFRONTATION</text>
+    <text x="195" y="27" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="12">10:30 AM</text>
+
+    <!-- Apartment Door 303 Blasted by Gunfire -->
+    <rect x="30" y="65" width="130" height="230" fill="#10151F" stroke="#253042" stroke-width="2"/>
+    <text x="95" y="115" fill="#F3EFE6" font-family="'Barlow Condensed', sans-serif" font-size="16" font-weight="600" text-anchor="middle">303</text>
+    
+    <!-- Bullet Holes with Crimson Haloes -->
+    <circle cx="70" cy="140" r="3" fill="#000" stroke="#C62F42" stroke-width="1.5"/>
+    <circle cx="85" cy="155" r="3" fill="#000" stroke="#C62F42" stroke-width="1.5"/>
+    <circle cx="110" cy="135" r="3" fill="#000" stroke="#C62F42" stroke-width="1.5"/>
+    <circle cx="95" cy="170" r="3" fill="#000" stroke="#C62F42" stroke-width="1.5"/>
+
+    <!-- High-Impact Muzzle Flash from Door Opening -->
+    <polygon points="160,180 280,120 250,200 290,240 160,210" fill="url(#muzzle-flash)"/>
+    <polygon points="160,185 240,150 220,195 250,215 160,200" fill="#FFF8E0"/>
+
+    <!-- Escape Down Rear Alley Silhouette -->
+    <polygon points="20,400 20,290 275,290 275,400" fill="#080A0E"/>
+    <!-- Alley Walls & Escape Car -->
+    <path d="M120,380 L180,380 L195,350 L105,350 Z" fill="#020304" stroke="#1D2433" stroke-width="1"/>
+    <!-- Wounded Fugitive & Companion Running -->
+    <circle cx="70" cy="330" r="7" fill="#C62F42"/> <!-- Dillinger with wounded leg -->
+    <polygon points="63,338 77,338 82,380 58,380" fill="#000"/>
+    <circle cx="95" cy="335" r="6" fill="#F3EFE6"/> <!-- Frechette fleeing beside him -->
+    <polygon points="90,342 100,342 105,380 85,380" fill="#0A0C10"/>
+
+    <!-- Panel Caption -->
+    <rect x="20" y="420" width="255" height="90" fill="#090B0F" stroke="#171D28" stroke-width="1"/>
+    <text x="35" y="445" fill="#F3EFE6" font-family="'Source Sans 3', sans-serif" font-weight="600" font-size="13">Gunfire & Rear Alley Escape</text>
+    <text x="35" y="468" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">Dillinger fires through the door,</text>
+    <text x="35" y="484" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">absorbing a bullet wound before</text>
+    <text x="35" y="500" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">fleeing with Frechette down the alley.</text>
+  </g>
+
+  <!-- Reconstruction Label Badge -->
+  <rect x="30" y="25" width="230" height="28" fill="#0B0C10" fill-opacity="0.85" stroke="#F3EFE6" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="40" y="44" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="12" letter-spacing="1">ILLUSTRATED RECONSTRUCTION</text>
+
+  <rect width="1000" height="650" fill="none" stroke="#F3EFE6" stroke-opacity="0.15" stroke-width="2"/>
+</svg>

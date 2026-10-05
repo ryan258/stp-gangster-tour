@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%" role="img" aria-labelledby="skyline-title skyline-desc">
+  <title id="skyline-title">Saint Paul Skyline Above the Mississippi River</title>
+  <desc id="skyline-desc">High-contrast graphic noir illustration of the Saint Paul skyline reflected in the Mississippi River with a single crimson reflection.</desc>
+  <defs>
+    <linearGradient id="sky-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050608"/>
+      <stop offset="60%" stop-color="#0E1117"/>
+      <stop offset="100%" stop-color="#1A202C"/>
+    </linearGradient>
+    <linearGradient id="water-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A0C10"/>
+      <stop offset="100%" stop-color="#040507"/>
+    </linearGradient>
+    <linearGradient id="crimson-glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C62F42" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#C62F42" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#C62F42" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="noir-grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0"/>
+      <feComposite in2="SourceGraphic" in="glitch" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="1200" height="480" fill="url(#sky-grad)"/>
+
+  <!-- Distant City Haze / Moon Glow -->
+  <circle cx="950" cy="180" r="140" fill="#F3EFE6" fill-opacity="0.04"/>
+  <circle cx="950" cy="180" r="70" fill="#F3EFE6" fill-opacity="0.08"/>
+
+  <!-- River Bluff Silhouettes (Left Bank) -->
+  <path d="M0,450 Q200,430 450,460 L450,480 L0,480 Z" fill="#0A0D12"/>
+  <path d="M0,420 Q180,410 380,440 L380,480 L0,480 Z" fill="#12161F"/>
+
+  <!-- Distant Skyline Silhouettes -->
+  <polygon points="120,440 120,380 150,380 150,440" fill="#151A24"/>
+  <polygon points="180,440 180,340 230,340 230,440" fill="#181E2A"/>
+  <polygon points="260,440 260,310 290,290 320,310 320,440" fill="#1C2331"/>
+
+  <!-- First National Bank Building with Tower Beacon -->
+  <polygon points="480,450 480,210 540,210 540,160 550,160 550,130 560,130 560,450" fill="#0B0C10"/>
+  <rect x="495" y="230" width="6" height="12" fill="#F3EFE6" fill-opacity="0.7"/>
+  <rect x="515" y="260" width="6" height="12" fill="#F3EFE6" fill-opacity="0.5"/>
+  <rect x="495" y="290" width="6" height="12" fill="#F3EFE6" fill-opacity="0.6"/>
+
+  <!-- High-Rise Silhouettes & Church Spires -->
+  <polygon points="580,450 580,260 620,260 620,450" fill="#141822"/>
+  <polygon points="630,450 630,220 645,180 660,220 660,450" fill="#0E121A"/>
+  <polygon points="670,450 670,280 720,280 720,450" fill="#161B26"/>
+  <polygon points="740,450 740,320 780,320 780,450" fill="#1A202C"/>
+
+  <!-- Landmark Center Romanesque Turrets in Skyline Silhouette -->
+  <polygon points="380,440 380,330 400,280 420,330 420,440" fill="#0D1017"/>
+  <polygon points="425,440 425,350 445,350 445,440" fill="#0E1119"/>
+
+  <!-- Wabasha Street Bridge / High Bridge Piers -->
+  <path d="M0,455 Q600,430 1200,455" stroke="#252D3D" stroke-width="6" fill="none"/>
+  <line x1="280" y1="445" x2="280" y2="480" stroke="#0B0C10" stroke-width="12"/>
+  <line x1="600" y1="440" x2="600" y2="480" stroke="#0B0C10" stroke-width="14"/>
+  <line x1="920" y1="445" x2="920" y2="480" stroke="#0B0C10" stroke-width="12"/>
+
+  <!-- Mississippi River Surface -->
+  <rect y="480" width="1200" height="220" fill="url(#water-grad)"/>
+
+  <!-- River Water Ripples and Light Reflections -->
+  <line x1="100" y1="510" x2="250" y2="510" stroke="#F3EFE6" stroke-opacity="0.08" stroke-width="2"/>
+  <line x1="180" y1="535" x2="320" y2="535" stroke="#F3EFE6" stroke-opacity="0.06" stroke-width="1.5"/>
+  <line x1="700" y1="520" x2="850" y2="520" stroke="#F3EFE6" stroke-opacity="0.07" stroke-width="2"/>
+  <line x1="650" y1="560" x2="820" y2="560" stroke="#F3EFE6" stroke-opacity="0.05" stroke-width="1.5"/>
+
+  <!-- The One Crimson Reflection (Spec R1: "one crimson reflection") -->
+  <polygon points="535,475 565,475 580,700 520,700" fill="url(#crimson-glow)"/>
+  <ellipse cx="550" cy="530" rx="35" ry="6" fill="#C62F42" fill-opacity="0.6"/>
+  <ellipse cx="548" cy="570" rx="45" ry="5" fill="#C62F42" fill-opacity="0.4"/>
+  <ellipse cx="552" cy="620" rx="60" ry="4" fill="#C62F42" fill-opacity="0.3"/>
+  <ellipse cx="550" cy="665" rx="40" ry="3" fill="#C62F42" fill-opacity="0.2"/>
+
+  <!-- High-contrast Bluff Foreground (Right Foreground) -->
+  <path d="M780,700 L850,560 Q1020,530 1200,540 L1200,700 Z" fill="#07080B"/>
+  <path d="M920,700 L980,590 Q1100,575 1200,580 L1200,700 Z" fill="#0B0C10"/>
+
+  <!-- Graphic Border Vignette -->
+  <rect width="1200" height="700" fill="none" stroke="#F3EFE6" stroke-opacity="0.12" stroke-width="2"/>
+</svg>

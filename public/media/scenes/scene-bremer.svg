@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%" role="img" aria-labelledby="scene-bremer-title scene-bremer-desc">
+  <title id="scene-bremer-title">Lexington and Goodrich Intersection — Winter 1934</title>
+  <desc id="scene-bremer-desc">Illustrated reconstruction: Graphic noir winter impression of the Lexington and Goodrich residential intersection in January 1934, showing snow-covered curbs, bare oak branches, glowing streetlamps in morning fog, and an idling automobile with open door.</desc>
+  <defs>
+    <linearGradient id="winter-fog" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080A0E"/>
+      <stop offset="50%" stop-color="#141A24"/>
+      <stop offset="100%" stop-color="#1E2736"/>
+    </linearGradient>
+    <radialGradient id="frost-halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FFFDF5" stop-opacity="0.7"/>
+      <stop offset="40%" stop-color="#F3EFE6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="snow-ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#242F40"/>
+      <stop offset="40%" stop-color="#161E2B"/>
+      <stop offset="100%" stop-color="#080B10"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Winter Morning Foggy Sky -->
+  <rect width="1000" height="420" fill="url(#winter-fog)"/>
+
+  <!-- Residential Victorian / Craftsman House Silhouettes (Crocus Hill Area) -->
+  <polygon points="50,420 50,220 120,150 190,220 190,420" fill="#0C0F16" stroke="#1F2838" stroke-width="2"/>
+  <polygon points="190,420 190,250 280,180 370,250 370,420" fill="#0E121B" stroke="#1F2838" stroke-width="2"/>
+  
+  <polygon points="650,420 650,230 760,140 870,230 870,420" fill="#0B0E14" stroke="#1A2230" stroke-width="2"/>
+  <polygon points="870,420 870,260 950,190 1020,260 1020,420" fill="#080A0F" stroke="#18202E" stroke-width="2"/>
+
+  <!-- Bare Winter Trees Cast Stark Graphic Silhouettes -->
+  <!-- Left Tree -->
+  <path d="M240,420 L245,280 Q250,220 220,160 M245,280 Q260,200 300,140 M245,280 L250,220 Q230,170 190,130" stroke="#050608" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- Right Tree -->
+  <path d="M780,420 L775,270 Q760,190 730,130 M775,270 Q790,190 840,120 M775,270 L770,210 Q790,160 810,110" stroke="#050608" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+  <!-- Streetlamps with Glowing Winter Halo (Lexington & Goodrich) -->
+  <circle cx="340" cy="240" r="140" fill="url(#frost-halo)"/>
+  <line x1="340" y1="200" x2="340" y2="420" stroke="#06070A" stroke-width="6"/>
+  <!-- Ornate Cast Iron Lamp Arm -->
+  <path d="M330,200 Q340,190 350,200 L345,240 L335,240 Z" fill="#F3EFE6" stroke="#000" stroke-width="1"/>
+
+  <!-- Winter Intersection Ground (Snow & Slush Rutted Pavement) -->
+  <rect y="420" width="1000" height="230" fill="url(#snow-ground)"/>
+
+  <!-- Snowdrift Curbs (High Contrast White / Ice Blue) -->
+  <path d="M0,450 Q200,430 420,450 L420,465 Q200,445 0,465 Z" fill="#F3EFE6" fill-opacity="0.85"/>
+  <path d="M580,450 Q800,430 1000,450 L1000,465 Q800,445 580,465 Z" fill="#F3EFE6" fill-opacity="0.85"/>
+
+  <!-- Cross-street Tire Tracks in Snow (Leading to Ambush Area) -->
+  <path d="M150,650 Q250,560 380,480" stroke="#080A0E" stroke-width="12" fill="none"/>
+  <path d="M190,650 Q290,560 410,480" stroke="#080A0E" stroke-width="12" fill="none"/>
+  
+  <path d="M520,480 Q620,550 780,650" stroke="#080A0E" stroke-width="14" fill="none"/>
+  <path d="M550,480 Q650,550 820,650" stroke="#080A0E" stroke-width="14" fill="none"/>
+
+  <!-- Interrupted Routine: Edward Bremer's Abandoned Car (Open Door) -->
+  <!-- No graphic injury or violence depicted per spec -->
+  <g transform="translate(360, 390)">
+    <!-- Car Body -->
+    <path d="M30,85 C50,55 90,35 140,35 L220,35 C240,35 270,55 280,75 L290,85 L300,95 L10,95 C15,88 25,85 30,85 Z" fill="#080A0E" stroke="#222B3B" stroke-width="2"/>
+    <!-- Car Cabin -->
+    <path d="M60,40 L90,12 L190,12 L230,40 Z" fill="#040506" stroke="#2A3548" stroke-width="2"/>
+    <polygon points="95,18 140,18 140,38 75,38" fill="#F3EFE6" fill-opacity="0.3"/>
+    
+    <!-- Open Driver's Door Angled Outward (The Sign of Sudden Abduction) -->
+    <polygon points="140,38 185,25 195,95 140,95" fill="#0E121B" stroke="#F3EFE6" stroke-opacity="0.4" stroke-width="2"/>
+    
+    <!-- Wheels in Snow Slush -->
+    <circle cx="65" cy="95" r="22" fill="#020304" stroke="#444" stroke-width="2"/>
+    <circle cx="250" cy="95" r="22" fill="#020304" stroke="#444" stroke-width="2"/>
+    <!-- Snow piled on car running board -->
+    <rect x="90" y="85" width="130" height="6" fill="#F3EFE6" fill-opacity="0.9" rx="2"/>
+
+    <!-- Abandoned Fedora Hat on the Cold Road (One Selective Red Ribbon Accent) -->
+    <ellipse cx="230" cy="140" rx="16" ry="6" fill="#050608"/>
+    <ellipse cx="230" cy="138" rx="10" ry="8" fill="#0B0D12"/>
+    <path d="M220,138 Q230,132 240,138" stroke="#C62F42" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- Graphic Street Signpost: LEXINGTON PKWY / GOODRICH AVE -->
+  <g transform="translate(680, 340)">
+    <line x1="20" y1="20" x2="20" y2="150" stroke="#06070A" stroke-width="6"/>
+    <!-- Sign Plates -->
+    <rect x="20" y="30" width="140" height="24" fill="#0B0E14" stroke="#F3EFE6" stroke-width="1.5"/>
+    <text x="90" y="47" fill="#F3EFE6" font-family="'Barlow Condensed', sans-serif" font-weight="600" font-size="12" letter-spacing="1" text-anchor="middle">S. LEXINGTON PKWY</text>
+    
+    <rect x="-60" y="58" width="120" height="24" fill="#0B0E14" stroke="#F3EFE6" stroke-width="1.5"/>
+    <text x="0" y="75" fill="#F3EFE6" font-family="'Barlow Condensed', sans-serif" font-weight="600" font-size="12" letter-spacing="1" text-anchor="middle">GOODRICH AVE</text>
+  </g>
+
+  <!-- Reconstruction Label Badge -->
+  <rect x="25" y="25" width="230" height="28" fill="#0B0C10" fill-opacity="0.85" stroke="#F3EFE6" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="35" y="44" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="12" letter-spacing="1">ILLUSTRATED RECONSTRUCTION</text>
+
+  <rect width="1000" height="650" fill="none" stroke="#F3EFE6" stroke-opacity="0.15" stroke-width="2"/>
+</svg>
