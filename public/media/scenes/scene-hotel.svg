@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%" role="img" aria-labelledby="scene-hotel-title scene-hotel-desc">
   <title id="scene-hotel-title">The Saint Paul Hotel Facade and Illuminated Suite</title>
-  <desc id="scene-hotel-desc">Illustrated reconstruction: Imposing Italian Renaissance Revival brick and stone facade of The Saint Paul Hotel, with a single brightly illuminated corner suite window on the fourth floor and an interpretive interior room vignette.</desc>
+  <desc id="scene-hotel-desc">Illustrated reconstruction: Imposing Italian Renaissance Revival brick and stone facade of The Saint Paul Hotel, with an interpretive illuminated window and an interpretive interior room vignette.</desc>
   <defs>
     <linearGradient id="window-glow" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#FFF8E7"/>
@@ -101,7 +101,7 @@
 
     <!-- Explanatory Caption inside Vignette -->
     <rect x="25" y="450" width="280" height="70" fill="#06080B" stroke="#1A212E" stroke-width="1"/>
-    <text x="35" y="472" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">Leon Gleckman's headquarters suite.</text>
+    <text x="35" y="472" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">Generalized suite; no room number asserted.</text>
     <text x="35" y="490" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">Hotel history places Malone in another room;</text>
     <text x="35" y="508" fill="#F3EFE6" font-family="'Source Sans 3', sans-serif" font-weight="600" font-size="11">Court records tracked the money, not the gossip.</text>
   </g>

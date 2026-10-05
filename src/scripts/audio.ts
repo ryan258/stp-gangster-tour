@@ -29,6 +29,7 @@ export class TourAudioController {
  private getNarration(){
   if(this.narration)return this.narration;
   const audio=new Audio();audio.preload='none';audio.src=this.root.dataset.narrationSrc!;audio.playbackRate=this.prefs.playbackSpeed;
+  audio.addEventListener('pause',()=>{if(this.phase==='playing'){this.phase='paused';this.narrationRequest++;this.applyVolumes();this.render();}});
   audio.addEventListener('ended',()=>{this.phase='ended';this.applyVolumes();this.status('Narration ended. Replay is available.');this.render();});
   audio.addEventListener('error',()=>{this.narrationRequest++;this.phase='error';this.applyVolumes();this.status('Narration could not load. Retry or read the introduction below.');this.render();});
   this.narration=audio;this.applyVolumes();return audio;
@@ -40,7 +41,7 @@ export class TourAudioController {
   if(restart||this.phase==='ended')audio.currentTime=0;
   if(this.phase==='error')audio.load();
   const request=++this.narrationRequest;this.phase='loading';this.status('Loading narration…');this.render();this.applyVolumes();
-  try{await audio.play();if(request!==this.narrationRequest)return;this.phase='playing';this.applyVolumes();this.status('Narration playing.');}
+  try{await audio.play();if(request!==this.narrationRequest){if(!['loading','playing'].includes(this.phase))audio.pause();return;}this.phase='playing';this.applyVolumes();this.status('Narration playing.');}
   catch{if(request!==this.narrationRequest)return;this.phase='error';this.status('Playback did not start. Retry narration or read the text below.');}
   this.render();
  }
@@ -53,7 +54,7 @@ export class TourAudioController {
   if(!this.mixerSupported){this.status('Use device volume for narration. Ambience is unavailable on this browser.');return;}
   if(!this.ambience){this.ambience=new Audio();this.ambience.preload='none';this.ambience.src=this.root.dataset.ambienceSrc!;this.ambience.loop=true;this.ambience.addEventListener('error',()=>{this.stopAmbience();this.status('Ambience could not load. Toggle ambience to retry.');this.render();});}
   this.ambience.muted=false;this.button('btn-mute-all')?.setAttribute('aria-pressed','false');this.ambienceOn=true;const request=++this.ambienceRequest;this.applyVolumes();this.render();
-  try{await this.ambience.play();if(request!==this.ambienceRequest)return;this.status('Ambience playing.');}catch{if(request!==this.ambienceRequest)return;this.stopAmbience();this.status('Ambience did not start. Toggle ambience to retry.');}this.render();
+  try{await this.ambience.play();if(request!==this.ambienceRequest){if(!this.ambienceOn)this.ambience.pause();return;}this.status('Ambience playing.');}catch{if(request!==this.ambienceRequest)return;this.stopAmbience();this.status('Ambience did not start. Toggle ambience to retry.');}this.render();
  }
  initUI(){
   this.button('btn-audio-play')?.addEventListener('click',()=>void this.play());

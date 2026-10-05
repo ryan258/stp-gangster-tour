@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%" role="img" aria-labelledby="scene-hamm-title scene-hamm-desc">
   <title id="scene-hamm-title">The Theodore Hamm Brewery Context Landscape</title>
-  <desc id="scene-hamm-desc">Illustrated reconstruction: High-contrast industrial brick brewhouse silhouettes, smokestacks, and a period sedan on Cable Street, paired with a quiet forensic evidence panel representing the silver nitrate fingerprint extraction.</desc>
+  <desc id="scene-hamm-desc">Illustrated reconstruction: High-contrast industrial brick brewhouse silhouettes, smokestacks, and a generic period sedan, paired with a quiet forensic evidence panel representing the silver nitrate fingerprint extraction.</desc>
   <defs>
     <linearGradient id="dusk-sky" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#050608"/>
@@ -86,7 +86,7 @@
     <!-- Context Caveat Note -->
     <rect x="20" y="165" width="360" height="32" fill="#07090C" stroke="#1A212C" stroke-width="1"/>
     <text x="30" y="185" fill="#C62F42" font-family="'Source Sans 3', sans-serif" font-weight="600" font-size="11">CONTEXT LOCATION:</text>
-    <text x="145" y="185" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">Seizure at Cable St residence, not brewery.</text>
+    <text x="145" y="185" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">Abduction footprint unresolved; context only.</text>
   </g>
 
   <!-- Reconstruction Label Badge -->

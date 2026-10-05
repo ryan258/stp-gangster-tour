@@ -36,7 +36,7 @@ test('no-JavaScript reading and evidence work without inert controls',async({bro
 test('audio completion, retry, ducking, Calm view, zero volume and page return',async({page})=>{
  await page.addInitScript(()=>{
   const tracks:HTMLAudioElement[]=[];(window as any).__tracks=tracks;
-  class FakeAudio extends EventTarget {src='';preload='';loop=false;muted=false;volume=1;playbackRate=1;currentTime=0;paused=true;fail=false;constructor(){super();tracks.push(this as any);}play(){if(this.fail)return Promise.reject(new Error('blocked'));this.paused=false;return Promise.resolve();}pause(){this.paused=true;}load(){}}
+  class FakeAudio extends EventTarget {src='';preload='';loop=false;muted=false;volume=1;playbackRate=1;currentTime=0;paused=true;fail=false;pending=false;resolve:()=>void=()=>{};constructor(){super();tracks.push(this as any);}play(){if(this.fail)return Promise.reject(new Error('blocked'));if(this.pending)return new Promise<void>(resolve=>{this.resolve=()=>{this.paused=false;resolve();};});this.paused=false;return Promise.resolve();}pause(){this.paused=true;}load(){}}
   (window as any).Audio=FakeAudio;
   localStorage.setItem('stp-after-dark:preferences:v1',JSON.stringify({schemaVersion:1,narrationVolume:0,ambienceVolume:.2,calmView:false,playbackSpeed:1}));
  });
@@ -44,4 +44,10 @@ test('audio completion, retry, ducking, Calm view, zero volume and page return',
  await page.getByRole('button',{name:'Toggle ambience',exact:true}).click();expect(await page.evaluate(()=>(window as any).__tracks[1].volume)).toBe(.05);
  await page.getByRole('button',{name:'Calm view',exact:true}).click();expect(await page.evaluate(()=>(window as any).__tracks[1].paused)).toBe(true);expect(await page.evaluate(()=>(window as any).__tracks[0].paused)).toBe(false);await expect(page.getByRole('button',{name:'Toggle ambience',exact:true})).toHaveAttribute('aria-pressed','false');
  await page.evaluate(()=>(window as any).__tracks[0].dispatchEvent(new Event('ended')));await expect(page.getByRole('button',{name:'Replay narration',exact:true})).toBeVisible();await page.evaluate(()=>(window as any).__tracks[0].fail=true);await page.getByRole('button',{name:'Replay narration',exact:true}).click();await expect(page.getByRole('button',{name:'Retry narration',exact:true})).toBeVisible();await page.evaluate(()=>(window as any).__tracks[0].fail=false);await page.getByRole('button',{name:'Retry narration',exact:true}).click();await page.evaluate(()=>window.dispatchEvent(new PageTransitionEvent('pagehide')));await page.evaluate(()=>window.dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true})));await expect(page.getByRole('button',{name:'Resume narration',exact:true})).toBeVisible();expect(await page.evaluate(()=>(window as any).__tracks[0].paused)).toBe(true);
+ await page.evaluate(()=>(window as any).__tracks[0].pending=true);await page.getByRole('button',{name:'Resume narration',exact:true}).click();await page.getByRole('button',{name:'Cancel loading',exact:true}).click();await page.evaluate(()=>(window as any).__tracks[0].resolve());await expect(page.getByRole('button',{name:'Resume narration',exact:true})).toBeVisible();expect(await page.evaluate(()=>(window as any).__tracks[0].paused)).toBe(true);
+});
+
+test('unsupported audio mixing falls back to device narration volume',async({page})=>{
+ await page.addInitScript(()=>{class FixedVolumeAudio extends EventTarget {src='';preload='';currentTime=0;playbackRate=1;muted=false;get volume(){return 1;}set volume(_v:number){}play(){return Promise.resolve();}pause(){}load(){}}(window as any).Audio=FixedVolumeAudio;});
+ await page.goto(stop);await page.getByRole('button',{name:'Play narration',exact:true}).click();await expect(page.locator('[data-mixer-notice]')).toBeVisible();await expect(page.getByRole('button',{name:'Toggle ambience',exact:true})).toBeHidden();await expect(page.getByRole('button',{name:'Pause narration',exact:true})).toBeVisible();
 });

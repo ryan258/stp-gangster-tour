@@ -64,7 +64,7 @@
     <!-- Panel Header -->
     <rect width="295" height="42" fill="#131822" rx="3"/>
     <text x="18" y="27" fill="#F3EFE6" font-family="'Barlow Condensed', sans-serif" font-weight="600" font-size="16" letter-spacing="1.5">2. THE STAKEOUT</text>
-    <text x="195" y="27" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="12">MARCH 31 AM</text>
+    <text x="195" y="27" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="12">MARCH 31</text>
 
     <!-- Interior Hallway & Staircase Perspective -->
     <polygon points="20,400 20,70 275,70 275,400" fill="#0A0C11"/>
@@ -93,10 +93,10 @@
 
     <!-- Panel Caption -->
     <rect x="20" y="420" width="255" height="90" fill="#090B0F" stroke="#171D28" stroke-width="1"/>
-    <text x="35" y="445" fill="#F3EFE6" font-family="'Source Sans 3', sans-serif" font-weight="600" font-size="13">Agents Converge on the Hallway</text>
-    <text x="35" y="468" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">Federal agents and St. Paul detectives</text>
-    <text x="35" y="484" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">confront Van Meter on the stairs as</text>
-    <text x="35" y="500" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">the account describes approaching the apartment.</text>
+    <text x="35" y="445" fill="#F3EFE6" font-family="'Source Sans 3', sans-serif" font-weight="600" font-size="13">Surveillance in the Agency Account</text>
+    <text x="35" y="468" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">The FBI account describes officers</text>
+    <text x="35" y="484" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">watching the building, followed by</text>
+    <text x="35" y="500" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">an approach to the apartment.</text>
   </g>
 
   <!-- PANEL 3: THE CONFRONTATION & ESCAPE (March 31, MARCH 31) -->
@@ -136,9 +136,9 @@
     <!-- Panel Caption -->
     <rect x="20" y="420" width="255" height="90" fill="#090B0F" stroke="#171D28" stroke-width="1"/>
     <text x="35" y="445" fill="#F3EFE6" font-family="'Source Sans 3', sans-serif" font-weight="600" font-size="13">Gunfire &amp; Escape</text>
-    <text x="35" y="468" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">Dillinger fires through the door,</text>
-    <text x="35" y="484" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">absorbing a bullet wound before</text>
-    <text x="35" y="500" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">fleeing with Frechette down the alley.</text>
+    <text x="35" y="468" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">The account describes gunfire and</text>
+    <text x="35" y="484" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">Dillinger escaping with a wound,</text>
+    <text x="35" y="500" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">accompanied by Frechette.</text>
   </g>
 
   <!-- Reconstruction Label Badge -->
