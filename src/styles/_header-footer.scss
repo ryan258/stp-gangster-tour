@@ -53,7 +53,7 @@
   gap: 0.75rem;
   font-family: $font-display;
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: $text-muted;
   letter-spacing: 0.02em;
 
@@ -78,7 +78,7 @@
     padding: 0.35rem 0.2rem;
     color: $text-bone;
     font-family: $font-body;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
     position: relative;
@@ -112,14 +112,14 @@
   align-items: center;
   gap: 0.4rem;
   padding: 0.35rem 0.9rem;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 500;
   color: $text-bone;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 9999px;
   cursor: pointer;
-  min-height: 36px;
+  min-height: 44px;
   transition: all $transition-fast;
 
   &:hover {
@@ -136,7 +136,7 @@
 
   .icon-moon {
     display: inline-block;
-    font-size: 0.95rem;
+    font-size: 1rem;
     opacity: 0.85;
   }
 }
@@ -171,7 +171,7 @@
     p {
       margin: 0;
       font-style: italic;
-      font-size: 0.88rem;
+      font-size: 1rem;
       color: $text-muted;
     }
   }
@@ -186,7 +186,7 @@
       align-items: center;
       min-height: 44px;
       color: $text-muted;
-      font-size: 0.9rem;
+      font-size: 1rem;
       text-decoration: none;
       transition: color $transition-fast;
 
@@ -201,7 +201,7 @@
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: $text-dim;
 
     .edition-tag {
@@ -225,4 +225,13 @@
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+// Small screens: a sticky multi-row header used ~25% of a 375px viewport, so it scrolls away below 800px.
+.site-nav > a { min-width: 44px; justify-content: center; }
+@media (max-width: 800px) {
+  .site-header { position: static; }
+  .site-tagline { display: none; }
+  .header-container { gap: 0.25rem 0.75rem; padding: 0.5rem 0; }
+  .site-nav { width: 100%; margin-left: 0; gap: 0 1rem; }
 }

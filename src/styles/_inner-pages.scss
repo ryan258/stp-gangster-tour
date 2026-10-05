@@ -32,7 +32,7 @@
 
     figcaption {
       padding: 0.75rem 1rem;
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: $text-muted;
       background: rgba(9, 11, 14, 0.6);
       border-top: 1px solid $border-subtle;
@@ -41,7 +41,7 @@
 
   .card {
     margin-top: 1rem;
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 }
 
@@ -161,7 +161,7 @@
     padding-top: 1rem;
     border-top: 1px dashed $border-subtle;
     margin-top: 0.75rem;
-    font-size: 0.98rem;
+    font-size: 1rem;
     color: $text-bone;
   }
 }
@@ -284,7 +284,7 @@
 
   .profile-role {
     font-family: $font-serif-caps;
-    font-size: 0.8rem;
+    font-size: 1rem;
     letter-spacing: 0.1em;
     color: $crimson-bright;
     text-transform: uppercase;
@@ -303,7 +303,7 @@
   border: 1px solid $border-subtle;
   border-radius: 6px;
   padding: 1rem 1.25rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
 
   .citation-source {
     font-style: italic;

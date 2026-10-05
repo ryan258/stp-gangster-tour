@@ -52,7 +52,7 @@
     display: inline-block;
     color: $crimson-bright;
     font-family: $font-serif-caps;
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -84,7 +84,7 @@
 
   .hero-tagline {
     font-family: $font-serif-caps;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.14em;
     color: $text-bone;
@@ -144,7 +144,7 @@
     .script-sub {
       display: block;
       font-family: $font-serif-caps;
-      font-size: 0.68rem;
+      font-size: 1rem;
       letter-spacing: 0.18em;
       color: rgba(255, 255, 255, 0.4);
       margin-top: 0.35rem;
@@ -192,7 +192,7 @@
 
     p {
       color: $paper-muted;
-      font-size: 0.98rem;
+      font-size: 1rem;
       line-height: 1.6;
       margin-bottom: 1.1rem;
 
@@ -202,7 +202,7 @@
     }
 
     .content-warning {
-      font-size: 0.88rem;
+      font-size: 1rem;
       line-height: 1.5;
       font-style: italic;
       color: color.adjust($paper-muted, $lightness: 10%);
@@ -211,7 +211,7 @@
 
     .dossier-icons {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.5rem), 1fr));
       gap: 0.75rem;
       border-top: 1px dashed rgba(0, 0, 0, 0.2);
       padding-top: 1.25rem;
@@ -229,8 +229,9 @@
         }
 
         .icon-label {
+          overflow-wrap: anywhere;
           font-family: $font-serif-caps;
-          font-size: 0.7rem;
+          font-size: 1rem;
           font-weight: 700;
           letter-spacing: 0.08em;
           color: $paper-ink;
@@ -387,7 +388,7 @@
       .header-sub {
         font-family: $font-display;
         font-style: italic;
-        font-size: 0.95rem;
+        font-size: 1rem;
         color: $text-muted;
       }
 
@@ -406,7 +407,7 @@
           align-items: center;
           justify-content: center;
           cursor: pointer;
-          font-size: 0.95rem;
+          font-size: 1rem;
           transition: all $transition-fast;
 
           &:hover {
@@ -483,7 +484,7 @@
 
     .card-period {
       font-family: $font-serif-caps;
-      font-size: 0.75rem;
+      font-size: 1rem;
       font-weight: 700;
       letter-spacing: 0.12em;
       color: #d1c8b8;
@@ -495,7 +496,7 @@
 
       .visited-badge {
         display: inline-block;
-        font-size: 0.7rem;
+        font-size: 1rem;
         padding: 0.1rem 0.4rem;
         background: rgba(211, 47, 47, 0.2);
         border: 1px solid $crimson-bright;
@@ -526,7 +527,7 @@
     }
 
     .card-synopsis {
-      font-size: 0.92rem;
+      font-size: 1rem;
       line-height: 1.55;
       color: #b5bcc8;
       margin: 0 0 1.25rem;
@@ -627,7 +628,7 @@
 
     .banner-eyebrow {
       font-family: $font-serif-caps;
-      font-size: 0.82rem;
+      font-size: 1rem;
       font-weight: 700;
       letter-spacing: 0.14em;
       color: $text-cream;
@@ -734,7 +735,7 @@
       gap: 0.5rem;
 
       .icon-col .icon-label {
-        font-size: 0.65rem;
+        font-size: 1rem;
       }
     }
   }

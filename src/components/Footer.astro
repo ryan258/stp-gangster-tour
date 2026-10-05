@@ -1,12 +1,13 @@
 ---
-import {edition,routeURL,assetURL} from '../lib/catalog';
+import {edition,routeURL} from '../lib/catalog';
+import ArtImage from './ArtImage.astro';
 ---
 <footer class="site-footer experience-footer">
   <div class="footer-inner">
     <div class="footer-brand"><strong>{edition.title}</strong><p>A public history reading experience.</p></div>
-    <nav class="footer-links" aria-label="Footer"><a href={routeURL('/')}>Home</a><a href={routeURL('/prologue/')}>Prologue</a><a href={routeURL('/map/')}>Map</a><a href={routeURL('/casebook/')}>Casebook</a><a href={routeURL('/sources/#credits')}>Sources & credits</a><a href={routeURL('/epilogue/')}>Epilogue</a></nav>
+    <nav class="footer-links" aria-label="Footer"><a href={routeURL('/')}>Home</a><a href={routeURL('/prologue/')}>Prologue</a><a href={routeURL('/map/')}>Map</a><a href={routeURL('/casebook/')}>Casebook</a><a href={routeURL('/method/')}>Method</a><a href={routeURL('/sources/#credits')}>Sources & credits</a><a href={routeURL('/epilogue/')}>Epilogue</a></nav>
     <div class="footer-meta"><span class="edition-tag">Edition {edition.contentRevision}</span></div>
   </div>
-  <div class="footer-city"><img src={assetURL('/images/redesign/banner-bridge.webp')} alt="" width="1376" height="768" decoding="async"/><div class="container"><p class="footer-city-line">Same city.<br/>A different way of seeing it.</p><p class="footer-city-caption">Read at home. Follow the evidence.<br/>Atmospheric artwork · Saint Paul inspired</p></div></div>
+  <div class="footer-city"><ArtImage name="banner-bridge"/><div class="container"><p class="footer-city-line">Same city.<br/>A different way of seeing it.</p><p class="footer-city-caption">Read at home. Follow the evidence.<br/>Atmospheric artwork · Saint Paul inspired</p></div></div>
 </footer>
 <div id="live-announcer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>

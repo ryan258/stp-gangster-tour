@@ -1,20 +1,12 @@
 ---
-import {assetURL} from '../lib/catalog';
 interface Props {
-  audioSrc?: string;
-  narrationId?: string;
-  durationSeconds?: number;
-  ambienceSrc?: string;
+  audioSrc: string;
+  ambienceSrc: string;
 }
-const {
-  narrationId,
-  durationSeconds,
-  audioSrc = narrationId ? assetURL(`/media/audio/${narrationId}.mp3`) : '',
-  ambienceSrc = assetURL('/media/audio/ambience-city-rain.mp3')
-} = Astro.props;
+const {audioSrc, ambienceSrc} = Astro.props;
 ---
 
-<section class="audio-player audio-player-panel card" aria-label="Introduction audio" data-audio-player data-narration-src={audioSrc} data-ambience-src={ambienceSrc} data-duration={durationSeconds}>
+<section class="audio-player audio-player-panel card" aria-label="Introduction audio" data-audio-player data-narration-src={audioSrc} data-ambience-src={ambienceSrc}>
  <h2>Listen to the introduction</h2>
  <p class="muted">Synthesized macOS Samantha voice. Listening and pronunciation review pending. The complete transcript is the introduction text on this page.</p>
  <div data-audio-controls hidden>
@@ -32,6 +24,7 @@ const {
    <button type="button" class="btn-secondary" data-volume-channel="ambienceVolume" data-volume-delta="-0.1">Ambience quieter</button><button type="button" class="btn-secondary" data-volume-channel="ambienceVolume" data-volume-delta="0.1">Ambience louder</button>
   </div>
   <p data-volume-status class="muted" data-mixer-control></p>
+  <label class="audio-background-option"><input type="checkbox" id="audio-background"/> Keep sound playing when this tab is hidden (otherwise it pauses)</label>
   <p data-mixer-notice hidden>Use your device volume for narration. This browser does not support independent audio volume; ambience is disabled.</p>
   <p role="status" data-audio-status>Sound is off. Nothing downloads until you start a channel.</p>
  </div>

@@ -2,11 +2,5 @@
 import {claims,claimURL} from '../lib/catalog';
 interface Props {ids:string[];from?:string}
 const {ids,from}=Astro.props;
-const mappedClaims = ids.map((id, i) => {
-  const c = claims.find(item => item.id === id);
-  return { id, c, isLast: i === ids.length - 1 };
-});
 ---
-<p class="claim-links">Claim basis: {mappedClaims.map(({ id, c, isLast }) => (
-  <span><a href={claimURL(id, from)}>{id} — {c?.status}, {c?.evidenceBasis}</a>{!isLast ? '; ' : ''}</span>
-))}</p>
+<div class="claim-links"><span>Claim basis:</span><ul>{ids.map(id=>{const c=claims.find(item=>item.id===id);return <li><a href={claimURL(id,from)}>{id} — {c?.status}, {c?.evidenceBasis}</a></li>;})}</ul></div>

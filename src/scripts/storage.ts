@@ -1,14 +1,17 @@
 import edition from '../data/edition.json';
+import {base} from '../lib/base';
 // The small manifest is the only content needed by browser state validation.
 export const STOP_IDS: string[] = edition.stops;
-export const EVIDENCE_IDS = Array.from({length:14},(_,i)=>`E${String(i+1).padStart(2,'0')}`);
+export const EVIDENCE_IDS: string[] = edition.evidenceIds;
+export const STOP_LABELS: Record<string,string> = {...edition.stopLabels,prologue:'Prologue',epilogue:'Epilogue'};
+export const BLOCK_LABELS: Record<string,string> = {intro:'Introduction',record:'The record',metagame:'The underlying bargain',opening:'Opening'};
 export const PROGRESS_KEY='stp-after-dark:progress:v1';
 export const PREFS_KEY='stp-after-dark:preferences:v1';
 export type Bookmark={stopId:string;blockId:'intro'|'record'|'metagame'|'opening'};
 export interface Progress {schemaVersion:1;contentRevision:string;bookmark:Bookmark|null;visitedStops:string[];inspectedEvidence:string[];endingReached:boolean}
-export interface Preferences {schemaVersion:1;calmView:boolean;narrationVolume:number;ambienceVolume:number;playbackSpeed:number}
+export interface Preferences {schemaVersion:1;calmView:boolean;backgroundAudio:boolean;narrationVolume:number;ambienceVolume:number;playbackSpeed:number}
 export const defaultProgress=():Progress=>({schemaVersion:1,contentRevision:edition.contentRevision,bookmark:null,visitedStops:[],inspectedEvidence:[],endingReached:false});
-export const defaultPreferences=():Preferences=>({schemaVersion:1,calmView:false,narrationVolume:.7,ambienceVolume:.2,playbackSpeed:1});
+export const defaultPreferences=():Preferences=>({schemaVersion:1,calmView:false,backgroundAudio:false,narrationVolume:.7,ambienceVolume:.2,playbackSpeed:1});
 const object=(v:unknown):v is Record<string,unknown>=>typeof v==='object'&&v!==null&&!Array.isArray(v);
 const known=(v:unknown,allowed:string[])=>Array.isArray(v)?[...new Set(v.filter((s):s is string=>typeof s==='string'&&allowed.includes(s)))]:[];
 function parse(raw:string|null):Record<string,unknown> {
@@ -26,7 +29,7 @@ export function decodeProgress(raw:string|null):Progress {
  return p;
 }
 export function decodePreferences(raw:string|null):Preferences {
- const data=parse(raw),p=defaultPreferences();p.calmView=data.calmView===true;
+ const data=parse(raw),p=defaultPreferences();p.calmView=data.calmView===true;p.backgroundAudio=data.backgroundAudio===true;
  for(const key of ['narrationVolume','ambienceVolume'] as const) if(typeof data[key]==='number'&&Number.isFinite(data[key]))p[key]=Math.min(1,Math.max(0,data[key]));
  if(typeof data.playbackSpeed==='number'&&[.75,1,1.25,1.5].includes(data.playbackSpeed))p.playbackSpeed=data.playbackSpeed;
  return p;
@@ -45,16 +48,8 @@ function write(key:string,value:unknown):boolean {
 }
 export function saveProgress(patch:Partial<Progress>):boolean {progressMemory=decodeProgress(JSON.stringify({...getProgress(),...patch,schemaVersion:1}));const saved=write(PROGRESS_KEY,progressMemory);window.dispatchEvent(new Event('stp:progress'));return saved;}
 export function savePreferences(patch:Partial<Preferences>):boolean {preferencesMemory=decodePreferences(JSON.stringify({...getPreferences(),...patch,schemaVersion:1}));const saved=write(PREFS_KEY,preferencesMemory);window.dispatchEvent(new CustomEvent('stp:preferences',{detail:{...preferencesMemory}}));return saved;}
-export function saveBookmark(bookmarkOrStopId: Bookmark | string, blockId?: Bookmark['blockId']): boolean {
- if (typeof bookmarkOrStopId === 'string') {
-  return saveProgress({ bookmark: { stopId: bookmarkOrStopId, blockId: blockId || 'intro' } });
- }
- return saveProgress({ bookmark: bookmarkOrStopId });
-}
-export function markStopVisited(stopId: string): boolean {
- const p = getProgress();
- if (!STOP_IDS.includes(stopId) || p.visitedStops.includes(stopId)) return false;
- return saveProgress({ visitedStops: [...p.visitedStops, stopId] });
+export function saveBookmark(bookmark: Bookmark): boolean {
+ return saveProgress({ bookmark });
 }
 export function markEvidenceInspected(id:string):{added:boolean;saved:boolean} {
  const p=getProgress();if(!EVIDENCE_IDS.includes(id)||p.inspectedEvidence.includes(id))return {added:false,saved:!unavailable.has(PROGRESS_KEY)};
@@ -62,8 +57,6 @@ export function markEvidenceInspected(id:string):{added:boolean;saved:boolean} {
 }
 export function clearProgress():boolean {progressMemory=defaultProgress();const saved=write(PROGRESS_KEY,progressMemory);window.dispatchEvent(new Event('stp:progress'));return saved;}
 export function bookmarkURL(bookmark:Bookmark|null):string {
-  const rawBase = import.meta.env.BASE_URL || '/';
-  const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
   if(!bookmark)return `${base}map/`;
   return `${base}${STOP_IDS.includes(bookmark.stopId)?'stops/':''}${bookmark.stopId}/#${bookmark.blockId}`;
 }

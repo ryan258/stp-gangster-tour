@@ -103,7 +103,7 @@ figcaption {
   color: $crimson-bright;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
   font-family: $font-serif-caps;
 }
@@ -252,7 +252,7 @@ label {
 .badge {
   display: inline-block;
   padding: 0.2rem 0.6rem;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: $text-muted;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 9999px;
@@ -261,7 +261,7 @@ label {
 
 .preview-note {
   padding: 0.6rem max(1rem, calc((100% - 1200px) / 2));
-  font-size: 0.95rem;
+  font-size: 1rem;
   background: #1c2330;
   border-bottom: 1px solid $border-subtle;
   color: $text-bone;
@@ -290,7 +290,7 @@ label {
     line-height: 1.5;
   }
   .preview-note {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   .page-heading {
     margin-bottom: 1rem;
@@ -354,3 +354,14 @@ label {
   h2 { font-size: 20pt; }
   h3 { font-size: 16pt; }
 }
+
+// Interactive targets meet the 44px minimum (spec R7).
+.claim-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0 1rem; }
+.claim-links ul { display: contents; list-style: none; margin: 0; padding: 0; }
+.claim-links li { margin: 0; }
+.claim-links a,
+.presenter-target > a,
+.dossier-card-actions a,
+.location-record a { display: inline-flex; align-items: center; min-height: 44px; }
+.audio-background-option { display: flex; align-items: center; gap: 0.6rem; min-height: 44px; }
+.audio-background-option input { width: 1.5rem; height: 1.5rem; flex-shrink: 0; }

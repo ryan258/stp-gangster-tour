@@ -1,6 +1,7 @@
 ---
-import {stops,stopURL,assetURL} from '../lib/catalog';
+import {stops,stopURL} from '../lib/catalog';
+import ArtImage from './ArtImage.astro';
 ---
 <ol class="reading-trail" role="list">
-  {stops.map(s=><li><a href={stopURL(s.id)}><img src={assetURL(`/images/redesign/card-${s.id}.webp`)} alt="" width="96" height="72" decoding="async"/><span class="trail-number" aria-hidden="true">{String(s.order).padStart(2,'0')}</span><span class="trail-title"><small>{s.period}</small><strong>{s.title}</strong></span><span class="trail-status" data-visited-stop={s.id} data-js-control hidden></span><span class="trail-arrow" aria-hidden="true">→</span></a></li>)}
+  {stops.map(s=><li><a href={stopURL(s.id)}><ArtImage name={`card-${s.id}`} width={96} height={72} sizes="96px"/><span class="trail-number" aria-hidden="true">{String(s.order).padStart(2,'0')}</span><span class="trail-title"><small>{s.period}</small><strong>{s.title}</strong></span><span class="trail-status" data-visited-stop={s.id} data-js-control hidden></span><span class="trail-arrow" aria-hidden="true">→</span></a></li>)}
 </ol>

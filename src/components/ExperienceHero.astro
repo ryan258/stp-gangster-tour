@@ -1,10 +1,10 @@
 ---
-import {assetURL} from '../lib/catalog';
+import ArtImage from './ArtImage.astro';
 interface Props {title:string;eyebrow:string;lede?:string;image:string;folio:string;note?:string;}
 const {title,eyebrow,lede,image,folio,note}=Astro.props;
 ---
 <header class="experience-hero">
-  <img class="experience-backdrop" src={assetURL(image)} alt="" width="1376" height="768" fetchpriority="high"/>
+  <ArtImage class="experience-backdrop" name={image.split('/').pop()!.replace('.webp','')} eager/>
   <div class="container experience-hero-inner">
     <div class="experience-hero-copy">
       <p class="eyebrow">{eyebrow}</p>

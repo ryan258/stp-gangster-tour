@@ -1,20 +1,12 @@
 ---
-import {stops,locations,stopURL,routeURL,assetURL} from '../lib/catalog';
+import {stops,locations,stopURL,routeURL} from '../lib/catalog';
+import ArtImage from './ArtImage.astro';
 import river from '../data/map-river.json';
 import geography from '../data/geography.json';
 
 const placed=locations.filter(l=>l.coordinates!==null);
 const x=(lon:number)=>80+(lon+93.102)*40000*Math.cos(44.94*Math.PI/180);
 const y=(lat:number)=>60+(44.947-lat)*40000;
-const chapterNotes: Record<string,string> = {
-  'the-arrangement': 'The bargain behind the refuge.',
-  'a-suite-above-the-street': 'Respectability had an address.',
-  'under-the-bluff': 'Where the music met the myth.',
-  'the-price-of-protection': 'Protection always has a price.',
-  'the-deal-breaks': 'Silence was part of the demand.',
-  'the-safe-house-fails': 'Refuge had its limits.',
-  'on-the-record': 'What remains is the record.'
-};
 ---
 <figure class="geographic-preview" aria-labelledby="field-map-heading">
   <div class="map-board">
@@ -56,7 +48,7 @@ const chapterNotes: Record<string,string> = {
       <ol class="map-venue-links" aria-label="Plotted venues">
         {placed.map(l=>{const stop=stops.find(s=>s.locationId===l.id)!;return <li><a href={`#location-${l.id}`}><span class="venue-key-number" aria-hidden="true">{stop.order}</span><span><strong>{l.currentName}</strong><small>Stop {stop.order} · approximate area</small></span><span aria-hidden="true">↗</span></a></li>;})}
       </ol>
-      <div class="map-postcard" aria-hidden="true"><img src={assetURL('/images/redesign/banner-bridge.webp')} alt="" width="800" height="450" decoding="async"/><span>The river runs<br/>through every story.</span></div>
+      <div class="map-postcard" aria-hidden="true"><ArtImage name="banner-bridge" width={800} height={450} sizes="320px"/><span>The river runs<br/>through every story.</span></div>
     </div>
   </div>
   <figcaption>North-up geographic overview. Dashed outlines indicate uncertain venue areas, not measured boundaries. No event footprints or travel connections are asserted. Modern river geometry is clipped from USGS NHD data, not a reconstructed 1930s shoreline. Map services and data: U.S. Geological Survey, National Geospatial Program. <a href={geography.baseSourceUrl!}>USGS river source</a> · <a href={geography.reuseSourceUrl}>Public-domain reuse basis</a>.</figcaption>
@@ -71,7 +63,7 @@ const chapterNotes: Record<string,string> = {
   <p class="directory-art-note">Chapter images are atmospheric illustrations, not documentary photographs.</p>
   <ol class="location-list" role="list">
     {stops.map(s=>{const l=locations.find(l=>l.id===s.locationId);if(!l)return null;return <li id={`location-${l.id}`} class="location-card">
-      <div class="location-picture"><img src={assetURL(`/images/redesign/card-${s.id}.webp`)} alt="" width="480" height="600" decoding="async"/><span class="location-number" aria-hidden="true">{s.order}</span></div>
+      <div class="location-picture"><ArtImage name={`card-${s.id}`} width={480} height={600} sizes="(min-width: 800px) 240px, 40vw"/><span class="location-number" aria-hidden="true">{s.order}</span></div>
       <div class="location-content">
         <p class="eyebrow">Stop {s.order} · {l.role}</p>
         <h3><a href={stopURL(s.id)}>{s.title}</a></h3>
@@ -89,7 +81,7 @@ const chapterNotes: Record<string,string> = {
         </div>
         <p class="muted location-progress" data-visited-stop={s.id} data-js-control hidden></p>
       </div>
-      <div class="location-margin"><p>{chapterNotes[s.id]}</p><a href={stopURL(s.id)} aria-label={`Read chapter ${s.order}: ${s.title}`}>Read chapter <span aria-hidden="true">→</span></a></div>
+      <div class="location-margin"><p>{s.chapterNote}</p><a href={stopURL(s.id)} aria-label={`Read chapter ${s.order}: ${s.title}`}>Read chapter <span aria-hidden="true">→</span></a></div>
     </li>;})}
   </ol>
 </section>
