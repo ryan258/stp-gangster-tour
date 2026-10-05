@@ -41,6 +41,10 @@ Grid columns shrink below 320 pixels without horizontal overflow. Navigation wra
 
 The map separates approximate venue coordinates from historical event geometry, current condition, and current access. Four unknown positions remain unplaced. A local north-up equirectangular projection places the three approximate venues against clipped modern USGS NHD river geometry. `geography.json` retains source/query/reuse/review metadata and original/derived hashes. `scripts/clip-map.py` rebuilds the small layer from the retained extract without network access, invalidating review if the bytes change. The river supplies modern context, not a reconstructed historical shoreline. On small screens the complete seven-stop directory supplies the geographic descriptions and navigation.
 
+## Images, data endpoints and metadata
+
+`ArtImage.astro` renders every atmospheric image from its `media.images` record: `srcset` from the recorded 640px variant plus the original, explicit dimensions, lazy loading below the fold (`eager` only for heroes). `src/lib/base.ts` is the single BASE_URL normalisation shared by build-time helpers and browser scripts. The edition manifest also carries `evidenceIds` and `stopLabels` so browser code needs neither the evidence catalog nor hard-coded counts; the validator checks both against the catalog. `src/pages/data/` publishes the citable catalog, BibTeX and CSL-JSON; `robots.txt` and `sitemap.xml` are endpoints; the layout adds canonical and Open Graph tags and `noindex` while the edition is an unreviewed preview. An optional preference (`backgroundAudio`) lets narration continue when the tab is hidden; the default remains to pause.
+
 ## Build and media
  
 `build.mjs` removes only its owned output directory, validates, and invokes Astro. Preview output and accepted production output use separate directories. Production rejects pending/stale reviews and unresolved rights; a failed gate leaves no stale accepted `dist/`.

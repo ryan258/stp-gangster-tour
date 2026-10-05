@@ -22,13 +22,21 @@ Remediation date: **2026-10-05**. Content/presentation revision: **0.5.0**. Runt
 
 The audio browser scenario uses controllable media doubles. It checks lifecycle, volume arithmetic and displayed controls. It does not establish acoustic quality, pronunciation, actual iOS mixer support, or human comfort.
 
+## Harmony pass and historian layer (observed 2026-10-05, owner-run)
+
+- `npm run check`: 0 errors, 0 warnings, 0 hints across 49 files; structural content and asset checks pass with 56 release obligations (35 previous + geography + 10 image provenance + 10 image rights).
+- `npm run test:unit`: 39 tests passed, including rejection of AI tools as reviewers, orphan claims and sources, manifest drift, unknown ambience beds and malformed image records.
+- `npm run build:preview` then `npm run test:browser`: 23 scenarios passed on Chromium. This adds axe-core (WCAG 2.0/2.1/2.2 A and AA tags) on all 14 content routes and a phone-width check of the 16px text floor and 44px targets. SVG text is excluded from the size check because it scales with the viewBox; the map's text alternative and directory carry that content.
+- Not run: `npm run links` (network), `node scripts/measure-performance.mjs`, real-device and assistive-technology checks. The map's enlarged SVG labels have not been inspected visually.
+
 ## Reproduce focused checks
 
 ```sh
 npm run check
 npm run test:unit -- tests/unit/data-integrity.test.ts tests/unit/storage.test.ts
 npm run build:preview
-npm run test:browser -- tests/browser/tour.spec.ts
+npm run test:browser   # tour + axe/size-floor specs
+npm run links          # network: URL reachability and archive coverage
 ```
 
 Python 3 and ffprobe are required by the asset validator. Browser tests require an installed Playwright Chromium browser and permission to bind loopback port 4337. They refuse to reuse an existing server. Package installation and advisory lookups require network access; site reading and builds do not fetch historical sources.

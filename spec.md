@@ -7,6 +7,8 @@
 **Current project state:** Static Astro application with thirteen content routes and a 404, validated JSON, local media, retained audio masters, Git history, and targeted tests. The history draft and research ledger remain editorial starting points; the runtime catalog records corrections.
 **Scope:** A personal creative project with one complete, bounded first edition.
 
+**Implementation divergence (2026-10-05):** the built visual design supersedes parts of R3. It uses atmospheric WebP artwork with Playfair Display, Cinzel and Caveat (self-hosted via Fontsource) beside Source Sans 3; the SVG scene studies are secondary. Operative design rules are in `docs/architecture.md`; constraints that still bind are self-hosted fonts, 16px metadata, 44px targets and no third-party requests.
+
 **Contract language:** “Must” and “shall” describe required behavior. “Target” describes a production goal to measure. Proposed copy and scene treatments may change without expanding the seven-stop scope. This is a specification, not evidence that the experience has been built, historically verified in full, or accepted by Ryan.
 
 Jump to [stop interactions](#r2-seven-locations-one-narrative), [art and audio](#r3-visual-and-sound-direction), [page behavior](#r4-pages-map-scenes-and-navigation), [technical foundation](#r12-technical-foundation-and-local-build-interface), [production readiness](#r13-editorial-production-assets-and-readiness), or [acceptance criteria](#acceptance-criteria-ears-style).

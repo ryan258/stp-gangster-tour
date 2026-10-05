@@ -16,6 +16,8 @@ All fourteen currently rendered evidence items are **Tour explanation** because 
 
 ## Corrections incorporated in 0.5.0
 
+The visitor-facing log is `src/data/corrections.json` (shown under Sources → Edition notes). Add an entry whenever visitor wording changes in response to a source check.
+
 - No claim that every payment occurred at the Green Lantern, every officer participated, or every resident was spared. “No record examined” does not become “no record exists.”
 - Gleckman’s partial tax acquittal remains distinct from the appeal; his contempt findings do not establish a separate conviction of Fuchs or a sole holdout juror.
 - Castle Royal guest lore remains disputed. No invented corporate capital quotation, origin date for the legend, or deliberate marketing fabrication is asserted.
@@ -32,4 +34,4 @@ When adding a claim, record its source, passage locator, status, basis, qualific
 
 Historical geometry, current condition, and access are separate assertions. Published community venue coordinates are approximate and identified as such. They do not establish an event footprint or an accessible entrance. Dated current venue pages are used only for what they actually state.
 
-No automated script may mark listening, rights, historical review, or owner acceptance complete. Reviewer identity, date, relevant revision and matching digests are required for a production review record. Source verification and editorial judgment remain separate from schema validity.
+No automated script or assistant may mark listening, rights, image-provenance, geography, historical review, or owner acceptance complete; the schema rejects AI tool names as reviewers. Reviewer identity, date, relevant revision and matching digests are required for a production review record. Source verification and editorial judgment remain separate from schema validity.

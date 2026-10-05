@@ -1,3 +1,12 @@
+# Project rules — Saint Paul After Dark
+
+- **Owner-controlled actions:** never stage, commit, push, deploy or publish unless Ryan names that action. Ryan runs tests and `gitnexus analyze`; give him the command instead of running them.
+- **Reviews are human acts:** no script or assistant may mark listening, rights, image-provenance, geography or editorial review complete. The schema rejects AI tool names as reviewers.
+- **Content lives in `src/data/*.json`**, validated by `scripts/content-schema.mjs` and `scripts/validate-content.mjs`. Every claim and source must be cited by visitor-facing content (orphans fail validation). Changing a stop introduction invalidates its narration digest; never regenerate audio implicitly.
+- **No third-party requests at runtime:** fonts are self-hosted; images go through `src/components/ArtImage.astro` and need a `media.images` record plus a `-640.webp` variant.
+- **Preview vs production:** `npm run build:preview` is permissive; `npm run build` must keep failing until every release gate is human-cleared.
+- **Verification commands:** `npm run check`, `npm run test:unit`, `npm run build:preview` then `npm run test:browser`; also `npm run links` (network) and `node scripts/measure-performance.mjs` (preview running).
+
 <!-- gitnexus:start -->
 # GitNexus — Code Intelligence
 

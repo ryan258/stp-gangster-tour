@@ -2,7 +2,7 @@
 
 A personal, at-home history tour about the informal protection system associated with Saint Paul’s underworld, its victims, and the records that complicate the legend. Seven chapters connect people, places, money, coercion, and institutional change. There are no scores, accounts, location tracking, or booking flows.
 
-**Current state: working preview, edition 0.5.0.** All thirteen content routes and a static 404 exist. Thirty claim records include disputes and qualifications; fourteen evidence items are source-linked explanations, not original transcripts or charters. Listening, illustration provenance/reference review, final editorial review, and real-device accessibility validation remain open. A successful structural check is not editorial certification.
+**Current state: working preview, edition 0.5.0.** All fourteen content routes (home, prologue, seven stops, map, casebook, sources, method, epilogue) and a static 404 exist. Thirty claim records include disputes and qualifications; fourteen evidence items are source-linked explanations, not original transcripts or charters. Listening, illustration provenance/reference review, final editorial review, and real-device accessibility validation remain open. A successful structural check is not editorial certification.
 
 ## Run locally
 
@@ -27,11 +27,12 @@ Preview output goes to `dist-preview/`. Edition notes and review records remain 
 
 ## What works
 
-- Home, prologue, seven ordered stops, map/directory, casebook, sources, epilogue, and recovery page.
+- Home, prologue, seven ordered stops, map/directory, casebook, sources, method, epilogue, and recovery page.
+- Historian tools: a method page, a corrections log with per-claim correction links, nearest-snapshot archive links, and downloadable catalog data (JSON, BibTeX, CSL-JSON) under `/data/`.
 - Comprehensive editorial experience redesign across all 14 routes: full-bleed `ExperienceHero` backdrops with marginalia and roman folios, interactive `ReadingTrail` with visited-stop tracking, chapter-level tabbed navigation, and paper-styled location files.
 - Redesigned homepage featuring illuminated Capitol dome skyline hero, "Read the City Through Its Evidence" dossier trio, seven responsive photographic chapter cards with dark vignette overlays, and an arched stone bridge quote banner.
-- Modular Sass (`.scss`) styling architecture carrying graphic noir aesthetics, custom typography (`Playfair Display`, `Cinzel`, `Caveat`, `Source Sans 3`), crimson accents, vintage ephemera treatments, and specialized experience stylesheets (`experience.scss`, `map.scss`).
-- High-efficiency WebP image pipeline (`public/images/redesign/*.webp`) with asynchronous decoding (`decoding="async"`), achieving ~80% footprint reduction with verified complete rendering across all routes.
+- Modular Sass (`.scss`) styling architecture carrying graphic noir aesthetics, self-hosted typography (`Playfair Display`, `Cinzel`, `Caveat` via Fontsource; `Source Sans 3`, `Barlow Condensed` from `public/fonts`), crimson accents, vintage ephemera treatments, and specialized experience stylesheets (`experience.scss`, `map.scss`).
+- High-efficiency WebP image pipeline (`public/images/redesign/*.webp`) each with a 640px `srcset` variant, lazy loading below the fold and a provenance/rights record in `media.json` (images are release-gated like the scenes).
 - Streamlined reading shell: the former "Work in progress" top banner has been removed from `Layout.astro` for an immersive reading presentation, with editorial notes preserved under Sources.
 - Complete static reading, links, and native evidence disclosures without JavaScript.
 - One catalog-driven presenter with relationship, comparison, document, and sequence layouts. Selection emphasizes text without moving keyboard focus.
@@ -61,7 +62,8 @@ Read [architecture](docs/architecture.md), [evidence standards](docs/evidence-le
 ```sh
 npm run check
 npm run test:unit -- tests/unit/data-integrity.test.ts tests/unit/storage.test.ts
-npm run test:browser -- tests/browser/tour.spec.ts
+npm run test:browser
+npm run links   # network: URL reachability and archive coverage
 ```
 
 Build the preview before browser tests. Playwright uses an isolated loopback port and refuses an existing server, avoiding tests against stale output. See the verification record for observed results and untested environments.
