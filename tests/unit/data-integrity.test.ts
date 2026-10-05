@@ -1,62 +1,29 @@
-import { describe, it, expect } from 'vitest';
-import stops from '../../src/data/stops.json';
-import claims from '../../src/data/claims.json';
-import evidence from '../../src/data/evidence.json';
-import sources from '../../src/data/sources.json';
-import metagames from '../../src/data/metagames.json';
-import edition from '../../src/data/edition.json';
-
-describe('Tour Data Integrity', () => {
-  it('contains exactly 7 ordered stops with required fields', () => {
-    expect(stops).toHaveLength(7);
-    stops.forEach((stop, index) => {
-      expect(stop.order).toBe(index + 1);
-      expect(stop.id).toBeTruthy();
-      expect(stop.title).toBeTruthy();
-      expect(stop.blocks.intro.text).toBeTruthy();
-      expect(stop.blocks.record.text).toBeTruthy();
-      expect(stop.blocks.metagame.text).toBeTruthy();
-    });
-  });
-
-  it('contains 30 claims with valid statuses and source associations', () => {
-    expect(claims).toHaveLength(30);
-    const sourceIds = new Set(sources.map(s => s.id));
-    claims.forEach(c => {
-      expect(['Supported', 'Unsubstantiated', 'Qualified', 'Disputed']).toContain(c.status);
-      c.sourceIds.forEach(sid => {
-        expect(sourceIds.has(sid)).toBe(true);
-      });
-    });
-  });
-
-  it('contains 14 evidence records all mapped to valid stops and claims', () => {
-    expect(evidence).toHaveLength(14);
-    const stopIds = new Set(stops.map(s => s.id));
-    const claimIds = new Set(claims.map(c => c.id));
-
-    evidence.forEach(e => {
-      expect(stopIds.has(e.stopId)).toBe(true);
-      e.claimIds.forEach(cid => {
-        expect(claimIds.has(cid)).toBe(true);
-      });
-    });
-  });
-
-  it('contains 7 metagame analytical entries mapped to stops', () => {
-    expect(metagames).toHaveLength(7);
-    const stopIds = new Set(stops.map(s => s.id));
-    metagames.forEach(m => {
-      expect(stopIds.has(m.owningStop)).toBe(true);
-      expect(m.aims).toBeTruthy();
-      expect(m.mechanism).toBeTruthy();
-      expect(m.bearingCosts).toBeTruthy();
-    });
-  });
-
-  it('edition metadata is consistent with stop list', () => {
-    expect(edition.stops).toEqual(stops.map(s => s.id));
-    expect(edition.prologue.paragraphs.length).toBeGreaterThan(0);
-    expect(edition.epilogue.paragraphs.length).toBeGreaterThan(0);
-  });
+import {describe,it,expect} from 'vitest';
+import {loadCatalog,validateCatalog} from '../../scripts/validate-content.mjs';
+const baseline=loadCatalog();
+const check=(data:typeof baseline)=>validateCatalog(data,{assets:false});
+describe('Content boundary regressions',()=>{
+ it('accepts the corrected structural catalog while retaining release gates',()=>{const r=check(baseline);expect(r.errors).toEqual([]);expect(r.gates.length).toBeGreaterThan(0);});
+ it.each([
+  ['unknown claim status',(d:any)=>d.claims[0].status='Definitely true'],
+  ['dangling narrative claim',(d:any)=>d.stops[0].blocks.record.claimIds=['C404']],
+  ['wrong evidence owner',(d:any)=>d.evidence[0].stopId=d.stops[1].id],
+  ['missing claim source',(d:any)=>d.claims[0].sourceIds=[]],
+  ['unsafe source URL',(d:any)=>d.sources[0].url='javascript:alert(1)'],
+  ['dangling person stop',(d:any)=>d.people[0].relatedStopIds=['missing']],
+  ['wrong metagame owner',(d:any)=>d.metagames[0].owningStop=d.stops[1].id],
+  ['invented canvas coordinates',(d:any)=>{d.locations[0].coordinates={x:20,y:30};d.locations[0].precision='exact';}],
+  ['unsupported access claim',(d:any)=>d.locations[0].access='public'],
+  ['duplicate record ID',(d:any)=>d.sources[1].id=d.sources[0].id],
+  ['duplicate selection',(d:any)=>d.presenters[0].items[1].key=d.presenters[0].items[0].key],
+  ['stale transcript',(d:any)=>d.stops[0].blocks.intro.text+=' A new sentence.'],
+  ['stale review digest',(d:any)=>d['narration-reviews'].narration[0].audioDigest='0'.repeat(64)],
+  ['wrong edition order',(d:any)=>d.edition.stops.reverse()],
+  ['missing nested block',(d:any)=>delete d.stops[0].blocks.intro],
+  ['invalid date',(d:any)=>d.claims[0].passageCheckDate='2026-02-30'],
+  ['duplicate reference',(d:any)=>d.claims[0].sourceIds.push(d.claims[0].sourceIds[0])]
+ ])('rejects %s',(_,mutate)=>{const d=structuredClone(baseline);mutate(d);expect(check(d).errors.length).toBeGreaterThan(0);});
+ it('does not accept an automatic pass without reviewer/date/revision',()=>{const d=structuredClone(baseline);d['narration-reviews'].narration[0].listeningReviewStatus='passed';expect(check(d).gates.join('\n')).toContain('narr-the-arrangement: listening review pending/stale');});
+ it('fails production on unresolved review obligations',()=>{expect(validateCatalog(baseline,{assets:false,production:true}).errors.some((e:string)=>e.startsWith('Release gate:'))).toBe(true);});
+ it('rejects missing and altered assets',()=>{const d=structuredClone(baseline);d.media.scenes[0].fileDigest='0'.repeat(64);d.media.ambience[0].file='/media/audio/missing.mp3';const errors=validateCatalog(d).errors.join('\n');expect(errors).toContain('file digest mismatch');expect(errors).toContain('missing/unreadable media');});
 });
