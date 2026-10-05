@@ -8,13 +8,16 @@
     "check": "astro check && node ./scripts/validate-content.mjs",
     "test:unit": "vitest run",
     "test:browser": "playwright test",
-    "build": "node ./scripts/validate-content.mjs && astro build",
-    "preview": "astro preview"
+    "build": "node ./scripts/validate-content.mjs --production && astro build",
+    "preview": "astro preview --outDir dist-preview",
+    "build:preview": "node ./scripts/validate-content.mjs && astro build --outDir dist-preview",
+    "validate": "node ./scripts/validate-content.mjs"
   },
   "dependencies": {
     "@fontsource/barlow-condensed": "^5.3.0",
     "@fontsource/source-sans-3": "^5.3.0",
-    "astro": "^5.4.2"
+    "astro": "^5.4.2",
+    "zod": "3.25.76"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
@@ -22,5 +25,8 @@
     "@types/node": "^22.13.9",
     "typescript": "^5.7.3",
     "vitest": "^3.0.7"
+  },
+  "engines": {
+    "node": ">=22.13.0 <23 || >=24.0.0 <25"
   }
 }

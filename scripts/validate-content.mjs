@@ -1,221 +1,110 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
-
-const errors = [];
-
-function error(recordType, id, field, reason) {
-  errors.push(`[${recordType}:${id}] ${field}: ${reason}`);
+import { spawnSync } from 'node:child_process';
+import { pathToFileURL } from 'node:url';
+import { schemas } from './content-schema.mjs';
+export const sha256=value=>crypto.createHash('sha256').update(value).digest('hex');
+export const normalizeTranscript=value=>value.normalize('NFC').replace(/\r\n?/g,'\n').trim();
+export function loadCatalog(root=process.cwd()) {
+ return Object.fromEntries(Object.keys(schemas).map(k=>[k,JSON.parse(fs.readFileSync(path.join(root,'src/data',`${k}.json`),'utf8'))]));
 }
-
-function loadJson(relPath) {
-  const fullPath = path.resolve(relPath);
-  if (!fs.existsSync(fullPath)) {
-    errors.push(`Missing required file: ${relPath}`);
-    return null;
+export function validateCatalog(input,{root=process.cwd(),production=false,assets=true}={}) {
+ const errors=[], gates=[], data={};
+ for(const [key,schema] of Object.entries(schemas)) {
+  const result=schema.safeParse(input[key]);
+  if(!result.success) errors.push(...result.error.issues.map(i=>`${key}.${i.path.join('.')}: ${i.message}`));
+  else data[key]=result.data;
+ }
+ if(errors.length) return {errors,gates};
+ const maps={};
+ const uniqueArrays=(v,trail='catalog')=>{if(Array.isArray(v)){if(v.every(x=>typeof x==='string')&&new Set(v).size!==v.length)errors.push(`${trail}: duplicate values`);v.forEach((x,i)=>uniqueArrays(x,`${trail}.${i}`));}else if(v&&typeof v==='object')for(const [k,x]of Object.entries(v))uniqueArrays(x,`${trail}.${k}`);};
+ uniqueArrays(data);
+ for(const name of ['stops','claims','sources','evidence','people','metagames','locations']) {
+  maps[name]=new Map();
+  for(const record of data[name]) { if(maps[name].has(record.id)) errors.push(`${name}: duplicate ${record.id}`);maps[name].set(record.id,record); }
+ }
+ for(const name of ['scenes','narration','ambience']) {
+  maps[name]=new Map();for(const r of data.media[name]) {if(maps[name].has(r.id)) errors.push(`${name}: duplicate ${r.id}`);maps[name].set(r.id,r);}
+ }
+ const refs=(owner,field,values,target)=>{for(const id of values) if(!maps[target].has(id)) errors.push(`${owner}.${field}: unknown ${target} ID ${id}`);};
+ refs('edition','stops',data.edition.stops,'stops');
+ if(JSON.stringify(data.edition.stops)!==JSON.stringify([...data.stops].sort((a,b)=>a.order-b.order).map(s=>s.id))) errors.push('edition.stops: order differs from stop catalog');
+ const orders=new Set();
+ for(const s of data.stops) {
+  if(orders.has(s.order)) errors.push(`${s.id}: duplicate order`);orders.add(s.order);
+  for(const [field,target] of [['locationId','locations'],['sceneId','scenes'],['narrationId','narration']]) refs(s.id,field,[s[field]],target);
+  refs(s.id,'evidenceIds',s.evidenceIds,'evidence');refs(s.id,'relatedPersonIds',s.relatedPersonIds,'people');refs(s.id,'relatedStopIds',s.relatedStopIds,'stops');
+  for(const [key,b] of Object.entries(s.blocks)) {if(b.id!==key) errors.push(`${s.id}.${key}: block ID mismatch`);refs(s.id,key,b.claimIds,'claims');}
+  if(s.blocks.intro.role!=='factual'||s.blocks.record.role!=='factual'||s.blocks.metagame.role!=='interpretive') errors.push(`${s.id}: block role mismatch`);
+  refs(s.id,'metagameId',[s.blocks.metagame.metagameId],'metagames');
+  if(maps.metagames.get(s.blocks.metagame.metagameId)?.owningStop!==s.id) errors.push(`${s.id}: metagame owner mismatch`);
+  if(maps.locations.get(s.locationId)?.stopId!==s.id) errors.push(`${s.id}: location owner mismatch`);
+  for(const eid of s.evidenceIds) if(maps.evidence.get(eid)?.stopId!==s.id) errors.push(`${s.id}: evidence ${eid} belongs to another stop`);
+  const narr=maps.narration.get(s.narrationId);
+  if(narr?.stopId!==s.id) errors.push(`${s.id}: narration owner mismatch`);
+  if(narr?.transcriptDigest!==sha256(normalizeTranscript(s.blocks.intro.text))) errors.push(`${s.id}: stale narration transcript digest`);
+  const words=t=>t.trim().split(/\s+/u).length;
+  const intro=words(s.blocks.intro.text),total=words(Object.values(s.blocks).map(b=>b.text).join(' '));
+  if(intro<120||intro>180) errors.push(`${s.id}: intro ${intro} words; expected 120–180`);
+  if(total<300||total>450) errors.push(`${s.id}: narrative ${total} words; expected 300–450`);
+  const prs=data.presenters.filter(p=>p.stopId===s.id);
+  if(prs.length!==1) errors.push(`${s.id}: needs exactly one presenter`);
+  else if(prs[0].kind!==s.presenterType||JSON.stringify(prs[0].items.map(x=>x.key))!==JSON.stringify(s.namedSelections)) errors.push(`${s.id}: presenter kind or selections mismatch`);
+ }
+ for(const key of ['prologue','epilogue']) refs(key,'premiseClaimIds',data.edition[key].premiseClaimIds,'claims');
+ for(const c of data.claims) {refs(c.id,'sourceIds',c.sourceIds,'sources');if(c.evidenceBasis==='cross-source'&&c.sourceIds.length<2) errors.push(`${c.id}: cross-source requires multiple sources`);}
+ for(const e of data.evidence) {refs(e.id,'stopId',[e.stopId],'stops');refs(e.id,'claimIds',e.claimIds,'claims');refs(e.id,'sourceLocators',e.sourceLocators.map(r=>r.sourceId),'sources');if(!maps.stops.get(e.stopId)?.evidenceIds.includes(e.id)) errors.push(`${e.id}: not owned by its stop`);}
+ for(const p of data.people) {refs(p.id,'supportingClaimIds',p.supportingClaimIds,'claims');refs(p.id,'relatedStopIds',p.relatedStopIds,'stops');}
+ for(const r of data.relationships) {refs('relationship','people',[r.fromId,r.toId],'people');refs('relationship','premiseClaims',r.premiseClaims,'claims');if(r.fromId===r.toId) errors.push('relationship: self edge');}
+ for(const m of data.metagames) {refs(m.id,'owningStop',[m.owningStop],'stops');refs(m.id,'premiseClaims',m.premiseClaims,'claims');}
+ for(const p of data.presenters) for(const x of p.items) {refs(p.stopId,'claimIds',x.claimIds,'claims');refs(p.stopId,'evidenceId',[x.evidenceId],'evidence');if(maps.evidence.get(x.evidenceId)?.stopId!==p.stopId) errors.push(`${p.stopId}: presenter evidence owner mismatch`);}
+ for(const l of data.locations) {
+  refs(l.id,'stopId',[l.stopId],'stops');refs(l.id,'supportingSourceId',[l.supportingSourceId],'sources');
+  if((l.precision==='unknown')!==(l.coordinates===null)) errors.push(`${l.id}: precision and coordinates disagree`);
+  if(l.access!=='unknown'&&!l.currentCheck) errors.push(`${l.id}: access claim requires dated current check`);
+ }
+ for(const id of ['loc-hotel','loc-castle-royal','loc-courthouse']) if(!maps.locations.get(id)?.coordinates) gates.push(`${id}: checked venue coordinates pending`);
+ const reviewMaps={};
+ for(const kind of ['narration','ambience']) {
+  reviewMaps[kind]=new Map();
+  for(const r of data['narration-reviews'][kind]) {
+   if(reviewMaps[kind].has(r.id)) errors.push(`${r.id}: duplicate listening review`);reviewMaps[kind].set(r.id,r);
+   refs(r.id,'review ID',[r.id],kind);
   }
-  return JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+  for(const n of data.media[kind]) {
+   const r=reviewMaps[kind].get(n.id);
+   if(!r) errors.push(`${n.id}: missing review record`);
+   else if(r.audioDigest!==n.audioDigest||r.transcriptDigest!==(n.transcriptDigest??null)) errors.push(`${n.id}: review digest mismatch`);
+   if(r?.listeningReviewStatus!=='passed'||!r.reviewer||!r.reviewDate||r.reviewedRevision!==data.edition.contentRevision) gates.push(`${n.id}: listening review pending/stale`);
+   if(n.rightsStatus!=='approved') gates.push(`${n.id}: distribution rights review pending`);
+   if(!n.masterFile) gates.push(`${n.id}: original lossless master missing`);
+  }
+ }
+ for(const s of data.media.scenes) {
+  refs(s.id,'referenceSourceIds',s.referenceSourceIds,'sources');
+  if(s.reviewStatus!=='reviewed'||!s.reviewer||!s.reviewDate||s.reviewedRevision!==data.edition.contentRevision||!s.referenceSourceIds.length) gates.push(`${s.id}: reference/render review pending`);
+  if(s.rightsStatus!=='approved') gates.push(`${s.id}: distribution rights review pending`);
+ }
+ if(assets) {
+  const svgPaths=[];
+  for(const a of [...data.media.scenes,...data.media.narration,...data.media.ambience]) {
+   const p=path.join(root,'public',a.file);
+   try { const buf=fs.readFileSync(p);if(sha256(buf)!==(a.fileDigest??a.audioDigest)) errors.push(`${a.id}: file digest mismatch`);
+    if(a.file.endsWith('.svg')) svgPaths.push({path:p,width:a.width,height:a.height});
+    if(a.masterFile&&!fs.existsSync(path.join(root,'public',a.masterFile))) errors.push(`${a.id}: missing lossless master`);
+   } catch {errors.push(`${a.id}: missing/unreadable media file`);}
+  }
+  const xml=spawnSync('python3',[path.join(root,'scripts/check-svg.py')],{input:JSON.stringify(svgPaths),encoding:'utf8'});
+  if(xml.status!==0) errors.push(`SVG validation: ${xml.stdout||xml.stderr||xml.error?.message}`);
+ }
+ if(data.edition.releaseStatus!=='reviewed') gates.push('edition: editorial release review pending');
+ if(production) errors.push(...gates.map(g=>`Release gate: ${g}`));
+ return {errors,gates};
 }
-
-const edition = loadJson('src/data/edition.json');
-const stops = loadJson('src/data/stops.json');
-const evidence = loadJson('src/data/evidence.json');
-const people = loadJson('src/data/people.json');
-const relationships = loadJson('src/data/relationships.json');
-const sources = loadJson('src/data/sources.json');
-const claims = loadJson('src/data/claims.json');
-const metagames = loadJson('src/data/metagames.json');
-const locations = loadJson('src/data/locations.json');
-const media = loadJson('src/data/media.json');
-
-if (!errors.length) {
-  // 1. Validate Edition
-  if (!edition.stops || edition.stops.length !== 7) {
-    error('Edition', edition.id, 'stops', `Must specify exactly 7 stops, got ${edition.stops ? edition.stops.length : 0}`);
-  }
-  if (!edition.prologue || !edition.prologue.paragraphs || edition.prologue.paragraphs.length === 0) {
-    error('Edition', edition.id, 'prologue', 'Must contain non-empty prologue paragraphs');
-  }
-  if (!edition.epilogue || !edition.epilogue.paragraphs || edition.epilogue.paragraphs.length === 0) {
-    error('Edition', edition.id, 'epilogue', 'Must contain non-empty epilogue paragraphs');
-  }
-
-  // Maps for reference validation
-  const stopMap = new Map();
-  const orderSet = new Set();
-  const evidenceMap = new Map();
-  const personMap = new Map();
-  const sourceMap = new Map();
-  const claimMap = new Map();
-  const metagameMap = new Map();
-  const locationMap = new Map();
-  const sceneMap = new Map();
-  const narrationMap = new Map();
-
-  sources.forEach(s => {
-    if (sourceMap.has(s.id)) error('Source', s.id, 'id', 'Duplicate source ID');
-    sourceMap.set(s.id, s);
-    if (!s.title || !s.creator || !s.sourceType) {
-      error('Source', s.id, 'fields', 'Missing title, creator, or sourceType');
-    }
-  });
-
-  claims.forEach(c => {
-    if (claimMap.has(c.id)) error('Claim', c.id, 'id', 'Duplicate claim ID');
-    claimMap.set(c.id, c);
-    if (!c.assertion || !c.status || !c.evidenceBasis) {
-      error('Claim', c.id, 'fields', 'Missing assertion, status, or evidenceBasis');
-    }
-    // Check qualification requirement
-    const needsQual = c.status !== 'Supported' || c.evidenceBasis === 'attributed account';
-    if (needsQual && (!c.qualification || c.qualification.trim() === '')) {
-      error('Claim', c.id, 'qualification', `Status '${c.status}' requires a non-empty qualification`);
-    }
-    // Check source references
-    for (const sid of c.sourceIds || []) {
-      if (!sourceMap.has(sid)) error('Claim', c.id, 'sourceIds', `Dangling source ID: ${sid}`);
-    }
-  });
-
-  locations.forEach(l => {
-    if (locationMap.has(l.id)) error('Location', l.id, 'id', 'Duplicate location ID');
-    locationMap.set(l.id, l);
-    if (!['exact', 'approximate', 'unknown'].includes(l.precision)) {
-      error('Location', l.id, 'precision', `Invalid precision: ${l.precision}`);
-    }
-    if (!['extant', 'altered', 'demolished', 'unverified'].includes(l.condition)) {
-      error('Location', l.id, 'condition', `Invalid condition: ${l.condition}`);
-    }
-    if (!['public', 'private', 'restricted', 'unknown'].includes(l.access)) {
-      error('Location', l.id, 'access', `Invalid access: ${l.access}`);
-    }
-  });
-
-  media.scenes.forEach(sc => {
-    sceneMap.set(sc.id, sc);
-    const p = path.join('public', sc.file);
-    if (!fs.existsSync(p)) error('Media', sc.id, 'file', `Scene file does not exist: ${sc.file}`);
-  });
-
-  media.narration.forEach(n => {
-    narrationMap.set(n.id, n);
-    const p = path.join('public', n.file);
-    if (!fs.existsSync(p)) error('Media', n.id, 'file', `Audio file does not exist: ${n.file}`);
-  });
-
-  people.forEach(p => {
-    if (personMap.has(p.id)) error('Person', p.id, 'id', 'Duplicate person ID');
-    personMap.set(p.id, p);
-    for (const cid of p.supportingClaimIds || []) {
-      if (!claimMap.has(cid)) error('Person', p.id, 'supportingClaimIds', `Dangling claim ID: ${cid}`);
-    }
-  });
-
-  metagames.forEach(m => {
-    if (metagameMap.has(m.id)) error('Metagame', m.id, 'id', 'Duplicate metagame ID');
-    metagameMap.set(m.id, m);
-    if (!m.actors || m.actors.length === 0) error('Metagame', m.id, 'actors', 'Actors cannot be empty');
-    if (!m.mechanism || !m.expectedBenefit || !m.bearingCosts || !m.evidentiaryLimit) {
-      error('Metagame', m.id, 'fields', 'Missing mechanism, benefit, costs, or limit');
-    }
-    for (const cid of m.premiseClaims || []) {
-      if (!claimMap.has(cid)) error('Metagame', m.id, 'premiseClaims', `Dangling claim ID: ${cid}`);
-    }
-  });
-
-  evidence.forEach(e => {
-    if (evidenceMap.has(e.id)) error('Evidence', e.id, 'id', 'Duplicate evidence ID');
-    evidenceMap.set(e.id, e);
-    if (!e.title || !e.description || !e.supports || !e.limits) {
-      error('Evidence', e.id, 'fields', 'Missing title, description, supports, or limits');
-    }
-    for (const cid of e.claimIds || []) {
-      if (!claimMap.has(cid)) error('Evidence', e.id, 'claimIds', `Dangling claim ID: ${cid}`);
-    }
-    for (const ref of e.sourceLocators || []) {
-      if (!sourceMap.has(ref.sourceId)) error('Evidence', e.id, 'sourceLocators', `Dangling source: ${ref.sourceId}`);
-    }
-  });
-
-  if (evidence.length !== 14) {
-    error('Evidence', 'catalog', 'length', `Expected exactly 14 evidence items (2 per stop), found ${evidence.length}`);
-  }
-
-  // 2. Validate Stops
-  if (stops.length !== 7) {
-    error('Stops', 'catalog', 'length', `Expected exactly 7 stops, found ${stops.length}`);
-  }
-
-  stops.forEach(s => {
-    if (stopMap.has(s.id)) error('Stop', s.id, 'id', 'Duplicate stop ID');
-    stopMap.set(s.id, s);
-
-    if (orderSet.has(s.order)) error('Stop', s.id, 'order', `Duplicate order: ${s.order}`);
-    orderSet.add(s.order);
-
-    if (!locationMap.has(s.locationId)) error('Stop', s.id, 'locationId', `Dangling location: ${s.locationId}`);
-    if (!sceneMap.has(s.sceneId)) error('Stop', s.id, 'sceneId', `Dangling scene: ${s.sceneId}`);
-    if (!narrationMap.has(s.narrationId)) error('Stop', s.id, 'narrationId', `Dangling narration: ${s.narrationId}`);
-
-    // Blocks
-    if (!s.blocks.intro || !s.blocks.record || !s.blocks.metagame) {
-      error('Stop', s.id, 'blocks', 'Must have intro, record, and metagame blocks');
-    }
-
-    // Narration transcript consistency & digest check
-    const norm = s.blocks.intro.text.normalize('NFC').replace(/\r\n/g, '\n').trim();
-    const digest = crypto.createHash('sha256').update(norm, 'utf8').digest('hex');
-    const narrRecord = narrationMap.get(s.narrationId);
-    if (narrRecord) {
-      if (narrRecord.transcriptDigest !== digest) {
-        error('Stop', s.id, 'narration', `Stale narration review: text digest ${digest} != recorded ${narrRecord.transcriptDigest}`);
-      }
-    }
-
-    // Evidence
-    if (!s.evidenceIds || s.evidenceIds.length !== 2) {
-      error('Stop', s.id, 'evidenceIds', `Each stop must have exactly 2 evidence items, got ${s.evidenceIds ? s.evidenceIds.length : 0}`);
-    } else {
-      for (const eid of s.evidenceIds) {
-        if (!evidenceMap.has(eid)) error('Stop', s.id, 'evidenceIds', `Dangling evidence ID: ${eid}`);
-      }
-    }
-
-    // Related people
-    for (const pid of s.relatedPersonIds || []) {
-      if (!personMap.has(pid)) error('Stop', s.id, 'relatedPersonIds', `Dangling person ID: ${pid}`);
-    }
-
-    // Related stops
-    for (const rsid of s.relatedStopIds || []) {
-      if (!edition.stops.includes(rsid)) error('Stop', s.id, 'relatedStopIds', `Dangling related stop: ${rsid}`);
-    }
-  });
-
-  // 3. Relationships check
-  relationships.forEach((r, idx) => {
-    if (!personMap.has(r.fromId)) error('Relationship', idx, 'fromId', `Dangling entity ID: ${r.fromId}`);
-    if (!personMap.has(r.toId)) error('Relationship', idx, 'toId', `Dangling entity ID: ${r.toId}`);
-    for (const cid of r.premiseClaims || []) {
-      if (!claimMap.has(cid)) error('Relationship', idx, 'premiseClaims', `Dangling claim ID: ${cid}`);
-    }
-  });
-
-  // 4. Required R9 checked venue geography
-  const requiredVenues = ['loc-hotel', 'loc-castle-royal', 'loc-courthouse'];
-  for (const vid of requiredVenues) {
-    const loc = locationMap.get(vid);
-    if (!loc || !loc.coordinates || loc.precision !== 'exact') {
-      error('Location', vid, 'coordinates', 'R9 requires verified exact coordinates for hotel, caves, and courthouse');
-    }
-  }
-}
-
-if (errors.length > 0) {
-  console.error(`\nContent Validation FAILED with ${errors.length} error(s):`);
-  errors.forEach(e => console.error(`  - ${e}`));
-  process.exit(1);
-} else {
-  console.log(`✓ Content validation passed quietly (7 stops, 14 evidence items, 30 claims, 16 sources, 7 metagames, 12 people, media verified).`);
-  process.exit(0);
+if(process.argv[1]&&import.meta.url===pathToFileURL(path.resolve(process.argv[1])).href) {
+ try {const result=validateCatalog(loadCatalog(),{production:process.argv.includes('--production')});
+ if(result.errors.length) {console.error(result.errors.join('\n'));process.exitCode=1;}
+ else console.log(`Structural content and asset checks passed. ${result.gates.length} release obligations remain; this is not listening or historical certification.`);
+ } catch(e) {console.error(`Content validation could not complete: ${e.message}`);process.exitCode=1;}
 }

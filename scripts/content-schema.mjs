@@ -1,0 +1,26 @@
+import { z } from 'zod';
+const text=z.string().trim().min(1);
+const id=text.regex(/^[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/);
+const ids=Object.assign(z.array(id).min(1).refine(v=>new Set(v).size===v.length,'IDs must be unique'),{length:n=>z.array(id).length(n).refine(v=>new Set(v).size===v.length,'IDs must be unique')});
+const date=text.regex(/^\d{4}-\d{2}-\d{2}$/).refine(v=>!Number.isNaN(Date.parse(v))&&new Date(v).toISOString().slice(0,10)===v,'Invalid date');
+const url=text.url().refine(v=>new URL(v).protocol==='https:','HTTPS required');
+const digest=text.regex(/^[a-f0-9]{64}$/);
+const file=text.regex(/^\/media\/[a-z-]+\/[a-z0-9-]+\.(svg|mp3|wav|aiff)$/);
+const block=z.object({id:z.enum(['intro','record','metagame']),role:z.enum(['factual','interpretive']),type:z.literal('paragraph'),text,claimIds:ids,metagameId:id.optional()});
+const bookend=z.object({title:text,summary:text,paragraphs:z.array(text).min(1),premiseClaimIds:ids});
+const review=z.object({id,audioDigest:digest,transcriptDigest:digest.nullable(),reviewedRevision:text.nullable(),reviewDate:date.nullable(),reviewer:text.nullable(),listeningReviewStatus:z.enum(['pending','passed','failed']),reviewNotes:text});
+const audio=z.object({id,file,durationSeconds:z.number().positive().max(900),audioDigest:digest,rightsBasis:text,masterFile:file.nullable(),rightsStatus:z.enum(['pending','approved']).default('pending')});
+export const schemas={
+ edition:z.object({id,title:text,subtitle:text,tagline:text,contentRevision:text,presentationRevision:text,historicalCheckDate:date,contentNote:text,releaseStatus:z.enum(['preview','reviewed']),stops:ids.length(7),prologue:bookend,epilogue:bookend}),
+ stops:z.array(z.object({id,order:z.number().int().min(1).max(7),title:text,period:text,synopsis:text,locationId:id,sceneId:id,narrationId:id,presenterType:z.enum(['relationship','comparison','document','sequence']),namedSelections:ids,evidenceIds:ids.length(2),relatedPersonIds:ids,relatedStopIds:ids,blocks:z.object({intro:block,record:block,metagame:block})})).length(7),
+ claims:z.array(z.object({id,assertion:text,status:z.enum(['Supported','Qualified','Disputed','Unverified']),evidenceBasis:z.enum(['direct record','attributed account','cross-source']),sourceIds:ids,locators:text,supportExplanation:text,qualification:text,passageCheckDate:date})).length(30),
+ sources:z.array(z.object({id,title:text,creator:text,url,publicationDate:text.regex(/^(\d{4}(-\d{2}-\d{2})?|Undated|undated|n\.d\.)$/).nullable(),consultationDate:date,sourceType:z.enum(['Historical record','Historical account','Lead / historical account']),passageLocators:text,limits:text})).length(16),
+ evidence:z.array(z.object({id,stopId:id,title:text,materialLabel:z.enum(['Tour explanation','Historical record','Historical account','Reconstruction']),claimIds:ids,sourceLocators:z.array(z.object({sourceId:id,locator:text})).min(1),description:text,supports:text,limits:text})).length(14),
+ people:z.array(z.object({id,name:text,aliases:z.array(text),role:text,period:text,description:text,supportingClaimIds:ids,relatedStopIds:ids,qualifications:text})).length(12),
+ relationships:z.array(z.object({fromId:id,toId:id,period:text,assertion:text,type:z.enum(['documented','attributed','interpretive']),premiseClaims:ids,qualifications:text})),
+ metagames:z.array(z.object({id,owningStop:id,title:text,period:text,actors:z.array(z.object({name:text,role:text,isDocumented:z.boolean()})).min(1),aims:text,mechanism:text,expectedBenefit:text,bearingCosts:text,observedResponse:text,evidentiaryLimit:text,premiseClaims:ids,interpretationLabel:z.literal('Tour explanation / Interpretation')})).length(7),
+ locations:z.array(z.object({id,stopId:id,historicalName:text,currentName:text,role:z.enum(['venue','event','context']),precision:z.enum(['exact','approximate','unknown']),condition:z.enum(['extant','altered','demolished','unverified']),access:z.enum(['public','private','restricted','unknown']),address:text,coordinates:z.object({latitude:z.number().min(-90).max(90),longitude:z.number().min(-180).max(180),sourceUrl:url,checkedDate:date,method:text}).nullable(),supportingSourceId:id,supportingLocator:text,qualification:text,currentCheck:z.object({url,date,note:text}).nullable()})).length(7),
+ presenters:z.array(z.object({stopId:id,kind:z.enum(['relationship','comparison','document','sequence']),title:text,items:z.array(z.object({key:id,label:text,text,qualification:text,claimIds:ids,evidenceId:id})).min(2)})).length(7),
+ media:z.object({scenes:z.array(z.object({id,kind:z.literal('scene-vector'),file,width:z.number().positive().int(),height:z.number().positive().int(),fileDigest:digest,creator:text,rightsBasis:text,rightsStatus:z.enum(['pending','approved']).default('pending'),materialLabel:z.literal('Reconstruction'),reviewStatus:z.enum(['pending','reviewed','failed']),reviewDate:date.nullable(),reviewedRevision:text.nullable(),reviewer:text.nullable(),referenceSourceIds:z.array(id),description:text})).length(8),narration:z.array(audio.extend({stopId:id,transcriptDigest:digest,voice:text})).length(7),ambience:z.array(audio.extend({description:text})).length(2)}),
+ 'narration-reviews':z.object({narration:z.array(review).length(7),ambience:z.array(review).length(2)})
+};
