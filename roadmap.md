@@ -14,7 +14,10 @@ This is a bounded personal reading experience. The next work completes its quali
 - [x] Retain original masters for regenerated narration and ambience outside published output.
 - [x] Improve small-screen reflow, link contrast, keyboard focus, visible voice-control labels, no-JavaScript controls and printable sources.
 - [x] Replace guessed geographic positions with three attributed approximate venue coordinates and four unplaced stops.
+- [x] Add the sourced USGS river base, retain original/derived hashes and reuse attribution, inspect the rendered overview, and provide offline reproducible generation.
+- [x] Configure GitHub Pages hosting and deployment workflow (`.github/workflows/deploy.yml`) with base-path and origin-URL resolution for subpath publication.
 - [x] Add targeted data/storage/browser regression coverage. Observed results and limits are in `docs/verification.md`.
+
 
 ## Required before calling the edition finished
 
@@ -23,9 +26,9 @@ This is a bounded personal reading experience. The next work completes its quali
 | Listening review | Audition all seven narration tracks and both noise textures, comparing the introductions and checking names, comfort, playback speeds and fades. Correct and regenerate affected tracks only. | Named reviewer, date, current content revision and matching digests in `narration-reviews.json`; no automatic pass. |
 | Media provenance/rights | Establish the existing SVG authorship/reference basis and applicable synthesized-voice distribution terms; retain the actual permission or licensing basis. | Explicit approved rights metadata and reference/render review records. No invented CC/public-domain assignment. |
 | Place-specific art | Compare the eight SVGs with identified architectural/place references, revise inaccurate details and inspect the actual mobile rendering. | Source IDs, reviewer, date, revision and visual review. Generalized reconstruction labels remain where appropriate. |
-| Finished map | Add a sourced river/base layer with its reuse record, retain the checked approximate venue points, keep uncertain event sites unplaced, and check labels at mobile/desktop sizes. | `geography.json` completed with the actual base source and review; all seven directory actions remain available. |
 | Editorial completion | Reconcile the complete visible catalog with passages, especially disputed attendance, person-specific outcomes, dates/locators and the Hamm setting conflict. | A documented editorial review; edition release status changes only after this work. |
 | Device and assistive use | Verify Safari/iOS, VoiceOver, voice control, reduced motion, forced colors, 200–400% zoom, audio interruption and unsupported-mixer behavior with Ryan’s actual workflow. | Observed device/browser versions and findings; targeted fixes for failures. |
 | Performance acceptance | Measure the specified cold-entry body-byte, LCP and CLS conditions on representative routes. | Three-run medians under the stated network/CPU profile; no certification inferred from bundle size. |
 
-Production remains blocked by incomplete review records. The preview is usable for completing them. No commit, publication, provider purchase, or deployment is part of these next actions.
+Production remains blocked by incomplete review records. The preview is usable for completing them. GitHub Pages automatically deploys the built preview edition via GitHub Actions on push to `main`.
+

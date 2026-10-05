@@ -25,10 +25,17 @@ The layout initializes optional enhancements separately. Controls start hidden a
 
 Dark backgrounds, warm paper text, a brighter crimson link color and a separate darker button fill provide the visual system. Grid columns can shrink below 320 pixels without clipping. Navigation wraps, controls have visible names suitable for voice input, and focus remains visible. Reduced-motion, forced-colors and print styles are present. Automated coverage is not screen-reader or real-device certification.
 
-The map separates approximate venue coordinates from historical event geometry, current condition, and current access. Four unknown positions remain unplaced. A mathematical coordinate grid supplies only relative venue positions; the river/base layer remains a release obligation recorded in `geography.json`.
+The map separates approximate venue coordinates from historical event geometry, current condition, and current access. Four unknown positions remain unplaced. A local north-up equirectangular projection places the three approximate venues against clipped modern USGS NHD river geometry. `geography.json` retains source/query/reuse/review metadata and original/derived hashes. `scripts/clip-map.py` rebuilds the small layer from the retained extract without network access, invalidating review if the bytes change. The river supplies modern context, not a reconstructed historical shoreline. On small screens the complete seven-stop directory supplies the geographic descriptions and navigation.
 
 ## Build and media
-
+ 
 `build.mjs` removes only its owned output directory, validates, and invokes Astro. Preview output and accepted production output use separate directories. Production rejects pending/stale reviews and unresolved rights; a failed gate leaves no stale accepted `dist/`.
 
 `generate-audio.mjs` uses argument arrays with `execFileSync`, isolated temporary files, and explicit stop IDs. It retains AIFF narration masters and WAV ambience masters in `production/audio/`, which Astro does not publish. MP3 files are served locally. Every generation invalidates the corresponding listening review. Distribution-rights approval is separate from file generation and technical checks.
+
+## Deployment and subpath routing
+
+`astro.config.mjs` reads `ASTRO_SITE` and `ASTRO_BASE` from environment variables, defaulting to origin root (`/`) for local development, unit tests, and local browser previews. `src/lib/catalog.ts` provides centralized URL resolution (`base`, `routeURL`, `assetURL`, `stopURL`, `sourceURL`, `claimURL`), ensuring that internal navigation, asset links, font preloads, SVG scenes, and client-side bookmark/context-return URLs resolve correctly under either an origin root or a repository subpath (such as GitHub Pages at `/stp-gangster-tour/`).
+
+GitHub Pages hosting is automated via `.github/workflows/deploy.yml`. On push to `main`, the workflow installs dependencies, verifies types and content schemas, runs focused unit tests, builds the preview edition using `actions/configure-pages` inputs, and deploys the preview artifact to GitHub Pages.
+

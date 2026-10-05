@@ -1,3 +1,5 @@
+> Implementation note (2026-10-05): This document is the editorial starting point. Visitor copy and corrections are maintained in `src/data/`; see `docs/evidence-ledger.md` for the 0.5.0 reconciliation. Historical review dates here are not automatically refreshed by code changes.
+
 # Historical research ledger
 
 **Checked:** October 3, 2026. **Companion narrative:** [history.md](history.md). **Contract:** [spec.md](spec.md).

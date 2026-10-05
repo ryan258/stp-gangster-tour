@@ -1,3 +1,5 @@
+> Implementation note (2026-10-05): This document is the editorial starting point. Visitor copy and corrections are maintained in `src/data/`; see `docs/evidence-ledger.md` for the 0.5.0 reconciliation. Historical review dates here are not automatically refreshed by code changes.
+
 # Saint Paul After Dark: the history and the games behind it
 
 **Research edition 0.1 — October 3, 2026.** A developed reading draft for the seven-stop tour in [spec.md](spec.md). The companion [research ledger](research.md) records the checked passages, claim qualifications, fourteen evidence treatments, and remaining location questions. This is the historical foundation; narration, art, precise map geometry, and media permissions are still production work.

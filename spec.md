@@ -1,10 +1,10 @@
 # Feature: Saint Paul After Dark
 
-**Working subtitle:** An interactive history of the city that sheltered the underworld.  
-**Status:** Complete specification draft v0.4, ready for implementation planning and Ryan's review; no application has been built.  
-**Created:** October 3, 2026.  
-**Specification revised:** October 5, 2026. Technical references checked on this date; historical passage checks remain dated October 3, 2026.  
-**Current project state:** This specification, a seven-stop [history draft](history.md), and a [research ledger](research.md) with thirty claims and fourteen evidence treatments; no application, production assets, dependencies, or Git repository.  
+**Working subtitle:** An interactive history of the city that sheltered the underworld.
+**Status:** Implementation contract v0.5; a complete reading preview exists. Production acceptance remains open; see `docs/verification.md` and `roadmap.md`.
+**Created:** October 3, 2026.
+**Specification revised:** October 5, 2026. Technical references checked on this date; historical passage checks remain dated October 3, 2026.
+**Current project state:** Static Astro application with thirteen content routes and a 404, validated JSON, local media, retained audio masters, Git history, and targeted tests. The history draft and research ledger remain editorial starting points; the runtime catalog records corrections.
 **Scope:** A personal creative project with one complete, bounded first edition.
 
 **Contract language:** “Must” and “shall” describe required behavior. “Target” describes a production goal to measure. Proposed copy and scene treatments may change without expanding the seven-stop scope. This is a specification, not evidence that the experience has been built, historically verified in full, or accepted by Ryan.
@@ -30,7 +30,7 @@ The experience should feel like stepping into a meticulously illustrated noir do
 - **Small technical footprint:** Astro in static-output mode, TypeScript, ordinary CSS, SVG, and local validated JSON content. Use full-document navigation and small browser enhancements; see R12. No required server, database, paid map service, runtime AI, or visitor account.
 - **Readable foundation:** Pre-render the narrative, evidence text, source links, and ordinary navigation. If client-side JavaScript fails or is disabled, the complete reading route remains available; saved progress, selection highlighting, and audio controls may be unavailable with a plain explanation. Do not require the map or an app-loading screen to reach the story.
 - **Bounded production:** Design for a solo 2–4 week build burst. Reuse interaction components and audio beds while giving each location its own composition. A full 3D city is outside this edition.
-- **Work boundary:** The authorized documentation work now includes this specification, the historical reading draft, and its research/evidence ledger. Implementation planning, code, asset production, commits, deployment, and publication are separate work. Follow Ryan's repository instructions for those actions.
+- **Work boundary:** Ryan authorized implementation and correction of the reviewed issues. Staging, commits, pushing, deployment and publication require separate explicit delegation.
 
 ## Requirements
 
@@ -312,12 +312,12 @@ Historical outcomes remain fixed. No numerical payoff matrix, optimization chall
 
 Choose **Astro static output, strict TypeScript, plain CSS and native browser APIs**. Astro's page routing supplies independent HTML documents; its schema-validated content collections can load the local JSON records. Use a separate cross-record/content gate for rules schemas alone cannot express. No React/Vue runtime, state-management package, animation library, map SDK, server adapter, database or external API is required. [Astro pages][astro-pages]; [content collections][astro-content].
 
-Use Node 24.x and npm. At scaffolding, verify the chosen stable Astro release supports that runtime, pin the tested Node patch and package versions, and keep the npm lockfile. The checked Astro installation documentation requires Node 22.12 or later and excludes odd-numbered majors; this draft does not assert that dependencies are already installed. [Astro prerequisites][astro-install].
+Implementation amendment: use the tested Node 22.22.3 patch recorded in `.nvmrc` and npm. Node 24 is an allowed upgrade path in `package.json`, but has not been tested in this remediation. Keep the lockfile and tested direct tool versions. Astro’s current package engine requires Node 22.12 or later. [Astro prerequisites][astro-install].
 
-| Future project area | Responsibility |
+| Implemented project area | Responsibility |
 | --- | --- |
 | `src/pages/`, `src/layouts/` | Thirteen content routes, explicit static 404, common navigation/metadata and reading shell. |
-| `src/content/`, `src/content.config.ts` | JSON collections, schemas and edition manifest; no fetched live content. |
+| `src/data/`, `scripts/content-schema.mjs`, `src/lib/catalog.ts` | JSON records, Zod schemas and edition manifest; no fetched live content. |
 | `src/components/`, `src/styles/` | Scene, disclosure, comparison, sequence, relationship list, map/list and audio controls; one shared set of design tokens. |
 | `src/scripts/`, `src/lib/` | Independent enhancements for storage, audio, evidence/selection and Resume; small shared validators/state helpers. |
 | `src/assets/`, `public/media/`, `public/licenses/` | Reviewed image sources, optimized derivatives, audio exports and notices. Large editable masters may live under a non-published `production/` directory. |
@@ -325,7 +325,7 @@ Use Node 24.x and npm. At scaffolding, verify the chosen stable Astro release su
 
 This names responsibilities, not a requirement to create empty folders or a plugin architecture. Each browser enhancement initializes independently: an audio error cannot disable evidence or navigation; a storage error cannot block the page. Essential navigation is native HTML. Theme/Calm initialization is tiny and fails to the readable static design. Browser JavaScript receives only the fields it uses, not whole archival records or the build-time content loader.
 
-The build interface must expose these commands when implementation begins; **none exists yet**:
+The implemented build interface exposes these commands. `build:preview` writes visibly labeled draft output to `dist-preview/`; production output is separate:
 
 | Command | Contract |
 | --- | --- |
@@ -334,7 +334,7 @@ The build interface must expose these commands when implementation begins; **non
 | `npm run test:unit -- <file>` | Run the selected Vitest file for content, storage or audio-state behavior. |
 | `npm run test:browser -- --grep <scenario>` | Run selected Playwright scenarios against local output; no paid or external services. |
 | `npm run build` | Require full production content/media validation, then write only successful static output to `dist/`. A failed gate must not leave an output that appears newly accepted. |
-| `npm run preview` | Serve the current built output locally; show its edition/revision, not an assurance that it matches unbuilt source changes. |
+| `npm run preview` | Serve `dist-preview/` locally; show its edition/revision. `preview:production` serves a separately accepted `dist/`. Neither guarantees agreement with unbuilt changes. |
 
 Use root-relative routes with directory index output and a real 404 on a compatible static host. Record base-path assumptions in the eventual README; v1 targets an origin root, not arbitrary subfolder installation. Per-page title and description derive from the stop/edition; there is no invented live domain, review rating or business listing. Build and runtime make no historical-source fetches. Package installation is the only expected network-dependent setup step once local media is present. Static-host deployment is portable and remains a separately authorized action. [Astro deployment output][astro-deploy].
 
