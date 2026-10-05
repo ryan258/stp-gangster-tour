@@ -1,29 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import {edition,stops,stopURL,routeURL,assetURL} from '../lib/catalog';
+import {edition,stops,claims,evidence,stopURL,routeURL} from '../lib/catalog';
+import ArtImage from '../components/ArtImage.astro';
 
-const cardImages: Record<string, string> = {
-  'the-arrangement': '/images/redesign/card-the-arrangement.webp',
-  'a-suite-above-the-street': '/images/redesign/card-a-suite-above-the-street.webp',
-  'under-the-bluff': '/images/redesign/card-under-the-bluff.webp',
-  'the-price-of-protection': '/images/redesign/card-the-price-of-protection.webp',
-  'the-deal-breaks': '/images/redesign/card-the-deal-breaks.webp',
-  'the-safe-house-fails': '/images/redesign/card-the-safe-house-fails.webp',
-  'on-the-record': '/images/redesign/card-on-the-record.webp'
-};
 ---
 <Layout title="Saint Paul After Dark">
  <div class="experience-page home-experience">
   <!-- 1. Hero Section -->
   <section class="hero-noir">
     <div class="hero-backdrop">
-      <img
-        src={assetURL('/images/redesign/hero-skyline.webp')}
-        alt=""
-        width="1600"
-        height="900"
-        fetchpriority="high"
-      />
+      <ArtImage name="hero-skyline" width={1600} height={900} eager/>
     </div>
     <div class="container">
       <div class="hero-content">
@@ -54,7 +40,7 @@ const cardImages: Record<string, string> = {
   </section>
 
   <div class="container">
-    <nav class="home-entry-strip" aria-label="Explore the experience"><a href="#reading-order"><b>07</b><span>Chapters<br/><small>Follow the story</small></span></a><a href={routeURL('/casebook/')}><b>14</b><span>Evidence files<br/><small>Look beneath the legend</small></span></a><a href={routeURL('/sources/')}><b>30</b><span>Claim records<br/><small>Trace the source</small></span></a></nav>
+    <nav class="home-entry-strip" aria-label="Explore the experience"><a href="#reading-order"><b>{String(stops.length).padStart(2,'0')}</b><span>Chapters<br/><small>Follow the story</small></span></a><a href={routeURL('/casebook/')}><b>{evidence.length}</b><span>Evidence files<br/><small>Look beneath the legend</small></span></a><a href={routeURL('/sources/')}><b>{claims.length}</b><span>Claim records<br/><small>Trace the source</small></span></a></nav>
     <!-- 2. Read the City Through Its Evidence (Dossier Section) -->
     <section class="evidence-dossier-section">
       <div class="dossier-grid">
@@ -87,13 +73,7 @@ const cardImages: Record<string, string> = {
         <figure class="vintage-photo-card">
           <div class="photo-tape" aria-hidden="true"></div>
           <div class="photo-inner">
-            <img
-              src={assetURL('/images/redesign/hotel-ryan.webp')}
-              alt="Atmospheric illustration of a hotel street corner at night"
-              width="800"
-              height="600"
-              decoding="async"
-            />
+            <ArtImage name="hotel-ryan" alt="Atmospheric illustration of a hotel street corner at night" width={800} height={600} sizes="(min-width: 900px) 320px, 80vw"/>
           </div>
           <figcaption>Atmospheric artwork · not an archival photograph</figcaption>
         </figure>
@@ -130,13 +110,7 @@ const cardImages: Record<string, string> = {
           <li class="chapter-card-item">
             <article class="chapter-card">
               <div class="card-backdrop">
-                <img
-                  src={assetURL(cardImages[s.id] || '/images/redesign/hero-skyline.webp')}
-                  alt=""
-                  width="600"
-                  height="340"
-                  decoding="async"
-                />
+                <ArtImage name={`card-${s.id}`} width={600} height={340} sizes="(min-width: 1100px) 25vw, (min-width: 700px) 50vw, 100vw"/>
               </div>
               <div class="card-content">
                 <p class="card-period">
@@ -160,13 +134,7 @@ const cardImages: Record<string, string> = {
     <!-- 4. Quote Banner Section -->
     <section class="quote-banner-section">
       <div class="banner-backdrop">
-        <img
-          src={assetURL('/images/redesign/banner-bridge.webp')}
-          alt=""
-          width="1600"
-          height="900"
-          decoding="async"
-        />
+        <ArtImage name="banner-bridge" width={1600} height={900}/>
       </div>
       <div class="banner-content">
         <div class="banner-left">

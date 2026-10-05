@@ -1,19 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ExperienceHero from '../components/ExperienceHero.astro';
-import { claims, sources, edition, media, sourceURL, routeURL } from '../lib/catalog';
+import { claims, sources, edition, media, corrections, sourceURL, routeURL, issuesURL } from '../lib/catalog';
+const reportURL = (id: string) => `${issuesURL}?title=${encodeURIComponent(`Correction: ${id}`)}&body=${encodeURIComponent(`Claim or evidence ID: ${id}\nProposed correction:\nSource with page or passage locator:\n`)}`;
 ---
 
 <Layout title="Sources and qualifications">
   <div class="experience-page sources-page">
     <ExperienceHero title="Sources and qualifications" eyebrow="The archive behind the story" lede="The atmosphere draws you in. The sources let you look closer." image="/images/redesign/banner-bridge.webp" folio="REF" note="Follow the paper trail.">
-      <p class="hero-explainer">Thirty claims, with their support, disputes, and limits. A historical record, a later account, and this tour’s explanation are different kinds of material.</p>
+      <p class="hero-explainer">{claims.length} claims, with their support, disputes, and limits. A historical record, a later account, and this tour’s explanation are different kinds of material.</p>
       <div class="experience-actions"><a data-context-return hidden href={routeURL('/map/')}>Back to the tour</a><a href="#claims">Open the claim ledger <span aria-hidden="true">↓</span></a></div>
     </ExperienceHero>
     <div class="container">
-      <nav class="archive-tabs" aria-label="Sources sections"><a href="#claims"><span>{claims.length}</span> Claims</a><a href="#bibliography"><span>{sources.length}</span> Bibliography</a><a href="#edition-status"><span>↳</span> Edition notes</a><a href="#credits"><span>↳</span> Credits</a></nav>
+      <nav class="archive-tabs" aria-label="Sources sections"><a href="#claims"><span>{claims.length}</span> Claims</a><a href="#bibliography"><span>{sources.length}</span> Bibliography</a><a href="#edition-status"><span>↳</span> Edition notes</a><a href="#credits"><span>↳</span> Credits</a><a href="#cite"><span>↳</span> Cite &amp; data</a></nav>
       <div class="archive-layout">
-        <aside class="archive-guide"><div class="paper-document"><p class="paper-kicker">A reader’s field guide</p><h2>Read the fine print.</h2><p>“Supported” refers to the bounded statement and cited source, not universal certainty.</p><p>These pages paraphrase records; they do not present invented transcripts or archival facsimiles.</p><dl><dt>Supported</dt><dd>Read the statement alongside its explanation and qualification.</dd><dt>Disputed</dt><dd>Follow the differing accounts and the limits of what they establish.</dd></dl><p data-js-control hidden><button type="button" class="btn-secondary" id="print-sources">Print or save as PDF</button></p></div><nav class="archive-guide-links" aria-label="Archive index"><a href="#claims">Claim ledger <span aria-hidden="true">↓</span></a><a href="#bibliography">Bibliography <span aria-hidden="true">↓</span></a><a href="#edition-status">Edition notes <span aria-hidden="true">↓</span></a><a href="#credits">Credits <span aria-hidden="true">↓</span></a></nav></aside>
+        <aside class="archive-guide"><div class="paper-document"><p class="paper-kicker">A reader’s field guide</p><h2>Read the fine print.</h2><p>“Supported” refers to the bounded statement and cited source, not universal certainty.</p><p>These pages paraphrase records; they do not present invented transcripts or archival facsimiles. <a href={routeURL('/method/')}>How this edition was researched →</a></p><dl><dt>Supported</dt><dd>Read the statement alongside its explanation and qualification.</dd><dt>Disputed</dt><dd>Follow the differing accounts and the limits of what they establish.</dd></dl><p data-js-control hidden><button type="button" class="btn-secondary" id="print-sources">Print or save as PDF</button></p></div><nav class="archive-guide-links" aria-label="Archive index"><a href="#claims">Claim ledger <span aria-hidden="true">↓</span></a><a href="#bibliography">Bibliography <span aria-hidden="true">↓</span></a><a href="#edition-status">Edition notes <span aria-hidden="true">↓</span></a><a href="#credits">Credits <span aria-hidden="true">↓</span></a></nav></aside>
         <div class="archive-records">
     <section id="claims">
       <div class="experience-section-heading"><div><p class="eyebrow">Statement. Support. Qualification.</p><h2>Claim ledger</h2></div></div>
@@ -24,6 +25,7 @@ import { claims, sources, edition, media, sourceURL, routeURL } from '../lib/cat
           <p>{c.supportExplanation}</p>
           <p><strong>Qualification:</strong> {c.qualification}</p>
           <p><strong>Locator:</strong> {c.locators}</p>
+          <p class="claim-report"><a href={reportURL(c.id)}>Suggest a correction to {c.id}</a></p>
           <p class="muted">Recorded passage check: {c.passageCheckDate}. This date describes the existing research record, not a new review of every passage.</p>
           <p>
             {c.sourceIds.map((id, i) => {
@@ -50,10 +52,10 @@ import { claims, sources, edition, media, sourceURL, routeURL } from '../lib/cat
           <p>Published: {s.publicationDate}. Recorded consultation: {s.consultationDate}.</p>
           <p><strong>Passages:</strong> {s.passageLocators}</p>
           <p><strong>Limits:</strong> {s.limits}</p>
-          <p><a href={s.url}>Read {s.id} at its source</a></p>
+          <p><a href={s.url}>Read {s.id} at its source</a>{s.archiveUrl&&<> · <a href={s.archiveUrl}>Archived copy</a> <span class="muted">(nearest snapshot; may differ from the version consulted)</span></>}</p>
           <details>
             <summary>Copyable citation</summary>
-            <p class="citation">{s.creator}. “{s.title}.” {s.publicationDate}. {s.url} (consulted {s.consultationDate}).</p>
+            <p class="citation">{s.creator}. “{s.title}.” {s.publicationDate}. {s.url} (consulted {s.consultationDate}).{s.archiveUrl?` Archived: ${s.archiveUrl}`:''}</p>
           </details>
         </article>
       ))}
@@ -62,16 +64,14 @@ import { claims, sources, edition, media, sourceURL, routeURL } from '../lib/cat
     <section id="edition-status" class="archive-note">
       <h2>Edition notes</h2>
       <p>Edition {edition.contentRevision} is a working preview. Structural checks cover records, links between records, asset digests, and SVG parsing. They cannot establish historical truth, listening quality, rights, or accessibility conformance.</p>
-      <h3>Corrections in 0.5.0</h3>
-      <ul>
-        <li>Removed unsupported presenter details and absolute claims about absent records.</li>
-        <li>Kept the Hamm abduction-setting conflict visible; replaced invented map positions with three qualified venue coordinates and an unplaced list.</li>
-        <li>Separated Gleckman’s outcomes from the unverified legal status of Fuchs.</li>
-        <li>Corrected the hotel surveillance caption, silver-nitrate wording, and Lincoln Court illustration labels.</li>
-        <li>Replaced automatic listening passes with pending review records.</li>
+      <h3>Corrections log</h3>
+      <ul class="corrections-log">
+        {corrections.map(k => (
+          <li id={`correction-${k.id}`}><strong>{k.id} · edition {k.revision} · {k.date}.</strong> {k.summary} <em>Why:</em> {k.reason}{k.claimIds.length>0&&<> Affects {k.claimIds.map((id,i)=><span><a href={`#claim-${id}`}>{id}</a>{i<k.claimIds.length-1?', ':''}</span>)}.</>}</li>
+        ))}
       </ul>
       <p>Still open: recorded listening and rights reviews, referenced illustration review, final editorial review, and real-device and assistive-technology verification.</p>
-      <p>To investigate a possible correction, note the claim or evidence ID, the proposed correction, and a source with a page or passage locator. The ledger preserves qualifications while that question is checked.</p>
+      <p>To suggest a correction, use the link under any claim: it opens a prefilled issue asking for the claim or evidence ID, the proposed correction, and a source with a page or passage locator. The ledger preserves qualifications while that question is checked.</p>
     </section>
 
     <section id="credits" class="archive-note">
@@ -79,12 +79,21 @@ import { claims, sources, edition, media, sourceURL, routeURL } from '../lib/cat
       <p>Local narration uses macOS Samantha; ambience is synthesized noise, not a location recording. Regenerated recordings have retained lossless masters in the project’s non-published production directory. Listening and distribution-rights reviews remain pending.</p>
       <p>The skyline, chapter artwork, hotel image, and bridge artwork are existing project WebP assets used for atmosphere. They are not presented as archival photographs, authenticated likenesses, or verified architectural views. The expandable scene studies use existing local SVG reconstructions with corrective edits. No new reuse license has been assigned. Referenced scene review and provenance confirmation remain open.</p>
       <ul>
+        {media.images.map(i => (
+          <li>{i.id}: {i.description} Provenance: {i.provenanceStatus}; distribution rights: {i.rightsStatus}.</li>
+        ))}
         {media.scenes.map(s => (
           <li>{s.id}: {s.description}</li>
         ))}
       </ul>
-      <p>Fonts: Barlow Condensed and Source Sans 3 have self-hosted files, with licenses retained under public/licenses in the project. The visual design also requests Playfair Display, Cinzel, Caveat, and Source Sans 3 from Google Fonts, with local fallback fonts when unavailable. The cited archives and websites retain their own rights and conditions.</p>
-      <p>No analytics, account, GPS, or external audio provider is part of the runtime. Following a source link leaves this site and uses that source’s services.</p>
+      <p>Fonts are all self-hosted; none is requested from a third-party service. Barlow Condensed and Source Sans 3 are served from the project’s font files, and Playfair Display, Cinzel and Caveat from the Fontsource packages. All five are under the SIL Open Font License; the notices are retained in <code>/licenses/</code>. The cited archives and websites retain their own rights and conditions.</p>
+      <p>No analytics, account, GPS, external font, or external audio provider is part of the runtime. Following a source link leaves this site and uses that source’s services.</p>
+    </section>
+
+    <section id="cite" class="archive-note">
+      <h2>Cite and reuse the data</h2>
+      <p><strong>Cite this edition:</strong> {edition.title}, edition {edition.contentRevision} (historical passages checked {edition.historicalCheckDate}). Give the page address and the date you accessed it; cite individual claims by ID, for example <a href="#claim-C01">C01</a>.</p>
+      <p>Machine-readable copies of the catalog: <a href={routeURL('/data/catalog.json')}>catalog (JSON)</a> · <a href={routeURL('/data/sources.bib')}>sources (BibTeX)</a> · <a href={routeURL('/data/sources.csl.json')}>sources (CSL-JSON)</a>. No reuse license has been assigned to the tour’s prose, images or voice; the data files are provided for citation and checking.</p>
     </section>
         </div>
       </div>

@@ -1,4 +1,13 @@
 ---
+import '@fontsource/playfair-display/latin-600.css';
+import '@fontsource/playfair-display/latin-700.css';
+import '@fontsource/playfair-display/latin-900.css';
+import '@fontsource/playfair-display/latin-400-italic.css';
+import '@fontsource/cinzel/latin-500.css';
+import '@fontsource/cinzel/latin-700.css';
+import '@fontsource/cinzel/latin-900.css';
+import '@fontsource/caveat/latin-400.css';
+import '@fontsource/caveat/latin-600.css';
 import '../styles/tokens.css';
 import '../styles/global.css';
 import '../styles/main.scss';
@@ -9,6 +18,11 @@ import SkipLink from '../components/SkipLink.astro';
 import {edition,assetURL} from '../lib/catalog';
 interface Props {title:string;description?:string;currentPath?:string;stopNumber?:number;totalStops?:number;}
 const {title,description=edition.subtitle,currentPath=Astro.url.pathname,stopNumber,totalStops=7}=Astro.props;
+const site=Astro.site??new URL('https://ryan258.github.io');
+const canonical=new URL(Astro.url.pathname,site).href;
+const ogImage=new URL(assetURL('/images/redesign/hero-skyline.webp'),site).href;
+const fullTitle=title===edition.title?edition.title:`${title} | ${edition.title}`;
+const preview=edition.releaseStatus!=='reviewed';
 ---
 <!doctype html>
 <html lang="en">
@@ -18,10 +32,17 @@ const {title,description=edition.subtitle,currentPath=Astro.url.pathname,stopNum
   <meta name="description" content={description}/>
   <meta name="color-scheme" content="dark"/>
   <meta name="referrer" content="strict-origin-when-cross-origin"/>
-  <title>{title===edition.title ? edition.title : `${title} | ${edition.title}`}</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cinzel:wght@500;700;900&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <title>{fullTitle}</title>
+  <link rel="canonical" href={canonical}/>
+  <link rel="icon" type="image/svg+xml" href={assetURL('/favicon.svg')}/>
+  {preview&&<meta name="robots" content="noindex"/>}
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content={edition.title}/>
+  <meta property="og:title" content={fullTitle}/>
+  <meta property="og:description" content={description}/>
+  <meta property="og:url" content={canonical}/>
+  <meta property="og:image" content={ogImage}/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="preload" href={assetURL('/fonts/source-sans-3-regular.woff2')} as="font" type="font/woff2" crossorigin/>
 </head>
 <body>

@@ -1,13 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SvgMap from '../components/SvgMap.astro';
-import {assetURL,routeURL} from '../lib/catalog';
+import {routeURL} from '../lib/catalog';
+import ArtImage from '../components/ArtImage.astro';
 import '../styles/map.scss';
 ---
 <Layout title="Map and places">
   <div class="map-page">
     <header class="map-hero">
-      <img class="map-hero-image" src={assetURL('/images/redesign/hero-skyline.webp')} alt="" width="1600" height="900" fetchpriority="high"/>
+      <ArtImage class="map-hero-image" name="hero-skyline" width={1600} height={900} eager/>
       <div class="container map-hero-content">
         <div class="map-intro">
           <p class="eyebrow">Places and uncertainty</p>

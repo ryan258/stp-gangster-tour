@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ExperienceHero from '../components/ExperienceHero.astro';
+import {claims, sources, evidence, corrections, routeURL} from '../lib/catalog';
+const count = (key: 'status' | 'evidenceBasis') => Object.entries(claims.reduce<Record<string, number>>((a, c) => ({...a, [c[key]]: (a[c[key]] ?? 0) + 1}), {}));
+const types = Object.entries(sources.reduce<Record<string, number>>((a, s) => ({...a, [s.sourceType]: (a[s.sourceType] ?? 0) + 1}), {}));
+const single = claims.filter(c => c.sourceIds.length === 1).length;
+---
+<Layout title="Method" description="How the claims, sources and evidence in Saint Paul After Dark were gathered, graded and checked.">
+  <div class="experience-page sources-page method-page">
+    <ExperienceHero title="How this was researched" eyebrow="Method and limits" lede="What the labels mean, what was checked, and what was not." image="/images/redesign/banner-bridge.webp" folio="MTH" note="Read the fine print.">
+      <div class="experience-actions"><a href={routeURL('/sources/')}>Open the claim ledger <span aria-hidden="true">→</span></a></div>
+    </ExperienceHero>
+    <div class="container bookend-layout">
+      <div class="bookend-prose">
+        <section id="chain"><p class="eyebrow">The chain</p><h2>Source → claim → explanation → chapter</h2>
+          <p>Each chapter passage rests on bounded <strong>claims</strong>, and each claim names its sources, the passage locator and its limits. Evidence items are the tour’s own <strong>source-linked explanations</strong>: they paraphrase and compare, and they are never presented as original documents. Passages cite their claims by ID, so a reader can follow any passage to its ledger entries (attribution is per passage, not yet per sentence).</p>
+        </section>
+        <section id="status"><p class="eyebrow">Claim status</p><h2>What the labels mean</h2>
+          <dl>
+            <dt>Supported</dt><dd>The cited material supports the bounded assertion with its stated limits. An attributed account can be Supported without independent corroboration.</dd>
+            <dt>Qualified</dt><dd>Support requires an explicit qualification.</dd>
+            <dt>Disputed</dt><dd>The claim is contested in the examined material.</dd>
+            <dt>Unverified</dt><dd>Adequate support has not been established in this project.</dd>
+          </dl>
+          <p>Current counts: {count('status').map(([k, v]) => `${v} ${k}`).join(', ')}. By basis: {count('evidenceBasis').map(([k, v]) => `${v} ${k}`).join(', ')}.</p>
+        </section>
+        <section id="sources-tiers"><p class="eyebrow">Sources</p><h2>Direct records and later accounts</h2>
+          <p>A <strong>historical record</strong> is a period source such as a court opinion or a published notice; a later rendering may be a transcription. A <strong>historical account</strong> is a historian, institution or investigative retrospective, and its attribution is kept. A <strong>lead</strong> is used only to find a location or a story, never as proof of attendance.</p>
+          <p>The bibliography holds {sources.length} sources ({types.map(([k, v]) => `${v} ${k.toLowerCase()}`).join(', ')}). {single} of {claims.length} claims rest on a single source; source count alone does not establish independence. Where available, each source links to the nearest archived snapshot, which may differ from the version consulted.</p>
+        </section>
+        <section id="checks"><p class="eyebrow">Checks</p><h2>What is verified, and what is not</h2>
+          <p>Automated checks confirm record shapes, cross-references, ownership, dates, source URLs, word budgets, file hashes, SVG safety and audio format. They cannot establish historical truth, listening quality, rights or accessibility conformance. Passage-check dates record the existing research ledger, not a fresh audit of every passage.</p>
+          <p>Reviews of listening, image provenance, distribution rights and final editorial judgment are human acts. A review record names a person, a date and the content revision; an automated tool is never recorded as a reviewer.</p>
+        </section>
+        <section id="media"><p class="eyebrow">Media</p><h2>Art and voice</h2>
+          <p>Illustrations are atmospheric and labelled as such; they are not archival photographs or authenticated likenesses. Narration is synthesized speech, and ambience is synthesized noise rather than a field recording. Provenance and distribution rights for each file are listed under <a href={routeURL('/sources/#credits')}>Credits</a> and remain pending until the owner records them.</p>
+        </section>
+        <section id="corrections"><p class="eyebrow">Corrections</p><h2>When something changes</h2>
+          <p>Wording corrections are logged with the claims they affect — {corrections.length} so far, in the <a href={routeURL('/sources/#edition-status')}>corrections log</a>. Every claim in the ledger has a link to suggest a correction with a source and locator.</p>
+          <p>The tour presents {evidence.length} evidence items across seven chapters, and the catalog behind them can be downloaded for checking from <a href={routeURL('/sources/#cite')}>Cite and reuse the data</a>.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</Layout>

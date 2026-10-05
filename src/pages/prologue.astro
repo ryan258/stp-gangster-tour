@@ -2,7 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import ExperienceHero from '../components/ExperienceHero.astro';
 import ClaimLinks from '../components/ClaimLinks.astro';
-import {edition,stops,stopURL,routeURL,assetURL} from '../lib/catalog';
+import {edition,stops,stopURL,routeURL} from '../lib/catalog';
+import ArtImage from '../components/ArtImage.astro';
 ---
 <Layout title="Prologue">
  <article class="experience-page bookend-page" data-reading-page="prologue">
@@ -17,11 +18,11 @@ import {edition,stops,stopURL,routeURL,assetURL} from '../lib/catalog';
     <nav class="stop-nav" aria-label="Reading order"><a href={routeURL('/')}>← Previous: Home</a><a href={stopURL(stops[0].id)}>Next: {stops[0].title} →</a></nav>
    </div>
    <aside class="bookend-aside">
-    <figure class="experience-photo"><img src={assetURL('/images/redesign/hotel-ryan.webp')} alt="" width="1024" height="768" decoding="async"/><figcaption>A city after dark.<br/><small>Atmospheric artwork, not an archival photograph.</small></figcaption></figure>
+    <figure class="experience-photo"><ArtImage name="hotel-ryan" width={1024} height={768} sizes="(min-width: 1000px) 400px, 100vw"/><figcaption>A city after dark.<br/><small>Atmospheric artwork, not an archival photograph.</small></figcaption></figure>
     <div class="paper-document"><p class="paper-kicker">A reading of the record</p><h2>The arrangement</h2><ol class="terms-list"><li>Identify yourself.</li><li>Pay for protection.</li><li>Keep major crimes outside the city.</li></ol><p>A paraphrase of the arrangement described by the Minnesota Historical Society. The linked claims set out its scope and limits.</p><a href={routeURL('/sources/#claim-C01')}>Read the claim basis <span aria-hidden="true">↗</span></a></div>
     <div class="experience-content-note"><p class="eyebrow">Before you begin</p><p>{edition.contentNote}</p></div>
    </aside>
   </div>
-  <div class="container"><a class="next-chapter-teaser" href={stopURL(stops[0].id)}><img src={assetURL('/images/redesign/card-the-arrangement.webp')} alt="" width="1376" height="768" decoding="async"/><span><small>Chapter 01 / {stops[0].period}</small><strong>{stops[0].title}</strong><em>Begin with the people who made the bargain work.</em></span><b aria-hidden="true">→</b></a></div>
+  <div class="container"><a class="next-chapter-teaser" href={stopURL(stops[0].id)}><ArtImage name="card-the-arrangement" sizes="(min-width: 800px) 300px, 100vw"/><span><small>Chapter 01 / {stops[0].period}</small><strong>{stops[0].title}</strong><em>Begin with the people who made the bargain work.</em></span><b aria-hidden="true">→</b></a></div>
  </article>
 </Layout>
