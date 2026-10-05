@@ -1,0 +1,340 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AudioPlayer from '../../components/AudioPlayer.astro';
+import EvidenceItem from '../../components/EvidenceItem.astro';
+import RelationshipPresenter from '../../components/RelationshipPresenter.astro';
+import ComparisonPresenter from '../../components/ComparisonPresenter.astro';
+import SequencePresenter from '../../components/SequencePresenter.astro';
+import DocumentPresenter from '../../components/DocumentPresenter.astro';
+
+import stops from '../../data/stops.json';
+import locations from '../../data/locations.json';
+import evidenceData from '../../data/evidence.json';
+import peopleData from '../../data/people.json';
+import metagamesData from '../../data/metagames.json';
+import mediaData from '../../data/media.json';
+
+export function getStaticPaths() {
+  return stops.map((stop, index) => {
+    const prevStop = index > 0 ? stops[index - 1] : null;
+    const nextStop = index < stops.length - 1 ? stops[index + 1] : null;
+    return {
+      params: { id: stop.id },
+      props: { stop, prevStop, nextStop }
+    };
+  });
+}
+
+const { stop, prevStop, nextStop } = Astro.props;
+
+const location = locations.find(l => l.id === stop.locationId);
+const scene = mediaData.scenes.find(s => s.id === stop.sceneId);
+const narration = mediaData.narration.find(n => n.id === stop.narrationId);
+const stopEvidence = evidenceData.filter(e => stop.evidenceIds.includes(e.id));
+const stopPeople = peopleData.filter(p => stop.relatedPersonIds.includes(p.id));
+const stopMetagame = metagamesData.find(m => m.id === stop.blocks.metagame?.metagameId);
+
+// Presenter conditions / props
+const conditionItems = [
+  {
+    key: "check-in",
+    label: "1. Check in upon arrival",
+    summary: "Visiting criminals reported immediately to the police chief or designated saloon intermediary.",
+    detail: "William 'Reddy' Griffin and later Dan Hogan ran the Green Lantern as the primary check-in clearinghouse, cataloging who entered Saint Paul."
+  },
+  {
+    key: "pay",
+    label: "2. Pay protection tribute",
+    summary: "Fugitives paid cash tribute and agreed to return stolen goods if requested by connected officials.",
+    detail: "Tribute payments funded the municipal political machine and assured visitors that federal tips would be quietly leaked."
+  },
+  {
+    key: "keep-crimes-elsewhere",
+    label: "3. Commit no major crimes in town",
+    summary: "Robberies, kidnappings, and assassinations had to occur outside Saint Paul city limits.",
+    detail: "Kept Saint Paul headlines calm while exporting violence and bank holdups to neighboring Minnesota and regional communities."
+  }
+];
+
+const lincolnCourtStages = [
+  {
+    key: "report",
+    title: "1. Tenant Report & Suspicion",
+    date: "March 30, 1934",
+    description: "The landlady at Lincoln Court reported suspicious tenants renting Apartment 303 under the alias 'Mr. and Mrs. Carl Hellman'."
+  },
+  {
+    key: "surveillance",
+    title: "2. Federal Surveillance",
+    date: "March 31, 1934 (Early Morning)",
+    description: "Two FBI agents stationed outside the apartment building observed Homer Van Meter arrive while agents awaited local backup."
+  },
+  {
+    key: "confrontation",
+    title: "3. Hallway Gunfire & Escape",
+    date: "March 31, 1934 (10:30 AM)",
+    description: "Gunfire erupted in the third-floor hallway. Dillinger was wounded in the leg, but escaped through the basement with Evelyn Frechette in a commandeered vehicle."
+  }
+];
+---
+
+<Layout 
+  title={stop.title} 
+  stopNumber={stop.order} 
+  totalStops={7} 
+  currentPath={`/stops/${stop.id}/`}
+>
+  <div style="max-width: var(--container-prose-width); margin: 0 auto; padding: 20px 0 60px;">
+    
+    <!-- Stop Header Meta -->
+    <div style="margin-bottom: 24px;">
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+        <span class="badge badge-approx">STOP {stop.order} OF 7</span>
+        <span class="badge badge-exact">{stop.period}</span>
+        {location && (
+          <span class={`badge ${location.precision === 'exact' ? 'badge-exact' : 'badge-context'}`}>
+            {location.address} ({location.precision})
+          </span>
+        )}
+      </div>
+
+      <h1 style="margin-top: 6px; margin-bottom: 12px; font-size: clamp(32px, 5vw, 48px);">
+        {stop.title}
+      </h1>
+      
+      <p style="font-size: 20px; color: var(--color-muted); line-height: 1.5; font-style: italic; margin-bottom: 0;">
+        {stop.synopsis}
+      </p>
+    </div>
+
+    <!-- Illustrated Scene Image (Spec R3) -->
+    {scene && (
+      <div class="scene-wrapper" style="margin: 28px 0; border: 1px solid var(--color-border); box-shadow: 0 12px 30px rgba(0,0,0,0.5);">
+        <img 
+          src={scene.file} 
+          alt={scene.description} 
+          width={scene.width} 
+          height={scene.height}
+          loading="eager" 
+        />
+        <div class="scene-caption">
+          <span>{scene.description}</span>
+          <span class="badge badge-context">
+            {scene.materialLabel}
+          </span>
+        </div>
+      </div>
+    )}
+
+    <!-- Audio Player (Spec R1 & R3) -->
+    <AudioPlayer 
+      narrationId={stop.narrationId} 
+      durationSeconds={narration?.durationSeconds}
+    />
+
+    <!-- Narrative Section: Intro -->
+    <section id="block-intro" class="reading-block" style="margin: 36px 0;">
+      <h2 style="font-size: 22px; color: var(--color-accent); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">
+        Where and When: The Setting
+      </h2>
+      <p style="font-size: 19px; line-height: 1.65; color: var(--color-paper); margin-bottom: 0;">
+        {stop.blocks.intro.text}
+      </p>
+    </section>
+
+    <!-- Narrative Section: The Metagame (Spec R2) -->
+    {stop.blocks.metagame && (
+      <section id="block-metagame" class="reading-block" style="margin: 36px 0; background: var(--color-surface-card); border-left: 3px solid var(--color-accent); padding: 24px; border-radius: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+          <h2 style="font-size: 22px; color: var(--color-paper); margin: 0;">
+            Reading the Metagame: Incentives &amp; Leverage
+          </h2>
+          <span class="badge badge-context">ANALYSIS</span>
+        </div>
+        
+        <p style="font-size: 18px; line-height: 1.65; color: var(--color-paper); margin-bottom: 16px;">
+          {stop.blocks.metagame.text}
+        </p>
+
+        {stopMetagame && (
+          <div style="background: rgba(14, 17, 23, 0.6); padding: 14px 18px; border-radius: 4px; font-size: 15px; color: var(--color-muted);">
+            <strong style="color: var(--color-paper); display: block; margin-bottom: 4px;">Who Absorbed the Costs:</strong>
+            {stopMetagame.bearingCosts}
+          </div>
+        )}
+      </section>
+    )}
+
+    <!-- Narrative Section: The Historical Record -->
+    <section id="block-record" class="reading-block" style="margin: 36px 0;">
+      <h2 style="font-size: 22px; color: var(--color-paper); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">
+        What the Record Shows
+      </h2>
+      <p style="font-size: 19px; line-height: 1.65; color: var(--color-paper); margin-bottom: 0;">
+        {stop.blocks.record.text}
+      </p>
+    </section>
+
+    <!-- Stop-Specific Presenter (Spec R2) -->
+    {stop.presenterType === 'relationship' && (
+      <RelationshipPresenter conditions={conditionItems} />
+    )}
+
+    {stop.id === 'a-suite-above-the-street' && (
+      <ComparisonPresenter 
+        title="Financial Reconstruction vs. Courtroom Tampering"
+        leftKey="tax-evidence"
+        leftLabel="Tax Evidence"
+        leftHeading="Appellate Record: Net-Worth Method"
+        leftText="Federal prosecutors bypassed hearsay to reconstruct Leon Gleckman's bank transactions and undeclared bootlegging revenue, establishing felony tax evasion."
+        leftNote="80 F.2d 394 (8th Cir. 1935)"
+        rightKey="juror-influence"
+        rightLabel="Juror Influence"
+        rightHeading="Contempt Proceeding: Juror Tampering"
+        rightText="Gleckman was separately convicted of criminal contempt for covertly directing loans, cash, and promises through intermediary Kelly to juror Bernard Fuchs."
+        rightNote="16 F. Supp. 470 (D. Minn. 1936)"
+      />
+    )}
+
+    {stop.id === 'under-the-bluff' && (
+      <ComparisonPresenter 
+        title="Documented Venue Record vs. Retrospective Lore"
+        leftKey="business-record"
+        leftLabel="1933 Business Record"
+        leftHeading="Corporate Filing & Architecture"
+        leftText="1933 articles of incorporation and trade reports verify Castle Royal opened as a premier public nightclub featuring big-band music inside silica sandstone caves."
+        leftNote="Articles of Incorporation (1933); St. Paul Pioneer Press"
+        rightKey="visitor-stories"
+        rightLabel="Visitor Stories & Lore"
+        rightHeading="1970s Retrospective Gangster Legends"
+        rightText="Later promotional accounts popularized unverified claims that Dillinger, Nelson, and the Barker-Karpis gang held private strategy meetings in hidden cave recesses."
+        rightNote="Retrospective folklore; zero contemporary police logs or guestbook entries"
+      />
+    )}
+
+    {stop.id === 'the-price-of-protection' && (
+      <DocumentPresenter 
+        title="Ransom Demands and the Forensic Trace"
+        leftKey="ransom-communication"
+        leftLabel="Ransom Communication"
+        leftHeading="The Hamm Extortion Letter"
+        leftText="Demanding $100,000 for William Hamm Jr.'s release, the kidnappers relied on local courier networks to deliver proof of life and payment demands."
+        leftEvidenceRef="E07"
+        rightKey="investigative-trace"
+        rightLabel="Investigative Trace"
+        rightHeading="Latent Silver Nitrate Fingerprints"
+        rightText="The FBI's forensic laboratory employed newly developed silver nitrate chemical processing on the paper ransom notes, revealing latent fingerprints of Alvin Karpis."
+        rightEvidenceRef="E08"
+      />
+    )}
+
+    {stop.id === 'the-deal-breaks' && (
+      <ComparisonPresenter 
+        title="Extortion Demands vs. Institutional Response"
+        leftKey="the-demand"
+        leftLabel="The Kidnappers' Demands"
+        leftHeading="Bremer Ransom Communications"
+        leftText="The Barker-Karpis gang demanded $200,000 in untraceable cash, threatening Edward Bremer's execution and directing intricate drop-off instructions."
+        leftNote="FBI Case Summary 7-1"
+        rightKey="reported-response"
+        rightLabel="The Family & Federal Response"
+        rightHeading="Targeting the Intermediaries"
+        rightText="Unlike earlier municipal accommodation, the Bremer family partnered with federal agents. J. Edgar Hoover deployed wiretaps on police Chief Dahill's phone line, shattering local protection."
+        rightNote="FBI Summary; Mahoney (2013)"
+      />
+    )}
+
+    {stop.id === 'the-safe-house-fails' && (
+      <SequencePresenter stages={lincolnCourtStages} />
+    )}
+
+    {stop.id === 'on-the-record' && (
+      <ComparisonPresenter 
+        title="Criminal Convictions vs. Institutional Reform"
+        leftKey="legal-outcomes"
+        leftLabel="Legal Convictions"
+        leftHeading="Federal Court Judgments"
+        leftText="Dozens of syndicate figures, including Arthur 'Doc' Barker and corrupt police chief intermediaries, were tried and convicted in the Saint Paul federal courthouse."
+        leftNote="U.S. District Court Criminal Dockets (1935–1936)"
+        rightKey="civil-service"
+        rightLabel="Civil Service Reform"
+        rightHeading="Abolishing the O'Connor Patronage System"
+        rightText="Saint Paul voters and municipal leaders instituted civil service police testing and removed the mayor and chief's arbitrary appointment and promotion powers."
+        rightNote="St. Paul Charter Amendments (1936)"
+      />
+    )}
+
+    <!-- Inspect the Evidence (Spec R2) -->
+    <section id="evidence-section" style="margin: 40px 0;">
+      <h2 style="font-size: 24px; margin-bottom: 8px;">Inspect the Evidence</h2>
+      <p style="font-size: 16px; color: var(--color-muted); margin-bottom: 20px;">
+        Examine the primary documents, court transcripts, and investigative traces supporting this stop.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        {stopEvidence.map(ev => (
+          <EvidenceItem evidence={ev} />
+        ))}
+      </div>
+    </section>
+
+    <!-- Related People & Places -->
+    <section style="margin: 40px 0; background: var(--color-surface-card); border: 1px solid var(--color-border); border-radius: 6px; padding: 24px;">
+      <h3 style="font-size: 20px; margin-top: 0; margin-bottom: 16px; color: var(--color-paper);">
+        Key Figures at this Location
+      </h3>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+        {stopPeople.map(p => (
+          <div style="background: rgba(14, 17, 23, 0.6); padding: 14px; border-radius: 4px; border: 1px solid var(--color-border-subtle);">
+            <div style="font-family: var(--font-title); font-size: 18px; font-weight: 600; color: var(--color-paper);">
+              {p.name}
+            </div>
+            <div style="font-size: 14px; color: var(--color-accent); margin-bottom: 6px;">
+              {p.role}
+            </div>
+            <p style="font-size: 14px; color: var(--color-muted); margin: 0;">
+              {p.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Navigation Footer: Previous & Next Stop (Spec R1) -->
+    <nav aria-label="Stop to stop navigation" style="display: flex; justify-content: space-between; align-items: center; margin-top: 48px; border-top: 1px solid var(--color-border-subtle); padding-top: 24px; flex-wrap: wrap; gap: 16px;">
+      {prevStop ? (
+        <a href={`/stops/${prevStop.id}/`} class="btn btn-secondary">
+          &larr; Stop {prevStop.order}: {prevStop.title}
+        </a>
+      ) : (
+        <a href="/prologue/" class="btn btn-secondary">
+          &larr; Prologue
+        </a>
+      )}
+
+      {nextStop ? (
+        <a href={`/stops/${nextStop.id}/`} class="btn btn-primary" style="font-size: 18px; padding: 12px 28px;">
+          Stop {nextStop.order}: {nextStop.title} &rarr;
+        </a>
+      ) : (
+        <a href="/epilogue/" class="btn btn-primary" style="font-size: 18px; padding: 12px 28px;">
+          Continue to Epilogue &rarr;
+        </a>
+      )}
+    </nav>
+
+  </div>
+
+  <div id="stop-tracker" data-current-stop-id={stop.id} style="display: none;"></div>
+
+  <script>
+    import { saveBookmark, markStopVisited } from '../../scripts/storage';
+    const tracker = document.getElementById('stop-tracker');
+    const stopId = tracker?.getAttribute('data-current-stop-id');
+    if (stopId) {
+      saveBookmark(stopId, 'intro');
+      markStopVisited(stopId);
+    }
+  </script>
+</Layout>

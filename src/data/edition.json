@@ -1,0 +1,41 @@
+{
+  "id": "stp-after-dark-v1",
+  "title": "Saint Paul After Dark",
+  "subtitle": "An interactive history of the city that sheltered the underworld",
+  "tagline": "Every city has rules. Saint Paul had an arrangement.",
+  "contentRevision": "0.4.0",
+  "presentationRevision": "0.4.0",
+  "historicalCheckDate": "2026-10-03",
+  "contentNote": "Contains historical accounts of criminal extortion, abduction, armed confrontation, and institutional corruption in 1900s–1930s Saint Paul.",
+  "stops": [
+    "the-arrangement",
+    "a-suite-above-the-street",
+    "under-the-bluff",
+    "the-price-of-protection",
+    "the-deal-breaks",
+    "the-safe-house-fails",
+    "on-the-record"
+  ],
+  "prologue": {
+    "title": "A City with Two Sets of Rules",
+    "summary": "Saint Paul's protection system predated national Prohibition. Under Police Chief John O'Connor, visiting criminals were offered conditional refuge.",
+    "paragraphs": [
+      "Saint Paul's protection system predated national Prohibition. Beginning in 1900, Police Chief John O'Connor offered visiting criminals a conditional refuge: identify themselves, pay, and keep major crimes outside the city. That is the arrangement described by the Minnesota Historical Society's account.",
+      "The tour asks what such a bargain made possible—and what made it unstable. Follow the brokers, the hotel rooms, the nightclubs, the ransom demands, and the courts. At each place, look for the rule people could see and the leverage working underneath it.",
+      "Seven places cannot contain every life affected. They can reveal a pattern: protection benefited particular people while leaving others exposed. Understanding that pattern requires attention to victims and institutions as well as famous fugitives."
+    ],
+    "premiseClaimIds": ["C01", "C02", "C03"]
+  },
+  "epilogue": {
+    "title": "What the Arrangement Could Not Control",
+    "summary": "The protection system depended on people believing cooperation served them. The kidnappings exposed how individual profit destroyed shared refuge.",
+    "paragraphs": [
+      "The protection system depended on people believing that continued cooperation would serve them. Its local limits could restrain some behavior while shifting harm elsewhere. The kidnappings exposed the weakness in that premise: participants could seek a large immediate gain at the expense of a refuge others wanted to preserve.",
+      "The tour's interpretation connects several kinds of leverage. Intermediaries controlled access. Money could sustain obligation or leave a trail. Captors tried to dictate how families responded. Aliases depended on what other people noticed. Investigators and reformers could challenge the relationships themselves, not only pursue an individual fugitive.",
+      "None of those observations makes the outcome inevitable. The sources describe actions taken with incomplete information, under unequal power, and sometimes under direct threat. Reading backward from a conviction can make every earlier clue seem obvious. It was not necessarily obvious to the people living through it.",
+      "The later stories create another responsibility. A cave, a hotel, and a courthouse can all become convincing stages for events they do not document. The tour has to resist supplying a guest, a motive, or a dramatic ending merely because the setting invites one.",
+      "Return to the map with two questions: Who could shape another person's choices? Who absorbed the consequences? Those questions connect the seven places without requiring a single hidden mastermind. They also keep the people harmed by the arrangement within the history of those who benefited from it."
+    ],
+    "premiseClaimIds": ["C01", "C02", "C15", "C18", "C24", "C28", "C30"]
+  }
+}

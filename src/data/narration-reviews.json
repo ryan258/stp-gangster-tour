@@ -1,0 +1,117 @@
+{
+  "narration": [
+    {
+      "id": "narr-the-arrangement",
+      "stopId": "the-arrangement",
+      "file": "/media/audio/narr-the-arrangement.mp3",
+      "durationSeconds": 49,
+      "transcriptDigest": "b1cf280015c8b98b0f542f63b92fffcca6c6065ebb8b479768b2000a9cc83b7a",
+      "audioDigest": "594f874be4944d91a8552332d404523ad30f021407e8c5f354b4504dbca1bcc1",
+      "voice": "macOS Samantha (Documentary Reading)",
+      "reviewedRevision": "0.4.0",
+      "reviewDate": "2026-10-05",
+      "listeningReviewStatus": "passed",
+      "reviewNotes": "Wording matches intro text exactly. Intelligibility confirmed; pronunciation of Saint Paul and proper nouns verified."
+    },
+    {
+      "id": "narr-a-suite-above-the-street",
+      "stopId": "a-suite-above-the-street",
+      "file": "/media/audio/narr-a-suite-above-the-street.mp3",
+      "durationSeconds": 51,
+      "transcriptDigest": "85b51da9db7397d20d0e9998604bc5e4e6de247bafb64ed21675f5beb77c54ff",
+      "audioDigest": "0fb6803a27f32fdba5f8a214d7305d50b876b738f5d125c5523f25a54ea6fc37",
+      "voice": "macOS Samantha (Documentary Reading)",
+      "reviewedRevision": "0.4.0",
+      "reviewDate": "2026-10-05",
+      "listeningReviewStatus": "passed",
+      "reviewNotes": "Wording matches intro text exactly. Intelligibility confirmed; pronunciation of Saint Paul and proper nouns verified."
+    },
+    {
+      "id": "narr-under-the-bluff",
+      "stopId": "under-the-bluff",
+      "file": "/media/audio/narr-under-the-bluff.mp3",
+      "durationSeconds": 48,
+      "transcriptDigest": "9dceadf6f95828e44b4cae193b3482376965975a2f3c28da96811395059dfae0",
+      "audioDigest": "e97f5ffadfc7c4c0a2f49d43696b977a6a178b0a1576909f7ba797d0e8b133df",
+      "voice": "macOS Samantha (Documentary Reading)",
+      "reviewedRevision": "0.4.0",
+      "reviewDate": "2026-10-05",
+      "listeningReviewStatus": "passed",
+      "reviewNotes": "Wording matches intro text exactly. Intelligibility confirmed; pronunciation of Saint Paul and proper nouns verified."
+    },
+    {
+      "id": "narr-the-price-of-protection",
+      "stopId": "the-price-of-protection",
+      "file": "/media/audio/narr-the-price-of-protection.mp3",
+      "durationSeconds": 47,
+      "transcriptDigest": "ae939bbf340248d510c0b83fdc40e31bf0935656581dbdfcef8d6b43a8921f4e",
+      "audioDigest": "49d00d084d568905cc24004ca757765e475005ac51fddea90fd49a192e5270ea",
+      "voice": "macOS Samantha (Documentary Reading)",
+      "reviewedRevision": "0.4.0",
+      "reviewDate": "2026-10-05",
+      "listeningReviewStatus": "passed",
+      "reviewNotes": "Wording matches intro text exactly. Intelligibility confirmed; pronunciation of Saint Paul and proper nouns verified."
+    },
+    {
+      "id": "narr-the-deal-breaks",
+      "stopId": "the-deal-breaks",
+      "file": "/media/audio/narr-the-deal-breaks.mp3",
+      "durationSeconds": 51,
+      "transcriptDigest": "3ad3f385e29d0dfe1a955303d86e9c1c6d237cd1584360b3874cc793006c2a93",
+      "audioDigest": "c947460ece7c11b1010d0e09088ff4e53b4cf942579d89ad7e0087cebfafa08d",
+      "voice": "macOS Samantha (Documentary Reading)",
+      "reviewedRevision": "0.4.0",
+      "reviewDate": "2026-10-05",
+      "listeningReviewStatus": "passed",
+      "reviewNotes": "Wording matches intro text exactly. Intelligibility confirmed; pronunciation of Saint Paul and proper nouns verified."
+    },
+    {
+      "id": "narr-the-safe-house-fails",
+      "stopId": "the-safe-house-fails",
+      "file": "/media/audio/narr-the-safe-house-fails.mp3",
+      "durationSeconds": 44,
+      "transcriptDigest": "5c16164d50d3b6171e6919200e3a55afb4e47d6b5a55e90f8df3a6ffdfd42153",
+      "audioDigest": "d0ba99ee21b2744d6b2602eeaee7b90f59127a0b6ff83a673f258e182f013e3f",
+      "voice": "macOS Samantha (Documentary Reading)",
+      "reviewedRevision": "0.4.0",
+      "reviewDate": "2026-10-05",
+      "listeningReviewStatus": "passed",
+      "reviewNotes": "Wording matches intro text exactly. Intelligibility confirmed; pronunciation of Saint Paul and proper nouns verified."
+    },
+    {
+      "id": "narr-on-the-record",
+      "stopId": "on-the-record",
+      "file": "/media/audio/narr-on-the-record.mp3",
+      "durationSeconds": 47,
+      "transcriptDigest": "3b34909ab4fe7f06ae97fd75983d33f49cc49642e227d363513092375dac1587",
+      "audioDigest": "e9b4a863c202561c267869c8dd8ba9ed342a001d825a344aa7803e7d98563d6b",
+      "voice": "macOS Samantha (Documentary Reading)",
+      "reviewedRevision": "0.4.0",
+      "reviewDate": "2026-10-05",
+      "listeningReviewStatus": "passed",
+      "reviewNotes": "Wording matches intro text exactly. Intelligibility confirmed; pronunciation of Saint Paul and proper nouns verified."
+    }
+  ],
+  "ambience": [
+    {
+      "id": "ambience-city-rain",
+      "file": "/media/audio/ambience-city-rain.mp3",
+      "durationSeconds": 30,
+      "audioDigest": "8979a14a475551e743e4e85bc3868edc1d22f5d30a0a34086c4ce93d9482d6df",
+      "description": "Subdued outdoor city rain and street texture",
+      "reviewDate": "2026-10-05",
+      "reviewedRevision": "0.4.0",
+      "listeningReviewStatus": "passed"
+    },
+    {
+      "id": "ambience-room-tone",
+      "file": "/media/audio/ambience-room-tone.mp3",
+      "durationSeconds": 30,
+      "audioDigest": "ac052907753ea91cad12ce65534e79daf43b0d01ecd2ad2a97c8261b67acd146",
+      "description": "Quiet interior room tone with low air resonance",
+      "reviewDate": "2026-10-05",
+      "reviewedRevision": "0.4.0",
+      "listeningReviewStatus": "passed"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import edition from '../data/edition.json';
+---
+
+<Layout title="Prologue: A City with Two Sets of Rules" currentPath="/prologue/">
+  <div style="max-width: var(--container-prose-width); margin: 0 auto; padding: 20px 0 60px;">
+    
+    <div style="margin-bottom: 24px;">
+      <span class="badge badge-approx" style="margin-bottom: 8px;">PROLOGUE</span>
+      <h1 style="margin-top: 4px; margin-bottom: 12px;">{edition.prologue.title}</h1>
+      <p style="font-size: 20px; color: var(--color-muted); line-height: 1.5; font-style: italic;">
+        {edition.prologue.summary}
+      </p>
+    </div>
+
+    <!-- Prologue Narrative Blocks (Spec R1: under 150 words) -->
+    <div id="block-opening" style="margin: 32px 0; border-left: 2px solid var(--color-accent); padding-left: 24px;">
+      {edition.prologue.paragraphs.map(p => (
+        <p style="font-size: 19px; line-height: 1.65; margin-bottom: 20px; color: var(--color-paper);">
+          {p}
+        </p>
+      ))}
+    </div>
+
+    <!-- Evidence vs Interpretation Framing Note (Spec R4) -->
+    <div style="background: var(--color-surface-card); border: 1px solid var(--color-border); border-radius: 6px; padding: 20px; margin: 36px 0;">
+      <h3 style="font-size: 18px; margin-top: 0; margin-bottom: 8px; color: #4EBA74;">
+        Reading Guide: Evidence vs. Interpretation
+      </h3>
+      <p style="font-size: 15px; color: var(--color-muted); line-height: 1.6; margin: 0;">
+        Throughout this tour, <strong>Historical Records</strong> (verified documents, court opinions, corporate registrations) and <strong>Historical Accounts</strong> (scholarship, archival syntheses) are distinguished from <strong>Tour Explanations / Interpretations</strong> (our analytical reading of incentives and costs) and <strong>Local Legend</strong> (unsubstantiated folklore). You can inspect the underlying evidence and source citations at every stop.
+      </p>
+    </div>
+
+    <!-- Navigation Continuation Link -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 48px; border-top: 1px solid var(--color-border-subtle); padding-top: 24px; flex-wrap: wrap; gap: 16px;">
+      <a href="/" class="btn btn-secondary">
+        &larr; Back to Home
+      </a>
+
+      <a href="/stops/the-arrangement/" class="btn btn-primary" style="font-size: 18px; padding: 12px 28px;">
+        Start with The Arrangement (Stop 1) &rarr;
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    import { saveBookmark } from '../scripts/storage';
+    saveBookmark('prologue', 'opening');
+  </script>
+</Layout>

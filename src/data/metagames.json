@@ -1,0 +1,135 @@
+[
+  {
+    "id": "M01",
+    "owningStop": "the-arrangement",
+    "title": "Protecting the Bargain",
+    "period": "1900–1928",
+    "actors": [
+      { "name": "Police Chief & Intermediaries", "role": "Brokers of sanctuary and toll collectors", "isDocumented": true },
+      { "name": "Visiting Fugitives", "role": "Purchasers of temporary immunity", "isDocumented": true },
+      { "name": "Victims in Neighboring Jurisdictions", "role": "Excluded targets of displaced violence", "isDocumented": false }
+    ],
+    "aims": "Police sought municipal calm and illicit revenue; criminals sought a reliable sanctuary free from arrest while preparing future operations.",
+    "mechanism": "Selective access: an intermediary conditioned safe harbor on tribute and local restraint, weaponizing peer pressure among criminals to maintain the city's boundary.",
+    "expectedBenefit": "Sanctuary for paying fugitives; low crime headlines for police leadership; steady cash flow through saloons and political conduits.",
+    "bearingCosts": "Neighboring communities and banks outside Saint Paul that suffered exported criminal raids; Saint Paul residents excluded from honest municipal governance.",
+    "observedResponse": "Fugitives largely respected city borders for decades until economic pressures of Prohibition and Depression-era bank exhaustion broke the truce.",
+    "evidentiaryLimit": "Historical accounts describe the system's operation, but cannot measure exact compliance percentages or verify that every patrolman participated.",
+    "premiseClaims": ["C01", "C02", "C03", "C04", "C05"],
+    "interpretationLabel": "Tour explanation / Interpretation"
+  },
+  {
+    "id": "M02",
+    "owningStop": "a-suite-above-the-street",
+    "title": "Influencing the Decision",
+    "period": "1920s–1938",
+    "actors": [
+      { "name": "Leon Gleckman", "role": "Syndicate financier seeking legal evasion", "isDocumented": true },
+      { "name": "Bernard Fuchs", "role": "Deliberating juror susceptible to financial leverage", "isDocumented": true },
+      { "name": "Federal Prosecutors & Investigators", "role": "Building net-worth and contempt cases", "isDocumented": true }
+    ],
+    "aims": "Gleckman sought to derail felony tax prosecution through hung juries and political pressure; prosecutors sought to establish a documented financial net worth trail.",
+    "mechanism": "Two-front contest: disputing accounting classifications inside the courtroom while covertly obligating individual jurors through intermediaries, promised cash, and coerced credit.",
+    "expectedBenefit": "A mistrial and eventual dismissal of federal tax indictments without serving prison time.",
+    "bearingCosts": "The integrity of the judicial process, honest jurors, and the public interest in equal justice under law.",
+    "observedResponse": "Tampering achieved a mistrial in 1934, but financial analysis yielded conviction in a second trial, while covert transactions left a paper trail resulting in contempt penalties.",
+    "evidentiaryLimit": "Appellate records establish Gleckman's specific tampering conduct with juror Fuchs, but do not prove every rumor of hotel conspiracy or universal political control.",
+    "premiseClaims": ["C07", "C08", "C09", "C10", "C11"],
+    "interpretationLabel": "Tour explanation / Interpretation"
+  },
+  {
+    "id": "M03",
+    "owningStop": "under-the-bluff",
+    "title": "Making a Place Desirable",
+    "period": "1933 (with later memory layer)",
+    "actors": [
+      { "name": "Castle Royal Club Operators", "role": "Commercial venue proprietors", "isDocumented": true },
+      { "name": "Twin Cities Diners & Patrons", "role": "Paying audience seeking unique nightlife", "isDocumented": true },
+      { "name": "Later Promotional Revitalizers", "role": "1970s folklore promoters", "isDocumented": true }
+    ],
+    "aims": "1933: Commercial survival in a competitive nightlife market by offering subterranean spectacle; 1970s: Tourism marketing using infamous gangster lore.",
+    "mechanism": "Physical novelty: converting a humid silica sandstone cave into a luxurious nightclub with castle battlements, dance floors, and big-band glamour.",
+    "expectedBenefit": "High-margin dining and ticket sales in 1933; tourist attraction status and media fascination in the post-prohibition nostalgic era.",
+    "bearingCosts": "Historical clarity: genuine architectural and social history was overshadowed by unsubstantiated gangster mythology.",
+    "observedResponse": "The club operated successfully into the mid-1930s before closing; decades later, folklore filled documentary voids with unverified tales of Dillinger and Barker.",
+    "evidentiaryLimit": "A corporate incorporation record verifies legal existence, but period evidence contains zero verified guest registers or police logs proving gang hideout operations.",
+    "premiseClaims": ["C06", "C12", "C13", "C14"],
+    "interpretationLabel": "Tour explanation / Interpretation"
+  },
+  {
+    "id": "M04",
+    "owningStop": "the-price-of-protection",
+    "title": "Taking a Payoff, Spreading the Cost",
+    "period": "June 1933 onward",
+    "actors": [
+      { "name": "Barker-Karpis Gang", "role": "Captors seeking rapid fortune", "isDocumented": true },
+      { "name": "William Hamm Jr. & Family", "role": "Victim and family operating under existential duress", "isDocumented": true },
+      { "name": "Underworld Sanctuary Network", "role": "Brokers dependent on city immunity", "isDocumented": false }
+    ],
+    "aims": "Captors sought an unprecedented $100,000 cash extraction; the Hamm family sought William's immediate survival.",
+    "mechanism": "Violating the municipal covenant: executing a major armed kidnapping on Saint Paul streets, gambling that federal law enforcement could not penetrate local silence.",
+    "expectedBenefit": "Immediate $100,000 liquidity for the criminal gang.",
+    "bearingCosts": "William Hamm Jr. who suffered captivity; Saint Paul business community exposed to terror; underworld peers whose safe harbor was jeopardized.",
+    "observedResponse": "The ransom was delivered and Hamm was released, but the extortion note served as forensic evidence (silver nitrate fingerprints) that catalyzed federal pursuit.",
+    "evidentiaryLimit": "Historical sources document the ransom and release, but cannot reconstruct Hamm's private thoughts during captivity or reveal internal gang debates.",
+    "premiseClaims": ["C02", "C15", "C16", "C17", "C30"],
+    "interpretationLabel": "Tour explanation / Interpretation"
+  },
+  {
+    "id": "M05",
+    "owningStop": "the-deal-breaks",
+    "title": "Controlling the Response",
+    "period": "January–February 1934",
+    "actors": [
+      { "name": "Barker-Karpis Gang", "role": "Kidnappers attempting coercive communication control", "isDocumented": true },
+      { "name": "Edward Bremer & Walter Magee", "role": "Victim and family friend operating under mortal coercion", "isDocumented": true },
+      { "name": "Division of Investigation & Police", "role": "Mobilizing law enforcement authorities", "isDocumented": true }
+    ],
+    "aims": "Captors sought a massive $200,000 extortion payment while coercing the family into isolating themselves from police; victims sought Bremer's safe return.",
+    "mechanism": "Information control and threat inversion: framing any contact with law enforcement as an act of murder by the family against the victim.",
+    "expectedBenefit": "Unimpeded extortion collection and escape without law enforcement interference.",
+    "bearingCosts": "Edward Bremer subjected to prolonged sensory deprivation; Walter Magee placed in mortal jeopardy as an intermediary.",
+    "observedResponse": "Coercion failed to control victim action: the family notified federal and municipal authorities immediately, shattering the illusion of underworld control.",
+    "evidentiaryLimit": "FBI summaries preserve the threatening letters and investigative actions, but cannot prove the inner motivations or psychological experiences of the victims.",
+    "premiseClaims": ["C18", "C19", "C20", "C21", "C22"],
+    "interpretationLabel": "Tour explanation / Interpretation"
+  },
+  {
+    "id": "M06",
+    "owningStop": "the-safe-house-fails",
+    "title": "The Limits of a Safe Place",
+    "period": "March 1934",
+    "actors": [
+      { "name": "John Dillinger & Evelyn Frechette", "role": "Fugitives seeking residential anonymity", "isDocumented": true },
+      { "name": "Apartment Building Manager", "role": "Citizen observer noticing anomalies", "isDocumented": true },
+      { "name": "Federal Agents & Saint Paul Police", "role": "Multi-agency enforcement detachment", "isDocumented": true }
+    ],
+    "aims": "Fugitives sought recovery and concealment in an ordinary residential neighborhood; federal agents sought to apprehend a high-profile interstate escapee.",
+    "mechanism": "Anonymity via ordinary domestic disguise (alias 'Hellman'), assuming an urban apartment complex would isolate them from police inquiry.",
+    "expectedBenefit": "Quiet refuge to heal and plan future bank robberies without local interference.",
+    "bearingCosts": "Tenants and building staff endangered by high-powered weapons fire in residential hallways; officers risking life in close quarters.",
+    "observedResponse": "Civic observation broke the disguise: odd behavior prompted a managerial tip, triggering a stakeout, gunfire, and Dillinger's wounded escape.",
+    "evidentiaryLimit": "No evidence indicates Dillinger had purchased an apartment-specific protection guarantee from local police; safehouse exposure stemmed from routine observation.",
+    "premiseClaims": ["C23", "C24"],
+    "interpretationLabel": "Tour explanation / Interpretation"
+  },
+  {
+    "id": "M07",
+    "owningStop": "on-the-record",
+    "title": "Changing Who Can Apply Pressure",
+    "period": "1934–1938",
+    "actors": [
+      { "name": "Federal Judiciary & Prosecutors", "role": "Adjudicating individual criminal conduct on the record", "isDocumented": true },
+      { "name": "Municipal Voters & Reformers", "role": "Altering charter appointment and tenure rules", "isDocumented": true },
+      { "name": "Corrupt Ward Machines", "role": "Losing patronage control over law enforcement", "isDocumented": true }
+    ],
+    "aims": "Establish verifiable accountability for specific offenses and insulate municipal police leadership from political and underworld extortion.",
+    "mechanism": "Dual reform: federal courtroom trials stripping immunity through documented evidence; charter civil service reform establishing 6-year terms and merit exams.",
+    "expectedBenefit": "Removal of chief of police from patronage dismissal; rule-of-law precedent replacing backroom arrangements.",
+    "bearingCosts": "Political machines that lost lucrative protection bribes; individuals facing imprisonment under adjudicated standards.",
+    "observedResponse": "Voters enacted the charter amendment in 1936; federal courts convicted Frechette, Gleckman, and accomplices; wiretaps exposed corrupt officers.",
+    "evidentiaryLimit": "Court records prove specific verdicts rather than the complete end of municipal vice; charter reform altered institutional incentives without ensuring moral perfection.",
+    "premiseClaims": ["C25", "C26", "C27", "C28"],
+    "interpretationLabel": "Tour explanation / Interpretation"
+  }
+]

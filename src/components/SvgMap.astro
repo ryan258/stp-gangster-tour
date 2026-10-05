@@ -1,0 +1,264 @@
+---
+import locations from '../data/locations.json';
+import stops from '../data/stops.json';
+
+interface Props {
+  activeStopId?: string;
+}
+
+const { activeStopId } = Astro.props;
+
+// Join stops with location details
+const stopLocations = stops.map(stop => {
+  const loc = locations.find(l => l.id === stop.locationId) || {
+    id: 'unknown',
+    historicalName: stop.title,
+    currentName: 'Unplaced Location',
+    role: 'context',
+    precision: 'unknown',
+    condition: 'unverified',
+    access: 'unknown',
+    address: 'Saint Paul, MN',
+    coordinates: null,
+    qualification: 'No coordinates asserted; listed in unplaced ledger.'
+  };
+  return {
+    stop,
+    loc
+  };
+});
+---
+
+<div class="map-layout-container" style="display: grid; grid-template-columns: 1fr; gap: 32px; align-items: start;">
+  <!-- SVG Map Overview -->
+  <div class="map-svg-card scene-wrapper">
+    <svg 
+      viewBox="0 0 1000 650" 
+      width="100%" 
+      height="100%" 
+      role="img" 
+      aria-labelledby="svg-map-title svg-map-desc"
+      style="background: #090B0F; display: block;"
+    >
+      <title id="svg-map-title">Interactive Historical Map of Saint Paul Gangster Tour</title>
+      <desc id="svg-map-desc">Graphic noir SVG map showing the Mississippi River bends, downtown Saint Paul street grid, bluff topography, verified historic venue locations, and approximate event areas.</desc>
+
+      <defs>
+        <!-- Gradients -->
+        <linearGradient id="map-river" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#040608"/>
+          <stop offset="50%" stop-color="#121822"/>
+          <stop offset="100%" stop-color="#05070A"/>
+        </linearGradient>
+        <radialGradient id="pin-glow-active" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stop-color="#C62F42" stop-opacity="0.9"/>
+          <stop offset="60%" stop-color="#C62F42" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#C62F42" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- Background Landmass (Dark Ink) -->
+      <rect width="1000" height="650" fill="#0C0F15"/>
+
+      <!-- Mississippi River Bluffs Topography (Contour Hachures) -->
+      <!-- South/West Bluffs -->
+      <path d="M0,580 Q250,530 480,550 Q650,560 1000,510 L1000,650 L0,650 Z" fill="#07090C" stroke="#1A212E" stroke-width="1.5"/>
+      <path d="M0,600 Q280,560 520,580 Q700,590 1000,540" stroke="#252E3E" stroke-width="1" stroke-dasharray="4,6" fill="none"/>
+      
+      <!-- Mississippi River (Stylized Noir Curve) -->
+      <path 
+        d="M-50,620 C200,510 400,530 520,440 C620,370 750,420 1050,430 L1050,510 C750,500 620,450 500,520 C380,590 200,580 -50,690 Z" 
+        fill="url(#map-river)" 
+        stroke="#222B3A" 
+        stroke-width="2"
+      />
+      <text x="350" y="580" fill="#B8B8BC" font-family="'Barlow Condensed', sans-serif" font-size="14" letter-spacing="4" fill-opacity="0.5">MISSISSIPPI RIVER</text>
+
+      <!-- Street Grid Network (Stylized Authentic Geometry) -->
+      <!-- Lexington Parkway (North-South on West Side) -->
+      <line x1="230" y1="50" x2="230" y2="580" stroke="#1A2230" stroke-width="5"/>
+      <text x="220" y="100" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11" transform="rotate(-90 220 100)" letter-spacing="1">LEXINGTON PKWY</text>
+
+      <!-- Summit Avenue / Grand Avenue (East-West Connecting to Downtown) -->
+      <line x1="50" y1="360" x2="420" y2="360" stroke="#1A2230" stroke-width="4"/>
+      <text x="80" y="352" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11" letter-spacing="1">SUMMIT AVE</text>
+
+      <!-- Goodrich Avenue -->
+      <line x1="120" y1="430" x2="350" y2="430" stroke="#161C26" stroke-width="2.5"/>
+      <text x="130" y="424" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="10">Goodrich Ave</text>
+
+      <!-- Downtown Saint Paul Street Diagonal Grid -->
+      <!-- Wabasha Street (Diagonal through Downtown crossing River) -->
+      <line x1="560" y1="80" x2="440" y2="600" stroke="#253042" stroke-width="6"/>
+      <text x="545" y="140" fill="#F3EFE6" font-family="'Barlow Condensed', sans-serif" font-size="12" letter-spacing="2" transform="rotate(-78 545 140)">WABASHA ST</text>
+
+      <!-- Robert Street -->
+      <line x1="620" y1="100" x2="520" y2="620" stroke="#1A2230" stroke-width="3"/>
+      <!-- St. Peter / Market Streets -->
+      <line x1="500" y1="120" x2="400" y2="520" stroke="#161D28" stroke-width="3"/>
+
+      <!-- East 7th Street (Connecting to Hamm Brewery on East Side) -->
+      <line x1="500" y1="300" x2="950" y2="180" stroke="#1D2635" stroke-width="4"/>
+      <text x="800" y="195" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11" letter-spacing="1">E. 7TH ST (HAMM AREA)</text>
+
+      <!-- Wabasha Street Bridge Pier -->
+      <rect x="495" y="465" width="25" height="10" fill="#000" stroke="#444"/>
+
+      <!-- Geographic Markers for the Stops -->
+      {stopLocations.map(({ stop, loc }) => {
+        if (!loc.coordinates) return null;
+        const isActive = stop.id === activeStopId;
+        const isExact = loc.precision === 'exact';
+        const isContext = loc.role === 'context';
+
+        return (
+          <g class="map-stop-pin" transform={`translate(${loc.coordinates.x}, ${loc.coordinates.y})`}>
+            {/* Active Aura */}
+            {isActive && (
+              <circle cx="0" cy="0" r="28" fill="url(#pin-glow-active)"/>
+            )}
+
+            {/* Approximate Area Boundary Circle (Spec R9) */}
+            {!isExact && (
+              <circle 
+                cx="0" 
+                cy="0" 
+                r="36" 
+                fill={isContext ? "rgba(198, 47, 66, 0.08)" : "rgba(226, 177, 88, 0.08)"}
+                stroke={isContext ? "#C62F42" : "#E2B158"}
+                stroke-width="1.5" 
+                stroke-dasharray="4,4"
+              />
+            )}
+
+            {/* Marker Link to Stop */}
+            <a href={`/stops/${stop.id}/`} aria-label={`Stop ${stop.order}: ${stop.title} (${loc.historicalName}, ${loc.precision} location)`}>
+              {/* Outer Pin Body */}
+              <circle 
+                cx="0" 
+                cy="0" 
+                r={isExact ? "14" : "12"}
+                fill={isActive ? "#C62F42" : (isExact ? "#141A24" : "#1B2230")}
+                stroke={isActive ? "#F3EFE6" : (isExact ? "#4EBA74" : (isContext ? "#C62F42" : "#E2B158"))}
+                stroke-width={isActive ? "3" : "2"}
+              />
+              {/* Stop Number Inside Pin */}
+              <text 
+                x="0" 
+                y="5" 
+                fill="#F3EFE6" 
+                font-family="'Barlow Condensed', sans-serif" 
+                font-weight="600" 
+                font-size="14" 
+                text-anchor="middle"
+              >
+                {stop.order}
+              </text>
+            </a>
+
+            {/* Labeled Tag Beside Marker */}
+            <g transform="translate(18, -10)">
+              <rect 
+                x="0" 
+                y="-12" 
+                width={loc.historicalName.length * 7.5 + 20} 
+                height="24" 
+                fill="rgba(11, 14, 20, 0.9)" 
+                stroke="rgba(243, 239, 230, 0.2)" 
+                stroke-width="1"
+                rx="3"
+              />
+              <text 
+                x="8" 
+                y="4" 
+                fill="#F3EFE6" 
+                font-family="'Barlow Condensed', sans-serif" 
+                font-weight="600" 
+                font-size="12" 
+                letter-spacing="0.5"
+              >
+                {stop.order}. {loc.historicalName}
+              </text>
+            </g>
+          </g>
+        );
+      })}
+
+      <!-- Map Legend (Spec R9: honest distinction of exact vs approximate vs context) -->
+      <g transform="translate(25, 25)">
+        <rect width="260" height="135" fill="rgba(11, 14, 20, 0.92)" stroke="#222B3B" stroke-width="1" rx="4"/>
+        <text x="14" y="24" fill="#F3EFE6" font-family="'Barlow Condensed', sans-serif" font-weight="600" font-size="14" letter-spacing="1.5">MAP LEGEND & GEOGRAPHY</text>
+        
+        <!-- Legend Items -->
+        <circle cx="24" cy="46" r="6" fill="#141A24" stroke="#4EBA74" stroke-width="2"/>
+        <text x="38" y="50" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="12">Verified Venue Position (Exact Footprint)</text>
+
+        <circle cx="24" cy="72" r="6" fill="#1B2230" stroke="#E2B158" stroke-width="2"/>
+        <text x="38" y="76" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="12">Approximate Area (Intersection/Vicinity)</text>
+
+        <circle cx="24" cy="98" r="6" fill="#1B2230" stroke="#C62F42" stroke-width="2"/>
+        <text x="38" y="102" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="12">Context Landmark (Not Exact Crime Site)</text>
+
+        <rect x="18" y="116" width="12" height="10" fill="none" stroke="#F3EFE6" stroke-dasharray="2,2"/>
+        <text x="38" y="124" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">R9 Verified Venues: Hotel, Caves, Courthouse</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Adjacent Ordered Seven-Stop Navigation List (Spec R4: accessible without clicking map pins) -->
+  <div class="map-stop-list-panel">
+    <h2 style="font-size: 24px; margin-top: 0; margin-bottom: 8px;">The Seven Sourced Places</h2>
+    <p style="font-size: 16px; color: var(--color-muted); margin-bottom: 20px;">
+      Explore any stop directly. Every place clearly distinguishes historical precision and present-day site condition.
+    </p>
+
+    <ol style="list-style: none; display: flex; flex-direction: column; gap: 14px; padding: 0;">
+      {stopLocations.map(({ stop, loc }) => {
+        const isCurrent = stop.id === activeStopId;
+        const precisionBadgeClass = loc.precision === 'exact' ? 'badge-exact' : (loc.role === 'context' ? 'badge-context' : 'badge-approx');
+
+        return (
+          <li style={`background: var(--color-surface-card); border: 1px solid ${isCurrent ? 'var(--color-accent)' : 'var(--color-border)'}; border-radius: 6px; padding: 16px 20px; transition: border-color var(--transition-fast);`}>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
+              <div>
+                <span style="font-family: var(--font-title); font-size: 15px; color: var(--color-accent); font-weight: 700; margin-right: 8px;">
+                  STOP {stop.order}
+                </span>
+                <a 
+                  href={`/stops/${stop.id}/`} 
+                  aria-current={isCurrent ? 'location' : undefined}
+                  style="font-family: var(--font-title); font-size: 22px; font-weight: 600; text-decoration: none; color: var(--color-paper);"
+                >
+                  {stop.title}
+                </a>
+              </div>
+
+              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                <span class={`badge ${precisionBadgeClass}`}>{loc.precision} {loc.role}</span>
+                <span class="badge badge-approx">{loc.condition}</span>
+                <span class="badge" style="background: #111; color: var(--color-muted); border: 1px solid #333;">{loc.access} access</span>
+              </div>
+            </div>
+
+            <div style="font-size: 15px; color: var(--color-paper); margin-bottom: 6px;">
+              <strong>Historical Anchor:</strong> {loc.historicalName}
+            </div>
+
+            <p style="font-size: 15px; color: var(--color-muted); margin-bottom: 10px;">
+              {stop.synopsis}
+            </p>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 14px; border-top: 1px dashed var(--color-border-subtle); padding-top: 8px;">
+              <span style="color: var(--color-muted); font-size: 13px;">
+                <em>{loc.qualification}</em>
+              </span>
+              <a href={`/stops/${stop.id}/`} class="btn btn-secondary" style="font-size: 14px; padding: 4px 12px; min-height: 36px;">
+                Enter Stop {stop.order} &rarr;
+              </a>
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+  </div>
+</div>

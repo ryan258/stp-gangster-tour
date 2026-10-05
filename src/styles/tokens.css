@@ -1,0 +1,92 @@
+/* Self-Hosted Font Definitions (Spec R3 & R13: max 3 WOFF2 files, swap display) */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/barlow-condensed-semibold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/source-sans-3-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/source-sans-3-semibold.woff2') format('woff2');
+}
+
+:root {
+  /* Color Palette - Spec R3 Graphic Noir */
+  --color-ink: #0B0C10;
+  --color-ink-rgb: 11, 12, 16;
+  --color-paper: #F3EFE6;
+  --color-paper-rgb: 243, 239, 230;
+  --color-muted: #B8B8BC;
+  --color-accent: #C62F42;
+  --color-accent-hover: #E0384E;
+  
+  --color-surface-bg: #0E1117;
+  --color-surface-card: #151A24;
+  --color-surface-card-hover: #1C2330;
+  --color-border: #283144;
+  --color-border-subtle: rgba(243, 239, 230, 0.12);
+  --color-highlight: rgba(198, 47, 66, 0.15);
+
+  /* Typography */
+  --font-title: 'Barlow Condensed', sans-serif, system-ui;
+  --font-body: 'Source Sans 3', sans-serif, system-ui;
+
+  --font-size-base: 19px;
+  --font-size-sm: 16px;
+  --font-size-lg: 22px;
+  --font-size-xl: 28px;
+  --font-size-2xl: 38px;
+  --font-size-3xl: 52px;
+
+  --line-height-body: 1.6;
+  --measure-prose: 68ch;
+
+  /* Target Sizes - Spec R7: min 44px */
+  --min-target-size: 44px;
+
+  /* Layout Containers */
+  --container-max-width: 1380px;
+  --container-prose-width: 780px;
+
+  /* Motion & Transitions (Max 300ms per R3) */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
+
+/* Calm View Mode & Reduced Motion overrides */
+html.calm-mode,
+body.calm-mode {
+  --color-surface-card: #121620;
+  --color-border-subtle: rgba(243, 239, 230, 0.2);
+}
+
+html.calm-mode *,
+html.calm-mode *::before,
+html.calm-mode *::after {
+  animation: none !important;
+  transition: none !important;
+  background-image: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

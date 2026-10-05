@@ -1,0 +1,74 @@
+---
+import SkipLink from '../components/SkipLink.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  stopNumber?: number;
+  totalStops?: number;
+  currentPath?: string;
+}
+
+const {
+  title,
+  description = "Saint Paul After Dark: An interactive history of the city that sheltered the underworld. Sourced, verified accounts of corruption, sanctuary, and reform.",
+  stopNumber,
+  totalStops = 7,
+  currentPath = Astro.url.pathname
+} = Astro.props;
+
+const pageTitle = stopNumber 
+  ? `${title} | Stop ${stopNumber} of ${totalStops} | Saint Paul After Dark` 
+  : `${title} | Saint Paul After Dark`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{pageTitle}</title>
+
+    <!-- Preload Self-Hosted Fonts (Spec R3 & R13) -->
+    <link rel="preload" href="/fonts/barlow-condensed-semibold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/source-sans-3-regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/source-sans-3-semibold.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Execute Calm view check early before render to prevent visual flashing -->
+    <script is:inline>
+      try {
+        const raw = localStorage.getItem('stp-after-dark:preferences:v1');
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && parsed.calmView) {
+            document.documentElement.classList.add('calm-mode');
+          }
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <SkipLink />
+    <Header currentPath={currentPath} stopNumber={stopNumber} totalStops={totalStops} />
+
+    <main id="main-content" tabindex="-1">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <script>
+      import { initCalmView } from '../scripts/calm';
+      import { initSelectionPresenters } from '../scripts/selection';
+      import { initEvidenceDisclosures } from '../scripts/casebook';
+      
+      initCalmView();
+      initSelectionPresenters();
+      initEvidenceDisclosures();
+    </script>
+  </body>
+</html>

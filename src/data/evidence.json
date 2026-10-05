@@ -1,0 +1,327 @@
+[
+  {
+    "id": "E01",
+    "stopId": "the-arrangement",
+    "title": "The Conditions",
+    "materialLabel": "Tour explanation",
+    "claimIds": ["C01", "C02"],
+    "sourceLocators": [
+      { "sourceId": "S01", "locator": "Opening narrative and conditions paragraph" }
+    ],
+    "description": "Historical synthesis describes three operating rules: incoming fugitives had to register with police leadership, pay regular tribute, and agree not to commit major crimes within city borders. This informal arrangement was never a formal public contract, but an understood operational boundary that shielded the city in exchange for toll-taking and jurisdictional immunity.",
+    "supports": "The conditional nature of the sanctuary described in historical accounts.",
+    "limits": "Does not establish a signed physical document, universal criminal obedience, or a measured citywide crime reduction.",
+    "presenterContent": {
+      "type": "conditions",
+      "conditions": [
+        {
+          "key": "check-in",
+          "label": "1. Check In",
+          "summary": "Incoming arrivals reported to police intermediaries or leadership upon arrival.",
+          "detail": "Fugitives were identified to city intermediaries to prevent unsanctioned operators from operating without permission."
+        },
+        {
+          "key": "pay",
+          "label": "2. Pay the Toll",
+          "summary": "Regular payments flowed through saloons and political intermediaries.",
+          "detail": "Bribes and protection fees were distributed among complicit officials, sustaining political machines and selective enforcement."
+        },
+        {
+          "key": "keep-crimes-elsewhere",
+          "label": "3. Keep Major Crimes Outside",
+          "summary": "Banks and residents inside Saint Paul were spared; neighboring cities bore the brunt.",
+          "detail": "The arrangement explicitly shifted violence outward. Minneapolis, Iowa, Wisconsin, and surrounding towns suffered robberies while Saint Paul offered quiet harbor."
+        }
+      ]
+    }
+  },
+  {
+    "id": "E02",
+    "stopId": "the-arrangement",
+    "title": "The Intermediary",
+    "materialLabel": "Tour explanation",
+    "claimIds": ["C03", "C04", "C05"],
+    "sourceLocators": [
+      { "sourceId": "S01", "locator": "Succession paragraphs and later narrative" },
+      { "sourceId": "S02", "locator": "Green Lantern paragraph" }
+    ],
+    "description": "Protection required human brokers between criminals and municipal power. William 'Reddy' Griffin acted as the initial liaison until his death in 1913, succeeded by saloon keeper Dan 'Dapper' Hogan at the Green Lantern on Wabasha Street. Hogan vetted visitors, passed money, and arbitrated disputes until his violent death by car bombing in 1928.",
+    "supports": "A corrupt network depended on identifiable human brokers and changed over time.",
+    "limits": "Does not prove every transaction occurred at one specific saloon or that all fugitives enjoyed identical access.",
+    "presenterContent": {
+      "type": "intermediary-timeline",
+      "roles": [
+        { "period": "1900–1913", "actor": "William 'Reddy' Griffin", "role": "First primary liaison under Chief John O'Connor." },
+        { "period": "1913–1928", "actor": "Dan 'Dapper' Hogan", "role": "Saloonkeeper of the Green Lantern, financial conduit, underworld arbiter." },
+        { "period": "1928", "actor": "Unsolved Car Bombing", "role": "Hogan killed in his garage; removes the primary broker as national syndicates expand." }
+      ]
+    }
+  },
+  {
+    "id": "E03",
+    "stopId": "a-suite-above-the-street",
+    "title": "The Money Trail",
+    "materialLabel": "Tour explanation of a Historical record",
+    "claimIds": ["C08", "C09"],
+    "sourceLocators": [
+      { "sourceId": "S04", "locator": "80 F.2d 394, pp. 396–400" }
+    ],
+    "description": "Federal prosecutors could not rely on underworld reputation alone to convict bootlegger Leon Gleckman. The 1935 Eighth Circuit appeal established that substantial unexplained bank deposits, when carefully analyzed against non-taxable loans and capital transactions, supported a lawful finding of taxable income evasion for 1929 and 1930, while acquitting him on the 1931 count.",
+    "supports": "How meticulous financial reconstruction replaced rumor in securing a criminal conviction.",
+    "limits": "Does not prove that every deposit was unlawful or that all financial activities were uncovered.",
+    "presenterContent": {
+      "type": "comparison",
+      "left": {
+        "title": "Raw Bank Deposits",
+        "description": "Gross sums passing through bank accounts over several years totaling hundreds of thousands of dollars.",
+        "evidentiaryWeight": "Insufficient on its own: court held deposits alone do not establish net taxable income."
+      },
+      "right": {
+        "title": "Analyzed Net Income",
+        "description": "Forensic reconciliation eliminating documented loans, capital returns, and legitimate transfers to isolate unreported taxable revenue.",
+        "evidentiaryWeight": "Adjudicated proof: sustained felony convictions for 1929 and 1930."
+      }
+    }
+  },
+  {
+    "id": "E04",
+    "stopId": "a-suite-above-the-street",
+    "title": "The Jury and the Loans",
+    "materialLabel": "Tour explanation of a Historical record",
+    "claimIds": ["C10", "C11"],
+    "sourceLocators": [
+      { "sourceId": "S05", "locator": "94 F.2d 331, pp. 331–333" }
+    ],
+    "description": "In 1938, the Eighth Circuit affirmed Gleckman's criminal contempt conviction for tampering with jurors in his 1934 tax trial. The record showed juror Bernard Fuchs held out during deliberations causing a mistrial, and subsequently received a $300 promised payment through intermediaries and an improper loan approved under Gleckman's pressure.",
+    "supports": "Adjudicated proof of covert efforts to distort the judicial process through financial leverage.",
+    "limits": "Proves individual juror tampering and proximity at the Saint Paul Hotel, but does not prove hotel institutional complicity.",
+    "presenterContent": {
+      "type": "timeline-flow",
+      "steps": [
+        { "stage": "1934 First Trial", "note": "Juror Bernard Fuchs resists fellow jurors, forcing a mistrial." },
+        { "stage": "Post-Trial Payoff", "note": "Intermediary delivers $300 cash promised to Fuchs." },
+        { "stage": "Coerced Credit", "note": "Finance company forced by Gleckman to extend a loan to Fuchs after initial refusal." },
+        { "stage": "1938 Affirmance", "note": "Contempt conviction upheld by federal appeals court." }
+      ]
+    }
+  },
+  {
+    "id": "E05",
+    "stopId": "under-the-bluff",
+    "title": "The 1933 Notice",
+    "materialLabel": "Historical record",
+    "claimIds": ["C12"],
+    "sourceLocators": [
+      { "sourceId": "S06", "locator": "Commercial West, Sept 30, 1933, p. 19" }
+    ],
+    "description": "On September 30, 1933, financial journal Commercial West recorded corporate incorporation papers for Castle Royal, Inc., organized for operating restaurants, cafes, and nightclubs. This brief business record firmly documents the venue's legal formation weeks before its opening and months prior to the constitutional repeal of Prohibition.",
+    "supports": "A verified commercial timeline and documented business purpose for the cave venue.",
+    "limits": "A corporate filing provides zero evidence of criminal patrons, opening guest lists, or underworld sanctuary.",
+    "presenterContent": {
+      "type": "document-excerpt",
+      "citation": "Commercial West, Sept. 30, 1933, p. 19",
+      "content": "Castle Royal, Inc., St. Paul; operate restaurants, cafes, taverns, nightclubs; capital stock $50,000.",
+      "significance": "Proves corporate formation in autumn 1933, dispelling myths that it existed as an undated 1920s speakeasy."
+    }
+  },
+  {
+    "id": "E06",
+    "stopId": "under-the-bluff",
+    "title": "A Guest List Without a Register",
+    "materialLabel": "Tour explanation / Local legend comparison",
+    "claimIds": ["C13", "C14"],
+    "sourceLocators": [
+      { "sourceId": "S07", "locator": "Subterranean Twin Cities, p. 115" },
+      { "sourceId": "S15", "locator": "Wabasha Street Caves tourism listing" }
+    ],
+    "description": "Popular folklore frequently names John Dillinger, Baby Face Nelson, and Ma Barker as regular patrons of Castle Royal. Historian Greg Brick noted that Paul Maccabee's investigative research found no corroborating documentary proof or period police records confirming their attendance. 1970s promotional nostalgia created a retroactive legend.",
+    "supports": "The critical analytical difference between a real physical entertainment space and subsequent celebrity myth-making.",
+    "limits": "Does not prove notorious figures never set foot in the caves, but confirms claims rest on memory layers rather than evidence.",
+    "presenterContent": {
+      "type": "comparison",
+      "left": {
+        "title": "Documented 1933 Reality",
+        "description": "Sophisticated dinner club carved into sandstone caves with big band music, legal dining, and formal society patronage.",
+        "sources": "Commercial West (S06), Greg Brick research (S07)"
+      },
+      "right": {
+        "title": "Retrospective Underworld Lore",
+        "description": "Tales of secret escape tunnels, bullet-riddled fireplaces, and gangster conclaves publicized during 1970s revival.",
+        "sources": "Tourism accounts (S15), folklore critiques (S07)"
+      }
+    }
+  },
+  {
+    "id": "E07",
+    "stopId": "the-price-of-protection",
+    "title": "A Person and an Uncertain Footprint",
+    "materialLabel": "Tour explanation",
+    "claimIds": ["C15", "C16"],
+    "sourceLocators": [
+      { "sourceId": "S08", "locator": "Ramsey County History 16(2), 1981, p. 13" },
+      { "sourceId": "S02", "locator": "Hamm home investigation caption" }
+    ],
+    "description": "On June 15, 1933, brewery executive William Hamm Jr. was seized outside his home on Cable Street (later Greenbrier). While popular memory centers on the historic Hamm Brewery, historical evidence places the abduction at the residence. The gang extorted $100,000 before releasing him alive near Wyoming, Minnesota.",
+    "supports": "Distinguishing the victim's residential kidnapping site from the commercial brewery landmark.",
+    "limits": "Historical address renumbering leaves exact property boundary approximate; modern interior access is private.",
+    "presenterContent": {
+      "type": "place-distinction",
+      "landmark": "Hamm Brewery Complex (Context Landmark)",
+      "eventSite": "671 Cable Street / Greenbrier (Historical Seizure Point)",
+      "outcome": "Held captive in Wisconsin, $100,000 paid, released unharmed after four days."
+    }
+  },
+  {
+    "id": "E08",
+    "stopId": "the-price-of-protection",
+    "title": "The Message Becomes Evidence",
+    "materialLabel": "Tour explanation of a Historical account",
+    "claimIds": ["C17", "C30"],
+    "sourceLocators": [
+      { "sourceId": "S09", "locator": "Barker-Karpis Gang FBI historical overview" },
+      { "sourceId": "S02", "locator": "Kidnapping breakdown paragraph" }
+    ],
+    "description": "The kidnappers' handwritten ransom notes were treated by investigators with a groundbreaking forensic technique: silver nitrate chemical fuming. Latent fingerprints on the paper were successfully visualized, directly linking Alvin Karpis, Doc Barker, and associates to the extortion and establishing national federal forensic precedent.",
+    "supports": "How communication used to extort cash served as physical evidence that dissolved underworld impunity.",
+    "limits": "Agency accounts highlight technological triumphs without acknowledging the months of elusive investigative legwork required.",
+    "presenterContent": {
+      "type": "trace-comparison",
+      "criminalIntent": "Ransom Demand: Coerce Hamm family into paying $100,000 cash under threat of execution.",
+      "forensicConsequence": "Latent Chemical Trace: First high-profile federal application of silver nitrate fingerprinting on paper."
+    }
+  },
+  {
+    "id": "E09",
+    "stopId": "the-deal-breaks",
+    "title": "A Demand Is Not Compliance",
+    "materialLabel": "Tour explanation of a Historical record",
+    "claimIds": ["C20", "C21"],
+    "sourceLocators": [
+      { "sourceId": "S10", "locator": "FBI Bremer Summary, printed pp. 18–19" }
+    ],
+    "description": "Following Edward Bremer's abduction on January 17, 1934, the Barker-Karpis gang delivered coercive letters demanding $200,000 and strictly warning family friend Walter Magee against notifying police or federal authorities. Despite threats that police contact would guarantee Bremer's death, the family notified authorities immediately.",
+    "supports": "The divergence between captors' coercive demands and actual victim response.",
+    "limits": "FBI summary contains retrospective investigative transcripts; original ransom handwriting scans are archival holdings.",
+    "presenterContent": {
+      "type": "demand-vs-response",
+      "demand": "Demanded $200,000; ordered total radio silence and prohibition of police or federal contact.",
+      "response": "Family friend Magee and Bremer family immediately notified Saint Paul police and J. Edgar Hoover's Division of Investigation."
+    }
+  },
+  {
+    "id": "E10",
+    "stopId": "the-deal-breaks",
+    "title": "Changing the Target",
+    "materialLabel": "Tour explanation of an attributed investigative reconstruction",
+    "claimIds": ["C18", "C19"],
+    "sourceLocators": [
+      { "sourceId": "S10", "locator": "FBI Bremer Summary, printed p. 17" }
+    ],
+    "description": "Federal investigation summaries indicate that underworld broker Harry Sawyer dissuaded the gang from robbing Commercial State Bank directly, calculating that vaults held limited cash while abducting bank president Edward Bremer could extort a far larger fortune from wealthy family circles.",
+    "supports": "How criminal strategy shifted from institutional robbery to direct human extortion.",
+    "limits": "Attributed to post-arrest investigative reconstructions and informant testimony rather than a contemporaneous recording.",
+    "presenterContent": {
+      "type": "target-comparison",
+      "optionA": {
+        "target": "Rob Commercial State Bank",
+        "yield": "Estimated $20,000–$30,000 immediate vault cash",
+        "risk": "High alarm risk, armed guards, bank robbery statute penalties"
+      },
+      "optionB": {
+        "target": "Kidnap President Edward Bremer",
+        "yield": "$200,000 extortion demand backed by prominent family wealth",
+        "consequence": "Provoked full federal mobilization and public outrage that shattered Saint Paul's refuge"
+      }
+    }
+  },
+  {
+    "id": "E11",
+    "stopId": "the-safe-house-fails",
+    "title": "A Boundary Changes the Case",
+    "materialLabel": "Tour explanation",
+    "claimIds": ["C23"],
+    "sourceLocators": [
+      { "sourceId": "S11", "locator": "FBI Dillinger overview, Bureau Joins the Hunt" }
+    ],
+    "description": "When John Dillinger escaped from Crown Point jail in March 1934 and drove the sheriff's stolen car across state lines into Illinois, he violated the National Motor Vehicle Theft Act (Dyer Act). This interstate crossing gave federal agents unambiguous jurisdiction to hunt him in Saint Paul, bypassing local police loyalties.",
+    "supports": "The vital jurisdictional threshold that overrode local political arrangements.",
+    "limits": "Does not prove local police officers were legally forbidden from cooperating, but explains federal supremacy in the operation.",
+    "presenterContent": {
+      "type": "jurisdiction-shift",
+      "localRealm": "Municipal Police: Governed by the O'Connor system and informal political understandings.",
+      "federalTrigger": "Dyer Act Violation: Interstate transport of stolen vehicle allowed Division of Investigation agents to take command."
+    }
+  },
+  {
+    "id": "E12",
+    "stopId": "the-safe-house-fails",
+    "title": "Report, Surveillance, Confrontation",
+    "materialLabel": "Tour explanation",
+    "claimIds": ["C24"],
+    "sourceLocators": [
+      { "sourceId": "S11", "locator": "Lincoln Court shootout summary" },
+      { "sourceId": "S16", "locator": "Shootout at Lincoln Court lead" }
+    ],
+    "description": "On March 30, 1934, Lincoln Court apartment manager reported suspicious tenants under the alias 'Hellman'. Agents established stakeout surveillance. On March 31, an agent and detective knocked; associate Homer Van Meter arrived, shots were exchanged, and Dillinger fired a Thompson submachine gun through the doorway, escaping wounded with Evelyn Frechette.",
+    "supports": "The documented chronological sequence of the safehouse exposure and gun battle.",
+    "limits": "Accounts of exact hallway ballistics, bullet trajectories, and tactical positioning differ between agent reports.",
+    "presenterContent": {
+      "type": "sequence-panels",
+      "panels": [
+        { "phase": "1. The Report", "date": "March 30, 1934", "text": "Building manager notices high-rent tenants keeping odd hours under alias Mr. and Mrs. Carl Hellman; alerts federal agents." },
+        { "phase": "2. The Stakeout", "date": "March 31, Morning", "text": "Agents watch 93 South Lexington Parkway; Homer Van Meter enters the lobby and encounters investigators on the stairs." },
+        { "phase": "3. The Shootout", "date": "March 31, 10:30 AM", "text": "Gunfire erupts in the hallway. Dillinger fires through the apartment door, absorbs a bullet in his leg, and escapes via the rear alley." }
+      ]
+    }
+  },
+  {
+    "id": "E13",
+    "stopId": "on-the-record",
+    "title": "Name the Actual Outcome",
+    "materialLabel": "Tour explanation comparing records and accounts",
+    "claimIds": ["C09", "C10", "C25", "C26"],
+    "sourceLocators": [
+      { "sourceId": "S04", "locator": "Gleckman tax opinion" },
+      { "sourceId": "S05", "locator": "Gleckman contempt opinion" },
+      { "sourceId": "S11", "locator": "Frechette sentencing record" },
+      { "sourceId": "S14", "locator": "Landmark Center trial associations" }
+    ],
+    "description": "Federal trials at Saint Paul's Landmark Center produced precise, varied adjudications rather than blanket villainy. Evelyn Frechette was convicted of harboring a fugitive (sentenced to two years and $1,000 fine); Leon Gleckman suffered tax convictions and contempt penalties; mistrials, dismissals, and acquittals were preserved on the court record.",
+    "supports": "Separating specific court findings from sweeping myth or collective guilt.",
+    "limits": "A federal courtroom association does not imply every appeal or trial took place in the same courtroom chamber.",
+    "presenterContent": {
+      "type": "outcome-table",
+      "outcomes": [
+        { "individual": "Evelyn Frechette", "charge": "Conspiracy to harbor a federal fugitive", "result": "Convicted May 1934; 2 years imprisonment, $1,000 fine." },
+        { "individual": "Leon Gleckman", "charge": "Income tax evasion (1929, 1930, 1931)", "result": "Convicted for 1929–1930; acquitted on 1931 count. Later convicted of criminal contempt." },
+        { "individual": "Bernard Fuchs", "charge": "Juror misconduct / contempt", "result": "Found in criminal contempt for accepting covert bribes and loans." }
+      ]
+    }
+  },
+  {
+    "id": "E14",
+    "stopId": "on-the-record",
+    "title": "Change the Appointment Rule",
+    "materialLabel": "Tour explanation from a Historical account",
+    "claimIds": ["C27", "C28"],
+    "sourceLocators": [
+      { "sourceId": "S12", "locator": "Reform 1933–1940, charter amendment paragraphs" }
+    ],
+    "description": "On June 15, 1936, Saint Paul voters approved a city charter amendment that fundamentally altered police administration. The chief of police was removed from patronage appointment by the public safety commissioner, requiring competitive civil service examination, a fixed six-year term, and removal only for documented cause.",
+    "supports": "A structural institutional remedy that altered the incentives sustaining police corruption.",
+    "limits": "A legal rule change did not instantaneously abolish all political favoritism or vice in Saint Paul.",
+    "presenterContent": {
+      "type": "comparison",
+      "left": {
+        "title": "Pre-1936 Patronage System",
+        "description": "Chief served at the whim of the political commissioner; easily dismissed if they enforced laws against favored underworld venues.",
+        "consequence": "Enabled O'Connor arrangement and political cover for 36 years."
+      },
+      "right": {
+        "title": "Post-1936 Civil Service Charter",
+        "description": "Mandated merit examinations, 6-year tenure of office, and dismissal only upon formal trial and cause.",
+        "consequence": "Incentivized professional independence and insulated leadership from underworld patronage."
+      }
+    }
+  }
+]

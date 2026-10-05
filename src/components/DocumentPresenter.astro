@@ -1,0 +1,94 @@
+---
+interface Props {
+  title: string;
+  leftKey: string;
+  leftLabel: string;
+  leftHeading: string;
+  leftText: string;
+  leftEvidenceRef?: string;
+  rightKey: string;
+  rightLabel: string;
+  rightHeading: string;
+  rightText: string;
+  rightEvidenceRef?: string;
+}
+
+const {
+  title,
+  leftKey,
+  leftLabel,
+  leftHeading,
+  leftText,
+  leftEvidenceRef,
+  rightKey,
+  rightLabel,
+  rightHeading,
+  rightText,
+  rightEvidenceRef
+} = Astro.props;
+---
+
+<div class="interactive-presenter" style="margin: 28px 0; background: var(--color-surface-card); border: 1px solid var(--color-border); border-radius: 6px; padding: 20px;">
+  <div style="margin-bottom: 16px;">
+    <span class="badge badge-context" style="margin-bottom: 8px;">DOCUMENT & INVESTIGATIVE EVIDENCE</span>
+    <h3 style="margin-top: 4px; margin-bottom: 8px;">{title}</h3>
+    <p style="font-size: 16px; color: var(--color-muted); margin-bottom: 16px;">
+      Examine the tension between coercive underworld demands and verified investigative reality.
+    </p>
+
+    <!-- Selection Controls -->
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+      <button 
+        type="button" 
+        class="btn presenter-select-btn active" 
+        data-selection={leftKey}
+        aria-pressed="true"
+      >
+        {leftLabel}
+      </button>
+      <button 
+        type="button" 
+        class="btn presenter-select-btn" 
+        data-selection={rightKey}
+        aria-pressed="false"
+      >
+        {rightLabel}
+      </button>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+    <!-- Left Document Box -->
+    <div 
+      class="presenter-target selected-highlight" 
+      data-target-key={leftKey}
+      style="padding: 18px; border-radius: 4px; background: rgba(14, 17, 23, 0.7); border: 1px solid var(--color-border-subtle); transition: border-color var(--transition-fast), background var(--transition-fast);"
+    >
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <h4 style="font-size: 18px; color: var(--color-paper); margin: 0;">{leftHeading}</h4>
+        {leftEvidenceRef && <span class="badge badge-context">{leftEvidenceRef}</span>}
+      </div>
+      <p style="font-size: 16px; line-height: 1.6; margin-bottom: 0; color: var(--color-paper);">{leftText}</p>
+    </div>
+
+    <!-- Right Document Box -->
+    <div 
+      class="presenter-target" 
+      data-target-key={rightKey}
+      style="padding: 18px; border-radius: 4px; background: rgba(14, 17, 23, 0.7); border: 1px solid var(--color-border-subtle); transition: border-color var(--transition-fast), background var(--transition-fast);"
+    >
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <h4 style="font-size: 18px; color: var(--color-paper); margin: 0;">{rightHeading}</h4>
+        {rightEvidenceRef && <span class="badge badge-exact">{rightEvidenceRef}</span>}
+      </div>
+      <p style="font-size: 16px; line-height: 1.6; margin-bottom: 0; color: var(--color-paper);">{rightText}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .presenter-target.selected-highlight {
+    border-color: var(--color-accent) !important;
+    background: rgba(198, 47, 66, 0.1) !important;
+  }
+</style>

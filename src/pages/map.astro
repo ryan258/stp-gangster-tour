@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SvgMap from '../components/SvgMap.astro';
+---
+
+<Layout title="City Map: Seven Historic Places" currentPath="/map/">
+  <div style="max-width: 1080px; margin: 0 auto; padding: 20px 0 60px;">
+    <div style="margin-bottom: 24px;">
+      <span class="badge badge-exact" style="margin-bottom: 8px;">CARTOGRAPHIC DIRECTORY</span>
+      <h1 style="margin-top: 4px; margin-bottom: 12px;">Saint Paul Underworld Map</h1>
+      <p style="font-size: 20px; color: var(--color-muted); line-height: 1.5; font-style: italic;">
+        Explore the seven sourced locations across downtown Saint Paul, the Mississippi River bluff caves, and residential neighborhoods.
+      </p>
+    </div>
+
+    <SvgMap />
+  </div>
+</Layout>

@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import edition from '../data/edition.json';
+import stopsData from '../data/stops.json';
+---
+
+<Layout title="Epilogue: What the Arrangement Could Not Control" currentPath="/epilogue/">
+  <div style="max-width: var(--container-prose-width); margin: 0 auto; padding: 20px 0 60px;">
+    
+    <div style="margin-bottom: 24px;">
+      <span class="badge badge-exact" style="margin-bottom: 8px;">EPILOGUE</span>
+      <h1 style="margin-top: 4px; margin-bottom: 12px;">{edition.epilogue.title}</h1>
+      <p style="font-size: 20px; color: var(--color-muted); line-height: 1.5; font-style: italic;">
+        {edition.epilogue.summary}
+      </p>
+    </div>
+
+    <!-- Epilogue Narrative Blocks -->
+    <div style="margin: 32px 0; border-left: 2px solid var(--color-accent); padding-left: 24px;">
+      {edition.epilogue.paragraphs.map(p => (
+        <p style="font-size: 19px; line-height: 1.65; margin-bottom: 20px; color: var(--color-paper);">
+          {p}
+        </p>
+      ))}
+    </div>
+
+    <!-- Tour Stops Recap -->
+    <section style="background: var(--color-surface-card); border: 1px solid var(--color-border); border-radius: 6px; padding: 24px; margin: 40px 0;">
+      <h2 style="font-size: 22px; margin-top: 0; margin-bottom: 8px;">The Seven Sourced Places</h2>
+      <p style="font-size: 15px; color: var(--color-muted); margin-bottom: 20px;">
+        Review any stop or explore the places you may have skipped along the route:
+      </p>
+
+      <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; margin: 0;">
+        {stopsData.map(stop => (
+          <li style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: rgba(14, 17, 23, 0.6); border-radius: 4px; border: 1px solid var(--color-border-subtle);">
+            <div>
+              <span style="color: var(--color-accent); font-weight: 700; margin-right: 8px;">Stop {stop.order}</span>
+              <a href={`/stops/${stop.id}/`} style="color: var(--color-paper); font-weight: 600;">
+                {stop.title}
+              </a>
+            </div>
+            <span class="badge badge-approx">{stop.period}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Epilogue Actions (Spec R2) -->
+    <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 48px; border-top: 1px solid var(--color-border-subtle); padding-top: 32px;">
+      <a href="/map/" class="btn btn-primary" style="font-size: 18px; padding: 12px 28px;">
+        Revisit the map &rarr;
+      </a>
+      
+      <a href="/casebook/" class="btn btn-secondary" style="font-size: 18px; padding: 12px 28px;">
+        Open casebook
+      </a>
+
+      <a href="/" class="btn btn-secondary" style="font-size: 18px; padding: 12px 28px;">
+        Return home
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    import { saveProgress } from '../scripts/storage';
+    saveProgress({ endingReached: true });
+  </script>
+</Layout>
