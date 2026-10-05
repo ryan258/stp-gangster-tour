@@ -3,10 +3,14 @@ import fs from 'node:fs';
 const edition = JSON.parse(fs.readFileSync(new URL('../../src/data/edition.json', import.meta.url), 'utf8'));
 const stop=`/stops/${edition.stops[0]}/`,key='stp-after-dark:progress:v1';
 test('every route, local link and fragment resolves; illustrations load',async({page,request})=>{
- const routes=['/','/prologue/','/map/','/casebook/','/sources/','/epilogue/',...edition.stops.map((id:string)=>`/stops/${id}/`)];
+ const routes=['/','/prologue/','/map/','/casebook/','/sources/','/method/','/epilogue/',...edition.stops.map((id:string)=>`/stops/${id}/`)];
  const documents=new Map<string,string>();for(const path of routes){const res=await request.get(path);expect(res.status(),path).toBe(200);documents.set(path,await res.text());}
- for(const path of routes){await page.goto(path);await expect(page.locator('h1')).toHaveCount(1);const links=await page.locator('a[href]').evaluateAll(as=>as.map(a=>(a as HTMLAnchorElement).getAttribute('href')!).filter(h=>h.startsWith('/')||h.startsWith('#')));
-  for(const href of links){const target=new URL(href,`http://localhost${path}`);const html=documents.get(target.pathname);expect(html,`${path} → ${href}`).toBeTruthy();if(target.hash)expect(html,`${path} → ${href}`).toContain(`id="${decodeURIComponent(target.hash.slice(1))}"`);}
+ for(const path of routes){await page.goto(path);await expect(page.locator('h1')).toHaveCount(1);
+  // Below-the-fold images are lazy-loaded; force them so completeness can be asserted.
+  await page.evaluate(()=>Promise.all([...document.images].map(async i=>{i.loading='eager';try{await i.decode();}catch{/* broken images are reported by the completeness assertion below */}})));const links=await page.locator('a[href]').evaluateAll(as=>as.map(a=>(a as HTMLAnchorElement).getAttribute('href')!).filter(h=>h.startsWith('/')||h.startsWith('#')));
+  for(const href of links){const target=new URL(href,`http://localhost${path}`);
+   if(target.pathname.startsWith('/data/')){expect((await request.get(target.pathname)).status(),`${path} → ${href}`).toBe(200);continue;}
+   const html=documents.get(target.pathname);expect(html,`${path} → ${href}`).toBeTruthy();if(target.hash)expect(html,`${path} → ${href}`).toContain(`id="${decodeURIComponent(target.hash.slice(1))}"`);}
   const bad=await page.locator('img').evaluateAll(imgs=>imgs.filter(i=>!(i as HTMLImageElement).complete||(i as HTMLImageElement).naturalWidth===0).map(i=>i.getAttribute('src')));expect(bad).toEqual([]);
  }
  await page.goto('/not-a-stop/');await expect(page.getByRole('heading',{name:'This page is not in the casebook'})).toBeVisible();
