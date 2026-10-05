@@ -1,27 +1,7 @@
-import { getPreferences, savePreferences } from './storage';
-
-export function initCalmView(): void {
-  const prefs = getPreferences();
-  const calmBtn = document.getElementById('btn-toggle-calm') as HTMLButtonElement;
-
-  if (prefs.calmView) {
-    document.documentElement.classList.add('calm-mode');
-    if (calmBtn) calmBtn.setAttribute('aria-pressed', 'true');
-  } else {
-    document.documentElement.classList.remove('calm-mode');
-    if (calmBtn) calmBtn.setAttribute('aria-pressed', 'false');
-  }
-
-  calmBtn?.addEventListener('click', () => {
-    const isCalm = document.documentElement.classList.toggle('calm-mode');
-    savePreferences({ calmView: isCalm });
-    calmBtn.setAttribute('aria-pressed', String(isCalm));
-
-    const announcer = document.getElementById('live-announcer');
-    if (announcer) {
-      announcer.textContent = isCalm ? 'Calm view enabled: decorative textures and ambient audio paused.' : 'Calm view disabled.';
-      announcer.classList.add('active');
-      setTimeout(() => announcer.classList.remove('active'), 3000);
-    }
-  });
+import {getPreferences,savePreferences,announce} from './storage';
+export function initCalmView(){
+ const button=document.getElementById('btn-toggle-calm');
+ const render=()=>{const calm=getPreferences().calmView;document.documentElement.classList.toggle('calm-mode',calm);button?.setAttribute('aria-pressed',String(calm));};
+ button?.addEventListener('click',()=>{const calmView=!getPreferences().calmView;const saved=savePreferences({calmView});render();announce(`Calm view ${calmView?'on. Ambience paused.':'off.'}${saved?'':' Preference is temporary on this page.'}`);});
+ window.addEventListener('storage',render);window.addEventListener('pageshow',render);render();
 }

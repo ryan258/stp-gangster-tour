@@ -1,102 +1,41 @@
 ---
 interface Props {
-  narrationId: string;
+  audioSrc?: string;
+  narrationId?: string;
   durationSeconds?: number;
+  ambienceSrc?: string;
 }
-
-const { narrationId, durationSeconds } = Astro.props;
-const audioSrc = `/media/audio/${narrationId}.mp3`;
+const {
+  narrationId,
+  durationSeconds,
+  audioSrc = narrationId ? `/media/audio/${narrationId}.mp3` : '',
+  ambienceSrc = '/media/audio/ambience-city-rain.mp3'
+} = Astro.props;
 ---
-
-<div class="audio-player-panel" role="region" aria-label="Audio narration controls">
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <span style="font-family: var(--font-title); font-size: 16px; font-weight: 600; letter-spacing: 1px;">AUDIO NARRATION</span>
-      {durationSeconds && <span style="font-size: 14px; color: var(--color-muted);">({durationSeconds}s)</span>}
-    </div>
-    <span id="audio-status" class="audio-status-badge">Stopped</span>
+<section class="audio-player audio-player-panel card" aria-label="Introduction audio" data-audio-player data-narration-src={audioSrc} data-ambience-src={ambienceSrc} data-duration={durationSeconds}>
+ <h2>Listen to the introduction</h2>
+ <p class="muted">Synthesized macOS Samantha voice. Listening and pronunciation review pending. The complete transcript is the introduction below.</p>
+ <div data-audio-controls hidden>
+  <div class="controls">
+   <button id="btn-audio-play" type="button">Play narration</button>
+   <button id="btn-audio-pause" type="button" hidden>Pause narration</button>
+   <button id="btn-audio-restart" type="button" class="btn-secondary">Restart narration</button>
+   <button id="btn-mute-all" type="button" class="btn-secondary" aria-pressed="false">Mute all</button>
+   <label for="audio-speed-select">Narration speed</label>
+   <select id="audio-speed-select"><option value="0.75">0.75×</option><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select>
   </div>
-
-  <div class="audio-controls-row">
-    <!-- Play / Resume Button -->
-    <button 
-      type="button" 
-      id="btn-audio-play" 
-      class="btn-primary" 
-      data-src={audioSrc}
-      aria-label="Listen to introduction audio"
-    >
-      Listen to introduction
-    </button>
-
-    <!-- Pause Button (Hidden initially) -->
-    <button 
-      type="button" 
-      id="btn-audio-pause" 
-      class="btn-secondary" 
-      style="display: none;"
-      aria-label="Pause introduction audio"
-    >
-      Pause
-    </button>
-
-    <!-- Restart Button -->
-    <button 
-      type="button" 
-      id="btn-audio-restart" 
-      class="btn-secondary"
-      aria-label="Restart introduction audio from beginning"
-    >
-      Restart
-    </button>
-
-    <!-- Speed Selector -->
-    <div style="display: inline-flex; align-items: center; gap: 6px;">
-      <label for="audio-speed-select" style="font-size: 14px; color: var(--color-muted); font-family: var(--font-title);">SPEED:</label>
-      <select 
-        id="audio-speed-select" 
-        style="background: var(--color-surface-card); color: var(--color-paper); border: 1px solid var(--color-border); padding: 8px 12px; border-radius: 4px; font-family: var(--font-title); font-size: 16px; min-height: var(--min-target-size);"
-        aria-label="Select playback speed"
-      >
-        <option value="0.75">0.75×</option>
-        <option value="1" selected>1.0×</option>
-        <option value="1.25">1.25×</option>
-        <option value="1.5">1.5×</option>
-      </select>
-    </div>
-
-    <!-- Volume Adjusters (Spec R3: dragging a slider is never required) -->
-    <div style="display: inline-flex; align-items: center; gap: 4px;">
-      <button type="button" id="btn-volume-down" class="btn-secondary" aria-label="Decrease audio volume">Quieter</button>
-      <button type="button" id="btn-volume-up" class="btn-secondary" aria-label="Increase audio volume">Louder</button>
-    </div>
-
-    <!-- Ambient Sound Bed Toggle -->
-    <button 
-      type="button" 
-      id="btn-toggle-ambience" 
-      class="btn-secondary" 
-      aria-pressed="false"
-      aria-label="Toggle ambient street sound"
-    >
-      City Ambience
-    </button>
+  <div class="controls" data-mixer-control>
+   <button type="button" class="btn-secondary" data-volume-channel="narrationVolume" data-volume-delta="-0.1">Narration quieter</button><button type="button" class="btn-secondary" data-volume-channel="narrationVolume" data-volume-delta="0.1">Narration louder</button>
+   <button type="button" id="btn-toggle-ambience" class="btn-secondary" aria-pressed="false">Toggle ambience</button>
+   <button type="button" class="btn-secondary" data-volume-channel="ambienceVolume" data-volume-delta="-0.1">Ambience quieter</button><button type="button" class="btn-secondary" data-volume-channel="ambienceVolume" data-volume-delta="0.1">Ambience louder</button>
   </div>
-
-  <noscript>
-    <p style="margin-top: 10px; font-size: 14px; color: var(--color-muted);">
-      Audio playback controls require JavaScript. The full introduction remains completely readable in the text below.
-    </p>
-  </noscript>
-</div>
-
+  <p data-volume-status class="muted" data-mixer-control></p>
+  <p data-mixer-notice hidden>Use your device volume for narration. This browser does not support independent audio volume; ambience is disabled.</p>
+  <p role="status" data-audio-status>Sound is off. Nothing downloads until you start a channel.</p>
+ </div>
+ <noscript><p>Audio controls need JavaScript. Read the complete introduction below.</p></noscript>
+</section>
 <script>
-  import { TourAudioController } from '../scripts/audio';
-  
-  const playBtn = document.getElementById('btn-audio-play') as HTMLButtonElement;
-  const audioSrc = playBtn?.getAttribute('data-src');
-  if (audioSrc) {
-    const controller = new TourAudioController(audioSrc);
-    controller.initUI();
-  }
+ import {TourAudioController} from '../scripts/audio';
+ document.querySelectorAll<HTMLElement>('[data-audio-player]').forEach(root=>new TourAudioController(root).initUI());
 </script>

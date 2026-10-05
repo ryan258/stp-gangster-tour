@@ -1,68 +1,11 @@
 ---
-interface Props {
-  evidence: {
-    id: string;
-    title: string;
-    materialLabel: string;
-    claimIds: string[];
-    sourceLocators: Array<{ sourceId: string; locator: string }>;
-    description: string;
-    supports: string;
-    limits: string;
-  };
-  initiallyOpen?: boolean;
-}
-
-const { evidence, initiallyOpen = false } = Astro.props;
+import {sourceURL, type evidence as evidenceData} from '../lib/catalog';
+import ClaimLinks from './ClaimLinks.astro';
+interface Props {evidence:typeof evidenceData[number]}
+const {evidence:e}=Astro.props;
 ---
-
-<details 
-  id={`evidence-${evidence.id}`} 
-  class="evidence-card" 
-  data-evidence-id={evidence.id}
-  open={initiallyOpen}
->
-  <summary class="evidence-summary">
-    <span style="display: flex; align-items: center; gap: 12px;">
-      <span style="color: var(--color-accent); font-weight: 700;">{evidence.id}</span>
-      <span>{evidence.title}</span>
-    </span>
-    <span class="evidence-summary-badge">{evidence.materialLabel}</span>
-  </summary>
-
-  <div class="evidence-content">
-    <p style="font-size: 18px; line-height: 1.6; margin-bottom: 16px;">
-      {evidence.description}
-    </p>
-
-    <div style="background: rgba(14, 17, 23, 0.6); padding: 14px 18px; border-radius: 4px; margin-bottom: 14px; border-left: 3px solid #4EBA74;">
-      <strong style="color: #4EBA74; text-transform: uppercase; font-size: 13px; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">What this supports:</strong>
-      <span style="font-size: 16px; color: var(--color-paper);">{evidence.supports}</span>
-    </div>
-
-    <div style="background: rgba(14, 17, 23, 0.6); padding: 14px 18px; border-radius: 4px; margin-bottom: 16px; border-left: 3px solid var(--color-accent);">
-      <strong style="color: var(--color-accent); text-transform: uppercase; font-size: 13px; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">Material limitation:</strong>
-      <span style="font-size: 16px; color: var(--color-muted);">{evidence.limits}</span>
-    </div>
-
-    <div class="evidence-meta-row">
-      <div class="evidence-meta-item">
-        <strong>Claims:</strong> 
-        {evidence.claimIds.map((cid, i) => (
-          <span>
-            <a href={`/sources/#claim-${cid}`}>{cid}</a>{i < evidence.claimIds.length - 1 ? ', ' : ''}
-          </span>
-        ))}
-      </div>
-
-      <div class="evidence-meta-item">
-        <strong>Sources:</strong>
-        {evidence.sourceLocators.map((s, i) => (
-          <span>
-            <a href={`/sources/#source-${s.sourceId}`}>{s.sourceId}</a> ({s.locator}){i < evidence.sourceLocators.length - 1 ? '; ' : ''}
-          </span>
-        ))}
-      </div>
-    </div>
-  </div>
+<details id={`evidence-${e.id}`} class="evidence-card" data-evidence-id={e.id}>
+ <summary><strong>{e.id}: {e.title}</strong> <span class="badge">{e.materialLabel}</span></summary>
+ <div class="evidence-content"><p>{e.description}</p><p><strong>Supports:</strong> {e.supports}</p><p><strong>Limits:</strong> {e.limits}</p><ClaimLinks ids={e.claimIds} from={e.stopId}/>
+ <ul>{e.sourceLocators.map(s=><li><a href={sourceURL(s.sourceId,e.stopId)}>{s.sourceId}</a> — {s.locator}</li>)}</ul></div>
 </details>

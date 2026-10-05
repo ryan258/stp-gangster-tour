@@ -1,39 +1,9 @@
-/**
- * Interactive Selection Presenter handler per Spec R2 & AC36
- */
-
-export function initSelectionPresenters(): void {
-  const presenters = document.querySelectorAll<HTMLElement>('.interactive-presenter');
-  
-  presenters.forEach(presenter => {
-    const buttons = presenter.querySelectorAll<HTMLButtonElement>('.presenter-select-btn');
-    const targets = presenter.querySelectorAll<HTMLElement>('.presenter-target');
-
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const selectedKey = btn.getAttribute('data-selection');
-        if (!selectedKey) return;
-
-        // Update button states
-        buttons.forEach(b => {
-          const isSelected = b === btn;
-          b.setAttribute('aria-pressed', String(isSelected));
-          b.classList.toggle('active', isSelected);
-        });
-
-        // Highlight matching target item without hiding unselected items per Spec R2
-        targets.forEach(t => {
-          const targetKey = t.getAttribute('data-target-key');
-          if (targetKey === selectedKey) {
-            t.classList.add('selected-highlight');
-            t.setAttribute('tabindex', '-1');
-            t.focus({ preventScroll: true });
-          } else {
-            t.classList.remove('selected-highlight');
-            t.removeAttribute('tabindex');
-          }
-        });
-      });
-    });
-  });
+export function initSelectionPresenters(){
+ document.querySelectorAll<HTMLElement>('.interactive-presenter').forEach(presenter=>{
+  presenter.querySelectorAll<HTMLButtonElement>('[data-selection]').forEach(button=>button.addEventListener('click',()=>{
+   const key=button.dataset.selection;
+   presenter.querySelectorAll<HTMLButtonElement>('[data-selection]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+   presenter.querySelectorAll<HTMLElement>('[data-target-key]').forEach(target=>target.classList.toggle('selected-highlight',target.dataset.targetKey===key));
+  }));
+ });
 }

@@ -1,40 +1,6 @@
 ---
-interface Props {
-  currentPath?: string;
-  stopNumber?: number;
-  totalStops?: number;
-}
-
-const { currentPath = '/', stopNumber, totalStops = 7 } = Astro.props;
+interface Props {currentPath?:string;stopNumber?:number;totalStops?:number}
+const {currentPath='/',stopNumber,totalStops=7}=Astro.props;
 ---
-
-<header class="site-header" role="banner">
-  <div class="header-container">
-    <a href="/" class="site-brand" aria-label="Saint Paul After Dark — Home">
-      <span class="site-brand-dot" aria-hidden="true"></span>
-      <span>SAINT PAUL AFTER DARK</span>
-    </a>
-
-    {stopNumber && (
-      <div class="header-stop-counter badge badge-approx" aria-label={`Current location: Stop ${stopNumber} of ${totalStops}`}>
-        STOP {stopNumber} OF {totalStops}
-      </div>
-    )}
-
-    <nav class="site-nav" aria-label="Main Navigation">
-      <a href="/" aria-current={currentPath === '/' ? 'page' : undefined}>Home</a>
-      <a href="/map/" aria-current={currentPath.startsWith('/map') ? 'page' : undefined}>Map</a>
-      <a href="/casebook/" aria-current={currentPath.startsWith('/casebook') ? 'page' : undefined}>Casebook</a>
-      <a href="/sources/" aria-current={currentPath.startsWith('/sources') ? 'page' : undefined}>Sources</a>
-      <button 
-        type="button" 
-        id="btn-toggle-calm" 
-        class="btn-secondary" 
-        aria-pressed="false"
-        aria-label="Toggle Calm view to remove decorative textures and motion"
-      >
-        Calm view
-      </button>
-    </nav>
-  </div>
-</header>
+<header class="site-header"><div class="header-container"><a href="/" class="site-brand">SAINT PAUL AFTER DARK</a>{stopNumber&&<span class="badge">Stop {stopNumber} of {totalStops}</span>}
+<nav class="site-nav" aria-label="Main navigation">{[['/','Home'],['/map/','Map'],['/casebook/','Casebook'],['/sources/','Sources']].map(([href,label])=><a href={href} aria-current={currentPath===href?'page':undefined}>{label}</a>)}<button type="button" class="btn-secondary" id="btn-toggle-calm" aria-pressed="false" data-js-control hidden>Calm view</button></nav></div></header>

@@ -1,107 +1,26 @@
-/**
- * Casebook and Evidence Disclosure enhancements per Spec R4, R5, AC06, AC29
- */
-import { markEvidenceInspected, getProgress, clearProgressKeepPreferences } from './storage';
-
-export function initEvidenceDisclosures(): void {
-  const cards = document.querySelectorAll<HTMLDetailsElement>('details.evidence-card');
-
-  cards.forEach(card => {
-    const evidenceId = card.getAttribute('data-evidence-id');
-    if (!evidenceId) return;
-
-    card.addEventListener('toggle', () => {
-      if (card.open) {
-        const newlyAdded = markEvidenceInspected(evidenceId);
-        if (newlyAdded) {
-          const announcer = document.getElementById('live-announcer');
-          if (announcer) {
-            announcer.textContent = 'Added to casebook.';
-            announcer.classList.add('active');
-            setTimeout(() => announcer.classList.remove('active'), 2500);
-          }
-        }
-      }
-    });
-  });
-
-  // Handle URL fragment targeting an evidence item (#evidence-E01)
-  if (window.location.hash) {
-    const hashId = window.location.hash.replace('#evidence-', '');
-    if (hashId) {
-      const targetCard = document.querySelector<HTMLDetailsElement>(`details.evidence-card[data-evidence-id="${hashId}"]`);
-      if (targetCard) {
-        targetCard.open = true;
-        const summary = targetCard.querySelector('summary');
-        summary?.focus();
-      }
-    }
-  }
+import {getProgress,markEvidenceInspected,clearProgress,bookmarkURL,announce,EVIDENCE_IDS,STOP_IDS} from './storage';
+export function initEvidenceDisclosures(){
+ const inspect=(details:HTMLDetailsElement)=>{const result=markEvidenceInspected(details.dataset.evidenceId||'');if(result.added)announce(result.saved?'Evidence marked inspected.':'Evidence inspected for this page only. Saving is unavailable.');};
+ document.querySelectorAll<HTMLDetailsElement>('details[data-evidence-id]').forEach(details=>details.addEventListener('toggle',()=>{if(details.open)inspect(details);}));
+ const openFragment=()=>{const match=/^#evidence-(E\d{2})$/.exec(location.hash);if(!match||!EVIDENCE_IDS.includes(match[1]))return;const el=document.getElementById(`evidence-${match[1]}`);if(el instanceof HTMLDetailsElement){el.open=true;inspect(el);}};
+ openFragment();window.addEventListener('hashchange',openFragment);
+ let filter='all';
+ const refresh=()=>{
+  const p=getProgress();let shown=0;
+  document.querySelectorAll<HTMLElement>('[data-casebook-evidence]').forEach(el=>{const inspected=p.inspectedEvidence.includes(el.dataset.casebookEvidence||'');el.hidden=filter==='inspected'&&!inspected;if(!el.hidden)shown++;const status=el.querySelector('[data-inspected-status]');if(status)status.textContent=inspected?'Inspected':'Not inspected';});
+  const empty=document.getElementById('casebook-empty');if(empty)empty.hidden=filter!=='inspected'||shown>0;
+  const count=document.getElementById('evidence-count');if(count)count.textContent=`${p.inspectedEvidence.length} of ${EVIDENCE_IDS.length} evidence items inspected. This is a reading marker, not a history score.`;
+  document.querySelectorAll<HTMLAnchorElement>('[data-resume]').forEach(a=>{a.href=bookmarkURL(p.bookmark);a.hidden=!p.bookmark;a.textContent=p.bookmark?`Resume reading: ${p.bookmark.stopId.replaceAll('-',' ')} — ${p.bookmark.blockId}`:'Resume reading';});
+  document.querySelectorAll<HTMLElement>('[data-visited-stop]').forEach(el=>{el.textContent=p.visitedStops.includes(el.dataset.visitedStop||'')?'Visited':'Not yet visited';});
+  const ending=document.getElementById('ending-status');if(ending)ending.textContent=p.endingReached?'Epilogue reached.':'Epilogue not yet reached.';
+ };
+ document.querySelectorAll<HTMLButtonElement>('[data-casebook-filter]').forEach(btn=>btn.addEventListener('click',()=>{filter=btn.dataset.casebookFilter||'all';document.querySelectorAll('[data-casebook-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));refresh();}));
+ const trigger=document.getElementById('btn-reset-progress'),confirm=document.getElementById('reset-confirmation');
+ trigger?.addEventListener('click',()=>{if(confirm){confirm.hidden=false;document.getElementById('btn-cancel-reset')?.focus();}});
+ document.getElementById('btn-cancel-reset')?.addEventListener('click',()=>{if(confirm)confirm.hidden=true;trigger?.focus();});
+ document.getElementById('btn-confirm-reset')?.addEventListener('click',()=>{const saved=clearProgress();if(confirm)confirm.hidden=true;trigger?.focus();announce(saved?'Reading progress reset. Preferences kept.':'Progress reset on this page only; saved data could not be changed.');refresh();});
+ const from=new URLSearchParams(location.search).get('from');if(from&&STOP_IDS.includes(from))document.querySelectorAll<HTMLAnchorElement>('[data-context-return]').forEach(a=>{a.href=`/stops/${from}/#record`;a.textContent=`Back to ${from.replaceAll('-',' ')}`;a.hidden=false;});
+ document.querySelectorAll<HTMLElement>('[data-js-control]').forEach(el=>el.hidden=false);
+ window.addEventListener('stp:progress',refresh);window.addEventListener('storage',refresh);window.addEventListener('pageshow',refresh);refresh();
 }
-
-export function initCasebookPage(): void {
-  const progress = getProgress();
-  const inspectedSet = new Set(progress.inspectedEvidence);
-
-  // Update inspected count banner
-  const countSpan = document.getElementById('casebook-inspected-count');
-  if (countSpan) {
-    countSpan.textContent = String(inspectedSet.size);
-  }
-
-  // Filter buttons
-  const btnAll = document.getElementById('filter-all-evidence') as HTMLButtonElement;
-  const btnInspected = document.getElementById('filter-inspected-evidence') as HTMLButtonElement;
-  const evidenceCards = document.querySelectorAll<HTMLElement>('.casebook-item-card');
-
-  function applyFilter(showOnlyInspected: boolean) {
-    evidenceCards.forEach(card => {
-      const eid = card.getAttribute('data-evidence-id') || '';
-      const isInspected = inspectedSet.has(eid);
-      const badge = card.querySelector('.casebook-status-tag');
-      
-      if (badge) {
-        badge.textContent = isInspected ? 'Inspected' : 'Uninspected';
-        badge.className = `casebook-status-tag badge ${isInspected ? 'badge-exact' : 'badge-context'}`;
-      }
-
-      if (showOnlyInspected && !isInspected) {
-        card.style.display = 'none';
-      } else {
-        card.style.display = 'block';
-      }
-    });
-
-    if (btnAll) btnAll.setAttribute('aria-pressed', String(!showOnlyInspected));
-    if (btnInspected) btnInspected.setAttribute('aria-pressed', String(showOnlyInspected));
-  }
-
-  btnAll?.addEventListener('click', () => applyFilter(false));
-  btnInspected?.addEventListener('click', () => applyFilter(true));
-
-  // Initialize with All evidence shown per Spec R5
-  applyFilter(false);
-
-  // Start Over confirmation flow (Spec R5)
-  const startOverBtn = document.getElementById('btn-start-over') as HTMLButtonElement;
-  const confirmBox = document.getElementById('start-over-confirmation') as HTMLElement;
-  const keepProgressBtn = document.getElementById('btn-keep-progress') as HTMLButtonElement;
-  const confirmClearBtn = document.getElementById('btn-confirm-clear') as HTMLButtonElement;
-
-  startOverBtn?.addEventListener('click', () => {
-    if (confirmBox) {
-      confirmBox.style.display = 'block';
-      keepProgressBtn?.focus(); // Focus "Keep progress" by default per Spec R5
-    }
-  });
-
-  keepProgressBtn?.addEventListener('click', () => {
-    if (confirmBox) confirmBox.style.display = 'none';
-    startOverBtn?.focus();
-  });
-
-  confirmClearBtn?.addEventListener('click', () => {
-    clearProgressKeepPreferences();
-    window.location.href = '/';
-  });
-}
+export const initCasebookPage = initEvidenceDisclosures;

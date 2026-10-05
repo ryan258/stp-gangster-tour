@@ -1,137 +1,101 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import claimsData from '../data/claims.json';
-import sourcesData from '../data/sources.json';
+import { claims, sources, edition, media, sourceURL } from '../lib/catalog';
 ---
 
-<Layout title="Sources & Claims Ledger" currentPath="/sources/">
-  <div style="max-width: var(--container-prose-width); margin: 0 auto; padding: 20px 0 60px;">
-    
-    <div style="margin-bottom: 24px;">
-      <span class="badge badge-exact" style="margin-bottom: 8px;">RESEARCH LEDGER</span>
-      <h1 style="margin-top: 4px; margin-bottom: 12px;">Sources &amp; Verified Claims</h1>
-      <p style="font-size: 20px; color: var(--color-muted); line-height: 1.5; font-style: italic;">
-        Every assertion in this tour is tied to a specific claim and documented historical source.
+<Layout title="Sources and qualifications">
+  <div class="container prose">
+    <header class="page-heading">
+      <p class="eyebrow">Follow the evidence</p>
+      <h1>Sources and qualifications</h1>
+      <p class="lede">Thirty claims, with their support, disputes, and limits.</p>
+      <p>“Supported” refers to the bounded statement and cited source, not universal certainty. A historical record, a later account, and this tour’s explanation are different kinds of material. These pages paraphrase records; they do not present invented transcripts or archival facsimiles.</p>
+      <p><a data-context-return hidden href="/map/">Back to the tour</a></p>
+      <nav class="controls" aria-label="Sources sections">
+        <a href="#claims">Claims</a>
+        <a href="#bibliography">Bibliography</a>
+        <a href="#edition-status">Edition notes</a>
+        <a href="#credits">Credits</a>
+      </nav>
+      <p data-js-control hidden>
+        <button type="button" class="btn-secondary" id="print-sources">Print or save as PDF</button>
       </p>
-    </div>
+    </header>
 
-    <!-- Quick Jump Links -->
-    <div style="display: flex; gap: 12px; margin-bottom: 36px;">
-      <a href="#claims-section" class="btn btn-secondary">Jump to Claims (30)</a>
-      <a href="#sources-section" class="btn btn-secondary">Jump to Sources (16)</a>
-    </div>
-
-    <!-- Section 1: Claims (C01 - C30) -->
-    <section id="claims-section" style="margin-bottom: 60px;">
-      <h2 style="font-size: 28px; margin-bottom: 12px; border-bottom: 1px solid var(--color-border); padding-bottom: 8px;">
-        Historical Claims (C01–C30)
-      </h2>
-      <p style="font-size: 16px; color: var(--color-muted); margin-bottom: 24px;">
-        Evaluated according to evidentiary basis, qualification limits, and research verification dates.
-      </p>
-
-      <div style="display: flex; flex-direction: column; gap: 16px;">
-        {claimsData.map(c => (
-          <div 
-            id={`claim-${c.id}`} 
-            style="background: var(--color-surface-card); border: 1px solid var(--color-border); border-radius: 6px; padding: 20px; scroll-margin-top: 80px;"
-          >
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
-              <div>
-                <span style="color: var(--color-accent); font-weight: 700; margin-right: 8px;">{c.id}</span>
-                <span style="font-family: var(--font-title); font-size: 18px; font-weight: 600; color: var(--color-paper);">
-                  {c.assertion}
+    <section id="claims">
+      <h2>Claim ledger</h2>
+      {claims.map(c => (
+        <article id={`claim-${c.id}`} class="card">
+          <p class="eyebrow">{c.id} · {c.status} · {c.evidenceBasis}</p>
+          <h3>{c.assertion}</h3>
+          <p>{c.supportExplanation}</p>
+          <p><strong>Qualification:</strong> {c.qualification}</p>
+          <p><strong>Locator:</strong> {c.locators}</p>
+          <p class="muted">Recorded passage check: {c.passageCheckDate}. This date describes the existing research record, not a new review of every passage.</p>
+          <p>
+            {c.sourceIds.map((id, i) => {
+              const src = sources.find(s => s.id === id);
+              return (
+                <span>
+                  <a href={sourceURL(id)}>{id}: {src?.title}</a>
+                  {i < c.sourceIds.length - 1 ? '; ' : ''}
                 </span>
-              </div>
-              <span class={`badge ${c.status === 'Supported' ? 'badge-exact' : 'badge-approx'}`}>
-                {c.status}
-              </span>
-            </div>
-
-            <p style="font-size: 15px; color: var(--color-paper); margin-bottom: 8px;">
-              <strong>Support Explanation:</strong> {c.supportExplanation}
-            </p>
-
-            <div style="background: rgba(14, 17, 23, 0.6); padding: 10px 14px; border-radius: 4px; margin-bottom: 12px; font-size: 14px; border-left: 3px solid var(--color-accent);">
-              <strong style="color: var(--color-accent);">Qualification / Limitation:</strong> 
-              <span style="color: var(--color-muted);">{c.qualification}</span>
-            </div>
-
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--color-muted);">
-              <div>
-                <strong>Sources:</strong> 
-                {c.sourceIds.map((sid, idx) => (
-                  <span>
-                    <a href={`#source-${sid}`}>{sid}</a>{idx < c.sourceIds.length - 1 ? ', ' : ''}
-                  </span>
-                ))} 
-                <span>({c.locators})</span>
-              </div>
-              <div>
-                <span>Verified: {c.passageCheckDate}</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+              );
+            })}
+          </p>
+        </article>
+      ))}
     </section>
 
-    <!-- Section 2: Sources (S01 - S16) -->
-    <section id="sources-section">
-      <h2 style="font-size: 28px; margin-bottom: 12px; border-bottom: 1px solid var(--color-border); padding-bottom: 8px;">
-        Documented Sources (S01–S16)
-      </h2>
-      <p style="font-size: 16px; color: var(--color-muted); margin-bottom: 24px;">
-        Historical accounts, court opinions, corporate filings, FBI records, and period news publications.
-      </p>
-
-      <div style="display: flex; flex-direction: column; gap: 16px;">
-        {sourcesData.map(s => (
-          <div 
-            id={`source-${s.id}`} 
-            style="background: var(--color-surface-card); border: 1px solid var(--color-border); border-radius: 6px; padding: 20px; scroll-margin-top: 80px;"
-          >
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
-              <div>
-                <span style="color: var(--color-accent); font-weight: 700; margin-right: 8px;">{s.id}</span>
-                <span style="font-family: var(--font-title); font-size: 20px; font-weight: 600; color: var(--color-paper);">
-                  {s.title}
-                </span>
-              </div>
-              <span class="badge badge-approx">{s.sourceType}</span>
-            </div>
-
-            <p style="font-size: 15px; color: var(--color-paper); margin-bottom: 6px;">
-              <strong>Creator / Author:</strong> {s.creator}
-            </p>
-
-            {s.passageLocators && (
-              <p style="font-size: 14px; color: var(--color-paper); margin-bottom: 6px;">
-                <strong>Key Passages:</strong> {s.passageLocators}
-              </p>
-            )}
-
-            <div style="background: rgba(14, 17, 23, 0.6); padding: 10px 14px; border-radius: 4px; margin-bottom: 12px; font-size: 14px; border-left: 3px solid var(--color-accent);">
-              <strong style="color: var(--color-accent);">Evidentiary Limits:</strong> 
-              <span style="color: var(--color-muted);">{s.limits}</span>
-            </div>
-
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--color-muted);">
-              <div>
-                {s.url && (
-                  <a href={s.url} target="_blank" rel="noopener noreferrer" style="color: var(--color-accent);">
-                    View External Archive &rarr;
-                  </a>
-                )}
-              </div>
-              <div>
-                <span>Consulted: {s.consultationDate}</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+    <section id="bibliography">
+      <h2>Bibliography</h2>
+      {sources.map(s => (
+        <article id={`source-${s.id}`} class="card">
+          <p class="eyebrow">{s.id} · {s.sourceType}</p>
+          <h3>{s.title}</h3>
+          <p>{s.creator}</p>
+          <p>Published: {s.publicationDate}. Recorded consultation: {s.consultationDate}.</p>
+          <p><strong>Passages:</strong> {s.passageLocators}</p>
+          <p><strong>Limits:</strong> {s.limits}</p>
+          <p><a href={s.url}>Read {s.id} at its source</a></p>
+          <details>
+            <summary>Copyable citation</summary>
+            <p class="citation">{s.creator}. “{s.title}.” {s.publicationDate}. {s.url} (consulted {s.consultationDate}).</p>
+          </details>
+        </article>
+      ))}
     </section>
 
+    <section id="edition-status">
+      <h2>Edition notes</h2>
+      <p>Edition {edition.contentRevision} is a working preview. Structural checks cover records, links between records, asset digests, and SVG parsing. They cannot establish historical truth, listening quality, rights, or accessibility conformance.</p>
+      <h3>Corrections in 0.5.0</h3>
+      <ul>
+        <li>Removed unsupported presenter details and absolute claims about absent records.</li>
+        <li>Kept the Hamm abduction-setting conflict visible; removed invented map positions.</li>
+        <li>Separated Gleckman’s outcomes from the unverified legal status of Fuchs.</li>
+        <li>Corrected the hotel surveillance caption, silver-nitrate wording, and Lincoln Court illustration labels.</li>
+        <li>Replaced automatic listening passes with pending review records.</li>
+      </ul>
+      <p>Still open: recorded listening and rights reviews, original lossless audio masters, referenced illustration review, checked map geometry, and real-device and assistive-technology verification.</p>
+      <p>To investigate a possible correction, note the claim or evidence ID, the proposed correction, and a source with a page or passage locator. The ledger preserves qualifications while that question is checked.</p>
+    </section>
+
+    <section id="credits">
+      <h2>Credits and material use</h2>
+      <p>Local narration uses macOS Samantha; ambience is synthesized noise, not a location recording. Earlier files have no retained original lossless masters. Listening and distribution-rights reviews remain pending.</p>
+      <p>Illustrations are existing local project SVGs with corrective edits. They are generalized reconstructions, not verified architectural views. No new reuse license has been assigned. Referenced scene review and provenance confirmation remain open.</p>
+      <ul>
+        {media.scenes.map(s => (
+          <li>{s.id}: {s.description}</li>
+        ))}
+      </ul>
+      <p>Fonts: Barlow Condensed and Source Sans 3, self-hosted. Their license files are retained under public/licenses in the project. The cited archives and websites retain their own rights and conditions.</p>
+      <p>No analytics, account, GPS, or external audio provider is part of the runtime. Following a source link leaves this site and uses that source’s services.</p>
+    </section>
   </div>
 </Layout>
+
+<script>
+  document.getElementById('print-sources')?.addEventListener('click', () => window.print());
+</script>

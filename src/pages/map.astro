@@ -1,18 +1,4 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SvgMap from '../components/SvgMap.astro';
+import Layout from '../layouts/Layout.astro';import SvgMap from '../components/SvgMap.astro';
 ---
-
-<Layout title="City Map: Seven Historic Places" currentPath="/map/">
-  <div style="max-width: 1080px; margin: 0 auto; padding: 20px 0 60px;">
-    <div style="margin-bottom: 24px;">
-      <span class="badge badge-exact" style="margin-bottom: 8px;">CARTOGRAPHIC DIRECTORY</span>
-      <h1 style="margin-top: 4px; margin-bottom: 12px;">Saint Paul Underworld Map</h1>
-      <p style="font-size: 20px; color: var(--color-muted); line-height: 1.5; font-style: italic;">
-        Explore the seven sourced locations across downtown Saint Paul, the Mississippi River bluff caves, and residential neighborhoods.
-      </p>
-    </div>
-
-    <SvgMap />
-  </div>
-</Layout>
+<Layout title="Map and places"><div class="container"><header class="page-heading"><p class="eyebrow">Places and uncertainty</p><h1>Map and places</h1><p class="lede">A reading directory, with location precision kept separate from condition and access.</p><p>The geographic map is awaiting checked base geometry and venue coordinates. This page is not a walking route or an invitation to enter private property.</p><p><a data-resume hidden href="/map/">Resume reading</a></p></header><SvgMap/></div></Layout>

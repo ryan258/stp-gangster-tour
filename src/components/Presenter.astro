@@ -1,0 +1,14 @@
+---
+import {type presenters} from '../lib/catalog';
+import ClaimLinks from './ClaimLinks.astro';
+interface Props {presenter:typeof presenters[number]}
+const {presenter:p}=Astro.props;
+---
+<section class={`interactive-presenter card presenter-${p.kind}`} aria-label={p.title}>
+ <p class="eyebrow">{p.kind} · Tour explanation</p><h3>{p.title}</h3>
+ <p>Choose a label to emphasize a passage. Every passage stays readable.</p>
+ <div class="controls" data-js-control hidden>{p.items.map((item,i)=><button type="button" class="btn-secondary" data-selection={item.key} aria-pressed={i===0}>{item.label}</button>)}</div>
+ <div class="presenter-panels">{p.items.map((item,i)=><article class={`presenter-target ${i===0?'selected-highlight':''}`} data-target-key={item.key}>
+  <h4>{item.label}</h4><p>{item.text}</p><p class="muted"><strong>Limit:</strong> {item.qualification}</p><a href={`#evidence-${item.evidenceId}`}>Inspect {item.evidenceId}</a><ClaimLinks ids={item.claimIds} from={p.stopId}/>
+ </article>)}</div>
+</section>

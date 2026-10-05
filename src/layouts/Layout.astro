@@ -1,74 +1,21 @@
 ---
-import SkipLink from '../components/SkipLink.astro';
+import '../styles/tokens.css';
+import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-
-interface Props {
-  title: string;
-  description?: string;
-  stopNumber?: number;
-  totalStops?: number;
-  currentPath?: string;
-}
-
-const {
-  title,
-  description = "Saint Paul After Dark: An interactive history of the city that sheltered the underworld. Sourced, verified accounts of corruption, sanctuary, and reform.",
-  stopNumber,
-  totalStops = 7,
-  currentPath = Astro.url.pathname
-} = Astro.props;
-
-const pageTitle = stopNumber 
-  ? `${title} | Stop ${stopNumber} of ${totalStops} | Saint Paul After Dark` 
-  : `${title} | Saint Paul After Dark`;
+import SkipLink from '../components/SkipLink.astro';
+import {edition} from '../lib/catalog';
+interface Props {title:string;description?:string;currentPath?:string;stopNumber?:number;totalStops?:number;}
+const {title,description=edition.subtitle,currentPath=Astro.url.pathname,stopNumber,totalStops=7}=Astro.props;
 ---
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <title>{pageTitle}</title>
-
-    <!-- Preload Self-Hosted Fonts (Spec R3 & R13) -->
-    <link rel="preload" href="/fonts/barlow-condensed-semibold.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/source-sans-3-regular.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/source-sans-3-semibold.woff2" as="font" type="font/woff2" crossorigin />
-
-    <!-- Execute Calm view check early before render to prevent visual flashing -->
-    <script is:inline>
-      try {
-        const raw = localStorage.getItem('stp-after-dark:preferences:v1');
-        if (raw) {
-          const parsed = JSON.parse(raw);
-          if (parsed && parsed.calmView) {
-            document.documentElement.classList.add('calm-mode');
-          }
-        }
-      } catch (e) {}
-    </script>
-  </head>
-  <body>
-    <SkipLink />
-    <Header currentPath={currentPath} stopNumber={stopNumber} totalStops={totalStops} />
-
-    <main id="main-content" tabindex="-1">
-      <slot />
-    </main>
-
-    <Footer />
-
-    <script>
-      import { initCalmView } from '../scripts/calm';
-      import { initSelectionPresenters } from '../scripts/selection';
-      import { initEvidenceDisclosures } from '../scripts/casebook';
-      
-      initCalmView();
-      initSelectionPresenters();
-      initEvidenceDisclosures();
-    </script>
-  </body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content={description}/><meta name="color-scheme" content="dark"/><meta name="referrer" content="strict-origin-when-cross-origin"/><title>{title} | {edition.title}</title><link rel="preload" href="/fonts/source-sans-3-regular.woff2" as="font" type="font/woff2" crossorigin/></head>
+<body><SkipLink/><Header currentPath={currentPath} stopNumber={stopNumber} totalStops={totalStops}/>
+ {edition.releaseStatus==='preview'&&<aside class="preview-note" aria-label="Edition status">Work in progress · Source qualifications are part of the story. Audio, illustration, and location review remains open. <a href="/sources/#edition-status">Edition notes</a></aside>}
+ <p id="storage-notice" class="storage-notice" role="status" hidden></p>
+ <main id="main-content" tabindex="-1"><slot/></main><Footer/>
+ <noscript><p class="container">Reading, navigation, sources, and evidence disclosures work without JavaScript. Saved progress, emphasis controls, and audio are unavailable.</p></noscript>
+ <script>
+ import {initCalmView} from '../scripts/calm';import {initSelectionPresenters} from '../scripts/selection';import {initEvidenceDisclosures} from '../scripts/casebook';import {initReading} from '../scripts/reading';
+ for(const initialize of [initCalmView,initSelectionPresenters,initEvidenceDisclosures,initReading]){try{initialize();}catch(error){console.error('An optional tour enhancement could not initialize.',error);}}
+ </script>
+</body></html>
