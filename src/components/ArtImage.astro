@@ -1,0 +1,9 @@
+---
+import {assetURL,imageRecord} from '../lib/catalog';
+// Catalog-backed atmospheric image: srcset from recorded variants; width/height default to the file but a slot may keep its own layout box.
+interface Props {name:string;alt?:string;sizes?:string;width?:number;height?:number;eager?:boolean;class?:string}
+const {name,alt='',sizes='100vw',width,height,eager=false,class:className}=Astro.props;
+const r=imageRecord(name);
+const srcset=[...r.variants.map(v=>`${assetURL(v.file)} ${v.width}w`),`${assetURL(r.file)} ${r.width}w`].join(', ');
+---
+<img class={className} src={assetURL(r.file)} srcset={srcset} sizes={sizes} alt={alt} width={width??r.width} height={height??r.height} loading={eager?'eager':'lazy'} decoding="async" fetchpriority={eager?'high':undefined}/>
