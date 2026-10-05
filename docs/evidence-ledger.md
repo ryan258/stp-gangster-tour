@@ -25,7 +25,7 @@ Every historical claim in the experience belongs to a transparent verification h
 - **Supported:** Backed by contemporaneous public records, trial transcripts, or authoritative archival synthesis (e.g. MNHS MNopedia studies).
 - **Qualified:** Plausible and documented, but bounded by context (e.g., informal policy without surviving signed contracts; corporate filings that don't prove secret gatherings).
 - **Disputed:** Competing contemporary accounts exist, or subsequent retractions took place.
-- **Unsubstantiated:** Widespread popular or marketing lore lacking primary source verification (e.g., claims of secret underground escape tunnels used by John Dillinger at Castle Royal).
+- **Unverified:** Popular or promotional lore lacking primary source verification (e.g., claims that John Dillinger or Ma Barker frequented Castle Royal).
 
 ---
 
@@ -35,11 +35,11 @@ Every evidence item (`EvidenceItem.astro`) and scene image display an explicit c
 
 | Label | Meaning |
 |---|---|
-| **Historical Record** | Primary source created during the event (federal court dockets, incorporation filings, FBI forensic reports). |
-| **Historical Account** | Archival synthesis written by professional historians or institutions (e.g., MNHS). |
-| **Tour Explanation / Interpretation** | The analytical framework applied by this project to explain economic incentives, leverage, and power dynamics. |
+| **Historical record** | Primary source created during the event (federal court dockets, incorporation filings, FBI forensic reports). |
+| **Historical account** | Archival synthesis written by professional historians or institutions (e.g., MNHS). |
+| **Tour explanation / Interpretation** | The analytical framework applied by this project to explain economic incentives, leverage, and power dynamics. |
 | **Reconstruction** | Original graphic-noir illustration based on documented architectural footprints and historical photographs. |
-| **Local Legend** | Retrospective oral history or promotional mythology. |
+| **Lead / historical account** | Contemporary or promotional address leads used for site context only. |
 
 ---
 

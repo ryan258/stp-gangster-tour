@@ -15,23 +15,27 @@ npm run check
 Runs:
 1. `astro check`: Validates TypeScript types across all `.astro`, `.ts`, and `.mjs` files.
 2. `node ./scripts/validate-content.mjs`:
-   - Validates JSON schemas and cross-references across stops, claims, evidence, sources, metagames, and people.
-   - Verifies all referenced SVG scene files and MP3 audio files exist on disk with valid file digests.
-   - Validates narration listening review status (`listeningReviewStatus === 'passed'`).
+   - Validates JSON datasets against strict schemas in `scripts/content-schema.mjs`.
+   - Validates reciprocal references across stops, claims, evidence, sources, metagames, locations, presenters, and people.
+   - Verifies transcript sha256 digests against recorded audio narrations.
+   - Spawns `scripts/check-svg.py` to validate XML parsing and dimensions of all SVG scenes.
+   - Separates structural content passes from outstanding editorial release gates (checked coordinates, human listening reviews, rights approvals, lossless audio masters).
 
 ### B. Unit Testing
 ```bash
 npm run test:unit
 ```
-Runs Vitest unit tests in `tests/unit/` to verify:
-- Stop sequencing and required narrative blocks.
+Runs Vitest unit tests in `tests/unit/` (`data-integrity.test.ts`, `storage.test.ts`) to verify:
+- Stop sequencing, narrative word counts, and required narrative blocks.
 - Claim statuses and source mappings.
 - Evidence-to-claim and evidence-to-stop foreign key integrity.
 - Metagame ownership.
 - Edition synchronization.
+- Local storage encoding, quota limits, and memory fallbacks.
 
 ### C. Browser End-to-End Testing
 ```bash
+npm run build:preview
 npm run test:browser
 ```
 Runs Playwright tests against an Astro preview build verifying:
@@ -46,7 +50,7 @@ Runs Playwright tests against an Astro preview build verifying:
 ```bash
 npm run build
 ```
-Compiles static HTML pages for all 13 routes into `dist/`.
+Runs `validate-content.mjs --production` and compiles static HTML pages into `dist/`.
 
 ---
 

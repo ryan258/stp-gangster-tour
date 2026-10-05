@@ -15,8 +15,8 @@ This project investigates how that bargain functioned, who benefited, who absorb
 - **7 Sourced Locations:** Green Lantern Saloon, Saint Paul Hotel, Castle Royal Caves, Hamm Brewery area, Lincoln Court Apartments, and the Federal Courthouse.
 - **30 Verified Claims (C01–C30):** Grounded in federal appellate court dockets, FBI case archives, Minnesota Historical Society research, and period newspaper accounts.
 - **14 Evidence Records (E01–E14):** Court transcripts, corporate charters, ransom letters, and latent silver-nitrate fingerprint records.
-- **Four Reusable Interaction Presenters:** Relationship diagrams, dated comparisons, sequential timelines, and forensic document viewers.
-- **Audio Narration & Ambience:** Self-hosted narration tracks and rain/room tone ambience.
+- **Four Reusable Interaction Patterns:** Unified `Presenter.astro` supporting relationship diagrams, dated comparisons, sequential timelines, and forensic document viewers driven by `src/data/presenters.json`.
+- **Audio Narration & Ambience:** Self-hosted narration tracks and rain/room tone ambience with independent mixing and fallback for limited audio stacks.
 - **Calm View & Low-Effort Navigation:** One-click reduced sensory mode removing decorative textures and animations; full keyboard and screen-reader accessibility.
 
 ---
@@ -29,7 +29,7 @@ This project investigates how that bargain functioned, who benefited, who absorb
 - **Assets:** Self-hosted typography (Barlow Condensed & Source Sans 3 with OFL licenses), responsive SVG scenes, CBR 128k MP3 narration
 - **State & Storage:** Local browser `localStorage` manager with safe quota boundaries and memory fallbacks
 - **Testing:**
-  - Content validation script: `scripts/validate-content.mjs`
+  - Content validation script: `scripts/validate-content.mjs` (Zod schemas via `scripts/content-schema.mjs` and SVG verification via `scripts/check-svg.py`)
   - Unit testing: [Vitest](https://vitest.dev/)
   - Browser E2E testing: [Playwright](https://playwright.dev/)
 
@@ -50,8 +50,13 @@ stp-gangster-tour/
 │   ├── evidence-ledger.md
 │   └── verification.md
 ├── scripts/
+│   ├── build.mjs            # Production build and preview orchestrator
+│   ├── content-schema.mjs   # Strict Zod schemas for all 11 catalog datasets
 │   ├── validate-content.mjs # Validates JSON cross-references and media files
+│   ├── check-svg.py         # Validates XML well-formedness and SVG dimensions
 │   └── generate-audio.mjs   # Speech-synthesis and ffmpeg audio pipeline
+├── production/
+│   └── audio/               # Original uncompressed lossless audio masters (.aiff, .wav)
 ├── public/
 │   ├── fonts/               # Self-hosted WOFF2 fonts
 │   ├── licenses/            # Font licenses
@@ -61,27 +66,35 @@ stp-gangster-tour/
 ├── src/
 │   ├── components/          # Reusable Astro components
 │   │   ├── AudioPlayer.astro
-│   │   ├── ComparisonPresenter.astro
-│   │   ├── DocumentPresenter.astro
+│   │   ├── ClaimLinks.astro
 │   │   ├── EvidenceItem.astro
 │   │   ├── Header.astro / Footer.astro
-│   │   ├── RelationshipPresenter.astro
-│   │   ├── SequencePresenter.astro
+│   │   ├── Presenter.astro
+│   │   ├── StopNav.astro
 │   │   └── SvgMap.astro
-│   ├── data/                # Validated JSON data files
+│   ├── data/                # Validated JSON data files (11 datasets)
 │   ├── layouts/Layout.astro # Root layout with SEO and Calm view injector
+│   ├── lib/                 # Shared data catalog access and typed URL helpers
+│   │   └── catalog.ts
 │   ├── pages/               # Static route definitions
+│   │   ├── 404.astro        # Error fallback page
 │   │   ├── index.astro      # Tour landing page
 │   │   ├── prologue.astro   # Contextual prologue
-│   │   ├── map.astro        # Interactive cartographic stop selector
+│   │   ├── map.astro        # Seven-stop directory and geography notes
 │   │   ├── stops/[id].astro # Dynamic 7-stop reading route
 │   │   ├── casebook.astro   # Evidence inspector and progress tracker
 │   │   ├── sources.astro    # Full claims (C01–C30) & sources (S01–S16) ledger
 │   │   └── epilogue.astro   # Historical synthesis and closing actions
 │   ├── scripts/             # Client-side TypeScript controllers
+│   │   ├── audio.ts         # Audio and ambient mixer controller
+│   │   ├── calm.ts          # Calm view state controller
+│   │   ├── casebook.ts      # Evidence disclosure and filter controller
+│   │   ├── reading.ts       # Reading progress and scroll tracking
+│   │   ├── selection.ts     # Interactive presenter highlight controller
+│   │   └── storage.ts       # Safe localStorage manager
 │   └── styles/              # CSS tokens and global base styles
 └── tests/
-    ├── unit/                # Vitest data integrity tests
+    ├── unit/                # Vitest data integrity and storage tests
     └── browser/             # Playwright end-to-end user journey tests
 ```
 

@@ -11,15 +11,17 @@ The site runs on Astro v5 configured in `output: 'static'` mode:
 - **Pre-rendered Routes:**
   - `/` — Landing page with hero illustration and resume bookmark prompt.
   - `/prologue/` — Concise narrative framing.
-  - `/map/` — SvgMap directory.
+  - `/map/` — Seven-stop directory with precision, condition, and access status.
   - `/stops/[id]/` — Seven static stop routes generated via `getStaticPaths()`.
-  - `/casebook/` — Evidence item dossier and inspection tracker.
-  - `/sources/` — Claims (C01–C30) and sources (S01–S16) ledger.
+  - `/casebook/` — Evidence item dossier, people registry, and inspection tracker.
+  - `/sources/` — Claims (C01–C30) and sources (S01–S16) ledger with edition release notes.
   - `/epilogue/` — Narrative closing and completion review.
+  - `/404.html` — Accessible error fallback page.
 - **Island Hydration:** Client-side JavaScript is selectively attached only where needed:
   - Audio playback controller (`src/scripts/audio.ts`)
   - Presenter button toggles (`src/scripts/selection.ts`)
   - Casebook filtering and bookmark tracking (`src/scripts/casebook.ts`, `src/scripts/storage.ts`)
+  - Reading position and scroll tracking (`src/scripts/reading.ts`)
   - Calm view preference toggling (`src/scripts/calm.ts`)
 
 ---
@@ -51,19 +53,21 @@ Users can toggle **Calm view** at any time. When `.calm-mode` is added to `<html
 
 ---
 
-## 3. Reusable Interactive Presenters
+## 3. Unified Interactive Presenter (`src/components/Presenter.astro`)
 
-To honor Spec R2, seven distinct locations are experienced through four reusable presentation components that render full text before JavaScript runs:
+To honor Spec R2, each of the seven stops features an interactive presentation component driven by a validated catalog dataset (`src/data/presenters.json`). The unified presenter supports four interaction kinds, rendering complete content prior to client-side enhancement:
 
-1. **`RelationshipPresenter.astro`**
+1. **`relationship`**
    - Displays interrelated participants, institutional conditions, and mechanisms.
    - Used in Stop 1 (The Three Conditions: Check-in, Pay, Keep crimes outside).
-2. **`ComparisonPresenter.astro`**
+2. **`comparison`**
    - Compares two perspectives, records, or timelines (e.g. Tax Net-Worth vs. Juror Tampering in Stop 2, Corporate Charter vs. 1970s folklore in Stop 3, Extortion vs. Response in Stop 5, Convictions vs. Civil Service Reform in Stop 7).
-3. **`DocumentPresenter.astro`**
+3. **`document`**
    - Contrasts primary documentary text with forensic traces (e.g. Hamm Ransom Letters vs. FBI Silver-Nitrate Fingerprints in Stop 4).
-4. **`SequencePresenter.astro`**
+4. **`sequence`**
    - Renders a multi-stage dated timeline (e.g. Lincoln Court apartment standoff in Stop 6).
+
+Each item in a presenter is linked to its primary evidence item (`evidenceId`) and supported claims (`claimIds`), rendered with interactive highlights via `src/scripts/selection.ts`.
 
 ---
 
