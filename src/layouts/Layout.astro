@@ -28,13 +28,22 @@ const preview=edition.releaseStatus!=='reviewed';
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <meta name="description" content={description}/>
   <meta name="color-scheme" content="dark"/>
+  <meta name="theme-color" content="#090b0e"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="After Dark"/>
+  <meta name="application-name" content="After Dark"/>
   <meta name="referrer" content="strict-origin-when-cross-origin"/>
   <title>{fullTitle}</title>
   <link rel="canonical" href={canonical}/>
   <link rel="icon" type="image/svg+xml" href={assetURL('/favicon.svg')}/>
+  <link rel="apple-touch-icon" sizes="180x180" href={assetURL('/apple-touch-icon.png')}/>
+  <link rel="apple-touch-icon" href={assetURL('/apple-touch-icon.png')}/>
+  <link rel="manifest" href={assetURL('/site.webmanifest')}/>
   {preview&&<meta name="robots" content="noindex"/>}
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content={edition.title}/>

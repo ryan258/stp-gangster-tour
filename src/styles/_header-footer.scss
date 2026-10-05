@@ -10,6 +10,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  padding-top: env(safe-area-inset-top, 0px);
   transition: background-color $transition-normal, border-color $transition-normal;
 }
 
@@ -146,7 +147,7 @@
   border-top: 1px solid $border-subtle;
   background-color: $bg-pitch;
   margin-top: 5rem;
-  padding: 3rem 0;
+  padding: 3rem 0 calc(3rem + env(safe-area-inset-bottom, 0px));
 
   .footer-inner {
     width: min(100% - 2rem, 1280px);

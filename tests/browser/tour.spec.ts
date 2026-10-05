@@ -55,3 +55,15 @@ test('unsupported audio mixing falls back to device narration volume',async({pag
  await page.addInitScript(()=>{class FixedVolumeAudio extends EventTarget {src='';preload='';currentTime=0;playbackRate=1;muted=false;get volume(){return 1;}set volume(_v:number){}play(){return Promise.resolve();}pause(){}load(){}}(window as any).Audio=FixedVolumeAudio;});
  await page.goto(stop);await page.getByRole('button',{name:'Play narration',exact:true}).click();await expect(page.locator('[data-mixer-notice]')).toBeVisible();await expect(page.getByRole('button',{name:'Toggle ambience',exact:true})).toBeHidden();await expect(page.getByRole('button',{name:'Pause narration',exact:true})).toBeVisible();
 });
+
+test('pwa manifest, apple touch icons, and ipad standalone tags resolve',async({page,request})=>{
+ await page.goto('/');
+ await expect(page.locator('link[rel="manifest"]')).toHaveAttribute('href',/site\.webmanifest$/);
+ await expect(page.locator('link[rel="apple-touch-icon"][sizes="180x180"]')).toHaveAttribute('href',/apple-touch-icon\.png$/);
+ await expect(page.locator('meta[name="apple-mobile-web-app-capable"]')).toHaveAttribute('content','yes');
+ await expect(page.locator('meta[name="apple-mobile-web-app-title"]')).toHaveAttribute('content','After Dark');
+ await expect(page.locator('meta[name="viewport"]')).toHaveAttribute('content',/viewport-fit=cover/);
+ const manifestRes=await request.get('/site.webmanifest');expect(manifestRes.status()).toBe(200);
+ const manifest=await manifestRes.json();expect(manifest.display).toBe('standalone');expect(manifest.icons.length).toBeGreaterThan(0);
+ const touchIconRes=await request.get('/apple-touch-icon.png');expect(touchIconRes.status()).toBe(200);
+});
