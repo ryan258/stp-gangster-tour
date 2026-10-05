@@ -1,0 +1,18 @@
+---
+import {assetURL} from '../lib/catalog';
+interface Props {title:string;eyebrow:string;lede?:string;image:string;folio:string;note?:string;}
+const {title,eyebrow,lede,image,folio,note}=Astro.props;
+---
+<header class="experience-hero">
+  <img class="experience-backdrop" src={assetURL(image)} alt="" width="1376" height="768" fetchpriority="high"/>
+  <div class="container experience-hero-inner">
+    <div class="experience-hero-copy">
+      <p class="eyebrow">{eyebrow}</p>
+      <h1>{title}</h1>
+      {lede&&<p class="lede">{lede}</p>}
+      <slot/>
+      <p class="experience-art-label">Atmospheric artwork · Not an archival image</p>
+    </div>
+    <div class="experience-marginalia" aria-hidden="true"><span class="experience-folio">{folio}</span>{note&&<p>{note}</p>}<small>Saint Paul After Dark</small></div>
+  </div>
+</header>
