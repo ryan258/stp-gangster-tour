@@ -23,14 +23,16 @@ npm run build:preview
 npm run preview
 ```
 
-Preview output goes to `dist-preview/` with a visible edition-status notice. `npm run build` is the production gate and intentionally fails while required reviews are pending; it removes stale `dist/` output before checking. `npm run preview:production` serves a separately accepted `dist/` build. Neither command deploys anything.
+Preview output goes to `dist-preview/`. Edition notes and review records remain accessible in `/sources/#edition-status` (the top preview banner has been removed from the reading shell for a cleaner reading experience). `npm run build` is the production gate and intentionally fails while required reviews are pending; it removes stale `dist/` output before checking. `npm run preview:production` serves a separately accepted `dist/` build. Neither command deploys anything.
 
 ## What works
 
 - Home, prologue, seven ordered stops, map/directory, casebook, sources, epilogue, and recovery page.
+- Comprehensive editorial experience redesign across all 14 routes: full-bleed `ExperienceHero` backdrops with marginalia and roman folios, interactive `ReadingTrail` with visited-stop tracking, chapter-level tabbed navigation, and paper-styled location files.
 - Redesigned homepage featuring illuminated Capitol dome skyline hero, "Read the City Through Its Evidence" dossier trio, seven responsive photographic chapter cards with dark vignette overlays, and an arched stone bridge quote banner.
-- Modular Sass (`.scss`) styling architecture carrying graphic noir aesthetics, custom typography (`Playfair Display`, `Cinzel`, `Caveat`, `Source Sans 3`), crimson accents, and dark glassmorphic card treatments across all pages.
-- High-efficiency WebP image pipeline (`public/images/redesign/*.webp`) achieving ~80% footprint reduction with verified complete rendering.
+- Modular Sass (`.scss`) styling architecture carrying graphic noir aesthetics, custom typography (`Playfair Display`, `Cinzel`, `Caveat`, `Source Sans 3`), crimson accents, vintage ephemera treatments, and specialized experience stylesheets (`experience.scss`, `map.scss`).
+- High-efficiency WebP image pipeline (`public/images/redesign/*.webp`) with asynchronous decoding (`decoding="async"`), achieving ~80% footprint reduction with verified complete rendering across all routes.
+- Streamlined reading shell: the former "Work in progress" top banner has been removed from `Layout.astro` for an immersive reading presentation, with editorial notes preserved under Sources.
 - Complete static reading, links, and native evidence disclosures without JavaScript.
 - One catalog-driven presenter with relationship, comparison, document, and sequence layouts. Selection emphasizes text without moving keyboard focus.
 - Optional local synthesized narration and ambience; no audio fetch before an explicit channel action. Pause, resume, replay, retry, mute, speed, separate volume buttons, Calm view, and silent page return.
@@ -44,8 +46,8 @@ Preview output goes to `dist-preview/` with a visible edition-status notice. `np
 | --- | --- |
 | `src/data/` | Edition order, stops, claims, sources, evidence, people, relationships, metagames, presenters, locations, geography and media/review records |
 | `src/lib/catalog.ts` | Build-time joins and URL helpers; not imported by browser controllers |
-| `src/pages/`, `src/components/`, `src/layouts/` | Static pages and reusable reading/presenter/evidence/audio shell |
-| `src/styles/` | Modular Sass architecture (`_variables`, `_mixins`, `_base`, `_header-footer`, `_homepage`, `_inner-pages`, `main.scss`) |
+| `src/pages/`, `src/components/`, `src/layouts/` | Static pages, `ExperienceHero`, `ReadingTrail`, and reusable reading/presenter/evidence/audio shell |
+| `src/styles/` | Modular Sass architecture (`_variables`, `_mixins`, `_base`, `_header-footer`, `_homepage`, `_inner-pages`, `experience.scss`, `map.scss`) |
 | `src/scripts/` | Small independent browser enhancements |
 | `scripts/content-schema.mjs`, `validate-content.mjs`, `check-svg.py` | Schemas, cross-record checks, hashes, SVG parsing, audio probes, production obligations |
 | `public/` | Served fonts, licenses, SVGs, WebP illustrations, and MP3 derivatives |

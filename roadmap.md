@@ -16,9 +16,9 @@ This is a bounded personal reading experience. The next work completes its quali
 - [x] Replace guessed geographic positions with three attributed approximate venue coordinates and four unplaced stops.
 - [x] Add the sourced USGS river base, retain original/derived hashes and reuse attribution, inspect the rendered overview, and provide offline reproducible generation.
 - [x] Configure GitHub Pages hosting and deployment workflow (`.github/workflows/deploy.yml`) with base-path and origin-URL resolution for subpath publication.
-- [x] Modernize visual design system using Sass (`.scss`) with modular architecture (`_variables`, `_mixins`, `_base`, `_header-footer`, `_homepage`, `_inner-pages`), custom Google typography (`Playfair Display`, `Cinzel`, `Caveat`, `Source Sans 3`), and dark glassmorphic styling.
-- [x] Implement homepage redesign featuring atmospheric skyline hero, dossier evidence feature, 7 photographic chapter cards with dark vignette overlays, and stone bridge quote banner.
-- [x] Optimize all newly introduced photographic and banner assets as WebP (`.webp`) images, achieving ~80% size compression with verified browser loading.
+- [x] Extend the graphic noir redesign across the entire reading experience: full-bleed `ExperienceHero` components with marginalia and Roman folios, interactive `ReadingTrail` with visited status, tabbed navigation, and paper-styled location files (`experience.scss`, `map.scss`).
+- [x] Streamline layout presentation by removing the intrusive "Work in progress" preview bar from `Layout.astro` while preserving complete edition status and review notes in `sources.astro#edition-status`.
+- [x] Configure asynchronous image decoding (`decoding="async"`) across all newly introduced WebP assets, ensuring verified error-free loading under Playwright headless test runs.
 - [x] Add targeted data/storage/browser regression coverage with 320px reflow verification across all routes. Observed results and limits are in `docs/verification.md`.
 
 

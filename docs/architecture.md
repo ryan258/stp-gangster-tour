@@ -23,15 +23,19 @@ The layout initializes optional enhancements separately. Controls start hidden a
 
 ## Presentation and Sass styling
 
-The visual system uses a modular Sass (`.scss`) architecture imported into `src/layouts/Layout.astro` via `src/styles/main.scss`:
+The visual system uses a modular Sass (`.scss`) architecture imported into `src/layouts/Layout.astro` via `src/styles/main.scss` and specialized stylesheets:
 - `_variables.scss`: Color tokens (pitch `#090b0e`, surface `#141820`, crimson accents `#d32f2f`/`#e53935`, warm bone `#f4efe6`, aged parchment `#ded4bf`), typography stacks (`Playfair Display`, `Cinzel`, `Caveat`, `Source Sans 3`), shadows, and transitions.
 - `_mixins.scss`: Glassmorphism panels, vintage ephemera paper treatment, responsive breakpoints, and crimson/ghost button mixins.
 - `_base.scss`: CSS resets, core typography, focus states, print rules, and 320px reflow guarantees without horizontal scrollbars.
-- `_header-footer.scss`: Sticky glassmorphic header with brand tagline `| Money. Power. Vice. Consequences.`, active crimson glow indicator, `Calm view ☾` pill, and editorial footer.
+- `_header-footer.scss`: Sticky glassmorphic header with brand tagline `| Money. Power. Vice. Consequences.`, active crimson glow indicator, `Calm view ☾` pill, and editorial footer with city skyline backdrop.
 - `_homepage.scss`: Redesigned homepage sections including the noir skyline hero banner, "Read the City Through Its Evidence" dossier trio (aged parchment card, tilted archival Hotel Ryan photo, debossed leather casebook cover), seven photographic chapter cards with dark vignette overlays, and an arched stone bridge quote banner.
-- `_inner-pages.scss`: Carries the graphic noir styling across `/stops/[id]`, `/map/`, `/casebook/`, `/sources/`, `/prologue/`, and `/epilogue/`, styling evidence disclosure panels, crime presenters, and audio players.
+- `_inner-pages.scss`: Base styling across inner routes, styling evidence disclosure panels, crime presenters, and audio players.
+- `experience.scss`: Shared atmosphere across reading routes (`stops/[id]`, `casebook`, `prologue`, `epilogue`), powering full-bleed `ExperienceHero` components, interactive `ReadingTrail` with visited-stop persistence, paper-styled place files, and tabbed chapter navigation.
+- `map.scss`: Cartographic board styling for `SvgMap.astro`, vintage map legends, coordinate grids, pinned venues, and the responsive 7-stop directory.
 
-All newly introduced photographic and banner assets are optimized WebP images (`public/images/redesign/*.webp`), reducing transfer weight by ~80% compared to raw images while preserving high fidelity.
+The top preview-status banner was removed from `src/layouts/Layout.astro` to ensure an immersive, distraction-free reading experience; edition revision notes and review records remain preserved on `/sources/#edition-status`.
+
+All newly introduced photographic and banner assets are optimized WebP images (`public/images/redesign/*.webp`), reducing transfer weight by ~80% compared to raw images while preserving high fidelity. Images use asynchronous decoding (`decoding="async"`), ensuring consistent non-blocking loading across both interactive sessions and headless automated test suites without premature lazy-load cancellation.
 
 Grid columns shrink below 320 pixels without horizontal overflow. Navigation wraps, controls have visible names suitable for voice input, and focus remains visible. Reduced-motion, forced-colors, and print styles are present. Automated coverage is not screen-reader or real-device certification.
 
