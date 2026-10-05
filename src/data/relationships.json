@@ -3,28 +3,39 @@
     "fromId": "john-oconnor",
     "toId": "william-reddy-griffin",
     "period": "1900–1913",
-    "assertion": "Chief O'Connor utilized Griffin as the primary underworld contact to vet arriving outlaws and manage layover tribute.",
-    "type": "documented",
-    "premiseClaims": ["C01", "C02", "C03"],
-    "qualifications": "Documented by Minnesota Historical Society syntheses; no signed correspondence between them exists."
+    "assertion": "MNHS describes Griffin as an intermediary in the system associated with O’Connor.",
+    "type": "attributed",
+    "premiseClaims": [
+      "C01",
+      "C02",
+      "C03"
+    ],
+    "qualifications": "See the linked claims for the specific source and its limits."
   },
   {
     "fromId": "william-reddy-griffin",
     "toId": "dan-hogan",
     "period": "1913",
     "assertion": "Following Griffin's death in 1913, Dan Hogan succeeded him as chief intermediary and underworld liaison.",
-    "type": "documented",
-    "premiseClaims": ["C03", "C04"],
-    "qualifications": "Attributed to MNHS historical chronology."
+    "type": "attributed",
+    "premiseClaims": [
+      "C03",
+      "C04"
+    ],
+    "qualifications": "Succession in a role, not an assertion of direct personal contact."
   },
   {
     "fromId": "dan-hogan",
     "toId": "john-oconnor",
     "period": "1913–1920",
-    "assertion": "Hogan operated the Green Lantern as the central nexus connecting underworld fugitives with municipal police leadership.",
-    "type": "documented",
-    "premiseClaims": ["C01", "C04", "C05"],
-    "qualifications": "Historical accounts describe operational accommodation; individual transactions were unrecorded."
+    "assertion": "MNHS associates Hogan’s Green Lantern with gatherings in the protection network.",
+    "type": "attributed",
+    "premiseClaims": [
+      "C01",
+      "C04",
+      "C05"
+    ],
+    "qualifications": "See the linked claims for the specific source and its limits."
   },
   {
     "fromId": "leon-gleckman",
@@ -32,17 +43,21 @@
     "period": "1934",
     "assertion": "Gleckman influenced juror Fuchs during the 1934 tax trial through cash payment promises and coerced loan approvals.",
     "type": "documented",
-    "premiseClaims": ["C10"],
-    "qualifications": "Formally established by federal court findings in 1938 criminal contempt proceedings."
+    "premiseClaims": [
+      "C10"
+    ],
+    "qualifications": "See the linked claims for the specific source and its limits."
   },
   {
     "fromId": "harry-sawyer",
     "toId": "edward-bremer",
     "period": "January 1934",
     "assertion": "Sawyer designated Bremer as an extortion target for the Barker-Karpis gang in preference to robbing a bank.",
-    "type": "interpretive",
-    "premiseClaims": ["C19"],
-    "qualifications": "Attributed to post-arrest investigative reconstructions in FBI summary reports."
+    "type": "attributed",
+    "premiseClaims": [
+      "C19"
+    ],
+    "qualifications": "See the linked claims for the specific source and its limits."
   },
   {
     "fromId": "walter-magee",
@@ -50,25 +65,33 @@
     "period": "January–February 1934",
     "assertion": "Magee served as the coerced courier and intermediary between Bremer's captors and the family.",
     "type": "documented",
-    "premiseClaims": ["C20", "C21"],
-    "qualifications": "Documented in federal case records; actions performed under severe duress."
+    "premiseClaims": [
+      "C20",
+      "C21"
+    ],
+    "qualifications": "See the linked claims for the specific source and its limits."
   },
   {
     "fromId": "john-dillinger",
     "toId": "evelyn-frechette",
     "period": "1933–1934",
     "assertion": "Frechette accompanied Dillinger as his companion, sharing refuge at the Lincoln Court apartments under an alias.",
-    "type": "documented",
-    "premiseClaims": ["C24", "C25"],
-    "qualifications": "Documented in federal harboring indictment and trial records."
+    "type": "attributed",
+    "premiseClaims": [
+      "C24",
+      "C25"
+    ],
+    "qualifications": "Attributed to the FBI retrospective; no original indictment or trial transcript examined here."
   },
   {
     "fromId": "homer-van-meter",
     "toId": "john-dillinger",
     "period": "March 1934",
-    "assertion": "Van Meter joined Dillinger at Lincoln Court, sparking the armed confrontation that enabled Dillinger to flee.",
-    "type": "documented",
-    "premiseClaims": ["C24"],
-    "qualifications": "Reconstructed from FBI and Saint Paul police operational summaries."
+    "assertion": "The FBI retrospective places Van Meter in the Lincoln Court confrontation involving Dillinger.",
+    "type": "attributed",
+    "premiseClaims": [
+      "C24"
+    ],
+    "qualifications": "See the linked claims for the specific source and its limits."
   }
 ]

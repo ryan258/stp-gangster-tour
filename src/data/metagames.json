@@ -5,17 +5,35 @@
     "title": "Protecting the Bargain",
     "period": "1900–1928",
     "actors": [
-      { "name": "Police Chief & Intermediaries", "role": "Brokers of sanctuary and toll collectors", "isDocumented": true },
-      { "name": "Visiting Fugitives", "role": "Purchasers of temporary immunity", "isDocumented": true },
-      { "name": "Victims in Neighboring Jurisdictions", "role": "Excluded targets of displaced violence", "isDocumented": false }
+      {
+        "name": "Police leadership and intermediaries",
+        "role": "Described as brokers of refuge",
+        "isDocumented": true
+      },
+      {
+        "name": "Visiting criminals",
+        "role": "Described as participants in the arrangement",
+        "isDocumented": true
+      },
+      {
+        "name": "People harmed outside the city",
+        "role": "Excluded from the bargain; analytical perspective",
+        "isDocumented": false
+      }
     ],
-    "aims": "Police sought municipal calm and illicit revenue; criminals sought a reliable sanctuary free from arrest while preparing future operations.",
-    "mechanism": "Selective access: an intermediary conditioned safe harbor on tribute and local restraint, weaponizing peer pressure among criminals to maintain the city's boundary.",
-    "expectedBenefit": "Sanctuary for paying fugitives; low crime headlines for police leadership; steady cash flow through saloons and political conduits.",
-    "bearingCosts": "Neighboring communities and banks outside Saint Paul that suffered exported criminal raids; Saint Paul residents excluded from honest municipal governance.",
-    "observedResponse": "Fugitives largely respected city borders for decades until economic pressures of Prohibition and Depression-era bank exhaustion broke the truce.",
-    "evidentiaryLimit": "Historical accounts describe the system's operation, but cannot measure exact compliance percentages or verify that every patrolman participated.",
-    "premiseClaims": ["C01", "C02", "C03", "C04", "C05"],
+    "aims": "Refuge and predictable access offered reasons to cooperate; private motives and exact compliance remain an interpretation.",
+    "mechanism": "An intermediary could make access selective and repeated dealings more predictable. A criminal hoping to return had a reason to respect local limits; an official receiving money had a reason to preserve a paying relationship. A conspicuous local crime threatened the benefits others expected from the arrangement. The boundary also shifted costs. Keeping an offense outside Saint Paul could serve participants' interests without making anyone beyond the city safer. The excluded parties matter: victims elsewhere had not agreed to finance local calm with their own exposure to violence. This is a model of incentives, not proof that the arrangement eliminated local crime or worked uniformly. Later kidnappings will show how an immediate opportunity could conflict with maintaining refuge.",
+    "expectedBenefit": "The expected advantage is an interpretation described above, not proof of success or private intent.",
+    "bearingCosts": "People harmed by crimes and excluded from protection.",
+    "observedResponse": "MNHS describes both efforts to preserve the arrangement and changes in its leadership. No compliance rate is established.",
+    "evidentiaryLimit": "Succession is not proof of a personal meeting between Griffin and Hogan.",
+    "premiseClaims": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05"
+    ],
     "interpretationLabel": "Tour explanation / Interpretation"
   },
   {
@@ -24,17 +42,35 @@
     "title": "Influencing the Decision",
     "period": "1920s–1938",
     "actors": [
-      { "name": "Leon Gleckman", "role": "Syndicate financier seeking legal evasion", "isDocumented": true },
-      { "name": "Bernard Fuchs", "role": "Deliberating juror susceptible to financial leverage", "isDocumented": true },
-      { "name": "Federal Prosecutors & Investigators", "role": "Building net-worth and contempt cases", "isDocumented": true }
+      {
+        "name": "Leon Gleckman",
+        "role": "Defendant in tax and contempt proceedings",
+        "isDocumented": true
+      },
+      {
+        "name": "Bernard Fuchs",
+        "role": "Juror described in the contempt opinion",
+        "isDocumented": true
+      },
+      {
+        "name": "Investigators and prosecutors",
+        "role": "Developed the financial and contempt cases",
+        "isDocumented": true
+      }
     ],
-    "aims": "Gleckman sought to derail felony tax prosecution through hung juries and political pressure; prosecutors sought to establish a documented financial net worth trail.",
-    "mechanism": "Two-front contest: disputing accounting classifications inside the courtroom while covertly obligating individual jurors through intermediaries, promised cash, and coerced credit.",
-    "expectedBenefit": "A mistrial and eventual dismissal of federal tax indictments without serving prison time.",
-    "bearingCosts": "The integrity of the judicial process, honest jurors, and the public interest in equal justice under law.",
-    "observedResponse": "Tampering achieved a mistrial in 1934, but financial analysis yielded conviction in a second trial, while covert transactions left a paper trail resulting in contempt penalties.",
-    "evidentiaryLimit": "Appellate records establish Gleckman's specific tampering conduct with juror Fuchs, but do not prove every rumor of hotel conspiracy or universal political control.",
-    "premiseClaims": ["C07", "C08", "C09", "C10", "C11"],
+    "aims": "An effort to influence jurors is established in the contempt case. Prosecutors separately sought to prove taxable income.",
+    "mechanism": "There were two contests here: proving the tax case and influencing the people who would decide it. The contempt findings document an attempt to affect that second contest. Fuchs received benefits; Gleckman sought favorable intervention. Credit could become a means of obligation, while the transactions and testimony supplied evidence against the effort. It is tempting to make a conviction explain an entire city's politics. Resist that shortcut. These proceedings support particular findings about Gleckman. They do not prove every story told about him, every meeting imagined inside the hotel, or complicity by every person who knew him.",
+    "expectedBenefit": "The expected advantage is an interpretation described above, not proof of success or private intent.",
+    "bearingCosts": "The integrity of jury deliberation and equal treatment before the law.",
+    "observedResponse": "The tax and contempt opinions record distinct proceedings, a partial acquittal, and convictions upheld on appeal. A mistrial alone does not establish a single holdout juror.",
+    "evidentiaryLimit": "The findings concern Gleckman. Do not assign Fuchs an unverified legal outcome.",
+    "premiseClaims": [
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C11"
+    ],
     "interpretationLabel": "Tour explanation / Interpretation"
   },
   {
@@ -43,17 +79,34 @@
     "title": "Making a Place Desirable",
     "period": "1933 (with later memory layer)",
     "actors": [
-      { "name": "Castle Royal Club Operators", "role": "Commercial venue proprietors", "isDocumented": true },
-      { "name": "Twin Cities Diners & Patrons", "role": "Paying audience seeking unique nightlife", "isDocumented": true },
-      { "name": "Later Promotional Revitalizers", "role": "1970s folklore promoters", "isDocumented": true }
+      {
+        "name": "Club operators",
+        "role": "Presented an unusual entertainment venue",
+        "isDocumented": true
+      },
+      {
+        "name": "Patrons",
+        "role": "Audience for the venue; individual guest identities not established",
+        "isDocumented": true
+      },
+      {
+        "name": "Later storytellers",
+        "role": "Transmit contested recollections",
+        "isDocumented": false
+      }
     ],
-    "aims": "1933: Commercial survival in a competitive nightlife market by offering subterranean spectacle; 1970s: Tourism marketing using infamous gangster lore.",
-    "mechanism": "Physical novelty: converting a humid silica sandstone cave into a luxurious nightclub with castle battlements, dance floors, and big-band glamour.",
-    "expectedBenefit": "High-margin dining and ticket sales in 1933; tourist attraction status and media fascination in the post-prohibition nostalgic era.",
-    "bearingCosts": "Historical clarity: genuine architectural and social history was overshadowed by unsubstantiated gangster mythology.",
-    "observedResponse": "The club operated successfully into the mid-1930s before closing; decades later, folklore filled documentary voids with unverified tales of Dillinger and Barker.",
-    "evidentiaryLimit": "A corporate incorporation record verifies legal existence, but period evidence contains zero verified guest registers or police logs proving gang hideout operations.",
-    "premiseClaims": ["C06", "C12", "C13", "C14"],
+    "aims": "An unusual setting could attract paying customers. This is an interpretation of the venue’s presentation, not measured profit or proof of criminal protection.",
+    "mechanism": "Turning an unusual physical space into an attraction could distinguish a business competing for customers. The supported analysis concerns entertainment and presentation. The evidence examined does not establish a criminal protection arrangement at Castle Royal. Later memory layer, explicitly outside the 1930s: Famous names can make a place's story more compelling. That creates an incentive worth examining, but it does not prove anyone knowingly invented a claim. Comparing the age and type of evidence is more useful than letting atmosphere decide the question.",
+    "expectedBenefit": "The expected advantage is an interpretation described above, not proof of success or private intent.",
+    "bearingCosts": "Readers who could mistake atmosphere for evidence.",
+    "observedResponse": "A 1933 business announcement and Brick’s account support venue history. Later guest recollections remain contested.",
+    "evidentiaryLimit": "Disputed guest stories remain disputed; no origin date or intentional invention is established.",
+    "premiseClaims": [
+      "C06",
+      "C12",
+      "C13",
+      "C14"
+    ],
     "interpretationLabel": "Tour explanation / Interpretation"
   },
   {
@@ -62,17 +115,35 @@
     "title": "Taking a Payoff, Spreading the Cost",
     "period": "June 1933 onward",
     "actors": [
-      { "name": "Barker-Karpis Gang", "role": "Captors seeking rapid fortune", "isDocumented": true },
-      { "name": "William Hamm Jr. & Family", "role": "Victim and family operating under existential duress", "isDocumented": true },
-      { "name": "Underworld Sanctuary Network", "role": "Brokers dependent on city immunity", "isDocumented": false }
+      {
+        "name": "Captors",
+        "role": "Demanded ransom",
+        "isDocumented": true
+      },
+      {
+        "name": "Hamm and family",
+        "role": "Faced captivity and ransom pressure",
+        "isDocumented": true
+      },
+      {
+        "name": "People relying on refuge",
+        "role": "Broader consequences are an interpretation",
+        "isDocumented": false
+      }
     ],
-    "aims": "Captors sought an unprecedented $100,000 cash extraction; the Hamm family sought William's immediate survival.",
-    "mechanism": "Violating the municipal covenant: executing a major armed kidnapping on Saint Paul streets, gambling that federal law enforcement could not penetrate local silence.",
-    "expectedBenefit": "Immediate $100,000 liquidity for the criminal gang.",
-    "bearingCosts": "William Hamm Jr. who suffered captivity; Saint Paul business community exposed to terror; underworld peers whose safe harbor was jeopardized.",
-    "observedResponse": "The ransom was delivered and Hamm was released, but the extortion note served as forensic evidence (silver nitrate fingerprints) that catalyzed federal pursuit.",
-    "evidentiaryLimit": "Historical sources document the ransom and release, but cannot reconstruct Hamm's private thoughts during captivity or reveal internal gang debates.",
-    "premiseClaims": ["C02", "C15", "C16", "C17", "C30"],
+    "aims": "Captors demanded a large immediate payment; the family faced an urgent threat to Hamm’s life.",
+    "mechanism": "A major ransom offered an immediate gain to its captors. The costs could extend beyond them: a victim and family suffered directly, while scrutiny could threaten other people depending on refuge. This is the conflict between an individual opportunity and a shared arrangement. Payment and investigation also operated on different time horizons. A family's urgent concern was a person's return; investigators could continue seeking evidence afterward. Those interests should not be presented as a simple contest between courage and weakness. Hamm's kidnapping occurred before national repeal that December. A June event cannot be explained as the consequence of a later date.",
+    "expectedBenefit": "The expected advantage is an interpretation described above, not proof of success or private intent.",
+    "bearingCosts": "Hamm and his family, with wider scrutiny affecting the refuge system.",
+    "observedResponse": "Ransom was paid and Hamm was released alive. The FBI retrospective describes subsequent fingerprint identification.",
+    "evidentiaryLimit": "Agency retrospective; neither a laboratory report examined here nor a claim of global forensic priority.",
+    "premiseClaims": [
+      "C02",
+      "C15",
+      "C16",
+      "C17",
+      "C30"
+    ],
     "interpretationLabel": "Tour explanation / Interpretation"
   },
   {
@@ -81,17 +152,35 @@
     "title": "Controlling the Response",
     "period": "January–February 1934",
     "actors": [
-      { "name": "Barker-Karpis Gang", "role": "Kidnappers attempting coercive communication control", "isDocumented": true },
-      { "name": "Edward Bremer & Walter Magee", "role": "Victim and family friend operating under mortal coercion", "isDocumented": true },
-      { "name": "Division of Investigation & Police", "role": "Mobilizing law enforcement authorities", "isDocumented": true }
+      {
+        "name": "Captors",
+        "role": "Tried to constrain police contact",
+        "isDocumented": true
+      },
+      {
+        "name": "Bremer and Magee",
+        "role": "Faced coercion",
+        "isDocumented": true
+      },
+      {
+        "name": "Local and federal authorities",
+        "role": "Received notification according to the summary",
+        "isDocumented": true
+      }
     ],
-    "aims": "Captors sought a massive $200,000 extortion payment while coercing the family into isolating themselves from police; victims sought Bremer's safe return.",
-    "mechanism": "Information control and threat inversion: framing any contact with law enforcement as an act of murder by the family against the victim.",
-    "expectedBenefit": "Unimpeded extortion collection and escape without law enforcement interference.",
-    "bearingCosts": "Edward Bremer subjected to prolonged sensory deprivation; Walter Magee placed in mortal jeopardy as an intermediary.",
-    "observedResponse": "Coercion failed to control victim action: the family notified federal and municipal authorities immediately, shattering the illusion of underworld control.",
-    "evidentiaryLimit": "FBI summaries preserve the threatening letters and investigative actions, but cannot prove the inner motivations or psychological experiences of the victims.",
-    "premiseClaims": ["C18", "C19", "C20", "C21", "C22"],
+    "aims": "The communications tried to secure payment and discourage police involvement. That aim did not dictate the family’s response.",
+    "mechanism": "The bank-robbery comparison reveals an alleged attempt to change the target of extraction: from institutional cash to the amount relatives and associates could be compelled to produce. The ransom pressure then tried to control the response as well as the payment. The limits are just as revealing as the strategy. Demanding secrecy did not guarantee secrecy. Expecting a higher payoff did not guarantee a stable refuge afterward. Participants could seek short-term advantage without controlling the investigation their actions produced. Bremer and Magee were operating under coercion. Explaining their constrained choices must never turn the tour into a puzzle about how a victim should have outsmarted a captor.",
+    "expectedBenefit": "The expected advantage is an interpretation described above, not proof of success or private intent.",
+    "bearingCosts": "Bremer and people pressured to arrange his return.",
+    "observedResponse": "The summary reports authorities were notified despite the captors’ threats. Bremer was later released.",
+    "evidentiaryLimit": "An attributed investigative reconstruction cannot supply every participant’s private reasoning.",
+    "premiseClaims": [
+      "C18",
+      "C19",
+      "C20",
+      "C21",
+      "C22"
+    ],
     "interpretationLabel": "Tour explanation / Interpretation"
   },
   {
@@ -100,17 +189,32 @@
     "title": "The Limits of a Safe Place",
     "period": "March 1934",
     "actors": [
-      { "name": "John Dillinger & Evelyn Frechette", "role": "Fugitives seeking residential anonymity", "isDocumented": true },
-      { "name": "Apartment Building Manager", "role": "Citizen observer noticing anomalies", "isDocumented": true },
-      { "name": "Federal Agents & Saint Paul Police", "role": "Multi-agency enforcement detachment", "isDocumented": true }
+      {
+        "name": "Dillinger and Frechette",
+        "role": "Used an alias at Lincoln Court in the agency account",
+        "isDocumented": true
+      },
+      {
+        "name": "Building manager",
+        "role": "Reported suspicious tenants",
+        "isDocumented": true
+      },
+      {
+        "name": "Officers",
+        "role": "Conducted surveillance and intervened",
+        "isDocumented": true
+      }
     ],
-    "aims": "Fugitives sought recovery and concealment in an ordinary residential neighborhood; federal agents sought to apprehend a high-profile interstate escapee.",
-    "mechanism": "Anonymity via ordinary domestic disguise (alias 'Hellman'), assuming an urban apartment complex would isolate them from police inquiry.",
-    "expectedBenefit": "Quiet refuge to heal and plan future bank robberies without local interference.",
-    "bearingCosts": "Tenants and building staff endangered by high-powered weapons fire in residential hallways; officers risking life in close quarters.",
-    "observedResponse": "Civic observation broke the disguise: odd behavior prompted a managerial tip, triggering a stakeout, gunfire, and Dillinger's wounded escape.",
-    "evidentiaryLimit": "No evidence indicates Dillinger had purchased an apartment-specific protection guarantee from local police; safehouse exposure stemmed from routine observation.",
-    "premiseClaims": ["C23", "C24"],
+    "aims": "An alias could help conceal identity. The record does not establish a prior wound to heal or a paid guarantee for this apartment.",
+    "mechanism": "An alias works only while other people accept or cannot penetrate it. A local accommodation is valuable only to the extent that relevant officials honor it—and only within the reach of that accommodation. Another authority, a manager's observation, or an associate's exposure can change the situation. The broader lesson is conditional security. People pursuing refuge could not control every observer or investigating body. The record shows reporting and intervention; it does not tell us the manager's private motive, establish a paid betrayal, or justify inventing an informer reward. Frechette belongs in this account as a named person with her own subsequent legal outcome. Association with Dillinger does not itself establish participation in his bank robberies.",
+    "expectedBenefit": "The expected advantage is an interpretation described above, not proof of success or private intent.",
+    "bearingCosts": "Residents, staff, and officers exposed to armed confrontation.",
+    "observedResponse": "The manager’s report preceded surveillance and the March 31 confrontation; Dillinger escaped wounded in the agency account.",
+    "evidentiaryLimit": "No checked floor plan, exact time of confrontation, or exhaustive witness comparison.",
+    "premiseClaims": [
+      "C23",
+      "C24"
+    ],
     "interpretationLabel": "Tour explanation / Interpretation"
   },
   {
@@ -119,17 +223,34 @@
     "title": "Changing Who Can Apply Pressure",
     "period": "1934–1938",
     "actors": [
-      { "name": "Federal Judiciary & Prosecutors", "role": "Adjudicating individual criminal conduct on the record", "isDocumented": true },
-      { "name": "Municipal Voters & Reformers", "role": "Altering charter appointment and tenure rules", "isDocumented": true },
-      { "name": "Corrupt Ward Machines", "role": "Losing patronage control over law enforcement", "isDocumented": true }
+      {
+        "name": "Courts and prosecutors",
+        "role": "Established specific legal outcomes",
+        "isDocumented": true
+      },
+      {
+        "name": "Municipal voters and reformers",
+        "role": "Changed appointment rules",
+        "isDocumented": true
+      },
+      {
+        "name": "Police leadership",
+        "role": "Subject to institutional change",
+        "isDocumented": true
+      }
     ],
-    "aims": "Establish verifiable accountability for specific offenses and insulate municipal police leadership from political and underworld extortion.",
-    "mechanism": "Dual reform: federal courtroom trials stripping immunity through documented evidence; charter civil service reform establishing 6-year terms and merit exams.",
-    "expectedBenefit": "Removal of chief of police from patronage dismissal; rule-of-law precedent replacing backroom arrangements.",
-    "bearingCosts": "Political machines that lost lucrative protection bribes; individuals facing imprisonment under adjudicated standards.",
-    "observedResponse": "Voters enacted the charter amendment in 1936; federal courts convicted Frechette, Gleckman, and accomplices; wiretaps exposed corrupt officers.",
-    "evidentiaryLimit": "Court records prove specific verdicts rather than the complete end of municipal vice; charter reform altered institutional incentives without ensuring moral perfection.",
-    "premiseClaims": ["C25", "C26", "C27", "C28"],
+    "aims": "Prosecution addressed individual conduct; appointment rules could reduce dependence on political favor.",
+    "mechanism": "Reform could target the conditions sustaining protection: expose relationships, prosecute provable conduct, and change how officials acquired and retained office. These approaches addressed different weaknesses. Evidence could damage secrecy; job protections could reduce one route for political pressure. The sources also deserve the questions asked of their subjects. A police history may emphasize professional reform; an agency history may emphasize investigative success. Those perspectives do not invalidate their evidence, but they cannot establish the whole story by themselves. The end of this route is therefore a change in the conditions of power, supported by particular outcomes. It is not proof that corruption disappeared or that all harms were repaired.",
+    "expectedBenefit": "The expected advantage is an interpretation described above, not proof of success or private intent.",
+    "bearingCosts": "People affected by corruption, and defendants subject to specific adjudicated outcomes.",
+    "observedResponse": "The cited accounts record legal outcomes and formal reform, without establishing an end to all corruption.",
+    "evidentiaryLimit": "Reform changed formal rules; it does not establish that all corruption disappeared.",
+    "premiseClaims": [
+      "C25",
+      "C26",
+      "C27",
+      "C28"
+    ],
     "interpretationLabel": "Tour explanation / Interpretation"
   }
 ]

@@ -5,14 +5,15 @@
     "historicalName": "Green Lantern Saloon",
     "currentName": "Historic Wabasha Street Corridor (Near 545 Wabasha St)",
     "role": "context",
-    "precision": "approximate",
-    "condition": "demolished",
-    "access": "public",
+    "precision": "unknown",
+    "condition": "unverified",
+    "access": "unknown",
     "address": "Historical Wabasha Street vicinity, Downtown Saint Paul",
-    "coordinates": { "x": 485, "y": 275 },
+    "coordinates": null,
     "supportingSourceId": "S02",
     "supportingLocator": "Green Lantern paragraph",
-    "qualification": "The original saloon structure has been demolished; approximate street area marked. Do not assume extant interior."
+    "qualification": "Historical association only. Coordinates, current condition, and access have not been checked; no visit or entry permission is implied.",
+    "currentCheck": null
   },
   {
     "id": "loc-hotel",
@@ -20,14 +21,19 @@
     "historicalName": "The Saint Paul Hotel",
     "currentName": "The Saint Paul Hotel",
     "role": "venue",
-    "precision": "exact",
-    "condition": "extant",
-    "access": "public",
+    "precision": "unknown",
+    "condition": "unverified",
+    "access": "unknown",
     "address": "350 Market Street, Saint Paul, MN 55102",
-    "coordinates": { "x": 450, "y": 380 },
+    "coordinates": null,
     "supportingSourceId": "S03",
     "supportingLocator": "Institutional history, 1920–30s section",
-    "qualification": "Verified landmark building footprint. Public access to lobby and restaurants; guest rooms and historical executive suites remain private."
+    "qualification": "Current address checked, but map coordinates and historical event footprint have not been verified.",
+    "currentCheck": {
+      "url": "https://www.saintpaulhotel.com/our-hotel/history/",
+      "date": "2026-10-05",
+      "note": "Official hotel footer gives 350 Market Street; no interior access claim is made."
+    }
   },
   {
     "id": "loc-castle-royal",
@@ -35,14 +41,19 @@
     "historicalName": "Castle Royal (Wabasha Street Caves)",
     "currentName": "Wabasha Street Caves",
     "role": "venue",
-    "precision": "exact",
-    "condition": "extant",
-    "access": "restricted",
+    "precision": "unknown",
+    "condition": "unverified",
+    "access": "unknown",
     "address": "215 Wabasha Street South, Saint Paul, MN 55107",
-    "coordinates": { "x": 510, "y": 485 },
+    "coordinates": null,
     "supportingSourceId": "S06",
     "supportingLocator": "Corporate notice S06 and Brick S07, pp. 114–115",
-    "qualification": "Verified cave venue footprint beneath the Mississippi bluffs. Access is restricted to scheduled commercial events and tours."
+    "qualification": "Current address checked, but map coordinates and historical event footprint have not been verified.",
+    "currentCheck": {
+      "url": "https://www.visitsaintpaul.com/directory/wabasha-street-caves/",
+      "date": "2026-10-05",
+      "note": "Tourism directory gives 215 Wabasha St S; no current hours or admission claim is made."
+    }
   },
   {
     "id": "loc-hamm",
@@ -50,14 +61,15 @@
     "historicalName": "Hamm Brewery Context (Theodore Hamm Brewing Co.)",
     "currentName": "Historic Hamm's Brewery Complex Area",
     "role": "context",
-    "precision": "approximate",
-    "condition": "altered",
-    "access": "restricted",
+    "precision": "unknown",
+    "condition": "unverified",
+    "access": "unknown",
     "address": "East 7th Street & Minnehaha Avenue vicinity, Saint Paul, MN",
-    "coordinates": { "x": 760, "y": 230 },
+    "coordinates": null,
     "supportingSourceId": "S08",
     "supportingLocator": "Brueggemann p. 13",
-    "qualification": "Context landmark. The abduction took place near the Hamm residence at 671 Cable Street, not in the commercial brewery buildings."
+    "qualification": "Brewery context only. Sources differ on the abduction setting; the event footprint is unresolved.",
+    "currentCheck": null
   },
   {
     "id": "loc-bremer",
@@ -65,14 +77,15 @@
     "historicalName": "Lexington & Goodrich Intersection Area",
     "currentName": "Lexington Parkway South & Goodrich Avenue",
     "role": "event",
-    "precision": "approximate",
-    "condition": "altered",
-    "access": "public",
+    "precision": "unknown",
+    "condition": "unverified",
+    "access": "unknown",
     "address": "Intersection of South Lexington Pkwy & Goodrich Ave, Saint Paul, MN",
-    "coordinates": { "x": 230, "y": 430 },
+    "coordinates": null,
     "supportingSourceId": "S10",
     "supportingLocator": "FBI Summary, printed p. 18 / PDF p. 19",
-    "qualification": "Public municipal street intersection. No exact curb or vehicle collision coordinate is asserted."
+    "qualification": "Historical association only. Coordinates, current condition, and access have not been checked; no visit or entry permission is implied.",
+    "currentCheck": null
   },
   {
     "id": "loc-lincoln-court",
@@ -80,14 +93,15 @@
     "historicalName": "Lincoln Court Apartments",
     "currentName": "Lincoln Court Apartments (93–95 S. Lexington Pkwy)",
     "role": "venue",
-    "precision": "exact",
-    "condition": "extant",
-    "access": "private",
+    "precision": "unknown",
+    "condition": "unverified",
+    "access": "unknown",
     "address": "93–95 South Lexington Parkway, Saint Paul, MN 55105",
-    "coordinates": { "x": 230, "y": 370 },
+    "coordinates": null,
     "supportingSourceId": "S11",
     "supportingLocator": "FBI Dillinger overview; S16 address lead",
-    "qualification": "Private multi-family residential building. Exterior street view only; interior entry is strictly private for residents."
+    "qualification": "Reported residential address, not permission to enter. Current condition and access are unverified.",
+    "currentCheck": null
   },
   {
     "id": "loc-courthouse",
@@ -95,13 +109,18 @@
     "historicalName": "Federal Courthouse and Post Office (now Landmark Center)",
     "currentName": "Landmark Center",
     "role": "venue",
-    "precision": "exact",
-    "condition": "extant",
+    "precision": "unknown",
+    "condition": "unverified",
     "access": "public",
     "address": "75 West 5th Street, Saint Paul, MN 55102",
-    "coordinates": { "x": 470, "y": 350 },
+    "coordinates": null,
     "supportingSourceId": "S14",
     "supportingLocator": "Library of Congress historical review",
-    "qualification": "Verified historic public building. Public cultural center today; courtrooms restored for historical tours."
+    "qualification": "Current address checked, but map coordinates and historical event footprint have not been verified.",
+    "currentCheck": {
+      "url": "https://www.landmarkcenter.org/visit-us/",
+      "date": "2026-10-05",
+      "note": "Official Visit Us page gives 75 Fifth Street West and public hours; confirm current opening arrangements with the venue."
+    }
   }
 ]

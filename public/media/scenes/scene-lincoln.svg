@@ -96,10 +96,10 @@
     <text x="35" y="445" fill="#F3EFE6" font-family="'Source Sans 3', sans-serif" font-weight="600" font-size="13">Agents Converge on the Hallway</text>
     <text x="35" y="468" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">Federal agents and St. Paul detectives</text>
     <text x="35" y="484" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">confront Van Meter on the stairs as</text>
-    <text x="35" y="500" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">they prepare to knock on Apartment 303.</text>
+    <text x="35" y="500" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">the account describes approaching the apartment.</text>
   </g>
 
-  <!-- PANEL 3: THE CONFRONTATION & ESCAPE (March 31, 10:30 AM) -->
+  <!-- PANEL 3: THE CONFRONTATION & ESCAPE (March 31, MARCH 31) -->
   <g id="panel-confrontation" transform="translate(670, 70)">
     <!-- Panel Box -->
     <rect width="295" height="540" fill="#0C0F15" stroke="#1F2837" stroke-width="2" rx="3"/>
@@ -107,11 +107,11 @@
     <!-- Panel Header -->
     <rect width="295" height="42" fill="#131822" rx="3"/>
     <text x="18" y="27" fill="#F3EFE6" font-family="'Barlow Condensed', sans-serif" font-weight="600" font-size="16" letter-spacing="1.5">3. CONFRONTATION</text>
-    <text x="195" y="27" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="12">10:30 AM</text>
+    <text x="195" y="27" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="12">MARCH 31</text>
 
     <!-- Apartment Door 303 Blasted by Gunfire -->
     <rect x="30" y="65" width="130" height="230" fill="#10151F" stroke="#253042" stroke-width="2"/>
-    <text x="95" y="115" fill="#F3EFE6" font-family="'Barlow Condensed', sans-serif" font-size="16" font-weight="600" text-anchor="middle">303</text>
+    <text x="95" y="115" fill="#F3EFE6" font-family="'Barlow Condensed', sans-serif" font-size="16" font-weight="600" text-anchor="middle">—</text>
     
     <!-- Bullet Holes with Crimson Haloes -->
     <circle cx="70" cy="140" r="3" fill="#000" stroke="#C62F42" stroke-width="1.5"/>
@@ -135,7 +135,7 @@
 
     <!-- Panel Caption -->
     <rect x="20" y="420" width="255" height="90" fill="#090B0F" stroke="#171D28" stroke-width="1"/>
-    <text x="35" y="445" fill="#F3EFE6" font-family="'Source Sans 3', sans-serif" font-weight="600" font-size="13">Gunfire & Rear Alley Escape</text>
+    <text x="35" y="445" fill="#F3EFE6" font-family="'Source Sans 3', sans-serif" font-weight="600" font-size="13">Gunfire &amp; Escape</text>
     <text x="35" y="468" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">Dillinger fires through the door,</text>
     <text x="35" y="484" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">absorbing a bullet wound before</text>
     <text x="35" y="500" fill="#B8B8BC" font-family="'Source Sans 3', sans-serif" font-size="11">fleeing with Frechette down the alley.</text>

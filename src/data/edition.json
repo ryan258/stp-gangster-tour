@@ -3,8 +3,8 @@
   "title": "Saint Paul After Dark",
   "subtitle": "An interactive history of the city that sheltered the underworld",
   "tagline": "Every city has rules. Saint Paul had an arrangement.",
-  "contentRevision": "0.4.0",
-  "presentationRevision": "0.4.0",
+  "contentRevision": "0.5.0",
+  "presentationRevision": "0.5.0",
   "historicalCheckDate": "2026-10-03",
   "contentNote": "Contains historical accounts of criminal extortion, abduction, armed confrontation, and institutional corruption in 1900s–1930s Saint Paul.",
   "stops": [
@@ -24,7 +24,11 @@
       "The tour asks what such a bargain made possible—and what made it unstable. Follow the brokers, the hotel rooms, the nightclubs, the ransom demands, and the courts. At each place, look for the rule people could see and the leverage working underneath it.",
       "Seven places cannot contain every life affected. They can reveal a pattern: protection benefited particular people while leaving others exposed. Understanding that pattern requires attention to victims and institutions as well as famous fugitives."
     ],
-    "premiseClaimIds": ["C01", "C02", "C03"]
+    "premiseClaimIds": [
+      "C01",
+      "C02",
+      "C03"
+    ]
   },
   "epilogue": {
     "title": "What the Arrangement Could Not Control",
@@ -36,6 +40,15 @@
       "The later stories create another responsibility. A cave, a hotel, and a courthouse can all become convincing stages for events they do not document. The tour has to resist supplying a guest, a motive, or a dramatic ending merely because the setting invites one.",
       "Return to the map with two questions: Who could shape another person's choices? Who absorbed the consequences? Those questions connect the seven places without requiring a single hidden mastermind. They also keep the people harmed by the arrangement within the history of those who benefited from it."
     ],
-    "premiseClaimIds": ["C01", "C02", "C15", "C18", "C24", "C28", "C30"]
-  }
+    "premiseClaimIds": [
+      "C01",
+      "C02",
+      "C15",
+      "C18",
+      "C24",
+      "C28",
+      "C30"
+    ]
+  },
+  "releaseStatus": "preview"
 }

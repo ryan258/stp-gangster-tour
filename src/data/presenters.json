@@ -1,0 +1,225 @@
+[
+  {
+    "stopId": "the-arrangement",
+    "kind": "relationship",
+    "title": "Three conditions",
+    "items": [
+      {
+        "key": "check-in",
+        "label": "Check in",
+        "text": "MNHS describes arriving criminals identifying themselves to those administering refuge.",
+        "qualification": "No universal compliance, crime-reduction measurement, or signed contract established.",
+        "claimIds": [
+          "C01",
+          "C02"
+        ],
+        "evidenceId": "E01"
+      },
+      {
+        "key": "pay",
+        "label": "Pay",
+        "text": "The historical account describes payments as a condition of protection.",
+        "qualification": "No universal compliance, crime-reduction measurement, or signed contract established.",
+        "claimIds": [
+          "C01",
+          "C02"
+        ],
+        "evidenceId": "E01"
+      },
+      {
+        "key": "keep-crimes-elsewhere",
+        "label": "Keep major crimes outside",
+        "text": "Local restraint was an expected condition; it does not establish that residents were always spared.",
+        "qualification": "No universal compliance, crime-reduction measurement, or signed contract established.",
+        "claimIds": [
+          "C01",
+          "C02"
+        ],
+        "evidenceId": "E01"
+      }
+    ]
+  },
+  {
+    "stopId": "a-suite-above-the-street",
+    "kind": "comparison",
+    "title": "Two proceedings",
+    "items": [
+      {
+        "key": "tax-evidence",
+        "label": "The Money Trail",
+        "text": "The 1935 appellate opinion upheld the convictions for 1929 and 1930 and notes the jury’s acquittal on the 1931 count. It distinguishes bank deposits from taxable income and examines competing financial explanations.",
+        "qualification": "The partial acquittal preceded the appeal; the court did not treat all deposits as income.",
+        "claimIds": [
+          "C08",
+          "C09"
+        ],
+        "evidenceId": "E03"
+      },
+      {
+        "key": "juror-influence",
+        "label": "The Jury and the Loans",
+        "text": "The 1938 opinion affirmed Gleckman’s criminal-contempt convictions. It describes a promised $300 payment to juror Bernard Fuchs through intermediaries and a later loan arranged at Gleckman’s direction. It does not establish a separate conviction of Fuchs.",
+        "qualification": "The findings concern Gleckman. Do not assign Fuchs an unverified legal outcome.",
+        "claimIds": [
+          "C10",
+          "C11"
+        ],
+        "evidenceId": "E04"
+      }
+    ]
+  },
+  {
+    "stopId": "under-the-bluff",
+    "kind": "comparison",
+    "title": "Business and memory",
+    "items": [
+      {
+        "key": "business-record",
+        "label": "The 1933 Notice",
+        "text": "Commercial West published a notice for Castle Royal, Inc. on September 30, 1933. The announcement names business purposes including restaurants, cafes, taverns, and nightclubs. This is a paraphrase of the notice, not an original charter or a facsimile.",
+        "qualification": "The business notice does not establish patrons or prove that this is the original incorporation filing.",
+        "claimIds": [
+          "C12"
+        ],
+        "evidenceId": "E05"
+      },
+      {
+        "key": "visitor-stories",
+        "label": "A Guest List Without a Register",
+        "text": "Brick discusses conflicting recollections around the venue’s 1977 revival and reports the lack of proof for named gangster attendance. Later recollections are evidence of disagreement; they are not a contemporary guest register.",
+        "qualification": "Disputed guest stories remain disputed; no origin date or intentional invention is established.",
+        "claimIds": [
+          "C13",
+          "C14"
+        ],
+        "evidenceId": "E06"
+      }
+    ]
+  },
+  {
+    "stopId": "the-price-of-protection",
+    "kind": "document",
+    "title": "Demand and trace",
+    "items": [
+      {
+        "key": "ransom-communication",
+        "label": "A Person and an Uncertain Footprint",
+        "text": "The RCHS account records Hamm’s kidnapping, $100,000 ransom, and release. It associates the abduction with a former family residence at 671 Cable Street. The FBI retrospective instead describes him leaving his office. The tour retains this unresolved difference.",
+        "qualification": "Released alive does not mean unharmed. The exact abduction location remains unresolved.",
+        "claimIds": [
+          "C15",
+          "C16"
+        ],
+        "evidenceId": "E07"
+      },
+      {
+        "key": "investigative-trace",
+        "label": "The Message Becomes Evidence",
+        "text": "The FBI retrospective describes applying silver nitrate solution to ransom material to reveal fingerprints. This paraphrase describes the reported method without claiming priority over every earlier forensic investigation.",
+        "qualification": "Agency retrospective; neither a laboratory report examined here nor a claim of global forensic priority.",
+        "claimIds": [
+          "C17",
+          "C30"
+        ],
+        "evidenceId": "E08"
+      }
+    ]
+  },
+  {
+    "stopId": "the-deal-breaks",
+    "kind": "document",
+    "title": "Demand and response",
+    "items": [
+      {
+        "key": "the-demand",
+        "label": "A Demand Is Not Compliance",
+        "text": "The 1936 Bremer summary records threats intended to deter police contact and also reports immediate notification of local and federal authorities. A demand for secrecy is therefore different from evidence of compliance.",
+        "qualification": "Threats describe coercion; they are not trustworthy promises about the victim’s fate.",
+        "claimIds": [
+          "C20",
+          "C21"
+        ],
+        "evidenceId": "E09"
+      },
+      {
+        "key": "the-reported-response",
+        "label": "Changing the Target",
+        "text": "The investigative summary attributes to Harry Sawyer a preference for kidnapping Bremer over robbing his bank because he expected a greater return. This is investigators’ reconstruction, not a recording of the planning conversation.",
+        "qualification": "An attributed investigative reconstruction cannot supply every participant’s private reasoning.",
+        "claimIds": [
+          "C18",
+          "C19"
+        ],
+        "evidenceId": "E10"
+      }
+    ]
+  },
+  {
+    "stopId": "the-safe-house-fails",
+    "kind": "sequence",
+    "title": "A reported sequence",
+    "items": [
+      {
+        "key": "report",
+        "label": "March 30: report",
+        "text": "The FBI account describes the manager reporting suspicious tenants using the name Hellman.",
+        "qualification": "An agency retrospective, not an independently checked floor plan or a full set of witness statements.",
+        "claimIds": [
+          "C24"
+        ],
+        "evidenceId": "E12"
+      },
+      {
+        "key": "surveillance",
+        "label": "March 31: surveillance",
+        "text": "The agency narrative describes officers watching the building the following day.",
+        "qualification": "An agency retrospective, not an independently checked floor plan or a full set of witness statements.",
+        "claimIds": [
+          "C24"
+        ],
+        "evidenceId": "E12"
+      },
+      {
+        "key": "confrontation",
+        "label": "March 31: confrontation",
+        "text": "The account describes gunfire and the escape of Dillinger, wounded, with Frechette.",
+        "qualification": "An agency retrospective, not an independently checked floor plan or a full set of witness statements.",
+        "claimIds": [
+          "C24"
+        ],
+        "evidenceId": "E12"
+      }
+    ]
+  },
+  {
+    "stopId": "on-the-record",
+    "kind": "comparison",
+    "title": "Outcomes and institutions",
+    "items": [
+      {
+        "key": "legal-outcomes",
+        "label": "Name the Actual Outcome",
+        "text": "The FBI retrospective reports Frechette’s conviction and sentence for conspiracy to harbor a fugitive. Separately, the Gleckman appellate opinions establish tax and contempt outcomes. These sources support named outcomes, not a claim that everyone associated with the defendants was convicted.",
+        "qualification": "An agency history is different from an original judgment. Each legal outcome must retain its own attribution.",
+        "claimIds": [
+          "C09",
+          "C10",
+          "C25",
+          "C26"
+        ],
+        "evidenceId": "E13"
+      },
+      {
+        "key": "appointment-rules",
+        "label": "Change the Appointment Rule",
+        "text": "MNHS describes a 1935 wiretap investigation and the June 15, 1936 charter amendment changing police-chief selection and tenure. Institutional rules and individual convictions address different parts of the problem.",
+        "qualification": "Reform changed formal rules; it does not establish that all corruption disappeared.",
+        "claimIds": [
+          "C27",
+          "C28"
+        ],
+        "evidenceId": "E14"
+      }
+    ]
+  }
+]

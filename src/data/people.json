@@ -2,46 +2,79 @@
   {
     "id": "john-oconnor",
     "name": "John J. O'Connor",
-    "aliases": ["The Big Fellow"],
+    "aliases": [
+      "The Big Fellow"
+    ],
     "role": "Saint Paul Chief of Police (1900–1912, 1914–1920)",
     "period": "1900–1920",
-    "description": "Architect of Saint Paul's famed 'O'Connor system.' Formulated the informal municipal policy offering safe harbor to criminals provided they registered, paid fees, and committed no major crimes within city limits.",
-    "supportingClaimIds": ["C01", "C02", "C05"],
-    "relatedStopIds": ["the-arrangement"],
-    "qualifications": "Synthesized from historical accounts; no signed personal policy document survives."
+    "description": "MNHS associates O’Connor with the protection arrangement beginning in 1900 and records his retirement in 1920.",
+    "supportingClaimIds": [
+      "C01",
+      "C02",
+      "C05"
+    ],
+    "relatedStopIds": [
+      "the-arrangement"
+    ],
+    "qualifications": "Read the linked claims for attribution and limits; association does not establish uncharged conduct."
   },
   {
     "id": "william-reddy-griffin",
     "name": "William 'Reddy' Griffin",
-    "aliases": ["Reddy Griffin"],
+    "aliases": [
+      "Reddy Griffin"
+    ],
     "role": "Saloonkeeper and early underworld liaison",
     "period": "1900–1913",
-    "description": "Served as the initial intermediary between Chief O'Connor and out-of-town criminals, handling check-ins and tribute until his death in 1913.",
-    "supportingClaimIds": ["C03"],
-    "relatedStopIds": ["the-arrangement"],
-    "qualifications": "Attributed to MNHS historical overview of underworld broker succession."
+    "description": "MNHS describes Griffin as an early intermediary, preceding Hogan in the role.",
+    "supportingClaimIds": [
+      "C03"
+    ],
+    "relatedStopIds": [
+      "the-arrangement"
+    ],
+    "qualifications": "Read the linked claims for attribution and limits; association does not establish uncharged conduct."
   },
   {
     "id": "dan-hogan",
     "name": "Dan 'Dapper Dan' Hogan",
-    "aliases": ["Dapper Dan"],
+    "aliases": [
+      "Dapper Dan"
+    ],
     "role": "Proprietor of the Green Lantern Saloon and underworld broker",
     "period": "1913–1928",
-    "description": "Succeeded Griffin as chief fixer in Saint Paul. Operates the Green Lantern on Wabasha Street as a clearinghouse for information, bond bailouts, and underworld diplomacy. Killed by an early automotive car bomb in 1928.",
-    "supportingClaimIds": ["C03", "C04", "C05"],
-    "relatedStopIds": ["the-arrangement"],
-    "qualifications": "The 1928 bombing remains legally unsolved; no assailant was ever convicted."
+    "description": "MNHS associates Hogan with the Green Lantern and records his death in a 1928 car bombing.",
+    "supportingClaimIds": [
+      "C03",
+      "C04",
+      "C05"
+    ],
+    "relatedStopIds": [
+      "the-arrangement"
+    ],
+    "qualifications": "Read the linked claims for attribution and limits; association does not establish uncharged conduct."
   },
   {
     "id": "leon-gleckman",
     "name": "Leon Gleckman",
-    "aliases": ["The Al Capone of Saint Paul"],
+    "aliases": [
+      "The Al Capone of Saint Paul"
+    ],
     "role": "Bootlegging syndicate leader and political powerbroker",
     "period": "1920s–1938",
-    "description": "Maintained an executive suite at the Saint Paul Hotel, wielding substantial influence over local police appointments and ward politics. Prosecuted federally for tax evasion and jury tampering.",
-    "supportingClaimIds": ["C07", "C08", "C09", "C10", "C11"],
-    "relatedStopIds": ["a-suite-above-the-street", "on-the-record"],
-    "qualifications": "Court opinions document tax fraud and juror contempt; do not substantiate generalized rumors of absolute political control."
+    "description": "The hotel’s retrospective associates Gleckman with a suite there. The appellate opinions separately document his tax and contempt cases.",
+    "supportingClaimIds": [
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C11"
+    ],
+    "relatedStopIds": [
+      "a-suite-above-the-street",
+      "on-the-record"
+    ],
+    "qualifications": "Read the linked claims for attribution and limits; association does not establish uncharged conduct."
   },
   {
     "id": "bernard-fuchs",
@@ -49,10 +82,15 @@
     "aliases": [],
     "role": "Juror in the 1934 Gleckman federal tax trial",
     "period": "1934–1938",
-    "description": "Held out against guilty verdicts in Gleckman's first trial, causing a mistrial. Subsequent appellate decisions confirmed he accepted a $300 bribe and pressured credit loans arranged by Gleckman.",
-    "supportingClaimIds": ["C10"],
-    "relatedStopIds": ["a-suite-above-the-street", "on-the-record"],
-    "qualifications": "Adjudicated by the Eighth Circuit Court of Appeals under criminal contempt proceedings."
+    "description": "The 1938 opinion in Gleckman’s contempt case describes payments and credit involving juror Fuchs. It does not support portraying him as the sole juror preventing conviction.",
+    "supportingClaimIds": [
+      "C10"
+    ],
+    "relatedStopIds": [
+      "a-suite-above-the-street",
+      "on-the-record"
+    ],
+    "qualifications": "This project does not establish a separate conviction of Fuchs."
   },
   {
     "id": "william-hamm-jr",
@@ -60,10 +98,15 @@
     "aliases": [],
     "role": "President of the Theo. Hamm Brewing Company; victim",
     "period": "June 1933",
-    "description": "Abducted outside his residence on June 15, 1933 by the Barker-Karpis gang. Held in Wisconsin until a $100,000 ransom was delivered, marking the collapse of the city's immunity guarantee for prominent residents.",
-    "supportingClaimIds": ["C15", "C16"],
-    "relatedStopIds": ["the-price-of-protection"],
-    "qualifications": "Kidnapping occurred at the residence on Cable Street rather than the commercial brewery."
+    "description": "Hamm was kidnapped in June 1933, held for ransom, and released alive. The examined sources differ about the precise abduction setting.",
+    "supportingClaimIds": [
+      "C15",
+      "C16"
+    ],
+    "relatedStopIds": [
+      "the-price-of-protection"
+    ],
+    "qualifications": "The RCHS account identifies a former residence; the FBI retrospective describes Hamm leaving his office. The precise abduction footprint is unresolved in this project."
   },
   {
     "id": "edward-bremer",
@@ -71,10 +114,16 @@
     "aliases": [],
     "role": "President of Commercial State Bank; victim",
     "period": "January–February 1934",
-    "description": "Ambushed and abducted at Lexington and Goodrich after dropping his daughter at school. Subjected to three weeks of captivity and coerced messages until a $200,000 ransom was paid.",
-    "supportingClaimIds": ["C18", "C20", "C22"],
-    "relatedStopIds": ["the-deal-breaks"],
-    "qualifications": "Historical date established as January 17, 1934; earlier printing errors corrected."
+    "description": "The federal summary dates Bremer’s abduction to January 17, 1934. The FBI retrospective reports his release after roughly three weeks.",
+    "supportingClaimIds": [
+      "C18",
+      "C20",
+      "C22"
+    ],
+    "relatedStopIds": [
+      "the-deal-breaks"
+    ],
+    "qualifications": "Read the linked claims for attribution and limits; association does not establish uncharged conduct."
   },
   {
     "id": "walter-magee",
@@ -82,43 +131,71 @@
     "aliases": [],
     "role": "Saint Paul contractor and Bremer family friend; intermediary",
     "period": "January–February 1934",
-    "description": "Targeted by kidnappers to receive ransom communications and act as courier under threat of Bremer's execution. Coordinated with federal and municipal law enforcement despite warnings.",
-    "supportingClaimIds": ["C20", "C21"],
-    "relatedStopIds": ["the-deal-breaks"],
-    "qualifications": "Documented in federal investigation summaries; actions were constrained by severe coercion."
+    "description": "The investigative summary describes Magee receiving coercive communications and notifying authorities.",
+    "supportingClaimIds": [
+      "C20",
+      "C21"
+    ],
+    "relatedStopIds": [
+      "the-deal-breaks"
+    ],
+    "qualifications": "Read the linked claims for attribution and limits; association does not establish uncharged conduct."
   },
   {
     "id": "harry-sawyer",
     "name": "Harry Sawyer",
-    "aliases": ["Harry Sandlovich"],
+    "aliases": [
+      "Harry Sandlovich"
+    ],
     "role": "Underworld finger man and Barker-Karpis associate",
     "period": "1933–1934",
-    "description": "Operated a roadhouse north of Saint Paul. Investigators identified him as selecting Bremer as an extortion target rather than attempting a high-risk bank vault heist.",
-    "supportingClaimIds": ["C19"],
-    "relatedStopIds": ["the-deal-breaks"],
-    "qualifications": "Attributed to FBI post-investigation summary reports; not contemporaneous planning wiretaps."
+    "description": "Investigators attributed to Sawyer a preference for kidnapping Bremer over robbing his bank.",
+    "supportingClaimIds": [
+      "C19"
+    ],
+    "relatedStopIds": [
+      "the-deal-breaks"
+    ],
+    "qualifications": "Read the linked claims for attribution and limits; association does not establish uncharged conduct."
   },
   {
     "id": "john-dillinger",
     "name": "John Dillinger",
-    "aliases": ["Carl Hellman"],
+    "aliases": [
+      "Carl Hellman"
+    ],
     "role": "Fugitive bank robber",
     "period": "March 1934",
-    "description": "Rented an apartment at Lincoln Court under an assumed name after escaping crown custody. Detected by building management, engaged in a shootout with local police and federal agents on March 31, 1934, escaping wounded.",
-    "supportingClaimIds": ["C23", "C24"],
-    "relatedStopIds": ["under-the-bluff", "the-safe-house-fails"],
-    "qualifications": "Attendance at Castle Royal remains disputed; presence at Lincoln Court is documented by eyewitness and agent records."
+    "description": "The FBI retrospective describes Dillinger’s use of an alias, the Lincoln Court confrontation, and his wounded escape.",
+    "supportingClaimIds": [
+      "C23",
+      "C24"
+    ],
+    "relatedStopIds": [
+      "under-the-bluff",
+      "the-safe-house-fails"
+    ],
+    "qualifications": "Castle Royal attendance remains disputed. The Lincoln Court sequence here is attributed to the FBI retrospective."
   },
   {
     "id": "evelyn-frechette",
     "name": "Evelyn 'Billie' Frechette",
-    "aliases": ["Billie Frechette"],
+    "aliases": [
+      "Billie Frechette"
+    ],
     "role": "Companion to John Dillinger",
     "period": "March–May 1934",
-    "description": "Lived with Dillinger at Lincoln Court. Arrested in Chicago in April 1934 and tried in Saint Paul's Landmark Center federal courtroom, convicted of conspiracy to harbor a fugitive and sentenced to two years in prison.",
-    "supportingClaimIds": ["C24", "C25", "C26"],
-    "relatedStopIds": ["the-safe-house-fails", "on-the-record"],
-    "qualifications": "Conviction was specifically for harboring a federal fugitive, not participating in bank robberies."
+    "description": "The FBI retrospective places Frechette at Lincoln Court and reports her later conviction for conspiracy to harbor a fugitive.",
+    "supportingClaimIds": [
+      "C24",
+      "C25",
+      "C26"
+    ],
+    "relatedStopIds": [
+      "the-safe-house-fails",
+      "on-the-record"
+    ],
+    "qualifications": "Read the linked claims for attribution and limits; association does not establish uncharged conduct."
   },
   {
     "id": "homer-van-meter",
@@ -126,9 +203,13 @@
     "aliases": [],
     "role": "Dillinger associate and armed robber",
     "period": "March 1934",
-    "description": "Arrived at Lincoln Court on March 31 during surveillance, encountered agents in the lobby stairs, and initiated gunfire that facilitated Dillinger and Frechette's escape.",
-    "supportingClaimIds": ["C24"],
-    "relatedStopIds": ["the-safe-house-fails"],
-    "qualifications": "Agency sequence reconstructed from conflicting officer and witness statements."
+    "description": "The FBI retrospective describes Van Meter’s involvement in the Lincoln Court confrontation.",
+    "supportingClaimIds": [
+      "C24"
+    ],
+    "relatedStopIds": [
+      "the-safe-house-fails"
+    ],
+    "qualifications": "Read the linked claims for attribution and limits; association does not establish uncharged conduct."
   }
 ]

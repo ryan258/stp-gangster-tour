@@ -4,7 +4,9 @@
     "assertion": "The Saint Paul protection arrangement originated under Police Chief John O'Connor in 1900.",
     "status": "Supported",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S01"],
+    "sourceIds": [
+      "S01"
+    ],
     "locators": "S01, opening narrative",
     "supportExplanation": "Minnesota Historical Society accounts document O'Connor instituting the system at the start of his tenure.",
     "qualification": "Predates national Prohibition; informal policy rather than formal municipal legislation.",
@@ -15,10 +17,12 @@
     "assertion": "Check-in, regular payments, and restraint from major crimes inside Saint Paul were the core conditions of refuge.",
     "status": "Supported",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S01"],
+    "sourceIds": [
+      "S01"
+    ],
     "locators": "S01, conditions paragraph",
     "supportExplanation": "Described in historical accounts as the three pillars of the O'Connor layover agreement.",
-    "qualification": "Synthesized from historical accounts; no signed physical contract exists.",
+    "qualification": "The examined historical accounts describe an informal system; this project has not examined a signed agreement.",
     "passageCheckDate": "2026-10-03"
   },
   {
@@ -26,7 +30,9 @@
     "assertion": "William 'Reddy' Griffin preceded Dan Hogan as the chief intermediary between criminals and police.",
     "status": "Supported",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S01"],
+    "sourceIds": [
+      "S01"
+    ],
     "locators": "S01, succession paragraphs",
     "supportExplanation": "MNHS account identifies Griffin as the initial broker until his death in 1913.",
     "qualification": "Do not collapse all earlier activity into Hogan's later saloon venue.",
@@ -37,21 +43,25 @@
     "assertion": "The Green Lantern Saloon on Wabasha Street was associated with Dan Hogan and criminal gatherings.",
     "status": "Supported",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S02"],
+    "sourceIds": [
+      "S02"
+    ],
     "locators": "S02, Green Lantern paragraph",
     "supportExplanation": "Historical accounts document the saloon as Hogan's operational base and a prominent underworld meeting place.",
-    "qualification": "No historical record claims every corrupt transaction occurred within that building.",
+    "qualification": "Association with a gathering place does not locate every transaction there.",
     "passageCheckDate": "2026-10-03"
   },
   {
     "id": "C05",
     "assertion": "Chief O'Connor retired in 1920; Dan Hogan was assassinated in a car bombing in 1928.",
     "status": "Supported",
-    "evidenceBasis": "cross-source",
-    "sourceIds": ["S01"],
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S01"
+    ],
     "locators": "S01, later narrative",
     "supportExplanation": "Documents O'Connor's retirement and Hogan's violent death.",
-    "qualification": "Hogan's bombing remains legally unsolved; no assailant was ever convicted.",
+    "qualification": "The MNHS account describes the bombing as unsolved.",
     "passageCheckDate": "2026-10-03"
   },
   {
@@ -59,7 +69,9 @@
     "assertion": "The 18th Amendment was ratified in 1919 taking effect in 1920; the 21st Amendment repealed it on December 5, 1933.",
     "status": "Supported",
     "evidenceBasis": "direct record",
-    "sourceIds": ["S13"],
+    "sourceIds": [
+      "S13"
+    ],
     "locators": "S13, Amendments XVIII and XXI annotations",
     "supportExplanation": "Official constitutional records of ratification and repeal dates.",
     "qualification": "Constitutional prohibition differs from the statutory Volstead Act; June 1933 preceded repeal.",
@@ -70,7 +82,9 @@
     "assertion": "Hotel history associates Leon Gleckman's headquarters and Treasury agent Malone's surveillance with the Saint Paul Hotel.",
     "status": "Supported",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S03"],
+    "sourceIds": [
+      "S03"
+    ],
     "locators": "S03, '1920–30s'",
     "supportExplanation": "Institutional retrospective records the suite association and surveillance.",
     "qualification": "Institutional account; no specific permanent suite number or staff complicity established.",
@@ -81,7 +95,9 @@
     "assertion": "Federal tax prosecution of Gleckman required distinguishing gross bank deposits from net taxable income.",
     "status": "Supported",
     "evidenceBasis": "direct record",
-    "sourceIds": ["S04"],
+    "sourceIds": [
+      "S04"
+    ],
     "locators": "S04, 80 F.2d 394, pp. 396–400",
     "supportExplanation": "Appellate court held that bank deposits alone do not constitute taxable income without eliminating loans and capital.",
     "qualification": "Reflects the specific appellate holding in that proceeding.",
@@ -92,7 +108,9 @@
     "assertion": "Gleckman's federal tax convictions were affirmed for 1929 and 1930, while he was acquitted on the 1931 count.",
     "status": "Supported",
     "evidenceBasis": "direct record",
-    "sourceIds": ["S04"],
+    "sourceIds": [
+      "S04"
+    ],
     "locators": "S04, 80 F.2d 394, p. 400 and disposition",
     "supportExplanation": "Eighth Circuit formal disposition affirmed convictions on counts 1 and 2, noting acquittal on count 3.",
     "qualification": "Preserve the partial acquittal; do not misrepresent as conviction on all counts.",
@@ -103,7 +121,9 @@
     "assertion": "Gleckman's criminal contempt convictions for jury tampering were affirmed on appeal in 1938.",
     "status": "Supported",
     "evidenceBasis": "direct record",
-    "sourceIds": ["S05"],
+    "sourceIds": [
+      "S05"
+    ],
     "locators": "S05, 94 F.2d 331, pp. 331–333",
     "supportExplanation": "Appellate record details payments and credit extended to juror Fuchs following a 1934 mistrial.",
     "qualification": "Adjudicated under criminal contempt rather than a separate statutory bribery indictment.",
@@ -114,7 +134,9 @@
     "assertion": "Gleckman and first trial jurors lodged at the Saint Paul Hotel during proceedings.",
     "status": "Supported",
     "evidenceBasis": "direct record",
-    "sourceIds": ["S05"],
+    "sourceIds": [
+      "S05"
+    ],
     "locators": "S05, 94 F.2d 331, p. 333",
     "supportExplanation": "Contempt opinion records physical proximity of defendant and jurors at the hotel.",
     "qualification": "Proximity is not proof of hotel management complicity.",
@@ -125,10 +147,12 @@
     "assertion": "Castle Royal, Inc. corporate notice was published in Commercial West on September 30, 1933.",
     "status": "Supported",
     "evidenceBasis": "direct record",
-    "sourceIds": ["S06"],
+    "sourceIds": [
+      "S06"
+    ],
     "locators": "S06, Commercial West, Sept 30, 1933, p. 19",
     "supportExplanation": "Contemporaneous corporate incorporation notice in financial press.",
-    "qualification": "Documents corporate formation; does not prove opening date or patrons.",
+    "qualification": "A period business announcement, not the original incorporation filing; it does not establish patrons or an opening date.",
     "passageCheckDate": "2026-10-03"
   },
   {
@@ -136,7 +160,9 @@
     "assertion": "Historian Greg Brick dates Castle Royal nightclub opening to October 26, 1933.",
     "status": "Supported",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S07"],
+    "sourceIds": [
+      "S07"
+    ],
     "locators": "S07, p. 114",
     "supportExplanation": "Scholarly study of Twin Cities subterranean venues provides opening date.",
     "qualification": "Attributed to Brick's historical monograph.",
@@ -146,11 +172,14 @@
     "id": "C14",
     "assertion": "Famous gangsters such as John Dillinger or Ma Barker frequented Castle Royal as patrons.",
     "status": "Disputed",
-    "evidenceBasis": "cross-source",
-    "sourceIds": ["S07", "S15"],
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S07",
+      "S15"
+    ],
     "locators": "S07, p. 115; S15 tourism listing",
-    "supportExplanation": "Historian Greg Brick and Paul Maccabee found no documentation proving attendance; claims emerged in 1970s promotional nostalgia.",
-    "qualification": "Remains disputed/unverified folklore; must not be stated as factual history.",
+    "supportExplanation": "Brick discusses conflicting later recollections and reports the lack of proof for named gangster attendance.",
+    "qualification": "Disputed or unverified in the examined material. Later recollections do not establish when the stories originated.",
     "passageCheckDate": "2026-10-03"
   },
   {
@@ -158,10 +187,13 @@
     "assertion": "William Hamm Jr. was kidnapped on June 15, 1933, held for $100,000 ransom, and released alive.",
     "status": "Supported",
     "evidenceBasis": "cross-source",
-    "sourceIds": ["S08", "S09"],
+    "sourceIds": [
+      "S08",
+      "S09"
+    ],
     "locators": "S08, p. 13; S09 Hamm narrative",
     "supportExplanation": "Both local historical society and FBI records confirm abduction, ransom, and release.",
-    "qualification": "Release unharmed does not negate captivity trauma.",
+    "qualification": "Released alive. The sources do not justify treating that outcome as absence of harm.",
     "passageCheckDate": "2026-10-03"
   },
   {
@@ -169,10 +201,13 @@
     "assertion": "Historical accounts associate William Hamm Jr.'s abduction point with 671 Cable Street (later Greenbrier).",
     "status": "Supported",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S08", "S02"],
+    "sourceIds": [
+      "S08",
+      "S02"
+    ],
     "locators": "S08, p. 13; S02 photograph caption",
     "supportExplanation": "Ramsey County History documents the residence location as the abduction site.",
-    "qualification": "Site of abduction was residential; the brewery complex is a contextual landmark.",
+    "qualification": "The RCHS account identifies a former residence; the FBI retrospective describes Hamm leaving his office. The precise abduction footprint is unresolved in this project.",
     "passageCheckDate": "2026-10-03"
   },
   {
@@ -180,7 +215,9 @@
     "assertion": "FBI investigators visualized latent fingerprints on Hamm ransom letters using silver nitrate.",
     "status": "Supported",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S09"],
+    "sourceIds": [
+      "S09"
+    ],
     "locators": "S09, Hamm investigation",
     "supportExplanation": "FBI case history credits silver nitrate development with establishing Barker-Karpis culpability.",
     "qualification": "Institutional agency account; not an assertion of being the first in all world forensic history.",
@@ -191,7 +228,9 @@
     "assertion": "Edward Bremer was kidnapped on January 17, 1934 at Lexington and Goodrich after dropping his daughter at school.",
     "status": "Supported",
     "evidenceBasis": "direct record",
-    "sourceIds": ["S10"],
+    "sourceIds": [
+      "S10"
+    ],
     "locators": "S10, printed p. 18 / PDF p. 19",
     "supportExplanation": "Federal investigative summary documents exact date, location, and circumstances.",
     "qualification": "Date is January 17, 1934; corrects printing error in S08.",
@@ -202,8 +241,10 @@
     "assertion": "Investigators reported Harry Sawyer advocated kidnapping Bremer over robbing Commercial State Bank for larger returns.",
     "status": "Supported",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S10"],
-    "locators": "S10, printed p. 17 / PDF p. 17",
+    "sourceIds": [
+      "S10"
+    ],
+    "locators": "S10, printed p. 17; confirm PDF viewer offset against the printed folio before quotation.",
     "supportExplanation": "Federal summary records Sawyer's calculation of expected extortion yield.",
     "qualification": "Attributed to post-arrest investigative reports, not a wiretap transcript.",
     "passageCheckDate": "2026-10-03"
@@ -213,7 +254,9 @@
     "assertion": "Bremer kidnappers demanded $200,000 ransom and coerced Walter Magee under threats of violence against police contact.",
     "status": "Supported",
     "evidenceBasis": "direct record",
-    "sourceIds": ["S10"],
+    "sourceIds": [
+      "S10"
+    ],
     "locators": "S10, printed pp. 18–19 / PDF pp. 19–20",
     "supportExplanation": "Federal summary documents ransom letters and coercive threats against reporting.",
     "qualification": "Threats were coercive tactics; captor promises were not factual findings.",
@@ -224,7 +267,9 @@
     "assertion": "Local and federal authorities were notified immediately by Walter Magee and the Bremer family upon receipt of threats.",
     "status": "Supported",
     "evidenceBasis": "direct record",
-    "sourceIds": ["S10"],
+    "sourceIds": [
+      "S10"
+    ],
     "locators": "S10, printed p. 19 / PDF p. 20",
     "supportExplanation": "Investigation summary confirms law enforcement was engaged despite extortionists' warnings.",
     "qualification": "Captor demands for secrecy did not produce compliance.",
@@ -235,7 +280,9 @@
     "assertion": "Edward Bremer was released by his captors after approximately three weeks of captivity following ransom payment.",
     "status": "Supported",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S09"],
+    "sourceIds": [
+      "S09"
+    ],
     "locators": "S09, Bremer section",
     "supportExplanation": "Agency case overview confirms duration of captivity and release in Wisconsin.",
     "qualification": "Rounded duration; exact daily release log not essential to tour.",
@@ -246,21 +293,25 @@
     "assertion": "Interstate transportation of a stolen car under the Dyer Act provided federal jurisdiction to hunt Dillinger.",
     "status": "Supported",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S11"],
+    "sourceIds": [
+      "S11"
+    ],
     "locators": "S11, 'The Bureau Actively Joins the Hunt'",
     "supportExplanation": "FBI history details how crossing state lines with the Lake County sheriff's vehicle triggered federal authority.",
-    "qualification": "Does not imply municipal officers were legally prohibited from assisting.",
+    "qualification": "This specific jurisdictional development does not imply that federal officers could never previously assist.",
     "passageCheckDate": "2026-10-03"
   },
   {
     "id": "C24",
     "assertion": "Manager report on March 30, 1934 led to the March 31 shootout and Dillinger's escape at Lincoln Court.",
     "status": "Supported",
-    "evidenceBasis": "cross-source",
-    "sourceIds": ["S11", "S16"],
-    "locators": "S11, Dillinger narrative; S16 address lead",
-    "supportExplanation": "Documented sequence of tenant report, agent stakeout, and doorway gunfire at 93 S Lexington.",
-    "qualification": "Building interior floor plan unverified; sequence drawn from agency accounts.",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S11"
+    ],
+    "locators": "S11, Lincoln Court narrative",
+    "supportExplanation": "The FBI retrospective provides the report and confrontation sequence.",
+    "qualification": "An agency retrospective, not an independently checked floor plan or a full set of witness statements.",
     "passageCheckDate": "2026-10-03"
   },
   {
@@ -268,9 +319,11 @@
     "assertion": "Evelyn Frechette was convicted of conspiracy to harbor a federal fugitive, sentenced to two years and fined $1,000.",
     "status": "Supported",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S11"],
+    "sourceIds": [
+      "S11"
+    ],
     "locators": "S11, Frechette paragraph",
-    "supportExplanation": "Federal record documents harboring conviction and sentence in May 1934.",
+    "supportExplanation": "The FBI retrospective reports the conviction and sentence; an original judgment has not been examined here.",
     "qualification": "Specific legal charge was harboring a fugitive, not participating in bank heists.",
     "passageCheckDate": "2026-10-03"
   },
@@ -279,7 +332,9 @@
     "assertion": "Saint Paul's former federal courthouse (now Landmark Center) served as the venue for Frechette's trial.",
     "status": "Supported",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S14"],
+    "sourceIds": [
+      "S14"
+    ],
     "locators": "S14, closing caption and historical notes",
     "supportExplanation": "Library of Congress history identifies Landmark Center as the trial location.",
     "qualification": "Building association established; specific courtroom chamber unverified.",
@@ -287,13 +342,15 @@
   },
   {
     "id": "C27",
-    "assertion": "Federal wiretap investigations in 1935 exposed Saint Paul police corruption, leading to disciplinary actions.",
+    "assertion": "A wiretap investigation exposed Saint Paul police corruption in 1935 and led to disciplinary action.",
     "status": "Supported",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S12"],
+    "sourceIds": [
+      "S12"
+    ],
     "locators": "S12, wiretap investigation paragraph",
     "supportExplanation": "MNHS account describes clandestine telephone taps revealing officer complicity with underworld figures.",
-    "qualification": "Specific names and transcripts subject to archival qualification.",
+    "qualification": "Attributed to the MNHS account. This project does not establish that this was a federal wiretap operation.",
     "passageCheckDate": "2026-10-03"
   },
   {
@@ -301,7 +358,9 @@
     "assertion": "Saint Paul voters approved a charter amendment on June 15, 1936 instituting civil service rules for police chief selection and tenure.",
     "status": "Supported",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S12"],
+    "sourceIds": [
+      "S12"
+    ],
     "locators": "S12, amendment paragraphs",
     "supportExplanation": "MNHS history details the transition from political appointment to competitive examination and 6-year terms.",
     "qualification": "Structural administrative reform; did not instantly eradicate all vice.",
@@ -312,9 +371,11 @@
     "assertion": "Ma Barker functioned as the criminal mastermind and tactical leader of the Barker-Karpis gang.",
     "status": "Disputed",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S02"],
+    "sourceIds": [
+      "S02"
+    ],
     "locators": "S02, discussion of gang leadership",
-    "supportExplanation": "Historians and surviving gang accounts indicate Karpis and Fred Barker directed operations; Ma Barker's mastermind role was largely an FBI media narrative.",
+    "supportExplanation": "The examined historical account disputes treating Ma Barker as the operational mastermind. This does not establish a complete origin history for that portrayal.",
     "qualification": "Disputed folklore; do not present as an established historical fact.",
     "passageCheckDate": "2026-10-03"
   },
@@ -323,7 +384,9 @@
     "assertion": "Minnesota Historical Society interprets the Hamm and Bremer kidnappings as the breakdown of the O'Connor layover arrangement.",
     "status": "Supported",
     "evidenceBasis": "attributed account",
-    "sourceIds": ["S02"],
+    "sourceIds": [
+      "S02"
+    ],
     "locators": "S02, kidnapping breakdown paragraph",
     "supportExplanation": "Historical analysis views violent local kidnappings as shattering the covenant of immunity within the city.",
     "qualification": "Historical interpretation; reflects the erosion of boundaries rather than a single sudden decree.",

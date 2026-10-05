@@ -9,34 +9,63 @@
     "sceneId": "scene-arrangement",
     "narrationId": "narr-the-arrangement",
     "presenterType": "relationship",
-    "namedSelections": ["check-in", "pay", "keep-crimes-elsewhere"],
+    "namedSelections": [
+      "check-in",
+      "pay",
+      "keep-crimes-elsewhere"
+    ],
     "blocks": {
       "intro": {
         "id": "intro",
         "role": "factual",
         "type": "paragraph",
         "text": "A protection system needs more than an official willing to look away. Someone must recognize newcomers, communicate expectations, and connect a request with a person able to honor it. In MNHS's account, William “Reddy” Griffin initially handled that intermediary role; Dan Hogan succeeded him after Griffin's death in 1913. MNHS also identifies Hogan's Green Lantern as a gathering place. The saloon is our doorway into this network. It is not the documented birthplace of every agreement, and the surviving accounts do not give us a universal written contract to display. Its importance is relational: a place associated with someone who could connect one world with another. That makes the first question more useful than a list of famous customers: what could an intermediary provide that a stranger could not obtain simply by arriving in town?",
-        "claimIds": ["C01", "C02", "C03", "C04"]
+        "claimIds": [
+          "C01",
+          "C02",
+          "C03",
+          "C04"
+        ]
       },
       "record": {
         "id": "record",
         "role": "factual",
         "type": "paragraph",
         "text": "MNHS describes criminals helping preserve the arrangement by pressuring peers to comply. O'Connor's retirement in 1920 did not immediately end the system; Hogan's death in a 1928 car bombing removed another important figure. The bombing remains unsolved in the account used here. These were changing relationships across decades, not one uninterrupted meeting of an unchanging conspiracy. Nor does an account of corrupt protection establish that every officer participated or that residents collectively approved.",
-        "claimIds": ["C01", "C04", "C05"]
+        "claimIds": [
+          "C01",
+          "C04",
+          "C05"
+        ]
       },
       "metagame": {
         "id": "metagame",
         "role": "interpretive",
         "type": "paragraph",
         "text": "An intermediary could make access selective and repeated dealings more predictable. A criminal hoping to return had a reason to respect local limits; an official receiving money had a reason to preserve a paying relationship. A conspicuous local crime threatened the benefits others expected from the arrangement. The boundary also shifted costs. Keeping an offense outside Saint Paul could serve participants' interests without making anyone beyond the city safer. The excluded parties matter: victims elsewhere had not agreed to finance local calm with their own exposure to violence. This is a model of incentives, not proof that the arrangement eliminated local crime or worked uniformly. Later kidnappings will show how an immediate opportunity could conflict with maintaining refuge.",
-        "claimIds": ["C01", "C02", "C03", "C04", "C05"],
+        "claimIds": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05"
+        ],
         "metagameId": "M01"
       }
     },
-    "evidenceIds": ["E01", "E02"],
-    "relatedPersonIds": ["john-oconnor", "william-reddy-griffin", "dan-hogan"],
-    "relatedStopIds": ["a-suite-above-the-street", "the-price-of-protection"]
+    "evidenceIds": [
+      "E01",
+      "E02"
+    ],
+    "relatedPersonIds": [
+      "john-oconnor",
+      "william-reddy-griffin",
+      "dan-hogan"
+    ],
+    "relatedStopIds": [
+      "a-suite-above-the-street",
+      "the-price-of-protection"
+    ]
   },
   {
     "id": "a-suite-above-the-street",
@@ -48,34 +77,60 @@
     "sceneId": "scene-hotel",
     "narrationId": "narr-a-suite-above-the-street",
     "presenterType": "comparison",
-    "namedSelections": ["tax-evidence", "juror-influence"],
+    "namedSelections": [
+      "tax-evidence",
+      "juror-influence"
+    ],
     "blocks": {
       "intro": {
         "id": "intro",
         "role": "factual",
         "type": "paragraph",
         "text": "The hotel's own history places Leon Gleckman's headquarters in a suite and describes Treasury investigator Mike Malone watching him from another room. Treat this as the hotel's retrospective account, not a surviving surveillance log. No suite number is needed to understand the connection. A stronger record takes us beyond the hotel's story. In 1935, an appellate court upheld Gleckman's tax convictions concerning 1929 and 1930; he had been acquitted on the 1931 count. The opinion examined a financial reconstruction rather than treating his reputation as proof. The narrative therefore moves from a room to a record. A suite can suggest privacy, comfort, or standing. A judgment asks a narrower question: what conduct was established in this case? Keeping those levels separate makes the history more revealing than simply calling the building a gangster headquarters.",
-        "claimIds": ["C07", "C08", "C09"]
+        "claimIds": [
+          "C07",
+          "C08",
+          "C09"
+        ]
       },
       "record": {
         "id": "record",
         "role": "factual",
         "type": "paragraph",
         "text": "The tax opinion expressly distinguished bank deposits from proof of taxable income. Investigators and accountants had to address loans, capital, and other explanations. Its conclusion was specific to the evidence and charges before it. A separate 1938 appeal affirmed Gleckman's criminal-contempt convictions involving efforts to influence jurors in the 1934 tax proceedings. The opinion describes juror Bernard Fuchs receiving a promised $300 through intermediaries after the first trial, then obtaining a loan at Gleckman's direction after the finance company's manager initially refused it. It also places Gleckman and the first trial's jurors at the Saint Paul Hotel. That establishes proximity; it does not implicate hotel employees.",
-        "claimIds": ["C08", "C10", "C11"]
+        "claimIds": [
+          "C08",
+          "C10",
+          "C11"
+        ]
       },
       "metagame": {
         "id": "metagame",
         "role": "interpretive",
         "type": "paragraph",
         "text": "There were two contests here: proving the tax case and influencing the people who would decide it. The contempt findings document an attempt to affect that second contest. Fuchs received benefits; Gleckman sought favorable intervention. Credit could become a means of obligation, while the transactions and testimony supplied evidence against the effort. It is tempting to make a conviction explain an entire city's politics. Resist that shortcut. These proceedings support particular findings about Gleckman. They do not prove every story told about him, every meeting imagined inside the hotel, or complicity by every person who knew him.",
-        "claimIds": ["C07", "C08", "C09", "C10", "C11"],
+        "claimIds": [
+          "C07",
+          "C08",
+          "C09",
+          "C10",
+          "C11"
+        ],
         "metagameId": "M02"
       }
     },
-    "evidenceIds": ["E03", "E04"],
-    "relatedPersonIds": ["leon-gleckman", "bernard-fuchs"],
-    "relatedStopIds": ["the-arrangement", "on-the-record"]
+    "evidenceIds": [
+      "E03",
+      "E04"
+    ],
+    "relatedPersonIds": [
+      "leon-gleckman",
+      "bernard-fuchs"
+    ],
+    "relatedStopIds": [
+      "the-arrangement",
+      "on-the-record"
+    ]
   },
   {
     "id": "under-the-bluff",
@@ -87,34 +142,58 @@
     "sceneId": "scene-caves",
     "narrationId": "narr-under-the-bluff",
     "presenterType": "comparison",
-    "namedSelections": ["business-record", "visitor-stories"],
+    "namedSelections": [
+      "business-record",
+      "visitor-stories"
+    ],
     "blocks": {
       "intro": {
         "id": "intro",
         "role": "factual",
         "type": "paragraph",
         "text": "The first evidence here is modest: a business notice. On September 30, 1933, Commercial West listed Castle Royal, Inc., with restaurants, cafes, taverns, and nightclubs among its purposes. The scanned page is a period record of a business announcement. It does not tell us who sat at a table. Historian Greg Brick dates the nightclub's opening to October 26, 1933, and describes its transformation from a mushroom cave into an elaborate entertainment setting. A cave supplies atmosphere immediately. That is also why it demands care from a storyteller. Darkness and an unusual interior can make a criminal encounter feel plausible before any evidence has appeared. Begin with the documented venue, then ask whether the stories attached to it can bear the weight placed on them.",
-        "claimIds": ["C06", "C12", "C13"]
+        "claimIds": [
+          "C06",
+          "C12",
+          "C13"
+        ]
       },
       "record": {
         "id": "record",
         "role": "factual",
         "type": "paragraph",
         "text": "Brick reports Paul Maccabee's conclusion that gangster attendance lacked proof and discusses conflicting recollections published around the venue's 1977 revival. Those recollections are evidence of later disagreement, not a reliable guest register. Claims that Dillinger or Ma Barker frequented Castle Royal remain disputed or unverified here. The timing also matters. Castle Royal's opening preceded the December 5, 1933 ratification of the Twenty-first Amendment. Do not flatten the venue's entire history into an undated Prohibition speakeasy scene. The Eighteenth Amendment and the statute enforcing it were different instruments.",
-        "claimIds": ["C06", "C13", "C14"]
+        "claimIds": [
+          "C06",
+          "C13",
+          "C14"
+        ]
       },
       "metagame": {
         "id": "metagame",
         "role": "interpretive",
         "type": "paragraph",
         "text": "Turning an unusual physical space into an attraction could distinguish a business competing for customers. The supported analysis concerns entertainment and presentation. The evidence examined does not establish a criminal protection arrangement at Castle Royal. Later memory layer, explicitly outside the 1930s: Famous names can make a place's story more compelling. That creates an incentive worth examining, but it does not prove anyone knowingly invented a claim. The tour should let a visitor compare the age and type of evidence instead of using atmosphere to decide the question.",
-        "claimIds": ["C06", "C12", "C13", "C14"],
+        "claimIds": [
+          "C06",
+          "C12",
+          "C13",
+          "C14"
+        ],
         "metagameId": "M03"
       }
     },
-    "evidenceIds": ["E05", "E06"],
-    "relatedPersonIds": ["john-dillinger"],
-    "relatedStopIds": ["the-price-of-protection", "the-safe-house-fails"]
+    "evidenceIds": [
+      "E05",
+      "E06"
+    ],
+    "relatedPersonIds": [
+      "john-dillinger"
+    ],
+    "relatedStopIds": [
+      "the-price-of-protection",
+      "the-safe-house-fails"
+    ]
   },
   {
     "id": "the-price-of-protection",
@@ -126,34 +205,57 @@
     "sceneId": "scene-hamm",
     "narrationId": "narr-the-price-of-protection",
     "presenterType": "document",
-    "namedSelections": ["ransom-communication", "investigative-trace"],
+    "namedSelections": [
+      "ransom-communication",
+      "investigative-trace"
+    ],
     "blocks": {
       "intro": {
         "id": "intro",
         "role": "factual",
         "type": "paragraph",
         "text": "William Hamm Jr. was kidnapped on June 15, 1933. A Ramsey County Historical Society account records a $100,000 ransom and his release. It places the abduction outside a former family residence at 671 Cable Street, identified there as later Greenbrier. That address is a research lead for the event's footprint, not permission to place a precise pin. The brewery area anchors this chapter because it connects Hamm to the city's business landscape. It should not replace the uncertainty with a dramatic but invented doorway. The essential event is already clear enough: someone was taken from ordinary life and held so that other people would pay for his return. The amount records the demand's scale. It does not measure the experience of captivity or the consequences for his family.",
-        "claimIds": ["C15", "C16"]
+        "claimIds": [
+          "C15",
+          "C16"
+        ]
       },
       "record": {
         "id": "record",
         "role": "factual",
         "type": "paragraph",
-        "text": "The FBI's retrospective account describes the identification of fingerprints on ransom material using silver nitrate. The communication used to extract money also supplied physical evidence. The agency's account is useful for that investigative thread; its celebratory framing should not become the tour's voice. MNHS treats the Hamm and Bremer kidnappings as signs that the local-restraint premise was breaking down. That is a historical interpretation supported by their occurrence inside Saint Paul. It is not evidence that every earlier crime had stayed outside the boundary.",
-        "claimIds": ["C17", "C30"]
+        "text": "The FBI's retrospective account describes the identification of fingerprints on ransom material using silver nitrate. The communication used to extract money also supplied physical evidence. The agency's account is useful for that investigative thread; its celebratory framing should not become the tour's voice. MNHS treats the Hamm and Bremer kidnappings as signs that the local-restraint premise was breaking down. That is a historical interpretation supported by their occurrence inside Saint Paul. It is not evidence that every earlier crime had stayed outside the boundary. The sources also differ on the abduction setting: RCHS identifies a former residence, while the FBI account describes Hamm leaving his office. This project leaves the exact footprint unresolved.",
+        "claimIds": [
+          "C17",
+          "C30"
+        ]
       },
       "metagame": {
         "id": "metagame",
         "role": "interpretive",
         "type": "paragraph",
-        "text": "A major ransom offered an immediate gain to its captors. The costs could extend beyond them: a victim and family suffered directly, while scrutiny could threaten other people depending on refuge. This is the conflict between an individual opportunity and a shared arrangement. Payment and investigation also operated on different time horizons. A family's urgent concern was a person's return; investigators could continue seeking evidence afterward. Those interests should not be presented as a simple contest between courage and weakness. Hamm's kidnapping occurred before national repeal that December. The tour must not explain a June event as the consequence of a later date.",
-        "claimIds": ["C02", "C15", "C16", "C17", "C30"],
+        "text": "A major ransom offered an immediate gain to its captors. The costs could extend beyond them: a victim and family suffered directly, while scrutiny could threaten other people depending on refuge. This is the conflict between an individual opportunity and a shared arrangement. Payment and investigation also operated on different time horizons. A family's urgent concern was a person's return; investigators could continue seeking evidence afterward. Those interests should not be presented as a simple contest between courage and weakness. Hamm's kidnapping occurred before national repeal that December. A June event cannot be explained as the consequence of a later date.",
+        "claimIds": [
+          "C02",
+          "C15",
+          "C16",
+          "C17",
+          "C30"
+        ],
         "metagameId": "M04"
       }
     },
-    "evidenceIds": ["E07", "E08"],
-    "relatedPersonIds": ["william-hamm-jr"],
-    "relatedStopIds": ["the-deal-breaks", "the-arrangement"]
+    "evidenceIds": [
+      "E07",
+      "E08"
+    ],
+    "relatedPersonIds": [
+      "william-hamm-jr"
+    ],
+    "relatedStopIds": [
+      "the-deal-breaks",
+      "the-arrangement"
+    ]
   },
   {
     "id": "the-deal-breaks",
@@ -165,34 +267,60 @@
     "sceneId": "scene-bremer",
     "narrationId": "narr-the-deal-breaks",
     "presenterType": "document",
-    "namedSelections": ["the-demand", "the-reported-response"],
+    "namedSelections": [
+      "the-demand",
+      "the-reported-response"
+    ],
     "blocks": {
       "intro": {
         "id": "intro",
         "role": "factual",
         "type": "paragraph",
         "text": "On January 17, 1934, Edward Bremer was abducted at Lexington and Goodrich after taking his daughter to school. The Bureau's November 1936 investigation summary supplies that location and describes the ransom pressure placed on family friend Walter Magee. The captors demanded $200,000 and tried to deter police involvement. This is more than a second entry in a kidnapping timeline. A threat can try to change what every subsequent action means: seeking help becomes something the captors blame for endangering the captive. The person receiving the threat is pushed to carry responsibility for violence controlled by someone else. That interpretation is grounded in the surviving account of the communications. It does not require us to invent a speech, reconstruct Bremer's private thoughts, or treat the kidnappers' promises as trustworthy statements of fact.",
-        "claimIds": ["C18", "C20"]
+        "claimIds": [
+          "C18",
+          "C20"
+        ]
       },
       "record": {
         "id": "record",
         "role": "factual",
         "type": "paragraph",
         "text": "The same summary reports immediate notification of local and federal authorities. Its account of the demand therefore cannot be mistaken for proof that the family complied with an instruction to exclude police. The FBI's later history records Bremer's release after roughly three weeks. The 1936 reconstruction also says Harry Sawyer favored kidnapping Bremer over robbing his bank because he expected a larger return. Attribute that account to investigators; it is not a recording of the planning discussion.",
-        "claimIds": ["C19", "C21", "C22"]
+        "claimIds": [
+          "C19",
+          "C21",
+          "C22"
+        ]
       },
       "metagame": {
         "id": "metagame",
         "role": "interpretive",
         "type": "paragraph",
         "text": "The bank-robbery comparison reveals an alleged attempt to change the target of extraction: from institutional cash to the amount relatives and associates could be compelled to produce. The ransom pressure then tried to control the response as well as the payment. The limits are just as revealing as the strategy. Demanding secrecy did not guarantee secrecy. Expecting a higher payoff did not guarantee a stable refuge afterward. Participants could seek short-term advantage without controlling the investigation their actions produced. Bremer and Magee were operating under coercion. Explaining their constrained choices must never turn the tour into a puzzle about how a victim should have outsmarted a captor.",
-        "claimIds": ["C18", "C19", "C20", "C21", "C22"],
+        "claimIds": [
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22"
+        ],
         "metagameId": "M05"
       }
     },
-    "evidenceIds": ["E09", "E10"],
-    "relatedPersonIds": ["edward-bremer", "walter-magee", "harry-sawyer"],
-    "relatedStopIds": ["the-price-of-protection", "the-safe-house-fails"]
+    "evidenceIds": [
+      "E09",
+      "E10"
+    ],
+    "relatedPersonIds": [
+      "edward-bremer",
+      "walter-magee",
+      "harry-sawyer"
+    ],
+    "relatedStopIds": [
+      "the-price-of-protection",
+      "the-safe-house-fails"
+    ]
   },
   {
     "id": "the-safe-house-fails",
@@ -204,34 +332,56 @@
     "sceneId": "scene-lincoln",
     "narrationId": "narr-the-safe-house-fails",
     "presenterType": "sequence",
-    "namedSelections": ["report", "surveillance", "confrontation"],
+    "namedSelections": [
+      "report",
+      "surveillance",
+      "confrontation"
+    ],
     "blocks": {
       "intro": {
         "id": "intro",
         "role": "factual",
         "type": "paragraph",
         "text": "The FBI's account places a manager's report about suspicious tenants at Lincoln Court on March 30, 1934. The tenants used the name Hellman. A confrontation followed the next day involving John Dillinger, Evelyn Frechette, Homer Van Meter, and officers. Dillinger escaped with a wound; Frechette escaped with him. An apartment is a different kind of refuge from a remote hideout. Other people have ordinary reasons to notice who lives there and how they behave. A private interior does not erase a building's relationships. The scene should follow the sourced sequence without pretending we possess a verified floor plan or every participant's view of the hallway. The point is the exposure of a refuge, not an invitation to replay the shooting more successfully.",
-        "claimIds": ["C24"]
+        "claimIds": [
+          "C24"
+        ]
       },
       "record": {
         "id": "record",
         "role": "factual",
         "type": "paragraph",
         "text": "The FBI links its active pursuit to Dillinger's interstate transportation of a stolen car after his March 3 escape from custody. That supplies a specific jurisdictional development. It does not establish that federal officers had previously been incapable of providing any assistance. This chapter does not assert that a particular officer had guaranteed this particular apartment protection. General knowledge of Saint Paul's system cannot fill a missing link in an individual case.",
-        "claimIds": ["C23", "C24"]
+        "claimIds": [
+          "C23",
+          "C24"
+        ]
       },
       "metagame": {
         "id": "metagame",
         "role": "interpretive",
         "type": "paragraph",
         "text": "An alias works only while other people accept or cannot penetrate it. A local accommodation is valuable only to the extent that relevant officials honor it—and only within the reach of that accommodation. Another authority, a manager's observation, or an associate's exposure can change the situation. The broader lesson is conditional security. People pursuing refuge could not control every observer or investigating body. The record shows reporting and intervention; it does not tell us the manager's private motive, establish a paid betrayal, or justify inventing an informer reward. Frechette belongs in this account as a named person with her own subsequent legal outcome. Association with Dillinger does not itself establish participation in his bank robberies.",
-        "claimIds": ["C23", "C24"],
+        "claimIds": [
+          "C23",
+          "C24"
+        ],
         "metagameId": "M06"
       }
     },
-    "evidenceIds": ["E11", "E12"],
-    "relatedPersonIds": ["john-dillinger", "evelyn-frechette", "homer-van-meter"],
-    "relatedStopIds": ["the-deal-breaks", "on-the-record"]
+    "evidenceIds": [
+      "E11",
+      "E12"
+    ],
+    "relatedPersonIds": [
+      "john-dillinger",
+      "evelyn-frechette",
+      "homer-van-meter"
+    ],
+    "relatedStopIds": [
+      "the-deal-breaks",
+      "on-the-record"
+    ]
   },
   {
     "id": "on-the-record",
@@ -243,33 +393,58 @@
     "sceneId": "scene-courthouse",
     "narrationId": "narr-on-the-record",
     "presenterType": "comparison",
-    "namedSelections": ["legal-outcomes", "appointment-rules"],
+    "namedSelections": [
+      "legal-outcomes",
+      "appointment-rules"
+    ],
     "blocks": {
       "intro": {
         "id": "intro",
         "role": "factual",
         "type": "paragraph",
         "text": "Landmark Center's courthouse history gives the tour a place to distinguish reputation from adjudication. A Library of Congress account identifies Evelyn Frechette among people tried in the building. The FBI describes her conviction for conspiracy to harbor a fugitive, with a two-year sentence and a $1,000 fine. That is the outcome to name, rather than assigning her Dillinger's crimes. The Gleckman proceedings provide another distinction: the tax case and the later contempt case concerned different conduct. Their appellate decisions are part of this chapter's evidence; their inclusion does not establish that the appeals were heard in the room shown in our illustration. A courthouse can symbolize accountability while a real court record resists a simple ending. Charges, verdicts, appeals, and the reach of each finding all matter.",
-        "claimIds": ["C09", "C10", "C25", "C26"]
+        "claimIds": [
+          "C09",
+          "C10",
+          "C25",
+          "C26"
+        ]
       },
       "record": {
         "id": "record",
         "role": "factual",
         "type": "paragraph",
         "text": "MNHS describes a 1935 wiretap investigation and disciplinary consequences. It also dates a charter amendment changing police-chief selection to June 15, 1936: independent examination of candidates, a six-year term, and removal for cause replaced the previous appointment arrangement. These are separately dated developments, not consequences proved to flow from a single trial. The amendment's mechanism is clearer than a claim that it abolished favoritism. A new rule can change an official's dependence without guaranteeing how everyone will behave under it.",
-        "claimIds": ["C27", "C28"]
+        "claimIds": [
+          "C27",
+          "C28"
+        ]
       },
       "metagame": {
         "id": "metagame",
         "role": "interpretive",
         "type": "paragraph",
         "text": "Reform could target the conditions sustaining protection: expose relationships, prosecute provable conduct, and change how officials acquired and retained office. These approaches addressed different weaknesses. Evidence could damage secrecy; job protections could reduce one route for political pressure. The sources also deserve the questions asked of their subjects. A police history may emphasize professional reform; an agency history may emphasize investigative success. Those perspectives do not invalidate their evidence, but they cannot establish the whole story by themselves. The end of this route is therefore a change in the conditions of power, supported by particular outcomes. It is not proof that corruption disappeared or that all harms were repaired.",
-        "claimIds": ["C25", "C26", "C27", "C28"],
+        "claimIds": [
+          "C25",
+          "C26",
+          "C27",
+          "C28"
+        ],
         "metagameId": "M07"
       }
     },
-    "evidenceIds": ["E13", "E14"],
-    "relatedPersonIds": ["evelyn-frechette", "leon-gleckman"],
-    "relatedStopIds": ["a-suite-above-the-street", "the-safe-house-fails"]
+    "evidenceIds": [
+      "E13",
+      "E14"
+    ],
+    "relatedPersonIds": [
+      "evelyn-frechette",
+      "leon-gleckman"
+    ],
+    "relatedStopIds": [
+      "a-suite-above-the-street",
+      "the-safe-house-fails"
+    ]
   }
 ]
