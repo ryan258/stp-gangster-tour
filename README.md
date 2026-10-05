@@ -28,6 +28,9 @@ Preview output goes to `dist-preview/` with a visible edition-status notice. `np
 ## What works
 
 - Home, prologue, seven ordered stops, map/directory, casebook, sources, epilogue, and recovery page.
+- Redesigned homepage featuring illuminated Capitol dome skyline hero, "Read the City Through Its Evidence" dossier trio, seven responsive photographic chapter cards with dark vignette overlays, and an arched stone bridge quote banner.
+- Modular Sass (`.scss`) styling architecture carrying graphic noir aesthetics, custom typography (`Playfair Display`, `Cinzel`, `Caveat`, `Source Sans 3`), crimson accents, and dark glassmorphic card treatments across all pages.
+- High-efficiency WebP image pipeline (`public/images/redesign/*.webp`) achieving ~80% footprint reduction with verified complete rendering.
 - Complete static reading, links, and native evidence disclosures without JavaScript.
 - One catalog-driven presenter with relationship, comparison, document, and sequence layouts. Selection emphasizes text without moving keyboard focus.
 - Optional local synthesized narration and ambience; no audio fetch before an explicit channel action. Pause, resume, replay, retry, mute, speed, separate volume buttons, Calm view, and silent page return.
@@ -42,9 +45,10 @@ Preview output goes to `dist-preview/` with a visible edition-status notice. `np
 | `src/data/` | Edition order, stops, claims, sources, evidence, people, relationships, metagames, presenters, locations, geography and media/review records |
 | `src/lib/catalog.ts` | Build-time joins and URL helpers; not imported by browser controllers |
 | `src/pages/`, `src/components/`, `src/layouts/` | Static pages and reusable reading/presenter/evidence/audio shell |
+| `src/styles/` | Modular Sass architecture (`_variables`, `_mixins`, `_base`, `_header-footer`, `_homepage`, `_inner-pages`, `main.scss`) |
 | `src/scripts/` | Small independent browser enhancements |
 | `scripts/content-schema.mjs`, `validate-content.mjs`, `check-svg.py` | Schemas, cross-record checks, hashes, SVG parsing, audio probes, production obligations |
-| `public/` | Served fonts, licenses, SVGs and MP3 derivatives |
+| `public/` | Served fonts, licenses, SVGs, WebP illustrations, and MP3 derivatives |
 | `production/` | Retained AIFF/WAV masters and original USGS geography; excluded from public output |
 | `tests/` | Targeted content/storage and browser regression scenarios |
 

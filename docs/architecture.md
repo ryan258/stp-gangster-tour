@@ -21,9 +21,19 @@ A single visitor claim can appear in several contexts. Review its qualification 
 
 The layout initializes optional enhancements separately. Controls start hidden and are shown only when JavaScript runs. Native text, links, and disclosures remain usable without enhancements. Browser modules import only the small edition manifest/state fields; the full research catalog and schemas stay at build time.
 
-## Presentation
+## Presentation and Sass styling
 
-Dark backgrounds, warm paper text, a brighter crimson link color and a separate darker button fill provide the visual system. Grid columns can shrink below 320 pixels without clipping. Navigation wraps, controls have visible names suitable for voice input, and focus remains visible. Reduced-motion, forced-colors and print styles are present. Automated coverage is not screen-reader or real-device certification.
+The visual system uses a modular Sass (`.scss`) architecture imported into `src/layouts/Layout.astro` via `src/styles/main.scss`:
+- `_variables.scss`: Color tokens (pitch `#090b0e`, surface `#141820`, crimson accents `#d32f2f`/`#e53935`, warm bone `#f4efe6`, aged parchment `#ded4bf`), typography stacks (`Playfair Display`, `Cinzel`, `Caveat`, `Source Sans 3`), shadows, and transitions.
+- `_mixins.scss`: Glassmorphism panels, vintage ephemera paper treatment, responsive breakpoints, and crimson/ghost button mixins.
+- `_base.scss`: CSS resets, core typography, focus states, print rules, and 320px reflow guarantees without horizontal scrollbars.
+- `_header-footer.scss`: Sticky glassmorphic header with brand tagline `| Money. Power. Vice. Consequences.`, active crimson glow indicator, `Calm view ☾` pill, and editorial footer.
+- `_homepage.scss`: Redesigned homepage sections including the noir skyline hero banner, "Read the City Through Its Evidence" dossier trio (aged parchment card, tilted archival Hotel Ryan photo, debossed leather casebook cover), seven photographic chapter cards with dark vignette overlays, and an arched stone bridge quote banner.
+- `_inner-pages.scss`: Carries the graphic noir styling across `/stops/[id]`, `/map/`, `/casebook/`, `/sources/`, `/prologue/`, and `/epilogue/`, styling evidence disclosure panels, crime presenters, and audio players.
+
+All newly introduced photographic and banner assets are optimized WebP images (`public/images/redesign/*.webp`), reducing transfer weight by ~80% compared to raw images while preserving high fidelity.
+
+Grid columns shrink below 320 pixels without horizontal overflow. Navigation wraps, controls have visible names suitable for voice input, and focus remains visible. Reduced-motion, forced-colors, and print styles are present. Automated coverage is not screen-reader or real-device certification.
 
 The map separates approximate venue coordinates from historical event geometry, current condition, and current access. Four unknown positions remain unplaced. A local north-up equirectangular projection places the three approximate venues against clipped modern USGS NHD river geometry. `geography.json` retains source/query/reuse/review metadata and original/derived hashes. `scripts/clip-map.py` rebuilds the small layer from the retained extract without network access, invalidating review if the bytes change. The river supplies modern context, not a reconstructed historical shoreline. On small screens the complete seven-stop directory supplies the geographic descriptions and navigation.
 

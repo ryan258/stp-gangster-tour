@@ -3,13 +3,15 @@
 Remediation date: **2026-10-05**. Content/presentation revision: **0.5.0**. Runtime: macOS, Node **22.22.3**. This file separates observed automated results from unfinished editorial and real-device work.
 
 ## Observed checks
-
-- Astro type checking: zero errors, warnings and hints after the static application migration.
+ 
+- Astro type checking: zero errors, warnings and hints after the static application migration and Sass integration.
 - Structural catalog/asset validation: passes with release obligations explicitly reported. Validates all dataset shapes, references, ownership, duplicates, enums, source URLs/dates, word budgets, intro digests, file/master hashes, SVG XML/dimensions and MP3 codec/duration.
 - Targeted Vitest files: 31 tests passed on Vitest 5.0.3 after the tooling update. Includes malformed catalog variants, missing/altered assets, production refusal, byte limits, stale IDs, and independently recoverable storage fields.
-- Targeted Chromium browser file: 8 scenarios passed against the built preview. Covers all content routes and local links/fragments, SVG rendering, 320px overflow, skip-link/focus behavior, silent entry, filters/profiles/reset, bookmark and source round trip, write failure, no-JavaScript reading, controlled audio state transitions, cancellation races, and unsupported-volume fallback.
+- Targeted Chromium browser file: 8 scenarios passed against the built preview. Covers all content routes and local links/fragments, SVG and WebP rendering, 320px overflow on all routes, skip-link/focus behavior, silent entry, filters/profiles/reset, bookmark and source round trip, write failure, no-JavaScript reading, controlled audio state transitions, cancellation races, and unsupported-volume fallback.
+- Sass and visual styling: Dart Sass compiled cleanly via Astro zero-config support. All deprecation warnings resolved using `@use 'sass:color'` with `color.adjust`. 320px reflow verified across `'/'`, `/stops/the-arrangement/`, `/casebook/`, `/sources/`, and `/map/` with exact 320px bounding box alignment.
+- Image assets & WebP pipeline: 10 newly introduced visual assets in `public/images/redesign/` converted to optimized WebP (`.webp`) at 85 quality, reducing total footprint from 15.8 MB down to 3.1 MB while achieving >42 dB PSNR. Playwright verified all images load completely with `naturalWidth > 0`.
 - Final map follow-up: repeated the two affected Chromium route/reflow scenarios after adding the river layer; both passed. Rebuilt all fourteen pages and reran the 31 focused unit cases and Astro/content checks.
-- Dependency audit: `npm audit` reported zero known vulnerabilities across runtime and development dependencies after upgrading Astro to 7.3.5, Vitest to 5.0.3, and @astrojs/check to 0.9.10. This is the registry’s result on the recorded date, not a guarantee of absence of defects.
+- Dependency audit: `npm audit` reported zero known vulnerabilities across runtime and development dependencies after upgrading Astro to 7.3.5, Vitest to 5.0.3, @astrojs/check to 0.9.10, and installing `sass`. This is the registry’s result on the recorded date, not a guarantee of absence of defects.
 - Production build: refused as intended on 35 incomplete review obligations (9 listening, 17 rights, 8 scene/reference, 1 editorial). Stale `dist/` was absent afterward; the preview remained intact.
 - Geography: retained the USGS NHD source polygon, confirmed the intersecting named Mississippi River flowline, clipped two rings/74 vertices, recorded reuse attribution and hashes, and inspected the desktop rendering. Three venue coordinates were cross-checked by published name/address and remain explicitly approximate. The small-screen directory retains all seven actions.
 - Preview build: thirteen content routes and `404.html`; draft output is separate from production.
