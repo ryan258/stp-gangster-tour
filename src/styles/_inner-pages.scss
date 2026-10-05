@@ -1,0 +1,333 @@
+@use 'sass:color';
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Inner Page Styles: Stop Pages, Map, Casebook, Sources, Prologue, Epilogue
+
+// 1. Stop Reading Pages
+.stop-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+.stop-scene-column {
+  position: sticky;
+  top: 4.5rem;
+
+  .scene-wrapper {
+    background: $bg-surface;
+    border: 1px solid $border-card;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: $shadow-card;
+
+    img, svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    figcaption {
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      color: $text-muted;
+      background: rgba(9, 11, 14, 0.6);
+      border-top: 1px solid $border-subtle;
+    }
+  }
+
+  .card {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+.stop-prose {
+  min-width: 0;
+
+  .reading-block {
+    margin-bottom: 2.5rem;
+
+    h2 {
+      border-bottom: 1px solid $border-subtle;
+      padding-bottom: 0.5rem;
+      margin-top: 1.5em;
+    }
+  }
+}
+
+.stop-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  border-block: 1px solid $border-subtle;
+  padding-block: 1.25rem;
+  margin-block: 2.5rem 1rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    flex: 1 1 220px;
+    font-weight: 600;
+    color: $text-cream;
+    text-decoration: none;
+    transition: color $transition-fast, transform $transition-fast;
+
+    &:hover {
+      color: $crimson-bright;
+      transform: translateX(2px);
+    }
+
+    &:first-child:hover {
+      transform: translateX(-2px);
+    }
+
+    &:last-child {
+      justify-content: flex-end;
+    }
+  }
+}
+
+// 2. Audio Player Component
+.audio-player {
+  background: $bg-card;
+  backdrop-filter: blur(12px);
+  border: 1px solid $border-card;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-top: 1rem;
+  box-shadow: $shadow-sm;
+
+  h2 {
+    font-family: $font-serif-caps;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin: 0 0 0.75rem;
+    color: $text-cream;
+  }
+
+  .audio-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+  }
+}
+
+// 3. Evidence Cards & Disclosures
+.evidence-card, details.evidence-card {
+  padding: 1.25rem 1.5rem;
+  background: $bg-surface;
+  border: 1px solid $border-card;
+  border-left: 4px solid $crimson-primary;
+  border-radius: 6px;
+  margin-block: 1.25rem;
+  box-shadow: $shadow-sm;
+  transition: border-color $transition-fast, background-color $transition-fast;
+
+  &[open] {
+    background: color.adjust($bg-surface, $lightness: 2%);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-left-color: $crimson-bright;
+  }
+
+  summary {
+    cursor: pointer;
+    font-family: $font-serif-caps;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+    color: $text-cream;
+    padding: 0.25rem 0;
+    list-style-position: outside;
+
+    &::marker {
+      color: $crimson-bright;
+    }
+
+    &:hover {
+      color: color.adjust($crimson-bright, $lightness: 15%);
+    }
+  }
+
+  .evidence-content {
+    padding-top: 1rem;
+    border-top: 1px dashed $border-subtle;
+    margin-top: 0.75rem;
+    font-size: 0.98rem;
+    color: $text-bone;
+  }
+}
+
+// 4. Presenter Panels (Interactive selection states)
+.presenter-panels {
+  display: grid;
+  gap: 1rem;
+  margin-block: 1.25rem;
+}
+
+.presenter-comparison .presenter-panels,
+.presenter-document .presenter-panels {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+}
+
+.presenter-target {
+  background: $bg-surface;
+  border: 1px solid $border-card;
+  border-radius: 6px;
+  padding: 1.2rem;
+  min-width: 0;
+  transition: all $transition-fast;
+
+  h3, h4 {
+    margin-top: 0;
+  }
+}
+
+.selected-highlight {
+  border-color: $crimson-bright !important;
+  background: rgba(211, 47, 47, 0.12) !important;
+  box-shadow: 0 0 15px rgba(211, 47, 47, 0.25);
+}
+
+.presenter-sequence .presenter-target {
+  border-left-width: 5px;
+  border-left-color: $crimson-primary;
+}
+
+.presenter-relationship .presenter-target {
+  border-radius: 12px;
+}
+
+.claim-links {
+  margin-top: 0.8rem;
+
+  a {
+    color: #ff94a2;
+    font-weight: 600;
+
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}
+
+// 5. Generic Cards
+.card {
+  padding: 1.25rem 1.5rem;
+  background: $bg-surface;
+  border: 1px solid $border-card;
+  border-radius: 6px;
+  margin-block: 1rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  box-shadow: $shadow-sm;
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// 6. Map Page Styles
+.map-view-wrapper {
+  margin-top: 1.5rem;
+
+  .map-interactive-container {
+    background: $bg-surface;
+    border: 1px solid $border-card;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: $shadow-card;
+    padding: 1rem;
+  }
+
+  .location-list {
+    padding-left: 1.5rem;
+    margin-top: 1.5rem;
+
+    li {
+      margin-bottom: 0.75rem;
+
+      a {
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+    }
+  }
+}
+
+// 7. Casebook & Dossier Archive Styles
+.casebook-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block: 1.5rem;
+}
+
+.person-profile-card {
+  background: $bg-surface;
+  border: 1px solid $border-card;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  .profile-role {
+    font-family: $font-serif-caps;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: $crimson-bright;
+    text-transform: uppercase;
+  }
+}
+
+// 8. Citations & Sources Table
+.citation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.citation-item {
+  background: $bg-surface;
+  border: 1px solid $border-subtle;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+
+  .citation-source {
+    font-style: italic;
+    color: $text-muted;
+  }
+}
+
+// Responsive breakdown for stop grid
+@media (max-width: 800px) {
+  .stop-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .stop-scene-column {
+    position: static;
+    grid-row: 1;
+
+    figure {
+      max-width: 620px;
+    }
+  }
+
+  .stop-nav a:last-child {
+    justify-content: flex-start;
+  }
+}

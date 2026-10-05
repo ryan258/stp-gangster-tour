@@ -9,5 +9,21 @@ const navItems = [
   ['/sources/', 'Sources']
 ];
 ---
-<header class="site-header"><div class="header-container"><a href={routeURL('/')} class="site-brand">SAINT PAUL AFTER DARK</a>{stopNumber&&<span class="badge">Stop {stopNumber} of {totalStops}</span>}
-<nav class="site-nav" aria-label="Main navigation">{navItems.map(([path,label])=>{const href=routeURL(path);return <a href={href} aria-current={currentPath===href?'page':undefined}>{label}</a>;})}<button type="button" class="btn-secondary" id="btn-toggle-calm" aria-pressed="false" data-js-control hidden>Calm view</button></nav></div></header>
+<header class="site-header">
+  <div class="header-container">
+    <div class="brand-wrapper">
+      <a href={routeURL('/')} class="site-brand">SAINT PAUL AFTER DARK</a>
+      <span class="site-tagline">Money. Power. Vice. Consequences.</span>
+      {stopNumber && <span class="badge">Stop {stopNumber} of {totalStops}</span>}
+    </div>
+    <nav class="site-nav" aria-label="Main navigation">
+      {navItems.map(([path,label])=>{
+        const href=routeURL(path);
+        return <a href={href} aria-current={currentPath===href?'page':undefined}>{label}</a>;
+      })}
+      <button type="button" class="btn-secondary calm-toggle-btn" id="btn-toggle-calm" aria-pressed="false" data-js-control hidden>
+        <span class="icon-moon" aria-hidden="true">☾</span> Calm view
+      </button>
+    </nav>
+  </div>
+</header>

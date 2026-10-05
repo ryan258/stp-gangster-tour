@@ -1,6 +1,7 @@
 ---
 import '../styles/tokens.css';
 import '../styles/global.css';
+import '../styles/main.scss';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SkipLink from '../components/SkipLink.astro';
@@ -8,14 +9,36 @@ import {edition,assetURL,routeURL} from '../lib/catalog';
 interface Props {title:string;description?:string;currentPath?:string;stopNumber?:number;totalStops?:number;}
 const {title,description=edition.subtitle,currentPath=Astro.url.pathname,stopNumber,totalStops=7}=Astro.props;
 ---
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content={description}/><meta name="color-scheme" content="dark"/><meta name="referrer" content="strict-origin-when-cross-origin"/><title>{title===edition.title ? edition.title : `${title} | ${edition.title}`}</title><link rel="preload" href={assetURL('/fonts/source-sans-3-regular.woff2')} as="font" type="font/woff2" crossorigin/></head>
-<body><SkipLink/><Header currentPath={currentPath} stopNumber={stopNumber} totalStops={totalStops}/>
- {edition.releaseStatus==='preview'&&<aside class="preview-note" aria-label="Edition status">Work in progress · Reviews pending. <a href={routeURL('/sources/#edition-status')}>Edition notes</a></aside>}
- <p id="storage-notice" class="storage-notice" role="status" hidden></p>
- <main id="main-content" tabindex="-1"><slot/></main><Footer/>
- <noscript><p class="container">Reading, navigation, sources, and evidence disclosures work without JavaScript. Saved progress, emphasis controls, and audio are unavailable.</p></noscript>
- <script>
- import {initCalmView} from '../scripts/calm';import {initSelectionPresenters} from '../scripts/selection';import {initEvidenceDisclosures} from '../scripts/casebook';import {initReading} from '../scripts/reading';
- for(const initialize of [initCalmView,initSelectionPresenters,initEvidenceDisclosures,initReading]){try{initialize();}catch(error){console.error('An optional tour enhancement could not initialize.',error);}}
- </script>
-</body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content={description}/>
+  <meta name="color-scheme" content="dark"/>
+  <meta name="referrer" content="strict-origin-when-cross-origin"/>
+  <title>{title===edition.title ? edition.title : `${title} | ${edition.title}`}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cinzel:wght@500;700;900&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" href={assetURL('/fonts/source-sans-3-regular.woff2')} as="font" type="font/woff2" crossorigin/>
+</head>
+<body>
+  <SkipLink/>
+  <Header currentPath={currentPath} stopNumber={stopNumber} totalStops={totalStops}/>
+  {edition.releaseStatus==='preview'&&<aside class="preview-note" aria-label="Edition status">Work in progress · Reviews pending. <a href={routeURL('/sources/#edition-status')}>Edition notes</a></aside>}
+  <p id="storage-notice" class="storage-notice" role="status" hidden></p>
+  <main id="main-content" tabindex="-1"><slot/></main>
+  <Footer/>
+  <noscript><p class="container">Reading, navigation, sources, and evidence disclosures work without JavaScript. Saved progress, emphasis controls, and audio are unavailable.</p></noscript>
+  <script>
+    import {initCalmView} from '../scripts/calm';
+    import {initSelectionPresenters} from '../scripts/selection';
+    import {initEvidenceDisclosures} from '../scripts/casebook';
+    import {initReading} from '../scripts/reading';
+    for(const initialize of [initCalmView,initSelectionPresenters,initEvidenceDisclosures,initReading]){
+      try{initialize();}catch(error){console.error('An optional tour enhancement could not initialize.',error);}
+    }
+  </script>
+</body>
+</html>

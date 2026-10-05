@@ -1,5 +1,22 @@
 ---
 import {edition,routeURL} from '../lib/catalog';
 ---
-<footer class="site-footer"><div class="container"><p><strong>{edition.title}</strong> · Edition {edition.contentRevision}</p><p class="muted">Historical baseline {edition.historicalCheckDate}. An at-home reading tour. Progress stays in this browser when saving is available.</p><nav class="footer-links" aria-label="Footer"><a href={routeURL('/prologue/')}>Prologue</a><a href={routeURL('/map/')}>Map</a><a href={routeURL('/casebook/')}>Casebook</a><a href={routeURL('/sources/#credits')}>Sources & credits</a><a href={routeURL('/epilogue/')}>Epilogue</a></nav></div></footer>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <strong>{edition.title}</strong>
+      <p>A public history reading experience.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href={routeURL('/prologue/')}>Prologue</a>
+      <a href={routeURL('/map/')}>Map</a>
+      <a href={routeURL('/casebook/')}>Casebook</a>
+      <a href={routeURL('/sources/#credits')}>Sources & credits</a>
+      <a href={routeURL('/epilogue/')}>Epilogue</a>
+    </nav>
+    <div class="footer-meta">
+      <span class="edition-tag">Edition {edition.contentRevision}</span>
+    </div>
+  </div>
+</footer>
 <div id="live-announcer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>

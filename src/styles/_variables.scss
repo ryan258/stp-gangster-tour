@@ -1,0 +1,53 @@
+// Noir Design System Variables & Tokens
+
+// Color Palette
+$bg-pitch: #090b0e;
+$bg-base: #0d1015;
+$bg-surface: #141820;
+$bg-card: rgba(20, 24, 32, 0.85);
+$bg-card-hover: rgba(28, 34, 46, 0.95);
+$bg-elevated: #1a202c;
+
+// Accents
+$crimson-bright: #e53935;
+$crimson-primary: #d32f2f;
+$crimson-dark: #991b1b;
+$crimson-glow: rgba(211, 47, 47, 0.35);
+$crimson-soft: rgba(211, 47, 47, 0.12);
+
+// Typography colors
+$text-cream: #f4efe6;
+$text-bone: #e2ded5;
+$text-muted: #9ba1ad;
+$text-dim: #646a78;
+
+// Borders
+$border-subtle: rgba(255, 255, 255, 0.08);
+$border-card: rgba(255, 255, 255, 0.12);
+$border-red: rgba(211, 47, 47, 0.4);
+
+// Vintage Ephemera Paper Palette
+$paper-parchment: #ded4bf;
+$paper-aged: #cfc2a7;
+$paper-ink: #1a1714;
+$paper-muted: #4f473c;
+$paper-leather: #3c2a1e;
+$paper-border: #b8a88a;
+
+// Typography Stacks
+$font-display: 'Playfair Display', Georgia, serif;
+$font-serif-caps: 'Cinzel', 'Playfair Display', Georgia, serif;
+$font-body: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+$font-condensed: 'Barlow Condensed', sans-serif;
+$font-script: 'Caveat', cursive, 'Brush Script MT', italic;
+
+// Shadows & Glows
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+$shadow-card: 0 8px 30px rgba(0, 0, 0, 0.6);
+$shadow-glow-red: 0 0 25px rgba(211, 47, 47, 0.3);
+$shadow-paper: 0 10px 35px rgba(0, 0, 0, 0.55), 0 2px 6px rgba(0, 0, 0, 0.3);
+
+// Transitions
+$transition-fast: 0.15s ease;
+$transition-normal: 0.25s ease;
+$transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
