@@ -87,6 +87,7 @@ export function validateCatalog(input,{root=process.cwd(),production=false,asset
   if(s.rightsStatus!=='approved') gates.push(`${s.id}: distribution rights review pending`);
  }
  if(assets) {
+  for(const [file,expected]of [[data.geography.sourceFile,data.geography.sourceDigest],[data.geography.baseFile,data.geography.baseDigest]]){try{if(sha256(fs.readFileSync(path.join(root,file)))!==expected)errors.push(`${file}: geography digest mismatch`);}catch{errors.push(`${file}: geography file missing`);}}
   const svgPaths=[];
   for(const a of [...data.media.scenes,...data.media.narration,...data.media.ambience]) {
    const p=path.join(root,'public',a.file);

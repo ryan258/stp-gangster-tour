@@ -1,8 +1,15 @@
 {
-  "status": "pending",
-  "reviewer": null,
-  "reviewDate": null,
-  "baseSourceUrl": null,
-  "reuseBasis": null,
-  "notes": "The preview uses a mathematical north-up coordinate grid with three approximate venue positions. A sourced river/base layer and its reuse record remain required for the finished map."
+  "status": "reviewed",
+  "reviewer": "Codex — source, geometry and rendered layout review",
+  "reviewDate": "2026-10-05",
+  "baseSourceUrl": "https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer/9",
+  "reuseBasis": "USGS National Map data are public domain. Credit retained: Map services and data available from U.S. Geological Survey, National Geospatial Program.",
+  "notes": "NHD large-scale area (FTYPE 460) clipped to the displayed bounds with six decimal coordinate precision. The intersecting named flowline identifies the Mississippi River. Local north-up equirectangular projection at latitude 44.94; modern geometry is context, not a reconstructed 1930s shoreline or surveyed event footprint.",
+  "reuseSourceUrl": "https://www.usgs.gov/faqs/are-there-any-costs-or-restrictions-usage-data-downloaded-national-map",
+  "sourceQuery": "https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer/9/query?f=geojson&where=1%3D1&geometry=-93.104%2C44.933%2C-93.081%2C44.949&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=GNIS_NAME%2CFTYPE%2CFCODE&returnGeometry=true&outSR=4326&geometryPrecision=6&maxAllowableOffset=0.00003",
+  "nameQuery": "https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer/6/query?f=json&where=GNIS_NAME+%3D+%27Mississippi+River%27&geometry=-93.104%2C44.933%2C-93.081%2C44.949&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=GNIS_NAME%2CFTYPE%2CFCODE&returnGeometry=false",
+  "sourceFile": "production/geography/usgs-nhd-area.geojson",
+  "sourceDigest": "119ed2b39aad180f954a247a37d130e13c8890eb8d6bb0a3b1e8420ee60af70f",
+  "baseFile": "src/data/map-river.json",
+  "baseDigest": "93b7afb21bf2e6c254e5ced1bf4477dceb6566eaa86c83c8b4ab81a5379f331f"
 }

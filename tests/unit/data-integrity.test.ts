@@ -13,6 +13,8 @@ describe('Content boundary regressions',()=>{
   ['dangling person stop',(d:any)=>d.people[0].relatedStopIds=['missing']],
   ['wrong metagame owner',(d:any)=>d.metagames[0].owningStop=d.stops[1].id],
   ['invented canvas coordinates',(d:any)=>{d.locations[0].coordinates={x:20,y:30};d.locations[0].precision='exact';}],
+  ['unclosed map polygon',(d:any)=>d['map-river'].rings[0].pop()],
+  ['map point outside recorded bounds',(d:any)=>d['map-river'].rings[0][1][0]=-180],
   ['unsupported access claim',(d:any)=>d.locations[0].access='public'],
   ['duplicate record ID',(d:any)=>d.sources[1].id=d.sources[0].id],
   ['duplicate selection',(d:any)=>d.presenters[0].items[1].key=d.presenters[0].items[0].key],
