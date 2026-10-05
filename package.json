@@ -4,14 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "node scripts/validate-content.mjs && astro dev --host 127.0.0.1",
     "check": "astro check && node ./scripts/validate-content.mjs",
     "test:unit": "vitest run",
     "test:browser": "playwright test",
-    "build": "node ./scripts/validate-content.mjs --production && astro build",
+    "build": "node scripts/build.mjs",
     "preview": "astro preview --outDir dist-preview",
-    "build:preview": "node ./scripts/validate-content.mjs && astro build --outDir dist-preview",
-    "validate": "node ./scripts/validate-content.mjs"
+    "build:preview": "node scripts/build.mjs --preview",
+    "validate": "node ./scripts/validate-content.mjs",
+    "preview:production": "astro preview --outDir dist"
   },
   "dependencies": {
     "@fontsource/barlow-condensed": "^5.3.0",

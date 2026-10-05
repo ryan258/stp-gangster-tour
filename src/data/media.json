@@ -147,7 +147,7 @@
       "audioDigest": "d5dc0ce7472c1c6783cb730fb7ea0232c022dd8e207df9d6c5595911beb27e1b",
       "voice": "macOS Samantha (synthesized narration)",
       "rightsBasis": "Local synthesized audio; distribution rights have not been reviewed.",
-      "masterFile": "/media/masters/narr-the-arrangement.aiff",
+      "masterFile": "production/audio/narr-the-arrangement.aiff",
       "masterDigest": "5699315aa120900774778d7e0a83a2eb0c3e32007224898b30a3b668405e3dfe"
     },
     {
@@ -159,7 +159,7 @@
       "audioDigest": "e5a55c03d71e83fe84f39c56a5d3d3370c91c418656fd9bda122660cfa670db9",
       "voice": "macOS Samantha (synthesized narration)",
       "rightsBasis": "Local synthesized audio; distribution rights have not been reviewed.",
-      "masterFile": "/media/masters/narr-a-suite-above-the-street.aiff",
+      "masterFile": "production/audio/narr-a-suite-above-the-street.aiff",
       "masterDigest": "bcf05975df5c0d4c87284295409831fbf397ff2cccbe211413611ad4bdc87654"
     },
     {
@@ -171,7 +171,7 @@
       "audioDigest": "4ea7b545548d09b59dcf559a516ea56d7f855ee119c1535150f9074ba9e0ad28",
       "voice": "macOS Samantha (synthesized narration)",
       "rightsBasis": "Local synthesized audio; distribution rights have not been reviewed.",
-      "masterFile": "/media/masters/narr-under-the-bluff.aiff",
+      "masterFile": "production/audio/narr-under-the-bluff.aiff",
       "masterDigest": "d48568b360111cb5436075afe3377ae36faf8e1c28110cc8d2b99b8da00e29c3"
     },
     {
@@ -183,7 +183,7 @@
       "audioDigest": "6d9fefb1986dfc87d2704b6802f9db55791882db7d588cfff53c438f7071f6be",
       "voice": "macOS Samantha (synthesized narration)",
       "rightsBasis": "Local synthesized audio; distribution rights have not been reviewed.",
-      "masterFile": "/media/masters/narr-the-price-of-protection.aiff",
+      "masterFile": "production/audio/narr-the-price-of-protection.aiff",
       "masterDigest": "bcd0416c3d5f5e90786c5daff59a40a264e266cfea7d884094edbb9f8d448670"
     },
     {
@@ -195,7 +195,7 @@
       "audioDigest": "2652b73b63200c8895fd48be6dba9c73b4118f67102daca1e5898609f29710e8",
       "voice": "macOS Samantha (synthesized narration)",
       "rightsBasis": "Local synthesized audio; distribution rights have not been reviewed.",
-      "masterFile": "/media/masters/narr-the-deal-breaks.aiff",
+      "masterFile": "production/audio/narr-the-deal-breaks.aiff",
       "masterDigest": "cc7a32252ccae3c10350d493daa98be080b92063e9328b1749f6c8db7f4d18b8"
     },
     {
@@ -207,7 +207,8 @@
       "audioDigest": "52b836d35b463defb5827b4f220aacea3506f3a92426c8943642cf497d635eea",
       "voice": "macOS Samantha (synthesized narration)",
       "rightsBasis": "Local synthesized audio; distribution rights have not been reviewed.",
-      "masterFile": "/media/masters/narr-the-safe-house-fails.aiff"
+      "masterFile": "production/audio/narr-the-safe-house-fails.aiff",
+      "masterDigest": "25a2e350b201bc0800c8258100c2e0139b2600de104f37bd1476f6e0839327ed"
     },
     {
       "id": "narr-on-the-record",
@@ -218,7 +219,7 @@
       "audioDigest": "fe07fbbf43796be5d121cc3176aa7f2795b86a74de733b3c5edf9f3b6fced6c4",
       "voice": "macOS Samantha (synthesized narration)",
       "rightsBasis": "Local synthesized audio; distribution rights have not been reviewed.",
-      "masterFile": "/media/masters/narr-on-the-record.aiff",
+      "masterFile": "production/audio/narr-on-the-record.aiff",
       "masterDigest": "5d3ef11b0dc0a80b9d6cb5aae411b947de7dfc49aaf79acb5793098216f0ec03"
     }
   ],
@@ -230,7 +231,7 @@
       "audioDigest": "44bdb0892a0b27365a2f69d01405a1b5fc72b949ff47a8b082b1b23bb47e6a42",
       "description": "Deterministic synthesized noise texture with a one-second fade at each end; not a field recording. Listening review pending.",
       "rightsBasis": "Local synthesized audio; distribution rights have not been reviewed.",
-      "masterFile": "/media/masters/ambience-city-rain.wav",
+      "masterFile": "production/audio/ambience-city-rain.wav",
       "masterDigest": "e8e0320478e588105dee83dbe5d1cb9a02b2eefdbcce1129405de915e698b6fc"
     },
     {
@@ -240,7 +241,7 @@
       "audioDigest": "e0264f999c6bdb8fa7da0159ab651ecfe88fec5f785c8e458e273580e7af691e",
       "description": "Deterministic synthesized noise texture with a one-second fade at each end; not a field recording. Listening review pending.",
       "rightsBasis": "Local synthesized audio; distribution rights have not been reviewed.",
-      "masterFile": "/media/masters/ambience-room-tone.wav",
+      "masterFile": "production/audio/ambience-room-tone.wav",
       "masterDigest": "b5a46a8c2c9fccaf7857952b232872d2587fa720e38889de74b26d64eb36efa2"
     }
   ]

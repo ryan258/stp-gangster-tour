@@ -92,12 +92,14 @@ export function validateCatalog(input,{root=process.cwd(),production=false,asset
    const p=path.join(root,'public',a.file);
    try { const buf=fs.readFileSync(p);if(sha256(buf)!==(a.fileDigest??a.audioDigest)) errors.push(`${a.id}: file digest mismatch`);
     if(a.file.endsWith('.svg')) svgPaths.push({path:p,width:a.width,height:a.height});
-    if(a.masterFile&&!fs.existsSync(path.join(root,'public',a.masterFile))) errors.push(`${a.id}: missing lossless master`);
+    if(a.masterFile){const master=path.join(root,a.masterFile);if(!fs.existsSync(master))errors.push(`${a.id}: missing lossless master`);else if(sha256(fs.readFileSync(master))!==a.masterDigest)errors.push(`${a.id}: master digest mismatch`);}
+    if(a.file.endsWith('.mp3')){const probe=spawnSync('ffprobe',['-v','error','-show_entries','format=duration:stream=codec_name','-of','json',p],{encoding:'utf8'});if(probe.status!==0)errors.push(`${a.id}: audio decoding failed`);else {const info=JSON.parse(probe.stdout);if(!info.streams.some(s=>s.codec_name==='mp3')||Math.abs(Number(info.format.duration)-a.durationSeconds)>.6)errors.push(`${a.id}: audio format/duration differs from catalog`);}}
    } catch {errors.push(`${a.id}: missing/unreadable media file`);}
   }
   const xml=spawnSync('python3',[path.join(root,'scripts/check-svg.py')],{input:JSON.stringify(svgPaths),encoding:'utf8'});
   if(xml.status!==0) errors.push(`SVG validation: ${xml.stdout||xml.stderr||xml.error?.message}`);
  }
+ if(data.geography.status!=='reviewed'||!data.geography.reviewer||!data.geography.reviewDate||!data.geography.baseSourceUrl||!data.geography.reuseBasis)gates.push('map: river/base geography reference and reuse review pending');
  if(data.edition.releaseStatus!=='reviewed') gates.push('edition: editorial release review pending');
  if(production) errors.push(...gates.map(g=>`Release gate: ${g}`));
  return {errors,gates};
