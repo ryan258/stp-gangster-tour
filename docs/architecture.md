@@ -45,6 +45,14 @@ The map separates approximate venue coordinates from historical event geometry, 
 
 `ArtImage.astro` renders every atmospheric image from its `media.images` record: `srcset` from the recorded 640px variant plus the original, explicit dimensions, lazy loading below the fold (`eager` only for heroes). `src/lib/base.ts` is the single BASE_URL normalisation shared by build-time helpers and browser scripts. The edition manifest also carries `evidenceIds` and `stopLabels` so browser code needs neither the evidence catalog nor hard-coded counts; the validator checks both against the catalog. `src/pages/data/` publishes the citable catalog, BibTeX and CSL-JSON; `robots.txt` and `sitemap.xml` are endpoints; the layout adds canonical and Open Graph tags and `noindex` while the edition is an unreviewed preview. An optional preference (`backgroundAudio`) lets narration continue when the tab is hidden; the default remains to pause.
 
+## Web app manifest and iPadOS PWA installability
+
+The site supports standalone Home Screen installation on iPadOS and iOS without requiring client-side service workers:
+- **Manifest**: `public/site.webmanifest` (and fallback `public/manifest.json`) defines `display: standalone`, `#090b0e` theme/background colors, and relative `start_url: "./"`.
+- **Apple touch icons**: Dedicated 180×180 px opaque raster asset `public/apple-touch-icon.png` (solid dark background matching Apple HIG; prevents blank/screenshot tiles on iPadOS/iOS Home Screens) and standard webmanifest icons (`icon-192.png`, `icon-512.png`).
+- **Metadata tags**: `src/layouts/Layout.astro` provides `viewport-fit=cover`, `apple-mobile-web-app-capable`, `mobile-web-app-capable`, `apple-mobile-web-app-status-bar-style` (`black-translucent`), and `apple-mobile-web-app-title`.
+- **Safe-area insets**: `src/styles/_header-footer.scss` pads `.site-header` with `env(safe-area-inset-top)` and `.site-footer` with `env(safe-area-inset-bottom)` so sticky navigation and footer links stay clear of the translucent iPadOS status bar and Home bar in standalone mode.
+
 ## Build and media
  
 `build.mjs` removes only its owned output directory, validates, and invokes Astro. Preview output and accepted production output use separate directories. Production rejects pending/stale reviews and unresolved rights; a failed gate leaves no stale accepted `dist/`.

@@ -39,6 +39,7 @@ Preview output goes to `dist-preview/`. Edition notes and review records remain 
 - Optional local synthesized narration and ambience; no audio fetch before an explicit channel action. Pause, resume, replay, retry, mute, speed, separate volume buttons, Calm view, and silent page return.
 - Local bookmark, visited-stop and evidence markers with strict runtime parsing, ID allowlists, UTF-8 byte limits, memory fallback notices, and a progress-only reset.
 - People profiles, qualified connections, context-return links, printable source pages, copyable citations, and edition correction notes.
+- Standalone iPad/iOS PWA support: web app manifest (`site.webmanifest`), 180×180 Apple touch icon, dark status bar (`#090b0e`), `viewport-fit=cover`, and safe-area inset protection for full-screen reading without Safari browser chrome when added to the Home Screen.
 - Three approximate venue positions with linked geographic sources, independent access/condition notes, and four unplaced stops. A sourced USGS river layer gives geographic context; the map does not assert a historical shoreline or walking route.
 
 ## Project map

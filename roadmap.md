@@ -1,6 +1,6 @@
 # Completion plan — edition 0.5.0
 
-This is a bounded personal reading experience. The next work completes its quality requirements; it does not add GPS, accounts, a PWA, bookings, a backend, alternate history, or additional editions.
+This is a bounded personal reading experience. The next work completes its quality requirements; it does not add GPS, accounts, cloud sync, bookings, a backend, alternate history, or additional editions.
 
 ## Implemented corrections
 
@@ -23,6 +23,7 @@ This is a bounded personal reading experience. The next work completes its quali
 - [x] Image provenance catalog (`media.images`) with release gates, `srcset` variants and lazy loading; human-reviewer enforcement in the schema; geography review reset to pending (it had been recorded by an assistant).
 - [x] Data hygiene: orphan claim/source checks, real `supports` text, catalog-derived counts and ambience/chapter notes, C29 now cited, S16 attached to Lincoln Court as an address lead.
 - [x] Historian layer, first pass: method page, corrections log with per-claim correction links, archive snapshot links where one exists, `/data/` catalog + BibTeX + CSL-JSON, link-check report, axe and size-floor browser tests, CI workflow.
+- [x] Standalone iPad/iOS PWA Home Screen support: web app manifest, 180×180 Apple touch icon, 192/512px icons, standalone display mode, safe-area inset protection, and automated Playwright verification.
 - [x] Add targeted data/storage/browser regression coverage with 320px reflow verification across all routes. Observed results and limits are in `docs/verification.md`.
 
 
