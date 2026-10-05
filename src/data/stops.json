@@ -8,6 +8,8 @@
     "locationId": "loc-green-lantern",
     "sceneId": "scene-arrangement",
     "narrationId": "narr-the-arrangement",
+    "ambienceId": "ambience-city-rain",
+    "chapterNote": "The bargain behind the refuge.",
     "presenterType": "relationship",
     "namedSelections": [
       "check-in",
@@ -76,6 +78,8 @@
     "locationId": "loc-hotel",
     "sceneId": "scene-hotel",
     "narrationId": "narr-a-suite-above-the-street",
+    "ambienceId": "ambience-room-tone",
+    "chapterNote": "Respectability had an address.",
     "presenterType": "comparison",
     "namedSelections": [
       "tax-evidence",
@@ -141,6 +145,8 @@
     "locationId": "loc-castle-royal",
     "sceneId": "scene-caves",
     "narrationId": "narr-under-the-bluff",
+    "ambienceId": "ambience-room-tone",
+    "chapterNote": "Where the music met the myth.",
     "presenterType": "comparison",
     "namedSelections": [
       "business-record",
@@ -204,6 +210,8 @@
     "locationId": "loc-hamm",
     "sceneId": "scene-hamm",
     "narrationId": "narr-the-price-of-protection",
+    "ambienceId": "ambience-city-rain",
+    "chapterNote": "Protection always has a price.",
     "presenterType": "document",
     "namedSelections": [
       "ransom-communication",
@@ -224,10 +232,11 @@
         "id": "record",
         "role": "factual",
         "type": "paragraph",
-        "text": "The FBI's retrospective account describes the identification of fingerprints on ransom material using silver nitrate. The communication used to extract money also supplied physical evidence. The agency's account is useful for that investigative thread; its celebratory framing should not become the tour's voice. MNHS treats the Hamm and Bremer kidnappings as signs that the local-restraint premise was breaking down. That is a historical interpretation supported by their occurrence inside Saint Paul. It is not evidence that every earlier crime had stayed outside the boundary. The sources also differ on the abduction setting: RCHS identifies a former residence, while the FBI account describes Hamm leaving his office. This project leaves the exact footprint unresolved.",
+        "text": "The FBI's retrospective account describes the identification of fingerprints on ransom material using silver nitrate. The communication used to extract money also supplied physical evidence. The agency's account is useful for that investigative thread; its celebratory framing should not become the tour's voice. MNHS treats the Hamm and Bremer kidnappings as signs that the local-restraint premise was breaking down. That is a historical interpretation supported by their occurrence inside Saint Paul. It is not evidence that every earlier crime had stayed outside the boundary. The sources also differ on the abduction setting: RCHS identifies a former residence, while the FBI account describes Hamm leaving his office. This project leaves the exact footprint unresolved. Separately, MNHS notes doubt about Ma Barker's role as the mastermind of the Barker-Karpis gang, so this tour does not present her as its tactical leader.",
         "claimIds": [
           "C17",
-          "C30"
+          "C30",
+          "C29"
         ]
       },
       "metagame": {
@@ -266,6 +275,8 @@
     "locationId": "loc-bremer",
     "sceneId": "scene-bremer",
     "narrationId": "narr-the-deal-breaks",
+    "ambienceId": "ambience-city-rain",
+    "chapterNote": "Silence was part of the demand.",
     "presenterType": "document",
     "namedSelections": [
       "the-demand",
@@ -331,6 +342,8 @@
     "locationId": "loc-lincoln-court",
     "sceneId": "scene-lincoln",
     "narrationId": "narr-the-safe-house-fails",
+    "ambienceId": "ambience-city-rain",
+    "chapterNote": "Refuge had its limits.",
     "presenterType": "sequence",
     "namedSelections": [
       "report",
@@ -392,6 +405,8 @@
     "locationId": "loc-courthouse",
     "sceneId": "scene-courthouse",
     "narrationId": "narr-on-the-record",
+    "ambienceId": "ambience-room-tone",
+    "chapterNote": "What remains is the record.",
     "presenterType": "comparison",
     "namedSelections": [
       "legal-outcomes",

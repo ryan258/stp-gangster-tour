@@ -111,6 +111,9 @@
     "address": "93–95 South Lexington Parkway, Saint Paul, MN 55105",
     "coordinates": null,
     "supportingSourceId": "S11",
+    "leadSourceIds": [
+      "S16"
+    ],
     "supportingLocator": "FBI Dillinger overview; S16 address lead",
     "qualification": "Reported residential address, not permission to enter. Current condition and access are unverified.",
     "currentCheck": null

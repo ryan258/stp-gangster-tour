@@ -24,16 +24,20 @@ export function validateCatalog(input,{root=process.cwd(),production=false,asset
   maps[name]=new Map();
   for(const record of data[name]) { if(maps[name].has(record.id)) errors.push(`${name}: duplicate ${record.id}`);maps[name].set(record.id,record); }
  }
- for(const name of ['scenes','narration','ambience']) {
+ for(const name of ['images','scenes','narration','ambience']) {
   maps[name]=new Map();for(const r of data.media[name]) {if(maps[name].has(r.id)) errors.push(`${name}: duplicate ${r.id}`);maps[name].set(r.id,r);}
  }
  const refs=(owner,field,values,target)=>{for(const id of values) if(!maps[target].has(id)) errors.push(`${owner}.${field}: unknown ${target} ID ${id}`);};
  refs('edition','stops',data.edition.stops,'stops');
  if(JSON.stringify(data.edition.stops)!==JSON.stringify([...data.stops].sort((a,b)=>a.order-b.order).map(s=>s.id))) errors.push('edition.stops: order differs from stop catalog');
+ refs('edition','evidenceIds',data.edition.evidenceIds,'evidence');
+ if(JSON.stringify(data.edition.evidenceIds)!==JSON.stringify(data.evidence.map(e=>e.id))) errors.push('edition.evidenceIds: differs from evidence catalog');
+ if(Object.keys(data.edition.stopLabels).length!==data.stops.length||data.stops.some(s=>data.edition.stopLabels[s.id]!==s.title)) errors.push('edition.stopLabels: differs from stop titles');
  const orders=new Set();
  for(const s of data.stops) {
   if(orders.has(s.order)) errors.push(`${s.id}: duplicate order`);orders.add(s.order);
   for(const [field,target] of [['locationId','locations'],['sceneId','scenes'],['narrationId','narration']]) refs(s.id,field,[s[field]],target);
+  refs(s.id,'ambienceId',[s.ambienceId],'ambience');
   refs(s.id,'evidenceIds',s.evidenceIds,'evidence');refs(s.id,'relatedPersonIds',s.relatedPersonIds,'people');refs(s.id,'relatedStopIds',s.relatedStopIds,'stops');
   for(const [key,b] of Object.entries(s.blocks)) {if(b.id!==key) errors.push(`${s.id}.${key}: block ID mismatch`);refs(s.id,key,b.claimIds,'claims');}
   if(s.blocks.intro.role!=='factual'||s.blocks.record.role!=='factual'||s.blocks.metagame.role!=='interpretive') errors.push(`${s.id}: block role mismatch`);
@@ -60,10 +64,16 @@ export function validateCatalog(input,{root=process.cwd(),production=false,asset
  for(const m of data.metagames) {refs(m.id,'owningStop',[m.owningStop],'stops');refs(m.id,'premiseClaims',m.premiseClaims,'claims');}
  for(const p of data.presenters) for(const x of p.items) {refs(p.stopId,'claimIds',x.claimIds,'claims');refs(p.stopId,'evidenceId',[x.evidenceId],'evidence');if(maps.evidence.get(x.evidenceId)?.stopId!==p.stopId) errors.push(`${p.stopId}: presenter evidence owner mismatch`);}
  for(const l of data.locations) {
-  refs(l.id,'stopId',[l.stopId],'stops');refs(l.id,'supportingSourceId',[l.supportingSourceId],'sources');
+  refs(l.id,'stopId',[l.stopId],'stops');refs(l.id,'supportingSourceId',[l.supportingSourceId],'sources');refs(l.id,'leadSourceIds',l.leadSourceIds??[],'sources');
   if((l.precision==='unknown')!==(l.coordinates===null)) errors.push(`${l.id}: precision and coordinates disagree`);
   if(l.access!=='unknown'&&!l.currentCheck) errors.push(`${l.id}: access claim requires dated current check`);
  }
+ for(const c of data.corrections) refs(c.id,'claimIds',c.claimIds,'claims');
+ // Every claim and source must be reachable from visitor-facing content; unused records rot silently.
+ const usedClaims=new Set([...data.stops.flatMap(s=>Object.values(s.blocks).flatMap(b=>b.claimIds)),...data.evidence.flatMap(e=>e.claimIds),...data.presenters.flatMap(p=>p.items.flatMap(i=>i.claimIds)),...data.people.flatMap(p=>p.supportingClaimIds),...data.relationships.flatMap(r=>r.premiseClaims),...data.metagames.flatMap(m=>m.premiseClaims),...data.edition.prologue.premiseClaimIds,...data.edition.epilogue.premiseClaimIds]);
+ for(const c of data.claims) if(!usedClaims.has(c.id)) errors.push(`${c.id}: claim is not cited by any visitor-facing content`);
+ const usedSources=new Set([...data.claims.flatMap(c=>c.sourceIds),...data.evidence.flatMap(e=>e.sourceLocators.map(r=>r.sourceId)),...data.locations.flatMap(l=>[l.supportingSourceId,...(l.leadSourceIds??[])]),...data.media.scenes.flatMap(s=>s.referenceSourceIds)]);
+ for(const s of data.sources) if(!usedSources.has(s.id)) errors.push(`${s.id}: source is not cited by any claim, evidence item, location or scene`);
  for(const id of ['loc-hotel','loc-castle-royal','loc-courthouse']) if(!maps.locations.get(id)?.coordinates) gates.push(`${id}: checked venue coordinates pending`);
  const reviewMaps={};
  for(const kind of ['narration','ambience']) {
@@ -81,6 +91,10 @@ export function validateCatalog(input,{root=process.cwd(),production=false,asset
    if(!n.masterFile) gates.push(`${n.id}: original lossless master missing`);
   }
  }
+ for(const i of data.media.images) {
+  if(i.provenanceStatus!=='confirmed'||!i.reviewer||!i.reviewDate||i.reviewedRevision!==data.edition.contentRevision) gates.push(`${i.id}: image provenance review pending`);
+  if(i.rightsStatus!=='approved') gates.push(`${i.id}: distribution rights review pending`);
+ }
  for(const s of data.media.scenes) {
   refs(s.id,'referenceSourceIds',s.referenceSourceIds,'sources');
   if(s.reviewStatus!=='reviewed'||!s.reviewer||!s.reviewDate||s.reviewedRevision!==data.edition.contentRevision||!s.referenceSourceIds.length) gates.push(`${s.id}: reference/render review pending`);
@@ -89,9 +103,10 @@ export function validateCatalog(input,{root=process.cwd(),production=false,asset
  if(assets) {
   for(const [file,expected]of [[data.geography.sourceFile,data.geography.sourceDigest],[data.geography.baseFile,data.geography.baseDigest]]){try{if(sha256(fs.readFileSync(path.join(root,file)))!==expected)errors.push(`${file}: geography digest mismatch`);}catch{errors.push(`${file}: geography file missing`);}}
   const svgPaths=[];
-  for(const a of [...data.media.scenes,...data.media.narration,...data.media.ambience]) {
+  for(const a of [...data.media.images,...data.media.scenes,...data.media.narration,...data.media.ambience]) {
    const p=path.join(root,'public',a.file);
    try { const buf=fs.readFileSync(p);if(sha256(buf)!==(a.fileDigest??a.audioDigest)) errors.push(`${a.id}: file digest mismatch`);
+    for(const v of a.variants??[]) if(!fs.existsSync(path.join(root,'public',v.file))) errors.push(`${a.id}: missing image variant ${v.file}`);
     if(a.file.endsWith('.svg')) svgPaths.push({path:p,width:a.width,height:a.height});
     if(a.masterFile){const master=path.join(root,a.masterFile);if(!fs.existsSync(master))errors.push(`${a.id}: missing lossless master`);else if(sha256(fs.readFileSync(master))!==a.masterDigest)errors.push(`${a.id}: master digest mismatch`);}
     if(a.file.endsWith('.mp3')){const probe=spawnSync('ffprobe',['-v','error','-show_entries','format=duration:stream=codec_name','-of','json',p],{encoding:'utf8'});if(probe.status!==0)errors.push(`${a.id}: audio decoding failed`);else {const info=JSON.parse(probe.stdout);if(!info.streams.some(s=>s.codec_name==='mp3')||Math.abs(Number(info.format.duration)-a.durationSeconds)>.6)errors.push(`${a.id}: audio format/duration differs from catalog`);}}

@@ -1,4 +1,236 @@
 {
+  "images": [
+    {
+      "id": "image-banner-bridge",
+      "file": "/images/redesign/banner-bridge.webp",
+      "width": 1376,
+      "height": 768,
+      "fileDigest": "f59aaa2b889a8c0487ac83fd0343cea8df4b76948d3d17788cd7c421e1b29dc1",
+      "variants": [
+        {
+          "file": "/images/redesign/banner-bridge-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production (authorship and generation method to be confirmed by owner)",
+      "rightsBasis": "Existing project illustration; authorship and distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "No author, tool, prompt or license is recorded for this file. The owner must record how it was made and its distribution basis before release.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "Arched stone bridge over the river at night; quote banner, epilogue, sources and footer backdrop."
+    },
+    {
+      "id": "image-card-a-suite-above-the-street",
+      "file": "/images/redesign/card-a-suite-above-the-street.webp",
+      "width": 1376,
+      "height": 768,
+      "fileDigest": "ac1621892377ac076860046bd3345bc10ae3e65b44980b4b5390fe0adeaf3bf6",
+      "variants": [
+        {
+          "file": "/images/redesign/card-a-suite-above-the-street-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production (authorship and generation method to be confirmed by owner)",
+      "rightsBasis": "Existing project illustration; authorship and distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "No author, tool, prompt or license is recorded for this file. The owner must record how it was made and its distribution basis before release.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "Chapter artwork for “A Suite Above the Street”."
+    },
+    {
+      "id": "image-card-on-the-record",
+      "file": "/images/redesign/card-on-the-record.webp",
+      "width": 1376,
+      "height": 768,
+      "fileDigest": "fa79fa74ef4087fb8c5d2d95b0ea489f56628a684af2c71fc12f697a8dd124e3",
+      "variants": [
+        {
+          "file": "/images/redesign/card-on-the-record-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production (authorship and generation method to be confirmed by owner)",
+      "rightsBasis": "Existing project illustration; authorship and distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "No author, tool, prompt or license is recorded for this file. The owner must record how it was made and its distribution basis before release.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "Chapter artwork for “On the Record”."
+    },
+    {
+      "id": "image-card-the-arrangement",
+      "file": "/images/redesign/card-the-arrangement.webp",
+      "width": 1376,
+      "height": 768,
+      "fileDigest": "e81e39cbc7869c5fc0709f0a2d20df4c123ca19485bc3d4cd2e4134bd3af18bf",
+      "variants": [
+        {
+          "file": "/images/redesign/card-the-arrangement-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production (authorship and generation method to be confirmed by owner)",
+      "rightsBasis": "Existing project illustration; authorship and distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "No author, tool, prompt or license is recorded for this file. The owner must record how it was made and its distribution basis before release.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "Chapter artwork for “The Arrangement”."
+    },
+    {
+      "id": "image-card-the-deal-breaks",
+      "file": "/images/redesign/card-the-deal-breaks.webp",
+      "width": 1376,
+      "height": 768,
+      "fileDigest": "c5b296dd57cc6637bb68db43701f8dfc86b83bd374f25751aceef890be76ac5b",
+      "variants": [
+        {
+          "file": "/images/redesign/card-the-deal-breaks-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production (authorship and generation method to be confirmed by owner)",
+      "rightsBasis": "Existing project illustration; authorship and distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "No author, tool, prompt or license is recorded for this file. The owner must record how it was made and its distribution basis before release.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "Chapter artwork for “The Deal Breaks”."
+    },
+    {
+      "id": "image-card-the-price-of-protection",
+      "file": "/images/redesign/card-the-price-of-protection.webp",
+      "width": 1376,
+      "height": 768,
+      "fileDigest": "7087ed804b9ca4e5fa5b0aef50d9df28acabc00e3898c39fbac8ba61e7818318",
+      "variants": [
+        {
+          "file": "/images/redesign/card-the-price-of-protection-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production (authorship and generation method to be confirmed by owner)",
+      "rightsBasis": "Existing project illustration; authorship and distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "No author, tool, prompt or license is recorded for this file. The owner must record how it was made and its distribution basis before release.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "Chapter artwork for “The Price of Protection”."
+    },
+    {
+      "id": "image-card-the-safe-house-fails",
+      "file": "/images/redesign/card-the-safe-house-fails.webp",
+      "width": 1376,
+      "height": 768,
+      "fileDigest": "c8f01e9be6e37ea456e7e661b1c8f158affca7d84bdef0530f6584bfff1f5d7d",
+      "variants": [
+        {
+          "file": "/images/redesign/card-the-safe-house-fails-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production (authorship and generation method to be confirmed by owner)",
+      "rightsBasis": "Existing project illustration; authorship and distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "No author, tool, prompt or license is recorded for this file. The owner must record how it was made and its distribution basis before release.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "Chapter artwork for “The Safe House Fails”."
+    },
+    {
+      "id": "image-card-under-the-bluff",
+      "file": "/images/redesign/card-under-the-bluff.webp",
+      "width": 1376,
+      "height": 768,
+      "fileDigest": "67ee6cba163ae5d2d6d20d2fa01baac0124bc8132aa5a943517205b45ca4de29",
+      "variants": [
+        {
+          "file": "/images/redesign/card-under-the-bluff-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production (authorship and generation method to be confirmed by owner)",
+      "rightsBasis": "Existing project illustration; authorship and distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "No author, tool, prompt or license is recorded for this file. The owner must record how it was made and its distribution basis before release.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "Chapter artwork for “Under the Bluff”."
+    },
+    {
+      "id": "image-hero-skyline",
+      "file": "/images/redesign/hero-skyline.webp",
+      "width": 1376,
+      "height": 768,
+      "fileDigest": "21deb8ed2cecc477406b8ebcd7170d5b8e25bebd1d481655d15836258aaa4c40",
+      "variants": [
+        {
+          "file": "/images/redesign/hero-skyline-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production (authorship and generation method to be confirmed by owner)",
+      "rightsBasis": "Existing project illustration; authorship and distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "No author, tool, prompt or license is recorded for this file. The owner must record how it was made and its distribution basis before release.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "Night skyline of Saint Paul with an illuminated Capitol dome; hero for home, prologue and map."
+    },
+    {
+      "id": "image-hotel-ryan",
+      "file": "/images/redesign/hotel-ryan.webp",
+      "width": 1200,
+      "height": 896,
+      "fileDigest": "d1a479d8709fd4a91ed3246c81400eb616738492c31c393b092b34c945e1a345",
+      "variants": [
+        {
+          "file": "/images/redesign/hotel-ryan-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production (authorship and generation method to be confirmed by owner)",
+      "rightsBasis": "Existing project illustration; authorship and distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "No author, tool, prompt or license is recorded for this file. The owner must record how it was made and its distribution basis before release.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "Hotel street corner at night; home dossier card and prologue aside."
+    }
+  ],
   "scenes": [
     {
       "id": "scene-skyline",

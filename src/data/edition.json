@@ -16,6 +16,31 @@
     "the-safe-house-fails",
     "on-the-record"
   ],
+  "evidenceIds": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E07",
+    "E08",
+    "E09",
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14"
+  ],
+  "stopLabels": {
+    "the-arrangement": "The Arrangement",
+    "a-suite-above-the-street": "A Suite Above the Street",
+    "under-the-bluff": "Under the Bluff",
+    "the-price-of-protection": "The Price of Protection",
+    "the-deal-breaks": "The Deal Breaks",
+    "the-safe-house-fails": "The Safe House Fails",
+    "on-the-record": "On the Record"
+  },
   "prologue": {
     "title": "A City with Two Sets of Rules",
     "summary": "Saint Paul's protection system predated national Prohibition. Under Police Chief John O'Connor, visiting criminals were offered conditional refuge.",

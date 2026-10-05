@@ -1,0 +1,98 @@
+[
+  {
+    "id": "K01",
+    "revision": "0.5.0",
+    "date": "2026-10-05",
+    "claimIds": [
+      "C02",
+      "C04"
+    ],
+    "summary": "Removed claims that every payment occurred at the Green Lantern, that every officer participated, or that every resident was spared.",
+    "reason": "Absolute statements went beyond the cited accounts; “no record examined” had been written as “no record exists.”"
+  },
+  {
+    "id": "K02",
+    "revision": "0.5.0",
+    "date": "2026-10-05",
+    "claimIds": [
+      "C09",
+      "C10"
+    ],
+    "summary": "Separated Gleckman’s partial tax acquittal from the appeal, and his contempt findings from any conviction of juror Bernard Fuchs.",
+    "reason": "The opinions do not establish a separate conviction of Fuchs or a sole holdout juror."
+  },
+  {
+    "id": "K03",
+    "revision": "0.5.0",
+    "date": "2026-10-05",
+    "claimIds": [
+      "C13",
+      "C14"
+    ],
+    "summary": "Kept Castle Royal guest lore as disputed; removed an invented corporate-capital quotation, a legend-origin date and a claim of deliberate marketing fabrication.",
+    "reason": "None of these is supported by the examined sources."
+  },
+  {
+    "id": "K04",
+    "revision": "0.5.0",
+    "date": "2026-10-05",
+    "claimIds": [
+      "C15",
+      "C16",
+      "C17"
+    ],
+    "summary": "Stated that Hamm was released alive; kept the residence-versus-office abduction-setting conflict visible; described silver nitrate as an applied solution, not chemical fuming or a global first.",
+    "reason": "The RCHS and FBI accounts conflict, and the FBI retrospective does not claim a first."
+  },
+  {
+    "id": "K05",
+    "revision": "0.5.0",
+    "date": "2026-10-05",
+    "claimIds": [
+      "C20",
+      "C21"
+    ],
+    "summary": "Reported that Bremer’s captors demanded secrecy while authorities were notified; removed invented bank-vault values, guards, dialogue and psychological certainty.",
+    "reason": "The FBI summary supports the demand and the notification, not the removed details."
+  },
+  {
+    "id": "K06",
+    "revision": "0.5.0",
+    "date": "2026-10-05",
+    "claimIds": [
+      "C24"
+    ],
+    "summary": "Gave the Lincoln Court sequence as an attributed account without an invented time, floor plan, apartment-specific protection guarantee or prior wound.",
+    "reason": "The sources give no such detail."
+  },
+  {
+    "id": "K07",
+    "revision": "0.5.0",
+    "date": "2026-10-05",
+    "claimIds": [
+      "C27",
+      "C28"
+    ],
+    "summary": "Stopped describing the police-reform wiretap as a federal operation; noted that convictions and charter reform do not prove the end of all corruption.",
+    "reason": "The MNHS account does not support either statement."
+  },
+  {
+    "id": "K08",
+    "revision": "0.5.0",
+    "date": "2026-10-05",
+    "claimIds": [
+      "C07",
+      "C24"
+    ],
+    "summary": "Corrected the hotel surveillance caption and the Lincoln Court illustration labels.",
+    "reason": "Captions asserted more than the attributed accounts support."
+  },
+  {
+    "id": "K09",
+    "revision": "0.5.0",
+    "date": "2026-10-05",
+    "claimIds": [],
+    "summary": "Replaced automatic listening passes with pending review records.",
+    "reason": "A generator success or automated test is not a listening review."
+  }
+]
