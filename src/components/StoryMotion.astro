@@ -1,0 +1,9 @@
+<script>
+  // Keep this optional chunk separate from progress, audio, and Calm view.
+  const root = document.querySelector<HTMLElement>('[data-story-root], .chapter-page, .bookend-page');
+  if (root) {
+    import('../scripts/story').then(({initStoryMotion}) => initStoryMotion(root)).catch(error => {
+      console.warn('Story motion is unavailable; the static story is ready to read.', error);
+    });
+  }
+</script>

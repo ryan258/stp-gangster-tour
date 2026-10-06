@@ -1,152 +1,70 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import {edition,stops,claims,evidence,stopURL,routeURL} from '../lib/catalog';
+import {edition,stops,stopURL,routeURL} from '../lib/catalog';
 import ArtImage from '../components/ArtImage.astro';
-
+import ClaimLinks from '../components/ClaimLinks.astro';
 ---
 <Layout title="Saint Paul After Dark">
- <div class="experience-page home-experience">
-  <!-- 1. Hero Section -->
-  <section class="hero-noir">
-    <div class="hero-backdrop">
-      <ArtImage name="hero-skyline" width={1600} height={900} eager/>
+ <article class="experience-page story-home" data-story-root>
+  <header class="story-cover" data-story-parallax>
+   <div class="story-cover-art" data-story-image><ArtImage name="hero-skyline" width={1600} height={900} eager/></div>
+   <div class="container story-cover-content">
+    <p class="eyebrow" data-story-reveal>Saint Paul, Minnesota · 1900–1938</p>
+    <h1 data-story-reveal><span>Saint Paul</span><em>After Dark</em></h1>
+    <p class="story-cover-line" data-story-reveal>{edition.tagline}</p>
+    <div class="story-cover-actions" data-story-reveal>
+     <a class="story-enter" href="#story-opening">Enter the story <span aria-hidden="true">↓</span></a>
+     <a href="#reading-order">Choose a chapter</a>
     </div>
-    <div class="container">
-      <div class="hero-content">
-        <span class="hero-eyebrow">1900–1938 · Seven Chapters</span>
-        <h1 class="hero-title">
-          <span class="title-saint-paul">SAINT PAUL</span>
-          <span class="title-after-dark">AFTER DARK</span>
-        </h1>
-        <p class="hero-tagline">Crime Shaped a City. People Tell Its Story.</p>
-        <p class="hero-description">
-          Follow the bargain that offered criminals refuge, the people who came for its costs, and the records that complicate the legend.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-hero-primary" href={routeURL('/prologue/')}>
-            Start the tour <span aria-hidden="true">&rarr;</span>
-          </a>
-          <a class="btn btn-hero-secondary" href={routeURL('/map/')}>
-            Explore the seven stops
-          </a>
-        </div>
-        <p><a data-resume hidden href={routeURL('/map/')}>Resume reading</a></p>
-      </div>
-    </div>
-    <div class="hero-script-watermark">
-      <span class="script-text">Same city. Different shadows.</span>
-      <span class="script-sub">Saint Paul, Minnesota · 1930s inspired artwork</span>
-    </div>
+    <a class="story-resume" data-resume hidden href={routeURL('/map/')}>Resume reading</a>
+   </div>
+   <div class="container story-cover-footer"><span>Seven places. Follow the thread.</span><span>Atmospheric artwork · Not an archival image</span></div>
+  </header>
+
+  <section class="container story-overture" id="story-opening" aria-labelledby="overture-title">
+   <div class="story-overture-heading" data-story-reveal><p class="eyebrow">Before we step inside</p><h2 id="overture-title">{edition.prologue.title}</h2><p class="story-pace">Scroll at your own pace.<br/>The records are here whenever you want to look closer.</p></div>
+   <div class="story-overture-copy" data-story-reveal>
+    <p class="story-lede">{edition.prologue.paragraphs[0]}</p>
+    <details class="story-sources"><summary>Behind the opening</summary><ClaimLinks ids={edition.prologue.premiseClaimIds}/><a href={routeURL('/prologue/')}>Read the full prologue <span aria-hidden="true">→</span></a></details>
+    <p class="story-content-note">{edition.contentNote}</p>
+    <p class="story-pace">Calm view removes movement and decoration. Sound is optional inside each chapter.</p>
+   </div>
   </section>
 
-  <div class="container">
-    <nav class="home-entry-strip" aria-label="Explore the experience"><a href="#reading-order"><b>{String(stops.length).padStart(2,'0')}</b><span>Chapters<br/><small>Follow the story</small></span></a><a href={routeURL('/casebook/')}><b>{evidence.length}</b><span>Evidence files<br/><small>Look beneath the legend</small></span></a><a href={routeURL('/sources/')}><b>{claims.length}</b><span>Claim records<br/><small>Trace the source</small></span></a></nav>
-    <!-- 2. Read the City Through Its Evidence (Dossier Section) -->
-    <section class="evidence-dossier-section">
-      <div class="dossier-grid">
-        <!-- Left: Vintage Paper Card -->
-        <article class="vintage-dossier-card">
-          <h2>Read the City Through Its Evidence</h2>
-          <p>
-            A self-paced reading tour for home use. Each chapter separates historical accounts, records, and interpretation; disputed stories retain their qualifications.
-          </p>
-          <p class="content-warning">
-            {edition.contentNote}
-          </p>
-          <div class="dossier-icons">
-            <div class="icon-col">
-              <span class="icon-glyph" aria-hidden="true">01</span>
-              <span class="icon-label">Real Records</span>
-            </div>
-            <div class="icon-col">
-              <span class="icon-glyph" aria-hidden="true">02</span>
-              <span class="icon-label">Multiple Perspectives</span>
-            </div>
-            <div class="icon-col">
-              <span class="icon-glyph" aria-hidden="true">03</span>
-              <span class="icon-label">Places & People</span>
-            </div>
-          </div>
-        </article>
+  <section class="container story-directory" id="reading-order" aria-label="Choose a chapter">
+   <details><summary>Choose a chapter <span>Seven ways into the city</span></summary><ol>{stops.map(s=><li><a href={`#scene-${s.id}`}><span aria-hidden="true">{String(s.order).padStart(2,'0')}</span><span>{s.title}<small>{s.period}</small></span><span aria-hidden="true">↓</span></a></li>)}</ol><a class="story-map-link" href={routeURL('/map/')}>Explore the seven stops on the map <span aria-hidden="true">↗</span></a></details>
+  </section>
 
-        <!-- Atmospheric illustration in a paper frame -->
-        <figure class="vintage-photo-card">
-          <div class="photo-tape" aria-hidden="true"></div>
-          <div class="photo-inner">
-            <ArtImage name="hotel-ryan" alt="Atmospheric illustration of a hotel street corner at night" width={800} height={600} sizes="(min-width: 900px) 320px, 80vw"/>
-          </div>
-          <figcaption>Atmospheric artwork · not an archival photograph</figcaption>
-        </figure>
+  <div class="story-journey" data-story-journey>
+   <nav class="story-rail" aria-label="Story chapters">
+    <div class="story-rail-inner"><span class="story-rail-label" aria-hidden="true">Follow the thread</span><ol>{stops.map(s=><li><a href={`#scene-${s.id}`} data-story-link={s.id}><span aria-hidden="true">{String(s.order).padStart(2,'0')}</span><span class="sr-only">Chapter {String(s.order).padStart(2,'0')}: {s.title}</span></a></li>)}</ol><a class="story-rail-map" href={routeURL('/map/')}>The map <span aria-hidden="true">↗</span></a></div>
+    <div class="story-progress" aria-hidden="true"><span data-story-progress></span></div>
+   </nav>
 
-        <!-- Right: Vintage Book Cover -->
-        <div class="vintage-book-card">
-          <div class="book-title">
-            <span>Seven Chapters</span>
-            <span>One City</span>
-            <span>Many Perspectives</span>
-          </div>
-          <div class="book-divider" aria-hidden="true"></div>
-          <a href={routeURL('/casebook/')}>Open the casebook <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
+   {stops.map((stop,index)=> (
+    <section class:list={['story-scene',{'story-scene-even':index%2===1}]} id={`scene-${stop.id}`} data-story-scene={stop.id} data-story-parallax aria-labelledby={`scene-title-${stop.id}`}>
+     <div class="story-scene-visual">
+      <figure class="story-scene-frame"><div class="story-scene-art" data-story-image><ArtImage name={`card-${stop.id}`} sizes="(min-width: 901px) 58vw, 100vw"/></div><figcaption>Atmospheric artwork · Not an archival image</figcaption><span class="story-scene-numeral" aria-hidden="true">{String(stop.order).padStart(2,'0')}</span></figure>
+     </div>
+     <div class="story-scene-copy">
+      <div data-story-reveal><p class="eyebrow">Chapter {String(stop.order).padStart(2,'0')} · {stop.period}</p><h2 id={`scene-title-${stop.id}`}>{stop.title}</h2><p class="story-scene-note">{stop.chapterNote}</p></div>
+      <p class="story-scene-lede" data-story-reveal>{stop.synopsis}</p>
+      <a class="story-chapter-link" href={stopURL(stop.id)}>Step inside this chapter <span aria-hidden="true">↗</span><span class="sr-only">: {stop.title}</span></a>
+      <span class="story-visited" data-visited-stop={stop.id} data-js-control hidden>Visited</span>
+      <details class="story-sources"><summary>Behind this scene</summary><p>{stop.blocks.record.text}</p><ClaimLinks ids={[...new Set(Object.values(stop.blocks).flatMap(block=>block.claimIds))]} from={stop.id}/><a href={`${stopURL(stop.id)}#evidence`}>Open the chapter’s evidence <span aria-hidden="true">↗</span></a></details>
+      <a class="story-next" href={index<stops.length-1?`#scene-${stops[index+1].id}`:'#story-coda'}>{index<stops.length-1?`Continue: ${stops[index+1].title}`:'Continue: After the bargain'} <span aria-hidden="true">↓</span></a>
+     </div>
     </section>
-
-    <!-- 3. The Reading Order Section -->
-    <section class="reading-order-section" id="reading-order">
-      <div class="section-header-bar">
-        <div class="header-left">
-          <h2>The Reading Order</h2>
-          <div class="header-line" aria-hidden="true"></div>
-        </div>
-        <div class="header-right">
-          <span class="header-sub">Move through time. See how it all connects.</span>
-          <a class="reading-map-link" href={routeURL('/map/')}>Open the field map <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-
-      <p class="home-art-note">Atmospheric illustrations accompany the chapters; the linked records supply the evidence.</p>
-      <ol class="chapter-cards-grid" role="list">
-        {stops.map((s, index) => (
-          <li class="chapter-card-item">
-            <article class="chapter-card">
-              <div class="card-backdrop">
-                <ArtImage name={`card-${s.id}`} width={600} height={340} sizes="(min-width: 1100px) 25vw, (min-width: 700px) 50vw, 100vw"/>
-              </div>
-              <div class="card-content">
-                <p class="card-period">
-                  {index + 1}. {s.period}
-                  <span class="visited-badge" data-visited-stop={s.id} data-js-control hidden>Visited</span>
-                </p>
-                <h3 class="card-title">
-                  <a href={stopURL(s.id)}>{s.title}</a>
-                </h3>
-                <p class="card-synopsis">{s.synopsis}</p>
-                <div class="card-action">
-                  <span class="circle-arrow" aria-hidden="true">&rarr;</span>
-                </div>
-              </div>
-            </article>
-          </li>
-        ))}
-      </ol>
-    </section>
-
-    <!-- 4. Quote Banner Section -->
-    <section class="quote-banner-section">
-      <div class="banner-backdrop">
-        <ArtImage name="banner-bridge" width={1600} height={900}/>
-      </div>
-      <div class="banner-content">
-        <div class="banner-left">
-          <p class="banner-eyebrow">A More Complete Saint Paul</p>
-          <p>History isn&rsquo;t just what happened &mdash; it&rsquo;s how we understand it.</p>
-        </div>
-        <div class="banner-right">
-          <p class="tour-reflection">The past is a map.<br/>Look closer at what it leaves out.</p>
-          <a href={routeURL('/sources/')}>Explore the sources <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </section>
+   ))}
   </div>
- </div>
+
+  <section class="story-coda" id="story-coda" data-story-parallax aria-labelledby="coda-title">
+   <div class="story-coda-art" data-story-image><ArtImage name="banner-bridge" width={1600} height={900}/></div>
+   <div class="container story-coda-copy" data-story-reveal><p class="eyebrow">After the bargain · Tour interpretation</p><h2 id="coda-title">{edition.epilogue.title}</h2><p>{edition.epilogue.paragraphs[0]}</p><a class="story-enter" href={routeURL('/epilogue/')}>Read the epilogue <span aria-hidden="true">→</span></a><p class="story-art-credit">Atmospheric artwork · Not an archival image</p></div>
+  </section>
+  <section class="container story-afterword" aria-labelledby="afterword-title">
+   <div><p class="eyebrow">Look closer</p><h2 id="afterword-title">The archive behind the story.</h2><p>Follow a person, open an evidence file, or trace a claim to its source. The story and its qualifications stay connected.</p><details class="story-sources"><summary>Sources behind the ending</summary><ClaimLinks ids={edition.epilogue.premiseClaimIds}/></details></div>
+   <nav aria-label="Explore the documentation"><a href={routeURL('/casebook/')}><span>The casebook<small>People, connections, and evidence</small></span><span aria-hidden="true">↗</span></a><a href={routeURL('/sources/')}><span>The sources<small>Records, qualifications, and edition notes</small></span><span aria-hidden="true">↗</span></a><a href={routeURL('/method/')}><span>How this was researched<small>The method behind the history</small></span><span aria-hidden="true">↗</span></a></nav>
+  </section>
+ </article>
 </Layout>
