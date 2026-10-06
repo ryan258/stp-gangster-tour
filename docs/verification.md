@@ -29,13 +29,32 @@ The audio browser scenario uses controllable media doubles. It checks lifecycle,
 - `npm run build:preview` then `npm run test:browser`: 28 scenarios passed on Chromium (24 previous + 4 story motion and reading specs in `tests/browser/story.spec.ts`). This includes axe-core (WCAG 2.0/2.1/2.2 A and AA tags) on all 14 content routes, a phone-width check of the 16px text floor and 44px targets, an automated PWA test verifying `site.webmanifest` and iPadOS tags, and 4 story specs covering immediate motion cancellation on Calm view / reduced-motion / print toggles, phone-width chapter navigation and source disclosure rendering, full no-JS story reading, and graceful fallback when the optional motion chunk fails to load.
 - Not run: `npm run links` (network), `node scripts/measure-performance.mjs`, real-device and assistive-technology checks. The map's enlarged SVG labels have not been inspected visually.
 
+## Six storytelling studies (observed 2026-10-05, owner-run)
+
+Ryan supplied the successful terminal output for the study verification sequence:
+
+- `npm run check`: zero errors, warnings and hints across **64 files**; structural content and asset validation passed with **56 release obligations** remaining.
+- `npm run test:unit -- tests/unit/studies.test.ts tests/unit/data-integrity.test.ts`: **44 tests passed**, comprising 13 study and 31 content-boundary cases.
+- `npm run build:preview`: **22 pages built**, including all six studies and `/studies/`.
+- `npm run test:browser -- tests/browser/studies.spec.ts`: **five Chromium scenarios passed**, covering study selections and source access at narrow width, complete no-JavaScript reading, paired-window synchronization and isolation, persistence and unsupported-feature fallbacks, reduced motion and explicit audio start.
+
+The assistant did not rerun these suites. The full suite, human listening, editorial/provenance/rights approvals, Safari/iPad, voice control, screen readers and physical printing were not established by this targeted run. See [the study guide](storytelling-studies.md).
+
+## Pop-up scene study verification
+
+- `npm run test:unit -- tests/unit/popup.test.ts`: **2 tests passed** in 5ms, establishing that the Green Lantern Saloon illustration (`scene-arrangement.svg`) is sliced along paint-order comment headers into 4 depth layers (`translateZ`) with the reconstruction frame and label kept flat and unblurred, and that unconfigured scenes return `null`.
+- `npm run test:browser -- tests/browser/story.spec.ts`: **4 Chromium scenarios passed**, confirming that calm mode and reduced motion disable scroll-driven timelines immediately, 320px reflow holds without clipping, and no-JS fallback renders complete content.
+
+The shell first emitted `Requested version v22.22.3 is not currently installed`. Inspection traced this to the `.nvmrc` pin and the shell's `fnm --use-on-cd` hook: fnm did not list that version, although a separate installation was available on the assistant's PATH. The owner-run log did not include `node --version`, so its exact runtime is unrecorded; the runtime in this file's opening paragraph belongs to the earlier remediation record. The warning did not stop this verification sequence.
+
 ## Reproduce focused checks
 
 ```sh
 npm run check
-npm run test:unit -- tests/unit/data-integrity.test.ts tests/unit/storage.test.ts
+npm run test:unit -- tests/unit/popup.test.ts tests/unit/studies.test.ts tests/unit/data-integrity.test.ts tests/unit/storage.test.ts
 npm run build:preview
-npm run test:browser   # tour + axe/size-floor specs
+npm run test:browser -- tests/browser/story.spec.ts tests/browser/studies.spec.ts   # targeted tour & study specs
+npm run test:browser   # complete tour + axe/size-floor specs
 npm run links          # network: URL reachability and archive coverage
 ```
 

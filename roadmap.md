@@ -25,6 +25,8 @@ This is a bounded personal reading experience. The next work completes its quali
 - [x] Historian layer, first pass: method page, corrections log with per-claim correction links, archive snapshot links where one exists, `/data/` catalog + BibTeX + CSL-JSON, link-check report, axe and size-floor browser tests, CI workflow.
 - [x] Standalone iPad/iOS PWA Home Screen support: web app manifest, 180×180 Apple touch icon, 192/512px icons, standalone display mode, safe-area inset protection, and automated Playwright verification.
 - [x] Continuous homepage story & motion presentation: scroll-linked chapter journey with Motion 14, sticky desktop artwork, native source disclosures beside each scene, instant Calm view / reduced-motion tear-down, and phone-width 320px reflow.
+- [x] Six browser storytelling studies (`/studies/`): source-linked interactive experiments for shifting questions, margin redactions, paired-window sync, acoustic distance filtering, alternative openings with View Transitions, and dual-scale timelines, backed by `studies.json` and `study-schema.mjs`.
+- [x] Scroll-driven 3D pop-up scene study for Chapter 01 (`scene-arrangement`): cuts SVG depth layers dynamically by semantic comment markers to unfold and dolly via CSS `@supports (animation-timeline: view())`, preserving SVG digest integrity, with static fallbacks for Calm view, reduced motion, and unsupporting engines.
 - [x] Add targeted data/storage/browser regression coverage with 320px reflow verification across all routes. Observed results and limits are in `docs/verification.md`.
 
 

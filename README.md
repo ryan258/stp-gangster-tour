@@ -44,29 +44,39 @@ Preview output goes to `dist-preview/`. Edition notes and review records remain 
 
 ## Story presentation
 
+### Browser storytelling studies
+
+The **Studies** navigation link opens six local experiments at `/studies/`: shifting a question, annotating a passage, comparing connected windows, changing sound perspective, revisiting an opening, and moving between two scales of time. Each has source-linked content, a complete reading fallback, and independent selected-view saving. Historical outcomes and the existing narration remain unchanged. See [the study guide and targeted verification commands](docs/storytelling-studies.md). Ryan's targeted verification on October 5, 2026 passed: zero Astro diagnostics, 44 unit tests, the 22-page preview build, and five Chromium browser scenarios. Human review and real-device acceptance remain open.
+
+### Scroll-driven pop-up scene study
+
+Chapter 01 (`stops/the-arrangement`) features an illustrated pop-up scene study (`PopUpScene.astro`, `src/lib/popup.ts`, `src/styles/story.scss`). The verified SVG asset (`scene-arrangement.svg`) is sliced along its semantic comment boundaries into four perspective layers (`translateZ`) and a flat reconstruction frame. As the reader scrolls, CSS `@supports (animation-timeline: view())` unfolds the scene from the pavement (`rotateX`) and dollies the camera into the Green Lantern Saloon door. SVG digests and hashes are unaltered. The scene remains static and fully visible without scroll-driven animation support, and collapses to a still, unpinned illustration under Calm view, `prefers-reduced-motion`, forced colors, and printing.
+
+### Main tour
+
 `src/pages/index.astro` draws the scrolling story from the existing validated edition and stop catalog. Narrated introductions, historical assertions, and review records are unchanged. The homepage is an overview; entering a full chapter uses the existing reading bookmark. Scrolling the overview does not mark all seven chapters as read.
 
 `src/components/StoryMotion.astro` loads `src/scripts/story.ts` only on story and reading pages. Motion is bundled locally, with its mini Web Animations API engine for transforms; there are no CDN requests or scroll interception. Text is rendered in HTML and never waits for animation to become visible. Reference pages retain their static presentation.
 
 Calm view, reduced motion, forced colors, printing, page exit, and tab visibility stop the effects and restore authored styles. Phone layouts keep images in normal flow without parallax. Desktop artwork uses native CSS sticky positioning. The chapter rail uses ordinary fragment links and `aria-current="step"`; it does not move focus or announce every scroll change.
 
-Targeted verification for this presentation change (owner-run):
+Targeted verification for presentation changes:
 
 ```sh
-npm run check && npm run build:preview && npm run test:browser -- tests/browser/story.spec.ts
+npm run test:unit -- tests/unit/popup.test.ts tests/unit/studies.test.ts && npm run build:preview && npm run test:browser -- tests/browser/story.spec.ts tests/browser/studies.spec.ts
 ```
 
-The new regression cases cover live preference changes, cancellation of hidden artwork, source disclosures and chapter navigation at 320px, JavaScript-free reading, and failure of the optional animation chunk. These tests have been added but not run by the assistant. `npm run build` remains the separate production gate.
+The regression suite covers live preference changes, cancellation of hidden artwork, pop-up layer slicing, source disclosures and chapter navigation at 320px, JavaScript-free reading, paired window synchronization, and failure of optional animation chunks. `npm run build` remains the separate production gate.
 
 ## Project map
 
 | Area | Responsibility |
 | --- | --- |
-| `src/data/` | Edition order, stops, claims, sources, evidence, people, relationships, metagames, presenters, locations, geography and media/review records |
-| `src/lib/catalog.ts` | Build-time joins and URL helpers; not imported by browser controllers |
-| `src/pages/`, `src/components/`, `src/layouts/` | Static pages, `ExperienceHero`, `ReadingTrail`, and reusable reading/presenter/evidence/audio shell |
-| `src/styles/` | Modular Sass architecture (`_variables`, `_mixins`, `_base`, `_header-footer`, `_homepage`, `_inner-pages`, `experience.scss`, `map.scss`) |
-| `src/scripts/` | Small independent browser enhancements |
+| `src/data/` | Edition order, stops, claims, sources, evidence, people, relationships, metagames, presenters, locations, studies, geography and media/review records |
+| `src/lib/catalog.ts`, `src/lib/popup.ts`, `src/lib/studies.ts` | Build-time joins, URL helpers, SVG pop-up layer cutter, and study reference resolution; not imported by client audio/motion runtimes |
+| `src/pages/`, `src/components/`, `src/layouts/` | Static pages, `ExperienceHero`, `ReadingTrail`, `PopUpScene`, `/studies/`, and reusable reading/presenter/evidence/audio shell |
+| `src/styles/` | Modular Sass architecture (`_variables`, `_mixins`, `_base`, `_header-footer`, `_homepage`, `_inner-pages`, `experience.scss`, `map.scss`, `story.scss`, `studies.scss`) |
+| `src/scripts/` | Small independent browser enhancements (`story.ts`, `studies.ts`, `study-audio.ts`) |
 | `scripts/content-schema.mjs`, `validate-content.mjs`, `check-svg.py` | Schemas, cross-record checks, hashes, SVG parsing, audio probes, production obligations |
 | `public/` | Served fonts, licenses, SVGs, WebP illustrations, and MP3 derivatives |
 | `production/` | Retained AIFF/WAV masters and original USGS geography; excluded from public output |
