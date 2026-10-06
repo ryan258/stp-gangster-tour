@@ -30,7 +30,7 @@ Preview output goes to `dist-preview/`. Edition notes and review records remain 
 - Home, prologue, seven ordered stops, map/directory, casebook, sources, method, epilogue, and recovery page.
 - Historian tools: a method page, a corrections log with per-claim correction links, nearest-snapshot archive links, and downloadable catalog data (JSON, BibTeX, CSL-JSON) under `/data/`.
 - Comprehensive editorial experience redesign across all 14 routes: full-bleed `ExperienceHero` backdrops with marginalia and roman folios, interactive `ReadingTrail` with visited-stop tracking, chapter-level tabbed navigation, and paper-styled location files.
-- Redesigned homepage featuring illuminated Capitol dome skyline hero, "Read the City Through Its Evidence" dossier trio, seven responsive photographic chapter cards with dark vignette overlays, and an arched stone bridge quote banner.
+- A continuous homepage story: skyline opening, seven illustrated scenes, chapter navigation, and an epilogue. Motion 14 adds scroll-linked artwork, short entrances, and a journey progress line. Sources open in native disclosures beside each scene. Individual chapters use roomier reading sections, a sticky illustration, and source disclosures.
 - Modular Sass (`.scss`) styling architecture carrying graphic noir aesthetics, self-hosted typography (`Playfair Display`, `Cinzel`, `Caveat` via Fontsource; `Source Sans 3`, `Barlow Condensed` from `public/fonts`), crimson accents, vintage ephemera treatments, and specialized experience stylesheets (`experience.scss`, `map.scss`).
 - High-efficiency WebP image pipeline (`public/images/redesign/*.webp`) each with a 640px `srcset` variant, lazy loading below the fold and a provenance/rights record in `media.json` (images are release-gated like the scenes).
 - Streamlined reading shell: the former "Work in progress" top banner has been removed from `Layout.astro` for an immersive reading presentation, with editorial notes preserved under Sources.
@@ -41,6 +41,22 @@ Preview output goes to `dist-preview/`. Edition notes and review records remain 
 - People profiles, qualified connections, context-return links, printable source pages, copyable citations, and edition correction notes.
 - Standalone iPad/iOS PWA support: web app manifest (`site.webmanifest`), 180×180 Apple touch icon, dark status bar (`#090b0e`), `viewport-fit=cover`, and safe-area inset protection for full-screen reading without Safari browser chrome when added to the Home Screen.
 - Three approximate venue positions with linked geographic sources, independent access/condition notes, and four unplaced stops. A sourced USGS river layer gives geographic context; the map does not assert a historical shoreline or walking route.
+
+## Story presentation
+
+`src/pages/index.astro` draws the scrolling story from the existing validated edition and stop catalog. Narrated introductions, historical assertions, and review records are unchanged. The homepage is an overview; entering a full chapter uses the existing reading bookmark. Scrolling the overview does not mark all seven chapters as read.
+
+`src/components/StoryMotion.astro` loads `src/scripts/story.ts` only on story and reading pages. Motion is bundled locally, with its mini Web Animations API engine for transforms; there are no CDN requests or scroll interception. Text is rendered in HTML and never waits for animation to become visible. Reference pages retain their static presentation.
+
+Calm view, reduced motion, forced colors, printing, page exit, and tab visibility stop the effects and restore authored styles. Phone layouts keep images in normal flow without parallax. Desktop artwork uses native CSS sticky positioning. The chapter rail uses ordinary fragment links and `aria-current="step"`; it does not move focus or announce every scroll change.
+
+Targeted verification for this presentation change (owner-run):
+
+```sh
+npm run check && npm run build:preview && npm run test:browser -- tests/browser/story.spec.ts
+```
+
+The new regression cases cover live preference changes, cancellation of hidden artwork, source disclosures and chapter navigation at 320px, JavaScript-free reading, and failure of the optional animation chunk. These tests have been added but not run by the assistant. `npm run build` remains the separate production gate.
 
 ## Project map
 

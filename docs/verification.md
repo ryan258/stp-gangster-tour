@@ -24,9 +24,9 @@ The audio browser scenario uses controllable media doubles. It checks lifecycle,
 
 ## Harmony pass and historian layer (observed 2026-10-05, owner-run)
 
-- `npm run check`: 0 errors, 0 warnings, 0 hints across 49 files; structural content and asset checks pass with 56 release obligations (35 previous + geography + 10 image provenance + 10 image rights).
+- `npm run check`: 0 errors, 0 warnings, 0 hints across 52 files; structural content and asset checks pass with 56 release obligations (35 previous + geography + 10 image provenance + 10 image rights).
 - `npm run test:unit`: 39 tests passed, including rejection of AI tools as reviewers, orphan claims and sources, manifest drift, unknown ambience beds and malformed image records.
-- `npm run build:preview` then `npm run test:browser`: 24 scenarios passed on Chromium (23 previous + 1 PWA standalone verification scenario). This includes axe-core (WCAG 2.0/2.1/2.2 A and AA tags) on all 14 content routes, a phone-width check of the 16px text floor and 44px targets, and an automated PWA test verifying `site.webmanifest` resolution, `apple-touch-icon.png` 180×180 raster presence and byte size, iPadOS status bar meta tags, and safe-area inset CSS protection.
+- `npm run build:preview` then `npm run test:browser`: 28 scenarios passed on Chromium (24 previous + 4 story motion and reading specs in `tests/browser/story.spec.ts`). This includes axe-core (WCAG 2.0/2.1/2.2 A and AA tags) on all 14 content routes, a phone-width check of the 16px text floor and 44px targets, an automated PWA test verifying `site.webmanifest` and iPadOS tags, and 4 story specs covering immediate motion cancellation on Calm view / reduced-motion / print toggles, phone-width chapter navigation and source disclosure rendering, full no-JS story reading, and graceful fallback when the optional motion chunk fails to load.
 - Not run: `npm run links` (network), `node scripts/measure-performance.mjs`, real-device and assistive-technology checks. The map's enlarged SVG labels have not been inspected visually.
 
 ## Reproduce focused checks

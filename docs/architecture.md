@@ -18,6 +18,7 @@ A single visitor claim can appear in several contexts. Review its qualification 
 - `selection.ts`: pressed state and highlight only. It never changes focus, browser history, or scroll position.
 - `audio.ts`: explicit audio lifecycle. Elements and their `src` are created only after a channel action. Generation counters reject stale asynchronous playback results; pagehide/visibility/BFCache pause sound. Calm view stops ambience while leaving narration alone. Unsupported independent volume disables ambience and directs the reader to device volume.
 - `calm.ts`: preference/render bridge. It shares a preference event with audio; disabling Calm view never automatically starts sound.
+- `story.ts`: optional scroll-linked atmosphere and journey progress powered by Motion 14 (`motion/mini` and `motion`), dynamically imported by `StoryMotion.astro` on story and chapter reading routes. Content never starts at `opacity: 0` and never waits for JS to become readable. Calm view, `prefers-reduced-motion`, `forced-colors`, printing, and `pagehide` instantly cancel all running animations, restore authored element styles, and disconnect observers. Compact viewports (≤900px) disable parallax and keep images in normal document flow.
 
 The layout initializes optional enhancements separately. Controls start hidden and are shown only when JavaScript runs. Native text, links, and disclosures remain usable without enhancements. Browser modules import only the small edition manifest/state fields; the full research catalog and schemas stay at build time.
 
@@ -32,6 +33,7 @@ The visual system uses a modular Sass (`.scss`) architecture imported into `src/
 - `_inner-pages.scss`: Base styling across inner routes, styling evidence disclosure panels, crime presenters, and audio players.
 - `experience.scss`: Shared atmosphere across reading routes (`stops/[id]`, `casebook`, `prologue`, `epilogue`), powering full-bleed `ExperienceHero` components, interactive `ReadingTrail` with visited-stop persistence, paper-styled place files, and tabbed chapter navigation.
 - `map.scss`: Cartographic board styling for `SvgMap.astro`, vintage map legends, coordinate grids, pinned venues, and the responsive 7-stop directory.
+- `story.scss`: Continuous scrolling story layout on `'/'`, sticky chapter navigation rail with `aria-current="step"`, horizontal journey progress bar, side-by-side illustrated scene sections with native source disclosures, and roomier chapter reading beats with sticky artwork companions.
 
 The top preview-status banner was removed from `src/layouts/Layout.astro` to ensure an immersive, distraction-free reading experience; edition revision notes and review records remain preserved on `/sources/#edition-status`.
 

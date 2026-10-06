@@ -24,6 +24,7 @@ This is a bounded personal reading experience. The next work completes its quali
 - [x] Data hygiene: orphan claim/source checks, real `supports` text, catalog-derived counts and ambience/chapter notes, C29 now cited, S16 attached to Lincoln Court as an address lead.
 - [x] Historian layer, first pass: method page, corrections log with per-claim correction links, archive snapshot links where one exists, `/data/` catalog + BibTeX + CSL-JSON, link-check report, axe and size-floor browser tests, CI workflow.
 - [x] Standalone iPad/iOS PWA Home Screen support: web app manifest, 180×180 Apple touch icon, 192/512px icons, standalone display mode, safe-area inset protection, and automated Playwright verification.
+- [x] Continuous homepage story & motion presentation: scroll-linked chapter journey with Motion 14, sticky desktop artwork, native source disclosures beside each scene, instant Calm view / reduced-motion tear-down, and phone-width 320px reflow.
 - [x] Add targeted data/storage/browser regression coverage with 320px reflow verification across all routes. Observed results and limits are in `docs/verification.md`.
 
 
