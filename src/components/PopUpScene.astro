@@ -1,0 +1,20 @@
+---
+import {popUpLayers} from '../lib/popup';
+// Scroll-driven pop-up of a scene's own SVG. Static, unfolded and complete without CSS scroll timelines.
+interface Props {scene: {id: string; file: string; width: number; height: number; description: string}}
+const {scene} = Astro.props;
+const pop = popUpLayers(scene)!;
+const box = `0 0 ${scene.width} ${scene.height}`;
+---
+<div class="popup">
+<figure class="popup-pin">
+ <div class="popup-stage" role="img" aria-label={scene.description} style={`aspect-ratio: ${scene.width} / ${scene.height}`}>
+  <svg class="popup-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs set:html={pop.defs}/></svg>
+  <div class="popup-book" aria-hidden="true">
+   {pop.layers.map(l => <svg class="popup-layer" viewBox={box} style={`--z:${l.z};--k:${l.hinge}`} set:html={l.body}/>)}
+  </div>
+  <svg class="popup-flat" viewBox={box} aria-hidden="true" set:html={pop.flat}/>
+ </div>
+ <figcaption>Illustrated scene · Reconstruction · Generalized illustration. Architecture, sightlines, and depicted figures are not verified.</figcaption>
+</figure>
+</div>

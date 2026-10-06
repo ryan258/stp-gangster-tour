@@ -132,14 +132,55 @@
  .story-rail { position: relative; top: auto; }
 }
 
+// Pop-up scene: scroll pins the figure, unfolds it from the floor, then dollies the camera through the layers into the saloon door.
+// Unfolded and still is the resting state; nothing below applies without scroll timelines.
+@property --hinge { syntax: '<angle>'; inherits: true; initial-value: 0deg; }
+@property --cam { syntax: '<number>'; inherits: true; initial-value: 0; }
+@property --px { syntax: '<percentage>'; inherits: true; initial-value: 50%; }
+@property --py { syntax: '<percentage>'; inherits: true; initial-value: 20%; }
+.popup-pin { margin: 2rem 0 0; }
+.popup-stage { position: relative; width: min(100%, 960px); margin-inline: auto; overflow: clip; perspective: 900px; perspective-origin: var(--px) var(--py); background: #0b0c10; }
+.popup-defs { position: absolute; width: 0; height: 0; }
+.popup-book { position: absolute; inset: 0; transform-style: preserve-3d; transform: translateZ(calc(var(--cam) * 1px)) rotateY(calc(var(--cam) * -.012deg)); }
+.popup-layer, .popup-flat { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+// Layers share the camera's vanishing point as their origin, so scale cancels perspective exactly at rest.
+// translateZ places the layer, scale cancels the perspective growth, and the sandwiched rotateX hinges it on its bottom edge.
+// Opacity ghosts a layer out as the dolly carries it up to the lens.
+.popup-layer {
+ transform-origin: var(--px) var(--py);
+ transform: translateZ(calc(var(--z) * 1px)) scale(calc(1 - var(--z) / 900)) translateY(calc(100% - var(--py))) rotateX(calc(var(--hinge) * var(--k))) translateY(calc(var(--py) - 100%));
+ opacity: clamp(0, calc((700 - var(--z) - var(--cam)) / 200), 1);
+}
+.popup-flat { pointer-events: none; }
+.popup-stage::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0; background: radial-gradient(circle at var(--px) var(--py), #f3efe6 0, #7fd3a0 14%, #38a16955 38%, transparent 62%); }
+.popup figcaption { max-width: 65ch; margin: .7rem auto 0; font-size: 1rem; line-height: 1.5; }
+@keyframes popup-unfold { from { --hinge: 72deg; } to { --hinge: 0deg; } }
+@keyframes popup-dolly {
+ from { --cam: 0; --px: 50%; --py: 20%; opacity: 1; }
+ 70% { --cam: 330; opacity: 1; }
+ to { --cam: 520; --px: 52.5%; --py: 49%; opacity: 0; }
+}
+@keyframes popup-flood { 0%, 55% { opacity: 0; } 90%, 100% { opacity: .9; } }
+@supports (animation-timeline: view()) {
+ .popup { view-timeline: --pop block; height: 240svh; }
+ .popup-pin { position: sticky; top: calc(var(--story-header-offset) + .5rem); min-height: calc(100svh - var(--story-header-offset) - 1rem); display: grid; align-content: center; }
+ .popup-stage { width: min(100%, 960px, calc((100svh - var(--story-header-offset) - 5.5rem) * 1.538)); animation: popup-unfold linear both, popup-dolly linear both; animation-timeline: --pop, --pop; animation-range: entry 10% entry 85%, entry 100% exit 0%; }
+ .popup-stage::after { animation: popup-flood linear both; animation-timeline: --pop; animation-range: entry 100% exit 0%; }
+ @media (max-width: 900px) { .popup { height: 190svh; } }
+}
+
 @mixin still-story {
  [data-story-reveal], [data-story-image], .chapter-prose > section > h2, .bookend-prose > section > h2, .experience-hero-copy, .experience-backdrop { transform: none !important; opacity: 1 !important; }
  .story-scene-frame, .chapter-page .chapter-aside .chapter-photo, .story-rail { position: relative; top: auto; }
  .story-progress { display: none; }
+ .popup { height: auto; }
+ .popup-pin { position: static; min-height: 0; display: block; }
+ .popup-stage { animation: none; width: min(100%, 960px); }
+ .popup-stage::after { display: none; }
 }
 html.calm-mode {
  @include still-story;
- .story-cover-art, .story-coda-art, .story-scene-visual, .story-art-credit { display: none; }
+ .story-cover-art, .story-coda-art, .story-scene-visual, .story-art-credit, .popup-stage { display: none; }
  .story-cover, .story-coda { min-height: 0; }
  .story-cover::after, .story-coda::after { display: none; }
  .story-cover-content, .story-coda { padding-block: 3rem; }
@@ -151,7 +192,7 @@ html.calm-mode {
 @media (prefers-reduced-motion: reduce) { @include still-story; }
 @media (forced-colors: active) {
  @include still-story;
- .story-cover-art, .story-coda-art, .story-scene-visual, .story-cover::after, .story-coda::after { display: none; }
+ .story-cover-art, .story-coda-art, .story-scene-visual, .story-cover::after, .story-coda::after, .popup-stage { display: none; }
  .story-scene { display: block; }
  .story-rail [aria-current=step] { outline: 2px solid Highlight; outline-offset: -3px; }
  .story-home a { color: LinkText; }
@@ -159,7 +200,7 @@ html.calm-mode {
 }
 @media print {
  @include still-story;
- .story-cover-art, .story-coda-art, .story-cover-footer, .story-cover-actions, .story-resume, .story-directory, .story-rail, .story-scene-visual, .story-next, .story-art-credit, .story-cover::after, .story-coda::after { display: none; }
+ .popup-stage, .story-cover-art, .story-coda-art, .story-cover-footer, .story-cover-actions, .story-resume, .story-directory, .story-rail, .story-scene-visual, .story-next, .story-art-credit, .story-cover::after, .story-coda::after { display: none; }
  .story-cover, .story-coda { min-height: 0; background: none; }
  .story-cover-content, .story-overture, .story-coda, .story-afterword, .story-scene, .story-scene-copy { display: block; padding: 1rem 0; margin: 0; max-width: none; width: 100%; background: none; }
  .story-cover h1 { font-size: 32pt; }

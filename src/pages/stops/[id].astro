@@ -8,6 +8,8 @@ import StopNav from '../../components/StopNav.astro';
 import ClaimLinks from '../../components/ClaimLinks.astro';
 import {stops,evidence,media,locations,people,metagames,presenters,stopURL,routeURL,assetURL} from '../../lib/catalog';
 import ArtImage from '../../components/ArtImage.astro';
+import PopUpScene from '../../components/PopUpScene.astro';
+import {hasPopUp} from '../../lib/popup';
 export function getStaticPaths(){return stops.map((stop,index)=>({params:{id:stop.id},props:{stop,index}}));}
 const {stop,index}=Astro.props;
 const scene=media.scenes.find(s=>s.id===stop.sceneId)!;
@@ -24,6 +26,7 @@ const next=stops[index+1];
   <ExperienceHero title={stop.title} eyebrow={`Chapter ${String(index+1).padStart(2,'0')} · ${stop.period}`} lede={stop.synopsis} image={`/images/redesign/card-${stop.id}.webp`} folio={String(index+1).padStart(2,'0')} note={loc.historicalName}>
    <nav class="experience-actions" aria-label="Chapter entry"><a href="#intro">Read the chapter <span aria-hidden="true">↓</span></a><a href="#evidence">Inspect the evidence <span aria-hidden="true">↗</span></a></nav>
   </ExperienceHero>
+  {hasPopUp(scene.id)&&<div class="container"><PopUpScene scene={scene}/></div>}
   <div class="container">
    <div class="chapter-navigation"><StopNav index={index} position="top"/><nav class="archive-tabs chapter-tabs" aria-label="On this page"><a href="#intro"><span aria-hidden="true">01</span> Introduction</a><a href="#record"><span aria-hidden="true">02</span> The record</a><a href="#metagame"><span aria-hidden="true">03</span> The underlying bargain</a><a href="#evidence"><span aria-hidden="true">04</span> Evidence</a></nav></div>
    <div class="chapter-layout">
@@ -43,7 +46,7 @@ const next=stops[index+1];
    <section class="chapter-context" aria-label="Place and chapter notes">
      <div class="paper-document place-file"><p class="paper-kicker">Location file / {String(index+1).padStart(2,'0')}</p><h2>The place</h2><p class="place-name">{loc.historicalName}</p><p>{loc.address}</p><dl class="place-status"><div><dt>Position</dt><dd>{loc.precision}</dd></div><div><dt>Condition</dt><dd>{loc.condition}</dd></div><div><dt>Access</dt><dd>{loc.access}</dd></div></dl><p>{loc.qualification}</p><a href={routeURL(`/map/#location-${loc.id}`)}>Location notes <span aria-hidden="true">↗</span></a></div>
      <div class="chapter-index"><p class="eyebrow">The seven chapters</p><ol>{stops.map(s=><li><a href={stopURL(s.id)} aria-current={s.id===stop.id?'page':undefined}><span aria-hidden="true">{String(s.order).padStart(2,'0')}</span>{s.title}</a></li>)}</ol><a class="chapter-casebook" href={routeURL(`/casebook/?from=${stop.id}`)}>Open the casebook <span aria-hidden="true">↗</span></a></div>
-     <details class="scene-study"><summary>Illustrated scene study</summary><figure><img src={assetURL(scene.file)} width={scene.width} height={scene.height} alt={scene.description} decoding="async"/><figcaption>Reconstruction · Generalized illustration. Architecture, sightlines, and depicted figures are not verified.</figcaption></figure></details>
+     {!hasPopUp(scene.id)&&<details class="scene-study"><summary>Illustrated scene study</summary><figure><img src={assetURL(scene.file)} width={scene.width} height={scene.height} alt={scene.description} decoding="async"/><figcaption>Reconstruction · Generalized illustration. Architecture, sightlines, and depicted figures are not verified.</figcaption></figure></details>}
    </section>
    <a class="next-chapter-teaser" href={next?stopURL(next.id):routeURL('/epilogue/')}><ArtImage name={next?`card-${next.id}`:'banner-bridge'} sizes="(min-width: 800px) 300px, 100vw"/><span><small>{next?`Next / Chapter ${String(next.order).padStart(2,'0')}`:'Next / Epilogue'}</small><strong>{next?next.title:'What the Arrangement Could Not Control'}</strong><em>Keep following the story.</em></span><b aria-hidden="true">→</b></a>
    <StopNav index={index} position="bottom"/>
