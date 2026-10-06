@@ -1,0 +1,427 @@
+[
+  {
+    "id": "change-the-question",
+    "kind": "question",
+    "title": "One place. Three questions.",
+    "subtitle": "An arrangement looks different from each side.",
+    "question": "What changes when you follow the cost instead of the benefit?",
+    "instructions": "Choose a question. The diagram changes emphasis; each view keeps its evidence and limits.",
+    "stopId": "the-arrangement",
+    "image": "card-the-arrangement",
+    "api": "Web Animations API",
+    "frames": [
+      {
+        "id": "money",
+        "label": "Follow the money",
+        "title": "Protection had a price.",
+        "body": "The historical account describes payments as a condition of protection.",
+        "claimIds": [
+          "C01",
+          "C02"
+        ],
+        "qualification": "No universal compliance, crime-reduction measurement, or signed contract established.",
+        "focusIds": [
+          "criminals",
+          "leadership"
+        ],
+        "path": [
+          "Visiting criminals",
+          "Payments",
+          "Protection"
+        ]
+      },
+      {
+        "id": "protection",
+        "label": "Follow the protection",
+        "title": "Access passed through intermediaries.",
+        "body": "A protection system needs more than an official willing to look away. Someone must recognize newcomers, communicate expectations, and connect a request with a person able to honor it. In MNHS's account, William “Reddy” Griffin initially handled that intermediary role; Dan Hogan succeeded him after Griffin's death in 1913. MNHS also identifies Hogan's Green Lantern as a gathering place. The saloon is our doorway into this network. It is not the documented birthplace of every agreement, and the surviving accounts do not give us a universal written contract to display. Its importance is relational: a place associated with someone who could connect one world with another. That makes the first question more useful than a list of famous customers: what could an intermediary provide that a stranger could not obtain simply by arriving in town?",
+        "claimIds": [
+          "C01",
+          "C02",
+          "C03",
+          "C04"
+        ],
+        "qualification": "The setting represents an association, not a documented meeting or universal agreement.",
+        "focusIds": [
+          "intermediaries",
+          "criminals",
+          "leadership"
+        ],
+        "path": [
+          "Arriving strangers",
+          "An intermediary",
+          "Access to protection"
+        ]
+      },
+      {
+        "id": "cost",
+        "label": "Who pays the cost?",
+        "title": "The bargain had an outside.",
+        "body": "An intermediary could make access selective and repeated dealings more predictable. A criminal hoping to return had a reason to respect local limits; an official receiving money had a reason to preserve a paying relationship. A conspicuous local crime threatened the benefits others expected from the arrangement. The boundary also shifted costs. Keeping an offense outside Saint Paul could serve participants' interests without making anyone beyond the city safer. The excluded parties matter: victims elsewhere had not agreed to finance local calm with their own exposure to violence. This is a model of incentives, not proof that the arrangement eliminated local crime or worked uniformly. Later kidnappings will show how an immediate opportunity could conflict with maintaining refuge.",
+        "claimIds": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C05"
+        ],
+        "qualification": "Tour interpretation of incentives; no claim of universal compliance or proven crime reduction.",
+        "focusIds": [
+          "outside"
+        ],
+        "path": [
+          "Local restraint",
+          "Crime elsewhere",
+          "People outside the bargain"
+        ]
+      }
+    ],
+    "role": "Tour explanation / Interpretation",
+    "actors": [
+      {
+        "id": "criminals",
+        "label": "Visiting criminals"
+      },
+      {
+        "id": "intermediaries",
+        "label": "Intermediaries"
+      },
+      {
+        "id": "leadership",
+        "label": "Police leadership"
+      },
+      {
+        "id": "outside",
+        "label": "People harmed outside the city"
+      }
+    ]
+  },
+  {
+    "id": "read-between-the-lines",
+    "kind": "palimpsest",
+    "title": "Read it again.",
+    "subtitle": "The words stay. Their evidentiary weight changes.",
+    "question": "Does knowing where a sentence comes from change how you read it?",
+    "instructions": "Choose a lens to highlight a passage and read its qualification. These are tour explanations, not archival quotations.",
+    "stopId": "a-suite-above-the-street",
+    "image": "card-a-suite-above-the-street",
+    "api": "CSS Custom Highlight API",
+    "frames": [
+      {
+        "id": "account",
+        "label": "The hotel account",
+        "title": "A place remembers.",
+        "body": "Hotel history associates Leon Gleckman's headquarters and Treasury agent Malone's surveillance with the Saint Paul Hotel.",
+        "claimIds": [
+          "C07"
+        ],
+        "qualification": "Institutional account; no specific permanent suite number or staff complicity established.",
+        "highlight": "The hotel's own history places Leon Gleckman's headquarters in a suite and describes Treasury investigator Mike Malone watching him from another room."
+      },
+      {
+        "id": "judgment",
+        "label": "The court record",
+        "title": "A narrower finding.",
+        "body": "Gleckman's federal tax convictions were affirmed for 1929 and 1930, while he was acquitted on the 1931 count.",
+        "claimIds": [
+          "C08",
+          "C09"
+        ],
+        "qualification": "Preserve the partial acquittal; do not misrepresent as conviction on all counts.",
+        "highlight": "In 1935, an appellate court upheld Gleckman's tax convictions concerning 1929 and 1930; he had been acquitted on the 1931 count."
+      },
+      {
+        "id": "limits",
+        "label": "The boundary",
+        "title": "The difference matters.",
+        "body": "The hotel account and the appellate opinion answer different questions. Reading them together does not turn the hotel’s retrospective story into a surveillance log.",
+        "claimIds": [
+          "C07",
+          "C08",
+          "C09"
+        ],
+        "qualification": "This is an editorial comparison of the cited accounts.",
+        "highlight": "Treat this as the hotel's retrospective account, not a surviving surveillance log."
+      }
+    ],
+    "role": "Tour explanation",
+    "passage": {
+      "stopId": "a-suite-above-the-street",
+      "block": "intro"
+    }
+  },
+  {
+    "id": "across-two-windows",
+    "kind": "windows",
+    "title": "Put the accounts together.",
+    "subtitle": "A place in one window. A record in the other.",
+    "question": "What becomes visible when the setting and the record share your attention?",
+    "instructions": "Choose a thread to align the two viewpoints. Read both here, or open the record beside this page.",
+    "stopId": "a-suite-above-the-street",
+    "image": "card-a-suite-above-the-street",
+    "api": "Broadcast Channel API",
+    "frames": [
+      {
+        "id": "tax",
+        "label": "Follow the finances",
+        "title": "The place",
+        "body": "Hotel history associates Leon Gleckman's headquarters and Treasury agent Malone's surveillance with the Saint Paul Hotel.",
+        "claimIds": [
+          "C07"
+        ],
+        "qualification": "Institutional account; no specific permanent suite number or staff complicity established.",
+        "pair": {
+          "title": "The tax record",
+          "body": "The 1935 appellate opinion upheld the convictions for 1929 and 1930 and notes the jury’s acquittal on the 1931 count. It distinguishes bank deposits from taxable income and examines competing financial explanations.",
+          "claimIds": [
+            "C08",
+            "C09"
+          ],
+          "qualification": "The partial acquittal preceded the appeal; the court did not treat all deposits as income."
+        }
+      },
+      {
+        "id": "influence",
+        "label": "Follow the influence",
+        "title": "The place",
+        "body": "The hotel’s retrospective account associates Gleckman with a suite. That setting does not itself establish the findings of a later criminal-contempt proceeding.",
+        "claimIds": [
+          "C07",
+          "C10"
+        ],
+        "qualification": "The relationship between setting and record is an editorial juxtaposition.",
+        "pair": {
+          "title": "The contempt record",
+          "body": "The 1938 opinion affirmed Gleckman’s criminal-contempt convictions. It describes a promised $300 payment to juror Bernard Fuchs through intermediaries and a later loan arranged at Gleckman’s direction. It does not establish a separate conviction of Fuchs.",
+          "claimIds": [
+            "C10",
+            "C11"
+          ],
+          "qualification": "The findings concern Gleckman. Do not assign Fuchs an unverified legal outcome."
+        }
+      }
+    ],
+    "role": "Tour explanation"
+  },
+  {
+    "id": "a-change-in-listening",
+    "kind": "audio",
+    "title": "Listen from somewhere else.",
+    "subtitle": "Three treatments of the same introduction.",
+    "question": "Can sound change the feeling of distance without changing the account?",
+    "instructions": "Choose a perspective, then start sound. Changing perspective pauses playback; starting again continues the introduction.",
+    "stopId": "the-arrangement",
+    "image": "card-the-arrangement",
+    "api": "Web Audio API",
+    "frames": [
+      {
+        "id": "street",
+        "label": "The street",
+        "title": "Outside the account.",
+        "body": "A designed rain texture places the same introduction against an exterior atmosphere. This is an expressive treatment, not a recording of historical Saint Paul.",
+        "claimIds": [
+          "C01",
+          "C02",
+          "C03",
+          "C04"
+        ],
+        "qualification": "The scene’s history is in the cited transcript. The sound treatment supplies no historical evidence.",
+        "audioPerspective": "street",
+        "ambienceId": "ambience-city-rain"
+      },
+      {
+        "id": "room",
+        "label": "The room",
+        "title": "An enclosed atmosphere.",
+        "body": "A filtered room-tone texture gives the same introduction a quieter, enclosed setting. It does not reconstruct a particular room or historical conversation.",
+        "claimIds": [
+          "C01",
+          "C02",
+          "C03",
+          "C04"
+        ],
+        "qualification": "The sound is a designed texture; it does not establish where a transaction occurred.",
+        "audioPerspective": "room",
+        "ambienceId": "ambience-room-tone"
+      },
+      {
+        "id": "account",
+        "label": "The account",
+        "title": "Only the introduction.",
+        "body": "The atmosphere falls away. The narration and its written transcript carry the account on their own.",
+        "claimIds": [
+          "C01",
+          "C02",
+          "C03",
+          "C04"
+        ],
+        "qualification": "The synthesized narration is not a historical voice. Listening and pronunciation review remain pending.",
+        "audioPerspective": "account"
+      }
+    ],
+    "role": "Tour explanation / Interpretation",
+    "passage": {
+      "stopId": "the-arrangement",
+      "block": "intro"
+    }
+  },
+  {
+    "id": "return-to-the-opening",
+    "kind": "return",
+    "title": "The second first impression.",
+    "subtitle": "Return to a place with a consequence in mind.",
+    "question": "Does the opening mean something different after the later account?",
+    "instructions": "Read the opening, follow the consequence, then return. Your selected view is remembered on this device.",
+    "stopId": "the-arrangement",
+    "image": "card-the-arrangement",
+    "api": "View Transition API",
+    "frames": [
+      {
+        "id": "opening",
+        "label": "The opening",
+        "title": "A doorway into the network.",
+        "body": "A protection system needs more than an official willing to look away. Someone must recognize newcomers, communicate expectations, and connect a request with a person able to honor it. In MNHS's account, William “Reddy” Griffin initially handled that intermediary role; Dan Hogan succeeded him after Griffin's death in 1913. MNHS also identifies Hogan's Green Lantern as a gathering place. The saloon is our doorway into this network. It is not the documented birthplace of every agreement, and the surviving accounts do not give us a universal written contract to display. Its importance is relational: a place associated with someone who could connect one world with another. That makes the first question more useful than a list of famous customers: what could an intermediary provide that a stranger could not obtain simply by arriving in town?",
+        "claimIds": [
+          "C01",
+          "C02",
+          "C03",
+          "C04"
+        ],
+        "qualification": "The saloon is associated with an intermediary; it is not the documented site of every agreement.",
+        "period": "1900–1928 · The arrangement"
+      },
+      {
+        "id": "consequence",
+        "label": "A later consequence",
+        "title": "An opportunity against the arrangement.",
+        "body": "The bank-robbery comparison reveals an alleged attempt to change the target of extraction: from institutional cash to the amount relatives and associates could be compelled to produce. The ransom pressure then tried to control the response as well as the payment. The limits are just as revealing as the strategy. Demanding secrecy did not guarantee secrecy. Expecting a higher payoff did not guarantee a stable refuge afterward. Participants could seek short-term advantage without controlling the investigation their actions produced. Bremer and Magee were operating under coercion. Explaining their constrained choices must never turn the tour into a puzzle about how a victim should have outsmarted a captor.",
+        "claimIds": [
+          "C18",
+          "C19",
+          "C20",
+          "C21",
+          "C22"
+        ],
+        "qualification": "This is the tour’s interpretation of incentives, not a transcript of private reasoning.",
+        "period": "January–February 1934 · The Bremer kidnapping"
+      },
+      {
+        "id": "return",
+        "label": "Revisit the opening",
+        "title": "The same doorway.",
+        "body": "A protection system needs more than an official willing to look away. Someone must recognize newcomers, communicate expectations, and connect a request with a person able to honor it. In MNHS's account, William “Reddy” Griffin initially handled that intermediary role; Dan Hogan succeeded him after Griffin's death in 1913. MNHS also identifies Hogan's Green Lantern as a gathering place. The saloon is our doorway into this network. It is not the documented birthplace of every agreement, and the surviving accounts do not give us a universal written contract to display. Its importance is relational: a place associated with someone who could connect one world with another. That makes the first question more useful than a list of famous customers: what could an intermediary provide that a stranger could not obtain simply by arriving in town?",
+        "claimIds": [
+          "C01",
+          "C02",
+          "C03",
+          "C04",
+          "C19"
+        ],
+        "qualification": "The opening’s words are unchanged. The note below is an interpretation, not newly discovered evidence.",
+        "afterword": "Read “a person able to honor it” beside the later account of an immediate opportunity. A relationship could encourage restraint without guaranteeing it. What initially looked like a stable arrangement can now be read as something its participants could put at risk.",
+        "period": "1900–1928 · Returning to the arrangement"
+      }
+    ],
+    "role": "Tour explanation / Interpretation"
+  },
+  {
+    "id": "two-scales-of-time",
+    "kind": "time",
+    "title": "Two days. Several decades.",
+    "subtitle": "An event sits inside a longer history.",
+    "question": "What can a wider view explain—and what does it still leave unresolved?",
+    "instructions": "Move between the reported sequence and selected institutional changes. The timeline spacing is not proportional to elapsed time.",
+    "stopId": "the-safe-house-fails",
+    "image": "card-the-safe-house-fails",
+    "api": "Web Animations API",
+    "frames": [
+      {
+        "id": "close",
+        "label": "The two days",
+        "title": "March 30–31, 1934",
+        "body": "The FBI links its active pursuit to Dillinger's interstate transportation of a stolen car after his March 3 escape from custody. That supplies a specific jurisdictional development. It does not establish that federal officers had previously been incapable of providing any assistance. This chapter does not assert that a particular officer had guaranteed this particular apartment protection. General knowledge of Saint Paul's system cannot fill a missing link in an individual case.",
+        "claimIds": [
+          "C23",
+          "C24"
+        ],
+        "qualification": "The sequence follows the FBI retrospective. It is not a floor plan or a complete set of witness statements.",
+        "timeline": [
+          {
+            "period": "March 30, 1934",
+            "title": "A report",
+            "body": "The FBI account describes the manager reporting suspicious tenants using the name Hellman.",
+            "claimIds": [
+              "C24"
+            ]
+          },
+          {
+            "period": "March 31, 1934",
+            "title": "Surveillance",
+            "body": "The agency narrative describes officers watching the building the following day.",
+            "claimIds": [
+              "C24"
+            ]
+          },
+          {
+            "period": "March 31, 1934",
+            "title": "Confrontation",
+            "body": "The account describes gunfire and the escape of Dillinger, wounded, with Frechette.",
+            "claimIds": [
+              "C24"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wide",
+        "label": "Widen the view",
+        "title": "1900–1936",
+        "body": "The reported confrontation is one event within a longer history of protection and institutional change. Placing these moments beside each other supplies context; it does not prove that this confrontation caused the later reform.",
+        "claimIds": [
+          "C01",
+          "C05",
+          "C24",
+          "C27",
+          "C28"
+        ],
+        "qualification": "Selected moments, not a complete chronology or a demonstrated chain of causation.",
+        "timeline": [
+          {
+            "period": "1900",
+            "title": "The arrangement",
+            "body": "The Saint Paul protection arrangement originated under Police Chief John O'Connor in 1900.",
+            "claimIds": [
+              "C01"
+            ]
+          },
+          {
+            "period": "1920 / 1928",
+            "title": "Leadership changes",
+            "body": "Chief O'Connor retired in 1920; Dan Hogan was assassinated in a car bombing in 1928.",
+            "claimIds": [
+              "C05"
+            ]
+          },
+          {
+            "period": "March 30–31, 1934",
+            "title": "The event in this study",
+            "body": "The FBI retrospective describes a report, surveillance, gunfire and Dillinger’s escape at Lincoln Court.",
+            "claimIds": [
+              "C24"
+            ]
+          },
+          {
+            "period": "1935 / 1936",
+            "title": "Investigation and reform",
+            "body": "A wiretap investigation exposed Saint Paul police corruption in 1935 and led to disciplinary action. Saint Paul voters approved a charter amendment on June 15, 1936 instituting civil service rules for police chief selection and tenure.",
+            "claimIds": [
+              "C27",
+              "C28"
+            ]
+          }
+        ]
+      }
+    ],
+    "role": "Tour explanation / Interpretation"
+  }
+]

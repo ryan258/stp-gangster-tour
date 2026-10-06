@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArtImage from '../../components/ArtImage.astro';
+import {studies} from '../../lib/studies';
+import {routeURL,edition} from '../../lib/catalog';
+import '../../styles/studies.scss';
+---
+<Layout title="Storytelling studies" description="Six small experiments in reading, perspective, sound and time.">
+  <div class="studies-index study-shell" data-study-index data-revision={edition.contentRevision}>
+    <header class="studies-intro">
+      <p class="eyebrow">Saint Paul After Dark · The studies</p>
+      <h1>Six ways<br/>into a story.</h1>
+      <p class="lede">Change a question. Put two accounts together. Return to the same words with something else in mind.</p>
+      <p>Each study tries one form using the tour’s existing evidence. Start anywhere, stay briefly, and return later. These are experiments in presentation; editorial, image and listening reviews remain open.</p>
+    </header>
+    <ol class="study-grid">
+      {studies.map((study,index) => <li class="study-card" data-study-card={study.id}>
+        <a class="study-card-link" href={routeURL(`studies/${study.id}/`)}>
+          <div class="study-card-art"><ArtImage name={study.image} sizes="(max-width: 700px) 100vw, 50vw"/><span class="study-number" aria-hidden="true">{String(index+1).padStart(2,'0')}</span></div>
+          <div class="study-card-copy"><p class="eyebrow">{study.api}</p><h2>{study.title}</h2><p>{study.subtitle}</p><span class="study-enter">Enter the study <span aria-hidden="true">↗</span></span><span class="study-resume" data-study-resume hidden></span></div>
+        </a>
+        <span hidden data-study-frames>{JSON.stringify(study.frames.map(f=>({id:f.id,label:f.label})))}</span>
+      </li>)}
+    </ol>
+    <p class="study-footnote">The studies remember only your selected view in this browser. They do not mark tour chapters as read. Complete text and source links remain available without JavaScript.</p>
+    <a href={routeURL('')}>Return to the tour</a>
+  </div>
+</Layout>
+<script>import {initStudyIndex} from '../../scripts/studies'; initStudyIndex();</script>

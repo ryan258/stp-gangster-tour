@@ -1,0 +1,66 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArtImage from '../../components/ArtImage.astro';
+import ClaimLinks from '../../components/ClaimLinks.astro';
+import {studies,type Study} from '../../lib/studies';
+import {stops,media,edition,routeURL,stopURL,assetURL} from '../../lib/catalog';
+import '../../styles/studies.scss';
+export function getStaticPaths() { return studies.map(study=>({params:{id:study.id},props:{study}})); }
+const {study}=Astro.props as {study:Study};
+const index=studies.findIndex(s=>s.id===study.id);
+const next=studies[(index+1)%studies.length];
+const stop=stops.find(s=>s.id===study.stopId)!;
+const passage=study.passage && stops.find(s=>s.id===study.passage!.stopId)!.blocks[study.passage.block];
+const narration=media.narration.find(n=>n.stopId===study.stopId)!;
+---
+<Layout title={`${study.title} — Study ${index+1}`} description={study.subtitle}>
+  <article class="study-shell" data-study={study.id} data-kind={study.kind} data-revision={edition.contentRevision}>
+    <nav class="study-navigation" aria-label="Study navigation"><a href={routeURL('studies/')}>All six studies</a><span>Study {index+1} / 6</span><a href={stopURL(study.stopId)}>Read the chapter</a></nav>
+    <header class="study-heading"><p class="eyebrow">{study.api}</p><h1>{study.title}</h1><p class="lede">{study.subtitle}</p><p class="study-question">{study.question}</p></header>
+    <div class="study-workbench">
+      <figure class="study-art" data-study-art>
+        <ArtImage name={study.image} eager sizes="(max-width: 850px) 100vw, 45vw"/>
+        <figcaption>Atmospheric artwork · {stop.title} · {stop.period}</figcaption>
+      </figure>
+      <div class="study-desk">
+        <p>{study.instructions}</p>
+        <div class="study-controls" data-study-controls hidden role="group" aria-label="Choose a story view">
+          {study.frames.map(f=><button type="button" data-study-select={f.id} aria-pressed="false" aria-controls={`frame-${f.id}`}>{f.label}</button>)}
+          <button type="button" class="btn-secondary" data-study-all aria-pressed="false">Read all views</button>
+        </div>
+        <p class="study-state" role="status" data-study-status></p>
+        <p class="study-footnote" data-study-saving hidden></p>
+        {study.kind==='question' && <div class="study-network" aria-label="Perspectives in the arrangement">
+          <p class="study-network-caption">A diagram of perspectives, not a map or a documented meeting.</p>
+          <ul>{study.actors!.map(a=><li data-study-actor={a.id}><span class="study-node-dot" aria-hidden="true"></span>{a.label}<span class="study-node-state" data-actor-state></span></li>)}</ul>
+        </div>}
+        {study.kind==='palimpsest' && passage && <section class="study-passage" aria-labelledby="passage-heading"><p class="eyebrow">Tour explanation · original passage</p><h2 id="passage-heading">The room and the record</h2><p data-study-passage>{passage.text}</p><ClaimLinks ids={passage.claimIds}/><p class="study-footnote" data-highlight-notice hidden></p></section>}
+        {study.kind==='windows' && <div class="study-window-tools" data-window-tools hidden>
+          <a data-study-companion target="_blank" rel="noopener" href={routeURL(`studies/${study.id}/?view=record`)}>Open the record in another tab ↗</a>
+          <label>View <select data-window-view><option value="both">Both viewpoints</option><option value="place">The place</option><option value="record">The record</option></select></label>
+          <p class="study-footnote" role="status" data-window-status>Both viewpoints are available here.</p>
+        </div>}
+        {study.kind==='audio' && <div class="study-sound" data-study-audio data-narration-src={assetURL(narration.file)}>
+          <div class="study-controls" data-sound-controls hidden><button type="button" data-sound-play>Start sound</button><button type="button" class="btn-secondary" data-sound-pause>Pause sound</button><button type="button" class="btn-secondary" data-sound-softer>Quieter</button><button type="button" class="btn-secondary" data-sound-louder>Louder</button></div>
+          <p role="status" data-sound-status>Sound is off. No audio downloads before you start it.</p>
+          <p class="study-footnote">Synthesized macOS Samantha narration and designed ambience. Listening, pronunciation and distribution-rights reviews remain pending. Calm view keeps narration and removes ambience.</p>
+        </div>}
+        <div class="study-frames" data-study-frames-container>
+          {study.frames.map(f=><section id={`frame-${f.id}`} class="study-frame" data-study-frame={f.id} data-label={f.label} data-highlight={f.highlight} data-focus-ids={f.focusIds?.join(' ')} data-audio-perspective={f.audioPerspective} data-ambience-src={f.ambienceId ? assetURL(media.ambience.find(a=>a.id===f.ambienceId)!.file):undefined}>
+            {f.period && <p class="eyebrow">{f.period}</p>}
+            {f.path && <ol class="study-path" aria-label="Interpretive relationship">{f.path.map((step,i)=><li>{i>0 && <span class="study-path-arrow" aria-hidden="true">→</span>}<span>{step}</span></li>)}</ol>}
+            <div class:list={['study-account',{'study-paired':!!f.pair}]}>
+              <div data-window-pane="place"><p class="eyebrow">{study.role}{f.pair?' · The place':''}</p><h2>{f.title}</h2>{f.highlight && <div class="study-excerpt"><p>Passage under examination</p><blockquote>{f.highlight}</blockquote></div>}<p>{f.body}</p><p class="study-qualification">{f.qualification}</p><ClaimLinks ids={f.claimIds}/></div>
+              {f.pair && <div data-window-pane="record"><p class="eyebrow">Tour explanation · The record</p><h2>{f.pair.title}</h2><p>{f.pair.body}</p><p class="study-qualification">{f.pair.qualification}</p><ClaimLinks ids={f.pair.claimIds}/></div>}
+            </div>
+            {f.afterword && <aside class="study-afterword"><h3>A note on returning</h3><p>{f.afterword}</p></aside>}
+            {f.timeline && <ol class="study-timeline" aria-label={`${f.title} — selected moments, spacing not to scale`}>{f.timeline.map(t=><li><p class="eyebrow">{t.period}</p><h3>{t.title}</h3><p>{t.body}</p><ClaimLinks ids={t.claimIds}/></li>)}</ol>}
+          </section>)}
+        </div>
+        {study.kind==='audio' && passage && <details class="study-transcript" open><summary>Complete narration transcript</summary><p>{passage.text}</p><ClaimLinks ids={passage.claimIds}/></details>}
+      </div>
+    </div>
+    <footer class="study-bottom"><p>Presentation study · Evidence remains qualified · No historical outcome changes</p><div class="study-navigation"><a href={routeURL('studies/')}>Compare all studies</a><a href={routeURL(`studies/${next.id}/`)}>Next: {next.title} →</a></div></footer>
+  </article>
+</Layout>
+<script>import {initStudy} from '../../scripts/studies'; initStudy();</script>

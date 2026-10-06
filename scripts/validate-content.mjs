@@ -4,6 +4,7 @@ import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import { schemas } from './content-schema.mjs';
+import {studyClaimIds,validateStudyReferences} from './study-schema.mjs';
 export const sha256=value=>crypto.createHash('sha256').update(value).digest('hex');
 export const normalizeTranscript=value=>value.normalize('NFC').replace(/\r\n?/g,'\n').trim();
 export function loadCatalog(root=process.cwd()) {
@@ -17,6 +18,7 @@ export function validateCatalog(input,{root=process.cwd(),production=false,asset
   else data[key]=result.data;
  }
  if(errors.length) return {errors,gates};
+ errors.push(...validateStudyReferences(data.studies,data));
  const maps={};
  const uniqueArrays=(v,trail='catalog')=>{if(Array.isArray(v)){if(v.every(x=>typeof x==='string')&&new Set(v).size!==v.length)errors.push(`${trail}: duplicate values`);v.forEach((x,i)=>uniqueArrays(x,`${trail}.${i}`));}else if(v&&typeof v==='object')for(const [k,x]of Object.entries(v))uniqueArrays(x,`${trail}.${k}`);};
  uniqueArrays(data);
@@ -71,6 +73,7 @@ export function validateCatalog(input,{root=process.cwd(),production=false,asset
  for(const c of data.corrections) refs(c.id,'claimIds',c.claimIds,'claims');
  // Every claim and source must be reachable from visitor-facing content; unused records rot silently.
  const usedClaims=new Set([...data.stops.flatMap(s=>Object.values(s.blocks).flatMap(b=>b.claimIds)),...data.evidence.flatMap(e=>e.claimIds),...data.presenters.flatMap(p=>p.items.flatMap(i=>i.claimIds)),...data.people.flatMap(p=>p.supportingClaimIds),...data.relationships.flatMap(r=>r.premiseClaims),...data.metagames.flatMap(m=>m.premiseClaims),...data.edition.prologue.premiseClaimIds,...data.edition.epilogue.premiseClaimIds]);
+ for(const id of studyClaimIds(data.studies)) usedClaims.add(id);
  for(const c of data.claims) if(!usedClaims.has(c.id)) errors.push(`${c.id}: claim is not cited by any visitor-facing content`);
  const usedSources=new Set([...data.claims.flatMap(c=>c.sourceIds),...data.evidence.flatMap(e=>e.sourceLocators.map(r=>r.sourceId)),...data.locations.flatMap(l=>[l.supportingSourceId,...(l.leadSourceIds??[])]),...data.media.scenes.flatMap(s=>s.referenceSourceIds)]);
  for(const s of data.sources) if(!usedSources.has(s.id)) errors.push(`${s.id}: source is not cited by any claim, evidence item, location or scene`);

@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import {studySchema} from './study-schema.mjs';
 const text=z.string().trim().min(1);
 const id=text.regex(/^[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/);
 const ids=Object.assign(z.array(id).min(1).refine(v=>new Set(v).size===v.length,'IDs must be unique'),{length:n=>z.array(id).length(n).refine(v=>new Set(v).size===v.length,'IDs must be unique')});
@@ -14,6 +15,7 @@ const bookend=z.object({title:text,summary:text,paragraphs:z.array(text).min(1),
 const review=z.object({id,audioDigest:digest,transcriptDigest:digest.nullable(),reviewedRevision:text.nullable(),reviewDate:date.nullable(),reviewer:person.nullable(),listeningReviewStatus:z.enum(['pending','passed','failed']),reviewNotes:text});
 const audio=z.object({id,file,durationSeconds:z.number().positive().max(900),audioDigest:digest,rightsBasis:text,masterFile:text.regex(/^production\/audio\/[a-z0-9-]+\.(aiff|wav)$/).nullable(),masterDigest:digest.nullable(),rightsStatus:z.enum(['pending','approved']).default('pending')});
 export const schemas={
+ studies:studySchema,
  'map-river':z.object({bounds:z.object({west:z.literal(-93.102),east:z.literal(-93.082),south:z.literal(44.934),north:z.literal(44.947)}),rings:z.array(z.array(z.tuple([z.number().min(-93.102).max(-93.082),z.number().min(44.934).max(44.947)])).min(4).refine(r=>JSON.stringify(r[0])===JSON.stringify(r[r.length-1]),'Ring must be closed')).min(1)}),
  geography:z.object({status:z.enum(['pending','reviewed']),reviewer:person.nullable(),reviewDate:date.nullable(),baseSourceUrl:url.nullable(),reuseBasis:text.nullable(),reuseSourceUrl:url,sourceQuery:url,nameQuery:url,sourceFile:z.literal('production/geography/usgs-nhd-area.geojson'),sourceDigest:digest,baseFile:z.literal('src/data/map-river.json'),baseDigest:digest,notes:text}),
  edition:z.object({id,title:text,subtitle:text,tagline:text,contentRevision:text,presentationRevision:text,historicalCheckDate:date,contentNote:text,releaseStatus:z.enum(['preview','reviewed']),stops:ids.length(7),evidenceIds:ids,stopLabels:z.record(id,text),prologue:bookend,epilogue:bookend}),
