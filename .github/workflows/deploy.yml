@@ -15,7 +15,12 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Full CI (types, content gate, unit, browser/axe, subpath guard) must pass before anything is published.
+  verify:
+    uses: ./.github/workflows/ci.yml
+
   build:
+    needs: verify
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -40,16 +45,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Type and content checks
-        run: npm run check
-
-      - name: Run unit tests
-        run: npm run test:unit
-
       - name: Build site
         run: npm run build:preview
         env:
           ASTRO_SITE: ${{ steps.pages.outputs.origin }}
+          ASTRO_BASE: ${{ steps.pages.outputs.base_path }}
+
+      - name: Check base path in the built site
+        run: npm run check:base -- "${ASTRO_BASE:-/}"
+        env:
           ASTRO_BASE: ${{ steps.pages.outputs.base_path }}
 
       - name: Upload Pages artifact

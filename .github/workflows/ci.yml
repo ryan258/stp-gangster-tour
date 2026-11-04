@@ -3,7 +3,8 @@ name: CI
 on:
   pull_request:
   push:
-    branches-ignore: [main] # pushes to main run the deploy workflow's own checks
+    branches-ignore: [main] # pushes to main run this same job through deploy.yml
+  workflow_call:
   workflow_dispatch:
 
 jobs:
@@ -27,3 +28,11 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Browser and accessibility tests
         run: npm run test:browser
+      # The browser tests above run at the origin root; Pages serves a subpath, so build that way too.
+      - name: Subpath build guard
+        env:
+          ASTRO_BASE: /${{ github.event.repository.name }}
+          ASTRO_SITE: https://${{ github.repository_owner }}.github.io
+        run: |
+          npm run build:preview
+          npm run check:base -- "$ASTRO_BASE"
