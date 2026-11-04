@@ -6,7 +6,7 @@ const {scene} = Astro.props;
 const pop = popUpLayers(scene)!;
 const box = `0 0 ${scene.width} ${scene.height}`;
 ---
-<div class="popup">
+<div class="popup" style={`--fx:${pop.focus.x}%;--fy:${pop.focus.y}%;--glow-hi:${pop.glow[0]};--glow-lo:${pop.glow[1]}`}>
 <figure class="popup-pin">
  <div class="popup-stage" role="img" aria-label={scene.description} style={`aspect-ratio: ${scene.width} / ${scene.height}`}>
   <svg class="popup-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs set:html={pop.defs}/></svg>
