@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import ExperienceHero from '../components/ExperienceHero.astro';
 import {claims, sources, evidence, corrections, routeURL} from '../lib/catalog';
+import {release} from '../lib/release';
+const recordsPending = release.imageProvenance || release.imageRights || release.audioRights || release.sceneRights;
 const count = (key: 'status' | 'evidenceBasis') => Object.entries(claims.reduce<Record<string, number>>((a, c) => ({...a, [c[key]]: (a[c[key]] ?? 0) + 1}), {}));
 const types = Object.entries(sources.reduce<Record<string, number>>((a, s) => ({...a, [s.sourceType]: (a[s.sourceType] ?? 0) + 1}), {}));
 const single = claims.filter(c => c.sourceIds.length === 1).length;
@@ -34,7 +36,7 @@ const single = claims.filter(c => c.sourceIds.length === 1).length;
           <p>Reviews of listening, image provenance, distribution rights and final editorial judgment are human acts. A review record names a person, a date and the content revision; an automated tool is never recorded as a reviewer.</p>
         </section>
         <section id="media"><p class="eyebrow">Media</p><h2>Art and voice</h2>
-          <p>Illustrations are atmospheric and labelled as such; they are not archival photographs or authenticated likenesses. Narration is synthesized speech, and ambience is synthesized noise rather than a field recording. Provenance and distribution rights for each file are listed under <a href={routeURL('/sources/#credits')}>Credits</a> and remain pending until the owner records them.</p>
+          <p>Illustrations are atmospheric and labelled as such; they are not archival photographs or authenticated likenesses. Narration is synthesized speech, and ambience is synthesized noise rather than a field recording. Provenance and distribution rights for each file are listed under <a href={routeURL('/sources/#credits')}>Credits</a>{recordsPending ? ' and remain pending until the owner records them.' : '.'}</p>
         </section>
         <section id="corrections"><p class="eyebrow">Corrections</p><h2>When something changes</h2>
           <p>Wording corrections are logged with the claims they affect — {corrections.length} so far, in the <a href={routeURL('/sources/#edition-status')}>corrections log</a>. Every claim in the ledger has a link to suggest a correction with a source and locator.</p>

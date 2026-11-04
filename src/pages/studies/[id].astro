@@ -4,6 +4,7 @@ import ArtImage from '../../components/ArtImage.astro';
 import ClaimLinks from '../../components/ClaimLinks.astro';
 import {studies,type Study} from '../../lib/studies';
 import {stops,media,edition,routeURL,stopURL,assetURL} from '../../lib/catalog';
+import {release,listeningPending} from '../../lib/release';
 import '../../styles/studies.scss';
 export function getStaticPaths() { return studies.map(study=>({params:{id:study.id},props:{study}})); }
 const {study}=Astro.props as {study:Study};
@@ -12,6 +13,7 @@ const next=studies[(index+1)%studies.length];
 const stop=stops.find(s=>s.id===study.stopId)!;
 const passage=study.passage && stops.find(s=>s.id===study.passage!.stopId)!.blocks[study.passage.block];
 const narration=media.narration.find(n=>n.stopId===study.stopId)!;
+const audioPending=[listeningPending(narration.id)&&'Listening and pronunciation review pending.',release.audioRights&&'Distribution-rights review pending.'].filter(Boolean).join(' ');
 ---
 <Layout title={`${study.title} — Study ${index+1}`} description={study.subtitle}>
   <article class="study-shell" data-study={study.id} data-kind={study.kind} data-revision={edition.contentRevision}>
@@ -43,7 +45,7 @@ const narration=media.narration.find(n=>n.stopId===study.stopId)!;
         {study.kind==='audio' && <div class="study-sound" data-study-audio data-narration-src={assetURL(narration.file)}>
           <div class="study-controls" data-sound-controls hidden><button type="button" data-sound-play>Start sound</button><button type="button" class="btn-secondary" data-sound-pause>Pause sound</button><button type="button" class="btn-secondary" data-sound-softer>Quieter</button><button type="button" class="btn-secondary" data-sound-louder>Louder</button></div>
           <p role="status" data-sound-status>Sound is off. No audio downloads before you start it.</p>
-          <p class="study-footnote">Synthesized macOS Samantha narration and designed ambience. Listening, pronunciation and distribution-rights reviews remain pending. Calm view keeps narration and removes ambience.</p>
+          <p class="study-footnote">Narration: {narration.voice}, with designed ambience.{audioPending&&` ${audioPending}`} Calm view keeps narration and removes ambience.</p>
         </div>}
         <div class="study-frames" data-study-frames-container>
           {study.frames.map(f=><section id={`frame-${f.id}`} class="study-frame" data-study-frame={f.id} data-label={f.label} data-highlight={f.highlight} data-focus-ids={f.focusIds?.join(' ')} data-audio-perspective={f.audioPerspective} data-ambience-src={f.ambienceId ? assetURL(media.ambience.find(a=>a.id===f.ambienceId)!.file):undefined}>

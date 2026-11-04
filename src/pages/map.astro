@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SvgMap from '../components/SvgMap.astro';
 import {routeURL} from '../lib/catalog';
+import {count,placedCount,unplacedSentence} from '../lib/release';
 import ArtImage from '../components/ArtImage.astro';
 import '../styles/map.scss';
 ---
@@ -14,7 +15,7 @@ import '../styles/map.scss';
           <p class="eyebrow">Places and uncertainty</p>
           <h1>Map and places</h1>
           <p class="lede">A city of refuge. A record of consequences.</p>
-          <p class="map-intro-copy">Explore the places behind seven chapters of Saint Paul’s history. Three approximate venue positions sit beside a sourced modern river; four chapters remain unplaced.</p>
+          <p class="map-intro-copy">Explore the places behind seven chapters of Saint Paul’s history. {count(placedCount)} approximate venue {placedCount === 1 ? 'position sits' : 'positions sit'} beside a sourced modern river; {unplacedSentence.toLowerCase()}.</p>
           <div class="map-hero-links">
             <a href="#directory">Explore the seven stops <span aria-hidden="true">↓</span></a>
             <a data-resume hidden href={routeURL('/map/')}>Resume reading <span aria-hidden="true">→</span></a>

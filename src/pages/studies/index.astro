@@ -3,7 +3,9 @@ import Layout from '../../layouts/Layout.astro';
 import ArtImage from '../../components/ArtImage.astro';
 import {studies} from '../../lib/studies';
 import {routeURL,edition} from '../../lib/catalog';
+import {release,list} from '../../lib/release';
 import '../../styles/studies.scss';
+const open=[release.preview&&'editorial',(release.imageProvenance||release.imageRights)&&'image',release.listening&&'listening'].filter((x):x is string=>!!x);
 ---
 <Layout title="Storytelling studies" description="Six small experiments in reading, perspective, sound and time.">
   <div class="studies-index study-shell" data-study-index data-revision={edition.contentRevision}>
@@ -11,7 +13,7 @@ import '../../styles/studies.scss';
       <p class="eyebrow">Saint Paul After Dark · The studies</p>
       <h1>Six ways<br/>into a story.</h1>
       <p class="lede">Change a question. Put two accounts together. Return to the same words with something else in mind.</p>
-      <p>Each study tries one form using the tour’s existing evidence. Start anywhere, stay briefly, and return later. These are experiments in presentation; editorial, image and listening reviews remain open.</p>
+      <p>Each study tries one form using the tour’s existing evidence. Start anywhere, stay briefly, and return later. These are experiments in presentation{open.length>0&&`; ${list(open)} reviews remain open`}.</p>
     </header>
     <ol class="study-grid">
       {studies.map((study,index) => <li class="study-card" data-study-card={study.id}>

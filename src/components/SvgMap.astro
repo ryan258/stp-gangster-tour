@@ -1,5 +1,6 @@
 ---
 import {stops,locations,stopURL,routeURL} from '../lib/catalog';
+import {count,placedCount,unplacedSentence} from '../lib/release';
 import ArtImage from './ArtImage.astro';
 import river from '../data/map-river.json';
 import geography from '../data/geography.json';
@@ -25,8 +26,8 @@ const y=(lat:number)=>60+(44.947-lat)*40000;
     </div>
     <div class="map-drawing">
       <svg class="venue-map" viewBox="0 0 640 570" role="img" aria-labelledby="map-title" aria-describedby="map-desc">
-        <title id="map-title">The Mississippi River and three approximate venue positions in Saint Paul</title>
-        <desc id="map-desc">North is up. Stop 7, Landmark Center, and stop 2, the Saint Paul Hotel, are close together northwest of stop 3, the Wabasha Street Caves. Four other stops remain unplaced. The modern river layer supplies geographic context. Historical shorelines and street routes are not asserted. Use the venue links beside the map or the directory below for full qualifications.</desc>
+        <title id="map-title">The Mississippi River and {count(placedCount).toLowerCase()} approximate venue {placedCount === 1 ? 'position' : 'positions'} in Saint Paul</title>
+        <desc id="map-desc">North is up. Stop 7, Landmark Center, and stop 2, the Saint Paul Hotel, are close together northwest of stop 3, the Wabasha Street Caves. {unplacedSentence}. The modern river layer supplies geographic context. Historical shorelines and street routes are not asserted. Use the venue links beside the map or the directory below for full qualifications.</desc>
         <defs>
           <pattern id="map-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#b8a88a" stroke-opacity=".12" stroke-width=".7"/></pattern>
           <linearGradient id="river-fill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#365966"/><stop offset="1" stop-color="#1d343e"/></linearGradient>
@@ -44,7 +45,7 @@ const y=(lat:number)=>60+(44.947-lat)*40000;
       <span class="map-drawing-caption">Geographic context · no travel route</span>
     </div>
     <div class="map-key">
-      <p class="map-key-heading">Three places on the map</p>
+      <p class="map-key-heading">{count(placedCount)} {placedCount === 1 ? 'place' : 'places'} on the map</p>
       <ol class="map-venue-links" aria-label="Plotted venues">
         {placed.map(l=>{const stop=stops.find(s=>s.locationId===l.id)!;return <li><a href={`#location-${l.id}`}><span class="venue-key-number" aria-hidden="true">{stop.order}</span><span><strong>{l.currentName}</strong><small>Stop {stop.order} · approximate area</small></span><span aria-hidden="true">↗</span></a></li>;})}
       </ol>
@@ -59,7 +60,7 @@ const y=(lat:number)=>60+(44.947-lat)*40000;
     <div><p class="eyebrow">Open the city’s case file</p><h2 id="directory-heading">The seven-stop directory</h2></div>
     <p class="directory-aside">Every chapter a different corner<br/>of a darker Saint Paul.</p>
   </header>
-  <p class="directory-intro">Every chapter can be read at home. Three venue positions are shown approximately from published geographic records. Four chapters remain unplaced. An address does not establish an exact historical event footprint.</p>
+  <p class="directory-intro">Every chapter can be read at home. {count(placedCount)} venue {placedCount === 1 ? 'position is' : 'positions are'} shown approximately from published geographic records. {unplacedSentence}. An address does not establish an exact historical event footprint.</p>
   <p class="directory-art-note">Chapter images are atmospheric illustrations, not documentary photographs.</p>
   <ol class="location-list" role="list">
     {stops.map(s=>{const l=locations.find(l=>l.id===s.locationId);if(!l)return null;return <li id={`location-${l.id}`} class="location-card">
@@ -74,7 +75,7 @@ const y=(lat:number)=>60+(44.947-lat)*40000;
           <a href={routeURL(`/sources/#source-${l.supportingSourceId}`)}>Historical source {l.supportingSourceId} <span aria-hidden="true">↗</span></a>
           <details class="location-details"><summary>Location notes <span class="sr-only">for {s.title}</span></summary><div class="location-details-content">
             <p>{l.qualification}</p>
-            {l.coordinates&&<p><a href={l.coordinates.sourceUrl}>Coordinate source</a>, checked {l.coordinates.checkedDate}. {l.coordinates.method} Structured Wikimedia place coordinates are available under CC0; no source photograph is reproduced.</p>}
+            {l.coordinates&&<p><a href={l.coordinates.sourceUrl}>Coordinate source</a>, checked {l.coordinates.checkedDate}. {l.coordinates.method}{new URL(l.coordinates.sourceUrl).hostname.endsWith('wikimedia.org') && ' Structured Wikimedia place coordinates are available under CC0; no source photograph is reproduced.'}</p>}
             {l.currentCheck&&<p>Address/access note checked {l.currentCheck.date}: {l.currentCheck.note} <a href={l.currentCheck.url}>Current venue source</a></p>}
             <p>Historical source {l.supportingSourceId} — {l.supportingLocator}</p>
           </div></details>

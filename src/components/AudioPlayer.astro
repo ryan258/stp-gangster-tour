@@ -2,13 +2,15 @@
 interface Props {
   audioSrc: string;
   ambienceSrc: string;
+  voice: string;
+  listeningPending: boolean;
 }
-const {audioSrc, ambienceSrc} = Astro.props;
+const {audioSrc, ambienceSrc, voice, listeningPending} = Astro.props;
 ---
 
 <section class="audio-player audio-player-panel card" aria-label="Introduction audio" data-audio-player data-narration-src={audioSrc} data-ambience-src={ambienceSrc}>
  <h2>Listen to the introduction</h2>
- <p class="muted">Synthesized macOS Samantha voice. Listening and pronunciation review pending. The complete transcript is the introduction text on this page.</p>
+ <p class="muted">Voice: {voice}.{listeningPending && ' Listening and pronunciation review pending.'} The complete transcript is the introduction text on this page.</p>
  <div data-audio-controls hidden>
   <div class="controls">
    <button id="btn-audio-play" type="button">Play narration</button>
