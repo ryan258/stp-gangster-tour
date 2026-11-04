@@ -1,0 +1,7 @@
+---
+import {segments} from '../lib/board';
+// A paragraph's text with its linked phrases wrapped. Plain, inert text without JavaScript; src/scripts/story.ts upgrades the spans to buttons.
+interface Props {text: string; markers: {phrase: string; actor: string}[]}
+const {text, markers} = Astro.props;
+---
+{segments(text, markers).map(part => part.actor ? <span class="text-marker" data-marker-actor={part.actor}>{part.text}</span> : part.text)}

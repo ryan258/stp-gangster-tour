@@ -64,6 +64,23 @@ export function validateCatalog(input,{root=process.cwd(),production=false,asset
  for(const p of data.people) {refs(p.id,'supportingClaimIds',p.supportingClaimIds,'claims');refs(p.id,'relatedStopIds',p.relatedStopIds,'stops');}
  for(const r of data.relationships) {refs('relationship','people',[r.fromId,r.toId],'people');refs('relationship','premiseClaims',r.premiseClaims,'claims');if(r.fromId===r.toId) errors.push('relationship: self edge');}
  for(const m of data.metagames) {refs(m.id,'owningStop',[m.owningStop],'stops');refs(m.id,'premiseClaims',m.premiseClaims,'claims');}
+ const boarded=new Set();
+ for(const b of data.board) {
+  const stop=maps.stops.get(b.stopId),mg=data.metagames.find(m=>m.owningStop===b.stopId);
+  if(!stop||!mg) {errors.push(`board ${b.stopId}: unknown stop or no metagame`);continue;}
+  if(boarded.has(b.stopId)) errors.push(`board ${b.stopId}: duplicate`);boarded.add(b.stopId);
+  const actors=new Set(mg.actors.map(a=>a.name));
+  if(new Set(b.beats.map(x=>x.block)).size!==3) errors.push(`board ${b.stopId}: needs exactly one beat per block`);
+  for(const beat of b.beats) for(const a of beat.actors) if(!actors.has(a)) errors.push(`board ${b.stopId}: beat ${beat.block} names unknown actor "${a}"`);
+  const spans=[];
+  for(const mk of b.markers) {
+   if(!actors.has(mk.actor)) errors.push(`board ${b.stopId}: marker names unknown actor "${mk.actor}"`);
+   const text=stop.blocks[mk.block].text,at=text.indexOf(mk.phrase);
+   if(at<0||text.indexOf(mk.phrase,at+1)>=0) {errors.push(`board ${b.stopId}: marker "${mk.phrase}" must appear exactly once in ${mk.block}`);continue;}
+   if(spans.some(s=>s.block===mk.block&&at<s.end&&at+mk.phrase.length>s.start)) errors.push(`board ${b.stopId}: marker "${mk.phrase}" overlaps another marker`);
+   spans.push({block:mk.block,start:at,end:at+mk.phrase.length});
+  }
+ }
  for(const p of data.presenters) for(const x of p.items) {refs(p.stopId,'claimIds',x.claimIds,'claims');refs(p.stopId,'evidenceId',[x.evidenceId],'evidence');if(maps.evidence.get(x.evidenceId)?.stopId!==p.stopId) errors.push(`${p.stopId}: presenter evidence owner mismatch`);}
  for(const l of data.locations) {
   refs(l.id,'stopId',[l.stopId],'stops');refs(l.id,'supportingSourceId',[l.supportingSourceId],'sources');refs(l.id,'leadSourceIds',l.leadSourceIds??[],'sources');

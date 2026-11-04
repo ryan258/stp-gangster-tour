@@ -1,0 +1,30 @@
+---
+import {fieldLabels, type BoardField, type BlockId} from '../lib/board';
+// "Who acts, who benefits, who pays": the chapter's metagame record laid out beside the reading.
+// Complete as stacked text without JavaScript; src/scripts/story.ts pins it on wide screens, steps through the beats as the
+// reader scrolls, and turns an actor into a "find in text" button when the prose points at that actor.
+interface Props {
+  metagame: Record<BoardField, string>;
+  actors: {name: string; role: string; isDocumented: boolean}[];
+  beats: {block: BlockId; label: string; actors: string[]; fields: BoardField[]}[];
+}
+const {metagame, actors, beats} = Astro.props;
+---
+<aside class="actor-board" data-board aria-labelledby="board-title">
+ <h2 id="board-title">Who acts, who benefits, who pays</h2>
+ <p class="board-kicker">Tour explanation · Interpretation</p>
+ <ul class="board-actors" aria-label="Actors in this chapter">
+  {actors.map(actor => <li class="board-actor" data-actor={actor.name} data-documented={String(actor.isDocumented)}>
+   <div class="board-actor-body">
+    <span class="board-dot" aria-hidden="true"></span>
+    <span class="board-actor-copy"><strong>{actor.name}</strong><span class="board-role">{actor.role}</span><span class="board-kind">{actor.isDocumented ? 'Documented' : 'Analytical perspective'}</span></span>
+   </div>
+  </li>)}
+ </ul>
+ <div class="board-beats">
+  {beats.map(beat => <section class="board-beat" data-beat={beat.block} data-actors={JSON.stringify(beat.actors)} aria-label={beat.label}>
+   <h3>{beat.label}</h3>
+   <dl>{beat.fields.map(field => <div class={`board-field board-field-${field}`}><dt>{fieldLabels[field]}</dt><dd>{metagame[field]}</dd></div>)}</dl>
+  </section>)}
+ </div>
+</aside>

@@ -1,0 +1,126 @@
+[
+  {
+    "stopId": "the-arrangement",
+    "beats": [
+      {"block": "intro", "label": "The intermediary", "actors": ["Police leadership and intermediaries"], "fields": ["aims"]},
+      {"block": "record", "label": "How it held", "actors": ["Police leadership and intermediaries", "Visiting criminals"], "fields": ["observedResponse"]},
+      {"block": "metagame", "label": "Who bore the cost", "actors": ["People harmed outside the city"], "fields": ["expectedBenefit", "bearingCosts", "evidentiaryLimit"]}
+    ],
+    "markers": [
+      {"block": "intro", "phrase": "Dan Hogan succeeded him", "actor": "Police leadership and intermediaries"},
+      {"block": "intro", "phrase": "a place associated with someone who could connect one world with another", "actor": "Police leadership and intermediaries"},
+      {"block": "record", "phrase": "criminals helping preserve the arrangement by pressuring peers to comply", "actor": "Visiting criminals"},
+      {"block": "record", "phrase": "retirement in 1920 did not immediately end the system", "actor": "Police leadership and intermediaries"},
+      {"block": "metagame", "phrase": "A criminal hoping to return had a reason to respect local limits", "actor": "Visiting criminals"},
+      {"block": "metagame", "phrase": "an official receiving money had a reason to preserve a paying relationship", "actor": "Police leadership and intermediaries"},
+      {"block": "metagame", "phrase": "victims elsewhere had not agreed to finance local calm", "actor": "People harmed outside the city"}
+    ]
+  },
+  {
+    "stopId": "a-suite-above-the-street",
+    "beats": [
+      {"block": "intro", "label": "The suite and the record", "actors": ["Leon Gleckman", "Investigators and prosecutors"], "fields": ["aims"]},
+      {"block": "record", "label": "Two cases", "actors": ["Leon Gleckman", "Bernard Fuchs"], "fields": ["observedResponse"]},
+      {"block": "metagame", "label": "Who bore the cost", "actors": ["Leon Gleckman", "Bernard Fuchs"], "fields": ["expectedBenefit", "bearingCosts", "evidentiaryLimit"]}
+    ],
+    "markers": [
+      {"block": "intro", "phrase": "Leon Gleckman's headquarters in a suite", "actor": "Leon Gleckman"},
+      {"block": "intro", "phrase": "Treasury investigator Mike Malone watching him", "actor": "Investigators and prosecutors"},
+      {"block": "intro", "phrase": "he had been acquitted on the 1931 count", "actor": "Leon Gleckman"},
+      {"block": "record", "phrase": "Investigators and accountants had to address loans, capital, and other explanations", "actor": "Investigators and prosecutors"},
+      {"block": "record", "phrase": "criminal-contempt convictions involving efforts to influence jurors", "actor": "Leon Gleckman"},
+      {"block": "record", "phrase": "juror Bernard Fuchs receiving a promised $300 through intermediaries", "actor": "Bernard Fuchs"},
+      {"block": "metagame", "phrase": "Fuchs received benefits", "actor": "Bernard Fuchs"},
+      {"block": "metagame", "phrase": "Gleckman sought favorable intervention", "actor": "Leon Gleckman"},
+      {"block": "metagame", "phrase": "the transactions and testimony supplied evidence against the effort", "actor": "Investigators and prosecutors"}
+    ]
+  },
+  {
+    "stopId": "under-the-bluff",
+    "beats": [
+      {"block": "intro", "label": "The venue", "actors": ["Club operators"], "fields": ["aims"]},
+      {"block": "record", "label": "The recollections", "actors": ["Later storytellers", "Patrons"], "fields": ["observedResponse"]},
+      {"block": "metagame", "label": "Who bore the cost", "actors": ["Later storytellers"], "fields": ["expectedBenefit", "bearingCosts", "evidentiaryLimit"]}
+    ],
+    "markers": [
+      {"block": "intro", "phrase": "Castle Royal, Inc., with restaurants, cafes, taverns, and nightclubs among its purposes", "actor": "Club operators"},
+      {"block": "intro", "phrase": "who sat at a table", "actor": "Patrons"},
+      {"block": "record", "phrase": "gangster attendance lacked proof", "actor": "Patrons"},
+      {"block": "record", "phrase": "conflicting recollections", "actor": "Later storytellers"},
+      {"block": "record", "phrase": "Claims that Dillinger or Ma Barker frequented Castle Royal", "actor": "Later storytellers"},
+      {"block": "metagame", "phrase": "Turning an unusual physical space into an attraction", "actor": "Club operators"},
+      {"block": "metagame", "phrase": "Famous names can make", "actor": "Later storytellers"}
+    ]
+  },
+  {
+    "stopId": "the-price-of-protection",
+    "beats": [
+      {"block": "intro", "label": "The demand", "actors": ["Captors", "Hamm and family"], "fields": ["aims"]},
+      {"block": "record", "label": "The record and its conflicts", "actors": ["Captors", "People relying on refuge"], "fields": ["observedResponse"]},
+      {"block": "metagame", "label": "Who bore the cost", "actors": ["Hamm and family", "People relying on refuge"], "fields": ["expectedBenefit", "bearingCosts", "evidentiaryLimit"]}
+    ],
+    "markers": [
+      {"block": "intro", "phrase": "William Hamm Jr. was kidnapped on June 15, 1933", "actor": "Hamm and family"},
+      {"block": "intro", "phrase": "held so that other people would pay for his return", "actor": "Captors"},
+      {"block": "record", "phrase": "identification of fingerprints on ransom material using silver nitrate", "actor": "Captors"},
+      {"block": "record", "phrase": "signs that the local-restraint premise was breaking down", "actor": "People relying on refuge"},
+      {"block": "metagame", "phrase": "A major ransom offered an immediate gain to its captors", "actor": "Captors"},
+      {"block": "metagame", "phrase": "a victim and family suffered directly", "actor": "Hamm and family"},
+      {"block": "metagame", "phrase": "scrutiny could threaten other people depending on refuge", "actor": "People relying on refuge"}
+    ]
+  },
+  {
+    "stopId": "the-deal-breaks",
+    "beats": [
+      {"block": "intro", "label": "The pressure", "actors": ["Captors", "Bremer and Magee"], "fields": ["aims"]},
+      {"block": "record", "label": "The response", "actors": ["Local and federal authorities", "Bremer and Magee"], "fields": ["observedResponse"]},
+      {"block": "metagame", "label": "Who bore the cost", "actors": ["Bremer and Magee"], "fields": ["expectedBenefit", "bearingCosts", "evidentiaryLimit"]}
+    ],
+    "markers": [
+      {"block": "intro", "phrase": "Edward Bremer was abducted", "actor": "Bremer and Magee"},
+      {"block": "intro", "phrase": "family friend Walter Magee", "actor": "Bremer and Magee"},
+      {"block": "intro", "phrase": "The captors demanded $200,000", "actor": "Captors"},
+      {"block": "record", "phrase": "immediate notification of local and federal authorities", "actor": "Local and federal authorities"},
+      {"block": "record", "phrase": "Harry Sawyer favored kidnapping Bremer", "actor": "Captors"},
+      {"block": "record", "phrase": "Bremer's release", "actor": "Bremer and Magee"},
+      {"block": "metagame", "phrase": "Demanding secrecy did not guarantee secrecy", "actor": "Captors"},
+      {"block": "metagame", "phrase": "Bremer and Magee were operating under coercion", "actor": "Bremer and Magee"}
+    ]
+  },
+  {
+    "stopId": "the-safe-house-fails",
+    "beats": [
+      {"block": "intro", "label": "The report", "actors": ["Building manager", "Dillinger and Frechette"], "fields": ["aims"]},
+      {"block": "record", "label": "The pursuit", "actors": ["Officers"], "fields": ["observedResponse"]},
+      {"block": "metagame", "label": "Who bore the cost", "actors": ["Building manager", "Officers"], "fields": ["expectedBenefit", "bearingCosts", "evidentiaryLimit"]}
+    ],
+    "markers": [
+      {"block": "intro", "phrase": "report about suspicious tenants", "actor": "Building manager"},
+      {"block": "intro", "phrase": "The tenants used the name Hellman", "actor": "Dillinger and Frechette"},
+      {"block": "intro", "phrase": "Dillinger escaped with a wound", "actor": "Dillinger and Frechette"},
+      {"block": "record", "phrase": "The FBI links its active pursuit", "actor": "Officers"},
+      {"block": "record", "phrase": "a particular officer had guaranteed this particular apartment protection", "actor": "Officers"},
+      {"block": "metagame", "phrase": "An alias works only while other people accept or cannot penetrate it", "actor": "Dillinger and Frechette"},
+      {"block": "metagame", "phrase": "justify inventing an informer reward", "actor": "Building manager"},
+      {"block": "metagame", "phrase": "Frechette belongs in this account as a named person", "actor": "Dillinger and Frechette"}
+    ]
+  },
+  {
+    "stopId": "on-the-record",
+    "beats": [
+      {"block": "intro", "label": "The courtroom", "actors": ["Courts and prosecutors"], "fields": ["aims"]},
+      {"block": "record", "label": "The reform", "actors": ["Municipal voters and reformers", "Police leadership"], "fields": ["observedResponse"]},
+      {"block": "metagame", "label": "What changed", "actors": ["Municipal voters and reformers", "Police leadership"], "fields": ["expectedBenefit", "bearingCosts", "evidentiaryLimit"]}
+    ],
+    "markers": [
+      {"block": "intro", "phrase": "conspiracy to harbor a fugitive, with a two-year sentence and a $1,000 fine", "actor": "Courts and prosecutors"},
+      {"block": "intro", "phrase": "the tax case and the later contempt case concerned different conduct", "actor": "Courts and prosecutors"},
+      {"block": "record", "phrase": "a 1935 wiretap investigation and disciplinary consequences", "actor": "Police leadership"},
+      {"block": "record", "phrase": "a charter amendment changing police-chief selection to June 15, 1936", "actor": "Municipal voters and reformers"},
+      {"block": "record", "phrase": "independent examination of candidates, a six-year term, and removal for cause", "actor": "Police leadership"},
+      {"block": "metagame", "phrase": "Evidence could damage secrecy", "actor": "Courts and prosecutors"},
+      {"block": "metagame", "phrase": "job protections could reduce one route for political pressure", "actor": "Police leadership"},
+      {"block": "metagame", "phrase": "A police history may emphasize professional reform", "actor": "Police leadership"}
+    ]
+  }
+]

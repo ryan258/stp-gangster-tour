@@ -30,7 +30,13 @@ describe('Content boundary regressions',()=>{
   ['evidence manifest drift',(d:any)=>d.edition.evidenceIds.reverse()],
   ['stop label drift',(d:any)=>{d.edition.stopLabels[d.stops[0].id]='Another title';}],
   ['unknown ambience bed',(d:any)=>{d.stops[0].ambienceId='ambience-missing';}],
-  ['image without catalog record fields',(d:any)=>{delete d.media.images[0].provenanceNote;}]
+  ['image without catalog record fields',(d:any)=>{delete d.media.images[0].provenanceNote;}],
+  ['board marker phrase missing from its block',(d:any)=>{d.board[0].markers[0].phrase='A sentence that is not there';}],
+  ['board marker phrase that is not unique',(d:any)=>{d.board[0].markers[0].phrase='the';}],
+  ['board beat naming an unknown actor',(d:any)=>{d.board[0].beats[0].actors=['Nobody'];}],
+  ['board marker naming an unknown actor',(d:any)=>{d.board[0].markers[0].actor='Nobody';}],
+  ['board for an unknown stop',(d:any)=>{d.board[0].stopId='missing';}],
+  ['board beats that repeat a block',(d:any)=>{d.board[0].beats[1].block='intro';}]
  ])('rejects %s',(_,mutate)=>{const d=structuredClone(baseline);mutate(d);expect(check(d).errors.length).toBeGreaterThan(0);});
  it('does not accept an automatic pass without reviewer/date/revision',()=>{const d=structuredClone(baseline);d['narration-reviews'].narration[0].listeningReviewStatus='passed';expect(check(d).gates.join('\n')).toContain('narr-the-arrangement: listening review pending/stale');});
  it('fails production on unresolved review obligations',()=>{expect(validateCatalog(baseline,{assets:false,production:true}).errors.some((e:string)=>e.startsWith('Release gate:'))).toBe(true);});
