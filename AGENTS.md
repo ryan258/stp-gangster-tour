@@ -1,16 +1,20 @@
 # Project rules — Saint Paul After Dark
 
-- **Owner-controlled actions:** never stage, commit, push, deploy or publish unless Ryan names that action. Ryan runs tests and `gitnexus analyze`; give him the command instead of running them.
+- **Owner-controlled actions:** never stage, commit, push, deploy or publish unless Ryan names that action. Ryan runs tests; give him the command instead of running them.
 - **Reviews are human acts:** no script or assistant may mark listening, rights, image-provenance, geography or editorial review complete. The schema rejects AI tool names as reviewers.
 - **Content lives in `src/data/*.json`**, validated by `scripts/content-schema.mjs` and `scripts/validate-content.mjs`. Every claim and source must be cited by visitor-facing content (orphans fail validation). Changing a stop introduction invalidates its narration digest; never regenerate audio implicitly.
 - **No third-party requests at runtime:** fonts are self-hosted; images go through `src/components/ArtImage.astro` and need a `media.images` record plus a `-640.webp` variant.
 - **Preview vs production:** `npm run build:preview` is permissive; `npm run build` must keep failing until every release gate is human-cleared.
 - **Verification commands:** `npm run check`, `npm run test:unit`, `npm run build:preview` then `npm run test:browser`; also `npm run links` (network) and `node scripts/measure-performance.mjs` (preview running).
 
+## Source change checks
+
+Trace affected imports, callers, routes, templates, and focused tests with native repository searches and source reads before editing. Keep unresolved references explicit and follow Ryan's current verification instructions. Staging, commits, pushes, deployment, and publication require his explicit delegation of that action.
+
 <!-- gitnexus:start -->
 # GitNexus — Code Intelligence
 
-This project is indexed by GitNexus as **stp-gangster-tour** (433 symbols, 1059 relationships, 24 execution flows).
+This project is indexed by GitNexus as **stp-gangster-tour** (675 symbols, 1601 relationships, 40 execution flows).
 
 > Index stale? Run `node .gitnexus/run.cjs analyze --index-only` from the project root — it auto-selects an available runner. No `.gitnexus/run.cjs` yet? Bootstrap with `npx`, `bunx`, or `pnpm dlx` — e.g. `bunx gitnexus@latest analyze` (npm 11 npx crash; #1939).
 

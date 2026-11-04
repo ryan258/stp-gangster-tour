@@ -9,6 +9,8 @@
 
 **Implementation divergence (2026-10-05):** the built visual design supersedes parts of R3. It uses atmospheric WebP artwork with Playfair Display, Cinzel and Caveat (self-hosted via Fontsource) beside Source Sans 3; the SVG scene studies are secondary. Operative design rules are in `docs/architecture.md`; constraints that still bind are self-hosted fonts, 16px metadata, 44px targets and no third-party requests.
 
+**Implementation divergence (2026-11-03):** the story and chapter pages use GSAP with ScrollTrigger (scrubbed image parallax, short entrances, a journey progress bar and the pop-up scenes), at Ryan's direction. This supersedes R3's "no parallax / no continuous animation" row and R12's "no animation library"; scrolling stays native (no ScrollSmoother or scroll interception). Calm view, reduced motion, forced colors and printing still turn every effect off and restore the static page, and the library is bundled locally.
+
 **Contract language:** “Must” and “shall” describe required behavior. “Target” describes a production goal to measure. Proposed copy and scene treatments may change without expanding the seven-stop scope. This is a specification, not evidence that the experience has been built, historically verified in full, or accepted by Ryan.
 
 Jump to [stop interactions](#r2-seven-locations-one-narrative), [art and audio](#r3-visual-and-sound-direction), [page behavior](#r4-pages-map-scenes-and-navigation), [technical foundation](#r12-technical-foundation-and-local-build-interface), [production readiness](#r13-editorial-production-assets-and-readiness), or [acceptance criteria](#acceptance-criteria-ears-style).
