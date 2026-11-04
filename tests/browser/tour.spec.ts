@@ -1,9 +1,10 @@
 import {test,expect} from '@playwright/test';
 import fs from 'node:fs';
 const edition = JSON.parse(fs.readFileSync(new URL('../../src/data/edition.json', import.meta.url), 'utf8'));
+const studies = JSON.parse(fs.readFileSync(new URL('../../src/data/studies.json', import.meta.url), 'utf8'));
 const stop=`/stops/${edition.stops[0]}/`,key='stp-after-dark:progress:v1';
 test('every route, local link and fragment resolves; illustrations load',async({page,request})=>{
- const routes=['/','/prologue/','/map/','/casebook/','/sources/','/method/','/epilogue/',...edition.stops.map((id:string)=>`/stops/${id}/`)];
+ const routes=['/','/prologue/','/map/','/casebook/','/sources/','/method/','/epilogue/','/studies/',...edition.stops.map((id:string)=>`/stops/${id}/`),...studies.map((s:{id:string})=>`/studies/${s.id}/`)];
  const documents=new Map<string,string>();for(const path of routes){const res=await request.get(path);expect(res.status(),path).toBe(200);documents.set(path,await res.text());}
  for(const path of routes){await page.goto(path);await expect(page.locator('h1')).toHaveCount(1);
   // Below-the-fold images are lazy-loaded; force them so completeness can be asserted.

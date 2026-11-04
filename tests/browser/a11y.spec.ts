@@ -2,7 +2,8 @@ import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import fs from 'node:fs';
 const edition=JSON.parse(fs.readFileSync(new URL('../../src/data/edition.json',import.meta.url),'utf8'));
-const routes=['/','/prologue/','/map/','/casebook/','/sources/','/method/','/epilogue/',...edition.stops.map((id:string)=>`/stops/${id}/`)];
+const studies=JSON.parse(fs.readFileSync(new URL('../../src/data/studies.json',import.meta.url),'utf8'));
+const routes=['/','/prologue/','/map/','/casebook/','/sources/','/method/','/epilogue/','/studies/',...edition.stops.map((id:string)=>`/stops/${id}/`),...studies.map((s:{id:string})=>`/studies/${s.id}/`)];
 for(const path of routes){
  test(`axe: no WCAG 2.x A/AA violations on ${path}`,async({page})=>{
   await page.goto(path);
