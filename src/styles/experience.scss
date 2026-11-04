@@ -46,6 +46,8 @@
 .archive-tabs a:last-child { border-right: 0; }
 .archive-tabs a span { color: #b89d76; font: 1.2rem Georgia, serif; }
 .archive-tabs a:hover { background: #b89d7610; color: #ffe5bd; }
+// The section being read (set by src/scripts/story.ts); an underline rather than colour alone, so it survives forced colors.
+.archive-tabs a[aria-current='location'] { background: #b89d7614; color: #ffe5bd; text-decoration: underline 3px #deaa76; text-underline-offset: .45em; }
 
 .bookend-layout { display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); gap: 5rem; padding-top: 1rem; align-items: start; }
 .bookend-prose, .chapter-prose { min-width: 0; }
