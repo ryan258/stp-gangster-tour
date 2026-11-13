@@ -1,0 +1,72 @@
+---
+import type {ComponentProps} from 'astro/types';
+import ClaimLinks from './ClaimLinks.astro';
+import LayeredScene from './LayeredScene.astro';
+import '../styles/visual-story.scss';
+
+interface Beat {
+  id: string;
+  image: string;
+  sprite: ComponentProps<typeof LayeredScene>['sprite'];
+  title: string;
+  caption: string;
+  href: string;
+  label: string;
+  alt: string;
+  nextHref: string;
+  nextLabel: string;
+  record: {text: string; claimIds: string[]};
+}
+
+interface Props {
+  beats: Beat[];
+}
+
+const {beats} = Astro.props;
+---
+
+<div class="visual-story" data-visual-story>
+  <div class="visual-story-stage" data-visual-stage aria-hidden="true"></div>
+  <div class="visual-story-track">
+    {beats.map(beat => (
+      <section
+        class="visual-beat"
+        id={`scene-${beat.id}`}
+        data-visual-beat={beat.id}
+        data-story-scene={beat.id}
+        aria-labelledby={`scene-title-${beat.id}`}
+      >
+        <div class="visual-beat-art" aria-hidden="true">
+          <LayeredScene image={beat.image} sprite={beat.sprite} fullBleed/>
+        </div>
+        <div class="visual-beat-panel" data-visual-caption>
+          <p class="visual-beat-label">{beat.label}</p>
+          <h2 id={`scene-title-${beat.id}`}>{beat.title}</h2>
+          <p class="visual-beat-caption">{beat.caption}</p>
+          <p class="sr-only">Illustration. {beat.alt}</p>
+          <a class="visual-beat-link" href={beat.href}>
+            {beat.id === 'under-the-bluff' ? 'Experience the scene' : 'Read the full chapter'} <span aria-hidden="true">↗</span><span class="sr-only">: {beat.title}</span>
+          </a>
+          <a class="visual-beat-next" href={beat.nextHref}>{beat.nextLabel} <span aria-hidden="true">↓</span></a>
+          <details class="visual-beat-record">
+            <summary>Compare with the record</summary>
+            <div class="visual-beat-record-copy">
+              <p>{beat.record.text}</p>
+              <ClaimLinks ids={beat.record.claimIds} from={beat.id}/>
+              <a href={`${beat.href}#evidence`}>Open the chapter’s evidence <span aria-hidden="true">↗</span></a>
+            </div>
+          </details>
+        </div>
+        <p class="visual-beat-credit">AI-generated illustration</p>
+      </section>
+    ))}
+  </div>
+</div>
+
+<script>
+  import {initVisualStory} from '../scripts/visual-story';
+
+  for (const story of document.querySelectorAll<HTMLElement>('[data-visual-story]')) {
+    initVisualStory(story);
+  }
+</script>

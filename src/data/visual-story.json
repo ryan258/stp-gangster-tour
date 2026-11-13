@@ -1,0 +1,37 @@
+{
+  "the-arrangement": {
+    "caption": "Refuge cost money and required keeping major crimes outside Saint Paul.",
+    "claimIds": ["C02"],
+    "sprite": {"x": 25, "y": 42, "width": 22, "travelX": 22, "travelY": 3, "columns": 3, "rows": 3}
+  },
+  "a-suite-above-the-street": {
+    "caption": "Bank records helped build the tax case against Leon Gleckman.",
+    "claimIds": ["C08"],
+    "sprite": {"x": 35, "y": 37, "width": 34, "columns": 3, "rows": 3}
+  },
+  "under-the-bluff": {
+    "caption": "An empty chair at Castle Royal. Who sat here?",
+    "claimIds": ["C13", "C14"],
+    "sprite": {"x": 44, "y": 45, "width": 26, "travelX": 8, "travelY": 4, "columns": 3, "rows": 3}
+  },
+  "the-price-of-protection": {
+    "caption": "Investigators found fingerprints on William Hamm Jr.’s ransom letters.",
+    "claimIds": ["C15", "C17"],
+    "sprite": {"x": 37, "y": 23, "width": 30, "blend": "multiply", "columns": 3, "rows": 3}
+  },
+  "the-deal-breaks": {
+    "caption": "Bremer’s family and a friend alerted authorities despite his captors’ threats.",
+    "claimIds": ["C20", "C21"],
+    "sprite": {"x": 34, "y": 22, "width": 41, "columns": 3, "rows": 3}
+  },
+  "the-safe-house-fails": {
+    "caption": "An apartment manager’s tip led to a confrontation at Dillinger’s hideout.",
+    "claimIds": ["C24"],
+    "sprite": {"x": 33, "y": 13, "width": 42, "columns": 3, "rows": 3}
+  },
+  "on-the-record": {
+    "caption": "Evelyn Frechette was convicted of conspiracy to harbor a fugitive.",
+    "claimIds": ["C25"],
+    "sprite": {"x": 37, "y": 31, "width": 35, "columns": 3, "rows": 3}
+  }
+}

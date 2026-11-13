@@ -1,0 +1,171 @@
+---
+import ArtImage from './ArtImage.astro';
+import {assetURL, imageRecord} from '../lib/catalog';
+
+interface Props {
+  image: string;
+  sprite: {
+    image: string;
+    flow?: string;
+    x: number;
+    y: number;
+    width: number;
+    travelX?: number;
+    travelY?: number;
+    blend?: 'multiply';
+    columns?: number;
+    rows?: number;
+    frameCount?: number;
+  };
+  eager?: boolean;
+  fullBleed?: boolean;
+}
+
+const {image, sprite, eager = false, fullBleed = false} = Astro.props;
+const {x, y, width, travelX = 0, travelY = 0, blend = 'normal', columns = 3, rows = 1, frameCount = columns * rows} = sprite;
+if (![columns, rows, frameCount].every(value => Number.isSafeInteger(value) && value > 0) || frameCount > columns * rows) {
+  throw new Error(`Invalid sprite grid for ${sprite.image}`);
+}
+
+const sheet = imageRecord(sprite.image);
+const finalFrame = frameCount - 1;
+const canvasStyle = [
+  `--visual-sprite-columns:${columns}`,
+  `--visual-sprite-rows:${rows}`,
+  `--visual-final-column:${finalFrame % columns}`,
+  `--visual-final-row:${Math.floor(finalFrame / columns)}`,
+].join(';');
+const spriteStyle = [
+  `--visual-sprite-x:${x}%`,
+  `--visual-sprite-y:${y}%`,
+  `--visual-sprite-travel-x:${travelX}%`,
+  `--visual-sprite-travel-y:${travelY}%`,
+  `--visual-sprite-blend:${blend}`,
+  `width:${width}%`,
+  `aspect-ratio:${sheet.width * rows} / ${sheet.height * columns}`,
+].join(';');
+const plateSizes = fullBleed
+  ? '(min-width: 900px) and (min-height: 620px) and (min-aspect-ratio: 4/3) max(100vw, 177.78svh), 133.34vw'
+  : '(min-width: 1300px) 730px, (min-width: 851px) 55vw, 100vw';
+const sheetWidth = width * columns;
+const spriteSizes = fullBleed
+  ? `(min-width: 900px) and (min-height: 620px) and (min-aspect-ratio: 4/3) max(${sheetWidth}vw, ${sheetWidth * 16 / 9}svh), ${sheetWidth * 4 / 3}vw`
+  : `(min-width: 1300px) ${730 * sheetWidth / 100}px, (min-width: 851px) ${sheetWidth * .55}vw, ${sheetWidth}vw`;
+---
+
+<div class:list={['layered-scene', {'layered-scene-full-bleed': fullBleed}]} aria-hidden="true">
+  <div
+    class="visual-beat-canvas"
+    data-visual-canvas
+    data-visual-frame={finalFrame}
+    data-visual-frame-count={frameCount}
+    data-visual-columns={columns}
+    data-visual-rows={rows}
+    data-visual-flow={sprite.flow ? assetURL(sprite.flow) : undefined}
+    style={canvasStyle}
+  >
+    <div class="visual-beat-plate" data-visual-plate>
+      <ArtImage name={image} sizes={plateSizes} eager={eager}/>
+    </div>
+    <div class="visual-beat-sprite" data-visual-sprite style={spriteStyle}>
+      <div class="visual-sprite-frames">
+        <div class="visual-sprite-frame" data-visual-sprite-current>
+          <ArtImage name={sprite.image} sizes={spriteSizes} eager={eager}/>
+        </div>
+        <div class="visual-sprite-frame visual-sprite-next" data-visual-sprite-next>
+          <ArtImage name={sprite.image} sizes={spriteSizes}/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .layered-scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    container-type: size;
+  }
+
+  .layered-scene.layered-scene-full-bleed { position: absolute; inset: 0; aspect-ratio: auto; }
+
+  /* The crop applies to the entire composition, preserving the sprite's position in the room. */
+  .visual-beat-canvas {
+    --visual-sprite-column: var(--visual-final-column);
+    --visual-sprite-row: var(--visual-final-row);
+    --visual-travel-progress: 1;
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: 100%;
+    width: max(100%, 177.777778cqh);
+    aspect-ratio: 16 / 9;
+    transform: translate(-50%, -50%);
+  }
+
+  .visual-beat-plate { position: absolute; inset: 0; }
+  .visual-beat-plate :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .visual-beat-sprite {
+    position: absolute;
+    left: calc(var(--visual-sprite-x) + var(--visual-sprite-travel-x) * var(--visual-travel-progress));
+    top: calc(var(--visual-sprite-y) + var(--visual-sprite-travel-y) * var(--visual-travel-progress));
+    overflow: hidden;
+    mix-blend-mode: var(--visual-sprite-blend);
+  }
+
+  .visual-sprite-frames,
+  .visual-sprite-frame {
+    position: absolute;
+    inset: 0;
+  }
+
+  .visual-sprite-frames { isolation: isolate; }
+  .visual-sprite-next { opacity: 0; }
+
+  .visual-sprite-frame :global(img) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: calc(var(--visual-sprite-columns) * 100%);
+    max-width: none;
+    height: calc(var(--visual-sprite-rows) * 100%);
+    transform: translate(
+      calc(-100% * var(--visual-sprite-column) / var(--visual-sprite-columns)),
+      calc(-100% * var(--visual-sprite-row) / var(--visual-sprite-rows))
+    );
+  }
+
+  .visual-beat-sprite :global([data-visual-interpolation-surface]) {
+    display: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media screen and (prefers-reduced-motion: no-preference) and (forced-colors: none) {
+    :global(html:not(.calm-mode)) .visual-beat-canvas {
+      --visual-travel-progress: var(--visual-sprite-progress, 1);
+      --visual-sprite-column: var(--visual-pose-column, var(--visual-final-column));
+      --visual-sprite-row: var(--visual-pose-row, var(--visual-final-row));
+    }
+
+    :global(html:not(.calm-mode)) .visual-sprite-frame { opacity: calc(1 - var(--visual-pose-fraction, 0)); }
+    :global(html:not(.calm-mode)) .visual-sprite-next {
+      --visual-sprite-column: var(--visual-next-column, var(--visual-final-column));
+      --visual-sprite-row: var(--visual-next-row, var(--visual-final-row));
+      opacity: var(--visual-pose-fraction, 0);
+      mix-blend-mode: plus-lighter;
+    }
+
+    :global(html:not(.calm-mode)) .visual-beat-canvas[data-visual-interpolated] .visual-sprite-frames { visibility: hidden; }
+    :global(html:not(.calm-mode)) .visual-beat-canvas[data-visual-interpolated] :global([data-visual-interpolation-surface]) { display: block; }
+  }
+</style>

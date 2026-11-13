@@ -1,0 +1,95 @@
+---
+import ArtImage from './ArtImage.astro';
+---
+
+<div class="story-visitor" data-story-visitor aria-hidden="true">
+  <div class="story-visitor-frame">
+    <ArtImage name="story-visitor" sizes="(max-width: 900px) 1px, min(42rem, 45vw)"/>
+  </div>
+</div>
+
+<style>
+  .story-visitor {
+    display: none;
+    position: absolute;
+    z-index: -1;
+    left: calc(var(--story-visitor-x, 75%) + var(--story-visitor-drift, 0%) * var(--visitor-progress, 0));
+    bottom: var(--story-visitor-ground, 8%);
+    width: var(--story-visitor-width, clamp(6.5rem, 12vw, 11rem));
+    transform: translate(-50%, calc(-1 * var(--story-visitor-travel, 5.5rem) * var(--visitor-progress, 0)))
+      scale(calc(1 - .16 * var(--visitor-progress, 0)));
+    transform-origin: center bottom;
+    pointer-events: none;
+  }
+
+  .story-visitor-frame { overflow: hidden; }
+
+  .story-visitor-frame :global(img) {
+    display: block;
+    width: 300%;
+    max-width: none;
+    height: auto;
+    transform: translateX(calc(var(--frame, 0) * -100% / 3));
+  }
+
+  @media screen and (min-width: 901px) and (min-height: 620px) {
+    .story-visitor { display: block; }
+  }
+
+  :global(html.calm-mode) .story-visitor { display: none; }
+
+  @media (forced-colors: active) {
+    .story-visitor { display: none; }
+  }
+</style>
+
+<script>
+  const visitor = document.querySelector<HTMLElement>('[data-story-visitor]');
+  const cover = visitor?.closest<HTMLElement>('.story-cover');
+
+  if (visitor && cover) {
+    const desktop = matchMedia('screen and (min-width: 901px) and (min-height: 620px)');
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    const forcedColors = matchMedia('(forced-colors: active)');
+    let frameRequest = 0;
+    let listening = false;
+    let previousProgress = -1;
+
+    const paint = () => {
+      frameRequest = 0;
+      const {top, height} = cover.getBoundingClientRect();
+      if (height <= 0 || top + height <= 0) return;
+      const progress = Math.min(1, Math.max(0, -top / (height * .55)));
+      if (progress === previousProgress) return;
+      previousProgress = progress;
+      visitor.style.setProperty('--visitor-progress', String(progress));
+      visitor.style.setProperty('--frame', String(Math.min(2, Math.floor(progress * 3))));
+    };
+
+    const onScroll = () => { if (!frameRequest) frameRequest = requestAnimationFrame(paint); };
+
+    const sync = () => {
+      const enabled = desktop.matches && !reduced.matches && !forcedColors.matches
+        && !document.documentElement.classList.contains('calm-mode');
+      if (listening === enabled) return;
+      listening = enabled;
+      if (enabled) {
+        window.addEventListener('scroll', onScroll, {passive: true});
+        window.addEventListener('resize', onScroll, {passive: true});
+        onScroll();
+      } else {
+        window.removeEventListener('scroll', onScroll);
+        window.removeEventListener('resize', onScroll);
+        cancelAnimationFrame(frameRequest);
+        frameRequest = 0;
+        previousProgress = -1;
+        visitor.style.removeProperty('--visitor-progress');
+        visitor.style.removeProperty('--frame');
+      }
+    };
+
+    [desktop, reduced, forcedColors].forEach(preference => preference.addEventListener('change', sync));
+    new MutationObserver(sync).observe(document.documentElement, {attributes: true, attributeFilter: ['class']});
+    sync();
+  }
+</script>
