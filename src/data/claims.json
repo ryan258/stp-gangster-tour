@@ -391,5 +391,2679 @@
     "supportExplanation": "Historical analysis views violent local kidnappings as shattering the covenant of immunity within the city.",
     "qualification": "Historical interpretation; reflects the erosion of boundaries rather than a single sudden decree.",
     "passageCheckDate": "2026-10-03"
+  },
+  {
+    "id": "C31",
+    "assertion": "Nick Hannegraf identified Alvin Karpis and Fred Barker as his mother’s West St. Paul tenants after recognizing them in a detective magazine.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S17",
+      "S18"
+    ],
+    "locators": "S17, April 30, 1932 report, printed pp. 4–5, Hannegraf account and rental address | S18, 1932 West St. Paul rental and recognition in True Detective Mysteries.",
+    "supportExplanation": "The state report records Hannegraf’s identification and the South Robert Street address. MNopedia recounts the recognition.",
+    "qualification": "The period report supplies the historical rental address. It does not establish present-day access.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C32",
+    "assertion": "Hannegraf said the departing tenants left the door open, the gas on, the radio playing, and part of a meal on the table.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S17",
+      "S10"
+    ],
+    "locators": "S17, April 30, 1932 report, printed pp. 4–5, Hannegraf account and rental address | S10, Printed pp. 5–6, report of recognition, violin case, and departure.",
+    "supportExplanation": "The Minnesota BCA records Hannegraf’s account. The later FBI reconstruction separately describes a violin case noticed by his mother.",
+    "qualification": "These details come from witness accounts. The violin case’s contents are unknown, and the reports give different accounts of the departure sequence.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C33",
+    "assertion": "Frank Cloutier and the Victoria Café Orchestra recorded “Moonshiner’s Dance” at the Lowry Hotel in 1927.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S19",
+      "S20"
+    ],
+    "locators": "S19, track listing and recording | S20, printed pp. 146–151 and 162, party favors, recording date, and Lowry Hotel.",
+    "supportExplanation": "The Smithsonian reissue preserves the recording. Gegenhuber locates the session at the Lowry Hotel and describes the café’s tin saxophone noisemakers.",
+    "qualification": "The studio session took place at the hotel. The 1997 Smithsonian release is a reissue.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C34",
+    "assertion": "The Victoria Café faced a six-month closure in March 1928 and a separate federal raid in December.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S20"
+    ],
+    "locators": "S20, printed pp. 162–165, padlock order, December raid, and reproduced newspaper and telegram.",
+    "supportExplanation": "Gegenhuber traces the closure to Prohibition enforcement over mixers served to customers who brought liquor. His account records McGill’s altercation with an agent in December and reproduces the front page and a telegram.",
+    "qualification": "The incidents took place months apart. The account attributes McGill’s explanation to him.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C35",
+    "assertion": "John Quinn was convicted of second-degree murder in Frank Ventress’s death behind the Green Lantern, and the Minnesota Supreme Court affirmed the conviction.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S21"
+    ],
+    "locators": "S21, Reporter pp. 243–244 and 249–253, account of shooting and ruling on Quinn’s appeal.",
+    "supportExplanation": "The appeal identifies the scene, summarizes Quinn’s self-defense argument and trial testimony, and affirms the judgment.",
+    "qualification": "The opinion is used for the facts and outcome of the case as it records them.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C36",
+    "assertion": "A researcher proposed that a set of old police photographs depicted the Green Lantern.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S22"
+    ],
+    "locators": "S22, Reproduced April 13, 2019 article and photographs, case mark X-40, exterior date, and photo identifications.",
+    "supportExplanation": "Woltman reports how Neuberger and Sazevich used the synagogue pillar ornament and describes how the booths and menu board matched witnesses’ descriptions.",
+    "qualification": "An exterior view marked X-40 bears a date before the shooting. The proposed identification and any use as trial exhibits remain unresolved.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C37",
+    "assertion": "The FBI summary records three prison escapes by Edna Murray, including an escape with Irene McCann in December 1932.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S10",
+      "S23"
+    ],
+    "locators": "S10, Printed pp. 10–11, robbery conviction and escapes | S23, Front-page coverage of the 1925 robbery case and Murray’s nickname.",
+    "supportExplanation": "The summary describes the earlier robbery conviction and sawing through the cell bars. The 1925 newspaper documents Murray’s nickname in the press.",
+    "qualification": "The nickname is documented. The alleged kiss remains unverified.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C38",
+    "assertion": "The federal charges against Edna Murray in the Bremer proceedings in Saint Paul were dismissed in May 1935.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S10"
+    ],
+    "locators": "S10, Printed pp. 44–46, trial and dismissal.",
+    "supportExplanation": "The investigation summary records the trial, dismissal, and return to Missouri to serve time in the earlier case and for the escape.",
+    "qualification": "The Missouri robbery conviction was a separate case.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C39",
+    "assertion": "The FBI’s Bremer summary describes three men having facial and fingertip surgery near Toledo.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S10"
+    ],
+    "locators": "S10, Printed p. 33, facial and fingertip surgery.",
+    "supportExplanation": "The summary names Arthur Barker, Volney Davis, and Harry Campbell and says companions, including Edna Murray, had to feed them while their fingers hurt.",
+    "qualification": "These details come from the investigators’ reconstruction.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C40",
+    "assertion": "A gasoline can with a fingerprint attributed to Arthur Barker was introduced at the Bremer trial in Saint Paul.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S10",
+      "S18"
+    ],
+    "locators": "S10, Printed p. 45, admission of the gasoline can | S18, Bremer investigation and discarded gasoline can.",
+    "supportExplanation": "The investigation summary describes admission of the can over defense objection. MNopedia recounts its discovery by a Wisconsin farmer.",
+    "qualification": "The discovery detail comes from a later historical account. The Bremer trial exhibit was separate from the Hamm case.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C41",
+    "assertion": "The August 30, 1933 Swift and Company payroll robbery in South St. Paul killed officer Leo Pavlak.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S24",
+      "S10"
+    ],
+    "locators": "S24, Account of the August 30, 1933 payroll robbery and officers who were shot | S10, Printed p. 14, Swift payroll robbery and notebook route.",
+    "supportExplanation": "The later Minnesota House account describes the robbery outside the post office and Pavlak’s death. The FBI summary describes the robbery and the officers who were shot.",
+    "qualification": "The cited accounts differ on the amount taken.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C42",
+    "assertion": "Federal investigators concluded that a route in a notebook found in Cleveland matched the South St. Paul payroll robbery getaway.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S25",
+      "S10"
+    ],
+    "locators": "S25, Printed p. 5, agents’ description of tracing the route | S10, Printed p. 14, Swift payroll robbery and notebook route.",
+    "supportExplanation": "The FBI memorandum and Bremer summary describe tracing the notebook route back to Stockyards National Bank.",
+    "qualification": "The identification comes from investigators. The cited documents describe the chart in prose.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C43",
+    "assertion": "Jack Peifer told federal agents that Frank Nash and his wife had dined at the Hollyhocks Inn shortly before Nash died.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S26",
+      "S27"
+    ],
+    "locators": "S26, October 13, 1934 memorandum, St. Paul File 62-888, summarizing the October 11 interview with Jack Pfeiffer | S27, June 17, 1933 section, Union Station attack and Nash’s death.",
+    "supportExplanation": "The interview memorandum records Peifer’s recollection and places the dinner about ten days before Nash’s death. The FBI case history dates the Kansas City Massacre.",
+    "qualification": "Peifer supplied the account of the dinner. The linked sources do not independently establish the visit.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C44",
+    "assertion": "Jack Peifer received a 30-year sentence in the William Hamm kidnapping case and died on July 31, 1936.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S26",
+      "S28"
+    ],
+    "locators": "S26, October 13, 1934 memorandum, St. Paul File 62-888, summarizing the October 11 interview with Jack Pfeiffer | S28, Front page, Associated Press report on Peifer’s sentence and death.",
+    "supportExplanation": "The Associated Press dispatch reports the jury conviction, sentence, and death that day. The earlier interview records his separate denial of knowledge of the Kansas City killing.",
+    "qualification": "The cases were separate. Accounts differ on details of Peifer’s last hours.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C45",
+    "assertion": "The FBI later said an agent used a necktie to bind Alvin Karpis’s hands during his New Orleans arrest.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S29"
+    ],
+    "locators": "S29, May 1, 2012, Canal Street arrest and necktie paragraphs.",
+    "supportExplanation": "The FBI’s 2012 account dates the arrest to May 1, 1936 and describes agents arriving without handcuffs.",
+    "qualification": "The necktie detail comes from the FBI’s retrospective account.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C46",
+    "assertion": "Alvin Karpis was brought to Saint Paul after his arrest and later received a life sentence after pleading guilty in the Hamm case.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S30",
+      "S10"
+    ],
+    "locators": "S30, p. 5, May 2 Associated Press dispatch | S10, printed p. 54, Hamm plea and sentence.",
+    "supportExplanation": "The Associated Press dispatch reported his arrival by plane. The investigation summary records his plea and sentence.",
+    "qualification": "The contemporary article concerns his arrival. The plea and sentence are documented separately.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C47",
+    "assertion": "A surviving April 1908 receipt records a mayoral wager between Richard T. O’Connor and Philip W. Herzog.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S31"
+    ],
+    "locators": "S31, Printed p. 23, receipt MNHS P1190-27 reproduced.",
+    "supportExplanation": "The receipt reproduced in Minnesota History gives the candidates, stakes, and the clause voiding the wager if either bettor or candidate died before the election.",
+    "qualification": "The published image reproduces the period document. Whether the wager was paid remains unknown.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C48",
+    "assertion": "The wager receipt was signed by Herzog and addressed to Pierce Butler, who later served on the U.S. Supreme Court.",
+    "status": "Supported",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S31"
+    ],
+    "locators": "S31, Printed pp. 19 and 22–23, participants and receipt.",
+    "supportExplanation": "Osten identifies the participants and supplies their political and professional context alongside the receipt.",
+    "qualification": "The paper names Butler as addressee. His role in handling the wager remains unclear.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C49",
+    "assertion": "The 1997 Science Museum excavation uncovered the foundations of Nina Clifford’s brothel and artifacts from the property.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S32",
+      "S33"
+    ],
+    "locators": "S32, Site 21RA32, discovery and artifact comparison paragraphs | S33, Ketz, Abel and Schmidt, Historical Archaeology 39(1), pp. 74–88, abstract.",
+    "supportExplanation": "The excavation summary and the archaeological study describe material recovered at the site and differences between the lives of customers and residents.",
+    "qualification": "Food and tableware evidence support interpretations about life at this site. The health findings concern its residents as studied by the researchers.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C50",
+    "assertion": "The Minnesota Historical Society reports that excavators found no tunnel linking Nina Clifford’s brothel to the Minnesota Club.",
+    "status": "Supported",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S34"
+    ],
+    "locators": "S34, Concluding biography paragraphs, excavation and tunnel legend.",
+    "supportExplanation": "MNopedia describes the local rumor and the excavation’s outcome.",
+    "qualification": "The result describes the area the team investigated.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C51",
+    "assertion": "Helen Warren Pfleger recalled working at the Saint Paul Prohibition Office from 1925.",
+    "status": "Supported",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S35"
+    ],
+    "locators": "S35, Printed pp. 19–21, office work, switchboard, and clothes.",
+    "supportExplanation": "Her memoir describes her office role, staying late to cover the switchboard, and agents dressing in worn clothes for fieldwork.",
+    "qualification": "This is a later recollection of her own work.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C52",
+    "assertion": "Pfleger’s memoir recounts an agent finding a faucet that dispensed liquor behind a flower shop’s fern display.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S35"
+    ],
+    "locators": "S35, Printed p. 21, flower shop anecdote.",
+    "supportExplanation": "Pfleger tells the story in her 1975 memoir as an incident involving an investigator.",
+    "qualification": "The memoir gives a secondhand account. The shop, date, and enforcement outcome remain unidentified.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C53",
+    "assertion": "Federal agents reported finding a body-rub redistilling plant and supplies for bottling liquor as Scotch at a Saint Paul bungalow in 1925.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S36"
+    ],
+    "locators": "S36, Printed p. 15, reproduced June 27 St. Paul Daily News caption and following Pioneer Press and seizure passages.",
+    "supportExplanation": "Gold reproduces the Daily News caption naming the location, doors and reported ingredient and recounts the bottling equipment and labels.",
+    "qualification": "The plant and contents are presented as the agents’ account in period coverage reproduced by Gold.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C54",
+    "assertion": "Gold’s history reports that all but one bottle had been destroyed by agents by the time Sam Taran went to trial and that the jury acquitted him.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S36"
+    ],
+    "locators": "S36, Printed p. 15, paragraph beginning “Taran’s trial for his operation on Wheeler Avenue”.",
+    "supportExplanation": "The account names the October 22 trial, destruction of bottles, defense argument, and not-guilty verdict.",
+    "qualification": "The source leaves the reason for the destruction unresolved. The verdict was an acquittal in the Wheeler Avenue case.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C55",
+    "assertion": "A July 1932 Associated Press dispatch reported Haskell Bohn’s kidnapping in Saint Paul and described a $35,000 ransom note written in pencil.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S37"
+    ],
+    "locators": "S37, Printed p. 3, “Youth Seized by Kidnapers for Ransom,” opening paragraphs and description of note.",
+    "supportExplanation": "The period dispatch describes Bohn’s age, the location of his abduction, the note’s delivery and the demand.",
+    "qualification": "The amount demanded and the amount ultimately paid are separate questions.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C56",
+    "assertion": "Police told the AP that a dummy package was used to catch three men suspected of a separate attempt to obtain money from Bohn’s father.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S38",
+      "S39"
+    ],
+    "locators": "S38, Printed p. 3, “Ransom Not Paid for Bohn,” father’s denial and final paragraph on the dummy package | S39, Home edition p. 1, “Bohn Case Arrest,” indictment and alleged payment.",
+    "supportExplanation": "The AP attributes the trap to police and records the father’s denial. The later newspaper separately describes allegations in the kidnapping indictment.",
+    "qualification": "The alleged extortion and the kidnapping were separate matters. The examined reports establish neither the three men’s legal outcomes nor a settled ransom amount.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C57",
+    "assertion": "Agent Hardy’s January 1936 report traced Sawyer’s Minneapolis arrest under the name Harry Stanley and identified a fingerprint card and photograph plate.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S40"
+    ],
+    "locators": "S40, January 25 report, pp. 1–2, beginning “On January 21, 1936,” arrest, detectives’ account, and fingerprint clerk.",
+    "supportExplanation": "The report explains the prosecutor’s request and records the police file, clerk’s offer and detectives’ recollections.",
+    "qualification": "The report describes the card and plate and records a later recollection about the warning shot.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C58",
+    "assertion": "The court entries reproduced by Hardy recorded a misdemeanor plea and payment of a fine. The prosecutor told Hardy the old conviction could not be used to impeach Sawyer.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S40"
+    ],
+    "locators": "S40, January 25 report, pp. 2–3, reproduced court entries and Sullivan’s response.",
+    "supportExplanation": "The agent reproduces the lesser charge, plea and payment and records the prosecutor’s response after the search.",
+    "qualification": "The reported misdemeanor is the outcome of this case. The earlier arrest classification describes a different stage of the same case.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C59",
+    "assertion": "Federal agents reported using baggage to track Eddie Green after the Lincoln Court shootout. Green died after agents shot him in Saint Paul.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S41",
+      "S42"
+    ],
+    "locators": "S41, April 10 memorandum beginning “I have just been advised that Eugene Green,” filing stamp 62-29777-4721 | S42, Front-page AP dispatch beginning “ST. PAUL, Minn., Aug. 24,” paragraph mentioning Green’s fatal shooting.",
+    "supportExplanation": "The federal memorandum recounts the route of the baggage and the encounter. The AP dispatch independently records that federal agents fatally wounded Green in Saint Paul.",
+    "qualification": "The baggage trail follows the agents’ account. An exact shooting address is omitted because the paperwork gives conflicting addresses.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C60",
+    "assertion": "The Bureau recorded Green’s statement that the keys belonged to Dillinger and described an apparent fit between a gunstock and a gun from Lincoln Court.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S41"
+    ],
+    "locators": "S41, April 10 memorandum, filing stamp 62-29777-4721, passages on keys and gunstock.",
+    "supportExplanation": "The Bureau’s memo attributes the keys to Green’s statement and treats the stock’s fit as an observation.",
+    "qualification": "The memo supplies the agents’ account of Green’s statement and an apparent fit. It establishes neither object’s independent identification.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C61",
+    "assertion": "The 1936 federal investigation summary attributed the McCord shooting to gang members who mistook airline employees for police and linked it to a delay in the Bremer kidnapping plan.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S10"
+    ],
+    "locators": "S10, Printed p. 17, paragraph beginning “The gang had originally planned”.",
+    "supportExplanation": "The summary names the employer, intersection, date, injury, and Sawyer’s reported response.",
+    "qualification": "The shooters’ reasoning and Sawyer’s role in delaying the plan are the investigators’ reconstruction.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C62",
+    "assertion": "Roy McCord survived his injuries and told federal agents he could not identify Arthur Barker as the shooter.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S43",
+      "S44"
+    ],
+    "locators": "S43, Printed p. 111, paragraph beginning “Later, during the same day, Roy McCord” | S44, “Gangsters gone bad,” paragraphs on the January shooting and recovery.",
+    "supportExplanation": "The 1935 report describes the unsuccessful identification. The later account names McCord, describes his occupation and reports his recovery.",
+    "qualification": "The 1936 summary calls the victim P. N. McCord. The earlier federal report and the later press account use Roy McCord. His inability to identify Barker does not identify another shooter.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C63",
+    "assertion": "Abe and Ben Gleeman were convicted of first-degree murder for the fatal shooting of Burton Stevens at a Saint Paul drugstore corner in February 1925.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S45"
+    ],
+    "locators": "S45, 170 Minn. 197, ¶¶1–2 and 6–7.",
+    "supportExplanation": "The court states the convictions and life sentences, gives the time and location of the shooting, and describes the appeal.",
+    "qualification": "The opinion records the convictions and separates them from the parties’ accounts of how the shooting happened.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C64",
+    "assertion": "The Gleemans’ unsuccessful bid for a new trial included allegations about a railroad car of alcohol, a shipment to an Eighth Street garage, and a different shooter.",
+    "status": "Qualified",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S45"
+    ],
+    "locators": "S45, 170 Minn. 197, ¶¶8–12, 14–17 and 21.",
+    "supportExplanation": "The opinion recounts the brothers’ new account and explains the decision to affirm the lower court’s orders.",
+    "qualification": "The railcar, truck shipment, and alternative shooter are attributed to the defense account. The court allowed the verdicts to stand.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C65",
+    "assertion": "Cooke testified that Wynn followed him to his basement furnace and said the man accompanying Wynn was there to guard him.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S46",
+      "S36"
+    ],
+    "locators": "S46, Printed pp. 180–182, Cooke’s account of the conversation by the furnace | S36, Printed p. 16, paragraph beginning “Taran’s dealings at the Wynn Motors auto dealership.”.",
+    "supportExplanation": "The opinion recounts Cooke’s testimony. Gold places Wynn Motors at 706 University Avenue in Saint Paul.",
+    "qualification": "Cooke recalled what Wynn told him. The companion’s role was Wynn’s account.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C66",
+    "assertion": "The Minnesota Supreme Court upheld Sam Taran’s grand larceny conviction over a $700 auto finance transaction in 1929.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S46"
+    ],
+    "locators": "S46, Printed pp. 176–180 and 183, the Otas Finance Company transaction, independent evidence of proceeds, and affirmed judgment.",
+    "supportExplanation": "The opinion describes the $700 check and finds independent evidence that Taran received the proceeds. It also summarizes Wynn’s coercion testimony.",
+    "qualification": "The judgment covers the finance transaction. The claimed ten days of detention come from Wynn’s testimony.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C67",
+    "assertion": "Alice McQuillan Dunn was murdered at her family’s Saint Paul home, where her rings and watch were left behind, and accomplices testified that the killing was meant to look like a burglary.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S47"
+    ],
+    "locators": "S47, 140 Minn. 308, printed pp. 310–312, ¶3.",
+    "supportExplanation": "The opinion recounts the shooting, lists the valuables left behind, and summarizes the accomplices’ account of the plan and the taxi detour.",
+    "qualification": "The plan and payment terms are testimony summarized by the court. A small amount of cash was taken from a different room.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C68",
+    "assertion": "Frank Dunn was convicted of first-degree murder, and the Minnesota Supreme Court found enough corroborating evidence to uphold the denial of a new trial.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S47"
+    ],
+    "locators": "S47, 140 Minn. 308, ¶1, printed pp. 315–317 and 322.",
+    "supportExplanation": "The opinion states the outcome and describes how Dunn’s own admissions fit parts of the accomplices’ testimony.",
+    "qualification": "The prosecution inferred that the money used to pay the men came from the vault. Dunn offered a different explanation for his visit.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C69",
+    "assertion": "Herbert Scott recalled that he and Boyd Carrier took a .45 automatic from Tommy Carroll and turned him over to detectives.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S48"
+    ],
+    "locators": "S48, printed pp. 17–18, Scott’s account of working with Boyd Carrier on Robert Street.",
+    "supportExplanation": "Scott describes the call on Robert Street, taking the pistol, and turning Carroll over to the Detective Division.",
+    "qualification": "This is Scott’s recollection decades later. The date of the encounter and the detectives’ reasons remain unknown.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C70",
+    "assertion": "Scott recalled seeing Carroll with what he recognized as the same gun and later being unable to find Carrier’s report.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S48"
+    ],
+    "locators": "S48, Printed p. 18, Carroll’s return to Robert Street and Carrier’s report.",
+    "supportExplanation": "Scott recalls the street encounter about two hours later and says Carrier filed a report they later could not find.",
+    "qualification": "Scott does not establish how Carroll got the gun, who authorized his release, or what happened to the report.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C71",
+    "assertion": "Bernice Fisher remembered watching police run up the alley across from her childhood home on the day Van Meter was killed.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S49",
+      "S42"
+    ],
+    "locators": "S49, Printed p. 25, the family’s address and the sentence beginning “I stood on the front porch.” | S42, Front page, Saint Paul dispatch dated August 24, reporting Van Meter was killed the previous night and identifying his Dillinger association.",
+    "supportExplanation": "Fisher gives her childhood address and recalls the scene from the porch. The contemporary dispatch identifies Van Meter as a Dillinger associate and dates his death.",
+    "qualification": "Fisher’s account is a later memory of the officers’ movements. Her memoir misidentifies Van Meter’s gang.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C72",
+    "assertion": "Scott recalled responding to a call about an injured dog before hearing gunfire and finding Van Meter behind a filling station.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S48"
+    ],
+    "locators": "S48, Printed pp. 19–20, the dog call and Scott’s account of where Van Meter was found.",
+    "supportExplanation": "Scott recalls the dog call, the shots to the east, and the alley behind a filling station near Marion and University.",
+    "qualification": "The interviewer and Scott gave different cross streets for the dog call. The recollection does not establish who fired first.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C73",
+    "assertion": "The Senate report on the Rogowskis’ refund claim records the inspector’s description, John Rogowski’s plea and fine, and the brothers’ payment of the assessment under protest.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S50"
+    ],
+    "locators": "S50, S. Rept. 2052, printed pp. 2–4, inspector’s description, and pp. 16–18, Representative Ryan’s letter.",
+    "supportExplanation": "The committee papers reproduce the inspector’s description and record the fine and assessment. Representative Ryan’s letter gives the initial quantity and price alleged.",
+    "qualification": "The inspector reported a surname and physical description. The identity of the bartender was disputed.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C74",
+    "assertion": "A Senate committee recommended reimbursing the Rogowskis. President Roosevelt withheld approval of H.R. 4941.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S50",
+      "S51"
+    ],
+    "locators": "S50, S. Rept. 2052, printed pp. 1–4 and 16–18, committee recommendation and Representative Ryan’s letter | S51, Congressional Record, 75th Congress, vol. 83, printed pp. 9714–9715, H.R. 4941 message.",
+    "supportExplanation": "The Senate report records the mistaken identity argument and recommendation. Roosevelt’s message records his refusal and reasons.",
+    "qualification": "The papers preserve a disputed identification. They leave the actual seller unresolved.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C75",
+    "assertion": "The Raasch opinion describes how calls from a line that bypassed the police switchboard were recorded and replayed for jurors after the needle skipped.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S52"
+    ],
+    "locators": "S52, Printed pp. 159–161, paragraphs 2–4, Cedar 5328, pamograph, headsets and playback.",
+    "supportExplanation": "The court describes the line, recording mechanism, listening equipment, and replay procedure.",
+    "qualification": "The opinion describes the recordings used in court. The individual call dates and the present location of the recordings remain unresolved.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C76",
+    "assertion": "The Raasch opinion distinguishes the admitted recordings from the transcripts used at trial and affirms the denial of a new trial following his malfeasance conviction.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S52"
+    ],
+    "locators": "S52, Printed pp. 160–162, paragraphs 3–8, admission of recordings, use of transcripts, and disposition.",
+    "supportExplanation": "The opinion finds a sufficient foundation for the recordings, describes the use of typed copies, and affirms the order.",
+    "qualification": "The court reviewed Raasch’s conviction and the handling of evidence in his case.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C77",
+    "assertion": "The FBI recorded and reported corroboration of Bolton’s account of the July 23, 1933 flight and his leaving it at Madison.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S53"
+    ],
+    "locators": "S53, March 16, 1936 memorandum, first page, paragraph about Bolton and Northwest Airways.",
+    "supportExplanation": "The memo dates the trip and describes the passenger manifests and Agent Coulter’s statement as corroboration.",
+    "qualification": "The surviving memo gives no reason for Bolton’s trip or his departure in Madison. It does not establish whether Hamm saw him.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C78",
+    "assertion": "The FBI’s summary identifies Bolton as a participant in the Hamm kidnapping, and a contemporary court report records his prior plea and expected testimony.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S10",
+      "S54"
+    ],
+    "locators": "S10, Printed pp. 13–14, Hamm kidnapping and Bolton’s association with Fred Goetz | S54, Printed p. 5, “Remaining Defendants,” paragraph about Bolton and Fitzgerald.",
+    "supportExplanation": "The FBI summary names Bolton in the abduction and describes how he was invited to participate. The dispatch places his guilty plea and expected testimony in the Hamm proceedings.",
+    "qualification": "The testimony reference reflects the prosecutor’s expectation as reported at the time.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C79",
+    "assertion": "Federal agents testified that they bought moonshine at the storefront and that one of the keys Weinberg said was for his car opened a courtyard door.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S55"
+    ],
+    "locators": "S55, Printed pp. 415–416, agents’ accounts of purchases and Weinberg’s keys.",
+    "supportExplanation": "The opinion records the purchase testimony and the agents’ description of opening the locked door with a key Weinberg produced.",
+    "qualification": "These are the agents’ accounts as recounted by the court. The defendants disputed their testimony.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C80",
+    "assertion": "The Weinberg opinion records the agents’ inventory, the defense’s denial, the guilty verdicts, and the court’s denial of the application for a writ of error.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S55"
+    ],
+    "locators": "S55, Printed pp. 416–418, inventory, defense testimony and verdicts, and p. 422, denial of application.",
+    "supportExplanation": "The judge summarizes the competing accounts, identifies the possession and sale verdicts, and rules on the application.",
+    "qualification": "The ruling concerns these defendants and these charges. The record supplies no named gang connection.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C81",
+    "assertion": "The FBI’s reconstruction places a Shell-marked Chevrolet and the next ransom instructions at 969 University Avenue.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S10"
+    ],
+    "locators": "S10, Printed p. 23, February 6 transfer and note in the coupe.",
+    "supportExplanation": "The case summary identifies the date, street address, marked coupe and contents of the door pocket.",
+    "qualification": "The signs identify how the car appeared. Their presence establishes no role for Shell in the handoff.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C82",
+    "assertion": "The Bureau recorded the light signals and roadside deposit in the Bremer ransom handoff and followed up on the Shell signs.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S10",
+      "S56"
+    ],
+    "locators": "S10, Printed pp. 23–24, instructions and Magee’s account of following the bus and leaving the money | S56, PDF p. 38, paragraphs on the original sign and sign painters’ union.",
+    "supportExplanation": "The case summary reproduces the directions and reconstructs the drive. The field report records showing the sign to a sign writer and the union contact.",
+    "qualification": "The records do not identify the driver who flashed the lights or the sign’s maker.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C83",
+    "assertion": "The FBI recorded Bremer’s recollection of the wallpaper and reported obtaining a similar specimen from a pattern sold by a mail-order house.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S10"
+    ],
+    "locators": "S10, Printed p. 24, paragraphs on Bremer’s observations and the wallpaper specimen.",
+    "supportExplanation": "The summary credits Bremer with describing the wallpaper and records the agents’ search and his comparison with their sample.",
+    "qualification": "The summary describes similarity. The specimen by itself does not establish the location of the room.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C84",
+    "assertion": "Bremer recalled sounds, food and a damaged flush lever from his captivity, as recorded in the FBI’s case summary.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S10"
+    ],
+    "locators": "S10, Printed pp. 24–25, dogs and children, toilet lever with damaged enamel, and the strawberry shortcake.",
+    "supportExplanation": "The summary records Bremer’s sensory observations and his recollection of fresh strawberry shortcake.",
+    "qualification": "The source records what Bremer reported and leaves the cook’s identity unresolved.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C85",
+    "assertion": "A federal investigator’s letter records the identification of Frank Nash’s right thumbprint on a beer bottle recovered at 804 Vernon Avenue.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S57"
+    ],
+    "locators": "S57, January 31, 1934 letter from John Hanni, file 62-888, quoting the June 23, 1933 Western Union telegram.",
+    "supportExplanation": "Hanni identifies the object and address and quotes the federal identification of the print.",
+    "qualification": "The match does not establish when or where Nash touched the bottle.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C86",
+    "assertion": "The federal report records a search for the source of six Squeezor beer bottles and says police kept the one with Nash’s print.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S58"
+    ],
+    "locators": "S58, Internal p. 14, paragraphs beginning “Considerable time was spent interviewing shop keepers” and “At the St. Clair Street shop.”.",
+    "supportExplanation": "The report names the two nearby shops that sold the brand and describes the unsuccessful search. Local officers said they were preserving the bottle with Nash’s print.",
+    "qualification": "The documented canvass did not identify who bought the bottles or where they were sold.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C87",
+    "assertion": "The FBI linked De Vol’s Saint Paul apartment to money from a fatal Minneapolis bank robbery and recorded his murder plea and life sentence.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S10",
+      "S59"
+    ],
+    "locators": "S10, Printed p. 10, Third Northwestern National Bank robbery and De Vol’s arrest and plea | S59, Printed p. 5, “Bank Robbery Suspects Held,” Saint Paul apartment and recovered proceeds.",
+    "supportExplanation": "The FBI summary describes the robbery, deaths and plea. The contemporary wire report names Barton and attributes the recovery of proceeds in his apartment to the authorities.",
+    "qualification": "The contemporary dispatch distinguishes the county attorney’s account of Barton’s statement from Barton’s refusal to admit taking part in the raid.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C88",
+    "assertion": "Contemporary papers reported that De Vol escaped from St. Peter and described a barred window and fire hose in the breakout.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S60",
+      "S61"
+    ],
+    "locators": "S60, Printed p. 3, continuation reporting chair legs, tools, barred window and hose | S61, Printed p. 1, St. Peter dispatch on the evening breakout and De Vol.",
+    "supportExplanation": "The contemporary coverage identifies De Vol as an escapee and reports the method used by the group.",
+    "qualification": "The reports do not establish whether De Vol personally handled the chair legs, tools or hose.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C89",
+    "assertion": "A period clipping reports the attack on Taran, and Paul R. Gold’s account says Alexander was thrown down a staircase and taken to Ancker Hospital.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S36"
+    ],
+    "locators": "S36, Printed p. 16 (PDF page 6), “Former Pugilist Shot” clipping and paragraph beginning “That Christmas Eve.”.",
+    "supportExplanation": "Gold reproduces the clipping that reports Taran’s injury and gives the staircase and hospital details in his own narrative.",
+    "qualification": "The clipping supports the attack and Taran’s injury. The staircase and identification of Alexander come from Gold’s later account.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C90",
+    "assertion": "Gold reports that Billy Alexander left Ancker Hospital in slippers, pajamas, and a robe in January 1926.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S36"
+    ],
+    "locators": "S36, Printed p. 16 (PDF page 6), paragraph beginning “Around midnight on January 21, 1926.”.",
+    "supportExplanation": "Gold gives the date, clothing and temperature and reports the police theory about a car.",
+    "qualification": "The escape details come from Gold’s later account. The waiting car was a police theory.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C91",
+    "assertion": "A federal letter records a conversation between Brennan and Tierney about a purported recording and says Tierney denied the allegation.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S62"
+    ],
+    "locators": "S62, March 14 confidential letter, from “On March 13” through the paragraph containing “Tierney vehemently denied”.",
+    "supportExplanation": "Stein recounts Brennan raising the claim and Tierney denying the alleged conversation.",
+    "qualification": "The letter preserves the accusation and denial. It leaves the existence and contents of any recording unresolved.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C92",
+    "assertion": "Stein’s letter says Tierney asked to hear the alleged record or obtain a retraction and that Brennan declined to go to the newspaper.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S62"
+    ],
+    "locators": "S62, March 14 confidential letter, Tierney’s proposal about Kahn through the O. W. Stein signature.",
+    "supportExplanation": "The letter describes Tierney’s demand, Brennan’s response, and Tierney’s offer to cooperate.",
+    "qualification": "Stein relays the interview. The year of the letter is uncertain in the available text.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C93",
+    "assertion": "A 1936 Daily News editorial attributes statements about a gold exchange, a $1,000 bill, loans, and safe-deposit boxes to Thomas Brown at a civil service hearing.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S63"
+    ],
+    "locators": "S63, September 24, 1936 “Brown Hearing” editorial, passages on Brown’s statements and assets.",
+    "supportExplanation": "The contemporary editorial lists figures and transactions it attributes to Brown’s hearing testimony.",
+    "qualification": "The source is a newspaper editorial about the hearing. The signed findings and underlying financial records are outside this account.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C94",
+    "assertion": "The editorial compared Brown’s reported assets and transactions with his police salary and allowed that they could be explained.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S63"
+    ],
+    "locators": "S63, September 24, 1936 “Brown Hearing” editorial, salary comparison and acknowledgment of a possible explanation.",
+    "supportExplanation": "The editorial supplies its reported salary figure, exception for Brown’s service as chief, and express acknowledgment that an explanation might exist.",
+    "qualification": "The editorial raises a question about Brown’s finances. The origin of the money and any finding of wrongdoing remain unestablished by this source.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C95",
+    "assertion": "A 1936 opinion recounts police finding chilled beer and two slot machines on rubber pads in Kaasa’s apartment.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S64"
+    ],
+    "locators": "S64, Printed p. 182, account of the March 19 search, the beer, glasses and slot machines.",
+    "supportExplanation": "The opinion describes the entry and lists what officers said they found in the kitchen and front room.",
+    "qualification": "The inventory is evidence in a liquor-license case. The opinion does not give a reason for the rubber pads.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C96",
+    "assertion": "The Minnesota Supreme Court upheld Kaasa’s conviction for keeping liquor for sale without a city license.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S64"
+    ],
+    "locators": "S64, Printed pp. 182–184, Kaasa’s account, absence of a search warrant or proof of an actual sale, and disposition.",
+    "supportExplanation": "The opinion records Kaasa’s explanation, describes the evidence and affirms the judgment.",
+    "qualification": "The judgment concerns unlicensed liquor. It does not record a gambling conviction.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C97",
+    "assertion": "Mystic Caverns advertised two thousand mirrors, Jack Foster’s Ten Cavemen, and directions to a neon skull and crossbones.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S07"
+    ],
+    "locators": "S07, Printed p. 113, April 14, 1933 St. Paul Daily News advertisement and adjoining discussion.",
+    "supportExplanation": "Brick reproduces a period ad and transcribes advertising copy for the mirrors, band and directions.",
+    "qualification": "The advertising establishes the promise. The actual number of mirrors is unverified.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C98",
+    "assertion": "Brick links Mystic Caverns’ 1934 closure to a gambling investigation, and an archival finding aid identifies a casino operator at the venue.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S07",
+      "S65"
+    ],
+    "locators": "S07, Printed p. 114, Foster’s police band role, the grand jury investigation, and the distinction from Castle Royal | S65, Alphabetical research files, entry for Robert “Frisco Dutch” Steinhardt.",
+    "supportExplanation": "Brick recounts the investigation and closure. The finding aid separately identifies the subject of a file as a casino operator at Mystic Caverns.",
+    "qualification": "The finding aid identifies an archive subject and does not establish an individual verdict.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C100",
+    "assertion": "Whittier described Dayton’s Saint Paul shop and a job proposal for the newly paroled Younger brothers.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S66"
+    ],
+    "locators": "S66, July 18, 1901 Whittier to Wolfer, passage beginning “his present store located on Wabasha”.",
+    "supportExplanation": "The letter gives the location, fixtures, dimensions, and proposed employment.",
+    "qualification": "The letter describes a proposal and does not establish acceptance.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C101",
+    "assertion": "Whittier described a card game using checks that Dayton sold for five cents and redeemed for five cents in goods or two and a half cents in cash.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S66"
+    ],
+    "locators": "S66, July 18, 1901 letter, paragraph beginning “As to the rumor of gambling”.",
+    "supportExplanation": "The letter records the game, the ten-cent payment, and the two redemption rates.",
+    "qualification": "Dayton’s explanation is attributed to him. The letter gives no criminal finding about the game and supplies no physical description of the checks.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C102",
+    "assertion": "Dayton proposed a monthly guarantee and a possible profit share. Other records identify Jim Younger at Andrew Schoch Grocery’s cigar department.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S66",
+      "S67",
+      "S68"
+    ],
+    "locators": "S66, July 18, 1901 letter, terms of Dayton’s job proposal | S67, Files 633–634, undated Globe Hotel card | S68, Chapter 34, “On Parole,” Jim’s work for Andrew Schoch Grocery.",
+    "supportExplanation": "Whittier gives the terms. The advertising card and memoir identify Jim’s cigar work at Schoch’s.",
+    "qualification": "The advertising card is undated. These sources establish neither acceptance of Dayton’s offer nor participation by either brother in the card game.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C103",
+    "assertion": "Agents took freight papers and a special-delivery envelope addressed to Gleckman when they arrested truck driver Sol Rosenhause.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S69"
+    ],
+    "locators": "S69, ¶¶ 27–31, papers taken from Rosenhause, Globe Building address and delivery timing.",
+    "supportExplanation": "The appeals opinion describes the seizure, lists the papers, and gives the envelope’s destination and delivery date.",
+    "qualification": "The opinion describes the envelope. Its physical appearance beyond the described markings is unresolved.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C104",
+    "assertion": "The bills of lading described later shipments of “Aleo Wash” to West Side Pharmacy, and the court described the use of the pharmacy’s name to receive alcohol.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S69"
+    ],
+    "locators": "S69, ¶¶ 24–35, pharmacy arrangement, bills of lading, and dates the incoming freight arrived.",
+    "supportExplanation": "The court identifies the shipper, consignee and description on the bills, and places delivery after the seizure.",
+    "qualification": "The freight on the bills and the load in the stopped truck were separate. The opinion expresses doubt about the druggist’s knowledge of the plant.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C105",
+    "assertion": "The Eighth Circuit inferred that Gleckman passed the envelope to Rosenhause and affirmed the judgment after Gleckman sought to withdraw his guilty plea.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S69"
+    ],
+    "locators": "S69, ¶¶ 27–35 on the envelope, procedural history and ¶ 51 on disposition.",
+    "supportExplanation": "The opinion explains the inference, records the plea and request to withdraw it, and affirms the judgment.",
+    "qualification": "The handoff was the court’s inference from the paperwork. The judgment concerns the liquor case.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C106",
+    "assertion": "An April 25 FBI phone slip records that a news service reported a possible capture of Alvin Karpis in the West.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S70"
+    ],
+    "locators": "S70, April 25, 1935 call slip, 8:15 p.m. entry.",
+    "supportExplanation": "The entry records Suydam’s name, the news service’s report and his inability to give a specific place.",
+    "qualification": "The slip establishes the content of the call. The reported capture remained unconfirmed.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C107",
+    "assertion": "The same FBI slip records that Suydam changed the reported region to the East, attributed the report to Saint Paul and that the local office had not heard about it.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S70"
+    ],
+    "locators": "S70, 8:25 p.m. entry and final paragraph on the call to Saint Paul.",
+    "supportExplanation": "The two entries and follow-up preserve the change in direction and the response from the local office.",
+    "qualification": "The slip does not name the original source in Saint Paul or establish whether the story was published.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C108",
+    "assertion": "The FBI dates the documented New Orleans arrest to May 1, 1936, over a year after the April 25, 1935 calls.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S09",
+      "S70"
+    ],
+    "locators": "S09, “The Big Fish is Caught,” capture and return, and opening photo caption for the date | S70, April 25, 1935 date and two reported locations.",
+    "supportExplanation": "The call slip dates the rumor. The FBI’s case history gives the date and place of the actual arrest and the immediate transfer to Saint Paul.",
+    "qualification": "The records give no connection between the rumor and the arrest operation.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C109",
+    "assertion": "A 1936 United Press dispatch reports that Robbins worked on a portable refrigerator while serving a 25-year term in the Gleckman kidnapping case.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S71"
+    ],
+    "locators": "S71, Printed p. 3, “Kidnaper In Prison Works On Invention,” opening paragraphs.",
+    "supportExplanation": "The dispatch identifies Robbins, his term and the kidnapping, and describes the design.",
+    "qualification": "The sentence and Robbins’s role are reported in the dispatch. A sentencing judgment was not examined.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C110",
+    "assertion": "United Press reports that Robbins began the design before sentencing and envisioned it for hunters, fishermen, motorists and picnickers.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S71"
+    ],
+    "locators": "S71, Printed p. 3, same brief, passage on when the design started and whom Robbins expected to use it.",
+    "supportExplanation": "The dispatch gives the timeline and lists the practical uses.",
+    "qualification": "The brief gives no drawing, patent or finished example of the design.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C111",
+    "assertion": "The newspaper reported that Robbins put his refrigerator plans before the state pardon board in connection with a commutation request.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S71"
+    ],
+    "locators": "S71, Printed p. 3, same brief, passage on the pardon board and commutation.",
+    "supportExplanation": "The dispatch links the plans to a request for commutation.",
+    "qualification": "The board’s disposition is unverified.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C112",
+    "assertion": "Federal records describe Davis’s escape after a forced landing. A contemporary agent’s diary describes the phone call, removal of shackles and flight by car.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S72",
+      "S10"
+    ],
+    "locators": "S72, February 6, 1935 entry, forced landing and escape | S10, Printed p. 43, opening paragraph on Davis’s arrest and escape.",
+    "supportExplanation": "The diary and the later case summary both describe the landing and escape. The diary supplies the more specific account of what happened in town.",
+    "qualification": "McDade’s diary dates the escape to February 6. The later case summary gives February 7.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C113",
+    "assertion": "The FBI reported recovering a counterfeit $100 bill and recorded Davis’s account of why he carried it.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S10"
+    ],
+    "locators": "S10, Printed p. 43, passage about the counterfeit $100 and Davis’s explanation.",
+    "supportExplanation": "The summary distinguishes what agents recovered, what Davis said he intended and what he did when agents caught him.",
+    "qualification": "The intended use was Davis’s explanation to investigators.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C114",
+    "assertion": "Davis returned to Saint Paul after his Chicago recapture, pleaded guilty to conspiracy and received a life sentence. An Associated Press dispatch describes his handcuffed escort.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S73",
+      "S74"
+    ],
+    "locators": "S73, Printed p. 1, second Saint Paul dateline and “Captured In Chicago” | S74, Printed pp. 407–408, motion and chronology of arrest, arraignment and sentence.",
+    "supportExplanation": "The period report describes the escort and plea. The later court opinion supplies the recapture and sentencing dates.",
+    "qualification": "The handcuff detail comes from contemporary news coverage.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C115",
+    "assertion": "Wolfer told Peterson he had heard that Bloom was passing himself off as Cole Younger and asked Peterson to intervene.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S66"
+    ],
+    "locators": "S66, Wolfer letter, August 16, 1901, passage containing “passing himself off”.",
+    "supportExplanation": "The warden names the salesman, summarizes what he heard, gives the towns, and asks Peterson to act.",
+    "qualification": "The letter records a report from others. Bloom’s own account and sales pitch remain unverified.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C116",
+    "assertion": "Peterson told Wolfer he had written to Bloom to stop. Cole Younger later recalled working as a traveling salesman for Peterson.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S66",
+      "S68"
+    ],
+    "locators": "S66, Peterson to Wolfer, August 19, 1901, letterhead, body, and August 20 prison receipt stamp | S68, Chapter 34, “On Parole,” traveling for Peterson.",
+    "supportExplanation": "Peterson records the intervention in his reply, and Younger’s memoir describes his employment with Peterson.",
+    "qualification": "The letter records Peterson’s action as he described it. What Bloom did afterward remains unresolved.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C117",
+    "assertion": "The Tax Court found that Banks kept daily liquor sales in a vest-pocket book and did not keep a record of alcohol costs.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S75"
+    ],
+    "locators": "S75, Findings of Fact, ¶ 23, daily sales and cost of alcohol.",
+    "supportExplanation": "The opinion identifies the book as his only record for those years and describes what he wrote in it.",
+    "qualification": "The 1961 opinion describes the book. The text of the book itself is not reproduced.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C118",
+    "assertion": "The Tax Court recorded Banks’s November 14, 1929 guilty plea on a liquor conspiracy charge in Saint Paul and his payment of a $2,500 fine.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S75"
+    ],
+    "locators": "S75, Findings of Fact, ¶ 27, Saint Paul federal proceeding, plea and fine.",
+    "supportExplanation": "The opinion names the date, charge, court division, amount and payment.",
+    "qualification": "The findings do not establish that the pocketbook was used as evidence in the 1929 proceeding.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C119",
+    "assertion": "The Tax Court found that Banks ordered alcohol in boxcars with others and did not keep records for the West Hotel operation.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S75"
+    ],
+    "locators": "S75, Findings of Fact, ¶¶ 24–26, typical shipments and West Hotel records.",
+    "supportExplanation": "The opinion gives an approximate starting year, typical drum counts and the absence of books while he operated from the hotel.",
+    "qualification": "The hotel operation was in Minneapolis. The opinion does not link an individual shipment to the earlier Saint Paul plea.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C120",
+    "assertion": "In one federal interview, Potthoff gave $331 as the initial and final trade-in allowance and said Gleeman requested black wire wheels.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S76"
+    ],
+    "locators": "S76, Printed pp. 16–17, W. J. Potthoff interview",
+    "supportExplanation": "Potthoff’s interview gives the dealership address, the negotiation and the proposed wheel change.",
+    "qualification": "The file also contains an account of a separate Potthoff interview that gives $375 as the allowance on the transfer agreement.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C121",
+    "assertion": "Gleeman said the trade-in allowance rose from $331 to $375 and that Filben supplied the name for the order.",
+    "status": "Qualified",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S76",
+      "S11"
+    ],
+    "locators": "S76, Printed pp. 16–20, vehicle identification, registration and Gleeman interview | S11, “The Bureau Actively Joins the Hunt,” the Hellman tenancy and March 31 escape",
+    "supportExplanation": "Gleeman’s interview gives the two prices and describes the supplied name. The dealer interview and the FBI case history use the Hellman spelling.",
+    "qualification": "The interviews give different final amounts and several spellings of the assumed surname.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C122",
+    "assertion": "The file gives $375 as the allowance on the transfer agreement, records Gleeman’s explanation of the $44 accounting difference, and identifies the Hudson as the car Dillinger had during his escape.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S76"
+    ],
+    "locators": "S76, Gleeman question-and-answer immediately before printed p. 21 marker, plus the April 2 Notestein interview and its introductory paragraph immediately before the p. 50 marker",
+    "supportExplanation": "The April 2 interview gives the transfer figure and delivery details, Gleeman’s interview gives the check and credit amounts, and the paragraph introducing the April 2 interview links the car to the escape.",
+    "qualification": "The report describes the agreement. The reason for the difference between the check and the credit is Gleeman’s explanation. The file does not document every handoff to Dillinger.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C123",
+    "assertion": "Dorsey opened at 151 South Washington Street in March 1913 and reportedly testified to approaching Flanagan about her plans.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S77",
+      "S78"
+    ],
+    "locators": "S77, Main text, paragraph on the March 7, 1913 move to Saint Paul | S78, p. 167, Ida Dorsey section, and p. 213, chapter 5 note 29",
+    "supportExplanation": "MNopedia gives the opening date and address. Petersen gives the meeting and references, citing the February 1914 local press.",
+    "qualification": "Dorsey’s account of the meeting survives here through Petersen’s synthesis of trial reporting. The meeting details are attributed to Dorsey.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C124",
+    "assertion": "Clifford reportedly described $4,000 paid by Dorsey, with $1,000 for the house and $3,000 intended for protection.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S78",
+      "S77"
+    ],
+    "locators": "S78, p. 167, Clifford’s testimony and closing of the brothels, and p. 213, chapter 5 notes 29–30 | S77, Main text, paragraph on the $1,000 purchase and $3,000 protection payment",
+    "supportExplanation": "Petersen summarizes the reported testimony and the closure. MNopedia also describes the purchase, protection payment, and closure.",
+    "qualification": "The split comes from trial testimony reported in the press. The source leaves the complete distribution of the money unresolved. Petersen suggests the $1,000 may have been a down payment.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C125",
+    "assertion": "A contemporary Saint Paul dispatch reported the bribery convictions and prison sentences of Flanagan and Turner.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S79",
+      "S78"
+    ],
+    "locators": "S79, p. 2, ‘Chief and Detective Fined for Bribery,’ St. Paul, February 20 dateline | S78, p. 167, introduction to Ida Dorsey’s trial testimony",
+    "supportExplanation": "The February 20 dispatch gives the jury verdict, names and sentences. Petersen independently records the two officials going to state prison as a result of the graft trial.",
+    "qualification": "The dispatch describes a $300 charge and does not tie that figure to a particular portion of the $3,000 mentioned in Clifford’s reported testimony.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C126",
+    "assertion": "Federal records attribute the clothing to Bremer’s abductors and document a lab examination of its remaining marks, buttons and seams.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S80",
+      "S81"
+    ],
+    "locators": "S80, Report 360, February 14, 1934, archive-stamped pp. 121–122, shirt label, collar button, crayon mark and sock heel seams | S81, February 27, 1934 Saint Paul report, archive-stamped p. 128, paragraph on the clothing at Bremer’s release",
+    "supportExplanation": "The Saint Paul field report gives the clothing’s origin; Appel’s report names the requesting office, specimens, dimensions and remaining details.",
+    "qualification": "The measurements and markings come from the lab report. They do not identify who removed the label or bought the clothes.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C127",
+    "assertion": "The February 27 Saint Paul report lists two potential sellers after cross-indexing retailers for the clothes.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S81"
+    ],
+    "locators": "S81, February 27, 1934 Saint Paul report, archive-stamped p. 128, paragraph naming Mueller Clothing and J. H. Conley",
+    "supportExplanation": "The report explains the cross-index and names both businesses as possible sources for two of the garments.",
+    "qualification": "The Windom lead was checked in person the following week. The list was a working index of retailers.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C128",
+    "assertion": "Ryan’s March 5 memo records Mueller’s reply that his merchandise did not match the shirt, underwear and socks.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S82"
+    ],
+    "locators": "S82, W. C. Ryan’s March 5, 1934 memorandum for Saint Paul file 7-30, Gustave Mueller interview, before the March 6 memorandum",
+    "supportExplanation": "Ryan records the shirt mismatch, the replacement sent for the underwear order and the absence of the sock brand.",
+    "qualification": "The shopkeeper’s answers address the Windom lead. They do not settle where the kidnappers obtained the clothes.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C129",
+    "assertion": "The appellate opinion records the soft drink bar’s address, agents’ description of its saloon fittings and admitted Prohibition violations in April 1925.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S83"
+    ],
+    "locators": "S83, Printed pp. 38–39, opening description, affidavits, stipulation and paragraph beginning “In this case the owner.”",
+    "supportExplanation": "The opinion sets out the premises, affidavits and parties’ stipulation before identifying four sales on April 6 and possession on April 15.",
+    "qualification": "The description of the fittings comes from the agents’ affidavits. The parties stipulated to the violations. The source establishes no organized-crime connection.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C130",
+    "assertion": "The stipulation records a change of tenant after the violations and no charges against the new tenant. The appeals court observed that the business continued with the same equipment.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S83"
+    ],
+    "locators": "S83, Printed pp. 38–39, stipulation beginning “It is admitted by the complainant” and paragraph beginning “In this case the owner.”",
+    "supportExplanation": "The stipulated facts identify the tenants, the date Ryshavy’s lease began and his record as stated in the proceeding. The court separately describes the continued use of the equipment.",
+    "qualification": "The opinion records no conviction of Engler or subsequent liquor sale by Ryshavy.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C131",
+    "assertion": "In 1928 the Eighth Circuit affirmed an order barring use of the premises for one year from April 11, 1927.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S83"
+    ],
+    "locators": "S83, Printed p. 38, opening paragraph describing the decree, and p. 39, reasoning and disposition.",
+    "supportExplanation": "The opinion states the original order’s starting date and duration, explains why the tenant change did not establish abatement and affirms the decree.",
+    "qualification": "The decision concerns the property under the National Prohibition Act’s civil nuisance provisions.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C132",
+    "assertion": "The postal circular records four pouches taken from a mail car in the Garrettsville robbery.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S84"
+    ],
+    "locators": "S84, Paragraph beginning “A circular issued by the Post Office Department”",
+    "supportExplanation": "The FBI case file reproduces the circular with the date, location and pouch count.",
+    "qualification": "The circular’s account establishes the reported inventory. The early reports differ on the total number of robbers and the train number.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C133",
+    "assertion": "A postal inspector recorded the Plymouth’s specifications and key number and named Karpis and Campbell as suspects.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S84",
+      "S10"
+    ],
+    "locators": "S84, December 16, 1935, inspector interview on Plymouth details and suspects | S10, Printed p. 51, Garrettsville robbery and the identification of Bremer fugitives",
+    "supportExplanation": "The December interview gives the car description and the inspectors’ suspicions. The later case summary identifies the two men as Bremer fugitives.",
+    "qualification": "The FBI report documents the information supplied by the inspector. The key number is a detail of the description, with no proof it was the clue that identified the robbers.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C134",
+    "assertion": "The 1936 FBI summary identifies two fugitives from the Saint Paul Bremer case as participants in the Ohio mail robbery.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S10"
+    ],
+    "locators": "S10, Printed p. 51, paragraph on identification of fugitives wanted in the Bremer kidnapping",
+    "supportExplanation": "The case summary explicitly links the Garrettsville participants to the Bremer fugitive investigation.",
+    "qualification": "The summary describes an investigative identification. It does not establish either man’s conviction for the train robbery.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C135",
+    "assertion": "Police sought entry to a licensed beer parlor on West Wheelock Parkway during the city’s Sunday closing hours.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S85"
+    ],
+    "locators": "S85, pp. 208–209, opening paragraph and Ordinance No. 7641, section 1",
+    "supportExplanation": "The court gives the date, address, time, officers’ observations outside, and ordinance hours.",
+    "qualification": "The setting and timing come from the opinion’s account of the trial. The case concerned closing hours at a licensed business.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C136",
+    "assertion": "Officers reported seven partly filled beer glasses in front of two people and four men hiding in the basement.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S85"
+    ],
+    "locators": "S85, p. 209, passage beginning with the officers’ admission after a delay",
+    "supportExplanation": "The published opinion lists what the officers reported seeing at the bar, in the booth, in the basement, and in back.",
+    "qualification": "The opinion summarizes police testimony. It leaves the building’s floor plan and the identity of the people in the booth unspecified.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C137",
+    "assertion": "The owners gave a surprise-planning explanation and the Minnesota Supreme Court affirmed the after-hours convictions.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S85"
+    ],
+    "locators": "S85, pp. 209–210, defendants’ testimony and final ruling",
+    "supportExplanation": "The opinion sets out the owners’ account, ordinance, reasoning, and disposition.",
+    "qualification": "The surprise was the defense’s explanation. The court ruled on after-hours business. The record establishes no gang connection.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C138",
+    "assertion": "Federal agents inventoried pencil-captioned childhood photographs and a picture described as Dillinger in naval uniform at the Lexington Avenue apartment.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S76"
+    ],
+    "locators": "S76, Saint Paul file 26-2434, after printed p. 11 marker, paragraphs describing photographs of the boy in a cherry tree and wagon and Dillinger in naval uniform.",
+    "supportExplanation": "The field report describes the photographs and reproduces the wording it records on their backs.",
+    "qualification": "The age and identity of the boy in the tree come from the pencil caption recorded by agents. The inventory does not name the writer.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C139",
+    "assertion": "Agents reported that a road chart from the apartment ran from Newton National Bank to Saint Paul and sent it for laboratory examination.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S76"
+    ],
+    "locators": "S76, Saint Paul file 26-2434, printed pp. 10–11 markers, paragraph beginning “In connection with the getaway road chart.”",
+    "supportExplanation": "The field report gives the two ends of the chart, the agent who traced it and the laboratory referral.",
+    "qualification": "The proposed getaway purpose was the investigators’ interpretation. This passage gives no evidence the route was used or that anyone robbed the bank.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C140",
+    "assertion": "The field report records Mrs. Coffey’s account of finding a telegram fragment under the carpet and transcribes the fragment.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S76"
+    ],
+    "locators": "S76, Saint Paul file 26-2434, two paragraphs immediately before the printed p. 16 marker, Mrs. Coffey’s Western Union telegram fragment.",
+    "supportExplanation": "Agents record that Coffey supplied the portion after the apartment inventory and quote its remaining text.",
+    "qualification": "The location comes from Coffey. The cited passage does not establish who put the fragment there or what the message meant.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C141",
+    "assertion": "The appellate opinion records an initial $6,193.30 bill of costs against Gleckman, including juror meals, lodging and doctors’ services among about $2,500 in disputed tribunal expenses.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S04"
+    ],
+    "locators": "S04, Reporter pp. 402–403, “On Taxation of Costs,” opening and assignment of error 18",
+    "supportExplanation": "The costs section gives the clerk’s total and the expenses challenged under assignment of error 18.",
+    "qualification": "The opinion gives a combined figure for the disputed group. It does not give the doctor’s charge by itself or describe the treatment.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C142",
+    "assertion": "The opinion records the $365.38 entry for Malone, explains why he did not testify, and directs that the costs of his attendance be limited to necessary travel and subsistence.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S04"
+    ],
+    "locators": "S04, Reporter pp. 403–404, “Witness Michael F. Malone,” assignment of error 19 and the court’s answers",
+    "supportExplanation": "The subsection on Malone itemizes the initial fees and mileage, explains the agreement about testimony, and states the governing rule.",
+    "qualification": "The opinion establishes how to recalculate this item. It gives no final amount for Malone.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C143",
+    "assertion": "The appeals court affirmed Gleckman’s convictions and separately reversed the order on costs, directing removal of tribunal expenses and recalculation.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S04"
+    ],
+    "locators": "S04, Reporter pp. 402–404, disposition on the merits, elimination of tribunal expenses, and final order on costs",
+    "supportExplanation": "The merits decision affirms the judgment. The costs ruling directs removal of the listed expenses and ends by sending back the order for recalculation.",
+    "qualification": "The opinion gives the directions on costs. The revised total is outside this record.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C144",
+    "assertion": "Saint Paul investigators recorded Bremer’s account of an overlapping whistle and siren and reported that the towns he visited with agents did not match his timing.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S86",
+      "S87"
+    ],
+    "locators": "S86, June 12, 1934 letter from Saint Paul, file 7-30, document p. 2 between archive stamps 305 and 306, paragraph beginning “Recent conferences with Mr. Bremer” | S87, June 7, 1934 R. E. Newby report, Saint Paul file 7-30, synopsis immediately after archive-stamped p. 720",
+    "supportExplanation": "The June 12 letter gives the order of the sounds. Newby’s June 7 report describes the field trip and its result.",
+    "qualification": "The pattern is Bremer’s recollection. The field report describes the resemblance of a bell rather than identifying the original bell.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C145",
+    "assertion": "A Saint Paul letter describes replies about church bells and sirens, and a field report records a Brookfield pastor’s account of 48 tolls to mark a parishioner’s death and age.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S86",
+      "S88"
+    ],
+    "locators": "S86, June 12, 1934 letter, first page above archive-stamped p. 305, discussion of lists and replies from clergy and officials | S88, Charles Jenkins report, March 14, 1934, “AT BROOKFIELD, ILLINOIS,” January 1934 table and the paragraph immediately below it",
+    "supportExplanation": "The June 12 correspondence gives the categories of replies and how towns were sorted. The March 14 report records the Brookfield interview after Rockoff wrote to the Saint Paul office.",
+    "qualification": "The bureau summarized how some recipients interpreted its questions. The Brookfield report records Rockoff’s account of his church bell without identifying it as the one Bremer heard.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C146",
+    "assertion": "D. M. Ladd requested permission to destroy the sound inquiry circulars after the hideout was found, and J. Edgar Hoover authorized it.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S89"
+    ],
+    "locators": "S89, Bureau file 7-576-5763, April 29, 1935 letter from Ladd and immediately following May 7, 1935 reply from Hoover",
+    "supportExplanation": "Ladd’s April 29 request and Hoover’s May 7 reply survive together in the case file.",
+    "qualification": "The exchange establishes permission. It leaves the date and extent of any destruction open and does not show that the sound inquiry located the hideout.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C147",
+    "assertion": "An August 14 United Press dispatch reported that headlights drew investigators to the Wildwood shooting scene while they were checking a tip about Bugs Moran.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S90",
+      "S91"
+    ],
+    "locators": "S90, Printed p. 1, Saint Paul dateline, report beneath 'Trio Believed Slain By Rival Gangster Band'. | S91, Printed p. 1, Saint Paul dateline at start of 'Guns Take Five Lives.'",
+    "supportExplanation": "The front-page dispatch gives the dateline, the location, the search for Moran, and the burning headlights. The Associated Press independently reports the three deaths near Wildwood.",
+    "qualification": "The dispatch explains what reportedly brought officers to the area. Moran's role in the shooting remains unestablished.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C148",
+    "assertion": "The United Press continuation describes a gold basketball with the inscription 'K. C. ’20' as one of the items police used to identify Frank Coleman.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S90"
+    ],
+    "locators": "S90, Printed p. 2, 'Trio Believed— (Continued from page 1),' paragraph beginning 'A gold basketball.'",
+    "supportExplanation": "The continuation names Coleman, describes the token and chain, and associates them with the police identification.",
+    "qualification": "The surviving dispatch gives no maker, photograph, or confirmed explanation of the inscription.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C149",
+    "assertion": "The August 14 wire dispatches give a tentative Saint Paul identification for the third man and report a police theory involving slot machine concessions.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S90",
+      "S91"
+    ],
+    "locators": "S90, Printed p. 1, tentative names below 'Trio Believed Slain By Rival Gangster Band.' | S91, Printed p. 1, 'Guns Take Five Lives,' Saint Paul dateline and 'Killed By Rivals' paragraphs.",
+    "supportExplanation": "United Press identifies the third man tentatively as 'Butch' Myers. The Associated Press attributes the identification and the slot concession theory to police.",
+    "qualification": "The contemporary reports preserve the early identification and motive theory. The third man's legal name and the shooters remain unresolved in these records.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C150",
+    "assertion": "Mr. Parnell told federal investigators that he saw suitcases being moved from the Grand Avenue apartments and a man turn with a revolver after a door squeaked.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S82"
+    ],
+    "locators": "S82, Archive stamp 323 and following passage, Parnell’s March 3 or 4 account from the basketball game through the laundry-room door.",
+    "supportExplanation": "The file records the basketball game, the call to police, Parnell’s laundry-room vantage and the squeaking door.",
+    "qualification": "Parnell was recounting what he remembered. A later resemblance to a photograph of Arthur Barker did not establish the gunman’s identity.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C151",
+    "assertion": "The Parnells described a pickup of dishes and silverware authorized by a penciled note. Federal agents recorded sending the note for comparison.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S82",
+      "S92",
+      "S81"
+    ],
+    "locators": "S82, Passage leading up to archive stamp 330, April 26 mover and pencil note, plus photo comparison and car registration passages before the Talbott interview. | S92, Report passage citing O. G. Hall’s March 7, 1934 report, printed pp. 4–5 and the following passage, departure, mover, and limits of photographic identification. | S81, February 26, 1934 Saint Paul letter, document p. 2 immediately after archive-stamped p. 52, paragraph beginning “The letter addressed to Mr. Coy O. Hardwick”",
+    "supportExplanation": "The interviews and later case summary describe the pickup and the limits of photographic identification. The February 26 letter records sending the note and a separate letter to the director for comparison.",
+    "qualification": "The reports give variants of the initials on the note and differ on which Parnell made the handoff. The photo resemblances did not settle the tenants’ identities.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C152",
+    "assertion": "A Bremer case memo records three Grand Avenue utility deposits, two returned checks, one check not returned, and signature tracings retained in Saint Paul.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S93"
+    ],
+    "locators": "S93, PDF p. 13, R. L. Nalls’s March 19, 1934 Northern States Power Company memo, in the report stamped 7-576-1384.",
+    "supportExplanation": "The report reproduces the utility inquiry, the different refund statuses and the agent’s account of keeping the tracings.",
+    "qualification": "The memo records what the utility showed. It does not establish who received or cashed the third check or whose names the occupants were using.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C153",
+    "assertion": "The Associated Press reported that Haskell Bohn testified in Saint Paul and named Verne Sankey and Ray Robinson as his abductors.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S94",
+      "S95"
+    ],
+    "locators": "S94, June 12 Saint Paul dateline, ‘Testimony Opens in Case Involving Bohn Kidnaping’. | S95, January 3 Saint Paul dateline, paragraph following Kinkead’s statement about the athletes.",
+    "supportExplanation": "The June 12 dateline names the first witness, describes the kidnapping, and reports Robinson’s plea and the ongoing search for Verne Sankey.",
+    "qualification": "The dispatch reports testimony from the opening of Fern Sankey’s trial. Fern was acquitted, as the January 1934 dispatch later reported.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C154",
+    "assertion": "Kinkead reportedly described a file on Dempsey’s and Ruth’s earnings and a photograph of Ruth, and inferred a possible kidnapping scheme.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S95"
+    ],
+    "locators": "S95, January 3 Saint Paul dateline, report on Kinkead’s suspicion about Sankey, paragraph beginning ‘We found in the basement’.",
+    "supportExplanation": "The January 3 Saint Paul dispatch gives Kinkead’s account of the ranch search and quotes his description of the earnings file and Ruth picture.",
+    "qualification": "The newspaper reports Kinkead’s description and inference. The original papers, author of the notation, and evidence of an actual attempt remain unlocated.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C155",
+    "assertion": "Contemporary reports attribute to Purvis an account of Sankey’s arrest and admissions in the Bohn and Denver cases, while continuing to attribute the athletes story to Kinkead.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S96"
+    ],
+    "locators": "S96, ‘No Sankey Link to Lindbergh Case,’ continuation from first page, February 1 Chicago dateline through the paragraph beginning ‘The prosecutor also accused Sankey’.",
+    "supportExplanation": "The February 1 dispatch records the barber-shop arrest and separately attributes the admissions and athlete allegation to the officials who described them.",
+    "qualification": "The press gives Purvis’s account of the admissions. The athlete scheme remains Kinkead’s allegation.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C156",
+    "assertion": "The Saint Paul bureau’s June 16 letter records a jail-note route between Barker and Kuhlman and says the sheriff arranged for copies to reach the bureau before delivery.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S97"
+    ],
+    "locators": "S97, June 16, 1935 letter, document p. 1, paragraph beginning “During the time that Arthur R. Barker was held”.",
+    "supportExplanation": "Andersen names the guard, the two correspondents, the sheriff, and the order of copying and delivery.",
+    "qualification": "The letter describes the arrangement for messages Hession handled. It gives no full inventory of the correspondence.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C157",
+    "assertion": "Hession told the Saint Paul bureau that he stayed at the Frederic Hotel under the name Ben Franklin and used the stay to handle the correspondence.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S97"
+    ],
+    "locators": "S97, June 16, 1935 letter, document p. 1, Hession’s explanation beginning after the room and telephone charges.",
+    "supportExplanation": "The letter records the name, dates, purpose and Hession’s account of his contact with Kuhlman.",
+    "qualification": "The source summarizes Hession’s explanation. It does not reproduce the hotel register or independently establish what Barker or Kuhlman knew.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C158",
+    "assertion": "The June 16 letter itemizes Hession’s expense request and asks whether the bureau could cover it.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S97"
+    ],
+    "locators": "S97, June 16, 1935 letter, document pp. 1–2, the $26.50 total, Chicago call, transfer to Leavenworth and reimbursement question.",
+    "supportExplanation": "The first sheet records the total and the room charge. The continuation gives Hession’s explanation and asks about reimbursement.",
+    "qualification": "The letter documents the request. The final payment disposition is unclear in this copy.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C159",
+    "assertion": "The Associated Press reported that Touhy and three co-defendants arrived in Saint Paul in a special car attached to a mail train and were escorted off in handcuffed pairs.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S98"
+    ],
+    "locators": "S98, Printed p. 6, August 19 Saint Paul dateline and the paragraphs on the arrival and transfer.",
+    "supportExplanation": "The August 19 Saint Paul dateline gives the train, arrival time, handcuff pairings and armed escort to jail.",
+    "qualification": "The wire report describes the transfer. The four were awaiting trial on the federal Hamm charges.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C160",
+    "assertion": "A contemporary dispatch places the September 25 hearing in a machine gun guarded courtroom in the jail basement and reports the judges kept bail at $100,000 each.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S100"
+    ],
+    "locators": "S100, Printed p. 3, “Touhy Denied Bail Reduction,” September 25 Saint Paul dateline and last paragraph on the basement courtroom.",
+    "supportExplanation": "The September 25 Saint Paul dispatch explains why the judges left their regular courtrooms and gives the motions, bail and the defendants’ route from their cells.",
+    "qualification": "The account describes a hearing on motions before trial, with the judges' location reported as a security measure.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C161",
+    "assertion": "Contemporary dispatches describe armed security on the trial’s opening day and report that the jury acquitted all four defendants in the Hamm case.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S101",
+      "S102"
+    ],
+    "locators": "S101, Printed p. 1, “Armed Guards Circle Room at St. Paul,” opening Saint Paul dateline and “Curious Turned Back” paragraphs. | S102, Printed p. 1, “Fail to Convict Touhy Gangsters,” November 28 Saint Paul dateline, acquittal and description of the two charges.",
+    "supportExplanation": "The November 9 story describes the tear gas guns and courthouse passes. The November 28 dispatch names the two federal charges and records the acquittals.",
+    "qualification": "The November 28 verdict concerned the federal Hamm charges. The press reported separate Chicago charges in the John Factor case.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C162",
+    "assertion": "A February 26 Saint Paul memo specifies three sample lines, similar paper, and a 1929 portable Corona with pica type as the target.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S81"
+    ],
+    "locators": "S81, February 26, 1934 Saint Paul typewriter memorandum, archive-stamped pp. 107–108, sample lines and laboratory description.",
+    "supportExplanation": "The Saint Paul memo specifies the test and gives the laboratory’s description of the machine sought.",
+    "qualification": "These were proposed test lines. The memo does not identify the machine that typed the ransom notes.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C163",
+    "assertion": "Agents found two records of the type of machine sought among roughly 500 repair slips and described the purple-ribbon Corona as an unlikely match.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S82",
+      "S81"
+    ],
+    "locators": "S82, J. E. Brennan’s “Re: Typewriters” memorandum, preceding archive stamp 320, eight months of slips and two machine entries. | S81, February 26, 1934 Saint Paul typewriter memorandum, archive-stamped p. 108, serial 656647, ribbon and assessment.",
+    "supportExplanation": "Brennan’s memorandum describes the repair search and lists the machines. The February 26 memorandum describes the former purple ribbon on the second machine and records the agent’s assessment.",
+    "qualification": "The repair slips identified candidates. The records cited here give no laboratory match to the notes.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C164",
+    "assertion": "Bureau correspondence documents the recovery of an Underwood, its detour to a supply shelf, missing routing labels, and the tentative identification of the ransom-note machine as a Corona.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S103"
+    ],
+    "locators": "S103, R. E. Newby’s September 27, 1934 memorandum for Mr. Tamm and October 2, 1934 letter to the Detroit office, archive-stamped pp. 239–241.",
+    "supportExplanation": "Newby’s September memorandum records the clerk’s discovery and the lab’s assessment. The October letter attributes the delay to the missing laboratory labels.",
+    "qualification": "The September memo proposed a fingerprint check. These passages give no result for it and no confirmed identification of the ransom-note machine.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C165",
+    "assertion": "On July 13, 1932, the Manchester Evening Herald printed an Associated Press dispatch relaying the New York Sun’s claim that Abe Wagner had been killed about two months earlier and sunk in the East River in a barrel of cement.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S104"
+    ],
+    "locators": "S104, July 13, 1932 issue, p. 2, ‘Abie Wagner Slain’",
+    "supportExplanation": "The original newspaper page preserves the headline, attribution, time estimate and river name.",
+    "qualification": "The dispatch establishes what reached print. The Saint Paul case contradicts the reported time and place of death.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C166",
+    "assertion": "Anne E. Cowie dates Wagner’s shooting near Snelling and University avenues in Saint Paul to July 25, 1932 and describes his fruit peddler cover.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S105",
+      "S106"
+    ],
+    "locators": "S105, Printed p. 12, paragraph beginning ‘Ramsey County’s national reputation,’ immediately before ‘Top Legal Talent’ | S106, July 22, 1933 letter, file 62-4949, p. 2, paragraph beginning ‘The St. Paul Office will observe’",
+    "supportExplanation": "Cowie supplies the date, intersection and occupation. The July 1933 bureau letter records the Saint Paul arrests for the killing.",
+    "qualification": "The date, intersection and fruit seller cover come from Cowie’s later account. A federal letter separately places the killing and arrests in Saint Paul.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C167",
+    "assertion": "Cowie’s county history records two convictions and life sentences in the Wagner case. A 1933 bureau letter uses different names for the two men and reports their July 26, 1932 arrests in Saint Paul for the murder of Abe Wagner.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S105",
+      "S106"
+    ],
+    "locators": "S105, Printed p. 12, ‘Top Legal Talent’ and the paragraph immediately preceding it | S106, July 22, 1933 letter, file 62-4949, p. 2, paragraph beginning ‘The St. Paul Office will observe’",
+    "supportExplanation": "Cowie’s account names George Young and Joseph Schaefer and describes the conviction and sentence. Cullen lists Albert L. Silverburg and John Newman and names the victim Abe Wagner.",
+    "qualification": "The federal letter was a summary written a year later. The compared passages leave the pairwise alias mapping and the method of identifying Wagner open.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C168",
+    "assertion": "The October 8 Associated Press dispatch identified Rutman as a dress shop proprietor and reported that he returned home after being held near White Bear Lake.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S107"
+    ],
+    "locators": "S107, Printed p. 1, “Kidnaped Man Beaten Before Being Released,” October 8 Saint Paul dateline.",
+    "supportExplanation": "The Pampa Daily News printed a Saint Paul dispatch describing Rutman’s occupation, release and hospitalization.",
+    "qualification": "The release and hospital visit are reported in a contemporary dispatch. The cottage location comes from the account available at the time.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C169",
+    "assertion": "A later history identifies Rutman as a bootlegger and attributes his abduction to Jack Ferrick and associates, naming the Silver Slipper as the place he was held.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S105"
+    ],
+    "locators": "S105, Printed p. 12, paragraph naming Morris Rutman, Jack Ferrick and the Silver Slipper. See note 25 for the citation to Paul Maccabee.",
+    "supportExplanation": "The historical account gives the Saint Paul abduction, names Ferrick and places Rutman at the Silver Slipper in Mahtomedi.",
+    "qualification": "The names and venue come from Cowie’s later account, which cites Paul Maccabee. The early wire gave a general location near White Bear Lake.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C170",
+    "assertion": "The contemporary press attributed the $50,000 demand to Rutman and carried conflicting reports about whether a payment followed.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S107",
+      "S108"
+    ],
+    "locators": "S107, Printed p. 1, “Kidnaped Man Beaten Before Being Released,” October 8 Saint Paul dateline, closing sentence on the demand. | S108, October 8 Saint Paul dateline, paragraphs between the demand and the “Was Abducted” subhead.",
+    "supportExplanation": "The short dispatch records the amount Rutman said was demanded. The longer dispatch records the denial and the friends’ report that relatives paid.",
+    "qualification": "The amount is the reported demand. The longer report’s police denial and secondhand report from friends leave the outcome unresolved.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C171",
+    "assertion": "The federal case file records that the man who encountered officers at Lincoln Court presented himself as a soap salesman.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S41",
+      "S11"
+    ],
+    "locators": "S41, April 8, 1934 memorandum for the Director, first page, about 2 p.m. call with Clegg and paragraphs on the soap salesman. | S11, “The Bureau Actively Joins the Hunt,” March 31 Lincoln Court encounter and flight.",
+    "supportExplanation": "The memo records the cover story as investigators discussed the man’s identity. The agency’s later narrative describes the corresponding encounter.",
+    "qualification": "The later FBI case history identifies Van Meter and describes the armed encounter. The contemporary April 8 memo records uncertainty about his identification.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C172",
+    "assertion": "The April 8 memorandum records Coulter’s tentative identification, facial resemblance to Green, and the lack of a fingerprint finding at that point.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S41"
+    ],
+    "locators": "S41, April 8, 1934 memorandum for the Director, first page, paragraph beginning “I asked him if we had enough information on Van Meter.”",
+    "supportExplanation": "The writer summarizes an afternoon call with Clegg in which the officers discussed Van Meter as a possible identification.",
+    "qualification": "This is a record of what the investigators knew on April 8. It gives no later fingerprint result.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C173",
+    "assertion": "Skinner said Van Meter told her he was the man who used the soap-sales story and fired at an officer, and the FBI’s later history identifies Van Meter at the scene.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S41",
+      "S11"
+    ],
+    "locators": "S41, Interview of Bessie Skinner, printed p. 10, paragraph beginning “She stated that to her knowledge Homer Van Meter” and continuing into the alleged admission. | S11, “The Bureau Actively Joins the Hunt,” March 31 Lincoln Court encounter.",
+    "supportExplanation": "Clegg’s interview write-up records Skinner’s account of Van Meter’s statement. The FBI case history names him in its account of the hallway encounter.",
+    "qualification": "Skinner was reporting a later conversation. She did not witness the encounter at Lincoln Court.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C174",
+    "assertion": "Gold’s history says the owner of a missing Buick roadster valued at $1,400 spotted it at a garage while riding a streetcar near University and Dale in Saint Paul.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S36"
+    ],
+    "locators": "S36, Printed p. 14, ‘The Car Thief,’ first paragraph",
+    "supportExplanation": "The first paragraph of ‘The Car Thief’ gives the model, value, streetcar and intersection.",
+    "qualification": "The sighting and valuation are from Gold’s retrospective account.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C175",
+    "assertion": "Gold says the owner found brochures from his nut-shelling plant in the Buick, called police, and that Taran appeared before Judge Hugo Hanft on a car theft charge.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S36"
+    ],
+    "locators": "S36, Printed p. 14, ‘The Car Thief,’ first two paragraphs, and adjacent ‘The Bootlegger’ section",
+    "supportExplanation": "Gold describes the discovery and the phone call, then recounts Taran’s court appearance. The surrounding article establishes Taran’s boxing and later bootlegging history.",
+    "qualification": "The source describes the brochures and the charge. The brochures themselves are unavailable and the charge does not establish that Taran stole the Buick.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C176",
+    "assertion": "Gold reports that Taran was released and quotes the St. Paul Daily News reporting Judge Hanft’s advice to stick to tailoring.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S36"
+    ],
+    "locators": "S36, Printed p. 14, ‘The Car Thief,’ second paragraph, including the St. Paul Daily News quotation",
+    "supportExplanation": "Gold reports the release and quotes the contemporary newspaper’s description of the advice.",
+    "qualification": "The newspaper sentence survives here as quoted by Gold. Gold gives no original docket or later disposition for this charge.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C177",
+    "assertion": "A contemporary dispatch reports Hogan’s death after surgery on December 4, 1928. A later account reports that people including a boxing champion offered to donate blood at the hospital.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S109",
+      "S110"
+    ],
+    "locators": "S109, Front page, ‘Underworld Leader Dies From Injuries,’ December 4 Saint Paul dateline. | S110, Opening paragraph and paragraph about the amputation and blood-transfusion offers.",
+    "supportExplanation": "The AP’s two-paragraph item records the fatal bombing and amputation. Curt Brown’s opening and his account of the surgery describe the people who volunteered.",
+    "qualification": "The later account describes offers to donate. The available reporting leaves the identities and participation of individual donors unconfirmed.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C178",
+    "assertion": "Contemporary local coverage tied Hogan’s death to a prediction of fewer Christmas turkey dinners in Saint Paul.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S110",
+      "S111"
+    ],
+    "locators": "S110, Paragraph beginning ‘He was the idol of not a few persons,’ followed by the Christmas dinner line. | S111, Significance narrative, sections 9–end p. 35, ‘Dapper Dan’ Hogan paragraph and note 45.",
+    "supportExplanation": "Brown reproduces the line from the Minneapolis Morning Tribune. The Calvary Cemetery registration form cites the December 5 front-page death story by title.",
+    "qualification": "The line is the 1928 newspaper’s characterization, as quoted by Curt Brown in 2018. It gives the paper’s view of Hogan’s reputation among some people.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C179",
+    "assertion": "A local history describes more than 2,000 mourners and five carloads of flowers at Hogan’s funeral, and recounts a witness remembering Granada Club regulars in the church.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S112"
+    ],
+    "locators": "S112, Printed p. 9, paragraph immediately before ‘Epilogue.’",
+    "supportExplanation": "The last two paragraphs before the epilogue give the crowd estimate, the flowers and the recollection inside the church.",
+    "qualification": "The turnout and flowers are estimates from a later account. The recollection of club regulars is attributed to Harry Turgeon.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C180",
+    "assertion": "A June 17 United Press report described the two ransom-related notes, the taxi driver’s arrest at the Dunn home, and his account of being paid $2 for the delivery.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S113"
+    ],
+    "locators": "S113, June 17, 1933, front page, Saint Paul dateline under ‘William Hamm Is Held’; paragraphs from the delivery to Dunn’s home through the photograph of Sankey.",
+    "supportExplanation": "The dispatch recounts the delivery and arrest, then attributes the fee and explanation to the driver.",
+    "qualification": "The dispatch reports what the driver said about the fee and his knowledge of the notes.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C181",
+    "assertion": "The June dispatch reported a tentative reaction to Sankey’s photograph, while the description for press photograph 97 identifies Allison and records that he described a resemblance to McFadden.",
+    "status": "Qualified",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S113",
+      "S114"
+    ],
+    "locators": "S113, June 17, 1933, front page, paragraph describing the driver’s reaction to the photograph of Verne Sankey. | S114, Crime Photographs collection, item 97, ‘Hamm, William A. Jr. 1933.’",
+    "supportExplanation": "United Press records the suspicion about the Sankey photo. Kent State identifies Allison and summarizes his response about McFadden at trial.",
+    "qualification": "The June item is a wire report. The archive entry is a photograph description and supplies no verbatim transcript.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C182",
+    "assertion": "The November 28 Associated Press dispatch reported that a federal jury acquitted McFadden, Touhy, Sharkey and Schaefer on both Hamm kidnapping counts.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S102"
+    ],
+    "locators": "S102, November 28, 1933, front page, ‘Fail to Convict Touhy Gangsters,’ opening paragraphs and description of counts.",
+    "supportExplanation": "The dispatch gives all four defendants’ names, the acquittal, and the two counts in the Hamm case.",
+    "qualification": "The article reports the verdict and charges and supplies no jury deliberations.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C183",
+    "assertion": "Cherrington told agents that she, her sister and Hamilton contacted Van Meter at a Saint Paul restaurant and stayed four days at a cottage she identified as Harry Sawyer’s before a warning prompted their return.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S115"
+    ],
+    "locators": "S115, Bremer Kidnapping Part 145, opening page, paragraph beginning ‘PATRICIA CHERRINGTON,’ immediately before the Vivian Mathias paragraph.",
+    "supportExplanation": "The report attributes the restaurant, Van Meter’s role, the four-day stay and the warning to Cherrington.",
+    "qualification": "The file summarizes Cherrington’s account. It gives neither the restaurant’s name nor the cottage’s address.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C184",
+    "assertion": "Skinner told agents that she had heard from Van Meter about the trio’s route to McCormick’s restaurant and their departure in a Ford, and she gave her belief about the destination.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S116"
+    ],
+    "locators": "S116, Bremer Kidnapping Part 175, Bessie Skinner interview, paragraph beginning ‘According to information Mrs. Skinner received from Van Meter on the day of the shooting on Lexington Avenue’.",
+    "supportExplanation": "The interview specifies the named restaurant, vehicle, and Skinner’s stated basis for the account.",
+    "qualification": "Skinner’s route is secondhand, and she described the farm as her belief.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C185",
+    "assertion": "A federal witness outline attributed to Werner Hanni the discovery of a light tan woman’s coat with a platinum fox collar and Young-Quinlan label in Apartment 303 at Lincoln Court.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S41"
+    ],
+    "locators": "S41, Dillinger Gang Part 12, witness outline near the end of the volume, after printed p. 5 marker, Werner Hanni entry, paragraph beginning ‘Witness will further testify that among the effects’.",
+    "supportExplanation": "Hanni’s witness entry gives the apartment number and the coat’s appearance and label.",
+    "qualification": "The outline describes expected testimony and names no purchaser or owner for the coat.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C186",
+    "assertion": "The FBI witness outline and trial summary both say Bremer discarded the goggles in weeds after the kidnappers drove away, but record different instructions about how high to count.",
+    "status": "Qualified",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S117",
+      "S119",
+      "S118"
+    ],
+    "locators": "S117, P. 018, Edward G. Bremer outline, final Rochester roadside paragraph. | S119, Printed p. 5, summary of Bremer’s release testimony. | S118, P. 059, Glynn outline, recovery on or about February 17, 1934.",
+    "supportExplanation": "The witness outline records fifteen and a restart at five. The later summary records ten and confirms Bremer’s account of discarding the goggles.",
+    "qualification": "These are an outline and an agent’s trial summary, not verbatim testimony. The trial summary also misdates the release to 1935; the recovery outline places the recovery in February 1934.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C187",
+    "assertion": "Glynn’s FBI witness outline says he found Bremer’s discarded goggles under about three inches of snow in Rochester and sent them to the Saint Paul office.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S118"
+    ],
+    "locators": "S118, P. 059, Special Agent M. P. Glynn witness outline.",
+    "supportExplanation": "The outline names Glynn and Rhode, describes the gap behind the building and states that Glynn sent the goggles to the Saint Paul office.",
+    "qualification": "The location and snow depth are recorded in the Bureau’s outline of Glynn’s expected testimony; they are not modern site measurements.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C188",
+    "assertion": "The FBI’s trial preparation file listed the welder’s goggles in Bureau custody and said they would go to the U.S. attorney in Saint Paul for Bremer to identify.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S117"
+    ],
+    "locators": "S117, Archive stamp 649, Items to Be Identified by Victim Bremer, Goggles entry.",
+    "supportExplanation": "The Goggles entry states who had the item, where it was to be sent, and who could identify it.",
+    "qualification": "The list gives the planned transfer and identification. It does not establish admission as an exhibit or the goggles’ current whereabouts.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C189",
+    "assertion": "Hoover’s April 30 memorandum says an Uptown State Bank cashier matched serial numbers to the Bremer ransom, and a subsequent report from First National Bank led agents to William Vidler.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S120"
+    ],
+    "locators": "S120, April 30, 1934 memorandum for the Attorney General, first sheet, paragraphs beginning ‘On April 23’ and ‘On April 26’",
+    "supportExplanation": "The memo’s first paragraph describes the cashier’s match and the circular. Its second describes the First National Bank exchange and the arrest.",
+    "qualification": "The memo gives the Bureau’s contemporary account of the bank employees’ actions. It describes the ransom match for some bills and leaves the provenance of the rest open.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C190",
+    "assertion": "A field report describes Jack McLaughlin trying on the wrong hat before agents found two envelopes under the sweatband of the hat he next identified. The field report and Hoover’s memo both report a match to Bremer ransom bills.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S120"
+    ],
+    "locators": "S120, Chicago field narrative, printed pp. 48–49, search of Rack No. 17 and examination of the brown felt hat; passage after McLaughlin’s signed statement, search ‘ransom list’; April 30, 1934 Attorney General memo, first sheet",
+    "supportExplanation": "The field report describes the gray and brown hats, the envelopes and the comparison to the ransom list. Hoover’s memo separately reports that some of the cash was identified as ransom.",
+    "qualification": "The field report records the agents’ version of the encounter. The field report and Hoover’s memo give different amounts for cash recovered and linked to the ransom.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C191",
+    "assertion": "The June 1934 correspondence records Vidler’s request for $460, the Saint Paul prosecutor’s decision to make no evidentiary claim to the sum, and Purvis’s proposed handling of the seal. A jury later acquitted Vidler and convicted John J. McLaughlin Sr. in the Saint Paul criminal case.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S121",
+      "S10"
+    ],
+    "locators": "S121, June 25 Sullivan and June 26 Purvis letters, archive-stamped pp. 186–188; Vidler petition in the Northern District of Illinois, stamps 233–235 | S10, Printed pp. 44–45, April 15 opening of the Saint Paul trial and May 17, 1935 verdicts",
+    "supportExplanation": "Sullivan’s June 25 letter and Purvis’s June 26 letter name the sum and give each office’s position. The later Bremer investigation summary lists the May 17, 1935 verdicts.",
+    "qualification": "The petition and correspondence describe a requested return. They give no final ruling about the cash. The acquittal is the verdict in the criminal case.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C192",
+    "assertion": "Arthur Murray’s witness outline records a package left at the New Hotel Brunswick by a man who said his father needed medicine and had missed the bus.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S117"
+    ],
+    "locators": "S117, P. 043, Arthur Murray witness outline.",
+    "supportExplanation": "The FBI outline names the hotel and recounts both visits and the explanation given for holding the package.",
+    "qualification": "The outline records what Murray said he was told. It does not identify the messenger or establish that the father or illness was real.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C193",
+    "assertion": "The Murray witness outlines say a Bremer ransom note found in an unclaimed cornmeal box directed its recipient to a marked black Chevrolet in Owatonna.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S117"
+    ],
+    "locators": "S117, Pp. 043–044, Arthur Murray and Mrs. George M. Murray witness outlines.",
+    "supportExplanation": "Arthur Murray’s outline gives the delay. The outline for his mother describes opening the package and transcribes the directions.",
+    "qualification": "The directions are transcribed in the witness outline. Their presence in the note does not establish that the car was there or that a payoff man followed them.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C194",
+    "assertion": "George M. Murray’s outline says he forwarded the note to the state Bureau of Criminal Apprehension in Saint Paul on March 31, 1934; the Bureau planned to send the cornmeal box to the U.S. attorney.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S117"
+    ],
+    "locators": "S117, Pp. 043–045, Arthur and George M. Murray witness outlines; p. 018, Edward Bremer release account.",
+    "supportExplanation": "George Murray’s outline dates the forwarding, while Arthur Murray’s page records the intended transfer of the cornmeal box and places delivery before the release.",
+    "qualification": "The file records the reported forwarding of the note and an intended transfer of the box, with no proof that the box was admitted in court.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C195",
+    "assertion": "A 1935 Associated Press dispatch described a siren and smoke at the 1933 South Saint Paul payroll robbery, the shooting of officers Pavlak and Yeaman, and Stassen’s announcement connecting the car to a Chicago robbery.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S122"
+    ],
+    "locators": "S122, March 12, 1935, Fairmont Daily Sentinel, South Saint Paul dateline, ‘Machine Gun Used Stolen From Police’ and continuation under ‘Auto Also Identified’.",
+    "supportExplanation": "The South Saint Paul dateline gives the date, deaths and injuries, and the continuation describes the smoke, siren and vehicle link.",
+    "qualification": "The dispatch recounts the 1933 robbery and reports what the county attorney announced in 1935.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C196",
+    "assertion": "A July 29, 1935 federal report identified the Hudson abandoned in Chicago as a black 1933 sedan and described its siren, smoke-screen equipment, bullet-resistant glass and steel armor.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S123"
+    ],
+    "locators": "S123, D. P. Sullivan’s July 29, 1935 report, printed pp. 9–12, Chicago robbery, abandoned Hudson and equipment paragraph immediately after the plate checks.",
+    "supportExplanation": "The Chicago robbery summary describes the smoke screen and abandonment. The following pages identify the model and list the modifications and the auto body shop.",
+    "qualification": "The report describes the equipment and records the investigators’ findings. It gives no complete diagram or operating description.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C197",
+    "assertion": "The July 29 federal report describes Florida plates on the recovered Hudson and says police linked Minnesota plates found inside, issued for a Duluth Ford, to the South Saint Paul robbery.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S123"
+    ],
+    "locators": "S123, D. P. Sullivan’s July 29, 1935 report, printed pp. 11–12, Florida plate number, interior inventory and Minnesota B141186 registration check.",
+    "supportExplanation": "The car inventory separates the mounted Florida plates from Minnesota sets recovered inside. The report then traces the Duluth Ford pair and describes its link to the earlier robbery.",
+    "qualification": "The report attributes the identification to Chicago police files. It gives no exact mounting history for all the other plates.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C198",
+    "assertion": "Period newspaper and magazine accounts describe Wallace Jamie presenting himself as a student of police work or an efficiency expert while investigating Saint Paul police ties to the underworld, with microphones hidden in lamps.",
+    "status": "Qualified",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S124",
+      "S125"
+    ],
+    "locators": "S124, August 16, 1935, p. 2, ‘He Stirred St. Paul’ | S125, July 1936, printed p. 53, opening account and caption beginning ‘Inside lamps’",
+    "supportExplanation": "The August 1935 feature and July 1936 illustrated account both describe Jamie in the public safety building and mention microphones in lamps.",
+    "qualification": "The magazine describes an efficiency survey. The newspaper says Jamie asked to observe police at work. Each account supplies different additional microphone locations.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C199",
+    "assertion": "Modern Mechanix reported that Jamie used a pamograph to cut conversations onto aluminum discs and adapted a fire alarm recorder to log telephone numbers dialed.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S125"
+    ],
+    "locators": "S125, July 1936, printed p. 127, paragraphs beginning ‘The method of listening’ and ‘Ticker Tape Records Telephone Numbers’; p. 53 captions",
+    "supportExplanation": "The continuation describes the pamograph, its sapphire needle and the fire alarm apparatus under ‘Ticker Tape Records Telephone Numbers.’",
+    "qualification": "The illustrated account describes the two instruments and gives a hypothetical telephone number as an example. It reproduces no original call tape or conversation.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C200",
+    "assertion": "Modern Mechanix reported that a janitor found recording equipment in a ventilation shaft and that recordings went to city and county officials. Cowie’s county history links Jamie’s investigation to a 1935 grand jury inquiry and twenty-one indictments.",
+    "status": "Qualified",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S125",
+      "S105"
+    ],
+    "locators": "S125, July 1936, printed p. 127, ‘Janitor Tips Off Jamie’s Plot’ | S105, Printed p. 13, paragraph beginning ‘In May, 1934, a young man named Wallace Ness Jamie’",
+    "supportExplanation": "The magazine’s closing paragraphs give the discovery and recipients. Cowie’s history describes the subsequent grand jury and official discipline.",
+    "qualification": "The janitor episode is from the magazine. The later county history supplies the count of indictments, which are formal charges.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C201",
+    "assertion": "The Associated Press reported that Antink identified Morrie Moll, also known as Morrie Miller, in Saint Paul. A later account places the meeting in the governor’s office.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S126",
+      "S128",
+      "S45"
+    ],
+    "locators": "S126, Printed p. 1, September 27 Los Angeles dispatch, paragraph naming the Phantom Gunman and describing Antink’s identification in Saint Paul. | S128, Paragraph immediately after the ‘Moll arrested in Florida 2-6-1929’ caption, on the June 5 identification. | S45, 170 Minn. 197, paragraphs discussing the alleged liquor syndicate and Morrie Miller.",
+    "supportExplanation": "The Eugene Guard’s September 27 Los Angeles dispatch names Moll’s alias and reports Antink’s Saint Paul identification. The Gleeman opinion records the brothers’ allegations about Morrie Miller, and Graham gives the date and place of Antink’s identification.",
+    "qualification": "The contemporary dispatch places the identification in Saint Paul that spring. The office and June 5 date come from Graham’s later account.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C202",
+    "assertion": "Moll was reported released on $10,000 bail and the 1929 transfer to California failed. The available accounts give different versions of the warrant decision.",
+    "status": "Qualified",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S127",
+      "S128"
+    ],
+    "locators": "S127, Printed p. 1, ‘Killed in Revenge for Foiling Crime,’ paragraph on bail and ‘Extradition Tried’ subheading. | S128, Paragraph beginning ‘The extradition to Los Angeles was granted on June 15.’",
+    "supportExplanation": "The Albany Democrat-Herald carries the bail figure and Fitts’s account of a refusal. Graham reports approval on June 15 followed by release and disappearance.",
+    "qualification": "The two accounts conflict over the warrant. The original extradition papers would be needed to resolve the decision and the chronology.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C203",
+    "assertion": "After Antink’s 1929 killing, the district attorney publicly blamed authorities for the failed transfer, police sought Moll, and the 1933 press reported that the killers had yet to be apprehended.",
+    "status": "Qualified",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S126",
+      "S129"
+    ],
+    "locators": "S126, Printed p. 1, September 27 Los Angeles dispatch, Fitts’s statement and paragraphs on the police search. | S129, August 29 Hollywood dateline, story about a shooting in an Italian restaurant, paragraphs on David Antink and Morris Moll.",
+    "supportExplanation": "The 1929 Associated Press report records the killing, Fitts’s statement and the police search. The August 29, 1933 dispatch says the people who killed Antink had yet to be apprehended.",
+    "qualification": "The criticism and identification of a suspect are attributed to the officials who made them. The later dispatch records the status of the investigation in August 1933.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C204",
+    "assertion": "The Bureau put Doyle at Twin Oaks in Saint Paul in 1932, and a separate agent report placed him at 23 Warner Plaza under the name Stacey at the time of the January 1935 Saint Paul indictment. The federal charge against him was later dismissed.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S89",
+      "S10"
+    ],
+    "locators": "S89, Kansas City follow-up, p. 1, paragraph referring to the agent’s April 25, 1935 Bremer report, just before printed p. 2. | S10, Paragraph beginning ‘November 1932 to December 1932,’ Twin Oaks; printed pp. 44–45, January indictments and May 6 dismissal.",
+    "supportExplanation": "The Bureau summary places Doyle at Twin Oaks and records the indictment and dismissal. The Kansas City agent report records the companion’s statement about Warner Plaza and the Stacey alias.",
+    "qualification": "Doyle’s companion supplied the alias account. The Saint Paul kidnapping-conspiracy charge was dismissed.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C205",
+    "assertion": "The Kansas City telegram records a federal apartment search that omitted refrigerated food containers and attributes the janitor’s reported discovery in a can to local press coverage.",
+    "status": "Qualified",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S122"
+    ],
+    "locators": "S122, Western Union Kansas City telegram KA17 72, signed Nathan, beginning ‘BREKID LOCAL PRESS TODAY STATES BOND,’ March 20, 1935 stamp.",
+    "supportExplanation": "The wire records the scope of the federal search in one passage and cites the local press for the janitor and the can in another.",
+    "qualification": "The telegram describes the Bureau’s own search and repeats a press account of the find. It promises to verify the press account.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C206",
+    "assertion": "An FBI letter records a $1,000 Peabody bond, serial 56, recovered in Doyle’s apartment and identified by the Bank of Drexel cashier as stolen from his bank, despite Davis’s suggestion that it came from a mail robbery.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S130"
+    ],
+    "locators": "S130, E. L. Conroy letter from Kansas City to Oklahoma City, September 1935, handwritten p. 67, citing R. P. Shanahan’s February 21 report on bond serial 56.",
+    "supportExplanation": "Conroy’s letter gives the value and serial, names the bank and robbery date, and distinguishes Davis’s account from the cashier’s identification in Shanahan’s report.",
+    "qualification": "The letter summarizes the cashier’s identification and Doyle’s reported admission. It does not describe the container or identify who put the bond there.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C207",
+    "assertion": "The federal outline of Byron Bolton’s expected testimony says he overheard a conversation about a Florida lake, a cottage and an alligator called Big Joe at a pecan ranch south of Macon. A longer interview records his account of a baited barrel and the alligator getting away.",
+    "status": "Qualified",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S118",
+      "S131"
+    ],
+    "locators": "S118, Printed p. 110, Byron Bolton witness outline, paragraph beginning ‘BOLTON will further state’ and describing the pecan ranch. P. 111 identifies the underlying interview record in Saint Paul. | S131, Statement under the name Monte Carter, immediately before printed p. 105, paragraph on Big Joe and the bait.",
+    "supportExplanation": "Bolton’s outline names the four men and records the conversation about the lake, hunting, the motorboat and the alligator. The interview under the name Monte Carter includes the barrel and what the men said happened.",
+    "qualification": "The outline describes what Bolton said he overheard. It places the ranch about 30 to 50 miles south of Macon and gives no exact location. Bolton reports the bait story secondhand.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C208",
+    "assertion": "A February 1935 bureau memorandum records two Florida maps found in Doc Barker’s Chicago apartment and Bolton’s opinion that their marks pointed to the hideout.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S122",
+      "S10"
+    ],
+    "locators": "S122, February 8, 1935 memorandum for the director, p. 1, first three paragraphs and the January 11 interview. | S10, Printed pp. 38–39, paragraph on the Chicago search, marked map and alligator report.",
+    "supportExplanation": "The memorandum’s opening gives the two marks separately and specifies that the maps were shown to Bolton before investigators went to Florida.",
+    "qualification": "The memorandum records recovery of the maps. Bolton’s identification of the marks is his interpretation. The later summary describes a single map with a circle around Ocala and Lake Weir.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C209",
+    "assertion": "The bureau’s records describe how the marked maps and information about the alligator preceded the Florida inquiries that located Fred and Kate Barker at Lake Weir.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S122",
+      "S10"
+    ],
+    "locators": "S122, February 8, 1935 memorandum for the director, pp. 1–2, Florida investigation and identification of the cottage occupants. | S10, Printed pp. 38–39, marked map, Old Joe and the location of the Lake Weir cottage.",
+    "supportExplanation": "The February memorandum records the dates and the inquiries near Ocala. The 1936 investigation summary identifies the Lake Weir cottage and gives the alligator nickname as Old Joe.",
+    "qualification": "Both accounts come from the federal investigation. They record the agents’ search and do not establish that the alligator alone identified the cottage.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C210",
+    "assertion": "Frechette was convicted in Saint Paul of conspiring to harbor a fugitive. In July 1936 The Billboard reported that she had joined Scout Younger’s Arizona Dust Bowl carnival attraction.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S11",
+      "S132"
+    ],
+    "locators": "S11, The Bureau Actively Joins the Hunt, paragraph on Frechette’s Saint Paul trial and sentence. | S132, Printed p. 51, Dodson World’s Fair Shows, Johnstown dispatch by Dick Collins.",
+    "supportExplanation": "The case history gives the location, charge and sentence. The trade report names Frechette, Younger and the attraction.",
+    "qualification": "The FBI’s case history gives the conviction and sentence. The carnival dispatch identifies the booking without describing a performance or linking this attraction to the later show as the same production.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C211",
+    "assertion": "The January 9, 1937 Billboard item names Frechette as the feature of Crime Does Not Pay, lists people who worked on the show, and mentions several wax figures in a picture of the group.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S133"
+    ],
+    "locators": "S133, Printed p. 50, Carnivals column, item opening ‘A recent picture on hand’.",
+    "supportExplanation": "The item says the company was playing theaters and supplies a roster of the people and wax figures shown in the photograph.",
+    "qualification": "The trade paper describes a photograph and names the people. It gives no names for the wax figures and leaves their role in the performance unclear.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C212",
+    "assertion": "On April 8, 1937, Camden chamber of commerce secretary Frank H. Heath wrote to Hoover about posters promising a personal appearance by Frechette and asked whether the performer could be her.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S134"
+    ],
+    "locators": "S134, April 8, 1937 letter from Frank H. Heath to J. Edgar Hoover, first sheet after FOIA cover.",
+    "supportExplanation": "Heath names the theater, describes where he saw the posters and asks Hoover to verify the advertised identity.",
+    "qualification": "The letter records Heath’s suspicion. It leaves open whether the advertised Camden performance took place.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C213",
+    "assertion": "The FBI’s May 29, 1937 letter describes Frechette answering audience questions at a Pittsburgh carnival and says a Bureau stenographer who attended recognized her from office photographs.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S134"
+    ],
+    "locators": "S134, May 29, 1937, letter from the Pittsburgh field office to the Director, file 62-47968-4.",
+    "supportExplanation": "The letter names the act, describes the audience questions and gives the basis for identifying the performer.",
+    "qualification": "The memo summarizes selected answers and records the stenographer’s identification in Pittsburgh. It gives no transcript and does not verify every booking or establish the facts of Frechette’s answers.",
+    "passageCheckDate": "2026-11-12"
+  },
+  {
+    "id": "C214",
+    "assertion": "The indictment reproduced in Goldberg v. United States described three freight cars carrying whiskey beneath scrap iron from Winnipeg to Minneapolis before national Prohibition took effect.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S135"
+    ],
+    "locators": "S135, 277 F. 211, pp. 213–215, paragraphs 26–27 on the indictment and the existing prohibition on imports.",
+    "supportExplanation": "The decision reproduces the counts and dates in the indictment and explains that federal law had prohibited importation since 1917.",
+    "qualification": "The identifiers, counts and siding dates are allegations reproduced in the appellate opinion. The court affirmed the convictions on appeal.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C215",
+    "assertion": "Quinn’s dissent describes a December 26 bank vault visit and railroad records putting the first car in Saint Paul on December 29 and Minneapolis on December 31.",
+    "status": "Qualified",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S136"
+    ],
+    "locators": "S136, 147 Minn. 383, p. 394, Quinn’s dissent, first numbered example of Weisman’s testimony.",
+    "supportExplanation": "The dissent recounts Weisman’s testimony and uses the two record sets to challenge the timing.",
+    "qualification": "Quinn treated the dates as a reason to reject Weisman’s account. The court’s controlling opinion applied a limited review of the governor’s decision.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C216",
+    "assertion": "A federal jury acquitted Nash, Governor Burnquist removed him after a hearing at the State Capitol, and the Minnesota Supreme Court left the order in place.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S136",
+      "S137"
+    ],
+    "locators": "S136, 147 Minn. 383, pp. 385, 387–392, hearing, findings, federal acquittal and disposition; Quinn dissent beginning p. 392. | S137, Paragraph beginning ‘Martinson admitted,’ account of Nash’s acquittal and the state Capitol removal hearing.",
+    "supportExplanation": "The state opinion gives both outcomes and distinguishes the proceedings. MNopedia locates the governor’s hearing at the Capitol.",
+    "qualification": "The acquittal was in the criminal case. The governor’s proceeding addressed fitness to hold office, and the court reviewed the removal under a limited standard.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C217",
+    "assertion": "The Minnesota Supreme Court records a disabled Lincoln in Como Park after the bank robbery, Peterson’s identification of Hankins as the man with a white sack, and Hankins’s first-degree murder conviction.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S138"
+    ],
+    "locators": "S138, Printed pp. 375–377, ¶¶1–5, robbery, disabled Lincoln, and J. H. Peterson’s testimony.",
+    "supportExplanation": "The opinion gives the date and police deaths, summarizes Peterson’s observation and identifies the conviction under review.",
+    "qualification": "The sack and the identification come from Peterson’s testimony as summarized by the court. The passage does not give the contents of the sack.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C218",
+    "assertion": "The opinion describes aluminum grips and chiseled-off factory numbers on both pistols. A prosecution expert attributed the work on both to the same tool.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S138"
+    ],
+    "locators": "S138, Printed p. 377, ¶¶6–7, weapons and tool marks; p. 379, ¶11, exhibit K.",
+    "supportExplanation": "The court describes each arrest, identifies Exhibit K as the pistol found on Hankins and summarizes the prosecution expert’s comparison.",
+    "qualification": "The same-tool comparison is the expert’s testimony as summarized in the opinion. The account leaves who altered the pistols and who fired each gun open.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C219",
+    "assertion": "The opinion describes Hankins’s account of obtaining the gun, the state’s rebuttal, and the barber’s alibi alongside Hankins’s own pretrial account. The court affirmed the denial of a new trial.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S138"
+    ],
+    "locators": "S138, Printed pp. 379–382, ¶¶11–14 and ¶20, possession testimony, rebuttal, competing alibi and disposition.",
+    "supportExplanation": "The opinion recounts Hankins’s testimony, witnesses who described his earlier possession of a similar gun, the Wabasha Street alibi, and Hankins’s own statement before affirming the order.",
+    "qualification": "The opinion summarizes competing testimony and statements. Its ruling left the original conviction in place.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C220",
+    "assertion": "Touhy’s car struck a telephone pole near Elkhorn on July 19, 1933. A contemporary report identifies Harry Ward as the unarmed officer who stopped the men.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S139",
+      "S140"
+    ],
+    "locators": "S139, September 1, 1933, ‘Wisconsin News,’ Milwaukee item naming Harry Ward. | S140, 361 Ill. 332, paragraph beginning ‘Touhy, Stevens and McFadden filed a motion to suppress.’",
+    "supportExplanation": "The Kewaskum Statesman places the four men at the crash and names Ward. The Illinois opinion supplies the date and describes the crash and seizure.",
+    "qualification": "The newspaper names Ward and summarizes the arrests. The later opinion describes the crash and gun seizure in the separate John Factor prosecution.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C221",
+    "assertion": "Later accounts describe going to the jail over the pole damage. Touhy remembered $22.50, and the county recounts Sharkey riding a chicken truck to Lake Geneva and calling the jail.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S141",
+      "S142"
+    ],
+    "locators": "S141, Chapter 10, ‘Gone Fishing,’ paragraphs beginning ‘At the little town of Elkhorn’ and ‘I waited until a policeman.’ | S142, ‘Roger Touhy’ and ‘Arrest & Parole’ sections, paragraphs on the pole damage and Sharkey’s arrest.",
+    "supportExplanation": "The memoir reports the price of replacing the pole. The county history gives Ward’s purpose and the account of Sharkey’s arrest.",
+    "qualification": "The dollar amount and the chicken-truck detail come from separate later accounts. No bill or receipt was located.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C222",
+    "assertion": "Contemporary coverage printed a photograph of Touhy in Elkhorn custody, reported the four men’s transfer to Saint Paul on Hamm charges, and reported their federal acquittal in November.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S143",
+      "S139",
+      "S102"
+    ],
+    "locators": "S143, July 22, 1933, front page, photograph and caption ‘First Photo of Roger Touhy, Chicago Gangster.’ | S139, ‘Wisconsin News,’ Milwaukee item, opening sentence on the Saint Paul transfer. | S102, Printed p. 1, ‘Fail to Convict Touhy Gangsters,’ November 28 Saint Paul dateline.",
+    "supportExplanation": "The Manchester caption describes the deputies, photograph and crash. The Kewaskum item reports the Saint Paul transfer. The Medford dispatch gives the verdict.",
+    "qualification": "The ‘first photo’ claim is the Herald’s caption. The verdict concerns the federal Hamm charges.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C223",
+    "assertion": "A Bureau memorandum says Austin was arrested at the conclusion of his January 20 Chicago wedding ceremony. A federal investigation summary identifies him as the Whitey named in the January 22 Saint Paul indictment.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S144",
+      "S10"
+    ],
+    "locators": "S144, April 15, 1935 memorandum in press-release form, p. 2, paragraph beginning ‘John J. McLaughlin, Sr., was located,’ enclosure 7-576-5572X. | S10, Printed pp. 44–45, the January 22, 1935 superseding indictments and identification of Whitey.",
+    "supportExplanation": "The April 15 memorandum gives both names and dates the arrest. The November 1936 case summary identifies the alias in the conspiracy indictment.",
+    "qualification": "The memo places the arrest at the end of the ceremony and gives no exact venue or sequence of events in the room. The indictment was a charge.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C224",
+    "assertion": "Shafetz recorded Mrs. Austin’s account of two calls answered by her mother and told her the Chicago Bureau had not made them.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S145"
+    ],
+    "locators": "S145, Printed p. 88, passage beginning ‘The following investigation was conducted by Special Agent M. Shafetz on March 18, 1935’.",
+    "supportExplanation": "The March 18 report gives the call date, the reported claim of federal authority, and Shafetz’s response in person.",
+    "qualification": "Mrs. Austin did not speak to the callers. The report preserves her account of what her mother heard and the agent’s response, and gives no caller identity or motive.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C225",
+    "assertion": "The Bureau named Austin among the April 15 Saint Paul defendants and later recorded his May 6 discharge from custody and an October 11 murder conviction in Chicago.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S144",
+      "S10"
+    ],
+    "locators": "S144, April 15, 1935 memorandum, p. 1, defendant list, enclosure 7-576-5572X. | S10, Printed p. 45, paragraph beginning ‘Bruno Austin on May 6, 1935’.",
+    "supportExplanation": "The April memo lists Austin as the trial opened. The November 1936 summary records the discharge, rearrest and Chicago sentence.",
+    "qualification": "The Bureau summary gives the disposition of custody in Saint Paul and describes a separate murder case in Chicago.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C226",
+    "assertion": "The Bureau’s investigation summary describes Karpis and Campbell escaping the hotel during a gunfight that wounded Dolores Delaney. It names both men in the January 22 Saint Paul indictment.",
+    "status": "Supported",
+    "evidenceBasis": "direct record",
+    "sourceIds": [
+      "S10"
+    ],
+    "locators": "S10, Printed p. 41, Atlantic City garage and hotel escape; p. 44, January 22 kidnapping indictment naming Karpis and Campbell.",
+    "supportExplanation": "The summary places the car in the Coast Garage and recounts the hallway encounter, escape and Delaney’s wound. Its later indictment section names both men in the Saint Paul case.",
+    "qualification": "The summary describes the man in the hallway without naming him in that sentence. Its account gives no reason to assign that detail to either fugitive by name.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C227",
+    "assertion": "The January 21 AP dispatch reported the clothing-store alert, each man’s clothing, and the authorities’ belief that both fugitives remained in Atlantic City.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S146"
+    ],
+    "locators": "S146, January 21, 1935, p. 1, Atlantic City AP dispatch, paragraphs on clothing stores, the bridges and the two descriptions.",
+    "supportExplanation": "The AP story gives the warning, the guarded bridges and the garments it reports each man wore.",
+    "qualification": "The dispatch reports the authorities’ belief and its account of the men’s clothing at the time.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C228",
+    "assertion": "The Bureau’s later investigation summary says the fugitives left Atlantic City in a stolen Pontiac and abandoned it near Quakertown, Pennsylvania.",
+    "status": "Supported",
+    "evidenceBasis": "cross-source",
+    "sourceIds": [
+      "S10",
+      "S146"
+    ],
+    "locators": "S10, Printed p. 41, paragraph beginning ‘After escaping from the hotel,’ Pontiac and Dr. Hunsicker. | S146, January 21, 1935, p. 1, paragraph reporting the police belief and guarded highway bridges.",
+    "supportExplanation": "The final Atlantic City paragraph gives the Pontiac and Pennsylvania locations, while the contemporary AP dispatch records the authorities’ earlier confidence in the cordon.",
+    "qualification": "The summary traces the fugitives beyond Atlantic City and leaves their exit route and any clothing-store visit open. The records give no chronology for the bridge patrols relative to the escape.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C229",
+    "assertion": "A federal prosecutor said Segar obtained two types of keys in Denver and recruited an alleged mail-theft crew in Saint Paul.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S147",
+      "S148"
+    ],
+    "locators": "S147, Printed p. 1, ‘Bare Conspiracy To Rob U.S. Mail And Peddle Loot,’ last paragraph before the jump. | S148, Printed p. 5, continuation headed ‘Bare Conspiracy,’ opening paragraph.",
+    "supportExplanation": "The front-page dispatch names Segar and the two sets of keys. The continuation says he returned to Saint Paul and names two alleged recruits.",
+    "qualification": "This is the prosecutor’s description of the alleged scheme as reported in 1936. The dispatch gives no account of how Segar obtained the keys.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C230",
+    "assertion": "The prosecutor described a pattern of opening station mailrooms and sacks, taking the registered mail, and locking both again before leaving.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S148"
+    ],
+    "locators": "S148, Printed p. 5, ‘Bare Conspiracy,’ quoted paragraphs beginning ‘In many small towns’ and describing relocking the sacks and building.",
+    "supportExplanation": "The page 5 continuation specifies where mail was left overnight and what the prosecutor said the two key sets opened.",
+    "qualification": "The newspaper quotes the prosecutor describing an alleged recurring method. This passage gives no list of the stations or a count for individual trips.",
+    "passageCheckDate": "2026-11-13"
+  },
+  {
+    "id": "C231",
+    "assertion": "The May 1936 dispatch reports eleven arrests in an alleged mail-theft conspiracy and attributes the $100 Liberty bond lead to the prosecutor.",
+    "status": "Qualified",
+    "evidenceBasis": "attributed account",
+    "sourceIds": [
+      "S147"
+    ],
+    "locators": "S147, Printed p. 1, May 9 Denver dateline, list of arrests and paragraph beginning ‘A $100 liberty bond.’",
+    "supportExplanation": "The front-page dispatch gives the number under arrest, names the two men held in Saint Paul and connects the Liberty bond to the investigation.",
+    "qualification": "The dispatch names people under arrest and gives the prosecution’s account. The outcome of the case remains unverified.",
+    "passageCheckDate": "2026-11-13"
   }
 ]

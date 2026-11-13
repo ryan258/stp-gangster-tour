@@ -11,6 +11,15 @@ const person=text.refine(v=>!/\b(codex|claude|gpt|chatgpt|gemini|copilot|llm|ai|
 const image=z.object({id,file:text.regex(/^\/images\/[a-z-]+\/[a-z0-9-]+\.webp$/),width:z.number().positive().int(),height:z.number().positive().int(),fileDigest:digest,variants:z.array(z.object({file:text.regex(/^\/images\/[a-z-]+\/[a-z0-9-]+-\d+\.webp$/),width:z.number().positive().int()})).min(1),creator:text,rightsBasis:text,rightsStatus:z.enum(['pending','approved']).default('pending'),materialLabel:z.literal('Atmospheric artwork'),provenanceStatus:z.enum(['pending','confirmed']),provenanceNote:text,reviewDate:date.nullable(),reviewedRevision:text.nullable(),reviewer:person.nullable(),description:text});
 const file=text.regex(/^\/media\/[a-z-]+\/[a-z0-9-]+\.(svg|mp3|wav|aiff)$/);
 const block=z.object({id:z.enum(['intro','record','metagame']),role:z.enum(['factual','interpretive']),type:z.literal('paragraph'),text,claimIds:ids,metagameId:id.optional()});
+const pilot=z.object({
+ symbol:z.enum(['threshold','ledger','chair','letter','telephone','doorway','docket']),
+ symbolLabel:text,
+ question:text,
+ recordTitle:text,
+ accounts:z.array(z.object({title:text,label:text,text,limit:text,linkLabel:text,evidenceId:id})).min(1).max(2),
+ returnTitle:text,
+ returnText:text
+});
 const bookend=z.object({title:text,summary:text,paragraphs:z.array(text).min(1),premiseClaimIds:ids});
 const review=z.object({id,audioDigest:digest,transcriptDigest:digest.nullable(),reviewedRevision:text.nullable(),reviewDate:date.nullable(),reviewer:person.nullable(),listeningReviewStatus:z.enum(['pending','passed','failed']),reviewNotes:text});
 const audio=z.object({id,file,durationSeconds:z.number().positive().max(900),audioDigest:digest,rightsBasis:text,masterFile:text.regex(/^production\/audio\/[a-z0-9-]+\.(aiff|wav)$/).nullable(),masterDigest:digest.nullable(),rightsStatus:z.enum(['pending','approved']).default('pending')});
@@ -19,8 +28,37 @@ export const schemas={
  'map-river':z.object({bounds:z.object({west:z.literal(-93.102),east:z.literal(-93.082),south:z.literal(44.934),north:z.literal(44.947)}),rings:z.array(z.array(z.tuple([z.number().min(-93.102).max(-93.082),z.number().min(44.934).max(44.947)])).min(4).refine(r=>JSON.stringify(r[0])===JSON.stringify(r[r.length-1]),'Ring must be closed')).min(1)}),
  geography:z.object({status:z.enum(['pending','reviewed']),reviewer:person.nullable(),reviewDate:date.nullable(),baseSourceUrl:url.nullable(),reuseBasis:text.nullable(),reuseSourceUrl:url,sourceQuery:url,nameQuery:url,sourceFile:z.literal('production/geography/usgs-nhd-area.geojson'),sourceDigest:digest,baseFile:z.literal('src/data/map-river.json'),baseDigest:digest,notes:text}),
  edition:z.object({id,title:text,subtitle:text,tagline:text,contentRevision:text,presentationRevision:text,historicalCheckDate:date,contentNote:text,releaseStatus:z.enum(['preview','reviewed']),stops:ids.length(7),evidenceIds:ids,stopLabels:z.record(id,text),prologue:bookend,epilogue:bookend}),
- stops:z.array(z.object({id,order:z.number().int().min(1).max(7),title:text,period:text,synopsis:text,locationId:id,sceneId:id,narrationId:id,ambienceId:id,chapterNote:text,presenterType:z.enum(['relationship','comparison','document','sequence']),namedSelections:ids,evidenceIds:ids,relatedPersonIds:ids,relatedStopIds:ids,blocks:z.object({intro:block,record:block,metagame:block})})).length(7),
+ stops:z.array(z.object({id,order:z.number().int().min(1).max(7),title:text,period:text,synopsis:text,locationId:id,sceneId:id,narrationId:id,ambienceId:id,chapterNote:text,presenterType:z.enum(['relationship','comparison','document','sequence']),namedSelections:ids,evidenceIds:ids,relatedPersonIds:ids,relatedStopIds:ids,pilot,blocks:z.object({intro:block,record:block,metagame:block})})).length(7),
  claims:z.array(z.object({id,assertion:text,status:z.enum(['Supported','Qualified','Disputed','Unverified']),evidenceBasis:z.enum(['direct record','attributed account','cross-source']),sourceIds:ids,locators:text,supportExplanation:text,qualification:text,passageCheckDate:date})).min(1),
+ 'casebook-stories':z.array(z.object({
+  id,title:text,period:text,stopId:id.optional(),
+  blocks:z.array(z.object({text,claimIds:ids})).min(1),
+  sourceLink:z.object({sourceId:id,label:text}).optional()
+ })).min(1),
+ 'casebook-experiences':z.array(z.object({
+  id,
+  form:z.enum(['sequence','comparison','evidence','dispatch','ledger','hearing','letters','sound','map','timeline','reconstruction','trace','apparatus','playbill','call-log']),
+  collection:z.enum(['old-records','strange-finds','between-the-lines','clues-in-plain-sight','stranger-than-the-headlines','oddities-in-saint-paul-files']).optional(),
+  deck:text,
+  sceneLabels:z.array(z.object({
+   label:text,title:text,focus:text,
+   inset:z.object({
+    label:text,
+    layout:z.literal('cards').optional(),
+    lines:z.array(z.object({label:text,text}).strict()).min(1)
+   }).strict().optional()
+  }).strict()).min(1)
+ }).strict()).min(1),
+ 'paper-trails':z.array(z.object({
+  id,title:text,subtitle:text,period:text,
+  form:z.enum(['table','letters','brief','freight','signals','escape','ledger']),
+  scenes:z.array(z.object({id,label:text,title:text,text,claimIds:ids}).strict()).min(2),
+  sourceLink:z.object({sourceId:id,label:text}).strict(),
+  comparison:z.object({merchandiseValue:text,cashValue:text}).strict().optional()
+ }).strict().superRefine((story,ctx)=>{
+  if((story.form==='table')!==Boolean(story.comparison)) ctx.addIssue({code:z.ZodIssueCode.custom,path:['comparison'],message:'Only the tabletop story requires comparison values'});
+  if(new Set(story.scenes.map(scene=>scene.id)).size!==story.scenes.length) ctx.addIssue({code:z.ZodIssueCode.custom,path:['scenes'],message:'Scene IDs must be unique within a story'});
+ })).min(1),
  sources:z.array(z.object({id,title:text,creator:text,url,publicationDate:text.regex(/^(\d{4}(-\d{2}-\d{2})?|Undated|undated|n\.d\.)$/).nullable(),consultationDate:date,archiveUrl:url.nullable(),sourceType:z.enum(['Historical record','Historical account','Lead / historical account']),passageLocators:text,limits:text})).min(1),
  evidence:z.array(z.object({id,stopId:id,title:text,materialLabel:z.enum(['Tour explanation','Historical record','Historical account','Reconstruction']),claimIds:ids,sourceLocators:z.array(z.object({sourceId:id,locator:text})).min(1),description:text,supports:text,limits:text})).min(1),
  people:z.array(z.object({id,name:text,aliases:z.array(text),role:text,period:text,description:text,supportingClaimIds:ids,relatedStopIds:ids,qualifications:text})).min(1),

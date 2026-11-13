@@ -11,6 +11,32 @@
     "ambienceId": "ambience-city-rain",
     "chapterNote": "The bargain behind the refuge.",
     "presenterType": "relationship",
+    "pilot": {
+      "symbol": "threshold",
+      "symbolLabel": "An open threshold with a line running beneath it",
+      "question": "Who gets to cross?",
+      "recordTitle": "The terms of refuge",
+      "accounts": [
+        {
+          "title": "The conditions",
+          "label": "Minnesota Historical Society account",
+          "text": "The account describes an informal arrangement. Arriving criminals were expected to identify themselves, pay, and avoid major crimes within Saint Paul.",
+          "limit": "These are the reported terms. How consistently people followed them and how the arrangement affected crime remain open questions.",
+          "linkLabel": "Sources for the conditions",
+          "evidenceId": "E01"
+        },
+        {
+          "title": "The intermediaries",
+          "label": "Minnesota Historical Society account",
+          "text": "The account places William ‘Reddy’ Griffin in the intermediary role before Dan Hogan. It associates Hogan with the Green Lantern Saloon.",
+          "limit": "The chronology tells us who held the role. Where particular dealings happened remains uncertain.",
+          "linkLabel": "Sources for the intermediaries",
+          "evidenceId": "E02"
+        }
+      ],
+      "returnTitle": "Refuge had a boundary.",
+      "returnText": "The bargain promised refuge on one side of a line. People on the other side had no say in the bargain or where offenders were expected to take their crimes."
+    },
     "namedSelections": [
       "check-in",
       "pay",
@@ -81,6 +107,32 @@
     "ambienceId": "ambience-room-tone",
     "chapterNote": "Respectability had an address.",
     "presenterType": "comparison",
+    "pilot": {
+      "symbol": "ledger",
+      "symbolLabel": "An open ledger ruled into columns",
+      "question": "What can the numbers prove?",
+      "recordTitle": "What went into the columns",
+      "accounts": [
+        {
+          "title": "Deposits and income",
+          "label": "1935 appellate opinion",
+          "text": "In Leon Gleckman’s tax case, the court weighed bank deposits alongside loans, capital, and other explanations. It upheld the convictions for 1929 and 1930.",
+          "limit": "The jury acquitted Gleckman on the 1931 count. Each count depended on its own evidence.",
+          "linkLabel": "Sources for the tax appeal",
+          "evidenceId": "E03"
+        },
+        {
+          "title": "Credit and influence",
+          "label": "1938 appellate opinion",
+          "text": "A separate appeal affirmed Gleckman’s criminal-contempt convictions. The opinion describes a payment to juror Bernard Fuchs through intermediaries and a loan arranged at Gleckman’s direction.",
+          "limit": "These findings concern Gleckman. They leave any involvement by hotel staff unestablished.",
+          "linkLabel": "Sources for the contempt appeal",
+          "evidenceId": "E04"
+        }
+      ],
+      "returnTitle": "A deposit is a clue.",
+      "returnText": "In court, the columns became questions about where the money came from and what it could prove. Even a loan could matter in two ways, as a financial explanation or as evidence of influence."
+    },
     "namedSelections": [
       "tax-evidence",
       "juror-influence"
@@ -148,6 +200,32 @@
     "ambienceId": "ambience-room-tone",
     "chapterNote": "Where the music met the myth.",
     "presenterType": "comparison",
+    "pilot": {
+      "symbol": "chair",
+      "symbolLabel": "An empty cut-paper chair",
+      "question": "Who sat here?",
+      "recordTitle": "What the record tells us",
+      "accounts": [
+        {
+          "title": "The business notice",
+          "label": "September 30, 1933 · Business press",
+          "text": "Commercial West published a notice for Castle Royal, Inc. that listed restaurants, cafés, taverns, and nightclubs among its business purposes.",
+          "limit": "The notice tells us what business Castle Royal planned to do. It gives us no names of patrons.",
+          "linkLabel": "Sources for the notice",
+          "evidenceId": "E05"
+        },
+        {
+          "title": "The guest stories",
+          "label": "Opening date and later recollections",
+          "text": "Historian Greg Brick dates the opening to October 26, 1933. He also describes conflicting recollections published around the club’s 1977 revival.",
+          "limit": "The accounts examined here leave the stories about John Dillinger and Ma Barker unverified.",
+          "linkLabel": "Sources for the guest stories",
+          "evidenceId": "E06"
+        }
+      ],
+      "returnTitle": "The chair stays empty.",
+      "returnText": "We can date the nightclub’s opening. Who sat at its tables is a different question."
+    },
     "namedSelections": [
       "business-record",
       "visitor-stories"
@@ -213,6 +291,32 @@
     "ambienceId": "ambience-city-rain",
     "chapterNote": "Protection always has a price.",
     "presenterType": "document",
+    "pilot": {
+      "symbol": "letter",
+      "symbolLabel": "A sealed envelope",
+      "question": "What can a letter carry?",
+      "recordTitle": "A demand leaves a trace",
+      "accounts": [
+        {
+          "title": "The ransom",
+          "label": "Ramsey County Historical Society account",
+          "text": "William Hamm Jr. was kidnapped on June 15, 1933, held for $100,000 ransom, and released alive.",
+          "limit": "The accounts give different settings for the abduction. The precise site remains unresolved.",
+          "linkLabel": "Sources for Hamm’s kidnapping",
+          "evidenceId": "E07"
+        },
+        {
+          "title": "The fingerprints",
+          "label": "FBI retrospective",
+          "text": "The FBI’s history reports that investigators applied silver nitrate to the ransom material and revealed fingerprints.",
+          "limit": "The method is described in the agency’s later account. Its place among earlier forensic uses remains outside this evidence.",
+          "linkLabel": "Sources for the fingerprint evidence",
+          "evidenceId": "E08"
+        }
+      ],
+      "returnTitle": "The letter carried a trace.",
+      "returnText": "The captors used a letter to demand money. The FBI account says the same material gave investigators fingerprints."
+    },
     "namedSelections": [
       "ransom-communication",
       "investigative-trace"
@@ -278,6 +382,24 @@
     "ambienceId": "ambience-city-rain",
     "chapterNote": "Silence was part of the demand.",
     "presenterType": "document",
+    "pilot": {
+      "symbol": "telephone",
+      "symbolLabel": "A telephone handset above its base",
+      "question": "Who could the family turn to?",
+      "recordTitle": "The threat and the response",
+      "accounts": [
+        {
+          "title": "Authorities were told",
+          "label": "1936 investigation summary",
+          "text": "Edward Bremer’s captors demanded $200,000 and threatened violence to deter contact with police. The investigators’ summary reports that Walter Magee and the Bremer family immediately notified local and federal authorities.",
+          "limit": "The threats show what the captors tried to make the family do. The summary separately records how the family and Magee responded.",
+          "linkLabel": "Sources for the demand and response",
+          "evidenceId": "E09"
+        }
+      ],
+      "returnTitle": "The line stayed open.",
+      "returnText": "The threat tried to cut the family off from help. The report records that they reached authorities anyway."
+    },
     "namedSelections": [
       "the-demand",
       "the-reported-response"
@@ -345,6 +467,32 @@
     "ambienceId": "ambience-city-rain",
     "chapterNote": "Refuge had its limits.",
     "presenterType": "sequence",
+    "pilot": {
+      "symbol": "doorway",
+      "symbolLabel": "An ajar door with a narrow wedge of open space",
+      "question": "What keeps a hiding place safe?",
+      "recordTitle": "The hiding place becomes a lead",
+      "accounts": [
+        {
+          "title": "A basis for federal pursuit",
+          "label": "FBI retrospective",
+          "text": "The FBI ties its active pursuit of John Dillinger to his interstate transportation of a stolen car under the Dyer Act.",
+          "limit": "The account identifies a specific basis for the pursuit. The sources leave any protection deal for this apartment unverified.",
+          "linkLabel": "Sources for federal jurisdiction",
+          "evidenceId": "E11"
+        },
+        {
+          "title": "The manager’s report",
+          "label": "FBI retrospective",
+          "text": "The account places the Lincoln Court apartment manager’s report on March 30, 1934. It describes surveillance and a confrontation the next day, followed by Dillinger’s wounded escape with Evelyn Frechette.",
+          "limit": "The account supplies the sequence. The manager’s private reasons and the exact layout of the confrontation remain uncertain.",
+          "linkLabel": "Sources for Lincoln Court",
+          "evidenceId": "E12"
+        }
+      ],
+      "returnTitle": "The door opens both ways.",
+      "returnText": "A doorway can shield someone from view. At Lincoln Court, a manager’s report made the hiding place a focus of surveillance."
+    },
     "namedSelections": [
       "report",
       "surveillance",
@@ -408,6 +556,32 @@
     "ambienceId": "ambience-room-tone",
     "chapterNote": "What remains is the record.",
     "presenterType": "comparison",
+    "pilot": {
+      "symbol": "docket",
+      "symbolLabel": "A docket sheet with ruled entries",
+      "question": "Whose name goes on the record?",
+      "recordTitle": "One case and a change in the rules",
+      "accounts": [
+        {
+          "title": "A named conviction",
+          "label": "FBI retrospective",
+          "text": "The FBI’s history reports that Evelyn Frechette was convicted of conspiracy to harbor a federal fugitive. She received a two-year sentence and a $1,000 fine.",
+          "limit": "The record here is the agency’s later account. The outcome is specific to the charge of harboring a fugitive.",
+          "linkLabel": "Sources for Frechette’s conviction",
+          "evidenceId": "E13"
+        },
+        {
+          "title": "A new appointment rule",
+          "label": "Minnesota Historical Society account",
+          "text": "Saint Paul voters approved a charter amendment on June 15, 1936. It established independent examination of candidates for police chief, a six-year term, and removal for cause.",
+          "limit": "The amendment establishes what changed on paper. The rule’s effect on later corruption remains outside this evidence.",
+          "linkLabel": "Sources for the charter amendment",
+          "evidenceId": "E14"
+        }
+      ],
+      "returnTitle": "Read each line for what it says.",
+      "returnText": "One line names what the court decided about a person. Another belongs to a different record, where voters changed the rules for the next chief. Each tells us what changed and how far the evidence reaches."
+    },
     "namedSelections": [
       "legal-outcomes",
       "appointment-rules"

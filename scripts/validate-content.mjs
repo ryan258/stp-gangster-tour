@@ -22,7 +22,7 @@ export function validateCatalog(input,{root=process.cwd(),production=false,asset
  const maps={};
  const uniqueArrays=(v,trail='catalog')=>{if(Array.isArray(v)){if(v.every(x=>typeof x==='string')&&new Set(v).size!==v.length)errors.push(`${trail}: duplicate values`);v.forEach((x,i)=>uniqueArrays(x,`${trail}.${i}`));}else if(v&&typeof v==='object')for(const [k,x]of Object.entries(v))uniqueArrays(x,`${trail}.${k}`);};
  uniqueArrays(data);
- for(const name of ['stops','claims','sources','evidence','people','metagames','locations']) {
+ for(const name of ['stops','claims','sources','evidence','people','metagames','locations','casebook-stories','casebook-experiences','paper-trails']) {
   maps[name]=new Map();
   for(const record of data[name]) { if(maps[name].has(record.id)) errors.push(`${name}: duplicate ${record.id}`);maps[name].set(record.id,record); }
  }
@@ -35,7 +35,7 @@ export function validateCatalog(input,{root=process.cwd(),production=false,asset
  refs('edition','evidenceIds',data.edition.evidenceIds,'evidence');
  if(JSON.stringify(data.edition.evidenceIds)!==JSON.stringify(data.evidence.map(e=>e.id))) errors.push('edition.evidenceIds: differs from evidence catalog');
  if(Object.keys(data.edition.stopLabels).length!==data.stops.length||data.stops.some(s=>data.edition.stopLabels[s.id]!==s.title)) errors.push('edition.stopLabels: differs from stop titles');
- const orders=new Set();
+ const orders=new Set(),pilotSymbols=new Set();
  for(const s of data.stops) {
   if(orders.has(s.order)) errors.push(`${s.id}: duplicate order`);orders.add(s.order);
   for(const [field,target] of [['locationId','locations'],['sceneId','scenes'],['narrationId','narration']]) refs(s.id,field,[s[field]],target);
@@ -47,6 +47,11 @@ export function validateCatalog(input,{root=process.cwd(),production=false,asset
   if(maps.metagames.get(s.blocks.metagame.metagameId)?.owningStop!==s.id) errors.push(`${s.id}: metagame owner mismatch`);
   if(maps.locations.get(s.locationId)?.stopId!==s.id) errors.push(`${s.id}: location owner mismatch`);
   for(const eid of s.evidenceIds) if(maps.evidence.get(eid)?.stopId!==s.id) errors.push(`${s.id}: evidence ${eid} belongs to another stop`);
+  if(pilotSymbols.has(s.pilot.symbol)) errors.push(`${s.id}: duplicate title sequence symbol ${s.pilot.symbol}`);
+  pilotSymbols.add(s.pilot.symbol);
+  const accountEvidence=s.pilot.accounts.map(account=>account.evidenceId);
+  if(new Set(accountEvidence).size!==accountEvidence.length) errors.push(`${s.id}: pilot accounts must cite distinct evidence`);
+  for(const eid of accountEvidence) if(!s.evidenceIds.includes(eid)) errors.push(`${s.id}: pilot cites evidence outside this stop: ${eid}`);
   const narr=maps.narration.get(s.narrationId);
   if(narr?.stopId!==s.id) errors.push(`${s.id}: narration owner mismatch`);
   if(narr?.transcriptDigest!==sha256(normalizeTranscript(s.blocks.intro.text))) errors.push(`${s.id}: stale narration transcript digest`);
@@ -91,6 +96,31 @@ export function validateCatalog(input,{root=process.cwd(),production=false,asset
  // Every claim and source must be reachable from visitor-facing content; unused records rot silently.
  const usedClaims=new Set([...data.stops.flatMap(s=>Object.values(s.blocks).flatMap(b=>b.claimIds)),...data.evidence.flatMap(e=>e.claimIds),...data.presenters.flatMap(p=>p.items.flatMap(i=>i.claimIds)),...data.people.flatMap(p=>p.supportingClaimIds),...data.relationships.flatMap(r=>r.premiseClaims),...data.metagames.flatMap(m=>m.premiseClaims),...data.edition.prologue.premiseClaimIds,...data.edition.epilogue.premiseClaimIds]);
  for(const id of studyClaimIds(data.studies)) usedClaims.add(id);
+ for(const experience of data['casebook-experiences']) {
+  const story=maps['casebook-stories'].get(experience.id);
+  if(!story) errors.push(`${experience.id}: experience has no Casebook story`);
+  else if(experience.sceneLabels.length!==story.blocks.length) errors.push(`${experience.id}: experience must label each story block`);
+ }
+ for(const story of data['casebook-stories']) {
+  if(!maps['casebook-experiences'].has(story.id)) errors.push(`${story.id}: missing Casebook experience`);
+  const claimIds=story.blocks.flatMap(block=>block.claimIds);
+  refs(story.id,'claimIds',claimIds,'claims');
+  for(const id of claimIds) usedClaims.add(id);
+  if(story.stopId) refs(story.id,'stopId',[story.stopId],'stops');
+  if(story.sourceLink) {
+   const {sourceId}=story.sourceLink;
+   refs(story.id,'sourceLink',[sourceId],'sources');
+   if(!claimIds.some(id=>maps.claims.get(id)?.sourceIds.includes(sourceId))) errors.push(`${story.id}: linked source ${sourceId} is not cited by a story claim`);
+  }
+ }
+ for(const story of data['paper-trails']) {
+  const claimIds=story.scenes.flatMap(scene=>scene.claimIds);
+  refs(story.id,'scene claims',claimIds,'claims');
+  for(const id of claimIds) usedClaims.add(id);
+  const {sourceId}=story.sourceLink;
+  refs(story.id,'sourceLink',[sourceId],'sources');
+  if(!claimIds.some(id=>maps.claims.get(id)?.sourceIds.includes(sourceId))) errors.push(`${story.id}: linked source ${sourceId} is not cited by a story claim`);
+ }
  for(const c of data.claims) if(!usedClaims.has(c.id)) errors.push(`${c.id}: claim is not cited by any visitor-facing content`);
  const usedSources=new Set([...data.claims.flatMap(c=>c.sourceIds),...data.evidence.flatMap(e=>e.sourceLocators.map(r=>r.sourceId)),...data.locations.flatMap(l=>[l.supportingSourceId,...(l.leadSourceIds??[])]),...data.media.scenes.flatMap(s=>s.referenceSourceIds)]);
  for(const s of data.sources) if(!usedSources.has(s.id)) errors.push(`${s.id}: source is not cited by any claim, evidence item, location or scene`);

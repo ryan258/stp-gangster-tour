@@ -229,6 +229,696 @@
       "reviewedRevision": null,
       "reviewer": null,
       "description": "Hotel street corner at night; home dossier card and prologue aside."
+    },
+    {
+      "id": "image-story-the-arrangement",
+      "file": "/images/redesign/story-the-arrangement.webp",
+      "width": 1536,
+      "height": 864,
+      "fileDigest": "9117f759d44ceac03f5fb5fbbe54ef14c39f11a9121b2295ac911b12416dadfa",
+      "variants": [
+        {
+          "file": "/images/redesign/story-the-arrangement-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive shot. Props and depicted settings do not establish historical details. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "A hand passes a folded packet through a lamplit saloon doorway."
+    },
+    {
+      "id": "image-story-a-suite-above-the-street",
+      "file": "/images/redesign/story-a-suite-above-the-street.webp",
+      "width": 1536,
+      "height": 864,
+      "fileDigest": "08bc792bfe6010ee9d7a44540c220557cf4258e1e6f79953f6661e54bd1847a4",
+      "variants": [
+        {
+          "file": "/images/redesign/story-a-suite-above-the-street-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive shot. Props and depicted settings do not establish historical details. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "An open ledger rests beneath a brass lamp in a rain-darkened hotel room."
+    },
+    {
+      "id": "image-story-under-the-bluff",
+      "file": "/images/redesign/story-under-the-bluff.webp",
+      "width": 1536,
+      "height": 864,
+      "fileDigest": "4e6a693116c23d89d39a73a813a18d81572bfb3a519d1e18e6619ca8d2801c61",
+      "variants": [
+        {
+          "file": "/images/redesign/story-under-the-bluff-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive shot. Props and depicted settings do not establish historical details. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "An empty table and chair sit beneath the limestone arch of a nightclub."
+    },
+    {
+      "id": "image-story-the-price-of-protection",
+      "file": "/images/redesign/story-the-price-of-protection.webp",
+      "width": 1536,
+      "height": 864,
+      "fileDigest": "46a1ba584f5faeed200eb53bc10c41ad404c43abf02db6596fc63b8b971b0ea1",
+      "variants": [
+        {
+          "file": "/images/redesign/story-the-price-of-protection-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive shot. Props and depicted settings do not establish historical details. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "A fingerprint marks a blank envelope under a pool of light."
+    },
+    {
+      "id": "image-story-the-deal-breaks",
+      "file": "/images/redesign/story-the-deal-breaks.webp",
+      "width": 1536,
+      "height": 864,
+      "fileDigest": "15b10f1ce061a866452a788fc2e03a8acc015a74a5c878679033a5c59d854cbc",
+      "variants": [
+        {
+          "file": "/images/redesign/story-the-deal-breaks-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive shot. Props and depicted settings do not establish historical details. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "A hand lifts a black telephone receiver beside a sealed envelope."
+    },
+    {
+      "id": "image-story-the-safe-house-fails",
+      "file": "/images/redesign/story-the-safe-house-fails.webp",
+      "width": 1536,
+      "height": 864,
+      "fileDigest": "8bf000101b23a07e0f574c10fa059e4d2eb2a54b6b0d97b84766090624d9b2e4",
+      "variants": [
+        {
+          "file": "/images/redesign/story-the-safe-house-fails-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive shot. Props and depicted settings do not establish historical details. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "Light from an open apartment door cuts across a shared stairwell."
+    },
+    {
+      "id": "image-story-on-the-record",
+      "file": "/images/redesign/story-on-the-record.webp",
+      "width": 1536,
+      "height": 864,
+      "fileDigest": "70305ac6d55f3f29cf285ac64d4c10a54e2306c0bfb499cf929075bfac720f80",
+      "variants": [
+        {
+          "file": "/images/redesign/story-on-the-record-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive shot. Props and depicted settings do not establish historical details. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "A clerk opens a thick docket in a sunlit courtroom."
+    },
+    {
+      "id": "image-story-doorway",
+      "file": "/images/redesign/story-doorway.webp",
+      "width": 1536,
+      "height": 864,
+      "fileDigest": "6a70fddaead4d6aa0085c4fdcd42eca93e87dad24cf4ee0172086fe82058f66a",
+      "variants": [
+        {
+          "file": "/images/redesign/story-doorway-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen for the interpretive opening. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "An open saloon doorway spills amber light onto a wet, empty street."
+    },
+    {
+      "id": "image-story-visitor",
+      "file": "/images/redesign/story-visitor.webp",
+      "width": 1536,
+      "height": 512,
+      "fileDigest": "a316f078537648c54aaac0c616fd58995c2591e05f2cfa954193f5af791e65b3",
+      "variants": [
+        {
+          "file": "/images/redesign/story-visitor-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen for the interpretive opening. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "Three transparent, rear-view poses of an anonymous visitor in a long coat and hat."
+    },
+    {
+      "id": "image-story-plate-the-arrangement",
+      "file": "/images/redesign/story-plate-the-arrangement.webp",
+      "width": 1536,
+      "height": 864,
+      "fileDigest": "550658f2a05af20c453be2fc94f6d6b5052c06b19773999e9bd3cad48d92b859",
+      "variants": [
+        {
+          "file": "/images/redesign/story-plate-the-arrangement-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive chapter layer. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "An empty saloon counter stands between the viewer and an open doorway."
+    },
+    {
+      "id": "image-story-layer-the-arrangement",
+      "file": "/images/redesign/story-layer-the-arrangement.webp",
+      "width": 1536,
+      "height": 512,
+      "fileDigest": "5982404ad7fe4527ba3720edfdf47e9cc4e2e1e6497cf559a37f1c10f3b62682",
+      "variants": [
+        {
+          "file": "/images/redesign/story-layer-the-arrangement-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive chapter layer. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "A folded packet slides across the saloon counter."
+    },
+    {
+      "id": "image-story-plate-a-suite-above-the-street",
+      "file": "/images/redesign/story-plate-a-suite-above-the-street.webp",
+      "width": 1536,
+      "height": 864,
+      "fileDigest": "ec4240381a344aba9c4ec16a30703d00d92ae8203ba4390e8fcf27df868418c4",
+      "variants": [
+        {
+          "file": "/images/redesign/story-plate-a-suite-above-the-street-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive chapter layer. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "A brass lamp lights the bare desk in a hotel suite."
+    },
+    {
+      "id": "image-story-layer-a-suite-above-the-street",
+      "file": "/images/redesign/story-layer-a-suite-above-the-street.webp",
+      "width": 1536,
+      "height": 512,
+      "fileDigest": "7039b0be9def4fea7c4cbfad379052762fe8040e1ff80ccac00939ff7b9ac166",
+      "variants": [
+        {
+          "file": "/images/redesign/story-layer-a-suite-above-the-street-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive chapter layer. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "Blank financial papers spread across the hotel desk."
+    },
+    {
+      "id": "image-story-plate-under-the-bluff",
+      "file": "/images/redesign/story-plate-under-the-bluff.webp",
+      "width": 1536,
+      "height": 864,
+      "fileDigest": "72fc802f714481255ee74fd86b201972bd90b314bf878cb2b54d0d1f2dfee768",
+      "variants": [
+        {
+          "file": "/images/redesign/story-plate-under-the-bluff-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive chapter layer. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "A lamp burns above a small table under a limestone nightclub arch."
+    },
+    {
+      "id": "image-story-layer-under-the-bluff",
+      "file": "/images/redesign/story-layer-under-the-bluff.webp",
+      "width": 1536,
+      "height": 512,
+      "fileDigest": "766de719ee28eb2ebcc02af5228ee64b2eb6abfcca58c0e2fb14edbbdc6cc224",
+      "variants": [
+        {
+          "file": "/images/redesign/story-layer-under-the-bluff-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive chapter layer. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "An empty bentwood chair turns and pulls away from the nightclub table."
+    },
+    {
+      "id": "image-story-plate-the-price-of-protection",
+      "file": "/images/redesign/story-plate-the-price-of-protection.webp",
+      "width": 1536,
+      "height": 864,
+      "fileDigest": "ab0d9b7514fa186a4f135bb4bf9ae554b905774fc9de0072347028dc424c2cb7",
+      "variants": [
+        {
+          "file": "/images/redesign/story-plate-the-price-of-protection-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive chapter layer. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "A blank cream envelope lies under a lamp on an evidence desk."
+    },
+    {
+      "id": "image-story-layer-the-price-of-protection",
+      "file": "/images/redesign/story-layer-the-price-of-protection.webp",
+      "width": 1536,
+      "height": 512,
+      "fileDigest": "74c2d63a0ad5c6d517c28b94b1e06e34de7e432aa12f2cdcec3b40f56a4393f8",
+      "variants": [
+        {
+          "file": "/images/redesign/story-layer-the-price-of-protection-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive chapter layer. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "The ridges of a fingerprint appear on the ransom envelope."
+    },
+    {
+      "id": "image-story-plate-the-deal-breaks",
+      "file": "/images/redesign/story-plate-the-deal-breaks.webp",
+      "width": 1536,
+      "height": 864,
+      "fileDigest": "d1678aaf7de3f39fe7d23a46be789c8874fe903d1c76d6519ab0e6c099ea9149",
+      "variants": [
+        {
+          "file": "/images/redesign/story-plate-the-deal-breaks-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive chapter layer. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "A sealed envelope rests on a wooden table by a snow-lit window."
+    },
+    {
+      "id": "image-story-layer-the-deal-breaks",
+      "file": "/images/redesign/story-layer-the-deal-breaks.webp",
+      "width": 1536,
+      "height": 512,
+      "fileDigest": "afc5705a333b4af412e39ab574bf781e7b20e5ab53bd015a0d7c543d7992d0e4",
+      "variants": [
+        {
+          "file": "/images/redesign/story-layer-the-deal-breaks-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive chapter layer. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "A hand lifts a black telephone receiver from its cradle."
+    },
+    {
+      "id": "image-story-plate-the-safe-house-fails",
+      "file": "/images/redesign/story-plate-the-safe-house-fails.webp",
+      "width": 1536,
+      "height": 864,
+      "fileDigest": "21f930af4d98cea081a7ce7f0d859e4d9ce29f09c8ceec6b9bdf556b79158c55",
+      "variants": [
+        {
+          "file": "/images/redesign/story-plate-the-safe-house-fails-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive chapter layer. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "A stairwell landing faces an unmarked apartment wall."
+    },
+    {
+      "id": "image-story-layer-the-safe-house-fails",
+      "file": "/images/redesign/story-layer-the-safe-house-fails.webp",
+      "width": 1536,
+      "height": 512,
+      "fileDigest": "472c02987fb9283c0ab1d0520f617bc8984361b43d58344ff6ebf0a83d7ec089",
+      "variants": [
+        {
+          "file": "/images/redesign/story-layer-the-safe-house-fails-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive chapter layer. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "An apartment door opens inward, revealing a warm strip of light."
+    },
+    {
+      "id": "image-story-plate-on-the-record",
+      "file": "/images/redesign/story-plate-on-the-record.webp",
+      "width": 1536,
+      "height": 864,
+      "fileDigest": "4f2de5719105ec54ba808da26ca11fd389cd8b69a15394a8cde7c6b7fe8fa28a",
+      "variants": [
+        {
+          "file": "/images/redesign/story-plate-on-the-record-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive chapter layer. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "Morning light falls on an empty courthouse clerk’s desk."
+    },
+    {
+      "id": "image-story-layer-on-the-record",
+      "file": "/images/redesign/story-layer-on-the-record.webp",
+      "width": 1536,
+      "height": 512,
+      "fileDigest": "c309f170349ce362f48a4870e2cab0d3070447114b936b61abac33d972f890ff",
+      "variants": [
+        {
+          "file": "/images/redesign/story-layer-on-the-record-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen as an interpretive chapter layer. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "A leather court docket opens to two cream pages."
+    },
+    {
+      "id": "image-story-layer-the-arrangement-smooth",
+      "file": "/images/redesign/story-layer-the-arrangement-smooth.webp",
+      "width": 1536,
+      "height": 1536,
+      "fileDigest": "334ce03de43298b4eda319dde3cbda860ecb77837f25bdb8f5a8157b72afed8c",
+      "variants": [
+        {
+          "file": "/images/redesign/story-layer-the-arrangement-smooth-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen from the three-pose chapter sprite; arranged as nine transparent poses. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "A folded packet slides across the saloon counter."
+    },
+    {
+      "id": "image-story-layer-a-suite-above-the-street-smooth",
+      "file": "/images/redesign/story-layer-a-suite-above-the-street-smooth.webp",
+      "width": 1536,
+      "height": 1536,
+      "fileDigest": "7fd627773665ee1363ad994aaee9ffb6898ebbdb523d8f7051f4cc82c6607310",
+      "variants": [
+        {
+          "file": "/images/redesign/story-layer-a-suite-above-the-street-smooth-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen from the three-pose chapter sprite; arranged as nine transparent poses. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "Blank financial papers spread across the hotel desk."
+    },
+    {
+      "id": "image-story-layer-under-the-bluff-smooth",
+      "file": "/images/redesign/story-layer-under-the-bluff-smooth.webp",
+      "width": 1536,
+      "height": 1536,
+      "fileDigest": "a27a6ff726af773f84c6dadf2ed82124296fd10b85ddf7e64e5de29c0fac8545",
+      "variants": [
+        {
+          "file": "/images/redesign/story-layer-under-the-bluff-smooth-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen from the three-pose chapter sprite; arranged as nine transparent poses. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "An empty bentwood chair turns and pulls away from the nightclub table."
+    },
+    {
+      "id": "image-story-layer-the-price-of-protection-smooth",
+      "file": "/images/redesign/story-layer-the-price-of-protection-smooth.webp",
+      "width": 1536,
+      "height": 1536,
+      "fileDigest": "a34636bd4553bddc7eba53cc189ca17fc8d31405843cfd46dbb678e18a68adeb",
+      "variants": [
+        {
+          "file": "/images/redesign/story-layer-the-price-of-protection-smooth-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen from the three-pose chapter sprite; arranged as nine transparent poses. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "The ridges of a fingerprint appear on the ransom envelope."
+    },
+    {
+      "id": "image-story-layer-the-deal-breaks-smooth",
+      "file": "/images/redesign/story-layer-the-deal-breaks-smooth.webp",
+      "width": 1536,
+      "height": 1536,
+      "fileDigest": "0530c5e4404be147845116da22598ca373136dd5638411783eaedcb001f947f3",
+      "variants": [
+        {
+          "file": "/images/redesign/story-layer-the-deal-breaks-smooth-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen from the three-pose chapter sprite; arranged as nine transparent poses. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "A hand lifts a black telephone receiver from its cradle."
+    },
+    {
+      "id": "image-story-layer-the-safe-house-fails-smooth",
+      "file": "/images/redesign/story-layer-the-safe-house-fails-smooth.webp",
+      "width": 1536,
+      "height": 1536,
+      "fileDigest": "b4f4b3f94184cc717ab70ddba4f07a638ea9a2c32ea0f1350533246d38f46987",
+      "variants": [
+        {
+          "file": "/images/redesign/story-layer-the-safe-house-fails-smooth-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen from the three-pose chapter sprite; arranged as nine transparent poses. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "An apartment door opens inward, revealing a warm strip of light."
+    },
+    {
+      "id": "image-story-layer-on-the-record-smooth",
+      "file": "/images/redesign/story-layer-on-the-record-smooth.webp",
+      "width": 1536,
+      "height": 1536,
+      "fileDigest": "945c14128bb6fd128017de8f3e0dcfcf3a989d88528b033281c479fa683317b6",
+      "variants": [
+        {
+          "file": "/images/redesign/story-layer-on-the-record-smooth-640.webp",
+          "width": 640
+        }
+      ],
+      "creator": "Tour Production with OpenAI ImageGen",
+      "rightsBasis": "AI-generated illustration for the tour. Distribution rights require owner review.",
+      "rightsStatus": "pending",
+      "materialLabel": "Atmospheric artwork",
+      "provenanceStatus": "pending",
+      "provenanceNote": "Generated with built-in OpenAI ImageGen from the three-pose chapter sprite; arranged as nine transparent poses. See docs/visual-story-art.md for the generation brief.",
+      "reviewDate": null,
+      "reviewedRevision": null,
+      "reviewer": null,
+      "description": "A leather court docket opens to two cream pages."
     }
   ],
   "scenes": [
