@@ -2,10 +2,18 @@ import {test,expect} from '@playwright/test';
 import fs from 'node:fs';
 const edition = JSON.parse(fs.readFileSync(new URL('../../src/data/edition.json', import.meta.url), 'utf8'));
 const studies = JSON.parse(fs.readFileSync(new URL('../../src/data/studies.json', import.meta.url), 'utf8'));
+const paperTrails: {id:string}[] = JSON.parse(fs.readFileSync(new URL('../../src/data/paper-trails.json', import.meta.url), 'utf8'));
+const casebookStories: {id:string}[] = JSON.parse(fs.readFileSync(new URL('../../src/data/casebook-stories.json', import.meta.url), 'utf8'));
 const stop=`/stops/${edition.stops[0]}/`,key='stp-after-dark:progress:v1';
 test('every route, local link and fragment resolves; illustrations load',async({page,request})=>{
- const routes=['/','/prologue/','/map/','/casebook/','/sources/','/method/','/epilogue/','/studies/',...edition.stops.map((id:string)=>`/stops/${id}/`),...studies.map((s:{id:string})=>`/studies/${s.id}/`)];
+ const routes=['/','/prologue/','/map/','/casebook/','/sources/','/method/','/epilogue/','/studies/',...edition.stops.map((id:string)=>`/stops/${id}/`),...studies.map((s:{id:string})=>`/studies/${s.id}/`),...paperTrails.map(s=>`/casebook/${s.id}/`)];
  const documents=new Map<string,string>();for(const path of routes){const res=await request.get(path);expect(res.status(),path).toBe(200);documents.set(path,await res.text());}
+ for(const {id} of casebookStories){
+  const path=`/casebook/stories/${id}/`;
+  const res=await request.get(path);
+  expect(res.status(),path).toBe(200);
+  documents.set(path,await res.text());
+ }
  for(const path of routes){await page.goto(path);await expect(page.locator('h1')).toHaveCount(1);
   // Below-the-fold images are lazy-loaded; force them so completeness can be asserted.
   await page.evaluate(()=>Promise.all([...document.images].map(async i=>{i.loading='eager';try{await i.decode();}catch{/* broken images are reported by the completeness assertion below */}})));const links=await page.locator('a[href]').evaluateAll(as=>as.map(a=>(a as HTMLAnchorElement).getAttribute('href')!).filter(h=>h.startsWith('/')||h.startsWith('#')));
@@ -21,6 +29,171 @@ test('320px reflow, skip link, selection focus and silent fresh entry',async({pa
  for(const path of ['/',stop,'/casebook/','/sources/','/map/']){await page.goto(path);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);}
  await page.goto(stop);await page.keyboard.press('Tab');await expect(page.getByRole('link',{name:'Skip to main content'})).toBeFocused();await page.keyboard.press('Enter');await expect(page.locator('#main-content')).toBeFocused();
  const button=page.getByRole('button',{name:'Pay',exact:true});await button.click();await expect(button).toBeFocused();await expect(button).toHaveAttribute('aria-pressed','true');await expect(page.locator('[data-target-key="pay"]')).toHaveClass(/selected-highlight/);expect(audio).toEqual([]);
+});
+test('paper trails open from the Casebook and work without JavaScript',async({browser})=>{
+ const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:320,height:844}});
+ try {
+  const page=await context.newPage();
+  await page.goto('/casebook/');
+  const section=page.locator('#paper-trails');
+  await expect(section.getByRole('link')).toHaveCount(paperTrails.length);
+  await section.getByRole('link',{name:'Five cents at the cigar counter'}).click();
+  const cash=page.getByRole('radio',{name:/Cash/});
+  await cash.check();
+  await expect(cash).toBeChecked();
+  await page.getByRole('link',{name:/Next story: The special-delivery envelope/}).click();
+  await page.getByRole('link',{name:/Next stage: Days after the arrest/}).click();
+  await expect(page.getByRole('heading',{name:'The freight was still coming'})).toBeVisible();
+  await page.getByRole('link',{name:/Next story: The arrest that changed directions/}).click();
+  await page.locator('.paper-trail-signals summary').filter({hasText:'8:25 p.m.'}).click();
+  await expect(page.getByText(/This time he said the report had come from Saint Paul/)).toBeVisible();
+  for(const {id} of paperTrails){
+   await page.goto(`/casebook/${id}/`);
+   await expect(page.locator('h1')).toHaveCount(1);
+   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),id).toBe(true);
+  }
+ } finally {await context.close();}
+});
+test('Casebook stories open their scenes and evidence without JavaScript',async({browser})=>{
+ const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:320,height:844}});
+ try {
+  const page=await context.newPage();
+  await page.goto('/casebook/#side-stories');
+  const directory=page.locator('#side-stories');
+  await expect(directory.getByRole('link')).toHaveCount(casebookStories.length);
+  await directory.getByRole('link',{name:/Edna Murray’s three escapes/}).click();
+  await expect(page.getByRole('heading',{name:'Edna Murray’s three escapes',exact:true})).toBeVisible();
+  await page.locator('.case-scene-next').click();
+  await expect(page.locator('#scene-2 .case-scene-text')).toContainText('dismissed in May');
+  await expect(page.locator('#scene-2 .case-scene-text')).toBeVisible();
+  await page.locator('#scene-2 summary').click();
+  await expect(page.getByRole('link',{name:/View claim C38/})).toHaveAttribute('href','/sources/#claim-C38');
+  await page.getByRole('link',{name:'Read all scenes',exact:true}).click();
+  await expect(page.locator('#scene-1 .case-scene-text')).toBeVisible();
+  await expect(page.locator('#scene-2 .case-scene-text')).toBeVisible();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await page.getByRole('link',{name:/Back to side stories/}).click();
+  await expect(page).toHaveURL(/#story-edna-murray-three-escapes$/);
+  await directory.getByRole('link',{name:/The Green Lantern and the pork chop sandwich/}).click();
+  await expect(page.locator('.case-scene-text')).toHaveCount(2);
+  await expect(page.locator('#scene-2 .case-scene-text')).toBeVisible();
+  await page.goto('/casebook/stories/the-moonshiners-dance/');
+  await expect(page.getByRole('link',{name:/Hear.*at Smithsonian Folkways/})).toHaveAttribute('href',/^https:\/\/folkways\.si\.edu\//);
+ } finally {await context.close();}
+});
+test('Old records reveal the Hudson paperwork and trace the Bremer clothing without JavaScript',async({browser})=>{
+ const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:320,height:844}});
+ try {
+  const page=await context.newPage();
+  await page.goto('/casebook/');
+  await page.getByRole('link',{name:/New stories from the old records/}).click();
+  await expect(page).toHaveURL(/#old-records$/);
+  await page.locator('#old-records').getByRole('link',{name:/black wire wheels/}).click();
+  await expect(page.locator('#scene-1 .case-scene-text')).toContainText('$331');
+  await expect(page.locator('#scene-2 .case-scene-text')).toContainText('$375');
+  const followup=page.locator('#scene-3 .case-scene-text');
+  await expect(followup).toBeHidden();
+  await page.getByText('Open the paper trail behind the $44 difference',{exact:true}).click();
+  await expect(followup).toBeVisible();
+  await expect(followup).toContainText('$206 check as $250');
+  await page.getByRole('link',{name:/Back to side stories/}).click();
+  await page.locator('#old-records').getByRole('link',{name:/The shirt with no label/}).click();
+  const steps=page.getByRole('navigation',{name:'Steps in the investigation'});
+  await steps.getByRole('link',{name:'The shop index',exact:true}).click();
+  await expect(page.locator('#scene-2 .case-scene-text')).toBeVisible();
+  await expect(page.locator('#scene-1 .case-scene-text')).toBeHidden();
+  await page.getByRole('link',{name:/Next scene: The shopkeeper/}).click();
+  await expect(page.locator('#scene-3 .case-scene-text')).toContainText('a lighter shirt in a different style');
+  await steps.getByRole('link',{name:'Read all scenes',exact:true}).click();
+  await expect(page.locator('#scene-1 .case-scene-text')).toBeVisible();
+  await expect(page.locator('#scene-3 .case-scene-text')).toBeVisible();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ } finally {await context.close();}
+});
+test('Strange finds open an exhibit and its source without JavaScript', async ({browser}) => {
+ const context = await browser.newContext({javaScriptEnabled: false, viewport: {width: 320, height: 844}});
+ try {
+  const page = await context.newPage();
+  await page.goto('/casebook/');
+  await page.getByRole('link', {name: 'Strange finds in the files'}).click();
+  await expect(page).toHaveURL(/#strange-finds$/);
+  await page.locator('#strange-finds').getByRole('link', {name: /The telegram under the carpet/}).click();
+  const fragment = page.locator('#scene-3');
+  await fragment.getByText('Read the fragment from under the carpet', {exact: true}).click();
+  const transcription = fragment.locator('dd');
+  await expect(transcription).toBeHidden();
+  const reveal = fragment.getByText('Open the telegram fragment', {exact: true});
+  await reveal.focus();
+  await page.keyboard.press('Enter');
+  await expect(transcription).toContainText('Received three');
+  await expect(transcription).toBeVisible();
+  await fragment.getByText('Read the evidence', {exact: false}).click();
+  await expect(fragment.getByRole('link', {name: /View claim C140/})).toHaveAttribute('href', '/sources/#claim-C140');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.getByRole('link', {name: /Next story: Gleckman/}).click();
+  await expect(page.getByRole('heading', {name: 'Gleckman and the jury’s doctor bill'})).toBeVisible();
+ } finally {
+  await context.close();
+ }
+});
+test('equipment and playbill cards open independently without JavaScript', async ({browser}) => {
+ const context = await browser.newContext({javaScriptEnabled: false, viewport: {width: 320, height: 844}});
+ try {
+  const page = await context.newPage();
+  await page.goto('/casebook/');
+  await page.getByRole('link', {name: 'Stranger than the headlines'}).click();
+  await expect(page).toHaveURL(/#stranger-than-the-headlines$/);
+  const collection = page.locator('#stranger-than-the-headlines');
+  await collection.getByRole('link', {name: /The Hudson that made its own smoke/}).click();
+  await page.getByRole('navigation', {name: 'Equipment inspection sections'}).getByRole('link', {name: 'The recovered car'}).click();
+  const equipment = page.getByRole('group', {name: 'Inspect the Hudson’s equipment'});
+  const siren = equipment.locator('details').filter({hasText: 'Siren'});
+  const smoke = equipment.locator('details').filter({hasText: 'Smoke-screen apparatus'});
+  await expect(siren.locator('p')).toBeHidden();
+  await siren.locator('summary').focus();
+  await page.keyboard.press('Enter');
+  await expect(siren.locator('p')).toBeVisible();
+  await expect(smoke.locator('p')).toBeHidden();
+  await smoke.locator('summary').click();
+  await expect(smoke.locator('p')).toBeVisible();
+  await expect(siren.locator('p')).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.getByRole('link', {name: /Back to side stories/}).click();
+  await collection.getByRole('link', {name: /Billie Frechette, in person/}).click();
+  await page.getByRole('navigation', {name: 'Playbill sections'}).getByRole('link', {name: 'The cast'}).click();
+  const wax = page.getByRole('group', {name: 'Open the cast list'}).locator('details').filter({hasText: 'The wax figures'});
+  await expect(wax.locator('p')).toBeHidden();
+  await wax.locator('summary').click();
+  await expect(wax.locator('p')).toContainText('without naming whom they depicted');
+  await expect(wax.locator('p')).toBeVisible();
+ } finally {
+  await context.close();
+ }
+});
+test('the wedding call log keeps its entries separately readable without JavaScript', async ({browser}) => {
+ const context = await browser.newContext({javaScriptEnabled: false, viewport: {width: 320, height: 844}});
+ try {
+  const page = await context.newPage();
+  await page.goto('/casebook/#oddities-in-saint-paul-files');
+  await page.locator('#oddities-in-saint-paul-files').getByRole('link', {name: /The wedding and the two calls/}).click();
+  const callScene = page.locator('#scene-2');
+  const log = callScene.getByRole('group', {name: 'Read the two call entries and the reply'});
+  await expect(log).toBeHidden();
+  await callScene.locator(':scope > summary').click();
+  const firstCall = log.locator('details').filter({hasText: 'First call'});
+  const reply = log.locator('details').filter({hasText: 'Bureau reply'});
+  await firstCall.locator('summary').focus();
+  await page.keyboard.press('Enter');
+  await expect(firstCall.locator('p')).toBeVisible();
+  await expect(reply.locator('p')).toBeHidden();
+  await reply.locator('summary').click();
+  await expect(reply.locator('p')).toContainText('neither call came from the Bureau');
+  await expect(reply.locator('p')).toBeVisible();
+  await expect(firstCall.locator('p')).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+ } finally {
+  await context.close();
+ }
 });
 test('evidence fragments, casebook filters, profiles, resume and reset preserve preferences',async({page})=>{
  await page.goto(stop);await page.getByRole('button',{name:'Calm view',exact:true}).click();await page.goto(`${stop}#evidence-E02`);await expect(page.locator('#evidence-E02')).toHaveAttribute('open','');
