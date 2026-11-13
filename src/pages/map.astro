@@ -9,19 +9,19 @@ import '../styles/map.scss';
 <Layout title="Map and places">
   <div class="map-page">
     <header class="map-hero">
-      <ArtImage class="map-hero-image" name="hero-skyline" width={1600} height={900} eager/>
+      <ArtImage class="map-hero-image" name="hero-skyline" sizes="(max-width: 720px) 100vw, 65vw" eager/>
       <div class="container map-hero-content">
         <div class="map-intro">
-          <p class="eyebrow">Places and uncertainty</p>
+          <p class="eyebrow">Saint Paul, Minnesota</p>
           <h1>Map and places</h1>
-          <p class="lede">A city of refuge. A record of consequences.</p>
-          <p class="map-intro-copy">Explore the places behind seven chapters of Saint Paul’s history. {count(placedCount)} approximate venue {placedCount === 1 ? 'position sits' : 'positions sit'} beside a sourced modern river; {unplacedSentence.toLowerCase()}.</p>
+          <p class="map-intro-copy">The map shows the modern Mississippi River and {count(placedCount).toLowerCase()} approximate venue {placedCount === 1 ? 'position' : 'positions'}. {unplacedSentence}. The directory includes all seven stops.</p>
           <div class="map-hero-links">
             <a href="#directory">Explore the seven stops <span aria-hidden="true">↓</span></a>
             <a data-resume hidden href={routeURL('/map/')}>Resume reading <span aria-hidden="true">→</span></a>
+            <a href={routeURL('/')}>Return to the story <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <div class="map-hero-note" aria-hidden="true"><span>Same city.<br/>Different shadows.</span><small>Saint Paul, Minnesota<br/>1930s inspired artwork</small></div>
+        <p class="map-hero-note">Atmospheric illustration</p>
       </div>
     </header>
     <div class="container map-content"><SvgMap/></div>

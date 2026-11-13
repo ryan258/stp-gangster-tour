@@ -1,0 +1,131 @@
+---
+import type {ComponentProps} from 'astro/types';
+import {assetURL, locations, media, stopURL, type stops} from '../lib/catalog';
+import {chapterTitleAnchors, featuredTitleScenes} from '../lib/title-sequence';
+import Glyph from './Glyph.astro';
+import TitleSceneArt from './TitleSceneArt.astro';
+import TitleSceneRecord from './TitleSceneRecord.astro';
+import TitleSymbol from './TitleSymbol.astro';
+import '../styles/title-sequence.scss';
+import '../styles/title-feature.scss';
+
+interface Props {
+  stop: (typeof stops)[number];
+  onward?: {href: string; label: string};
+}
+
+const {stop, onward} = Astro.props;
+const sequence = stop.pilot;
+if (!sequence) throw new Error(`Missing title sequence for ${stop.id}`);
+const feature = featuredTitleScenes[stop.id];
+const openingImage = feature?.image ?? `story-${stop.id}`;
+
+const inTour = !!onward;
+const Heading = inTour ? 'h2' : 'h1';
+const BeatHeading = inTour ? 'h3' : 'h2';
+const AccountHeading = inTour ? 'h4' : 'h3';
+const chapter = chapterTitleAnchors(stop.id);
+const opening = `scene-${stop.id}`;
+const anchors = inTour ? {opening, record: `${opening}-record`, return: `${opening}-return`} : chapter;
+const chapterHref = inTour ? stopURL(stop.id) : '';
+const place = locations.find(location => location.id === stop.locationId)!.historicalName;
+const ambience = media.ambience.find(track => track.id === stop.ambienceId)!;
+const symbol = sequence.symbol as ComponentProps<typeof TitleSymbol>['symbol'];
+const titleId = `${anchors.opening}-title`;
+const recordTitleId = `${anchors.record}-title`;
+const returnTitleId = `${anchors.return}-title`;
+const soundStatusId = `${anchors.opening}-sound-status`;
+const calmNoticeId = `${anchors.opening}-calm-notice`;
+---
+
+<div
+  class="title-sequence"
+  data-title-sequence={stop.id}
+  data-title-theme={symbol}
+  data-title-feature={feature?.theme}
+  data-title-sound-src={assetURL(ambience.file)}
+  data-story-scene={inTour ? stop.id : undefined}
+>
+  <section id={anchors.opening} data-title-beat="opening" data-title-bookmark={chapter.opening} data-reading-block={inTour ? undefined : ''} aria-labelledby={titleId} tabindex="-1">
+    <div class="title-frame title-frame-opening">
+      <div class="container title-composition">
+        <header class="title-type">
+          <p class="title-kicker">
+            <a class="title-place" href={`${chapterHref}#place`}>{place}</a>{' '}
+            <span class="title-period"><span aria-hidden="true">·</span> {stop.period}</span>
+          </p>
+          <Heading class="title-display" id={titleId}>{stop.title}</Heading>
+        </header>
+        {!feature && <TitleSymbol symbol={symbol} label={sequence.symbolLabel}/>}
+      </div>
+      <TitleSceneArt image={openingImage} eager={!inTour}/>
+    </div>
+    <div class="container title-deck">
+      <div class="title-deck-row">
+        <BeatHeading class="title-question">{sequence.question}</BeatHeading>
+        <div class="title-actions">
+          <a class="title-action" href={`#${anchors.record}`}>{feature?.inspectLabel ?? 'Inspect the record'} <span aria-hidden="true">↓</span></a>
+          <button type="button" class="title-sound btn-secondary" data-title-sound aria-describedby={soundStatusId} hidden>Play scene sound</button>
+          {feature && inTour && <a class="title-quiet" href={`${chapterHref}#chapter-narration`}>Go to chapter narration</a>}
+          <a class="title-quiet" href={`${chapterHref}#intro`}>Read the full chapter <Glyph name="read"/></a>
+        </div>
+      </div>
+      <p id={soundStatusId} class="title-sound-status" role="status" data-title-sound-status></p>
+      <p id={calmNoticeId} class="title-sound-status" data-title-calm-notice hidden>Calm view keeps scene sound off.</p>
+      {feature && Astro.slots.has('narration') && <div id="chapter-narration" class="title-scene-narration" tabindex="-1">
+        <slot name="narration"/>
+        <a class="title-quiet" href="#intro">Read the introduction transcript <Glyph name="transcript"/></a>
+      </div>}
+    </div>
+    <audio data-title-audio preload="none" loop></audio>
+  </section>
+
+  <section class="title-record" id={anchors.record} data-title-beat="record" data-title-bookmark={chapter.record} data-reading-block={inTour ? undefined : ''} aria-labelledby={recordTitleId} tabindex="-1">
+    <div class="container title-record-inner">
+      <span class="title-record-rule" data-title-cut aria-hidden="true"></span>
+      <BeatHeading id={recordTitleId}>{sequence.recordTitle}</BeatHeading>
+      {feature ? <TitleSceneRecord stop={stop} theme={feature.theme} chapterHref={chapterHref} heading={AccountHeading}/> : <div class="title-accounts">
+        {sequence.accounts.map(account => (
+          <div class="title-account">
+            <p class="title-kicker">{account.label}</p>
+            <AccountHeading>{account.title}</AccountHeading>
+            <p>{account.text}</p>
+            <p class="title-limit">{account.limit}</p>
+            <a href={`${chapterHref}#evidence-${account.evidenceId}`}>{account.linkLabel} <span aria-hidden="true">↗</span></a>
+          </div>
+        ))}
+      </div>}
+      <div class="title-actions">
+        <a class="title-action" href={`#${anchors.return}`}>{feature?.returnLabel ?? (symbol === 'chair' ? 'Return to the chair' : 'Return to the symbol')} <span aria-hidden="true">↓</span></a>
+        <a class="title-quiet" href={`#${anchors.opening}`}>Look back at the opening <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id={anchors.return} data-title-beat="return" data-title-bookmark={chapter.return} data-reading-block={inTour ? undefined : ''} aria-labelledby={returnTitleId} tabindex="-1">
+    <div class="title-frame">
+      <div class="container title-composition">
+        <div class="title-type" aria-hidden="true">
+          <p class="title-kicker">
+            <span class="title-place">{place}</span> <span class="title-period">· {stop.period}</span>
+          </p>
+          <p class="title-display">{stop.title}</p>
+        </div>
+        <TitleSymbol symbol={symbol} label={sequence.symbolLabel}/>
+      </div>
+    </div>
+    <div class="container title-deck title-deck-row">
+      <div>
+        <BeatHeading class="title-question" id={returnTitleId}>{sequence.returnTitle}</BeatHeading>
+        <p class="title-takeaway">{sequence.returnText}</p>
+      </div>
+      <a class="title-action" href={onward?.href ?? '#intro'}>{onward?.label ?? 'Continue to the chapter'} <span aria-hidden="true">↓</span></a>
+    </div>
+  </section>
+</div>
+
+<script>
+  import {initTitleSequences} from '../scripts/title-sequence';
+
+  initTitleSequences();
+</script>

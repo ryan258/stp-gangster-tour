@@ -1,8 +1,7 @@
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
-import {SplitText} from 'gsap/SplitText';
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 /** Optional atmosphere: GSAP + ScrollTrigger. Text and links are always present in the static document. */
 export function initStoryMotion(root: HTMLElement) {
@@ -14,12 +13,13 @@ export function initStoryMotion(root: HTMLElement) {
   const journey = root.querySelector<HTMLElement>('[data-story-journey]');
   const scenes = Array.from(root.querySelectorAll<HTMLElement>('[data-story-scene]'));
   const links = Array.from(root.querySelectorAll<HTMLAnchorElement>('[data-story-link]'));
+  const currentLabel = root.querySelector<HTMLElement>('[data-story-current]');
+  const defaultLabel = currentLabel?.textContent ?? '';
   // Chapter pages: the "On this page" tabs mark the section being read. Plain DOM, like the story rail, so it survives Calm view.
   const tabs = Array.from(root.querySelectorAll<HTMLAnchorElement>('.chapter-tabs a[href^="#"]'))
     .map(link => ({link, section: root.querySelector<HTMLElement>(link.getAttribute('href')!)}))
     .filter((tab): tab is {link: HTMLAnchorElement; section: HTMLElement} => !!tab.section);
   let currentTab: HTMLAnchorElement | undefined;
-  const revealed = new WeakSet<Element>();
   let context: gsap.Context | undefined;
   let popups: HTMLElement[] = [];
   let running = false;
@@ -54,6 +54,7 @@ export function initStoryMotion(root: HTMLElement) {
     })?.dataset.storyScene;
     if (active === currentScene) return;
     currentScene = active;
+    if (currentLabel) currentLabel.textContent = links.find(link => link.dataset.storyLink === active)?.dataset.storyTitle ?? defaultLabel;
     for (const link of links) {
       if (link.dataset.storyLink === active) link.setAttribute('aria-current', 'step');
       else link.removeAttribute('aria-current');
@@ -62,8 +63,7 @@ export function initStoryMotion(root: HTMLElement) {
   const queueOrientation = () => {
     if (pageActive && !orientationFrame) orientationFrame = requestAnimationFrame(updateOrientation);
   };
-  // Actors-and-costs board (chapter pages that have one). Like the rail and tabs this is orientation, not decoration, so it works
-  // with motion off; GSAP only adds the short transitions while motion is allowed.
+  // The actors-and-costs board follows the chapter sections, including with motion off.
   const board = root.querySelector<HTMLElement>('[data-board]');
   const beatSections = ['intro', 'record', 'metagame'].map(id => root.querySelector<HTMLElement>(`#${id}`)).filter((el): el is HTMLElement => !!el);
   const beatPanels = new Map<string, HTMLElement>();
@@ -74,10 +74,7 @@ export function initStoryMotion(root: HTMLElement) {
   let liveBoard = false;
   let currentBeat: string | undefined;
   const setBeat = (block: string) => {
-    if (!liveBoard || block === currentBeat) return;
-    const panel = beatPanels.get(block);
-    if (!panel) return;
-    const previous = currentBeat;
+    if (!liveBoard || block === currentBeat || !beatPanels.has(block)) return;
     currentBeat = block;
     for (const [id, el] of beatPanels) el.toggleAttribute('data-active', id === block);
     const lit = beatActors.get(block) ?? new Set<string>();
@@ -85,10 +82,6 @@ export function initStoryMotion(root: HTMLElement) {
       card.toggleAttribute('data-emphasis', lit.has(name));
       if (lit.has(name)) card.setAttribute('aria-current', 'true');
       else card.removeAttribute('aria-current');
-    }
-    if (previous && running) {
-      gsap.fromTo(panel, {y: 14, opacity: 0}, {y: 0, opacity: 1, duration: .45, ease: 'power2.out', overwrite: true, clearProps: 'opacity,transform'});
-      gsap.fromTo([...actorCards].filter(([name]) => lit.has(name)).map(([, card]) => card), {scale: .98}, {scale: 1, duration: .5, ease: 'back.out(2)', stagger: .08, clearProps: 'transform'});
     }
   };
   // Pin only when the tallest beat fits the screen; measured synchronously, so nothing paints in between.
@@ -185,54 +178,6 @@ export function initStoryMotion(root: HTMLElement) {
       for (const popup of popups) popup.setAttribute('data-scrolly', '');
 
       context = gsap.context(() => {
-        // Nothing starts at opacity: 0, and nothing waits for JS to become readable.
-        // Headlines are split into words that rise and fade in with a stagger; they never drop below .4 opacity, and the
-        // original markup is restored when the reveal finishes (or when the context reverts).
-        const revealWords = (heading: HTMLElement) => {
-          revealed.add(heading);
-          // aria: 'none' keeps the words as ordinary text nodes; 'auto' would swap in an aria-label that drops the space between block spans.
-          const text = SplitText.create(heading, {type: 'words', aria: 'none'});
-          gsap.fromTo(text.words, {opacity: .4, yPercent: 35}, {
-            opacity: 1, yPercent: 0, duration: .7, ease: 'power3.out', stagger: .07, immediateRender: false,
-            onComplete: () => text.revert(),
-            scrollTrigger: {trigger: heading, start: 'top 85%', once: true}
-          });
-        };
-        const reveals = root.querySelectorAll<HTMLElement>('[data-story-reveal], .chapter-prose > section > h2, .bookend-prose > section > h2, .experience-hero-copy');
-        for (const target of reveals) {
-          if (revealed.has(target)) continue;
-          if (target.matches('h1, h2')) { revealWords(target); continue; }
-          gsap.fromTo(target, {opacity: .7, y: 16}, {
-            opacity: 1, y: 0, duration: .65, ease: 'power3.out', immediateRender: false, clearProps: 'opacity,transform',
-            onStart: () => revealed.add(target),
-            scrollTrigger: {trigger: target, start: 'top 85%', once: true}
-          });
-        }
-        for (const heading of root.querySelectorAll<HTMLElement>('.experience-hero h1, .story-scene-copy h2')) {
-          if (!revealed.has(heading)) revealWords(heading);
-        }
-
-        // Evidence cards arrive together in a staggered batch.
-        const cards = root.querySelectorAll<HTMLElement>('.evidence-card');
-        if (cards.length) {
-          ScrollTrigger.batch(Array.from(cards), {
-            start: 'top bottom', once: true,
-            onEnter: batch => gsap.fromTo(batch, {opacity: .5, y: 18}, {opacity: 1, y: 0, duration: .5, ease: 'power2.out', stagger: .1, overwrite: true, clearProps: 'opacity,transform'})
-          });
-        }
-
-        // The big chapter numeral drifts against the scroll.
-        if (!compact.matches) {
-          for (const scene of scenes) {
-            const numeral = scene.querySelector<HTMLElement>('.story-scene-numeral');
-            if (!numeral) continue;
-            gsap.fromTo(numeral, {yPercent: 25}, {
-              yPercent: -25, ease: 'none',
-              scrollTrigger: {trigger: scene, start: 'top bottom', end: 'bottom top', scrub: true}
-            });
-          }
-        }
-
         // Small screens keep their images still and in normal flow.
         if (!compact.matches) {
           for (const stage of root.querySelectorAll<HTMLElement>('[data-story-parallax], .experience-hero')) {
@@ -303,6 +248,11 @@ export function initStoryMotion(root: HTMLElement) {
   compact.addEventListener('change', onCompactChange);
   window.addEventListener('scroll', queueOrientation, {passive: true});
   window.addEventListener('resize', resize, {passive: true});
+  root.addEventListener('toggle', event => {
+    if (!(event.target instanceof HTMLDetailsElement)) return;
+    if (running) ScrollTrigger.refresh(true);
+    queueOrientation();
+  }, true);
   // beforeprint is also needed where matchMedia('print') changes too late.
   window.addEventListener('beforeprint', stopEffects);
   window.addEventListener('afterprint', syncMotion);

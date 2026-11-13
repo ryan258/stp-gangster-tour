@@ -6,6 +6,11 @@ import {routeURL,edition} from '../../lib/catalog';
 import {release,list} from '../../lib/release';
 import '../../styles/studies.scss';
 const open=[release.preview&&'editorial',(release.imageProvenance||release.imageRights)&&'image',release.listening&&'listening'].filter((x):x is string=>!!x);
+const studyCardArt: Partial<Record<string, string>> = {
+  'across-two-windows': 'story-a-suite-above-the-street',
+  'a-change-in-listening': 'story-the-arrangement',
+  'return-to-the-opening': 'story-doorway'
+};
 ---
 <Layout title="Storytelling studies" description="Six small experiments in reading, perspective, sound and time.">
   <div class="studies-index study-shell" data-study-index data-revision={edition.contentRevision}>
@@ -18,7 +23,7 @@ const open=[release.preview&&'editorial',(release.imageProvenance||release.image
     <ol class="study-grid">
       {studies.map((study,index) => <li class="study-card" data-study-card={study.id}>
         <a class="study-card-link" href={routeURL(`studies/${study.id}/`)}>
-          <div class="study-card-art"><ArtImage name={study.image} sizes="(max-width: 700px) 100vw, 50vw"/><span class="study-number" aria-hidden="true">{String(index+1).padStart(2,'0')}</span></div>
+          <div class="study-card-art"><ArtImage name={studyCardArt[study.id] ?? study.image} sizes="(max-width: 700px) 100vw, 50vw"/><span class="study-number" aria-hidden="true">{String(index+1).padStart(2,'0')}</span></div>
           <div class="study-card-copy"><p class="eyebrow">{study.api}</p><h2>{study.title}</h2><p>{study.subtitle}</p><span class="study-enter">Enter the study <span aria-hidden="true">↗</span></span><span class="study-resume" data-study-resume hidden></span></div>
         </a>
         <span hidden data-study-frames>{JSON.stringify(study.frames.map(f=>({id:f.id,label:f.label})))}</span>

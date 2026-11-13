@@ -2,6 +2,7 @@
 import {stops,locations,stopURL,routeURL} from '../lib/catalog';
 import {count,placedCount,unplacedSentence} from '../lib/release';
 import ArtImage from './ArtImage.astro';
+import Glyph from './Glyph.astro';
 import river from '../data/map-river.json';
 import geography from '../data/geography.json';
 
@@ -14,13 +15,13 @@ const y=(lat:number)=>60+(44.947-lat)*40000;
     <div class="map-legend">
       <div class="map-paper-label">
         <span class="map-sheet-number">Field notes / 01</span>
-        <h2 id="field-map-heading">Saint Paul<br/>Map</h2>
-        <p>Approximate<br/>venue locations</p>
+        <h2 id="field-map-heading">Saint Paul Map</h2>
+        <p>Approximate venue locations</p>
       </div>
       <ul class="map-symbols" aria-label="Map legend">
-        <li><span class="legend-pin" aria-hidden="true">#</span><span>Venue position<br/><small>Approximate</small></span></li>
-        <li><span class="legend-river" aria-hidden="true"></span><span>Mississippi River<br/><small>Modern geometry</small></span></li>
-        <li><span class="legend-grid" aria-hidden="true"></span><span>Coordinate grid<br/><small>North is up</small></span></li>
+        <li><span class="legend-pin" aria-hidden="true">#</span><span>Venue position <small>Approximate</small></span></li>
+        <li><span class="legend-river" aria-hidden="true"></span><span>Mississippi River <small>Modern geometry</small></span></li>
+        <li><span class="legend-grid" aria-hidden="true"></span><span>Coordinate grid <small>North is up</small></span></li>
       </ul>
       <div class="map-compass" aria-hidden="true"><span>N</span><svg viewBox="0 0 100 100"><path d="M50 5 59 41 95 50 59 59 50 95 41 59 5 50 41 41Z" fill="none" stroke="currentColor"/><path d="m50 5 9 36-9 9Z M95 50 59 59 50 50Z M50 95 41 59 50 50Z M5 50 41 41 50 50Z" fill="currentColor"/><circle cx="50" cy="50" r="26" fill="none" stroke="currentColor"/></svg><span>S</span></div>
     </div>
@@ -37,22 +38,29 @@ const y=(lat:number)=>60+(44.947-lat)*40000;
         {[-93.1,-93.095,-93.09,-93.085].map(lon=><g class="map-coordinate"><line y1="20" y2="535" x1={x(lon)} x2={x(lon)}/><text x={x(lon)} y="555" text-anchor="middle">{Math.abs(lon)}°W</text></g>)}
         <path d={river.rings.map(r=>r.map((point,i)=>`${i===0?'M':'L'}${x(point[0]).toFixed(2)},${y(point[1]).toFixed(2)}`).join(' ')+' Z').join(' ')} fill="url(#river-fill)" stroke="#7a9ca5" stroke-width="1.5" fill-rule="evenodd"/>
         <text class="map-river-label" x="250" y="340" transform="rotate(-33 250 340)">Mississippi River</text>
-        <text class="map-area-label" x="250" y="65">Downtown<tspan x="250" dy="21">Saint Paul</tspan></text>
+        <text class="map-area-label" x="250" y="65">Downtown<tspan x="250" dy="1.08em">Saint Paul</tspan></text>
         <text class="map-area-label" x="290" y="500">West Side</text>
-        <text class="map-north" x="595" y="45">N ↑</text>
-        {placed.map(l=>{const stop=stops.find(s=>s.locationId===l.id)!;return <g class="map-venue"><circle cx={x(l.coordinates!.longitude)} cy={y(l.coordinates!.latitude)} r="22" class="map-pin-halo"/><circle cx={x(l.coordinates!.longitude)} cy={y(l.coordinates!.latitude)} r="17" class="map-pin"/><text x={x(l.coordinates!.longitude)} y={y(l.coordinates!.latitude)+6} text-anchor="middle">{stop.order}</text></g>;})}
+        <text class="map-north" x="622" y="45" text-anchor="end">N ↑</text>
+        {placed.map(l=>{const stop=stops.find(s=>s.locationId===l.id)!;return <g class="map-venue"><circle cx={x(l.coordinates!.longitude)} cy={y(l.coordinates!.latitude)} r="22" class="map-pin-halo"/><circle cx={x(l.coordinates!.longitude)} cy={y(l.coordinates!.latitude)} r="17" class="map-pin"/><text x={x(l.coordinates!.longitude)} y={y(l.coordinates!.latitude)} dy=".32em" text-anchor="middle">{stop.order}</text></g>;})}
       </svg>
       <span class="map-drawing-caption">Geographic context · no travel route</span>
     </div>
     <div class="map-key">
       <p class="map-key-heading">{count(placedCount)} {placedCount === 1 ? 'place' : 'places'} on the map</p>
       <ol class="map-venue-links" aria-label="Plotted venues">
-        {placed.map(l=>{const stop=stops.find(s=>s.locationId===l.id)!;return <li><a href={`#location-${l.id}`}><span class="venue-key-number" aria-hidden="true">{stop.order}</span><span><strong>{l.currentName}</strong><small>Stop {stop.order} · approximate area</small></span><span aria-hidden="true">↗</span></a></li>;})}
+        {placed.map(l=>{const stop=stops.find(s=>s.locationId===l.id)!;return <li><a href={`#location-${l.id}`}><span class="venue-key-number" aria-hidden="true">{stop.order}</span><span><strong>{l.currentName}</strong><small>Stop {stop.order} · approximate area</small></span><span><Glyph name="next"/></span></a></li>;})}
       </ol>
       <div class="map-postcard" aria-hidden="true"><ArtImage name="banner-bridge" width={800} height={450} sizes="320px"/><span>The river runs<br/>through every story.</span></div>
     </div>
   </div>
-  <figcaption>North-up geographic overview. Dashed outlines indicate uncertain venue areas, not measured boundaries. No event footprints or travel connections are asserted. Modern river geometry is clipped from USGS NHD data, not a reconstructed 1930s shoreline. Map services and data: U.S. Geological Survey, National Geospatial Program. <a href={geography.baseSourceUrl!}>USGS river source</a> · <a href={geography.reuseSourceUrl}>Public-domain reuse basis</a>.</figcaption>
+  <figcaption>
+    <p>North-up geographic overview. Dashed outlines indicate uncertain venue areas, not measured boundaries. No event footprints or travel connections are asserted.</p>
+    <p>Modern river geometry is clipped from USGS NHD data, not a reconstructed 1930s shoreline. Map services and data: U.S. Geological Survey, National Geospatial Program.</p>
+    <div class="map-caption-links">
+      <a href={geography.baseSourceUrl!}>USGS river source <Glyph name="external"/></a>
+      <a href={geography.reuseSourceUrl}>Public-domain reuse basis <Glyph name="external"/></a>
+    </div>
+  </figcaption>
 </figure>
 <aside class="map-reading-note"><span aria-hidden="true">↳</span><p>A reading directory, wherever you are. Location precision, condition, and access are separate. This page is not a walking route or an invitation to enter private property.</p></aside>
 <section class="map-directory" id="directory" aria-labelledby="directory-heading">
@@ -72,7 +80,7 @@ const y=(lat:number)=>60+(44.947-lat)*40000;
         <p class="location-synopsis">{s.synopsis}</p>
         <ul class="location-status" aria-label="Location status"><li>Position: <strong>{l.precision}</strong></li><li>Condition: <strong>{l.condition}</strong></li><li>Access: <strong>{l.access}</strong></li></ul>
         <div class="location-record">
-          <a href={routeURL(`/sources/#source-${l.supportingSourceId}`)}>Historical source {l.supportingSourceId} <span aria-hidden="true">↗</span></a>
+          <a href={routeURL(`/sources/#source-${l.supportingSourceId}`)}>Historical source {l.supportingSourceId} <Glyph name="sources"/></a>
           <details class="location-details"><summary>Location notes <span class="sr-only">for {s.title}</span></summary><div class="location-details-content">
             <p>{l.qualification}</p>
             {l.coordinates&&<p><a href={l.coordinates.sourceUrl}>Coordinate source</a>, checked {l.coordinates.checkedDate}. {l.coordinates.method}{new URL(l.coordinates.sourceUrl).hostname.endsWith('wikimedia.org') && ' Structured Wikimedia place coordinates are available under CC0; no source photograph is reproduced.'}</p>}
@@ -82,7 +90,7 @@ const y=(lat:number)=>60+(44.947-lat)*40000;
         </div>
         <p class="muted location-progress" data-visited-stop={s.id} data-js-control hidden></p>
       </div>
-      <div class="location-margin"><p>{s.chapterNote}</p><a href={stopURL(s.id)} aria-label={`Read chapter ${s.order}: ${s.title}`}>Read chapter <span aria-hidden="true">→</span></a></div>
+      <div class="location-margin"><p>{s.chapterNote}</p><a href={stopURL(s.id)} aria-label={`Read chapter ${s.order}: ${s.title}`}>Read chapter <Glyph name="read"/></a></div>
     </li>;})}
   </ol>
 </section>

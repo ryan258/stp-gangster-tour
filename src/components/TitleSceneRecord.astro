@@ -1,0 +1,71 @@
+---
+import {claims, evidence, metagames, presenters, sources, sourceURL, type stops} from '../lib/catalog';
+
+interface Props {
+  stop: (typeof stops)[number];
+  theme: 'threshold' | 'telephone';
+  chapterHref: string;
+  heading: 'h3' | 'h4';
+}
+
+const {stop, theme, chapterHref, heading: AccountHeading} = Astro.props;
+const sequence = stop.pilot!;
+const isThreshold = theme === 'threshold';
+const conditions = isThreshold ? presenters.find(presenter => presenter.stopId === stop.id)!.items : [];
+const arrangement = isThreshold ? metagames.find(entry => entry.id === stop.blocks.metagame.metagameId)! : undefined;
+const demand = isThreshold ? undefined : claims.find(claim => claim.id === 'C20')!;
+const response = isThreshold ? undefined : claims.find(claim => claim.id === 'C21')!;
+const accounts = sequence.accounts.map(account => ({
+  ...account,
+  item: evidence.find(entry => entry.id === account.evidenceId)!,
+}));
+---
+
+<div class="title-scene-record">
+  <div class="title-scene-line" aria-hidden="true"><span></span><span></span></div>
+  <div class="title-scene-record-copy">
+    <p class="title-scene-context title-kicker">{accounts[0].label}</p>
+    {isThreshold ? conditions.map(condition => {
+      const revealsCosts = condition.key === 'keep-crimes-elsewhere';
+      return (
+        <details class:list={['title-scene-disclosure', {'title-scene-reveal': revealsCosts}]}>
+          <summary>{condition.label}</summary>
+          <div class="title-scene-detail">
+            <p>{condition.text}</p>
+            {revealsCosts && <div class="title-scene-payoff">
+              <AccountHeading>Who was outside the bargain?</AccountHeading>
+              <p>{arrangement?.bearingCosts}</p>
+            </div>}
+          </div>
+        </details>
+      );
+    }) : <>
+      <div class="title-scene-demand">
+        <AccountHeading>The demand</AccountHeading>
+        <p>{demand?.assertion}</p>
+      </div>
+      <details class="title-scene-disclosure title-scene-reveal">
+        <summary>Read the reported response</summary>
+        <div class="title-scene-detail">
+          <p>{response?.assertion}</p>
+        </div>
+      </details>
+    </>}
+
+    {accounts.map(({item, title, linkLabel, text, limit}) => (
+      <details class="title-scene-source" data-evidence-id={item.id}>
+        <summary>{isThreshold ? linkLabel : 'Source for the demand and response'}</summary>
+        <div class="title-scene-detail">
+          {isThreshold && item.id === 'E02' && <p><strong>{title}.</strong> {text}</p>}
+          <p><strong>Limits.</strong> {isThreshold ? limit : item.limits}</p>
+          <ul>
+            {item.sourceLocators.map(({sourceId, locator}) => (
+              <li><a href={sourceURL(sourceId, stop.id)}>{sources.find(source => source.id === sourceId)?.title ?? sourceId}</a> <span>· {locator}</span></li>
+            ))}
+          </ul>
+          <a href={`${chapterHref}#evidence-${item.id}`}>Open the full evidence note for {item.title}</a>
+        </div>
+      </details>
+    ))}
+  </div>
+</div>

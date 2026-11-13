@@ -1,0 +1,16 @@
+---
+import '../styles/title-symbol.scss';
+
+interface Props {
+  symbol: 'threshold' | 'ledger' | 'chair' | 'letter' | 'telephone' | 'doorway' | 'docket';
+  label: string;
+}
+
+const {symbol, label} = Astro.props;
+---
+
+<div class="title-symbol" data-title-symbol={symbol} role="img" aria-label={label}>
+  <span data-title-piece="first" aria-hidden="true"></span>
+  <span data-title-piece="second" aria-hidden="true"></span>
+  <span data-title-piece="third" aria-hidden="true"></span>
+</div>

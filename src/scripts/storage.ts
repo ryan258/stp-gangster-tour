@@ -1,13 +1,14 @@
 import edition from '../data/edition.json';
 import {base} from '../lib/base';
+import {chapterTitleAnchors, titleBlockLabels, type TitleBlock} from '../lib/title-sequence';
 // The small manifest is the only content needed by browser state validation.
 export const STOP_IDS: string[] = edition.stops;
 export const EVIDENCE_IDS: string[] = edition.evidenceIds;
 export const STOP_LABELS: Record<string,string> = {...edition.stopLabels,prologue:'Prologue',epilogue:'Epilogue'};
-export const BLOCK_LABELS: Record<string,string> = {intro:'Introduction',record:'The record',metagame:'The underlying bargain',opening:'Opening'};
+export const BLOCK_LABELS: Record<string,string> = {intro:'Introduction',record:'The record',metagame:'The underlying bargain',opening:'Opening',...titleBlockLabels};
 export const PROGRESS_KEY='stp-after-dark:progress:v1';
 export const PREFS_KEY='stp-after-dark:preferences:v1';
-export type Bookmark={stopId:string;blockId:'intro'|'record'|'metagame'|'opening'};
+export type Bookmark={stopId:string;blockId:'intro'|'record'|'metagame'|'opening'|TitleBlock};
 export interface Progress {schemaVersion:1;contentRevision:string;bookmark:Bookmark|null;visitedStops:string[];inspectedEvidence:string[];endingReached:boolean}
 export interface Preferences {schemaVersion:1;calmView:boolean;backgroundAudio:boolean;narrationVolume:number;ambienceVolume:number;playbackSpeed:number}
 export const defaultProgress=():Progress=>({schemaVersion:1,contentRevision:edition.contentRevision,bookmark:null,visitedStops:[],inspectedEvidence:[],endingReached:false});
@@ -23,7 +24,12 @@ export function decodeProgress(raw:string|null):Progress {
  p.visitedStops=known(data.visitedStops,STOP_IDS);p.inspectedEvidence=known(data.inspectedEvidence,EVIDENCE_IDS);p.endingReached=data.endingReached===true;
  if(object(data.bookmark)&&typeof data.bookmark.stopId==='string') {
   const stopId=data.bookmark.stopId,valid=STOP_IDS.includes(stopId),bookend=['prologue','epilogue'].includes(stopId);
-  if(valid||bookend) p.bookmark={stopId,blockId:bookend?'opening':(['intro','record','metagame'].includes(String(data.bookmark.blockId))?data.bookmark.blockId as Bookmark['blockId']:'intro')};
+  if(bookend) p.bookmark={stopId,blockId:'opening'};
+  else if(valid) {
+   const blockId=data.bookmark.blockId;
+   const allowedBlocks=['intro','record','metagame',...Object.values(chapterTitleAnchors(stopId))];
+   p.bookmark={stopId,blockId:typeof blockId==='string'&&allowedBlocks.includes(blockId)?blockId as Bookmark['blockId']:'intro'};
+  }
   else {const next=STOP_IDS.find(id=>!p.visitedStops.includes(id));if(next)p.bookmark={stopId:next,blockId:'intro'};}
  }
  return p;

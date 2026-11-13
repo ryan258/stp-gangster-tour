@@ -1,0 +1,18 @@
+---
+import {imageRecord} from '../lib/catalog';
+import ArtImage from './ArtImage.astro';
+
+interface Props {
+  image: string;
+  eager?: boolean;
+}
+
+const {image, eager = false} = Astro.props;
+---
+
+<figure class="title-scene-art">
+  <div class="title-scene-image">
+    <ArtImage name={image} alt={imageRecord(image).description} eager={eager}/>
+  </div>
+  <figcaption>AI-generated illustration</figcaption>
+</figure>

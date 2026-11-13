@@ -1,0 +1,33 @@
+---
+type Name =
+  | 'read' | 'map' | 'place' | 'casebook' | 'people' | 'record' | 'sources'
+  | 'qualification' | 'transcript' | 'bookmark' | 'previous' | 'next'
+  | 'play' | 'pause' | 'restart' | 'mute' | 'calm' | 'external';
+
+interface Props {
+  name: Name;
+  size?: number | string;
+  class?: string;
+}
+
+const {name, size = '1em', class: extraClass} = Astro.props;
+---
+
+<svg
+  class:list={['brand-glyph', extraClass]}
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  aria-hidden="true"
+  focusable="false"
+>
+  <use href={`#glyph-${name}`}/>
+</svg>
+
+<style>
+  .brand-glyph {
+    display: inline-block;
+    flex: none;
+    vertical-align: -.17em;
+  }
+</style>

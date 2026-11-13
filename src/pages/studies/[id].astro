@@ -14,6 +14,9 @@ const stop=stops.find(s=>s.id===study.stopId)!;
 const passage=study.passage && stops.find(s=>s.id===study.passage!.stopId)!.blocks[study.passage.block];
 const narration=media.narration.find(n=>n.stopId===study.stopId)!;
 const audioPending=[listeningPending(narration.id)&&'Listening and pronunciation review pending.',release.audioRights&&'Distribution-rights review pending.'].filter(Boolean).join(' ');
+const artSizes=study.kind==='windows'||study.kind==='time'
+  ? '100vw'
+  : '(max-width: 719px) 100vw, (max-width: 1050px) 35vw, 45vw';
 ---
 <Layout title={`${study.title} — Study ${index+1}`} description={study.subtitle}>
   <article class="study-shell" data-study={study.id} data-kind={study.kind} data-revision={edition.contentRevision}>
@@ -21,7 +24,7 @@ const audioPending=[listeningPending(narration.id)&&'Listening and pronunciation
     <header class="study-heading"><p class="eyebrow">{study.api}</p><h1>{study.title}</h1><p class="lede">{study.subtitle}</p><p class="study-question">{study.question}</p></header>
     <div class="study-workbench">
       <figure class="study-art" data-study-art>
-        <ArtImage name={study.image} eager sizes="(max-width: 850px) 100vw, 45vw"/>
+        <ArtImage name={study.image} eager sizes={artSizes}/>
         <figcaption>Atmospheric artwork · {stop.title} · {stop.period}</figcaption>
       </figure>
       <div class="study-desk">

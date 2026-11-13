@@ -2,7 +2,7 @@
 
 // The scrolling "who acts, who benefits, who pays" board. Stacked and complete by default.
 // src/scripts/story.ts sets data-live on wide, tall screens, which pins the board and shows one beat at a time.
-$gold: #deaa76;
+$gold: var(--color-focus);
 .chapter-layout.has-board { align-items: start; }
 @media (min-width: 1051px) { .chapter-layout.has-board { grid-template-columns: minmax(0, 1fr) 370px; } }
 
@@ -11,7 +11,7 @@ $gold: #deaa76;
 .board-kicker { margin: 0 0 .7rem; color: $text-muted; font-size: 1rem; }
 
 .board-actors { list-style: none; margin: 0 0 .9rem; padding: 0; display: grid; gap: .4rem; }
-.board-actor { margin: 0; border: 1px solid $border-card; border-left: 4px solid #4a5160; border-radius: 4px; background: #0d1117; transition: border-color .2s, background-color .2s; }
+.board-actor { margin: 0; border: 1px solid $border-card; border-left: 4px solid var(--color-paper-border); border-radius: 4px; background: var(--color-ink); transition: border-color .2s, background-color .2s; }
 .board-actor-body { display: grid; grid-template-columns: auto 1fr; gap: .1rem .7rem; align-items: start; width: 100%; padding: .45rem .65rem; text-align: left; }
 // Filled dot = documented, dashed hollow dot = analytical perspective; the text label says it too.
 .board-dot { width: .85rem; height: .85rem; margin-top: .3rem; border-radius: 50%; border: 2px solid $text-muted; }
@@ -47,17 +47,17 @@ $gold: #deaa76;
 // Pinned: only the actors in the current beat look like cards (filled, gold edge, gold dot, bright text). The others have no
 // box at all, just muted text, so an outline can never read as "selected". Muted text still clears 4.5:1 on the board background.
 .actor-board[data-live] .board-actor:not([data-emphasis]) { border-color: transparent; background: transparent; }
-.actor-board[data-live] .board-actor:not([data-emphasis]) .board-actor-copy strong { color: #9ba1ad; }
-.actor-board[data-live] .board-actor:not([data-emphasis]) :is(.board-role, .board-kind) { color: #8a909d; }
-.actor-board[data-live] .board-actor[data-emphasis] { border-left-color: $gold; background: #1b2230; }
+.actor-board[data-live] .board-actor:not([data-emphasis]) .board-actor-copy strong { color: var(--color-muted); }
+.actor-board[data-live] .board-actor:not([data-emphasis]) :is(.board-role, .board-kind) { color: var(--color-muted); }
+.actor-board[data-live] .board-actor[data-emphasis] { border-left-color: $gold; background: var(--color-surface-card-hover); }
 .actor-board[data-live] .board-actor[data-emphasis] .board-dot { border-color: $gold; }
 .actor-board[data-live] .board-actor[data-emphasis][data-documented='true'] .board-dot { background: $gold; }
-.board-actor[data-highlight], .actor-board[data-live] .board-actor[data-highlight] { border-color: $gold; outline: 2px solid $gold; outline-offset: 1px; background: #1c2431; }
+.board-actor[data-highlight], .actor-board[data-live] .board-actor[data-highlight] { border-color: $gold; outline: 2px solid $gold; outline-offset: 1px; background: var(--color-surface-card-hover); }
 
 // Phrases in the reading that point at an actor. Plain, unstyled text until the script gives them role="button".
 // Inline targets inside a sentence are exempt from the 44px rule, like ordinary prose links.
 .text-marker[role='button'] { cursor: pointer; text-decoration: underline dotted $gold 2px; text-underline-offset: .2em; transition: background-color .15s; }
-.text-marker[role='button']:hover, .text-marker[data-lit] { background: #deaa7626; text-decoration-style: solid; }
+.text-marker[role='button']:hover, .text-marker[data-lit] { background: var(--color-highlight); text-decoration-style: solid; }
 
 @media (forced-colors: active) {
  .board-actor[data-emphasis], .board-actor[data-highlight] { outline: 2px solid Highlight; }

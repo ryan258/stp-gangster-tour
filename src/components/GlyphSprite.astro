@@ -1,0 +1,19 @@
+---
+import sprite from '../../brand/assets/glyphs/sprite.svg?raw';
+
+const definitions = sprite.slice(sprite.indexOf('>') + 1, sprite.lastIndexOf('</svg>'));
+---
+
+<svg width="0" height="0" aria-hidden="true" focusable="false" class="brand-glyph-sprite">
+  <defs><Fragment set:html={definitions}/></defs>
+</svg>
+
+<style>
+  .brand-glyph-sprite {
+    position: absolute;
+    inline-size: 0;
+    block-size: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+</style>

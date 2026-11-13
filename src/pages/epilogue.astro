@@ -1,20 +1,64 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ExperienceHero from '../components/ExperienceHero.astro';
+import EditorialChapterHero from '../components/EditorialChapterHero.astro';
 import ReadingTrail from '../components/ReadingTrail.astro';
 import ClaimLinks from '../components/ClaimLinks.astro';
-import {edition,stops,stopURL,routeURL} from '../lib/catalog';
-import ArtImage from '../components/ArtImage.astro';
+import {edition, stops, stopURL, routeURL} from '../lib/catalog';
+import '../styles/editorial-chapters.scss';
+
+const last = stops[stops.length - 1];
 ---
-<Layout title="Epilogue">
- <article class="experience-page bookend-page epilogue-page" data-reading-page="epilogue">
-  <ExperienceHero title={edition.epilogue.title} eyebrow="Epilogue · Tour explanation" image="/images/redesign/banner-bridge.webp" folio="08" note="The city remains.">
-   <p class="lede">The story closes. The questions stay with us.</p><nav class="experience-actions" aria-label="Epilogue sections"><a href="#opening">Read the epilogue <span aria-hidden="true">↓</span></a><a href="#reading-trail">Your reading trail <span aria-hidden="true">↓</span></a></nav>
-  </ExperienceHero>
-  <div class="container bookend-layout">
-   <div class="bookend-prose"><section id="opening" data-reading-block class="story-opening"><p class="eyebrow">The limits of protection</p><h2>After the bargain</h2>{edition.epilogue.paragraphs.map(p=><p>{p}</p>)}<ClaimLinks ids={edition.epilogue.premiseClaimIds}/></section></div>
-   <aside class="bookend-aside"><figure class="experience-photo"><ArtImage name="card-on-the-record" sizes="(min-width: 1000px) 400px, 100vw"/><figcaption>What remains is the record.<br/><small>Atmospheric illustration.</small></figcaption></figure><div class="paper-document reflection-note"><p class="paper-kicker">Two questions to carry back</p><p>Who could shape another person’s choices?</p><p>Who absorbed the consequences?</p><span class="handwritten">Return to the city.<br/>Read it again.</span></div></aside>
-  </div>
-  <section class="container trail-section" id="reading-trail"><div class="experience-section-heading"><div><p class="eyebrow">The places you passed through</p><h2>Your reading trail</h2></div><p id="ending-status" data-js-control hidden></p></div><ReadingTrail/><div class="experience-actions"><a href={routeURL('/casebook/')}>Revisit people and inspected evidence <span aria-hidden="true">→</span></a><a href={routeURL('/sources/')}>Follow the source trail <span aria-hidden="true">↗</span></a></div><nav class="stop-nav" aria-label="Reading order"><a href={stopURL(stops[6].id)}>← Previous: {stops[6].title}</a><a href={routeURL('/map/')}>Return to the map →</a></nav></section>
- </article>
+
+<Layout title="Epilogue" description={edition.epilogue.summary}>
+  <article class="experience-page bookend-page epilogue-page tour-editorial" data-reading-page="epilogue">
+    <EditorialChapterHero
+      title={edition.epilogue.title}
+      label="Epilogue · Tour interpretation"
+      image="banner-bridge"
+    >
+      <nav class="experience-actions editorial-hero-actions" aria-label="Epilogue sections">
+        <a href="#opening">Read the epilogue <span aria-hidden="true">↓</span></a>
+        <a href="#reading-trail">Your reading trail <span aria-hidden="true">↓</span></a>
+      </nav>
+    </EditorialChapterHero>
+
+    <div class="container epilogue-reading">
+      <div class="bookend-prose">
+        <section id="opening" data-reading-block class="story-opening">
+          <h2>After the bargain</h2>
+          {edition.epilogue.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+          <details class="story-sources">
+            <summary>Sources behind the epilogue</summary>
+            <ClaimLinks ids={edition.epilogue.premiseClaimIds}/>
+          </details>
+        </section>
+      </div>
+    </div>
+
+    <section class="epilogue-reflection" aria-labelledby="reflection-heading">
+      <div class="container">
+        <p class="eyebrow">Return to the city</p>
+        <h2 id="reflection-heading">Who could shape another person’s choices?</h2>
+        <p>Who absorbed the consequences?</p>
+        <div class="experience-actions">
+          <a href={routeURL('/map/')}>Return to the map <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container trail-section" id="reading-trail" aria-labelledby="trail-heading">
+      <div class="experience-section-heading">
+        <h2 id="trail-heading">Your reading trail</h2>
+        <p id="ending-status" data-js-control hidden></p>
+      </div>
+      <ReadingTrail/>
+      <div class="experience-actions">
+        <a href={routeURL('/casebook/')}>Revisit people and inspected evidence <span aria-hidden="true">→</span></a>
+        <a href={routeURL('/sources/')}>Follow the source trail <span aria-hidden="true">↗</span></a>
+      </div>
+      <nav class="stop-nav" aria-label="Reading order">
+        <a href={stopURL(last.id)}>← Previous: {last.title}</a>
+      </nav>
+    </section>
+  </article>
 </Layout>

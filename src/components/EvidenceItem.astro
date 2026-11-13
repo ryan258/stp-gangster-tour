@@ -1,11 +1,13 @@
 ---
 import {sourceURL, type evidence as evidenceData} from '../lib/catalog';
 import ClaimLinks from './ClaimLinks.astro';
+import Glyph from './Glyph.astro';
+
 interface Props {evidence:typeof evidenceData[number]}
 const {evidence:e}=Astro.props;
 ---
 <details id={`evidence-${e.id}`} class="evidence-card" data-evidence-id={e.id}>
- <summary><strong>{e.id}: {e.title}</strong> <span class="badge">{e.materialLabel}</span></summary>
- <div class="evidence-content"><p>{e.description}</p><p><strong>Supports:</strong> {e.supports}</p><p><strong>Limits:</strong> {e.limits}</p><ClaimLinks ids={e.claimIds} from={e.stopId}/>
+ <summary><Glyph name="record"/> <strong>{e.id}: {e.title}</strong> <span class="badge">{e.materialLabel}</span></summary>
+ <div class="evidence-content"><p>{e.description}</p><p><strong>Supports:</strong> {e.supports}</p><p><Glyph name="qualification"/> <strong>Limits:</strong> {e.limits}</p><ClaimLinks ids={e.claimIds} from={e.stopId}/>
  <ul>{e.sourceLocators.map(s=><li><a href={sourceURL(s.sourceId,e.stopId)}>{s.sourceId}</a> — {s.locator}</li>)}</ul></div>
 </details>

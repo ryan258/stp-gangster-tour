@@ -57,6 +57,14 @@ export class TourAudioController {
   try{await this.ambience.play();if(request!==this.ambienceRequest){if(!this.ambienceOn)this.ambience.pause();return;}this.status('Ambience playing.');}catch{if(request!==this.ambienceRequest)return;this.stopAmbience();this.status('Ambience did not start. Toggle ambience to retry.');}this.render();
  }
  initUI(){
+  this.root.addEventListener('stp:pause-audio',()=>{
+   const mute=this.button('btn-mute-all');
+   const wasMuted=mute?.getAttribute('aria-pressed')==='true';
+   if(wasMuted) mute?.setAttribute('aria-pressed','false');
+   if(this.ambienceOn||this.phase==='loading'||this.phase==='playing'){
+    this.stopAll();this.status('Introduction audio is paused.');
+   }else if(wasMuted) this.status('Introduction audio is off.');
+  });
   this.button('btn-audio-play')?.addEventListener('click',()=>void this.play());
   this.button('btn-audio-pause')?.addEventListener('click',()=>{this.pause();this.status('Narration paused. Resume is available.');});
   this.button('btn-audio-restart')?.addEventListener('click',()=>{this.pause();void this.play(true);});

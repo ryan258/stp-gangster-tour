@@ -1,0 +1,92 @@
+---
+import type {ComponentProps} from 'astro/types';
+import ArtImage from './ArtImage.astro';
+import LayeredScene from './LayeredScene.astro';
+
+type ChapterSprite = ComponentProps<typeof LayeredScene>['sprite'] & {plate: string; description: string};
+
+interface Props {
+  title: string;
+  label: string;
+  image: string;
+  synopsis?: string;
+  place?: string;
+  artNote?: string;
+  sprite?: ChapterSprite;
+}
+
+const {title, label, image, synopsis, place, artNote = 'Atmospheric illustration', sprite} = Astro.props;
+---
+
+<header class:list={['experience-hero', 'editorial-chapter-hero', {'editorial-hero-with-backdrop': !sprite}]}>
+  {!sprite && <ArtImage class="experience-backdrop" name={image} sizes="100vw" eager/>}
+  <div class="container editorial-hero-grid">
+    <div class="experience-hero-copy">
+      <p class="eyebrow">{label}</p>
+      <h1>{title}</h1>
+      {synopsis && <p class="lede">{synopsis}</p>}
+      {place && <a class="editorial-hero-place" href="#place">{place} <span aria-hidden="true">↗</span></a>}
+      <slot/>
+      {!sprite && <p class="experience-art-label">{artNote}</p>}
+    </div>
+    {sprite && <figure class="editorial-hero-art" data-layered-chapter-art>
+      <div class="editorial-image-well" data-chapter-sprite>
+        <LayeredScene image={sprite.plate} sprite={sprite} eager/>
+      </div>
+      <figcaption>{artNote}<span class="sr-only">. {sprite.description}</span></figcaption>
+    </figure>}
+  </div>
+</header>
+
+<script>
+  import {setLayeredSceneProgress} from '../scripts/layered-scene';
+
+  const art = document.querySelector<HTMLElement>('[data-chapter-sprite]');
+  const canvas = art?.querySelector<HTMLElement>('[data-visual-canvas]');
+
+  if (art && canvas) {
+    const motion = matchMedia('screen and (prefers-reduced-motion: no-preference) and (forced-colors: none)');
+    const header = document.querySelector<HTMLElement>('.site-header');
+    let pendingFrame = 0;
+
+    const motionAllowed = () => motion.matches && !document.hidden
+      && !document.documentElement.classList.contains('calm-mode');
+
+    const paint = () => {
+      pendingFrame = 0;
+      if (!motionAllowed()) return;
+
+      const {top, height} = art.getBoundingClientRect();
+      if (height <= 0) return;
+      const headerOffset = header && getComputedStyle(header).position === 'sticky' ? header.offsetHeight : 0;
+      const artStart = top + window.scrollY;
+      // Start as the art enters view and finish while most of it is still visible.
+      const start = Math.max(0, artStart - innerHeight * .67);
+      const distance = Math.max(1, artStart + height * .33 - headerOffset - start);
+      setLayeredSceneProgress(canvas, (window.scrollY - start) / distance);
+    };
+
+    const schedule = () => {
+      if (!pendingFrame && motionAllowed()) pendingFrame = requestAnimationFrame(paint);
+    };
+
+    const sync = () => {
+      if (motionAllowed()) {
+        schedule();
+      } else {
+        cancelAnimationFrame(pendingFrame);
+        pendingFrame = 0;
+        setLayeredSceneProgress(canvas, 1);
+      }
+    };
+
+    motion.addEventListener('change', sync);
+    new MutationObserver(sync).observe(document.documentElement, {attributes: true, attributeFilter: ['class']});
+    document.addEventListener('visibilitychange', sync);
+    window.addEventListener('scroll', schedule, {passive: true});
+    window.addEventListener('resize', schedule, {passive: true});
+    window.addEventListener('pageshow', sync);
+    void document.fonts?.ready.then(schedule);
+    sync();
+  }
+</script>

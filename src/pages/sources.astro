@@ -25,7 +25,24 @@ const reportURL = (id: string) => `${issuesURL}?title=${encodeURIComponent(`Corr
     <div class="container">
       <nav class="archive-tabs" aria-label="Sources sections"><a href="#claims"><span>{claims.length}</span> Claims</a><a href="#bibliography"><span>{sources.length}</span> Bibliography</a><a href="#edition-status"><span>↳</span> Edition notes</a><a href="#credits"><span>↳</span> Credits</a><a href="#cite"><span>↳</span> Cite &amp; data</a></nav>
       <div class="archive-layout">
-        <aside class="archive-guide"><div class="paper-document"><p class="paper-kicker">A reader’s field guide</p><h2>Read the fine print.</h2><p>“Supported” refers to the bounded statement and cited source, not universal certainty.</p><p>These pages paraphrase records; they do not present invented transcripts or archival facsimiles. <a href={routeURL('/method/')}>How this edition was researched →</a></p><dl><dt>Supported</dt><dd>Read the statement alongside its explanation and qualification.</dd><dt>Disputed</dt><dd>Follow the differing accounts and the limits of what they establish.</dd></dl><p data-js-control hidden><button type="button" class="btn-secondary" id="print-sources">Print or save as PDF</button></p></div><nav class="archive-guide-links" aria-label="Archive index"><a href="#claims">Claim ledger <span aria-hidden="true">↓</span></a><a href="#bibliography">Bibliography <span aria-hidden="true">↓</span></a><a href="#edition-status">Edition notes <span aria-hidden="true">↓</span></a><a href="#credits">Credits <span aria-hidden="true">↓</span></a></nav></aside>
+        <aside class="archive-guide">
+          <div class="paper-document">
+            <div>
+              <p class="paper-kicker">A reader’s field guide</p>
+              <h2>Read the fine print.</h2>
+              <p>“Supported” refers to the bounded statement and cited source, not universal certainty.</p>
+              <p>These pages paraphrase records; they do not present invented transcripts or archival facsimiles. <a href={routeURL('/method/')}>How this edition was researched →</a></p>
+            </div>
+            <div>
+              <dl>
+                <dt>Supported</dt><dd>Read the statement alongside its explanation and qualification.</dd>
+                <dt>Disputed</dt><dd>Follow the differing accounts and the limits of what they establish.</dd>
+              </dl>
+              <p data-js-control hidden><button type="button" class="btn-secondary" id="print-sources">Print or save as PDF</button></p>
+            </div>
+          </div>
+          <nav class="archive-guide-links" aria-label="Archive index"><a href="#claims">Claim ledger <span aria-hidden="true">↓</span></a><a href="#bibliography">Bibliography <span aria-hidden="true">↓</span></a><a href="#edition-status">Edition notes <span aria-hidden="true">↓</span></a><a href="#credits">Credits <span aria-hidden="true">↓</span></a></nav>
+        </aside>
         <div class="archive-records">
     <section id="claims">
       <div class="experience-section-heading"><div><p class="eyebrow">Statement. Support. Qualification.</p><h2>Claim ledger</h2></div></div>
@@ -97,7 +114,7 @@ const reportURL = (id: string) => `${issuesURL}?title=${encodeURIComponent(`Corr
           <li>{s.id}: {s.description}</li>
         ))}
       </ul>
-      <p>Fonts are all self-hosted; none is requested from a third-party service. Barlow Condensed and Source Sans 3 are served from the project’s font files, and Playfair Display, Cinzel and Caveat from the Fontsource packages. All five are under the SIL Open Font License; the notices are retained in <code>/licenses/</code>. The cited archives and websites retain their own rights and conditions.</p>
+      <p>Barlow Condensed and Source Sans 3 are self-hosted. Both use the SIL Open Font License, with notices in <code>/licenses/</code>. The cited archives and websites retain their own rights and conditions.</p>
       <p>No analytics, account, GPS, external font, or external audio provider is part of the runtime. Following a source link leaves this site and uses that source’s services.</p>
     </section>
 

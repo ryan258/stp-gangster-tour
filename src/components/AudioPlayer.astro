@@ -1,4 +1,6 @@
 ---
+import Glyph from './Glyph.astro';
+
 interface Props {
   audioSrc: string;
   ambienceSrc: string;
@@ -15,15 +17,25 @@ const {audioSrc, ambienceSrc, voice, listeningPending} = Astro.props;
   <div class="controls">
    <button id="btn-audio-play" type="button">Play narration</button>
    <button id="btn-audio-pause" type="button" hidden>Pause narration</button>
-   <button id="btn-audio-restart" type="button" class="btn-secondary">Restart narration</button>
-   <button id="btn-mute-all" type="button" class="btn-secondary" aria-pressed="false">Mute all</button>
-   <label for="audio-speed-select">Narration speed</label>
-   <select id="audio-speed-select"><option value="0.75">0.75×</option><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select>
+   <button id="btn-audio-restart" type="button" class="btn-secondary"><Glyph name="restart"/> Restart narration</button>
+   <button id="btn-mute-all" type="button" class="btn-secondary" aria-pressed="false"><Glyph name="mute"/> Mute all</button>
+   <div class="audio-speed">
+    <label for="audio-speed-select">Narration speed</label>
+    <select id="audio-speed-select"><option value="0.75">0.75×</option><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select>
+   </div>
   </div>
   <div class="controls" data-mixer-control>
-   <button type="button" class="btn-secondary" data-volume-channel="narrationVolume" data-volume-delta="-0.1">Narration quieter</button><button type="button" class="btn-secondary" data-volume-channel="narrationVolume" data-volume-delta="0.1">Narration louder</button>
-   <button type="button" id="btn-toggle-ambience" class="btn-secondary" aria-pressed="false">Toggle ambience</button>
-   <button type="button" class="btn-secondary" data-volume-channel="ambienceVolume" data-volume-delta="-0.1">Ambience quieter</button><button type="button" class="btn-secondary" data-volume-channel="ambienceVolume" data-volume-delta="0.1">Ambience louder</button>
+   <div class="audio-volume-pair" role="group" aria-label="Narration volume">
+    <button type="button" class="btn-secondary" data-volume-channel="narrationVolume" data-volume-delta="-0.1">Narration quieter</button>
+    <button type="button" class="btn-secondary" data-volume-channel="narrationVolume" data-volume-delta="0.1">Narration louder</button>
+   </div>
+   <div class="audio-ambience" role="group" aria-label="Ambience">
+    <button type="button" id="btn-toggle-ambience" class="btn-secondary" aria-pressed="false">Toggle ambience</button>
+    <div class="audio-volume-pair">
+     <button type="button" class="btn-secondary" data-volume-channel="ambienceVolume" data-volume-delta="-0.1">Ambience quieter</button>
+     <button type="button" class="btn-secondary" data-volume-channel="ambienceVolume" data-volume-delta="0.1">Ambience louder</button>
+    </div>
+   </div>
   </div>
   <p data-volume-status class="muted" data-mixer-control></p>
   <label class="audio-background-option"><input type="checkbox" id="audio-background"/> Keep sound playing when this tab is hidden (otherwise it pauses)</label>
@@ -32,6 +44,29 @@ const {audioSrc, ambienceSrc, voice, listeningPending} = Astro.props;
  </div>
  <noscript><p>Audio controls need JavaScript. Read the complete introduction on this page.</p></noscript>
 </section>
+<style>
+ .audio-player .controls button { gap: .4rem; }
+ .audio-speed,
+ .audio-ambience {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  max-inline-size: 100%;
+ }
+ .audio-ambience { flex-wrap: wrap; }
+ .audio-volume-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .5rem;
+  max-inline-size: 100%;
+ }
+ .audio-volume-pair button { min-inline-size: 0; }
+ @media (max-width: 480px) {
+  .audio-volume-pair,
+  .audio-ambience { inline-size: 100%; }
+  .audio-volume-pair button { padding-inline: .45rem; }
+ }
+</style>
 <script>
  import {TourAudioController} from '../scripts/audio';
  document.querySelectorAll<HTMLElement>('[data-audio-player]').forEach(root=>new TourAudioController(root).initUI());
