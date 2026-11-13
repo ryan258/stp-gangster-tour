@@ -1,0 +1,71 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ClaimLinks from '../../components/ClaimLinks.astro';
+import PaperTrailDesk from '../../components/PaperTrailDesk.astro';
+import PaperTrailMotion from '../../components/PaperTrailMotion.astro';
+import {paperTrails, paperTrailForms, paperTrailURL, type PaperTrail} from '../../lib/paper-trails';
+import {routeURL, sources} from '../../lib/catalog';
+import '../../styles/paper-trails.scss';
+
+export function getStaticPaths() {
+  return paperTrails.map(story => ({params: {id: story.id}, props: {story}}));
+}
+
+const {story} = Astro.props as {story: PaperTrail};
+const next = paperTrails[paperTrails.findIndex(item => item.id === story.id) + 1];
+const featuredSource = sources.find(source => source.id === story.sourceLink.sourceId)!;
+const back = routeURL('/casebook/#paper-trails');
+---
+<Layout title={story.title} description={story.subtitle} currentPath={routeURL('/casebook/')}>
+  <article class="paper-trail container" data-paper-form={story.form}>
+    <nav class="paper-trail-nav" aria-label="Story navigation">
+      <a href={back}>← All paper trails</a>
+      <span>{paperTrailForms[story.form]}</span>
+    </nav>
+    <header class="paper-trail-header">
+      <p class="eyebrow">{story.period}</p>
+      <h1>{story.title}</h1>
+      <p class="lede">{story.subtitle}</p>
+    </header>
+    {(story.form === 'table' || story.form === 'letters' || story.form === 'brief') && (
+      <PaperTrailDesk story={story}/>
+    )}
+    {(story.form === 'freight' || story.form === 'signals') && <PaperTrailMotion story={story}/>}
+    {story.form === 'escape' && (
+      <div class="paper-escape">
+        <nav aria-label="Scenes in the escape">
+          {story.scenes.map(scene => <a href={`#${scene.id}`}>{scene.label}</a>)}
+        </nav>
+        <ol aria-label="Escape sequence" role="list">
+          {story.scenes.map((scene, index) => (
+            <li id={scene.id} tabindex="-1">
+              <span class="paper-escape-step" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+              <article>
+                <p class="eyebrow">{scene.label}</p>
+                <h2>{scene.title}</h2>
+                <p>{scene.text}</p>
+                <ClaimLinks ids={scene.claimIds}/>
+                {story.scenes[index + 1] && <a class="paper-trail-jump" href={`#${story.scenes[index + 1].id}`}>Next scene: {story.scenes[index + 1].label} ↓</a>}
+              </article>
+            </li>
+          ))}
+        </ol>
+      </div>
+    )}
+    {story.form === 'ledger' && (
+      <div class="paper-ledger">
+        {story.scenes.map((scene, index) => (
+          <details id={scene.id} open={index === 0}>
+            <summary><span>{scene.label}</span><strong>{scene.title}</strong></summary>
+            <p>{scene.text}</p>
+            <ClaimLinks ids={scene.claimIds}/>
+          </details>
+        ))}
+      </div>
+    )}
+    <footer class="paper-trail-end">
+      <a href={featuredSource.url}>{story.sourceLink.label} <span aria-hidden="true">↗</span></a>
+      {next ? <a href={paperTrailURL(next.id)}>Next story: {next.title}</a> : <a href={back}>Return to the Casebook</a>}
+    </footer>
+  </article>
+</Layout>

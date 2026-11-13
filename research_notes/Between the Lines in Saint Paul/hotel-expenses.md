@@ -1,0 +1,7 @@
+# A jail courier’s hotel bill
+
+On June 16, 1935, Saint Paul special agent in charge H. E. Andersen wrote to the director about Jack Hession, a special deputy who had guarded Arthur Barker in Ramsey County Jail. Andersen says Sheriff Thomas Gibbons arranged for the federal office to receive copies of notes Hession carried between Barker and Mildred Kuhlman before their delivery. [Bremer Kidnapping Part 140, Saint Paul file 7-50, June 16 letter, first sheet](https://vault.fbi.gov/barker-karpis-gang/bremer-kidnapping/Bremer%20Kidnapping%20Part%20140)
+
+Hession said he registered at the Frederic Hotel as Ben Franklin on May 1 and stayed through May 24. He told agents the hotel let him keep in contact with Kuhlman, who was staying there. The letter records his account and gives no copy of the hotel register. [Same letter, first sheet, paragraph beginning with the $26.50 bill](https://vault.fbi.gov/barker-karpis-gang/bremer-kidnapping/Bremer%20Kidnapping%20Part%20140)
+
+Hession submitted $26.50, including $21.50 for the room and the balance for telephone expenses. He separately described a $4.80 collect call from Chicago. He expected Barker to pay, but Barker had been moved to Leavenworth. Andersen asked whether the bureau could cover the bill as a confidential expense. The overlapping margin marks leave the payment disposition uncertain. [Same letter, first sheet and continuation through Andersen’s signature](https://vault.fbi.gov/barker-karpis-gang/bremer-kidnapping/Bremer%20Kidnapping%20Part%20140)

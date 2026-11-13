@@ -1,0 +1,68 @@
+---
+import ClaimLinks from './ClaimLinks.astro';
+import '../styles/paper-trail-motion.scss';
+
+interface Scene {
+  id: string;
+  label: string;
+  title: string;
+  text: string;
+  claimIds: string[];
+}
+
+interface Props {
+  story: {id: string; form: string; scenes: Scene[]};
+  from?: string;
+}
+
+const {story, from} = Astro.props;
+const scenes = story.scenes.map(scene => ({
+  ...scene,
+  anchor: `${story.id}-${scene.id}`
+}));
+---
+
+{story.form === 'freight' && (
+  <div class="paper-trail-freight">
+    <nav aria-label="Freight case stages" class="paper-trail-freight__nav">
+      <ol role="list">
+        {scenes.map(scene => (
+          <li><a href={`#${scene.anchor}`}>{scene.label}</a></li>
+        ))}
+      </ol>
+    </nav>
+    <div class="paper-trail-freight__stages">
+      {scenes.map((scene, index) => (
+        <article class="paper-trail-freight__stage" id={scene.anchor} tabindex="-1" aria-labelledby={`${scene.anchor}-title`}>
+          <h2 id={`${scene.anchor}-title`}>{scene.title}</h2>
+          <p>{scene.text}</p>
+          <ClaimLinks ids={scene.claimIds} from={from}/>
+          {scenes[index + 1] && (
+            <a class="paper-trail-freight__next" href={`#${scenes[index + 1].anchor}`}>
+              <span><span class="sr-only">Next stage: </span>{scenes[index + 1].label}</span> <span aria-hidden="true">→</span>
+            </a>
+          )}
+        </article>
+      ))}
+    </div>
+  </div>
+)}
+
+{story.form === 'signals' && (
+  <ol class="paper-trail-signals" aria-label="Reports in order" role="list">
+    {scenes.map((scene, index) => (
+      <li>
+        <details open={index === 0}>
+          <summary>
+            <span class="paper-trail-signals__time">{scene.label}</span>
+            <span class="paper-trail-signals__title">{scene.title}</span>
+          </summary>
+          <div class="paper-trail-signals__entry">
+            <p>{scene.text}</p>
+            <ClaimLinks ids={scene.claimIds} from={from}/>
+          </div>
+        </details>
+      </li>
+    ))}
+  </ol>
+)}

@@ -1,0 +1,51 @@
+---
+import type {CasebookStory} from '../lib/casebook-experiences';
+import {claimURL, claims} from '../lib/catalog';
+
+interface Props {
+  scene: CasebookStory['scenes'][number];
+  next?: CasebookStory['scenes'][number];
+}
+
+const {scene, next} = Astro.props;
+const records = scene.claimIds.map(id => claims.find(claim => claim.id === id)!);
+---
+<div class="case-scene-body">
+  <div class="case-scene-focus" aria-hidden="true"><p>{scene.focus}</p></div>
+  <p class="case-scene-text">{scene.text}</p>
+  {scene.inset?.layout === 'cards' ? (
+    <fieldset class="case-inspection">
+      <legend>{scene.inset.label}</legend>
+      <div class="case-inspection-cards">
+        {scene.inset.lines.map(line => (
+          <details class="case-inspection-card">
+            <summary>{line.label}</summary>
+            <p>{line.text}</p>
+          </details>
+        ))}
+      </div>
+    </fieldset>
+  ) : scene.inset && (
+    <details class="case-scene-inset">
+      <summary>{scene.inset.label}</summary>
+      <dl>
+        {scene.inset.lines.map(line => (
+          <div><dt>{line.label}</dt><dd>{line.text}</dd></div>
+        ))}
+      </dl>
+    </details>
+  )}
+  <details class="case-scene-record">
+    <summary>Read the evidence <span class="sr-only">for {scene.label}</span></summary>
+    <ul role="list">
+      {records.map(record => (
+        <li>
+          <p><strong>{record.status} · {record.evidenceBasis}</strong></p>
+          <p>{record.qualification}</p>
+          <a href={claimURL(record.id)}>View claim {record.id} and its sources</a>
+        </li>
+      ))}
+    </ul>
+  </details>
+  {next && <a class="case-scene-next" href={`#${next.id}`}>Next scene: {next.label} <span aria-hidden="true">→</span></a>}
+</div>

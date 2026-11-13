@@ -1,0 +1,180 @@
+@media screen {
+  .paper-trail-freight {
+    --freight-edge: var(--color-paper-border);
+    color: var(--color-ink);
+    min-inline-size: 0;
+  }
+
+  .paper-trail-freight__nav ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .55rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .paper-trail-freight__nav li {
+    display: flex;
+    flex: 1 1 9rem;
+    min-inline-size: 0;
+    margin: 0;
+  }
+
+  .paper-trail-freight__nav a {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    min-block-size: var(--min-target-size);
+    padding: .6rem .8rem;
+    border: 1px solid var(--freight-edge);
+    border-radius: .18rem .18rem 0 0;
+    background: var(--color-paper-raised);
+    color: var(--color-paper-link-hover);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .paper-trail-freight__nav a:hover {
+    background: var(--color-paper);
+  }
+
+  .paper-trail-freight__stage {
+    margin-block: .55rem 0;
+    padding: clamp(1rem, 4vw, 2rem);
+    border: 1px solid var(--freight-edge);
+    border-block-start: .25rem solid var(--color-button);
+    background: var(--color-paper);
+    overflow-wrap: anywhere;
+  }
+
+  .paper-trail-freight__stage h2 {
+    margin-block: 0 .55rem;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+  }
+
+  .paper-trail-freight__stage > p,
+  .paper-trail-signals__entry > p {
+    max-inline-size: var(--measure-prose);
+  }
+
+  .paper-trail-freight .claim-links {
+    color: var(--color-paper-muted);
+  }
+
+  .paper-trail-freight .claim-links a,
+  .paper-trail-freight__next {
+    color: var(--color-paper-link-hover);
+  }
+
+  .paper-trail-freight .claim-links a,
+  .paper-trail-freight__next,
+  .paper-trail-signals .claim-links a {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--min-target-size);
+  }
+
+  .paper-trail-freight__next {
+    gap: .55rem;
+    font-weight: 600;
+  }
+
+  .paper-trail-freight__nav a:focus-visible,
+  .paper-trail-freight__next:focus-visible,
+  .paper-trail-freight .claim-links a:focus-visible,
+  .paper-trail-freight__stage:focus-visible {
+    outline-color: var(--color-paper-link-hover);
+  }
+
+  @supports selector(:has(*)) {
+    .paper-trail-freight__stage:not(:first-child),
+    .paper-trail-freight:has(.paper-trail-freight__stage:target) .paper-trail-freight__stage:not(:target) {
+      display: none;
+    }
+
+    .paper-trail-freight .paper-trail-freight__stage:target {
+      display: block;
+    }
+
+  }
+
+  .paper-trail-signals {
+    --signals-frame: #79919a;
+    margin: 0;
+    padding: .75rem;
+    border: 1px solid var(--signals-frame);
+    background: #17282f;
+    color: var(--color-paper);
+    list-style: none;
+  }
+
+  .paper-trail-signals > li {
+    margin: 0;
+    border-inline-start: 2px solid var(--signals-frame);
+  }
+
+  .paper-trail-signals > li + li {
+    border-block-start: 1px solid var(--signals-frame);
+  }
+
+  .paper-trail-signals > li:last-child {
+    border-inline-start-color: var(--color-accent);
+    background: #33251f;
+  }
+
+  .paper-trail-signals summary {
+    min-block-size: var(--min-target-size);
+    padding: .7rem .9rem;
+    color: var(--color-paper);
+  }
+
+  .paper-trail-signals summary:hover {
+    text-decoration: underline;
+  }
+
+  .paper-trail-signals__time {
+    display: inline-block;
+    margin-inline-end: .75rem;
+    color: #c2dbdf;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .paper-trail-signals__title {
+    font: 600 clamp(1.3rem, 3vw, 1.6rem)/1.15 var(--font-title);
+  }
+
+  .paper-trail-signals > li:last-child .paper-trail-signals__time {
+    color: var(--color-accent-hover);
+  }
+
+  .paper-trail-signals__entry {
+    padding: .45rem .9rem 1rem;
+    overflow-wrap: anywhere;
+  }
+
+  .paper-trail-signals__entry .claim-links {
+    color: var(--color-muted);
+  }
+
+  @media (forced-colors: active) {
+    .paper-trail-freight__nav a:focus-visible,
+    .paper-trail-freight__next:focus-visible,
+    .paper-trail-freight .claim-links a:focus-visible,
+    .paper-trail-freight__stage:focus-visible {
+      outline-color: Highlight;
+    }
+  }
+}
+
+@media print {
+  .paper-trail-freight__nav,
+  .paper-trail-freight__next {
+    display: none;
+  }
+
+  .paper-trail-signals > li {
+    break-inside: avoid;
+  }
+}

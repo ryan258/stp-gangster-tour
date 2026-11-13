@@ -1,23 +1,204 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ExperienceHero from '../components/ExperienceHero.astro';
+import ArtImage from '../components/ArtImage.astro';
+import Glyph from '../components/Glyph.astro';
 import ReadingTrail from '../components/ReadingTrail.astro';
 import ClaimLinks from '../components/ClaimLinks.astro';
-import {stops,evidence,people,relationships,stopURL,routeURL} from '../lib/catalog';
+import {casebookStories, casebookForms, casebookStoryURL} from '../lib/casebook-experiences';
+import {paperTrails, paperTrailForms, paperTrailURL} from '../lib/paper-trails';
+import {stops, evidence, people, relationships, stopURL, routeURL} from '../lib/catalog';
+import '../styles/casebook.scss';
+
+const stopTitles = new Map(stops.map(stop => [stop.id, stop.title]));
+const personNames = new Map(people.map(person => [person.id, person.name]));
+const storyGroups = [
+  {id: 'oddities-in-saint-paul-files', title: 'Oddities in Saint Paul files', collection: 'oddities-in-saint-paul-files'},
+  {id: 'stranger-than-the-headlines', title: 'Stranger than the headlines', collection: 'stranger-than-the-headlines'},
+  {id: 'clues-in-plain-sight', title: 'Clues in plain sight', collection: 'clues-in-plain-sight'},
+  {id: 'between-the-lines', title: 'Between the lines', collection: 'between-the-lines'},
+  {id: 'strange-finds', title: 'Strange finds in the files', collection: 'strange-finds'},
+  {id: 'old-records', title: 'New stories from the old records', collection: 'old-records'},
+  {id: 'earlier-stories', title: 'Earlier side stories', collection: undefined}
+].map(group => ({...group, stories: casebookStories.filter(story => story.collection === group.collection)}))
+  .filter(group => group.stories.length > 0);
+const sections = [
+  {id: 'paper-trails', label: 'Paper trails', count: paperTrails.length},
+  {id: 'side-stories', label: 'Side stories', count: casebookStories.length},
+  {id: 'evidence-ledger', label: 'Evidence', count: evidence.length},
+  {id: 'people', label: 'People', count: people.length},
+  {id: 'relationships', label: 'Connections', count: relationships.length},
+  {id: 'reading-progress', label: 'Reading progress', count: stops.length}
+];
 ---
 <Layout title="Casebook">
- <div class="experience-page casebook-page">
-  <ExperienceHero title="The casebook" eyebrow="People. Connections. Evidence." lede="Every name has a context. Every connection has a limit." image="/images/redesign/card-on-the-record.webp" folio="FILE" note="Keep the record close.">
-   <p class="hero-explainer">Everything is open from the start. Gather the people, revisit the evidence, and pick up the thread where you left it.</p><div class="experience-actions"><a data-context-return hidden href={routeURL('/map/')}>Back to the tour</a><a data-resume hidden href={routeURL('/map/')}>Resume reading</a></div>
-  </ExperienceHero>
-  <div class="container">
-   <nav class="archive-tabs" aria-label="Casebook sections"><a href="#evidence-ledger"><span>{String(evidence.length).padStart(2,'0')}</span> Evidence</a><a href="#people"><span>{String(people.length).padStart(2,'0')}</span> People</a><a href="#relationships"><span>{String(relationships.length).padStart(2,'0')}</span> Connections</a><a href="#reading-progress"><span>07</span> Reading progress</a></nav>
-   <section id="evidence-ledger"><div class="experience-section-heading"><div><p class="eyebrow">Open files / 01</p><h2>Evidence ledger</h2></div><p>{evidence.length} ways into the record.</p></div><p class="section-explainer">Source-linked explanations, with their support and limits. Inspection markers record what you have opened; they do not certify understanding or agreement.</p><div class="evidence-filter-bar"><div class="controls" data-js-control hidden><button type="button" class="btn-secondary" data-casebook-filter="all" aria-pressed="true">All evidence</button><button type="button" class="btn-secondary" data-casebook-filter="inspected" aria-pressed="false">Inspected evidence</button></div><p id="evidence-count" data-js-control hidden></p></div><p id="casebook-empty" class="archive-empty" hidden>No evidence inspected yet. Choose “All evidence” and open an item at its stop.</p>
-   <div class="dossier-grid-list">{evidence.map(e=><article class="dossier-card" data-casebook-evidence={e.id}><div class="dossier-tab"><span>{e.id}</span><span>{e.materialLabel}</span></div><h3>{e.title}</h3><p>{e.description}</p><p class="record-limit"><strong>Limit</strong> {e.limits}</p><div class="dossier-card-actions"><a href={`${stopURL(e.stopId)}#evidence-${e.id}`}>Inspect {e.id} at its stop <span aria-hidden="true">↗</span></a><span data-inspected-status data-js-control hidden>Not inspected</span></div><ClaimLinks ids={e.claimIds}/></article>)}</div>
-   </section>
-   <section id="people"><div class="experience-section-heading"><div><p class="eyebrow">Names in the record / 02</p><h2>The people</h2></div><p>Lives beyond the legend.</p></div><div class="people-grid">{people.map((p,i)=><article class="person-dossier" id={`person-${p.id}`}><header><span class="person-file-number" aria-hidden="true">{String(i+1).padStart(2,'0')}</span><div><p class="eyebrow">{p.period}</p><h3>{p.name}</h3></div></header><p class="person-role">{p.role}</p>{p.aliases.length>0&&<p class="muted">Also known as: {p.aliases.join(', ')}</p>}<p>{p.description}</p><p class="record-limit"><strong>Qualification</strong> {p.qualifications}</p><ClaimLinks ids={p.supportingClaimIds}/><ul class="dossier-chapters">{p.relatedStopIds.map(id=><li><a href={stopURL(id)}>{stops.find(s=>s.id===id)!.title} <span aria-hidden="true">↗</span></a></li>)}</ul></article>)}</div></section>
-   <section id="relationships"><div class="experience-section-heading"><div><p class="eyebrow">Between the names / 03</p><h2>Connections and their limits</h2></div></div><div class="connection-list">{relationships.map(r=><article class="connection-card"><p class="eyebrow">{r.period} · {r.type}</p><h3><a href={`#person-${r.fromId}`}>{people.find(p=>p.id===r.fromId)!.name}</a><span aria-hidden="true">↔</span><a href={`#person-${r.toId}`}>{people.find(p=>p.id===r.toId)!.name}</a></h3><p>{r.assertion}</p><p class="record-limit"><strong>Qualification</strong> {r.qualifications}</p><ClaimLinks ids={r.premiseClaims}/></article>)}</div></section>
-   <section id="reading-progress" class="trail-section"><div class="experience-section-heading"><div><p class="eyebrow">Your place in the story / 04</p><h2>Reading progress</h2></div><p id="ending-status" data-js-control hidden></p></div><ReadingTrail/><div class="progress-reset" data-js-control hidden><p>Your trail stays in this browser when saving is available.</p><button type="button" id="btn-reset-progress" class="btn-secondary">Start over</button><div id="reset-confirmation" class="card" hidden><p>Reset this browser’s reading bookmark, visited stops, and inspected evidence? Sound and Calm view preferences will be kept.</p><div class="controls"><button type="button" id="btn-cancel-reset" class="btn-secondary">Keep progress</button><button type="button" id="btn-confirm-reset">Reset reading progress</button></div></div></div></section>
+  <div class="experience-page casebook-page">
+    <header class="casebook-masthead container">
+      <div class="casebook-masthead-copy">
+        <p class="eyebrow">Saint Paul After Dark</p>
+        <h1>The casebook</h1>
+        <p class="lede">Follow the paper trails, read a side story, or compare the evidence from the tour.</p>
+        <div class="experience-actions">
+          <a data-context-return hidden href={routeURL('/map/')}>Back to the tour</a>
+          <a data-resume hidden href={routeURL('/map/')}>Resume reading</a>
+          {storyGroups.filter(group => group.collection).map(group => (
+            <a href={`#${group.id}`}>{group.title} <Glyph name="record"/></a>
+          ))}
+          <a href={routeURL('/map/')}>Explore the map <Glyph name="map"/></a>
+        </div>
+      </div>
+      <figure class="casebook-art experience-photo">
+        <ArtImage name="card-on-the-record" sizes="(max-width: 719px) calc(100vw - 2rem), 42vw" eager/>
+        <figcaption>Atmospheric artwork · Fictional court papers</figcaption>
+      </figure>
+    </header>
+
+    <div class="container">
+      <nav class="archive-tabs casebook-index" aria-label="Casebook sections">
+        {sections.map(section => (
+          <a href={`#${section.id}`}>
+            <span aria-hidden="true">{String(section.count).padStart(2, '0')}</span>
+            {section.label}
+            <span class="casebook-index-arrow" aria-hidden="true">↓</span>
+          </a>
+        ))}
+      </nav>
+
+      <section id="paper-trails" class="casebook-section">
+        <div class="experience-section-heading"><h2>Paper trails</h2></div>
+        <div class="dossier-grid-list paper-trail-index">
+          {paperTrails.map(story=>(
+            <article class="dossier-card">
+              <p class="casebook-story-period">{paperTrailForms[story.form]} · {story.period}</p>
+              <h3><a href={paperTrailURL(story.id)}>{story.title}</a></h3>
+              <p>{story.subtitle}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="side-stories" class="casebook-section">
+        <div class="experience-section-heading"><h2>Side stories</h2></div>
+        {storyGroups.map(group => (
+          <div class="casebook-story-group" id={group.id}>
+            <h3>{group.title}</h3>
+            <ul class="casebook-story-list" role="list">
+              {group.stories.map(story => (
+                <li id={`story-${story.id}`}>
+                  <a href={casebookStoryURL(story.id)}>
+                    <span class="casebook-story-title">{story.title}</span>
+                    <span class="casebook-story-period">{story.period} · {casebookForms[story.form]}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
+
+      <section id="evidence-ledger" class="casebook-section">
+        <div class="experience-section-heading">
+          <h2>Evidence ledger</h2>
+          <a href={routeURL('/sources/')}>Sources and claim basis <Glyph name="sources"/></a>
+        </div>
+        <p class="section-explainer">Each file gives the source’s account and its limits. Open an item at its stop to mark it as inspected.</p>
+        <noscript><p class="section-explainer">Automatic saving requires JavaScript. The full catalog is available below.</p></noscript>
+        <div class="evidence-filter-bar">
+          <div class="controls" data-js-control hidden>
+            <button type="button" class="btn-secondary" data-casebook-filter="all" aria-pressed="true">All evidence</button>
+            <button type="button" class="btn-secondary" data-casebook-filter="inspected" aria-pressed="false">Inspected evidence</button>
+          </div>
+          <p id="evidence-count" data-js-control hidden></p>
+        </div>
+        <p id="casebook-empty" class="archive-empty" hidden>No evidence inspected yet. Choose “All evidence” to browse the ledger or <a href={routeURL('/map/')}>open a stop from the map</a>.</p>
+        <div class="casebook-ledger">
+          {stops.map(stop => (
+            <div class="casebook-evidence-group">
+              <div class="casebook-evidence-heading">
+                <span class="casebook-chapter-number" aria-hidden="true">{String(stop.order).padStart(2, '0')}</span>
+                <h3><a href={stopURL(stop.id)}>{stop.title} <span aria-hidden="true">↗</span></a></h3>
+                <span class="casebook-period">{stop.period}</span>
+              </div>
+              <div class="dossier-grid-list">
+                {evidence.filter(item => item.stopId === stop.id).map(item => (
+                  <article class="dossier-card" data-casebook-evidence={item.id}>
+                    <div class="dossier-tab"><span>{item.id}</span><span>{item.materialLabel}</span></div>
+                    <h4>{item.title}</h4>
+                    <p>{item.description}</p>
+                    <p class="record-limit"><strong>Limit</strong> {item.limits}</p>
+                    <ClaimLinks ids={item.claimIds}/>
+                    <div class="dossier-card-actions">
+                      <a href={`${stopURL(item.stopId)}#evidence-${item.id}`}>Inspect {item.id} at its stop <Glyph name="record"/></a>
+                      <span data-inspected-status data-js-control hidden>Not inspected</span>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="people" class="casebook-section">
+        <div class="experience-section-heading"><h2>The people</h2></div>
+        <div class="people-grid">
+          {people.map(person => (
+            <article class="person-dossier" id={`person-${person.id}`}>
+              <header>
+                <p class="eyebrow">{person.period}</p>
+                <h3>{person.name}</h3>
+              </header>
+              <p class="person-role">{person.role}</p>
+              {person.aliases.length > 0 && <p class="muted">Also known as {person.aliases.join(', ')}</p>}
+              <p>{person.description}</p>
+              <p class="record-limit"><strong>Qualification</strong> {person.qualifications}</p>
+              <ClaimLinks ids={person.supportingClaimIds}/>
+              <ul class="dossier-chapters">
+                {person.relatedStopIds.map(id => (
+                  <li><a href={stopURL(id)}>{stopTitles.get(id)} <span aria-hidden="true">↗</span></a></li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="relationships" class="casebook-section">
+        <div class="experience-section-heading"><h2>Connections and their limits</h2></div>
+        <div class="connection-list">
+          {relationships.map(connection => (
+            <article class="connection-card">
+              <p class="eyebrow">{connection.period} · {connection.type}</p>
+              <h3>
+                <a href={`#person-${connection.fromId}`}>{personNames.get(connection.fromId)}</a>
+                <span> and </span>
+                <a href={`#person-${connection.toId}`}>{personNames.get(connection.toId)}</a>
+              </h3>
+              <p>{connection.assertion}</p>
+              <p class="record-limit"><strong>Qualification</strong> {connection.qualifications}</p>
+              <ClaimLinks ids={connection.premiseClaims}/>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="reading-progress" class="casebook-section trail-section">
+        <div class="experience-section-heading">
+          <h2>Reading progress</h2>
+          <p id="ending-status" data-js-control hidden></p>
+        </div>
+        <ReadingTrail/>
+        <div class="progress-reset" data-js-control hidden>
+          <p>Your trail stays in this browser when saving is available.</p>
+          <button type="button" id="btn-reset-progress" class="btn-secondary">Start over</button>
+          <div id="reset-confirmation" class="card" hidden>
+            <p>Reset this browser’s reading bookmark, visited stops, and inspected evidence? Sound and Calm view preferences will be kept.</p>
+            <div class="controls">
+              <button type="button" id="btn-cancel-reset" class="btn-secondary">Keep progress</button>
+              <button type="button" id="btn-confirm-reset">Reset reading progress</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
- </div>
 </Layout>

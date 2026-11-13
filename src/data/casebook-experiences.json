@@ -1,0 +1,2300 @@
+[
+  {
+    "id": "the-tenants-left-the-radio-on",
+    "form": "timeline",
+    "deck": "Start with the detective magazine. Then see what the tenants left behind.",
+    "sceneLabels": [
+      {
+        "label": "April 1932",
+        "title": "The faces in the magazine",
+        "focus": "True Detective Mysteries"
+      },
+      {
+        "label": "Hannegraf’s account",
+        "title": "Dinner was still on the table",
+        "focus": "The radio was playing"
+      }
+    ]
+  },
+  {
+    "id": "the-moonshiners-dance",
+    "form": "sound",
+    "deck": "Hear the Victoria Café orchestra, then follow the two encounters with Prohibition agents.",
+    "sceneLabels": [
+      {
+        "label": "1927 recording",
+        "title": "The café band at the Lowry Hotel",
+        "focus": "Moonshiner’s Dance"
+      },
+      {
+        "label": "1928 enforcement",
+        "title": "What the waiters brought to the table",
+        "focus": "Ginger ale and ice"
+      }
+    ]
+  },
+  {
+    "id": "the-green-lantern-photographs",
+    "form": "comparison",
+    "deck": "Compare what the court established with what researchers could piece together from the photographs.",
+    "sceneLabels": [
+      {
+        "label": "The court record",
+        "title": "Behind the café on Wabasha",
+        "focus": "Second-degree murder conviction"
+      },
+      {
+        "label": "The proposed photo identification",
+        "title": "The menu matches. The date raises a question.",
+        "focus": "Exterior dated May 1930"
+      }
+    ]
+  },
+  {
+    "id": "edna-murray-three-escapes",
+    "form": "sequence",
+    "deck": "Follow Edna Murray from the Missouri prison to the federal courtroom in Saint Paul.",
+    "sceneLabels": [
+      {
+        "label": "1925–1932",
+        "title": "Murray and McCann saw through the bars",
+        "focus": "Three escapes"
+      },
+      {
+        "label": "April–May 1935",
+        "title": "The federal case ends in Saint Paul",
+        "focus": "Charges dismissed"
+      }
+    ]
+  },
+  {
+    "id": "the-print-on-the-gasoline-can",
+    "form": "evidence",
+    "deck": "Follow two traces in the FBI summary, from changed fingertips to a trial exhibit.",
+    "sceneLabels": [
+      {
+        "label": "FBI reconstruction",
+        "title": "The operation near Toledo",
+        "focus": "Surgery to alter fingerprints"
+      },
+      {
+        "label": "Bremer trial",
+        "title": "The farmer’s find reaches court",
+        "focus": "A print attributed to Barker"
+      }
+    ]
+  },
+  {
+    "id": "the-cleveland-notebook",
+    "form": "map",
+    "deck": "Trace how investigators linked a notebook found in Cleveland to a robbery in South St. Paul.",
+    "sceneLabels": [
+      {
+        "label": "South St. Paul, 1933",
+        "title": "Shots outside the post office",
+        "focus": "The Swift and Company payroll"
+      },
+      {
+        "label": "Cleveland raid and route inquiry",
+        "title": "The notebook’s route starts at a bank",
+        "focus": "Stockyards National Bank"
+      }
+    ]
+  },
+  {
+    "id": "hollyhocks-dinner",
+    "form": "dispatch",
+    "deck": "Read Peifer’s account of the dinner alongside the court outcome in the separate Hamm case.",
+    "sceneLabels": [
+      {
+        "label": "October 1934 interview",
+        "title": "Peifer recalls who came to dinner",
+        "focus": "About ten days before Nash died"
+      },
+      {
+        "label": "July 31, 1936",
+        "title": "Sentencing day in the Hamm case",
+        "focus": "30-year sentence"
+      }
+    ]
+  },
+  {
+    "id": "karpis-necktie",
+    "form": "sequence",
+    "deck": "Follow the arrest in New Orleans and the flight back to Saint Paul.",
+    "sceneLabels": [
+      {
+        "label": "New Orleans, May 1936",
+        "title": "The FBI says an agent took off his tie",
+        "focus": "Agents without handcuffs"
+      },
+      {
+        "label": "Return to Saint Paul",
+        "title": "The Hamm case ends in a guilty plea",
+        "focus": "Life sentence"
+      }
+    ]
+  },
+  {
+    "id": "oconnor-election-wager",
+    "form": "ledger",
+    "deck": "Read the stakes and the unusual condition written on hotel stationery.",
+    "sceneLabels": [
+      {
+        "label": "April 9, 1908",
+        "title": "The bet goes on paper",
+        "focus": "$1,000 against $600"
+      },
+      {
+        "label": "The surviving receipt",
+        "title": "Herzog addresses it to Pierce Butler",
+        "focus": "Whether either man collected is unknown"
+      }
+    ]
+  },
+  {
+    "id": "nina-clifford-excavation",
+    "form": "evidence",
+    "deck": "See what archaeologists could learn from the front steps and the backyard.",
+    "sceneLabels": [
+      {
+        "label": "The 1997 excavation",
+        "title": "Clues on both sides of the house",
+        "focus": "Tableware and food remains"
+      },
+      {
+        "label": "The excavated area",
+        "title": "What the dig could say about the tunnel",
+        "focus": "No tunnel in the area excavated"
+      }
+    ]
+  },
+  {
+    "id": "florist-extra-faucet",
+    "form": "reconstruction",
+    "deck": "Start with Pfleger’s own work at the switchboard, then read the story she told about a flower shop.",
+    "sceneLabels": [
+      {
+        "label": "Pfleger’s office recollection",
+        "title": "The switchboard stays staffed after hours",
+        "focus": "Worn outfits for agents"
+      },
+      {
+        "label": "Pfleger’s secondhand account",
+        "title": "An agent looks behind the ferns",
+        "focus": "An extra faucet"
+      }
+    ]
+  },
+  {
+    "id": "scotch-labels-and-body-rub",
+    "form": "evidence",
+    "deck": "Follow the Scotch labels from a Wheeler Avenue raid to Sam Taran’s trial.",
+    "sceneLabels": [
+      {
+        "label": "Wheeler Avenue raid",
+        "title": "What agents said was behind the barred doors",
+        "focus": "Cases labeled White Horse"
+      },
+      {
+        "label": "October trial",
+        "title": "Gold’s account of the bottle that survived",
+        "focus": "One bottle, according to Gold"
+      }
+    ]
+  },
+  {
+    "id": "the-dummy-ransom-package",
+    "form": "dispatch",
+    "deck": "Follow the penciled ransom demand and the police account of a separate offer to bring Bohn home.",
+    "sceneLabels": [
+      {
+        "label": "Summit Avenue",
+        "title": "A ransom note for the chauffeur",
+        "focus": "$35,000, written in pencil"
+      },
+      {
+        "label": "After Bohn’s return",
+        "title": "Police tell the AP about the dummy package",
+        "focus": "Three men, according to police"
+      }
+    ]
+  },
+  {
+    "id": "sawyers-old-fingerprint-file",
+    "form": "ledger",
+    "deck": "Open the old arrest file and see why the prosecutor couldn’t use the conviction.",
+    "sceneLabels": [
+      {
+        "label": "Police records",
+        "title": "A fingerprint card filed under another name",
+        "focus": "Police file No. 16479"
+      },
+      {
+        "label": "Court entries",
+        "title": "The $100 fine the prosecutor couldn’t use",
+        "focus": "Misdemeanor plea"
+      }
+    ]
+  },
+  {
+    "id": "eddie-greens-keys",
+    "form": "sequence",
+    "deck": "Follow the baggage in the federal memo, then see what the agents made of a set of keys and a gunstock.",
+    "sceneLabels": [
+      {
+        "label": "The agents’ account",
+        "title": "After Lincoln Court, agents wait for the baggage",
+        "focus": "Baggage from Marshall Avenue"
+      },
+      {
+        "label": "The April 10 memo",
+        "title": "Green said the keys were Dillinger’s",
+        "focus": "A gunstock that appeared to fit"
+      }
+    ]
+  },
+  {
+    "id": "the-airline-uniforms",
+    "form": "comparison",
+    "deck": "Read the investigators’ reconstruction alongside what the injured radio operator could tell them.",
+    "sceneLabels": [
+      {
+        "label": "The federal reconstruction",
+        "title": "Three airline workers in uniform",
+        "focus": "Portland and St. Alban"
+      },
+      {
+        "label": "The survivor’s interview",
+        "title": "McCord couldn’t identify Barker",
+        "focus": "Roy McCord"
+      }
+    ]
+  },
+  {
+    "id": "the-gleeman-railroad-car",
+    "form": "hearing",
+    "deck": "Start at the drugstore entrance and follow the account the Gleemans gave when they sought a new trial.",
+    "sceneLabels": [
+      {
+        "label": "The convictions",
+        "title": "A fatal shooting at the Dreis drugstore",
+        "focus": "Ninth and St. Peter"
+      },
+      {
+        "label": "The new-trial request",
+        "title": "The Gleemans’ account of a liquor shipment",
+        "focus": "A railroad car, the brothers said"
+      }
+    ]
+  },
+  {
+    "id": "the-conversation-by-the-furnace",
+    "form": "sequence",
+    "deck": "Follow Cooke’s testimony from his basement to the finance papers at the center of the appeal.",
+    "sceneLabels": [
+      {
+        "label": "Cooke’s testimony",
+        "title": "Wynn follows Cooke down to the furnace",
+        "focus": "A man waiting upstairs"
+      },
+      {
+        "label": "The finance transaction",
+        "title": "A note and mortgage for a purported sale",
+        "focus": "$700 paid by the finance company"
+      }
+    ]
+  },
+  {
+    "id": "the-burglary-that-left-the-diamonds",
+    "form": "reconstruction",
+    "deck": "Look at what was left in Alice Dunn’s home and how the court tested the accomplices’ account.",
+    "sceneLabels": [
+      {
+        "label": "The Selby Avenue house",
+        "title": "Diamond rings and a watch left behind",
+        "focus": "Alice Dunn’s rings and watch"
+      },
+      {
+        "label": "The evidence on appeal",
+        "title": "The court looks beyond the accomplices’ testimony",
+        "focus": "A visit to the safe-deposit vault"
+      }
+    ]
+  },
+  {
+    "id": "scott-remembers-carrolls-gun",
+    "form": "timeline",
+    "deck": "Follow Herbert Scott’s 1979 recollection from Robert Street to headquarters and back.",
+    "sceneLabels": [
+      {
+        "label": "The first encounter, as recalled",
+        "title": "Scott and Carrier take Carroll to headquarters",
+        "focus": "A .45 automatic"
+      },
+      {
+        "label": "About two hours later, as recalled",
+        "title": "Scott thought he recognized the gun",
+        "focus": "A report Scott couldn’t find"
+      }
+    ]
+  },
+  {
+    "id": "van-meter-from-the-porch",
+    "form": "sound",
+    "deck": "Read what Bernice Fisher remembered seeing from her porch and what Herbert Scott remembered hearing on University Avenue.",
+    "sceneLabels": [
+      {
+        "label": "Fisher’s later memoir",
+        "title": "Squad cars across from the porch",
+        "focus": "193 West University Avenue"
+      },
+      {
+        "label": "Scott’s 1979 interview",
+        "title": "Scott recalled hearing a volley",
+        "focus": "Gunfire or firecrackers?"
+      }
+    ]
+  },
+  {
+    "id": "the-bartenders-ring-and-the-veto",
+    "form": "letters",
+    "deck": "Follow a disputed bartender’s description through a Senate report to Roosevelt’s veto.",
+    "sceneLabels": [
+      {
+        "label": "The inspector’s description",
+        "title": "A yellow stone on the bartender’s pinky",
+        "focus": "Eight glasses at 25 cents, allegedly"
+      },
+      {
+        "label": "The 1938 veto",
+        "title": "A reimbursement bill reaches Roosevelt",
+        "focus": "The deadline for filing suit"
+      }
+    ]
+  },
+  {
+    "id": "the-jury-heard-the-needle-skip",
+    "form": "sound",
+    "deck": "Follow a tapped phone call from the police line to the jury’s headsets.",
+    "sceneLabels": [
+      {
+        "label": "Playback",
+        "title": "The needle jumps a groove",
+        "focus": "A passage played again"
+      },
+      {
+        "label": "Evidence ruling",
+        "title": "The recordings go into evidence",
+        "focus": "Typed transcripts"
+      }
+    ]
+  },
+  {
+    "id": "hamm-and-bolton-on-the-same-flight",
+    "form": "timeline",
+    "deck": "Trace one passenger’s account from a July flight to the prosecutor’s plans three years later.",
+    "sceneLabels": [
+      {
+        "label": "July 23, 1933",
+        "title": "Bolton says he spotted Hamm",
+        "focus": "The passenger manifests"
+      },
+      {
+        "label": "July 1936",
+        "title": "The prosecutor names a prospective witness",
+        "focus": "A reported guilty plea"
+      }
+    ]
+  },
+  {
+    "id": "the-car-key-that-opened-a-room",
+    "form": "reconstruction",
+    "deck": "Follow the Prohibition agents’ testimony from a shop counter to a locked courtyard door.",
+    "sceneLabels": [
+      {
+        "label": "The agents’ testimony",
+        "title": "A key for the car, Weinberg says",
+        "focus": "Two Yale keys"
+      },
+      {
+        "label": "The reported search",
+        "title": "The agents describe what was inside",
+        "focus": "Bottles under a couch"
+      }
+    ]
+  },
+  {
+    "id": "bremer-ransom-shell-coupe",
+    "form": "map",
+    "deck": "Trace Walter Magee’s handoff from University Avenue to the five headlight flashes.",
+    "sceneLabels": [
+      {
+        "label": "University Avenue",
+        "title": "Instructions in the driver’s door",
+        "focus": "Shell signs on both doors"
+      },
+      {
+        "label": "Farmington to the gravel road",
+        "title": "The signal on a gravel road",
+        "focus": "Five headlight flashes"
+      }
+    ]
+  },
+  {
+    "id": "bremer-wallpaper-and-shortcake",
+    "form": "evidence",
+    "deck": "Read the details Edward Bremer recalled of the place where he was held.",
+    "sceneLabels": [
+      {
+        "label": "The wallpaper sample",
+        "title": "Bremer recognizes a similar pattern",
+        "focus": "A mail-order pattern"
+      },
+      {
+        "label": "Bremer’s other recollections",
+        "title": "What he heard, touched and ate",
+        "focus": "Fresh strawberry shortcake"
+      }
+    ]
+  },
+  {
+    "id": "the-squeezor-beer-bottle",
+    "form": "evidence",
+    "deck": "Trace what investigators learned from one bottle, from the thumbprint telegram to the neighborhood shops.",
+    "sceneLabels": [
+      {
+        "label": "The identification telegram",
+        "title": "A match to Nash’s right thumb",
+        "focus": "804 Vernon Avenue"
+      },
+      {
+        "label": "The neighborhood canvass",
+        "title": "Two shops carry Squeezor",
+        "focus": "Six Squeezor bottles"
+      }
+    ]
+  },
+  {
+    "id": "de-vol-grand-avenue-fire-hose",
+    "form": "sequence",
+    "deck": "Follow the accounts from a Grand Avenue apartment to the reported hospital escape.",
+    "sceneLabels": [
+      {
+        "label": "December 1932",
+        "title": "The money leads to Grand Avenue",
+        "focus": "A life sentence at Stillwater"
+      },
+      {
+        "label": "June 1936",
+        "title": "The newspaper describes a descent",
+        "focus": "A fire hose"
+      }
+    ]
+  },
+  {
+    "id": "alexander-left-in-slippers",
+    "form": "reconstruction",
+    "deck": "Follow the accounts from Sam Taran’s apartment to Alexander’s reported midnight departure.",
+    "sceneLabels": [
+      {
+        "label": "The clipping and Gold’s account",
+        "title": "Gold describes the fight on the stairs",
+        "focus": "A staircase"
+      },
+      {
+        "label": "Gold’s account of the escape",
+        "title": "Outside in below-zero weather",
+        "focus": "Slippers, pajamas and a robe"
+      }
+    ]
+  },
+  {
+    "id": "tierney-asked-to-hear-the-record",
+    "form": "letters",
+    "deck": "Open a letter from the Bremer files and follow what it says about a purported recording.",
+    "sceneLabels": [
+      {
+        "label": "Brennan’s question",
+        "title": "Tierney denies the conversation",
+        "focus": "A purported recording"
+      },
+      {
+        "label": "Tierney’s reply",
+        "title": "Ask the editor to play it",
+        "focus": "Daily News editor Howard Kahn"
+      }
+    ]
+  },
+  {
+    "id": "the-former-police-chiefs-gold",
+    "form": "ledger",
+    "deck": "Read the figures that a Saint Paul newspaper set side by side after the former chief’s hearing.",
+    "sceneLabels": [
+      {
+        "label": "The editorial’s account of the hearing",
+        "title": "Brown describes a gold exchange",
+        "focus": "$900 in gold"
+      },
+      {
+        "label": "The editorial’s salary comparison",
+        "title": "The paper asks how the figures fit",
+        "focus": "$158 a month"
+      }
+    ]
+  },
+  {
+    "id": "the-slot-machines-on-rubber-pads",
+    "form": "hearing",
+    "deck": "Follow the inventory from an apartment kitchen and front room into a liquor-license case.",
+    "sceneLabels": [
+      {
+        "label": "The officers’ inventory",
+        "title": "Beer in the kitchen, slots out front",
+        "focus": "Two machines on rubber pads"
+      },
+      {
+        "label": "The court’s ruling",
+        "title": "The conviction concerns liquor kept for sale",
+        "focus": "A city liquor license"
+      }
+    ]
+  },
+  {
+    "id": "mystic-caverns-two-thousand-mirrors",
+    "form": "comparison",
+    "deck": "Read a nightclub’s invitation alongside the records of who worked there and how it closed.",
+    "sceneLabels": [
+      {
+        "label": "The 1933 advertisement",
+        "title": "Look for the neon skull",
+        "focus": "2,000 mirrors advertised"
+      },
+      {
+        "label": "The club in the records",
+        "title": "The bandleader and the gambling inquiry",
+        "focus": "A grand jury investigation"
+      }
+    ]
+  },
+  {
+    "id": "dillingers-hudson-wire-wheels",
+    "form": "comparison",
+    "collection": "old-records",
+    "deck": "Put the dealer’s account next to the buyer’s. Then open the paperwork trail and see what might account for a $44 difference.",
+    "sceneLabels": [
+      {
+        "label": "The dealer’s account",
+        "title": "A Hudson, preferably with black wheels",
+        "focus": "$331 and a request for black wire wheels"
+      },
+      {
+        "label": "Gleeman’s account",
+        "title": "Put down any address",
+        "focus": "$375 and a name supplied by Tom Filben"
+      },
+      {
+        "label": "The follow-up interview",
+        "title": "Open the paper trail behind the $44 difference",
+        "focus": "$206 written on the check · $250 in credit"
+      }
+    ]
+  },
+  {
+    "id": "dorsey-price-of-police-protection",
+    "form": "hearing",
+    "collection": "old-records",
+    "deck": "Open the accounts given by Ida Dorsey and Nina Clifford, then compare the money they described with the charge reported in the verdict dispatch.",
+    "sceneLabels": [
+      {
+        "label": "Ida Dorsey",
+        "title": "A move to South Washington Street",
+        "focus": "151 South Washington Street"
+      },
+      {
+        "label": "Nina Clifford",
+        "title": "One payment, two purposes",
+        "focus": "$1,000 for the house and $3,000 for protection"
+      },
+      {
+        "label": "The verdict",
+        "title": "The chief and detective were convicted",
+        "focus": "A dispatch from Saint Paul"
+      }
+    ]
+  },
+  {
+    "id": "the-shirt-with-no-label",
+    "form": "trace",
+    "collection": "old-records",
+    "deck": "Start at the lab bench, follow a shirt and a pair of socks into the agents’ shop index, then open the reply from one of the stores.",
+    "sceneLabels": [
+      {
+        "label": "The lab bench",
+        "title": "The label is gone. Measure the buttons.",
+        "focus": "0.3989 inches across the collar button"
+      },
+      {
+        "label": "The shop index",
+        "title": "Which store might sell two of the three?",
+        "focus": "Windom, Minnesota · Watertown, South Dakota"
+      },
+      {
+        "label": "The shopkeeper’s reply",
+        "title": "Close on paper. Wrong in the store.",
+        "focus": "A lighter shirt in a different style"
+      }
+    ]
+  },
+  {
+    "id": "west-seventh-new-lease-same-bar",
+    "form": "timeline",
+    "collection": "old-records",
+    "deck": "Track one West Seventh address from four documented liquor sales to a change of tenants and a court order. Watch what stays in the room as the dates change.",
+    "sceneLabels": [
+      {
+        "label": "April 1925",
+        "title": "Four sales on West Seventh",
+        "focus": "905 West Seventh Street"
+      },
+      {
+        "label": "May 1925",
+        "title": "The tenant changes",
+        "focus": "May 1, 1925"
+      },
+      {
+        "label": "March 1928",
+        "title": "The order applies to the building",
+        "focus": "One year of closure"
+      }
+    ]
+  },
+  {
+    "id": "garrettsville-mail-pouches-and-key",
+    "form": "evidence",
+    "collection": "old-records",
+    "deck": "Open a postal circular, a getaway-car description and a later FBI finding. The Ohio case led back to two men wanted in Saint Paul.",
+    "sceneLabels": [
+      {
+        "label": "The postal circular",
+        "title": "Two kinds of mail leave the train",
+        "focus": "Four mail pouches"
+      },
+      {
+        "label": "The inspector’s description",
+        "title": "A car described down to its key",
+        "focus": "Key No. MP 802"
+      },
+      {
+        "label": "The FBI case summary",
+        "title": "Two names turn up in the Saint Paul case file",
+        "focus": "Karpis and Campbell"
+      }
+    ]
+  },
+  {
+    "id": "seven-glasses-after-closing",
+    "form": "reconstruction",
+    "collection": "old-records",
+    "deck": "Start at the locked door, jump to the booth and basement, then read why the owners said the group stayed after closing.",
+    "sceneLabels": [
+      {
+        "label": "The door",
+        "title": "Cars outside, curtains drawn",
+        "focus": "3:15 a.m. on West Wheelock Parkway"
+      },
+      {
+        "label": "Inside",
+        "title": "Two people and seven glasses",
+        "focus": "The booth and the basement"
+      },
+      {
+        "label": "The appeal",
+        "title": "They said they were planning a surprise",
+        "focus": "The explanation and the ruling"
+      }
+    ]
+  },
+  {
+    "id": "the-telegram-under-the-carpet",
+    "form": "evidence",
+    "collection": "strange-finds",
+    "deck": "Sort through three things left at Lincoln Court after the shootout. The last clue is only a fragment.",
+    "sceneLabels": [
+      {
+        "label": "Turn over the photographs",
+        "title": "The boy in the cherry tree",
+        "focus": "A pencil note on the back",
+        "inset": {
+          "label": "Read the photograph notes",
+          "lines": [
+            {
+              "label": "Cherry tree",
+              "text": "Pencil caption identifies John Dillinger, about age ten or eleven."
+            },
+            {
+              "label": "Wagon",
+              "text": "The inventory describes another childhood photograph."
+            },
+            {
+              "label": "Naval uniform",
+              "text": "Agents list a separate photograph of Dillinger in uniform."
+            }
+          ]
+        }
+      },
+      {
+        "label": "Trace the road chart",
+        "title": "A road from an Iowa bank to Saint Paul",
+        "focus": "Newton National Bank → Saint Paul"
+      },
+      {
+        "label": "Lift the carpet",
+        "title": "Read the fragment from under the carpet",
+        "focus": "Received three",
+        "inset": {
+          "label": "Open the telegram fragment",
+          "lines": [
+            {
+              "label": "Words transcribed in the report",
+              "text": "Received three will appreciate your help must act at once"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "gleckman-and-the-jurys-doctor-bill",
+    "form": "ledger",
+    "collection": "strange-finds",
+    "deck": "Open the court bill that followed Leon Gleckman’s tax conviction. Then check which charges the appeals judges sent back.",
+    "sceneLabels": [
+      {
+        "label": "The clerk’s bill",
+        "title": "The jurors’ doctor goes on the bill",
+        "focus": "$6,193.30 charged in all",
+        "inset": {
+          "label": "Inspect the disputed entries",
+          "lines": [
+            {
+              "label": "Meals and lodging",
+              "text": "Jury expenses"
+            },
+            {
+              "label": "Professional services",
+              "text": "Payments for a doctor who treated several jurors"
+            },
+            {
+              "label": "About $2,500",
+              "text": "Combined charge for the challenged judge and jury expenses"
+            }
+          ]
+        }
+      },
+      {
+        "label": "The investigator",
+        "title": "Malone attended without taking the stand",
+        "focus": "$250 in fees and $115.38 in mileage"
+      },
+      {
+        "label": "The appeal",
+        "title": "The judges order a new bill",
+        "focus": "Conviction affirmed · costs sent back"
+      }
+    ]
+  },
+  {
+    "id": "bremer-whistle-and-siren",
+    "form": "sound",
+    "collection": "strange-finds",
+    "deck": "Read the sounds Edward Bremer remembered, then see what happened when Saint Paul investigators asked a region to listen for them.",
+    "sceneLabels": [
+      {
+        "label": "The sound pattern",
+        "title": "Whistle, siren, whistle",
+        "focus": "The siren rose during a long whistle blast",
+        "inset": {
+          "label": "Read the remembered sequence",
+          "lines": [
+            {
+              "label": "First",
+              "text": "The factory whistle starts a long blast."
+            },
+            {
+              "label": "During the blast",
+              "text": "A siren rises, then falls away."
+            },
+            {
+              "label": "Last",
+              "text": "The whistle continues briefly on its own."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The replies",
+        "title": "One church bell rang 48 times",
+        "focus": "One toll for each year of a parishioner’s life"
+      },
+      {
+        "label": "The file",
+        "title": "Washington gives permission to destroy the letters",
+        "focus": "April 29 request · May 7 reply",
+        "inset": {
+          "label": "Compare the request and reply",
+          "lines": [
+            {
+              "label": "April 29, 1935",
+              "text": "D. M. Ladd asks for permission to destroy the circulars."
+            },
+            {
+              "label": "May 7, 1935",
+              "text": "J. Edgar Hoover gives permission."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "the-gold-basketball-at-wildwood",
+    "form": "reconstruction",
+    "collection": "strange-finds",
+    "deck": "Start with a parked car near White Bear Lake, move to the gold token, then see what the morning papers could report.",
+    "sceneLabels": [
+      {
+        "label": "The road",
+        "title": "Headlights still burning",
+        "focus": "Near Wildwood Amusement Park"
+      },
+      {
+        "label": "The chain",
+        "title": "A basketball small enough to wear",
+        "focus": "K. C. ’20",
+        "inset": {
+          "label": "Inspect the reported inscription",
+          "lines": [
+            {
+              "label": "Object",
+              "text": "A small gold basketball hanging from a chain."
+            },
+            {
+              "label": "Inscription",
+              "text": "K. C. ’20"
+            },
+            {
+              "label": "Reported use",
+              "text": "One of several items police used to identify Frank Coleman."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The morning papers",
+        "title": "A name and a theory enter print",
+        "focus": "“Butch” Myers, tentatively identified"
+      }
+    ]
+  },
+  {
+    "id": "the-dishes-on-grand-avenue",
+    "form": "trace",
+    "collection": "strange-finds",
+    "deck": "Follow the caretakers from a squeaking laundry room door to a mover’s penciled note and three utility refunds.",
+    "sceneLabels": [
+      {
+        "label": "The squeaking door",
+        "title": "A caretaker watches from the laundry room",
+        "focus": "Black suitcases in the alley"
+      },
+      {
+        "label": "The mover’s note",
+        "title": "Someone came back for the silverware",
+        "focus": "April 26, 1933"
+      },
+      {
+        "label": "The refund checks",
+        "title": "Two checks came back unclaimed",
+        "focus": "$6 to turn on the gas and electricity",
+        "inset": {
+          "label": "Compare the three refund entries",
+          "lines": [
+            {
+              "label": "First account",
+              "text": "Six-dollar deposit. Refund check returned unclaimed."
+            },
+            {
+              "label": "Second account",
+              "text": "Similar deposit. Refund check returned unclaimed."
+            },
+            {
+              "label": "Third account",
+              "text": "Similar deposit. Check had not come back, and no credit remained."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "sankeys-babe-ruth-picture",
+    "form": "dispatch",
+    "collection": "strange-finds",
+    "deck": "Turn through three dispatches. The first gives the Saint Paul testimony. The second describes papers on two sports stars. The third shows which kidnapping Sankey reportedly admitted.",
+    "sceneLabels": [
+      {
+        "label": "Saint Paul courtroom · June 1933",
+        "title": "Haskell Bohn names his abductors",
+        "focus": "The first witness"
+      },
+      {
+        "label": "The prosecutor’s account · January 1934",
+        "title": "An earnings file and a photograph",
+        "focus": "Babe Ruth and Jack Dempsey",
+        "inset": {
+          "label": "Compare the papers with the accusation",
+          "lines": [
+            {
+              "label": "What Kinkead described",
+              "text": "Earnings information for Babe Ruth and Jack Dempsey and a picture of Ruth with a notation."
+            },
+            {
+              "label": "What Kinkead inferred",
+              "text": "Sankey may have considered kidnapping the two athletes."
+            }
+          ]
+        }
+      },
+      {
+        "label": "Chicago arrest · January 31, 1934",
+        "title": "The admission concerned Bohn",
+        "focus": "Two kidnappings Purvis named"
+      }
+    ]
+  },
+  {
+    "id": "ben-franklin-at-the-frederic",
+    "form": "letters",
+    "collection": "between-the-lines",
+    "deck": "Open a jail deputy’s account of a private note route, then check the name on the hotel registration and the bill that went to Washington.",
+    "sceneLabels": [
+      {
+        "label": "Ramsey County Jail",
+        "title": "Barker asks a guard to carry notes",
+        "focus": "A copy before each delivery"
+      },
+      {
+        "label": "The Frederic Hotel",
+        "title": "A guest signs in as Ben Franklin",
+        "focus": "May 1–24, 1935",
+        "inset": {
+          "label": "Compare the two names",
+          "lines": [
+            {
+              "label": "Hotel name",
+              "text": "Ben Franklin, according to Hession’s account."
+            },
+            {
+              "label": "Deputy’s name",
+              "text": "Jack Hession, one of three guards assigned to Barker’s cell block."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The expense request",
+        "title": "Who pays for Ben Franklin’s room?",
+        "focus": "$26.50 submitted to the bureau",
+        "inset": {
+          "label": "Open the expense breakdown",
+          "lines": [
+            {
+              "label": "Room",
+              "text": "$21.50 at the Frederic Hotel."
+            },
+            {
+              "label": "Telephone",
+              "text": "The balance. Hession separately described a $4.80 collect call from Chicago."
+            },
+            {
+              "label": "Question for Washington",
+              "text": "Could the bureau pay the $26.50 bill as a confidential expense?"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "touhy-judges-went-downstairs",
+    "form": "sequence",
+    "collection": "between-the-lines",
+    "deck": "Follow Roger Touhy and three co-defendants from a special car on the mail train to a hearing in the jail basement and the verdict in Saint Paul.",
+    "sceneLabels": [
+      {
+        "label": "Mail train · August 19",
+        "title": "Four men in two pairs",
+        "focus": "2:45 p.m."
+      },
+      {
+        "label": "Jail basement · September 25",
+        "title": "The court comes to the prisoners",
+        "focus": "$100,000 bail each",
+        "inset": {
+          "label": "Read the hearing arrangements",
+          "lines": [
+            {
+              "label": "Transfer avoided",
+              "text": "Moving four defendants out of the jail and across the street."
+            },
+            {
+              "label": "Where the hearing took place",
+              "text": "The Ramsey County jail basement, with machine guns guarding the courtroom."
+            },
+            {
+              "label": "Bail",
+              "text": "$100,000 for each defendant."
+            }
+          ]
+        }
+      },
+      {
+        "label": "Federal court · November",
+        "title": "Tear gas guns at the trial, acquittal at the end",
+        "focus": "November 28 verdict"
+      }
+    ]
+  },
+  {
+    "id": "the-typewriter-on-the-supply-shelf",
+    "form": "trace",
+    "collection": "between-the-lines",
+    "deck": "Open the lab’s test lines, check the repair slips, then see why a typewriter turned up on the Bureau’s own shelf.",
+    "sceneLabels": [
+      {
+        "label": "The typing sample",
+        "title": "The lab asks for the quick brown fox",
+        "focus": "1929 portable Corona · Pica type",
+        "inset": {
+          "label": "Open the three test lines",
+          "lines": [
+            {
+              "label": "Line 1",
+              "text": "The quick brown fox jumps over the lazy dog."
+            },
+            {
+              "label": "Line 2",
+              "text": "You are hereby declared"
+            },
+            {
+              "label": "Line 3",
+              "text": "You must be proud of yourself."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The repair records",
+        "title": "Five hundred slips yield two leads",
+        "focus": "A $1.50 repair on Robert Street",
+        "inset": {
+          "label": "Compare the two repair leads",
+          "lines": [
+            {
+              "label": "From Robert Street",
+              "text": "A Corona portable. The repair bill was $1.50."
+            },
+            {
+              "label": "A former lunchroom owner’s machine",
+              "text": "A Corona No. 3. The agent recorded its former purple ribbon and judged it an unlikely match."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The supply-room memo",
+        "title": "Someone had painted a room number on the case",
+        "focus": "Underwood · Held as Bureau property",
+        "inset": {
+          "label": "Check where the shipment went",
+          "lines": [
+            {
+              "label": "Where it landed",
+              "text": "The Chief Clerk’s Office held it as Bureau property."
+            },
+            {
+              "label": "Where it was meant to go",
+              "text": "The Technical Laboratory. The October letter says the laboratory routing labels were missing."
+            },
+            {
+              "label": "Why the model mattered",
+              "text": "The recovered machine was an Underwood. The lab’s tentative identification was a portable Corona."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "abe-wagner-premature-headline",
+    "form": "timeline",
+    "collection": "between-the-lines",
+    "deck": "Compare a New York death report with the Saint Paul case that followed twelve days later.",
+    "sceneLabels": [
+      {
+        "label": "July 13, 1932 · In print",
+        "title": "The paper puts Wagner in the East River",
+        "focus": "A barrel of cement",
+        "inset": {
+          "label": "Read the dispatch",
+          "lines": [
+            {
+              "label": "Headline",
+              "text": "Abie Wagner Slain"
+            },
+            {
+              "label": "Who supplied the story?",
+              "text": "The Associated Press attributed the claim to the New York Sun."
+            }
+          ]
+        }
+      },
+      {
+        "label": "July 25, 1932 · In Saint Paul",
+        "title": "A fruit seller near Snelling and University",
+        "focus": "Twelve days after the dispatch"
+      },
+      {
+        "label": "The case record",
+        "title": "Two men draw life sentences",
+        "focus": "The bureau calls the victim Abe Wagner",
+        "inset": {
+          "label": "Set the records alongside each other",
+          "lines": [
+            {
+              "label": "Bureau letter",
+              "text": "Albert L. Silverburg and John Newman"
+            },
+            {
+              "label": "County history",
+              "text": "George Young and Joseph Schaefer"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "rutman-dress-shop-and-silver-slipper",
+    "form": "comparison",
+    "collection": "between-the-lines",
+    "deck": "A dress shop proprietor vanished from his Saint Paul home. An early dispatch put him near White Bear Lake, and a later account named a gambling spot.",
+    "sceneLabels": [
+      {
+        "label": "The morning dispatch",
+        "title": "The dress shop proprietor",
+        "focus": "Three days away"
+      },
+      {
+        "label": "The later history",
+        "title": "The Silver Slipper",
+        "focus": "Mahtomedi gambling spot"
+      },
+      {
+        "label": "The ransom reports",
+        "title": "Three accounts of the ransom",
+        "focus": "$50,000 demanded · payment disputed",
+        "inset": {
+          "label": "Compare who said what",
+          "lines": [
+            {
+              "label": "Rutman",
+              "text": "The captors demanded $50,000."
+            },
+            {
+              "label": "Police chief",
+              "text": "He denied that any ransom was paid."
+            },
+            {
+              "label": "Friends",
+              "text": "They said they had heard relatives paid."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "the-man-who-sold-soap",
+    "form": "comparison",
+    "collection": "between-the-lines",
+    "deck": "Read the description from the Lincoln Court hallway, then compare what investigators thought with what Bessie Skinner said she heard.",
+    "sceneLabels": [
+      {
+        "label": "The man in the hallway",
+        "title": "A salesman at Lincoln Court",
+        "focus": "Soap was the story he gave"
+      },
+      {
+        "label": "The April 8 memo",
+        "title": "Two faces looked alike in photographs",
+        "focus": "Van Meter or Eddie Green?",
+        "inset": {
+          "label": "Compare the two forms of identification",
+          "lines": [
+            {
+              "label": "Photographs",
+              "text": "Investigators noted a resemblance between Van Meter and Green."
+            },
+            {
+              "label": "Fingerprints",
+              "text": "The April 8 memo says agents had found none of Van Meter’s in the material examined at that point."
+            }
+          ]
+        }
+      },
+      {
+        "label": "Skinner’s interview",
+        "title": "She says he told her himself",
+        "focus": "An account of a conversation"
+      }
+    ]
+  },
+  {
+    "id": "taran-buick-from-the-streetcar",
+    "form": "sequence",
+    "collection": "clues-in-plain-sight",
+    "deck": "Look through a streetcar window, search a Buick for the owner’s clue, then hear what the judge told the Fighting Tailor.",
+    "sceneLabels": [
+      {
+        "label": "From the streetcar",
+        "title": "A Buick turns up near University and Dale",
+        "focus": "A missing $1,400 roadster"
+      },
+      {
+        "label": "Inside the car",
+        "title": "The owner recognizes his own brochures",
+        "focus": "Paperwork from a nut-shelling plant",
+        "inset": {
+          "label": "Look inside the Buick",
+          "lines": [
+            {
+              "label": "What the owner recognized",
+              "text": "Brochures from his own nut-shelling plant."
+            },
+            {
+              "label": "What he did next",
+              "text": "He called the police, according to Gold’s account."
+            }
+          ]
+        }
+      },
+      {
+        "label": "In court",
+        "title": "The judge tells him to stick to tailoring",
+        "focus": "The advice made the Daily News"
+      }
+    ]
+  },
+  {
+    "id": "hogan-hospital-and-christmas-turkeys",
+    "form": "dispatch",
+    "collection": "clues-in-plain-sight",
+    "deck": "People offered blood after the bombing. The local paper’s account ended with a line about Christmas dinner.",
+    "sceneLabels": [
+      {
+        "label": "December 4 · At the hospital",
+        "title": "People showed up to give blood",
+        "focus": "Offers of blood",
+        "inset": {
+          "label": "Compare the two reports",
+          "lines": [
+            {
+              "label": "December 1928 wire dispatch",
+              "text": "Hogan died after surgery."
+            },
+            {
+              "label": "Later Star Tribune account",
+              "text": "People came to the hospital offering blood. The article does not establish who gave it."
+            }
+          ]
+        }
+      },
+      {
+        "label": "December 5 · In print",
+        "title": "The paper imagines Christmas without him",
+        "focus": "The Minneapolis Morning Tribune"
+      },
+      {
+        "label": "The funeral",
+        "title": "Five carloads of flowers",
+        "focus": "St. Mary’s Catholic Church"
+      }
+    ]
+  },
+  {
+    "id": "a-two-dollar-delivery",
+    "form": "hearing",
+    "collection": "clues-in-plain-sight",
+    "deck": "Follow a taxi driver’s $2 delivery from a Saint Paul doorstep to the witness stand, then open the jury’s verdict.",
+    "sceneLabels": [
+      {
+        "label": "The doorstep",
+        "title": "Two notes, one fare",
+        "focus": "$2 · William Dunn’s home",
+        "inset": {
+          "label": "Open the two deliveries",
+          "lines": [
+            {
+              "label": "From the kidnappers",
+              "text": "A communication for Dunn, who had already received calls demanding a ransom."
+            },
+            {
+              "label": "From William Hamm",
+              "text": "A message telling Dunn to follow the kidnappers’ instructions."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The witness stand",
+        "title": "Two names, two uncertain reactions",
+        "focus": "Verne Sankey · Eddie McFadden",
+        "inset": {
+          "label": "Compare the photograph and the courtroom",
+          "lines": [
+            {
+              "label": "June · Police photograph",
+              "text": "The wire report says the driver strongly suspected the man in the photo was the sender."
+            },
+            {
+              "label": "November · Courtroom",
+              "text": "The photo archive says Allison described a resemblance to McFadden."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The verdict",
+        "title": "The jury acquits all four defendants",
+        "focus": "November 28, 1933 · Saint Paul",
+        "inset": {
+          "label": "Read the two counts",
+          "lines": [
+            {
+              "label": "Transporting Hamm across state lines",
+              "text": "Acquitted."
+            },
+            {
+              "label": "Conspiring to transport him across state lines",
+              "text": "Acquitted."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "the-coat-left-in-303",
+    "form": "comparison",
+    "collection": "clues-in-plain-sight",
+    "deck": "Compare two accounts of the flight from Lincoln Court, then turn over the store label on a coat left in Apartment 303.",
+    "sceneLabels": [
+      {
+        "label": "Cherrington’s account",
+        "title": "Four days at Sawyer’s cottage",
+        "focus": "A Saint Paul restaurant · A cottage outside town"
+      },
+      {
+        "label": "Skinner’s account",
+        "title": "A restaurant name and a Ford sedan",
+        "focus": "McCormick’s restaurant · A story heard later"
+      },
+      {
+        "label": "The apartment inventory",
+        "title": "A fox collar in Apartment 303",
+        "focus": "Young-Quinlan Company · Light tan coat",
+        "inset": {
+          "label": "Turn over the coat label",
+          "lines": [
+            {
+              "label": "Color",
+              "text": "Light tan."
+            },
+            {
+              "label": "Collar",
+              "text": "Platinum fox."
+            },
+            {
+              "label": "Store label",
+              "text": "Young-Quinlan Company."
+            },
+            {
+              "label": "Owner",
+              "text": "The witness outline gives no name."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "bremer-goggles-in-the-snow",
+    "form": "trace",
+    "collection": "clues-in-plain-sight",
+    "deck": "Follow a pair of welder’s goggles from a roadside release to the Saint Paul case file.",
+    "sceneLabels": [
+      {
+        "label": "The roadside",
+        "title": "He waited for the car to leave",
+        "focus": "Rochester · Bremer’s account",
+        "inset": {
+          "label": "Compare the two counts",
+          "lines": [
+            {
+              "label": "Witness outline",
+              "text": "Count to fifteen. Start over after reaching five."
+            },
+            {
+              "label": "Trial summary",
+              "text": "Count to ten. Both accounts put the discarded goggles in the weeds."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The weeds",
+        "title": "Three inches under",
+        "focus": "February 1934 · Recovery account",
+        "inset": {
+          "label": "Open the recovery note",
+          "lines": [
+            {
+              "label": "Location in the file",
+              "text": "Near Fourth Street and First Place Southeast, Rochester."
+            },
+            {
+              "label": "Spot to search",
+              "text": "Weeds between the building and the wire fence."
+            },
+            {
+              "label": "Cover",
+              "text": "About three inches of snow."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The case file",
+        "title": "The Bureau put them on its list",
+        "focus": "Saint Paul · Trial preparation"
+      }
+    ]
+  },
+  {
+    "id": "bremer-ransom-under-the-hatband",
+    "form": "evidence",
+    "collection": "clues-in-plain-sight",
+    "deck": "Follow Bremer ransom bills from a cashier’s serial-number list to two felt hats and a petition for the return of cash.",
+    "sceneLabels": [
+      {
+        "label": "The cashier’s list",
+        "title": "A repeat customer brings another stack of fives",
+        "focus": "Some serial numbers matched the Saint Paul ransom",
+        "inset": {
+          "label": "Read the two bank reports",
+          "lines": [
+            {
+              "label": "Uptown State Bank",
+              "text": "A cashier recognized a repeat customer and checked serial numbers."
+            },
+            {
+              "label": "First National Bank",
+              "text": "Tellers remembered the circular and reported the exchange."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The hat rack",
+        "title": "The gray felt was too big",
+        "focus": "Two envelopes under the brown hat’s sweatband",
+        "inset": {
+          "label": "Inspect the two hats",
+          "lines": [
+            {
+              "label": "Gray, rolled brim",
+              "text": "Jack pointed to this one first. The agent reported that it was about a size and a half too large."
+            },
+            {
+              "label": "Brown, flat brim",
+              "text": "The agent found two sealed envelopes tucked under the sweatband."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The court petition",
+        "title": "Who can open the sealed cash?",
+        "focus": "A separate $460 in dispute",
+        "inset": {
+          "label": "Read the petition and replies",
+          "lines": [
+            {
+              "label": "Vidler’s petition",
+              "text": "Asked for the disputed balance to be returned."
+            },
+            {
+              "label": "Saint Paul’s U.S. attorney",
+              "text": "Made no claim to hold the $460 as ransom evidence."
+            },
+            {
+              "label": "Melvin Purvis",
+              "text": "Wanted the agent who sealed the money to reopen it if the money was returned."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "bremer-cornmeal-box",
+    "form": "letters",
+    "collection": "clues-in-plain-sight",
+    "deck": "Open an unclaimed hotel package and see where the note inside was supposed to send a ransom courier.",
+    "sceneLabels": [
+      {
+        "label": "Leave a package",
+        "title": "Medicine for the late bus",
+        "focus": "New Hotel Brunswick · Faribault"
+      },
+      {
+        "label": "Open the box",
+        "title": "Look for the white dot",
+        "focus": "The note · A different bus stop",
+        "inset": {
+          "label": "Unfold the instructions",
+          "lines": [
+            {
+              "label": "Get off here",
+              "text": "Owatonna."
+            },
+            {
+              "label": "Find this car",
+              "text": "A black 1933 Chevrolet coupe with a white dot on its spare tire cover."
+            },
+            {
+              "label": "Look here next",
+              "text": "The steering post."
+            }
+          ]
+        }
+      },
+      {
+        "label": "Forward the note",
+        "title": "The hotel sends it to Saint Paul",
+        "focus": "March 31, 1934 · Bureau of Criminal Apprehension"
+      }
+    ]
+  },
+  {
+    "id": "the-hudson-that-made-its-own-smoke",
+    "form": "apparatus",
+    "collection": "stranger-than-the-headlines",
+    "deck": "Inspect the equipment in a black 1933 Hudson linked to the Barker–Karpis gang’s South Saint Paul payroll robbery.",
+    "sceneLabels": [
+      {
+        "label": "Outside the post office",
+        "title": "A sedan arrived with its siren on",
+        "focus": "August 30, 1933 · South Saint Paul"
+      },
+      {
+        "label": "The recovered car",
+        "title": "Investigators inspect a sedan built to make smoke",
+        "focus": "1933 Hudson · Equipment described in the case file",
+        "inset": {
+          "label": "Inspect the Hudson’s equipment",
+          "lines": [
+            {
+              "label": "Siren",
+              "text": "Investigators recorded a siren. The report gives no mounting point."
+            },
+            {
+              "label": "Smoke-screen apparatus",
+              "text": "The Hudson carried equipment to make a smoke screen. Its placement and mechanism are unspecified."
+            },
+            {
+              "label": "Driver’s door glass",
+              "text": "The report calls the glass in the left front door beside the driver bulletproof."
+            },
+            {
+              "label": "Side armor",
+              "text": "The report describes steel armor plate around the sides of the Hudson."
+            }
+          ],
+          "layout": "cards"
+        }
+      },
+      {
+        "label": "The plates",
+        "title": "A Duluth Ford gives the Hudson away",
+        "focus": "Minnesota B141186 · Found in Chicago",
+        "inset": {
+          "label": "Compare the two registrations",
+          "lines": [
+            {
+              "label": "On the Hudson · 112-185",
+              "text": "Florida plates. The report says they had been issued for a Chevrolet sedan."
+            },
+            {
+              "label": "Inside the Hudson · B141186",
+              "text": "Minnesota plates issued for a Ford in Duluth. Chicago police linked this number to the South Saint Paul robbery."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "wallace-jamie-lamps-and-ticker",
+    "form": "evidence",
+    "collection": "stranger-than-the-headlines",
+    "deck": "Inspect a lamp, a telephone ticker and a ventilation shaft from the investigation of Saint Paul police ties to the underworld.",
+    "sceneLabels": [
+      {
+        "label": "The public safety building",
+        "title": "The man who came to study police work",
+        "focus": "Microphones inside lamps",
+        "inset": {
+          "label": "Inspect the hiding places",
+          "lines": [
+            {
+              "label": "Desk lamp",
+              "text": "The newspaper and magazine both describe microphones in lamps."
+            },
+            {
+              "label": "Telephone",
+              "text": "The newspaper says microphones in telephones connected to recording equipment in Jamie’s office."
+            },
+            {
+              "label": "Desk and chair",
+              "text": "The magazine also reports microphones underneath furniture."
+            }
+          ],
+          "layout": "cards"
+        }
+      },
+      {
+        "label": "The equipment",
+        "title": "One machine recorded voices. Another tracked the dial.",
+        "focus": "An aluminum disc and a strip of tape",
+        "inset": {
+          "label": "Compare what each machine recorded",
+          "lines": [
+            {
+              "label": "Pamograph",
+              "text": "A needle cut the conversation into an aluminum disc."
+            },
+            {
+              "label": "Adapted fire alarm recorder",
+              "text": "A tape captured the digits as they were dialed. Repeated calls gave investigators numbers to follow."
+            }
+          ],
+          "layout": "cards"
+        }
+      },
+      {
+        "label": "The ventilation shaft",
+        "title": "A janitor finds a recorder",
+        "focus": "The operation comes to light",
+        "inset": {
+          "label": "Follow the records after the discovery",
+          "lines": [
+            {
+              "label": "Where it turned up",
+              "text": "A ventilation shaft leading to a police official’s office, according to the magazine."
+            },
+            {
+              "label": "Where the recordings went",
+              "text": "The magazine names the mayor, city attorney and county attorney."
+            },
+            {
+              "label": "What followed in 1935",
+              "text": "The county history records a grand jury inquiry and twenty-one indictments."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "the-phantom-gunman-in-saint-paul",
+    "form": "comparison",
+    "collection": "stranger-than-the-headlines",
+    "deck": "A California robbery witness identified a suspect in Saint Paul. The accounts disagree on what happened to the extradition warrant.",
+    "sceneLabels": [
+      {
+        "label": "Spring · The identification",
+        "title": "A witness comes from California",
+        "focus": "Morrie Moll, also known as Morrie Miller"
+      },
+      {
+        "label": "June · The warrant",
+        "title": "Two accounts of the handover",
+        "focus": "$10,000 bail",
+        "inset": {
+          "label": "Compare the warrant accounts",
+          "lines": [
+            {
+              "label": "The prosecutor’s statement in 1929",
+              "text": "Minnesota refused the warrant."
+            },
+            {
+              "label": "Graham’s later account",
+              "text": "Extradition was granted on June 15. Moll was released on bond and disappeared."
+            }
+          ],
+          "layout": "cards"
+        }
+      },
+      {
+        "label": "September · Back in the papers",
+        "title": "A prosecutor makes an accusation",
+        "focus": "The death of David Antink"
+      }
+    ]
+  },
+  {
+    "id": "the-bond-in-the-food-can",
+    "form": "trace",
+    "collection": "stranger-than-the-headlines",
+    "deck": "Read what federal agents searched in Jess Doyle’s Kansas City apartment, then use a bond’s serial number to trace it back to a bank robbery.",
+    "sceneLabels": [
+      {
+        "label": "The apartment",
+        "title": "At Warner Plaza, his name was Stacey",
+        "focus": "Kansas City, Missouri · January 1935",
+        "inset": {
+          "label": "Check the two addresses",
+          "lines": [
+            {
+              "label": "Saint Paul · Twin Oaks",
+              "text": "The Bureau placed Doyle in the same apartment building as Fred and Arthur Barker and Alvin Karpis in late 1932."
+            },
+            {
+              "label": "Kansas City · 23 Warner Plaza",
+              "text": "His companion told agents that they used the name Stacey at this address."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The search",
+        "title": "The agents skipped the food containers",
+        "focus": "Kansas City field office · Western Union",
+        "inset": {
+          "label": "Read the two parts of the telegram",
+          "lines": [
+            {
+              "label": "What the field office knew",
+              "text": "Federal agents searched the apartment and did not examine the food containers in the refrigerator."
+            },
+            {
+              "label": "What the newspaper said",
+              "text": "A janitor found a bond in a can at the apartment. The telegram said verification would follow."
+            }
+          ],
+          "layout": "cards"
+        }
+      },
+      {
+        "label": "The serial number",
+        "title": "A bank cashier recognizes bond number 56",
+        "focus": "$1,000 · City of Peabody, Kansas",
+        "inset": {
+          "label": "Trace bond number 56",
+          "lines": [
+            {
+              "label": "Issuer",
+              "text": "City of Peabody, Kansas."
+            },
+            {
+              "label": "Value and serial",
+              "text": "$1,000 · No. 56."
+            },
+            {
+              "label": "Place the cashier identified",
+              "text": "Bank of Drexel, Missouri · Robbed December 13, 1934."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "the-alligator-on-the-lake-weir-trail",
+    "form": "map",
+    "collection": "stranger-than-the-headlines",
+    "deck": "Follow a conversation about an alligator from a Georgia pecan ranch to a penciled map in Chicago and a cottage in Florida.",
+    "sceneLabels": [
+      {
+        "label": "South of Macon, Georgia",
+        "title": "Talk at a pecan ranch",
+        "focus": "Big Joe",
+        "inset": {
+          "label": "What Bolton heard",
+          "lines": [
+            {
+              "label": "The lake",
+              "text": "A cottage, a motorboat and good deer hunting."
+            },
+            {
+              "label": "Big Joe",
+              "text": "The men said they set out a small pig in a barrel. The alligator got the bait without getting caught."
+            }
+          ]
+        }
+      },
+      {
+        "label": "Chicago, Illinois",
+        "title": "The ring around Lake Weir",
+        "focus": "Two marked maps of Florida",
+        "inset": {
+          "label": "Open the map notes",
+          "lines": [
+            {
+              "label": "Map one",
+              "text": "Ocala was marked."
+            },
+            {
+              "label": "Map two",
+              "text": "A pencil ring surrounded Lake Weir."
+            },
+            {
+              "label": "Bolton’s reading",
+              "text": "He thought the marks showed the hideout area and described the road and the alligator."
+            }
+          ]
+        }
+      },
+      {
+        "label": "Lake Weir, Florida",
+        "title": "The agents find the cottage",
+        "focus": "January 15, 1935"
+      }
+    ]
+  },
+  {
+    "id": "billie-frechette-carnival-playbill",
+    "form": "playbill",
+    "collection": "stranger-than-the-headlines",
+    "deck": "Open the playbill for a carnival act starring the woman from Lincoln Court. The FBI got mail about the show, and one of its own went to see her.",
+    "sceneLabels": [
+      {
+        "label": "The booking",
+        "title": "From a Saint Paul trial to the midway",
+        "focus": "July 1936 · Dodson World’s Fair Shows"
+      },
+      {
+        "label": "The cast",
+        "title": "A booker, an emcee and several figures in wax",
+        "focus": "January 1937 · Crime Does Not Pay",
+        "inset": {
+          "label": "Open the cast list",
+          "layout": "cards",
+          "lines": [
+            {
+              "label": "Featured performer",
+              "text": "Evelyn Frechette."
+            },
+            {
+              "label": "Booking and publicity",
+              "text": "H. G. Arenson booked the show. Marvin Dent handled sound advertising."
+            },
+            {
+              "label": "Emcee",
+              "text": "Jimmy Ellison, who had worked with Conklin’s All-Canadian Shows."
+            },
+            {
+              "label": "The wax figures",
+              "text": "The item lists several without naming whom they depicted."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The letter",
+        "title": "Was the woman on the poster really her?",
+        "focus": "April 1937 · Camden, South Carolina"
+      },
+      {
+        "label": "The audience",
+        "title": "The Bureau had somebody in the seats",
+        "focus": "May 1937 · Pittsburgh",
+        "inset": {
+          "label": "Open the topics in the FBI memo",
+          "layout": "cards",
+          "lines": [
+            {
+              "label": "Dillinger’s crews",
+              "text": "She described two crews of six and gave no names."
+            },
+            {
+              "label": "The shooting",
+              "text": "She said she was in prison in Michigan and did not know who fired the fatal shot."
+            },
+            {
+              "label": "The woman in red",
+              "text": "She said she had never known the woman personally."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "whiskey-under-the-scrap-iron",
+    "form": "ledger",
+    "collection": "oddities-in-saint-paul-files",
+    "deck": "Open three freight entries, check a vault visit against a railway date, then see what happened when the case reached the State Capitol.",
+    "sceneLabels": [
+      {
+        "label": "The freight entries",
+        "title": "The cargo on top was scrap iron",
+        "focus": "Winnipeg to Minneapolis · January 1920",
+        "inset": {
+          "label": "Lift the scrap from each freight entry",
+          "layout": "cards",
+          "lines": [
+            {
+              "label": "January 2 · Car number unknown",
+              "text": "15 barrels alleged. The siding was near Sixteenth Avenue and Second Street North."
+            },
+            {
+              "label": "January 7 · PMCKY 40479",
+              "text": "25 barrels alleged. The siding was near Eighteenth Avenue and Second Street North."
+            },
+            {
+              "label": "January 16 · Penn. 281781",
+              "text": "24 barrels alleged. The indictment gives the same siding as on January 7."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The vault and railway dates",
+        "title": "The vault visit came before the train",
+        "focus": "December 26, 29 and 31, 1919",
+        "inset": {
+          "label": "Compare the dates Quinn cited",
+          "layout": "cards",
+          "lines": [
+            {
+              "label": "Bank vault · December 26",
+              "text": "The bank recorded Weisman’s visit. The entry alone cannot show what he took or when he paid anyone."
+            },
+            {
+              "label": "Railroad · December 29",
+              "text": "The first car reached Saint Paul, according to the railroad evidence in Quinn’s dissent."
+            },
+            {
+              "label": "Railroad · December 31",
+              "text": "The car reached Minneapolis. The dissent puts unloading on January 1 or 2."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The Capitol hearing",
+        "title": "Acquitted in court, removed from office",
+        "focus": "1920 · Two decisions about Nash",
+        "inset": {
+          "label": "Open both outcomes",
+          "layout": "cards",
+          "lines": [
+            {
+              "label": "Federal jury",
+              "text": "Nash was acquitted on the criminal charge."
+            },
+            {
+              "label": "Governor’s hearing",
+              "text": "Burnquist removed Nash from office after hearing evidence."
+            },
+            {
+              "label": "Minnesota Supreme Court",
+              "text": "The court discharged the writ, leaving the removal in place. Quinn dissented."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "the-two-colts-with-aluminum-grips",
+    "form": "comparison",
+    "collection": "oddities-in-saint-paul-files",
+    "deck": "Compare two pistols and two accounts of where Leonard Hankins was during a bank robbery whose getaway came through Como Park.",
+    "sceneLabels": [
+      {
+        "label": "Como Park",
+        "title": "A white sack moves from one car to another",
+        "focus": "December 16, 1932 · A disabled Lincoln"
+      },
+      {
+        "label": "The pistols",
+        "title": "The grips matched and the numbers were gone",
+        "focus": "An expert describes the same tool marks",
+        "inset": {
+          "label": "Compare the two pistols",
+          "layout": "cards",
+          "lines": [
+            {
+              "label": "De Vol’s pistol",
+              "text": "Aluminum grips, factory numbers chiseled off, and an extended magazine."
+            },
+            {
+              "label": "Hankins’s pistol · Exhibit K",
+              "text": "Aluminum grips and factory numbers chiseled off. The court says no extended magazine was found on him."
+            },
+            {
+              "label": "The expert’s comparison",
+              "text": "The prosecution expert said the same tool had removed the factory numbers from both pistols."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The alibi",
+        "title": "The barber put Hankins on Wabasha Street",
+        "focus": "A haircut and a trip from Superior",
+        "inset": {
+          "label": "Set the two accounts side by side",
+          "layout": "cards",
+          "lines": [
+            {
+              "label": "The barber’s testimony",
+              "text": "Hankins was in his Wabasha Street shop at a time that would have ruled out his participation."
+            },
+            {
+              "label": "Hankins’s pretrial statement",
+              "text": "He was traveling from Superior that afternoon and arrived in Saint Paul at about five."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "touhy-and-the-telephone-pole",
+    "form": "timeline",
+    "collection": "oddities-in-saint-paul-files",
+    "deck": "Follow a wreck on a Wisconsin road from the disputed details of the stop to a newspaper photograph and a Saint Paul verdict.",
+    "sceneLabels": [
+      {
+        "label": "July 19 · Near Elkhorn",
+        "title": "An unarmed officer responds to the wreck",
+        "focus": "Harry Ward and the broken pole"
+      },
+      {
+        "label": "July · The repair bill",
+        "title": "Twenty-two dollars and fifty cents",
+        "focus": "Touhy’s memory and the county’s account",
+        "inset": {
+          "label": "Compare the recollections",
+          "lines": [
+            {
+              "label": "Touhy’s memoir",
+              "text": "He recalled an officer naming a $22.50 replacement cost and said he agreed to pay it."
+            },
+            {
+              "label": "Walworth County history",
+              "text": "Ward insisted they go to the jail about the damage. The county recounts Sharkey’s chicken-truck ride and phone call."
+            }
+          ],
+          "layout": "cards"
+        }
+      },
+      {
+        "label": "July–November · In print",
+        "title": "A front-page photograph and a federal verdict",
+        "focus": "The road from Elkhorn to Saint Paul",
+        "inset": {
+          "label": "Open the dated clippings",
+          "lines": [
+            {
+              "label": "July 22 · Manchester Evening Herald",
+              "text": "The caption called its picture of Touhy in custody his first newspaper or police photograph."
+            },
+            {
+              "label": "September 1 · Kewaskum Statesman",
+              "text": "The paper reported that the four men had been taken to Saint Paul."
+            },
+            {
+              "label": "November 28 · Medford Mail Tribune",
+              "text": "The Associated Press reported the jury’s acquittal on the two federal counts."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "the-wedding-and-the-two-calls",
+    "form": "call-log",
+    "collection": "oddities-in-saint-paul-files",
+    "deck": "A Bremer suspect was taken into custody at the end of his wedding. Weeks later, his wife went to the Bureau to find out who had called her.",
+    "sceneLabels": [
+      {
+        "label": "The wedding",
+        "title": "The ceremony ends with an arrest",
+        "focus": "January 20, 1935 · Chicago",
+        "inset": {
+          "label": "Compare the names in the file",
+          "lines": [
+            {
+              "label": "Chicago · Wedding arrest",
+              "text": "The Bureau’s account gives both Bruno Austin and Bruno Putis."
+            },
+            {
+              "label": "Saint Paul · Indictment",
+              "text": "The conspiracy indictment lists Whitey. The Bureau’s case summary identifies him as Austin."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The calls",
+        "title": "Mrs. Austin goes to the Bureau herself",
+        "focus": "March 11 and 18, 1935 · Chicago",
+        "inset": {
+          "label": "Read the two call entries and the reply",
+          "layout": "cards",
+          "lines": [
+            {
+              "label": "March 11 · First call",
+              "text": "Her mother answered. The report gives no separate account of what was said in this call."
+            },
+            {
+              "label": "March 11 · Second call",
+              "text": "Her mother answered again. The report summarizes the calls together: the callers claimed to be federal men who wanted to question Mrs. Austin."
+            },
+            {
+              "label": "March 18 · Bureau reply",
+              "text": "Shafetz told Mrs. Austin neither call came from the Bureau. His report identifies no caller."
+            }
+          ]
+        }
+      },
+      {
+        "label": "The court record",
+        "title": "The Saint Paul court orders his release",
+        "focus": "May 6, 1935 · Saint Paul",
+        "inset": {
+          "label": "Read the two case outcomes",
+          "lines": [
+            {
+              "label": "Saint Paul · May 6",
+              "text": "The court ordered Austin discharged from custody in the Bremer proceedings."
+            },
+            {
+              "label": "Chicago · October 11",
+              "text": "The Bureau records a murder conviction and a life sentence in Illinois."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "the-manhunt-at-the-clothing-counter",
+    "form": "dispatch",
+    "collection": "oddities-in-saint-paul-files",
+    "deck": "Compare what the papers said two fugitives were wearing with where the Bureau later traced them after a hotel escape.",
+    "sceneLabels": [
+      {
+        "label": "The hotel",
+        "title": "A police visit turns into an escape",
+        "focus": "January 20, 1935 · Atlantic City, New Jersey"
+      },
+      {
+        "label": "The store alert",
+        "title": "Police ask clothing stores to watch for customers",
+        "focus": "January 21, 1935 · Associated Press dispatch",
+        "inset": {
+          "label": "Read the descriptions from the wire",
+          "lines": [
+            {
+              "label": "Alvin Karpis",
+              "text": "Slippers, trousers and an overcoat."
+            },
+            {
+              "label": "Harry Campbell",
+              "text": "Underwear, slippers and an overcoat."
+            },
+            {
+              "label": "What authorities expected",
+              "text": "They believed both men were still on the island and asked shops to be alert for men buying clothes."
+            }
+          ],
+          "layout": "cards"
+        }
+      },
+      {
+        "label": "The later trace",
+        "title": "The Bureau follows a Pontiac into Pennsylvania",
+        "focus": "Atlantic City to Quakertown · Bureau case summary",
+        "inset": {
+          "label": "Compare the search with the later route",
+          "lines": [
+            {
+              "label": "Police account in the wire report",
+              "text": "Three guarded highway bridges and a search focused on the island."
+            },
+            {
+              "label": "The Bureau’s later account",
+              "text": "A stolen Pontiac abandoned near Quakertown, Pennsylvania. The report gives no bridge or exact departure route."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "the-mailbags-they-locked-again",
+    "form": "apparatus",
+    "collection": "oddities-in-saint-paul-files",
+    "deck": "Inspect the two sets of keys in a federal prosecutor’s account, then follow the $100 bond that drew investigators’ attention.",
+    "sceneLabels": [
+      {
+        "label": "Denver to Saint Paul · 1931",
+        "title": "Two sets of keys",
+        "focus": "Railroad switch keys and mailbag keys"
+      },
+      {
+        "label": "Railway stations · Overnight",
+        "title": "Close the bag and lock the door",
+        "focus": "Registered mail",
+        "inset": {
+          "label": "Open the two locks",
+          "lines": [
+            {
+              "label": "Mailroom",
+              "text": "The prosecutor said the crew entered with railroad switch keys."
+            },
+            {
+              "label": "Mailbag",
+              "text": "The prosecutor said the crew used the other keys on the sacks and locked them again after taking the registered mail."
+            }
+          ],
+          "layout": "cards"
+        }
+      },
+      {
+        "label": "Denver and Saint Paul · 1936",
+        "title": "A $100 Liberty bond surfaces",
+        "focus": "Eleven reported arrests"
+      }
+    ]
+  }
+]

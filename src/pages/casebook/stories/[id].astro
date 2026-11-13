@@ -1,0 +1,78 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import CasebookSceneBody from '../../../components/CasebookSceneBody.astro';
+import {casebookStories, casebookStoryURL, casebookForms, type CasebookStory} from '../../../lib/casebook-experiences';
+import {routeURL, sources, stops, stopURL} from '../../../lib/catalog';
+import '../../../styles/casebook-experiences.scss';
+
+export function getStaticPaths() {
+  return casebookStories.map(story => ({params: {id: story.id}, props: {story}}));
+}
+
+const {story} = Astro.props as {story: CasebookStory};
+const sameCollection = casebookStories.filter(item => item.collection === story.collection);
+const next = sameCollection[sameCollection.findIndex(item => item.id === story.id) + 1];
+const source = sources.find(item => item.id === story.sourceLink?.sourceId);
+const stop = stops.find(item => item.id === story.stopId);
+const back = routeURL(`/casebook/#story-${story.id}`);
+const stepsThrough = ['sequence', 'trace'].includes(story.form);
+const usesAnchors = stepsThrough || ['timeline', 'map', 'reconstruction', 'apparatus', 'playbill'].includes(story.form);
+const usesDisclosures = ['evidence', 'dispatch', 'ledger', 'hearing', 'sound', 'call-log'].includes(story.form);
+const sceneNavLabels: Partial<Record<CasebookStory['form'], string>> = {
+  map: 'Places in the story',
+  trace: 'Steps in the investigation',
+  apparatus: 'Equipment inspection sections',
+  playbill: 'Playbill sections'
+};
+---
+<Layout title={story.title} description={story.deck}>
+  <article class="case-experience container" data-case-form={story.form}>
+    <nav class="case-experience-nav" aria-label="Casebook navigation">
+      <a href={back}>← Back to side stories</a>
+      <span>{casebookForms[story.form]}</span>
+    </nav>
+    <header class="case-experience-header">
+      <p class="eyebrow">{story.period}</p>
+      <h1>{story.title}</h1>
+      <p class="lede">{story.deck}</p>
+      {story.form === 'sound' && source && story.sourceLink && (
+        <a class="case-listen-source" href={source.url}>{story.sourceLink.label} <span aria-hidden="true">↗</span></a>
+      )}
+    </header>
+    <div class="case-experience-stage">
+      {story.form === 'map' && <p class="case-route-note">Places in the account, shown in reading order.</p>}
+      {usesAnchors && (
+        <nav class="case-scene-nav" aria-label={sceneNavLabels[story.form] ?? 'Story scenes'}>
+          <ul role="list">
+            {story.scenes.map(scene => <li><a href={`#${scene.id}`}>{scene.label}</a></li>)}
+            {stepsThrough && <li><a href="#all-scenes">Read all scenes</a></li>}
+          </ul>
+        </nav>
+      )}
+      <div class="case-scenes" id={stepsThrough ? 'all-scenes' : undefined} tabindex={stepsThrough ? -1 : undefined}>
+        {story.scenes.map((scene, index) => usesDisclosures || (story.form === 'comparison' && index >= 2) ? (
+          <details class:list={['case-scene', {'case-scene-followup': story.form === 'comparison'}]} id={scene.id} open={index === 0}>
+            <summary class="case-scene-trigger">
+              <span class="case-scene-label">{scene.label}</span>
+              <span class="case-scene-title">{scene.title}</span>
+            </summary>
+            <CasebookSceneBody scene={scene}/>
+          </details>
+        ) : (
+          <article class="case-scene" id={scene.id} tabindex={usesAnchors ? -1 : undefined} aria-labelledby={`${scene.id}-title`}>
+            <p class="case-scene-label">{scene.label}</p>
+            <h2 id={`${scene.id}-title`}>{scene.title}</h2>
+            <CasebookSceneBody scene={scene} next={stepsThrough ? story.scenes[index + 1] : undefined}/>
+          </article>
+        ))}
+      </div>
+    </div>
+    <footer class="case-experience-footer">
+      {story.form !== 'sound' && source && story.sourceLink && (
+        <a href={source.url}>{story.sourceLink.label} <span aria-hidden="true">↗</span></a>
+      )}
+      {stop && <a href={stopURL(stop.id)}>Related chapter: {stop.title}</a>}
+      {next ? <a href={casebookStoryURL(next.id)}>Next story: {next.title} →</a> : <a href={back}>Return to the Casebook</a>}
+    </footer>
+  </article>
+</Layout>

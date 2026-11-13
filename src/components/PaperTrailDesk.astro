@@ -1,0 +1,52 @@
+---
+import type {PaperTrail} from '../lib/paper-trails';
+import ClaimLinks from './ClaimLinks.astro';
+import '../styles/paper-trail-desk.scss';
+
+interface Props {
+  story: PaperTrail;
+}
+
+const {story} = Astro.props;
+const {form, scenes, comparison} = story;
+---
+
+<div class:list={['paper-trail-desk', `paper-trail-desk--${form}`]}>
+  {scenes.map((scene, index) => (
+    <article class="desk-scene" id={scene.id} aria-labelledby={`${scene.id}-heading`}>
+      <p class="desk-scene-label">{scene.label}</p>
+      <h2 id={`${scene.id}-heading`}>{scene.title}</h2>
+      <p class="desk-scene-text">{scene.text}</p>
+
+      {form === 'table' && index === 1 && comparison && (
+        <fieldset class="desk-exchange">
+          <legend>What would you take for one check?</legend>
+          <div class="desk-exchange-options">
+            <label class="desk-exchange-option">
+              <input type="radio" name={`${scene.id}-redemption`} value="merchandise" checked />
+              <span>Cigars or tobacco</span>
+              <strong>{comparison.merchandiseValue}</strong>
+            </label>
+            <label class="desk-exchange-option">
+              <input type="radio" name={`${scene.id}-redemption`} value="cash" />
+              <span>Cash</span>
+              <strong>{comparison.cashValue}</strong>
+            </label>
+          </div>
+          <div class="desk-exchange-result" aria-hidden="true">
+            <span class="desk-exchange-check">One<br />check</span>
+            <span>→</span>
+            <span class="desk-exchange-return desk-exchange-return--merchandise">
+              <strong>{comparison.merchandiseValue}</strong> in cigars or tobacco
+            </span>
+            <span class="desk-exchange-return desk-exchange-return--cash">
+              <strong>{comparison.cashValue}</strong> in cash
+            </span>
+          </div>
+        </fieldset>
+      )}
+
+      <ClaimLinks ids={scene.claimIds} />
+    </article>
+  ))}
+</div>

@@ -1,0 +1,277 @@
+[
+  {
+    "id": "younger-cigar-counter",
+    "title": "Five cents at the cigar counter",
+    "subtitle": "A job offer for Cole and Jim Younger and a card game with two exchange rates.",
+    "period": "1901",
+    "form": "table",
+    "comparison": {
+      "merchandiseValue": "5¢",
+      "cashValue": "2½¢"
+    },
+    "scenes": [
+      {
+        "id": "cigar-counter",
+        "label": "The shop",
+        "title": "A counter on Wabasha",
+        "text": "In July 1901, state prison agent F. A. Whittier wrote to Warden Henry Wolfer about a job proposal for the newly paroled Cole and Jim Younger. He described Mr. Dayton’s cigar shop on Wabasha near Seventh, right down to its tobacco cabinet and a cigar counter fifteen or twenty feet long.",
+        "claimIds": [
+          "C100"
+        ]
+      },
+      {
+        "id": "five-cent-checks",
+        "label": "The card game",
+        "title": "Five cents in goods, half as much in cash",
+        "text": "Whittier asked about gambling rumors. He described an open card game like cinch, in which a player who was set paid ten cents in checks. Dayton sold each check for five cents. It could be redeemed for five cents in merchandise or sold back for two and a half cents in cash. Dayton called it social play.",
+        "claimIds": [
+          "C101"
+        ]
+      },
+      {
+        "id": "daytons-offer",
+        "label": "The job proposal",
+        "title": "Seventy-five dollars a month each",
+        "text": "Dayton proposed guaranteeing each brother $75 a month for a year, with a possible share of the profits. The letter records the offer. A Globe Hotel advertising card later identifies Jim at the Andrew Schoch Grocery cigar department at Seventh and Broadway. Cole’s memoir also places Jim at that different cigar counter.",
+        "claimIds": [
+          "C102"
+        ]
+      }
+    ],
+    "sourceLink": {
+      "sourceId": "S66",
+      "label": "Read the July 18 letter about the cigar shop"
+    }
+  },
+  {
+    "id": "gleckman-special-delivery",
+    "title": "The special-delivery envelope",
+    "subtitle": "A truckload of alcohol and paperwork addressed to a Saint Paul real estate office.",
+    "period": "1922–1926",
+    "form": "freight",
+    "scenes": [
+      {
+        "id": "truck-seizure",
+        "label": "August 3, 1922",
+        "title": "The papers in the truck",
+        "text": "Agents arrested Sol Rosenhause as he drove a truck loaded with redistilled alcohol. They took a small account book, two bills of lading, a note on Leon Gleckman’s real estate letterhead, and a special-delivery envelope. The envelope was addressed to Gleckman at 306 Globe Building in Saint Paul and had arrived the previous morning.",
+        "claimIds": [
+          "C103"
+        ]
+      },
+      {
+        "id": "incoming-freight",
+        "label": "Days after the arrest",
+        "title": "The freight was still coming",
+        "text": "The two bills of lading listed freight from Chicago’s Universal Medicine Company to Saint Paul’s West Side Pharmacy under the name “Aleo Wash.” The shipments in those papers arrived days after the truck seizure. The court described how the pharmacy name was used to receive alcohol that could be redistilled and sold for drinking.",
+        "claimIds": [
+          "C104"
+        ]
+      },
+      {
+        "id": "plea-and-appeal",
+        "label": "December 1926",
+        "title": "What the appeals court inferred",
+        "text": "The appeals court inferred that Gleckman received the envelope and passed it to Rosenhause. Gleckman had pleaded guilty after the government presented its evidence. He later sought to withdraw the plea. In 1926, the Eighth Circuit affirmed the judgment.",
+        "claimIds": [
+          "C105"
+        ]
+      }
+    ],
+    "sourceLink": {
+      "sourceId": "S69",
+      "label": "Read the court’s account of the freight paperwork"
+    }
+  },
+  {
+    "id": "karpis-capture-that-changed-directions",
+    "title": "The arrest that changed directions",
+    "subtitle": "Ten minutes and two different reports about Alvin Karpis.",
+    "period": "April 1935 and May 1936",
+    "form": "signals",
+    "scenes": [
+      {
+        "id": "first-call",
+        "label": "8:15 p.m.",
+        "title": "The first report says west",
+        "text": "On April 25, 1935, the FBI director’s office logged a call from a man named Suydam. Universal Service had heard that Alvin Karpis was captured somewhere in the West. When the person taking the call asked where, Suydam had no exact location.",
+        "claimIds": [
+          "C106"
+        ]
+      },
+      {
+        "id": "second-call",
+        "label": "8:25 p.m.",
+        "title": "The next report says east",
+        "text": "Ten minutes later, Suydam called back. This time he said the report had come from Saint Paul and the capture had happened somewhere in the East. The director’s office checked with the FBI’s Saint Paul office. A man named Ladd said he hadn’t heard about it and would look into it.",
+        "claimIds": [
+          "C107"
+        ]
+      },
+      {
+        "id": "confirmed-capture",
+        "label": "May 1, 1936",
+        "title": "Federal agents take Karpis into custody",
+        "text": "Federal agents arrested Karpis in New Orleans on May 1, 1936, a little over a year after the two calls. The FBI’s history says he was brought to Saint Paul within hours. Neither call had named New Orleans.",
+        "claimIds": [
+          "C108"
+        ]
+      }
+    ],
+    "sourceLink": {
+      "sourceId": "S70",
+      "label": "Read the April 25 FBI call slip"
+    }
+  },
+  {
+    "id": "robbins-portable-refrigerator",
+    "title": "The portable refrigerator",
+    "subtitle": "A camp appliance design accompanied a request for a shorter prison term.",
+    "period": "July 1936",
+    "form": "brief",
+    "scenes": [
+      {
+        "id": "newspaper-brief",
+        "label": "The newspaper",
+        "title": "An invention in prison",
+        "text": "In July 1936, a short United Press dispatch from Stillwater reported that Albert A. Robbins was designing a portable refrigerator. The dispatch identified him as a prisoner serving 25 years for his role in the kidnapping of Leon Gleckman in Saint Paul.",
+        "claimIds": [
+          "C109"
+        ]
+      },
+      {
+        "id": "practical-use",
+        "label": "The proposed uses",
+        "title": "For a picnic or a fishing trip",
+        "text": "According to the dispatch, Robbins started work before sentencing and believed by 1936 that he had perfected the design. He imagined hunters, fishermen, motorists, and picnickers using it. The brief describes the people he thought it could serve. Whether a refrigerator was ever built remains unresolved.",
+        "claimIds": [
+          "C110"
+        ]
+      },
+      {
+        "id": "commutation-request",
+        "label": "The pardon board",
+        "title": "Plans for a shorter term",
+        "text": "United Press reported that Robbins put his plans before the state pardon board as part of a request for a shorter sentence. The article records the request. The board’s decision and any effect the plans had on his term remain unresolved.",
+        "claimIds": [
+          "C111"
+        ]
+      }
+    ],
+    "sourceLink": {
+      "sourceId": "S71",
+      "label": "Read the 1936 newspaper brief"
+    }
+  },
+  {
+    "id": "volney-davis-forced-landing",
+    "title": "The forced landing",
+    "subtitle": "A grounded plane, a counterfeit bill, and a return to court in Saint Paul.",
+    "period": "February–June 1935",
+    "form": "escape",
+    "scenes": [
+      {
+        "id": "forced-landing",
+        "label": "February 1935",
+        "title": "A forced landing near Yorkville",
+        "text": "Federal agents were taking Volney Davis to Chicago when their plane had to land near Yorkville, Illinois. Agent Thomas McDade wrote that the escorts took Davis into town to call their office and removed his shackles. In McDade’s account, Davis knocked down one agent and escaped in a car.",
+        "claimIds": [
+          "C112"
+        ]
+      },
+      {
+        "id": "counterfeit-bill",
+        "label": "The first arrest",
+        "title": "A hundred dollars that wouldn’t pass",
+        "text": "The FBI’s summary says agents found a counterfeit hundred-dollar bill after Davis’s first arrest. Davis told investigators he carried it in case he needed to bribe an officer. He said he hoped to get away before the officer spotted the fake. The summary says he never offered the bill to the agents who caught him.",
+        "claimIds": [
+          "C113"
+        ]
+      },
+      {
+        "id": "court-return",
+        "label": "June 3, 1935",
+        "title": "Cuffed to a deputy marshal",
+        "text": "Davis was arrested again in Chicago on June 1 and flown to Saint Paul. The Associated Press reported that he went before Judge M. M. Joyce handcuffed to a deputy marshal. He pleaded guilty to conspiracy in the Bremer kidnapping case. The federal court later recorded that he was sentenced to life on June 7.",
+        "claimIds": [
+          "C114"
+        ]
+      }
+    ],
+    "sourceLink": {
+      "sourceId": "S72",
+      "label": "Read Thomas McDade’s February diary"
+    }
+  },
+  {
+    "id": "the-salesman-using-youngers-name",
+    "title": "The salesman using Younger’s name",
+    "subtitle": "Two letters about a traveling salesman who was reportedly calling himself Cole Younger.",
+    "period": "August 1901",
+    "form": "letters",
+    "scenes": [
+      {
+        "id": "warden-complaint",
+        "label": "August 16, 1901",
+        "title": "The warden writes to Saint Paul",
+        "text": "Warden Henry Wolfer wrote to P. N. Peterson at 104 East Fifth Street in Saint Paul. Two sources had told him that a traveling salesman named Bloom was passing himself off as Cole Younger in North Branch, Duluth, and elsewhere. Wolfer asked Peterson to put a stop to it.",
+        "claimIds": [
+          "C115"
+        ]
+      },
+      {
+        "id": "peterson-reply",
+        "label": "August 19, 1901",
+        "title": "Peterson writes back",
+        "text": "Peterson replied on the granite company’s decorative letterhead. He said he had just learned about the matter and had written to Bloom in Prentice, Wisconsin, telling him to stop. The prison stamped Peterson’s reply received August 20. Cole Younger’s memoir later described his own work traveling for Peterson’s monument company after parole.",
+        "claimIds": [
+          "C116"
+        ]
+      }
+    ],
+    "sourceLink": {
+      "sourceId": "S66",
+      "label": "Read the warden’s letter and Peterson’s reply"
+    }
+  },
+  {
+    "id": "tommy-banks-pocket-ledger",
+    "title": "Tommy Banks’s pocket ledger",
+    "subtitle": "Daily liquor sales in a vest-pocket book, then alcohol by the boxcar.",
+    "period": "About 1927–1931",
+    "form": "ledger",
+    "scenes": [
+      {
+        "id": "vest-pocket",
+        "label": "About 1927–1929",
+        "title": "Sales in a vest-pocket book",
+        "text": "Thomas W. Banks kept a book small enough for a vest pocket. According to findings later made by the United States Tax Court, Banks personally wrote down his daily liquor sales from about 1927 through 1929. The court found that he kept no record of what the alcohol cost him.",
+        "claimIds": [
+          "C117"
+        ]
+      },
+      {
+        "id": "saint-paul-plea",
+        "label": "November 14, 1929",
+        "title": "A plea in Saint Paul",
+        "text": "The Tax Court’s account places Banks in federal court in Saint Paul on November 14, 1929. He pleaded guilty to a liquor conspiracy charge. The fine was $2,500, which the court says he paid. The opinion records the plea and the pocketbook separately.",
+        "claimIds": [
+          "C118"
+        ]
+      },
+      {
+        "id": "boxcars",
+        "label": "1930 or 1931",
+        "title": "Eighty to a hundred drums per car",
+        "text": "Banks and others began ordering alcohol by the railroad boxcar in 1930 or 1931. A car typically held eighty to a hundred drums, according to the Tax Court. Banks worked out of offices at the West Hotel in Minneapolis. The court found that he kept no books for the hotel operation.",
+        "claimIds": [
+          "C119"
+        ]
+      }
+    ],
+    "sourceLink": {
+      "sourceId": "S75",
+      "label": "Read the Tax Court’s findings about Banks"
+    }
+  }
+]

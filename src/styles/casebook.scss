@@ -1,0 +1,380 @@
+@use 'variables' as *;
+
+@media screen {
+  .experience-page.casebook-page {
+    --casebook-ink: var(--color-ink);
+    --casebook-desk: var(--color-surface-card);
+    --casebook-rule: var(--color-border);
+    --casebook-paper: var(--color-paper);
+    --casebook-paper-rule: var(--color-paper-border);
+    --casebook-paper-text: var(--color-ink);
+    --casebook-rust: var(--color-button);
+    --experience-accent: var(--color-accent);
+    --experience-muted: var(--color-muted);
+    background: var(--casebook-ink);
+    background-image: radial-gradient(ellipse at 72% 0, #3b291e 0, transparent 40rem);
+    color: var(--color-paper);
+  }
+
+  .casebook-page .casebook-masthead {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+    padding-block: clamp(2.5rem, 6vw, 6rem) clamp(2rem, 4vw, 4rem);
+  }
+
+  .casebook-masthead h1 {
+    font: 600 clamp(3.1rem, 7vw, 6.6rem)/.99 $font-display;
+    letter-spacing: -.045em;
+    text-wrap: balance;
+    margin: .18em 0 .34em;
+  }
+
+  .casebook-masthead .lede {
+    max-width: 34ch;
+    color: #dfccba;
+    font-size: clamp(1.125rem, 2vw, 1.4rem);
+  }
+
+  .casebook-page .casebook-art {
+    margin: 0;
+    padding: .55rem;
+    border: 1px solid #a7896d;
+    background: #33271e;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .casebook-page .casebook-art::before { content: none; }
+  .casebook-page .casebook-art img {
+    aspect-ratio: 16 / 10;
+    object-position: center 48%;
+    filter: none;
+  }
+
+  .casebook-page .casebook-art figcaption {
+    padding: .45rem .4rem .1rem;
+    color: #dfccba;
+    text-align: start;
+    font: 1rem/1.4 $font-body;
+  }
+
+  .casebook-page .casebook-index {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 1px;
+    margin: 0 0 clamp(3rem, 6vw, 6rem);
+    border: 1px solid var(--casebook-rule);
+    background: var(--casebook-rule);
+  }
+
+  .casebook-page .casebook-index a {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: .6rem;
+    min-height: 60px;
+    padding: .75rem clamp(.65rem, 1.8vw, 1.25rem);
+    line-height: 1.3;
+    color: var(--color-paper);
+    border: 0;
+    background: var(--casebook-desk);
+  }
+
+  .casebook-page .casebook-index a:hover {
+    background: #35261c;
+    text-decoration: underline;
+  }
+
+  .casebook-page .casebook-index a span {
+    color: #dbaf87;
+    font: 600 1rem/1.1 $font-body;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .casebook-page .casebook-index-arrow { text-align: end; }
+
+  .casebook-page .casebook-section {
+    margin-block: clamp(3rem, 7vw, 7rem);
+  }
+
+  .casebook-page .experience-section-heading {
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: .3rem 1.5rem;
+    border-color: var(--casebook-rule);
+  }
+
+  .casebook-page .experience-section-heading h2 {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    letter-spacing: -.035em;
+    text-wrap: balance;
+  }
+
+  .casebook-page .experience-section-heading a {
+    display: inline-flex;
+    gap: .5rem;
+    align-items: center;
+    min-height: 44px;
+    font-size: 1rem;
+  }
+
+  .casebook-page .section-explainer, .casebook-page .evidence-filter-bar > p {
+    color: var(--experience-muted);
+  }
+
+  .paper-trail-index .dossier-card h3 { margin-block: .5rem; }
+  .paper-trail-index .dossier-card h3 a { display: inline-flex; align-items: center; min-height: 44px; }
+  .paper-trail-index .dossier-card > p:last-child { margin-bottom: 0; }
+  .paper-trail-index .casebook-story-period { color: var(--color-paper-muted); }
+
+  .casebook-story-group + .casebook-story-group { margin-block-start: 2rem; }
+  .casebook-story-group > h3 { margin-block: 0 .7rem; }
+
+  .casebook-story-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 23rem), 1fr));
+    gap: 1px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid var(--casebook-paper-rule);
+    background: var(--casebook-paper-rule);
+  }
+
+  .casebook-story-list li {
+    margin: 0;
+    min-width: 0;
+    background: var(--casebook-paper);
+  }
+
+  .casebook-story-list a {
+    display: grid;
+    align-content: center;
+    height: 100%;
+    min-height: 72px;
+    padding: .85rem clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--casebook-paper-text);
+    text-decoration: none;
+  }
+
+  .casebook-story-list a:hover .casebook-story-title { text-decoration: underline; }
+  .casebook-story-list a:focus-visible, .casebook-story-list li:target {
+    outline: 3px solid var(--casebook-rust);
+    outline-offset: -4px;
+  }
+
+  .casebook-story-title {
+    font: 600 clamp(1.25rem, 2.4vw, 1.65rem)/1.25 $font-display;
+  }
+
+  .casebook-story-period {
+    display: block;
+    margin-top: .3rem;
+    color: var(--color-paper-muted);
+    font: 1rem/1.4 $font-body;
+  }
+
+  .casebook-page .evidence-filter-bar { flex-wrap: wrap; gap: .3rem 1rem; }
+  .casebook-page .btn-secondary {
+    background: var(--casebook-desk);
+    color: var(--color-paper);
+    border-color: #a78c70;
+  }
+
+  .casebook-page .btn-secondary:hover { background: #382b20; }
+  .experience-page.casebook-page button[aria-pressed='true'] {
+    background: #efc7a6;
+    color: #2d1e14;
+    border-color: #efc7a6;
+  }
+
+  .casebook-page .archive-empty {
+    margin-top: 1rem;
+    background: var(--casebook-desk);
+    border-color: #9e8066;
+  }
+
+  .casebook-ledger { display: grid; gap: 1.6rem; }
+
+  @supports selector(:has(*)) {
+    .casebook-evidence-group:not(:has(.dossier-card:not([hidden]))) { display: none; }
+  }
+
+  .casebook-evidence-group { min-width: 0; }
+
+  .casebook-evidence-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .25rem .8rem;
+    min-width: 0;
+    padding: .65rem clamp(.8rem, 2.1vw, 1.35rem);
+    background: #302318;
+    border: 1px solid #a38161;
+    border-bottom: 0;
+  }
+
+  .casebook-evidence-heading h3 { margin: 0; font-size: clamp(1.2rem, 2.5vw, 1.55rem); }
+  .casebook-evidence-heading h3 a {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    min-height: 44px;
+    color: var(--color-paper);
+  }
+
+  .casebook-evidence-heading h3 a span { color: var(--experience-accent); font: 1rem $font-body; }
+  .casebook-chapter-number { font-variant-numeric: tabular-nums; color: #dbaf87; }
+  .casebook-period { margin-inline-start: auto; font-size: 1rem; color: #dfccba; }
+
+  .casebook-page .dossier-grid-list {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 23rem), 1fr));
+    gap: 1px;
+    border: 1px solid var(--casebook-paper-rule);
+    background: var(--casebook-paper-rule);
+  }
+
+  .casebook-page .dossier-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    border: 0;
+    padding: clamp(1rem, 2.4vw, 1.9rem);
+    background: var(--casebook-paper);
+    color: var(--casebook-paper-text);
+    box-shadow: none;
+  }
+
+  .casebook-page .dossier-tab {
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .3rem .75rem;
+    color: var(--color-paper-muted);
+    font: 600 1rem/1.4 $font-body;
+    letter-spacing: .06em;
+  }
+
+  .casebook-page .dossier-tab > span:first-child {
+    transform: none;
+    color: #fff2df;
+    background: var(--casebook-rust);
+    padding: .2rem .5rem;
+    font: 600 1rem/1.35 $font-body;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .casebook-page .dossier-card h4 {
+    margin-block: .85rem .6rem;
+    font: 600 clamp(1.35rem, 2.35vw, 1.75rem)/1.2 $font-display;
+    color: inherit;
+    text-wrap: balance;
+  }
+
+  .casebook-page .dossier-card .record-limit {
+    padding: .75rem .9rem;
+    border-color: var(--casebook-rust);
+    background: var(--color-paper-raised);
+    color: var(--casebook-paper-text);
+  }
+
+  .casebook-page .dossier-card .record-limit strong { color: var(--color-paper-link-hover); }
+  .casebook-page .dossier-card a { color: var(--color-button); text-decoration-color: currentColor; }
+  .casebook-page .dossier-card a:hover { color: var(--color-paper-link-hover); }
+  .casebook-page .dossier-card .claim-links {
+    color: var(--color-paper-muted);
+    border-color: #997856;
+    margin-block: 0 1rem;
+  }
+
+  .casebook-page .dossier-card :focus-visible { outline-color: var(--color-button); }
+
+  .casebook-page .dossier-card-actions {
+    margin-top: auto;
+    border-color: var(--casebook-paper-rule);
+  }
+
+  .casebook-page .dossier-card-actions [data-inspected-status] { color: var(--color-paper-muted); border-color: #8d6e50; }
+  .casebook-page .person-dossier, .casebook-page .connection-card, .casebook-page .progress-reset {
+    min-width: 0;
+    background: var(--casebook-desk);
+    border: 1px solid var(--casebook-rule);
+  }
+
+  .casebook-page .person-dossier header {
+    display: block;
+    border-color: var(--casebook-rule);
+  }
+
+  .casebook-page .person-dossier:target {
+    outline: 2px solid var(--experience-accent);
+    outline-offset: 3px;
+  }
+
+  .casebook-page .connection-card h3 { display: block; }
+  .casebook-page .connection-card h3 a { color: var(--color-paper); }
+  .casebook-page .connection-card h3 > span { color: #d4b597; }
+
+  .casebook-page .reading-trail, .casebook-page .reading-trail li {
+    border-color: var(--casebook-rule);
+  }
+
+  .casebook-page .reading-trail img {
+    filter: saturate(.7);
+    border: 1px solid var(--casebook-rule);
+  }
+
+  .casebook-page .reading-trail a:hover .trail-title strong { text-decoration: underline; }
+
+  @media (max-width: 1050px) {
+    .casebook-page :is(.dossier-card, .person-dossier, .connection-card) > p:not(.eyebrow, .muted, .person-role) {
+      max-inline-size: var(--measure-prose);
+      font-size: var(--font-size-base);
+      line-height: 1.55;
+    }
+  }
+
+  @media (min-width: 801px) and (max-width: 1050px) {
+    .casebook-page .casebook-index { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  @media (max-width: 800px) {
+    #main-content .casebook-page [id] { scroll-margin-block-start: 1.25rem; }
+    .casebook-page .casebook-masthead { gap: 1.5rem; }
+    .casebook-page .casebook-index { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-block-end: 2rem; }
+    .casebook-page .casebook-section { margin-block: 2rem; }
+  }
+
+  @media (max-width: 719px) {
+    .casebook-page .casebook-masthead {
+      grid-template-columns: minmax(0, 1fr);
+      align-items: start;
+      padding-block: clamp(1.5rem, 5vw, 2.5rem);
+    }
+    .casebook-page .casebook-art { max-width: 620px; }
+    .casebook-page .casebook-art img { aspect-ratio: 16 / 8; }
+  }
+
+  @media (max-width: 520px) {
+    .casebook-page .casebook-art img { aspect-ratio: 5 / 2; }
+    .casebook-page .casebook-index a { grid-template-columns: auto minmax(0, 1fr); }
+    .casebook-page .casebook-index-arrow { display: none; }
+  }
+
+  html.calm-mode .casebook-page .casebook-masthead { grid-template-columns: minmax(0, 1fr); }
+  html.calm-mode .casebook-page .reading-trail img { display: none; }
+
+  @media (forced-colors: active) {
+    .casebook-page .casebook-art { display: none; }
+    .casebook-page .casebook-masthead { grid-template-columns: minmax(0, 1fr); }
+    .casebook-page .person-dossier:target, .casebook-page .dossier-card :focus-visible,
+    .casebook-story-list li:target, .casebook-story-list a:focus-visible { outline-color: Highlight; }
+    .casebook-page button[aria-pressed='true'] { outline: 2px solid Highlight; outline-offset: -4px; }
+  }
+}
+
+@media print {
+  .casebook-page .casebook-masthead { padding-block: 0; }
+  .casebook-page .casebook-art, .casebook-page .reading-trail img, .casebook-page .casebook-chapter-number { display: none; }
+  .casebook-page .dossier-card, .casebook-page .person-dossier, .casebook-page .connection-card { margin-bottom: 1rem; }
+  .casebook-page .casebook-evidence-heading { break-after: avoid; }
+}
