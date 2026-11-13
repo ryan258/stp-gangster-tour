@@ -1,4 +1,3 @@
-@use 'sass:color';
 @use 'variables' as *;
 @use 'mixins' as *;
 
@@ -36,7 +35,7 @@ a {
 
   &:hover {
     text-decoration-thickness: 2px;
-    color: color.adjust($crimson-bright, $lightness: 10%);
+    color: var(--color-accent-hover);
   }
 }
 
@@ -48,7 +47,7 @@ h1, h2, h3, h4, .eyebrow, .site-brand {
 
 h1 {
   font-size: clamp(2.4rem, 5vw, 4.5rem);
-  font-weight: 700;
+  font-weight: 600;
   margin: 0.2em 0 0.4em;
   letter-spacing: -0.02em;
 }
@@ -104,7 +103,7 @@ figcaption {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   font-family: $font-serif-caps;
 }
 
@@ -162,7 +161,7 @@ button, .btn, select {
 
 button, .btn {
   background: $crimson-primary;
-  color: #ffffff;
+  color: $text-cream;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -170,13 +169,15 @@ button, .btn {
 
   &:hover {
     background: $crimson-bright;
+    color: $bg-pitch;
     border-color: $text-cream;
     box-shadow: 0 4px 14px $crimson-glow;
   }
 
   &[aria-pressed=true] {
     border-color: $crimson-bright;
-    background: #39212c;
+    background: $bg-elevated;
+    color: $text-cream;
   }
 
   &:disabled {
@@ -188,12 +189,13 @@ button, .btn {
 
 .btn-secondary, select {
   background: $bg-surface;
-  border-color: #63718a;
+  border-color: var(--color-paper-border);
   color: $text-cream;
 
   &:hover {
     border-color: $text-cream;
-    background: color.adjust($bg-surface, $lightness: 5%);
+    background: $bg-card-hover;
+    color: $text-cream;
   }
 }
 
@@ -217,7 +219,7 @@ label {
 }
 
 :focus-visible {
-  outline: 3px solid #f2c979;
+  outline: 3px solid var(--color-focus);
   outline-offset: 4px;
 }
 
@@ -262,17 +264,17 @@ label {
 .preview-note {
   padding: 0.6rem max(1rem, calc((100% - 1200px) / 2));
   font-size: 1rem;
-  background: #1c2330;
+  background: $bg-surface;
   border-bottom: 1px solid $border-subtle;
   color: $text-bone;
 }
 
 .storage-notice {
-  border: 2px solid #e2b158;
+  border: 2px solid var(--color-focus);
   padding: 1rem;
   margin: 1rem;
   color: $text-cream;
-  background: rgba(226, 177, 88, 0.08);
+  background: rgba(232, 173, 82, 0.08);
   border-radius: 4px;
 }
 
@@ -323,6 +325,9 @@ label {
   a {
     color: LinkText;
   }
+  :focus-visible {
+    outline-color: Highlight;
+  }
   badge {
     border-color: CanvasText;
   }
@@ -347,7 +352,7 @@ label {
     border: 1px solid #999;
     break-inside: avoid;
   }
-  a, .muted, .claim-links, .eyebrow, .claim-links a {
+  h1, h2, h3, h4, a, .muted, .claim-links, .eyebrow, .claim-links a {
     color: black;
   }
   h1 { font-size: 28pt; }

@@ -1,5 +1,7 @@
 ---
-import {routeURL} from '../lib/catalog';
+import {edition, routeURL} from '../lib/catalog';
+import ArchMark from '../../brand/assets/identity/arch-mark-dark.svg';
+import Glyph from './Glyph.astro';
 interface Props {currentPath?:string;stopNumber?:number;totalStops?:number}
 const {currentPath=routeURL('/'),stopNumber,totalStops=7}=Astro.props;
 const navItems = [
@@ -13,8 +15,10 @@ const navItems = [
 <header class="site-header">
   <div class="header-container">
     <div class="brand-wrapper">
-      <a href={routeURL('/')} class="site-brand">SAINT PAUL AFTER DARK</a>
-      <span class="site-tagline">Money. Power. Vice. Consequences.</span>
+      <a href={routeURL('/')} class="site-brand">
+        <ArchMark width={32} height={32} aria-hidden="true" focusable="false" role="presentation"/>
+        <span>{edition.title}</span>
+      </a>
       {stopNumber && <span class="badge">Stop {stopNumber} of {totalStops}</span>}
     </div>
     <nav class="site-nav" aria-label="Main navigation">
@@ -23,7 +27,7 @@ const navItems = [
         return <a href={href} aria-current={currentPath===href?'page':undefined}>{label}</a>;
       })}
       <button type="button" class="btn-secondary calm-toggle-btn" id="btn-toggle-calm" aria-pressed="false" data-js-control hidden>
-        <span class="icon-moon" aria-hidden="true">☾</span> Calm view
+        <Glyph name="calm"/> Calm view
       </button>
     </nav>
   </div>

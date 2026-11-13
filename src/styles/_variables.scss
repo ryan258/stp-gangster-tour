@@ -1,45 +1,45 @@
-// Noir Design System Variables & Tokens
+// Sass aliases for the runtime identity tokens in tokens.css.
 
 // Color Palette
-$bg-pitch: #090b0e;
-$bg-base: #0d1015;
-$bg-surface: #141820;
-$bg-card: rgba(20, 24, 32, 0.85);
-$bg-card-hover: rgba(28, 34, 46, 0.95);
-$bg-elevated: #1a202c;
+$bg-pitch: var(--color-ink);
+$bg-base: var(--color-surface-bg);
+$bg-surface: var(--color-surface-card);
+$bg-card: var(--color-surface-card);
+$bg-card-hover: var(--color-surface-card-hover);
+$bg-elevated: var(--color-surface-card-hover);
 
 // Accents
-$crimson-bright: #e53935;
-$crimson-primary: #d32f2f;
-$crimson-dark: #991b1b;
-$crimson-glow: rgba(211, 47, 47, 0.35);
-$crimson-soft: rgba(211, 47, 47, 0.12);
+$crimson-bright: var(--color-accent);
+$crimson-primary: var(--color-button);
+$crimson-dark: var(--color-paper-link-hover);
+$crimson-glow: rgba(245, 141, 114, 0.22);
+$crimson-soft: var(--color-highlight);
 
 // Typography colors
-$text-cream: #f4efe6;
-$text-bone: #e2ded5;
-$text-muted: #9ba1ad;
-$text-dim: #646a78;
+$text-cream: var(--color-paper);
+$text-bone: #E7D8C4;
+$text-muted: var(--color-muted);
+$text-dim: var(--color-muted);
 
 // Borders
-$border-subtle: rgba(255, 255, 255, 0.08);
-$border-card: rgba(255, 255, 255, 0.12);
-$border-red: rgba(211, 47, 47, 0.4);
+$border-subtle: var(--color-border-subtle);
+$border-card: var(--color-border);
+$border-red: rgba(245, 141, 114, 0.4);
 
 // Vintage Ephemera Paper Palette
-$paper-parchment: #ded4bf;
-$paper-aged: #cfc2a7;
-$paper-ink: #1a1714;
-$paper-muted: #4f473c;
+$paper-parchment: var(--color-paper);
+$paper-aged: var(--color-paper-raised);
+$paper-ink: var(--color-ink);
+$paper-muted: var(--color-paper-muted);
 $paper-leather: #3c2a1e;
-$paper-border: #b8a88a;
+$paper-border: var(--color-paper-border);
 
 // Typography Stacks
-$font-display: 'Playfair Display', Georgia, serif;
-$font-serif-caps: 'Cinzel', 'Playfair Display', Georgia, serif;
-$font-body: 'Source Sans 3', system-ui, -apple-system, sans-serif;
-$font-condensed: 'Barlow Condensed', sans-serif;
-$font-script: 'Caveat', cursive, 'Brush Script MT', italic;
+$font-display: var(--font-title);
+$font-body: var(--font-body);
+$font-condensed: $font-display;
+$font-serif-caps: $font-body;
+$font-script: $font-body;
 
 // Shadows & Glows
 $shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);

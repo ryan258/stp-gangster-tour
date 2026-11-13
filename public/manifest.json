@@ -1,13 +1,13 @@
 {
   "name": "Saint Paul After Dark",
   "short_name": "After Dark",
-  "description": "A public history reading experience about the informal protection system in Saint Paul's underworld.",
+  "description": "A digital history tour of Saint Paul’s underworld, 1900–1938",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#090b0e",
-  "theme_color": "#090b0e",
+  "background_color": "#171310",
+  "theme_color": "#171310",
   "icons": [
     {
       "src": "icon-192.png",

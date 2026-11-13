@@ -1,0 +1,35 @@
+/* Saint Paul After Dark marketing identity. The visitor site has its own runtime tokens. */
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("assets/fonts/barlow-condensed-semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("assets/fonts/source-sans-3-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("assets/fonts/source-sans-3-semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+:root {
+  --brand-ink: #171310;
+  --brand-paper: #FFF1D9;
+  --brand-copper: #F58D72;
+  --brand-oxblood: #B2382A;
+  --brand-ash: #594538;
+  --brand-rule: #967765;
+  --brand-river: #274852;
+  --brand-brass: #E8AD52;
+  --brand-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --brand-body: "Source Sans 3", system-ui, sans-serif;
+  --brand-space: 8px;
+  --brand-target: 44px;
+  --brand-text: 19px;
+  --brand-measure: 66ch;
+}

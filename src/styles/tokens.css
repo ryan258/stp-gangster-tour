@@ -24,26 +24,32 @@
 }
 
 :root {
-  /* Color Palette - Spec R3 Graphic Noir */
-  --color-ink: #0B0C10;
-  --color-ink-rgb: 11, 12, 16;
-  --color-paper: #F3EFE6;
-  --color-paper-rgb: 243, 239, 230;
-  --color-muted: #B8B8BC;
-  --color-accent: #FF8293;
-  --color-button: #A62436;
-  --color-accent-hover: #E0384E;
-  
-  --color-surface-bg: #0E1117;
-  --color-surface-card: #151A24;
-  --color-surface-card-hover: #1C2330;
-  --color-border: #283144;
-  --color-border-subtle: rgba(243, 239, 230, 0.12);
-  --color-highlight: rgba(198, 47, 66, 0.15);
+  /* Identity palette from the brand guide. Chapter frames carry their own colors. */
+  --color-ink: #171310;
+  --color-ink-rgb: 23, 19, 16;
+  --color-paper: #FFF1D9;
+  --color-paper-rgb: 255, 241, 217;
+  --color-accent: #F58D72;
+  --color-button: #B2382A;
+  --color-paper-muted: #594538;
+  --color-paper-border: #967765;
+  --color-river: #274852;
+  --color-focus: #E8AD52;
+
+  --color-accent-hover: #FFD0B5;
+  --color-muted: #C5B7A7;
+  --color-surface-bg: var(--color-ink);
+  --color-surface-card: #221A15;
+  --color-surface-card-hover: #32261E;
+  --color-paper-raised: #F2DFC0;
+  --color-paper-link-hover: #7A2A1D;
+  --color-border: #80634B;
+  --color-border-subtle: rgba(var(--color-paper-rgb), 0.12);
+  --color-highlight: rgba(245, 141, 114, 0.15);
 
   /* Typography */
-  --font-title: 'Barlow Condensed', sans-serif, system-ui;
-  --font-body: 'Source Sans 3', sans-serif, system-ui;
+  --font-title: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
 
   --font-size-base: 19px;
   --font-size-sm: 16px;
@@ -53,7 +59,7 @@
   --font-size-3xl: 52px;
 
   --line-height-body: 1.6;
-  --measure-prose: 68ch;
+  --measure-prose: 66ch;
 
   /* Target Sizes - Spec R7: min 44px */
   --min-target-size: 44px;
@@ -70,8 +76,8 @@
 /* Calm View Mode & Reduced Motion overrides */
 html.calm-mode,
 body.calm-mode {
-  --color-surface-card: #121620;
-  --color-border-subtle: rgba(243, 239, 230, 0.2);
+  --color-surface-card: var(--color-ink);
+  --color-border-subtle: rgba(var(--color-paper-rgb), 0.2);
 }
 
 html.calm-mode *,

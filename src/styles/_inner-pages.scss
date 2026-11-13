@@ -1,4 +1,3 @@
-@use 'sass:color';
 @use 'variables' as *;
 @use 'mixins' as *;
 
@@ -107,7 +106,7 @@
   h2 {
     font-family: $font-serif-caps;
     font-size: 1.15rem;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.08em;
     margin: 0 0 0.75rem;
     color: $text-cream;
@@ -133,7 +132,7 @@
   transition: border-color $transition-fast, background-color $transition-fast;
 
   &[open] {
-    background: color.adjust($bg-surface, $lightness: 2%);
+    background: $bg-card-hover;
     border-color: rgba(255, 255, 255, 0.2);
     border-left-color: $crimson-bright;
   }
@@ -141,7 +140,7 @@
   summary {
     cursor: pointer;
     font-family: $font-serif-caps;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.05rem;
     letter-spacing: 0.04em;
     color: $text-cream;
@@ -153,7 +152,7 @@
     }
 
     &:hover {
-      color: color.adjust($crimson-bright, $lightness: 15%);
+      color: var(--color-accent-hover);
     }
   }
 
@@ -193,8 +192,8 @@
 
 .selected-highlight {
   border-color: $crimson-bright !important;
-  background: rgba(211, 47, 47, 0.12) !important;
-  box-shadow: 0 0 15px rgba(211, 47, 47, 0.25);
+  background: $crimson-soft !important;
+  box-shadow: 0 0 15px $crimson-glow;
 }
 
 .presenter-sequence .presenter-target {
@@ -210,11 +209,11 @@
   margin-top: 0.8rem;
 
   a {
-    color: #ff94a2;
+    color: $crimson-bright;
     font-weight: 600;
 
     &:hover {
-      color: #ffffff;
+      color: var(--color-accent-hover);
     }
   }
 }

@@ -1,13 +1,4 @@
 ---
-import '@fontsource/playfair-display/latin-600.css';
-import '@fontsource/playfair-display/latin-700.css';
-import '@fontsource/playfair-display/latin-900.css';
-import '@fontsource/playfair-display/latin-400-italic.css';
-import '@fontsource/cinzel/latin-500.css';
-import '@fontsource/cinzel/latin-700.css';
-import '@fontsource/cinzel/latin-900.css';
-import '@fontsource/caveat/latin-400.css';
-import '@fontsource/caveat/latin-600.css';
 import '../styles/tokens.css';
 import '../styles/global.css';
 import '../styles/main.scss';
@@ -17,6 +8,7 @@ import StoryMotion from '../components/StoryMotion.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SkipLink from '../components/SkipLink.astro';
+import GlyphSprite from '../components/GlyphSprite.astro';
 import {edition,assetURL} from '../lib/catalog';
 interface Props {title:string;description?:string;currentPath?:string;stopNumber?:number;totalStops?:number;}
 const {title,description=edition.subtitle,currentPath=Astro.url.pathname,stopNumber,totalStops=7}=Astro.props;
@@ -33,7 +25,7 @@ const preview=edition.releaseStatus!=='reviewed';
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <meta name="description" content={description}/>
   <meta name="color-scheme" content="dark"/>
-  <meta name="theme-color" content="#090b0e"/>
+  <meta name="theme-color" content="#171310"/>
   <meta name="mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
@@ -58,6 +50,7 @@ const preview=edition.releaseStatus!=='reviewed';
 </head>
 <body>
   <SkipLink/>
+  <GlyphSprite/>
   <Header currentPath={currentPath} stopNumber={stopNumber} totalStops={totalStops}/>
   <p id="storage-notice" class="storage-notice" role="status" hidden></p>
   <main id="main-content" tabindex="-1"><slot/></main>
