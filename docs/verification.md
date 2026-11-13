@@ -111,6 +111,19 @@ Owner-run on 2026-11-04 with all seven boards and the card-order and emphasis fi
 - **Second follow-up, same screenshot series:** after the first fix Ryan reported that on load Officers still looked active. The inactive card still had a full visible outline, so it read as a selected box beside the gold-edged ones. Inactive cards now have no border and no fill (muted text only); only the current beat's cards look like boxes. Observed in the in-app browser at 1280×1000 on Chapter 06's intro beat: the two active cards are filled with gold edges and dots, and Officers is a plain muted row. Not yet run through the owner's chain.
 - Not checked: Safari and iPad, a screen reader, a real phone, and the pop-up code, which is dormant but untouched (`PopUpScene.astro`, `popup.ts` and the pop-up block in `story.ts` and `story.scss` stay until the boards are approved). The 53 beat and phrase-link drafts need Ryan's editorial review.
 
+## Casebook expansion, Paper Trails, Visual Story, and Title Sequences (observed 2026-11-13)
+
+Verification across the expanded Casebook (71 side stories, 7 paper trail desks, 7 experiences), visual story layers, and title sequences:
+- `npm run check`: 95 files, 0 errors, 0 warnings, 0 hints. Content schemas and cross-catalog validation passed; 116 release obligations remain open.
+- `npm run test:unit`: 6 test files, **77 tests passed**, covering base paths, storage, board regressions, popup depth layers, studies, and data integrity.
+- `npm run build:preview`: **100 static routes generated** in 2.1 s.
+- Browser test suites:
+  - `tour.spec.ts`: **15 passed**, verifying paper trails, side stories, strange finds, clues in plain sight, oddities in files, and equipment cards opening without JavaScript.
+  - `story.spec.ts`: **6 passed**, verifying title sequence backdrops, cut-paper returns, Calm view, and live preference cancellations.
+  - `bluff-pilot.spec.ts`: **4 passed**, verifying visitor chair shot reading, sound opt-in/handoff, and phone width accessibility.
+  - `board.spec.ts`: **3 passed**, verifying beat stepping, marker emphasis, and stacked mobile fallback.
+  - `a11y.spec.ts`: **22 passed**, zero WCAG 2.x A/AA violations and 16px font floor / 44px target floor across all checked routes.
+
 ## Reproduce focused checks
 
 ```sh
