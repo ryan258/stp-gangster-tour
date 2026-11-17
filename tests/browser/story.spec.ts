@@ -287,3 +287,16 @@ test('a failed motion chunk leaves title sequences and the existing preferences 
   await record.locator('summary').filter({hasText: 'Sources for the conditions'}).click();
   await expect(record.locator('a[href$="#evidence-E01"]')).toBeVisible();
 });
+
+test('cross-page cut carries the chapter title frame from the home story', async ({page}) => {
+  await page.goto('./#scene-the-deal-breaks');
+  const link = page.locator('[data-title-sequence="the-deal-breaks"] a.title-quiet[href*="#intro"]');
+  await page.evaluate(() => addEventListener('pageswap', event => sessionStorage.setItem('cut', JSON.stringify({
+    transition: !!event.viewTransition,
+    tagged: [...document.querySelectorAll<HTMLElement>('[data-cut-target]')].map(el => el.dataset.titleSequence),
+  }))));
+  await link.click();
+  await page.waitForURL(/\/stops\/the-deal-breaks\/#intro$/);
+  expect(await page.evaluate(() => JSON.parse(sessionStorage.getItem('cut')!))).toEqual({transition: true, tagged: ['the-deal-breaks']});
+  await expect(page.locator('.title-frame-opening')).toHaveCSS('view-transition-name', 'chapter-frame');
+});
