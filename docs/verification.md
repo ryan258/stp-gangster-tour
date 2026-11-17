@@ -124,6 +124,12 @@ Verification across the expanded Casebook (71 side stories, 7 paper trail desks,
   - `board.spec.ts`: **3 passed**, verifying beat stepping, marker emphasis, and stacked mobile fallback.
   - `a11y.spec.ts`: **22 passed**, zero WCAG 2.x A/AA violations and 16px font floor / 44px target floor across all checked routes.
 
+## Cross-page cuts (observed 2026-11-15)
+
+Owner-run after adding native cross-document View Transitions (`src/styles/story.scss`, `src/layouts/Layout.astro`) and browser coverage in `tests/browser/story.spec.ts`:
+- `npm run build:preview && npm run test:browser`: **56 passed** in Chromium, including `cross-page cut carries the chapter title frame from the home story` (verifying `pageswap` `viewTransition` activation, `[data-cut-target]` tagging on `.story-home`, and `view-transition-name: chapter-frame` on the chapter page).
+- Not checked: human visual acceptance of the cut feel, and non-Chromium browsers (unsupported browsers, reduced motion, Calm view, and no-JavaScript reading fall back to ordinary page loads).
+
 ## Reproduce focused checks
 
 ```sh

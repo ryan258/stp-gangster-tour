@@ -71,7 +71,7 @@ The homepage and all seven chapter routes render `src/components/TitleSequence.a
 
 Scroll through the sequence or use its native links to go to the record, return to the symbol, and continue. These links work without JavaScript. Opening a beat by its link on the homepage saves the equivalent chapter location. Existing Under the Bluff bookmark fragments still resolve.
 
-Short entrance cuts animate only the paper shapes. Calm view, reduced motion, and forced colors keep the scenes still. Scene sound uses the catalog’s local synthesized atmosphere and starts by request. It stops on a cut, on leaving the opening or tab, or when Calm view is enabled. The separate chapter narration retains its own playback controls and transcript.
+Short entrance cuts animate only the paper shapes. Native cross-document View Transitions (`src/styles/story.scss`, `src/layouts/Layout.astro`) carry the chapter title frame and title between the home story and chapter pages and between chapters while keeping the header steady. Calm view, reduced motion, forced colors, and no-JavaScript reading keep the scenes still and use ordinary page loads. Scene sound uses the catalog’s local synthesized atmosphere and starts by request. It stops on a cut, on leaving the opening or tab, or when Calm view is enabled. The separate chapter narration retains its own playback controls and transcript.
 
 Targeted verification for presentation changes:
 
