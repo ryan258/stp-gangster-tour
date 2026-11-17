@@ -396,3 +396,18 @@ html.calm-mode {
   .story-sources { break-inside: auto; }
   .chapter-page .chapter-context { display: block; }
 }
+
+// Cross-page cuts: native cross-document View Transitions. The chapter title frame carries one shared name, so it holds
+// its place between chapters and from the home story (Layout.astro tags the frame being left). Unsupported browsers,
+// reduced motion, Calm view (skipped in Layout.astro) and no-JavaScript reading get an ordinary page load: the page is
+// inert to clicks while a cut runs, and with scripting off automated clicks made during it never landed (tour.spec.ts).
+@media screen and (prefers-reduced-motion: no-preference) and (scripting: enabled) {
+  @view-transition { navigation: auto; }
+  .site-header { view-transition-name: site-header; }
+  :is(.chapter-page, [data-cut-target]) .title-frame-opening { view-transition-name: chapter-frame; }
+  :is(.chapter-page, [data-cut-target]) .title-frame-opening .title-display { view-transition-name: chapter-title; }
+  ::view-transition-group(*) { animation-duration: .5s; animation-timing-function: cubic-bezier(.2, .7, .2, 1); }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .35s; }
+  // The title is the same words at two sizes: scale it, never stretch it.
+  ::view-transition-old(chapter-title), ::view-transition-new(chapter-title) { block-size: 100%; object-fit: contain; object-position: left center; }
+}

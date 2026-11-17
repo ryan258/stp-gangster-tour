@@ -64,6 +64,14 @@ const preview=edition.releaseStatus!=='reviewed';
     for(const initialize of [initCalmView,initSelectionPresenters,initEvidenceDisclosures,initReading]){
       try{initialize();}catch(error){console.error('An optional tour enhancement could not initialize.',error);}
     }
+    // Cross-page cuts (story.scss): leaving the home story for a chapter, that chapter's title frame takes the shared name.
+    window.addEventListener('pageswap',event=>{
+      if(!event.viewTransition)return;
+      if(document.documentElement.classList.contains('calm-mode')){event.viewTransition.skipTransition();return;}
+      const id=event.activation?.entry.url?.match(/\/stops\/([^/#?]+)/)?.[1];
+      document.querySelector('[data-cut-target]')?.removeAttribute('data-cut-target'); // a page restored from the back/forward cache
+      if(id)document.querySelector(`.story-home [data-title-sequence="${CSS.escape(id)}"]`)?.setAttribute('data-cut-target','');
+    });
   </script>
   <StoryMotion/>
 </body>
